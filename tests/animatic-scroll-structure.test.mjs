@@ -57,6 +57,8 @@ test("the guide has a visible heading and links the verified two-sheet PDF", asy
 
   assert.match(html, /<h1>Recovery safety cards<\/h1>/);
   assert.match(html, /Scroll through 14 illustrated recovery cards\./);
+  assert.match(html, /href="\.\.\/index\.html#variations" aria-label="All experiments"/);
+  assert.match(html, /All experiments/);
   assert.match(html, /\.\.\/output\/pdf\/airline-safety-card-deck-prototype\.pdf/);
   assert.match(html, /\bdownload\b/);
 });

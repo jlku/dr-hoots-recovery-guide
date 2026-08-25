@@ -18,7 +18,7 @@ In short: this is ready to share as an honest working project, not as a finished
 The homepage presents three ways to deliver related recovery information:
 
 1. A mascot-guided Watch experience with captions, chapters, clinical cards, and fallback states.
-2. A short vertical-video experiment testing a more native social-video rhythm.
+2. A complete three-part vertical-video experiment with chapter controls, testing a more native social-video rhythm across the full guide.
 3. A scroll-driven safety-card guide with a downloadable PDF.
 
 All formats are intended to derive clinical meaning from the versioned content model in `content/`, while presentation code and generated media stay replaceable.
@@ -32,7 +32,7 @@ As of the date above:
 - Media projections contain identifiers and behavior rather than copied clinical strings.
 - Six narration tracks validate against their exact copy and timestamps.
 - The private three-scene production contract validates.
-- The deterministic suite passes 58 tests.
+- The deterministic suite passes 62 tests.
 - The production dependency audit reports zero known vulnerabilities.
 
 Run `npm run check` to reproduce the content and engineering checks. These results prove contracts and wiring, not presentation quality or clinical approval.
