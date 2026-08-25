@@ -54,12 +54,19 @@
 
     h1 {
       max-width: 18ch;
-      margin: 0 0 clamp(72px, 11vw, 120px);
+      margin: 0 0 24px;
       font-size: clamp(43px, 6.5vw, 76px);
       font-weight: 300;
       letter-spacing: -.045em;
       line-height: 1;
       text-wrap: balance;
+    }
+
+    .page-lede {
+      max-width: 47em;
+      margin: 0 0 clamp(72px, 11vw, 120px);
+      color: var(--muted);
+      font-size: clamp(19px, 2.4vw, 24px);
     }
 
     section + section { margin-top: 88px; }
@@ -196,7 +203,7 @@
     @media (max-width: 760px) {
       :root { --content: min(100% - 32px, 1040px); }
       main { padding-top: 56px; }
-      h1 { margin-bottom: 72px; }
+      .page-lede { margin-bottom: 72px; }
       .variation-copy { max-width: 34em; }
       .variation-number { margin-bottom: 12px; }
       .tiktok-video-preview { padding: 18px; }
@@ -211,6 +218,7 @@
 
   <main class="wrap">
     <h1>Alternatives to text-only after-visit summaries</h1>
+    <p class="page-lede">Three experimental formats for the same recovery information: guided video, short-form video, and an illustrated guide available as a scrolling story or two-sheet PDF.</p>
 
     <section id="variations" aria-label="Three variations">
       <ol class="variation-list">
@@ -226,8 +234,8 @@
         </li>
         <li class="variation">
           <div class="variation-copy"><span class="variation-number">03</span><h3>Airline safety-style illustrated guide</h3><p>Tests whether we can generate accurate recovery illustrations and use them in a safety-card system people can scan and remember on screen or in a take-home PDF.</p></div>
-          <a class="thumbnail-link" href="preview/animatic-scroll.html" aria-label="Open the airline safety-style scrollytelling guide"><figure class="variation-preview pdf-preview"><img src="assets/homepage-airline-pdf-guide.png" alt="Preview of the complete three-panel airline safety-style PDF guide"></figure></a>
-          <div class="variation-links"><a class="variation-link" href="preview/animatic-scroll.html">Open the scrollytelling guide →</a><a class="variation-link" href="output/pdf/airline-safety-card-deck-prototype.pdf">Open the PDF →</a></div>
+          <a class="thumbnail-link" href="output/pdf/airline-safety-card-deck-prototype.pdf" aria-label="Open the two-sheet airline safety-style PDF guide"><figure class="variation-preview pdf-preview"><img src="assets/homepage-airline-pdf-guide.png" alt="Preview of the first sheet in the two-sheet airline safety-style PDF guide"></figure></a>
+          <div class="variation-links"><a class="variation-link" href="preview/animatic-scroll.html">Open the scrolling guide →</a><a class="variation-link" href="output/pdf/airline-safety-card-deck-prototype.pdf">Download the two-sheet PDF →</a></div>
         </li>
       </ol>
     </section>

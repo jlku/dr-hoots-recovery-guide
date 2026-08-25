@@ -11,7 +11,8 @@ An open prototype exploring how the same cochlear-implant recovery information m
 2. Compare the three delivery directions:
    - **Mascot-guided Watch prototype** — `variations.html?mode=watch`
    - **31-second vertical-video experiment** — `tiktok-video.html`
-   - **Scroll-driven safety-card guide** — `preview/animatic-scroll.html`
+   - **14-card scroll-driven safety guide** — `preview/animatic-scroll.html`
+   - **Two-sheet printable PDF** — `output/pdf/airline-safety-card-deck-prototype.pdf`
 3. Read [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) before treating any surface as finished. It separates what works technically from what still needs design, accessibility, usability, and clinical review.
 
 ## Quick start
