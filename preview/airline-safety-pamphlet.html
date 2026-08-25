@@ -3,84 +3,602 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Recovery safety pamphlet · three-step prototype</title>
-  <link rel="icon" href="data:,">
-  <link rel="stylesheet" href="assets/airline-safety-pamphlet.css?v=1">
+  <title>Recovery safety cards — two-sheet print map</title>
+  <style>
+    :root {
+      --ink: #071b43;
+      --ink-2: #163257;
+      --teal: #07988e;
+      --teal-soft: #dcefeb;
+      --red: #d93b35;
+      --paper: #f7f4ec;
+      --white: #fffdfa;
+      --line: #aab7c4;
+      --shell: #030c1b;
+      --shell-2: #0b1727;
+      --muted: #9caec0;
+      --gap: clamp(3px, .35vw, 8px);
+      --radius: clamp(3px, .3vw, 7px);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { background: var(--shell); color: white; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(42, 72, 105, .28), transparent 34rem),
+        var(--shell);
+    }
+
+    button { font: inherit; }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 68px;
+      padding: 12px 22px;
+      border-bottom: 1px solid rgba(255,255,255,.14);
+      background: rgba(3, 12, 27, .94);
+      backdrop-filter: blur(16px);
+    }
+
+    .brand { min-width: 0; }
+
+    .brand strong {
+      display: block;
+      font-size: 16px;
+      letter-spacing: -.01em;
+    }
+
+    .brand span {
+      display: block;
+      margin-top: 3px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex: none;
+    }
+
+    .control {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 38px;
+      padding: 0 13px;
+      color: #dfe9f4;
+      border: 1px solid #496078;
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .control:hover,
+    .control[aria-pressed="true"] {
+      color: #06152c;
+      border-color: #dcefeb;
+      background: #dcefeb;
+    }
+
+    .control:focus-visible,
+    .card:focus-visible,
+    .modal__close:focus-visible {
+      outline: 3px solid #59d7ca;
+      outline-offset: 3px;
+    }
+
+    .stage {
+      width: min(1540px, calc(100vw - 34px));
+      margin: 0 auto;
+      padding: 28px 0 54px;
+    }
+
+    .intro {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 22px;
+      margin: 0 2px 16px;
+      color: #b8c7d6;
+      font-size: 12px;
+    }
+
+    .intro b { color: white; }
+
+    .sheets { display: grid; gap: 28px; }
+
+    .sheet-wrap[hidden] { display: none; }
+
+    .sheet-label {
+      display: flex;
+      justify-content: space-between;
+      margin: 0 2px 8px;
+      color: #b9c7d4;
+      font-size: 11px;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sheet {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 17 / 11;
+      overflow: hidden;
+      padding: clamp(7px, .72vw, 16px);
+      color: var(--ink);
+      border: 1px solid #72839a;
+      border-radius: 2px;
+      background:
+        linear-gradient(rgba(255,255,255,.94), rgba(255,255,255,.94)),
+        radial-gradient(circle at 30% 20%, #fff 0, #f4efe3 75%);
+      box-shadow: 0 22px 60px rgba(0,0,0,.45);
+    }
+
+    .sheet__head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 8.4%;
+      padding: 0 .35%;
+      border-bottom: clamp(1px, .18vw, 3px) solid var(--ink);
+    }
+
+    .sheet__head h1 {
+      margin: 0;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(10px, 1.65vw, 31px);
+      font-weight: 700;
+      letter-spacing: -.025em;
+    }
+
+    .sheet__head p {
+      margin: 0;
+      color: var(--ink-2);
+      font-size: clamp(5px, .68vw, 12px);
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .sheet__grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: repeat(18, 1fr);
+      gap: var(--gap);
+      height: 91.6%;
+      padding-top: var(--gap);
+    }
+
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      padding: clamp(4px, .5vw, 10px);
+      color: var(--ink);
+      border: clamp(1px, .12vw, 2px) solid var(--ink);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.85);
+      cursor: zoom-in;
+    }
+
+    .card--real { border-width: clamp(1px, .17vw, 3px); }
+
+    .card--placeholder {
+      background:
+        repeating-linear-gradient(-45deg, rgba(7,27,67,.035) 0 8px, rgba(7,27,67,.07) 8px 9px),
+        #f5f1e8;
+      cursor: default;
+    }
+
+    .card--warning { border-color: #812b2b; }
+    .card--contact { background: #eaf1f5; }
+    .card--programming { background: #edf5f2; }
+
+    .card__top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      min-height: clamp(13px, 1.15vw, 23px);
+      margin-bottom: clamp(2px, .25vw, 6px);
+    }
+
+    .step {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+      width: clamp(14px, 1.55vw, 28px);
+      aspect-ratio: 1;
+      color: white;
+      border-radius: 50%;
+      background: var(--ink);
+      font-size: clamp(6px, .72vw, 13px);
+      font-weight: 900;
+    }
+
+    .chip {
+      min-width: 0;
+      overflow: hidden;
+      color: var(--ink-2);
+      font-size: clamp(5px, .58vw, 11px);
+      font-weight: 900;
+      letter-spacing: .08em;
+      text-overflow: ellipsis;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .art {
+      flex: 1 1 auto;
+      min-height: 52%;
+      overflow: hidden;
+      border-top: 1px solid #d9dee3;
+      border-bottom: 1px solid #d9dee3;
+      background: white;
+    }
+
+    .art img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+
+    .art--crop img { object-fit: cover; }
+
+    .c4 .art img,
+    .c5 .art img,
+    .c7 .art img,
+    .c8 .art img,
+    .c9 .art img,
+    .c10 .art img,
+    .c12 .art img,
+    .c13 .art img,
+    .c14 .art img { object-position: center; }
+
+    .card h2 {
+      margin: clamp(3px, .35vw, 8px) 0 0;
+      color: var(--ink);
+      font-size: clamp(7px, 1.05vw, 20px);
+      line-height: 1.03;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+    }
+
+    .card p {
+      margin: clamp(2px, .22vw, 5px) 0 0;
+      color: var(--ink-2);
+      font-size: clamp(5px, .58vw, 11px);
+      line-height: 1.22;
+      font-weight: 650;
+    }
+
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+      padding-top: clamp(2px, .22vw, 5px);
+      color: #48617b;
+      font-size: clamp(4px, .49vw, 9px);
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .status::before {
+      width: clamp(4px, .44vw, 8px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--teal);
+      content: "";
+    }
+
+    .status--uncertain::before { background: #c17620; }
+
+    .placeholder-art {
+      display: grid;
+      flex: 1 1 auto;
+      min-height: 52%;
+      place-items: center;
+      color: #698097;
+      border: 1px dashed #94a4b5;
+      font-size: clamp(5px, .58vw, 11px);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .c1 { grid-column: 1 / 9; grid-row: 1 / 13; }
+    .c2 { grid-column: 9 / 13; grid-row: 1 / 7; }
+    .c3 { grid-column: 9 / 13; grid-row: 7 / 13; }
+    .c4 { grid-column: 1 / 7; grid-row: 13 / 19; }
+    .c5 { grid-column: 7 / 13; grid-row: 13 / 19; }
+
+    .c6 { grid-column: 1 / 6; grid-row: 1 / 11; }
+    .c7 { grid-column: 6 / 9; grid-row: 1 / 6; }
+    .c8 { grid-column: 9 / 13; grid-row: 1 / 6; }
+    .c9 { grid-column: 6 / 9; grid-row: 6 / 11; }
+    .c10 { grid-column: 9 / 13; grid-row: 6 / 11; }
+    .c11 { grid-column: 1 / 13; grid-row: 11 / 13; }
+    .c12 { grid-column: 1 / 5; grid-row: 13 / 19; }
+    .c13 { grid-column: 5 / 9; grid-row: 13 / 19; }
+    .c14 { grid-column: 9 / 13; grid-row: 13 / 19; }
+
+    .c11 { cursor: default; }
+
+    .audit-panel {
+      display: none;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .audit-panel.is-open { display: grid; }
+
+    .audit-card {
+      padding: 16px;
+      color: #dfe9f2;
+      border: 1px solid #40556d;
+      border-radius: 6px;
+      background: var(--shell-2);
+    }
+
+    .audit-card h3 { margin: 0 0 8px; font-size: 14px; }
+    .audit-card p { margin: 5px 0; color: #aebfd0; font-size: 12px; line-height: 1.45; }
+    .audit-card strong { color: #59d7ca; }
+    .audit-card--uncertain strong { color: #f1b35b; }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 50;
+      display: none;
+      place-items: center;
+      padding: 24px;
+      background: rgba(1, 6, 15, .88);
+      backdrop-filter: blur(12px);
+    }
+
+    .modal.is-open { display: grid; }
+
+    .modal__body {
+      position: relative;
+      width: min(1080px, 94vw);
+      max-height: 90vh;
+    }
+
+    .modal__body .card {
+      min-height: min(720px, 80vh);
+      padding: 18px;
+      cursor: default;
+    }
+
+    .modal__body .card__top { min-height: 30px; }
+    .modal__body .step { width: 34px; font-size: 15px; }
+    .modal__body .chip { font-size: 12px; }
+    .modal__body .card h2 { margin-top: 12px; font-size: clamp(22px, 3vw, 42px); }
+    .modal__body .card p { font-size: 15px; line-height: 1.35; }
+    .modal__body .status { font-size: 11px; }
+
+    .modal__close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      color: white;
+      border: 1px solid #71859c;
+      border-radius: 50%;
+      background: #101e2e;
+      cursor: pointer;
+    }
+
+    @media (max-width: 780px) {
+      .toolbar { align-items: flex-start; padding: 12px 14px; }
+      .brand span { display: none; }
+      .controls { gap: 5px; }
+      .control { min-height: 34px; padding: 0 9px; font-size: 11px; }
+      .download-long { display: none; }
+      .stage { width: calc(100vw - 18px); padding-top: 18px; }
+      .intro { align-items: flex-start; font-size: 10px; }
+      .intro span:last-child { display: none; }
+      .intro::after { color: white; content: "Tap a finished card to inspect."; }
+      .audit-panel { grid-template-columns: 1fr; }
+    }
+
+    @media print {
+      @page { size: 17in 11in; margin: 0; }
+      html, body { background: white; }
+      .toolbar, .intro, .sheet-label, .audit-panel, .modal { display: none !important; }
+      .stage { width: auto; margin: 0; padding: 0; }
+      .sheets { display: block; }
+      .sheet-wrap, .sheet-wrap[hidden] { display: block !important; }
+      .sheet { width: 17in; height: 11in; border: 0; box-shadow: none; break-after: page; }
+      .sheet-wrap:last-child .sheet { break-after: auto; }
+    }
+  </style>
 </head>
 <body>
-  <main class="pamphlet" aria-labelledby="pamphlet-title">
-    <header class="pamphlet__header">
-      <div>
-        <p class="pamphlet__eyebrow">Post-op recovery guide</p>
-        <h1 id="pamphlet-title">Three things to know after surgery</h1>
-      </div>
-      <p class="pamphlet__status">Draft · pending clinical review</p>
-    </header>
+  <header class="toolbar">
+    <div class="brand">
+      <strong>Two-sheet recovery map</strong>
+      <span>All illustrated cards generated to their print footprints · Card 11 stays live type by design</span>
+    </div>
+    <div class="controls" aria-label="Prototype views">
+      <button class="control" type="button" data-view="1" aria-pressed="true">Sheet 1</button>
+      <button class="control" type="button" data-view="2" aria-pressed="false">Sheet 2</button>
+      <button class="control" type="button" id="auditToggle" aria-pressed="false">Audit</button>
+      <a class="control" href="../output/pdf/airline-safety-card-deck-prototype.pdf" download><span class="download-long">Download&nbsp;</span>PDF</a>
+    </div>
+  </header>
 
-    <div class="instruction-path" aria-label="Recovery instructions in order">
-      <section class="instruction instruction--dressing" aria-labelledby="step-one-title">
-        <header class="instruction__header">
-          <span class="instruction__number" aria-hidden="true">1</span>
-          <div>
-            <p class="instruction__timing">Day 2</p>
-            <h2 id="step-one-title">Remove the head dressing</h2>
+  <main class="stage">
+    <div class="intro">
+      <span><b>Layout rule:</b> every illustrated card reserves at least 52% of its interior for art.</span>
+      <span>Click a finished card to inspect the artwork.</span>
+    </div>
+
+    <div class="sheets">
+      <section class="sheet-wrap" data-sheet="1">
+        <div class="sheet-label"><span>Sheet 1 of 2</span><span>Care for the surgery site</span></div>
+        <article class="sheet" aria-label="Sheet 1: care for the surgery site">
+          <header class="sheet__head">
+            <h1>Care for the surgery site</h1>
+            <p>Recovery days 0–14</p>
+          </header>
+          <div class="sheet__grid">
+            <article class="card card--real c1" tabindex="0" data-card="1">
+              <div class="card__top"><span class="step">1</span><span class="chip">Day 2</span></div>
+              <div class="art"><img src="assets/generated/card-01-dressing-check.png" alt="Two-beat illustration: removing the mastoid dressing, then checking behind the ear for tape over the incision."></div>
+              <h2>Remove the head dressing. Then check behind the ear.</h2>
+              <p>Two days after surgery, take off the mastoid dressing and look for tape covering the incision.</p>
+              <span class="status">Visually supported · clinical review pending</span>
+            </article>
+
+            <article class="card card--real c2" tabindex="0" data-card="2">
+              <div class="card__top"><span class="step">2</span><span class="chip">Tape present · keep dry</span></div>
+              <div class="art"><img src="assets/generated/card-02-tape-keep-dry.png" alt="Tape directly over the incision behind the ear and a keep-dry symbol."></div>
+              <h2>If there is tape</h2>
+              <p>Keep the area dry until three days after surgery. Do not clean it before then.</p>
+              <span class="status">Visually supported · clinical review pending</span>
+            </article>
+
+            <article class="card card--real c3" tabindex="0" data-card="3">
+              <div class="card__top"><span class="step">3</span><span class="chip">No tape · 2× a day</span></div>
+              <div class="art"><img src="assets/generated/card-03-no-tape-clean.png" alt="Three-beat illustration: gently clean incision edges, combine equal parts hydrogen peroxide and distilled water, then apply ointment."></div>
+              <h2>If there is no tape</h2>
+              <p>Clean the incision edges gently twice a day with the 50/50 mix, then apply antibiotic ointment.</p>
+              <span class="status status--uncertain">Applicator technique needs review</span>
+            </article>
+
+            <article class="card card--real c4" tabindex="0" data-card="4">
+              <div class="card__top"><span class="step">4</span><span class="chip">Day 3</span></div>
+              <div class="art art--crop"><img loading="lazy" src="assets/generated/card-04-shower.png" alt="A calm adult washes their hair under a shower."></div>
+              <h2>Showering again</h2>
+              <p>Three days after surgery, you may shower and wash your hair.</p>
+            </article>
+
+            <article class="card card--real c5" tabindex="0" data-card="5">
+              <div class="card__top"><span class="step">5</span><span class="chip">About 2 weeks</span></div>
+              <div class="art art--crop"><img loading="lazy" src="assets/generated/card-05-followup.png" alt="A calendar leads to a clinician examining the ear, with an inset showing dissolvable stitches behind the ear."></div>
+              <h2>Your wound check</h2>
+              <p>Return for a wound check and ear exam. The stitches dissolve on their own.</p>
+            </article>
           </div>
-        </header>
-
-        <figure class="instruction__art instruction__art--dressing">
-          <img src="assets/cards/art/frame-01-art-grounded-v2.png" alt="A person removes the head dressing and then checks behind the ear for tape over the incision.">
-        </figure>
-
-        <ol class="action-pair" aria-label="Day two actions">
-          <li><span>1</span><p>Remove the mastoid dressing, or head bandage.</p></li>
-          <li><span>2</span><p>Check whether tape covers the incision behind the ear.</p></li>
-        </ol>
+        </article>
       </section>
 
-      <section class="instruction instruction--call" aria-labelledby="step-two-title">
-        <header class="instruction__header">
-          <span class="instruction__number" aria-hidden="true">2</span>
-          <div>
-            <p class="instruction__timing">During recovery</p>
-            <h2 id="step-two-title">Watch for all three signs</h2>
+      <section class="sheet-wrap" data-sheet="2" hidden>
+        <div class="sheet-label"><span>Sheet 2 of 2</span><span>When to call + programming</span></div>
+        <article class="sheet" aria-label="Sheet 2: when to call and programming">
+          <header class="sheet__head">
+            <h1>Know when to call</h1>
+            <p>Then prepare for programming</p>
+          </header>
+          <div class="sheet__grid">
+            <article class="card card--real card--warning c6" tabindex="0" data-card="6"><div class="card__top"><span class="step">6</span><span class="chip">All 3 together</span></div><div class="art"><img loading="lazy" src="assets/generated/card-06-redness-all-three.png" alt="Three connected signs behind the ear: redness and swelling, no improvement across two days, and pain when touched."></div><h2>Redness with all three signs</h2><p>Red and swollen · not improving in 1–2 days · painful to touch.</p></article>
+            <article class="card card--real card--warning c7" tabindex="0" data-card="7"><div class="card__top"><span class="step">7</span><span class="chip">Above 101.5°F</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-07-fever.png" alt="A forehead temperature check with a thermometer and an upward threshold arrow."></div><h2>Fever</h2><p>Call above this temperature.</p></article>
+            <article class="card card--real card--warning c8" tabindex="0" data-card="8"><div class="card__top"><span class="step">8</span><span class="chip">Behind the ear</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-08-swelling-fluid.png" alt="A person holds hair aside to show swelling behind the ear, with an inset suggesting fluid under intact skin."></div><h2>Swelling or fluid</h2><p>Call if fluid feels like it is building up under the skin.</p></article>
+            <article class="card card--real card--warning c9" tabindex="0" data-card="9"><div class="card__top"><span class="step">9</span><span class="chip">Any of these</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-09-warning-signs.png" alt="Three equal signs: headache, shielding the eyes from light, and excessive lethargy."></div><h2>Other warning signs</h2><p>Headache · light sensitivity · excessive lethargy.</p></article>
+            <article class="card card--real card--warning c10" tabindex="0" data-card="10"><div class="card__top"><span class="step">10</span><span class="chip">Just call</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-10-call-concerns.png" alt="A calm adult calls by phone with a question symbol."></div><h2>Questions or concerns</h2><p>Call for any wound-care question or medical concern.</p></article>
+            <article class="card card--contact c11"><div class="card__top"><span class="step">11</span><span class="chip">Save these</span></div><h2>Routine: 415-353-2148 · Emergency: 415-476-1000</h2><p>For an emergency, ask for the Otolaryngology resident on call.</p></article>
+            <article class="card card--real card--programming c12" tabindex="0" data-card="12"><div class="card__top"><span class="step">12</span><span class="chip">After healing</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-12-return-after-healing.png" alt="A healed area behind the ear leads to an appointment calendar and clinic."></div><h2>Return for programming</h2><p>After the surgery site heals, return for your first programming visit.</p></article>
+            <article class="card card--real card--programming c13" tabindex="0" data-card="13"><div class="card__top"><span class="step">13</span><span class="chip">The audiologist</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-13-programming.png" alt="An audiologist uses a computer to adjust an adult patient's external cochlear implant speech processor."></div><h2>Your first program</h2><p>The audiologist programs the speech processor for your needs.</p></article>
+            <article class="card card--real card--programming c14" tabindex="0" data-card="14"><div class="card__top"><span class="step">14</span><span class="chip">Keep returning</span></div><div class="art art--crop"><img loading="lazy" src="assets/generated/card-14-ongoing-visits.png" alt="Repeated appointments lead to an equipment check and an ongoing fine-tuning loop."></div><h2>Checks and fine-tuning</h2><p>The team checks the equipment and adjusts the program over time.</p></article>
           </div>
-        </header>
-
-        <p class="call-rule">Call your surgeon or clinic staff only if all three signs below are present.</p>
-        <ol class="sign-list">
-          <li><span>1</span><strong>Red and swollen</strong></li>
-          <li><span>2</span><strong>Not getting better</strong><small>Over the next 1-2 days</small></li>
-          <li><span>3</span><strong>Hurts when touched</strong></li>
-        </ol>
-        <p class="call-action">All 3 <span aria-hidden="true">→</span> call</p>
-      </section>
-
-      <section class="instruction instruction--programming" aria-labelledby="step-three-title">
-        <header class="instruction__header">
-          <span class="instruction__number" aria-hidden="true">3</span>
-          <div>
-            <p class="instruction__timing">After healing</p>
-            <h2 id="step-three-title">Return for programming</h2>
-          </div>
-        </header>
-
-        <figure class="instruction__art instruction__art--programming">
-          <img src="../assets/illustrations/ci-activation-programming-safety-card-v1.png" alt="An audiologist programs the outside-ear speech processor with a patient.">
-        </figure>
-
-        <div class="programming-copy">
-          <p>An audiologist programs the speech processor you wear outside your ear.</p>
-          <p>The program is made for your needs.</p>
-        </div>
+        </article>
       </section>
     </div>
 
-    <footer class="pamphlet__route" aria-label="Instruction sequence">
-      <span>Day 2</span><i aria-hidden="true"></i>
-      <span>Watch the incision</span><i aria-hidden="true"></i>
-      <span>First programming visit</span>
-      <b>Prototype · not for patient use</b>
-    </footer>
+    <section class="audit-panel" id="auditPanel" aria-label="Illustration audit">
+      <article class="audit-card"><h3>Card 1 · Dressing + check</h3><p><strong>Pass:</strong> wide footprint, recognizable dressing, postauricular inset, no cropped action.</p><p>Watch: exact UCSF wrap construction is not photographed in the governing source.</p></article>
+      <article class="audit-card"><h3>Card 2 · Tape present</h3><p><strong>Pass:</strong> tape overlies the incision directly behind the ear; keep-dry symbol is separate.</p><p>Watch: individual Steri-Strip count and orientation may vary by surgeon.</p></article>
+      <article class="audit-card audit-card--uncertain"><h3>Card 3 · No tape</h3><p><strong>Needs review:</strong> the sequence follows UCSF, but the source does not prescribe the applicator technique shown.</p><p>Safe fallback: replace the hand action with object-only supplies if the clinician does not approve it.</p></article>
+      <article class="audit-card"><h3>Cards 4–5 · Milestones</h3><p><strong>Pass:</strong> both shallow cards preserve enough room for a full action; Card 5 has no stitch-removal tools.</p><p>Watch: dissolving stitches are symbolic and require clinician review.</p></article>
+      <article class="audit-card"><h3>Card 6 · All three together</h3><p><strong>Pass:</strong> the same restrained redness persists across time and remains joined to the touch-pain sign.</p><p>Watch: severity is illustrative, not a diagnostic example.</p></article>
+      <article class="audit-card"><h3>Cards 7–10 · Any one reason</h3><p><strong>Pass:</strong> four compact images remain independent; the exact fever threshold stays live text.</p><p>Watch: Card 8's fluid inset is conceptual and needs clinical confirmation.</p></article>
+      <article class="audit-card"><h3>Card 11 · Contact strip</h3><p><strong>Pass:</strong> phone routes remain selectable, printable live text rather than raster art.</p><p>No generated illustration is intended for this card.</p></article>
+      <article class="audit-card"><h3>Cards 12–14 · Programming</h3><p><strong>Pass:</strong> the row moves from healed site to programming session to recurring fine-tuning.</p><p>Watch: computer controls are deliberately generic; visit timing remains unspecified.</p></article>
+    </section>
   </main>
+
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Card detail">
+    <div class="modal__body" id="modalBody"><button class="modal__close" type="button" aria-label="Close">×</button></div>
+  </div>
+
+  <script>
+    const viewButtons = [...document.querySelectorAll('[data-view]')];
+    const sheets = [...document.querySelectorAll('[data-sheet]')];
+    const auditToggle = document.getElementById('auditToggle');
+    const auditPanel = document.getElementById('auditPanel');
+    const modal = document.getElementById('modal');
+    const modalBody = document.getElementById('modalBody');
+    const closeButton = modalBody.querySelector('.modal__close');
+    let lastFocus = null;
+
+    viewButtons.forEach(button => button.addEventListener('click', () => {
+      const target = button.dataset.view;
+      viewButtons.forEach(item => item.setAttribute('aria-pressed', String(item === button)));
+      sheets.forEach(sheet => { sheet.hidden = sheet.dataset.sheet !== target; });
+    }));
+
+    auditToggle.addEventListener('click', () => {
+      const open = !auditPanel.classList.contains('is-open');
+      auditPanel.classList.toggle('is-open', open);
+      auditToggle.setAttribute('aria-pressed', String(open));
+      if (open) auditPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    });
+
+    function openCard(card) {
+      lastFocus = card;
+      const clone = card.cloneNode(true);
+      clone.removeAttribute('tabindex');
+      clone.removeAttribute('data-card');
+      modalBody.querySelector('.card')?.remove();
+      modalBody.appendChild(clone);
+      modal.classList.add('is-open');
+      closeButton.focus();
+    }
+
+    document.querySelectorAll('[data-card]').forEach(card => {
+      card.addEventListener('click', () => openCard(card));
+      card.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          openCard(card);
+        }
+      });
+    });
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      lastFocus?.focus();
+    }
+
+    closeButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', event => { if (event.target === modal) closeModal(); });
+    document.addEventListener('keydown', event => { if (event.key === 'Escape') closeModal(); });
+  </script>
 </body>
 </html>
