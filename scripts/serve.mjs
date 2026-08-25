@@ -27,6 +27,22 @@ function safePath(pathname) {
   return candidate === root || candidate.startsWith(`${root}${sep}`) ? candidate : null;
 }
 
+function parseRange(header, size) {
+  const match = /^bytes=(\d*)-(\d*)$/.exec(header || "");
+  if (!match || (!match[1] && !match[2])) return null;
+
+  const requestedStart = match[1] ? Number.parseInt(match[1], 10) : null;
+  const requestedEnd = match[2] ? Number.parseInt(match[2], 10) : null;
+  const start = requestedStart ?? Math.max(0, size - requestedEnd);
+  const end = requestedStart === null ? size - 1 : Math.min(requestedEnd ?? size - 1, size - 1);
+
+  if (!Number.isSafeInteger(start) || !Number.isSafeInteger(end) || start < 0 || start > end || start >= size) {
+    return { invalid: true };
+  }
+
+  return { end, start };
+}
+
 const server = createServer(async (request, response) => {
   try {
     let filePath = safePath(request.url || "/");
@@ -40,9 +56,32 @@ const server = createServer(async (request, response) => {
     const resolvedStat = await stat(filePath);
     if (!resolvedStat.isFile()) throw new Error("Not a file");
 
+    const contentType = mimeTypes[extname(filePath).toLowerCase()] || "application/octet-stream";
+    const range = request.headers.range ? parseRange(request.headers.range, resolvedStat.size) : null;
+
+    if (range?.invalid) {
+      response.writeHead(416, {
+        "Accept-Ranges": "bytes",
+        "Content-Range": `bytes */${resolvedStat.size}`
+      }).end();
+      return;
+    }
+
+    if (range) {
+      response.writeHead(206, {
+        "Accept-Ranges": "bytes",
+        "Content-Length": range.end - range.start + 1,
+        "Content-Range": `bytes ${range.start}-${range.end}/${resolvedStat.size}`,
+        "Content-Type": contentType
+      });
+      createReadStream(filePath, { start: range.start, end: range.end }).pipe(response);
+      return;
+    }
+
     response.writeHead(200, {
+      "Accept-Ranges": "bytes",
       "Content-Length": resolvedStat.size,
-      "Content-Type": mimeTypes[extname(filePath).toLowerCase()] || "application/octet-stream"
+      "Content-Type": contentType
     });
     createReadStream(filePath).pipe(response);
   } catch {

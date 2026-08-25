@@ -118,6 +118,13 @@
 
     .mode--pdf:hover { background: var(--teal); }
 
+    .mode--home {
+      gap: 6px;
+      color: #f0f5f8;
+    }
+
+    .mode--home:hover { background: #17263a; }
+
     .progressbar {
       position: fixed;
       inset: 68px 0 auto;
@@ -537,6 +544,7 @@
       .progressbar__main { gap: 9px; }
       .section-name { max-width: 40vw; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
       .mode { min-height: 34px; padding-inline: 10px; font-size: 11px; }
+      .home-long { display: none; }
       .pdf-long { display: none; }
 
       .visual-shell {
@@ -585,6 +593,7 @@
       <p>Scroll through 14 illustrated recovery cards. Design prototype · not for patient use.</p>
     </div>
     <nav class="modes" aria-label="Choose guide format">
+      <a class="mode mode--home" href="../index.html#variations" aria-label="All experiments"><span aria-hidden="true">←</span><span class="home-long">All experiments</span></a>
       <span class="mode" aria-current="page">Digital</span>
       <a class="mode mode--pdf" href="../output/pdf/airline-safety-card-deck-prototype.pdf" download><span aria-hidden="true">↓</span><span class="pdf-long">Print&nbsp;</span>PDF</a>
     </nav>
