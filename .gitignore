@@ -1,0 +1,25 @@
+.env
+.env.local
+.env.*.local
+.DS_Store
+node_modules/
+coverage/
+.claude/
+.codex/
+.context/
+.playwright-mcp/
+/.production/
+artifacts/
+audits/
+design/
+evals/
+prototypes/
+tmp/
+todos/
+design-qa.md
+
+# Keep only the PDF linked from the public experiment index.
+output/*
+!output/pdf/
+output/pdf/*
+!output/pdf/airline-safety-card-deck-prototype.pdf

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Frame 04-05 · What comes next: shower at day 3, wound check at ~2 weeks; stitches dissolve on their own · safety-card grammar -->
+  <defs>
+    <!-- suture thread knot, threaded on a horizontal line at local y=0; tail dissolves into dashes then remnant dots -->
+    <g id="knot">
+      <circle cx="0" cy="-10" r="13" fill="none" stroke="#052049" stroke-width="5"/>
+      <path d="M -9 -1 C -16 5 -24 8 -32 7" fill="none" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 9 -1 C 16 6 22 10 28 12" fill="none" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+      <path d="M 28 12 C 36 14 44 13 51 10" fill="none" stroke="#052049" stroke-width="4.5" stroke-linecap="round" stroke-dasharray="9 7"/>
+      <circle cx="57" cy="7" r="2.5" fill="#052049"/>
+      <circle cx="63" cy="4" r="2" fill="#052049"/>
+    </g>
+    <!-- falling water drop -->
+    <path id="drop" d="M 0 -11 C 5 -4 8 1 8 6 A 8 8 0 0 1 -8 6 C -8 1 -5 -4 0 -11 Z" fill="#14828c"/>
+    <!-- Consistent patient profile used to make both milestones literal rather than purely symbolic. -->
+    <g id="profile-head">
+      <path d="M 6 -88 C -40 -86 -70 -60 -75 -24 C -76 -14 -74 -8 -77 0 L -87 12 C -89 16 -86 20 -80 21 C -83 28 -83 34 -78 38 C -81 44 -79 52 -71 56 C -63 70 -48 79 -32 81 C -21 83 -11 83 -2 81 L 2 106 L 58 106 L 52 64 C 72 46 83 20 81 -12 C 77 -58 48 -88 6 -88 Z" fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M -10 106 C 18 94 76 96 108 110 L 114 138 L -14 138 Z" fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 8 -4 C 28 -14 44 2 34 22 C 27 35 11 38 3 29 C 7 24 9 18 8 12" fill="#fbfaf5" stroke="#052049" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M 15 4 C 23 2 27 10 21 16" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 6 -88 C -30 -87 -58 -68 -70 -38 C -52 -60 -22 -70 4 -68 C 40 -66 66 -44 74 -12 C 80 -20 81 -32 79 -44 C 70 -74 44 -89 6 -88 Z" fill="#052049"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="132" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="92" y="61" text-anchor="middle" font-size="19" font-weight="800" fill="#052049">CARDS 04–05</text>
+  <rect x="500" y="30" width="270" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="635" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">WHAT COMES NEXT</text>
+
+  <!-- timeline rail across upper half -->
+  <line x1="90" y1="228" x2="710" y2="228" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- stop 1 · day 3 · a person showering and washing hair -->
+  <path d="M 250 112 L 250 90 L 214 90" fill="none" stroke="#052049" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 214 148 A 36 36 0 0 1 286 148 Z" fill="#ffffff" stroke="#052049" stroke-width="5.5" stroke-linejoin="round"/>
+  <circle cx="229" cy="140" r="2.5" fill="#052049"/>
+  <circle cx="243" cy="140" r="2.5" fill="#052049"/>
+  <circle cx="257" cy="140" r="2.5" fill="#052049"/>
+  <circle cx="271" cy="140" r="2.5" fill="#052049"/>
+  <use href="#drop" transform="translate(230,168)"/>
+  <use href="#drop" transform="translate(250,192)"/>
+  <use href="#drop" transform="translate(270,168)"/>
+  <g transform="translate(250,190) scale(0.27)">
+    <use href="#profile-head"/>
+  </g>
+
+  <!-- stop 2 · ~2 weeks · clinician visually examines behind the patient's ear -->
+  <g transform="translate(570,170) scale(0.34)">
+    <use href="#profile-head"/>
+  </g>
+  <circle cx="662" cy="130" r="24" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <path d="M 635 207 Q 662 173 689 207 L 697 226 L 627 226 Z" fill="#14828c" stroke="#052049" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 650 131 Q 658 125 666 131" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+  <line x1="646" y1="145" x2="607" y2="177" stroke="#052049" stroke-width="3" stroke-dasharray="6 6"/>
+  <circle cx="607" cy="177" r="6" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+
+  <!-- timeline stop markers: yellow marker square + navy dot -->
+  <rect x="238" y="216" width="24" height="24" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <circle cx="250" cy="228" r="6.5" fill="#052049"/>
+  <rect x="563" y="216" width="24" height="24" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <circle cx="575" cy="228" r="6.5" fill="#052049"/>
+
+  <!-- serif milestone figures + labels, one axis per stop -->
+  <text x="250" y="280" text-anchor="middle" font-size="38" fill="#052049" font-family="Granjon, 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif">Day 3</text>
+  <text x="250" y="302" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1" fill="#29405d">AFTER SURGERY</text>
+  <text x="250" y="324" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">SHOWER + HAIR OK</text>
+  <text x="575" y="280" text-anchor="middle" font-size="36" fill="#052049" font-family="Granjon, 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif">≈ 2 weeks</text>
+  <text x="575" y="302" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1" fill="#29405d">AFTER SURGERY</text>
+  <text x="575" y="324" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">WOUND CHECK + EAR EXAM</text>
+
+  <!-- Anatomy-bound, untimed note with its own site anchor, separate from both timeline milestones. -->
+  <g transform="translate(135,445) scale(0.32)">
+    <use href="#profile-head"/>
+  </g>
+  <line x1="153" y1="448" x2="220" y2="448" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+  <circle cx="153" cy="448" r="5" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <circle cx="292" cy="448" r="72" fill="#fff5cf" stroke="#052049" stroke-width="6"/>
+  <line x1="236" y1="450" x2="348" y2="450" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+  <use href="#knot" transform="translate(274,450) scale(1.15)"/>
+  <circle cx="274" cy="438" r="27" fill="none" stroke="#feb80a" stroke-width="5"/>
+  <rect x="374" y="390" width="128" height="34" fill="#052049"/>
+  <text x="438" y="413" text-anchor="middle" font-size="17" font-weight="800" letter-spacing="1.6" fill="#ffffff">STITCHES</text>
+  <text x="292" y="551" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">DISSOLVE ON THEIR OWN</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dr. Hoots character exploration</title>
+  <style>
+    :root{
+      --navy:#052049;--blue:#0071ad;--teal:#14828c;--yellow:#feb80a;
+      --gray-1:#f2f3f4;--gray-3:#d1d3d3;--blue-gray:#506380;--paper:#fff;
+      --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;--content:min(1230px,calc(100vw - 30px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;background:var(--paper);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+    a{color:var(--blue);text-underline-offset:4px}a:focus-visible{outline:3px solid var(--yellow);outline-offset:4px}
+    h1,h2,h3,p{margin-top:0}h1{max-width:22ch;margin-bottom:16px;font-size:39px;font-weight:200;letter-spacing:-.02em;line-height:1.08}h2{margin-bottom:16px;font-size:34px;font-weight:200;line-height:1.12}h3{margin-bottom:8px;font-size:22px;font-weight:300;line-height:1.2}p{color:#29405d}
+    .wrap{width:var(--content);margin:auto}.brand .wrap{min-height:106px;display:flex;align-items:center;justify-content:space-between;gap:30px}.lockup strong{display:block;font-size:27px;font-weight:300}.lockup span{color:var(--blue-gray);font-size:14px}.back{font-size:16px;font-weight:700}.rule{height:6px;background:var(--teal)}
+    .nav{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--gray-3);background:rgba(255,255,255,.98)}.nav .wrap{min-height:68px;display:flex;align-items:center;gap:34px;overflow:auto}.nav strong,.nav a{flex:0 0 auto}.nav a{padding:22px 0;color:var(--navy);font-weight:700;text-decoration:none}.nav a:hover{text-decoration:underline}
+    .hero{padding:64px 0 72px;border-bottom:1px solid var(--gray-3)}.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}.hero p{max-width:56ch;margin-bottom:0;color:var(--blue-gray)}.eyebrow{margin-bottom:12px;color:var(--teal);font-size:13px;font-weight:800;text-transform:uppercase}
+    .status{border-top:5px solid var(--navy)}.status div{padding:13px 0;display:grid;grid-template-columns:92px 1fr;gap:16px;border-bottom:1px solid var(--gray-3);font-size:14px}.status b{color:var(--teal);text-transform:uppercase}.status span{color:#29405d}
+    .section{padding:76px 0;border-bottom:1px solid var(--gray-3)}.section-head{max-width:760px;margin-bottom:30px}.section-head p{margin:0;color:var(--blue-gray)}
+    figure{margin:0}.asset{display:block;width:100%;height:auto;border:1px solid var(--gray-3);background:#dcebf4}.caption{padding:13px 0;color:var(--blue-gray);font-size:14px}
+    .rules{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--gray-3);border-left:1px solid var(--gray-3)}.rules div{padding:20px;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3)}.rules b{display:block;margin-bottom:5px;color:var(--teal);font-size:13px;text-transform:uppercase}.rules p{margin:0;font-size:14px}.identity-tests{margin-top:28px;display:grid;grid-template-columns:1fr 1fr;gap:20px}.identity-test{padding:18px;border:1px solid var(--gray-3);background:var(--gray-1)}.identity-test b{display:block;margin-bottom:12px;color:var(--teal);font-size:13px;text-transform:uppercase}.identity-test img{display:block;width:280px;max-width:100%;height:auto}.identity-test .grayscale{filter:grayscale(1)}.identity-test .silhouette{filter:grayscale(1) brightness(0)}
+    .motion-layout{display:grid;grid-template-columns:minmax(260px,420px) 1fr;gap:42px;align-items:start}.motion-stage{min-height:620px;padding:28px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:22px;border:1px solid var(--gray-3);background:#dcebf4}.clay-rig{width:min(92%,340px);position:relative;aspect-ratio:1;overflow:hidden}.rig-base{display:block;width:100%;height:100%;object-fit:cover}.rig-wing{position:absolute;width:23%;height:auto;left:16%;top:40.5%;clip-path:ellipse(42% 49% at 50% 50%);filter:brightness(.82) saturate(.88);transform-origin:66% 7%;will-change:transform}.is-playing .rig-wing{animation:wing-point 4.8s ease-in-out 1}.is-pointing .rig-wing{transform:rotate(72deg)}.motion-button{padding:.55rem 1.7rem;border:1px solid var(--blue);border-radius:3px;background:var(--blue);color:white;font:700 16px/1.5 var(--sans);letter-spacing:.06em;text-transform:uppercase}.motion-button:hover,.motion-button:focus-visible{background:white;color:var(--blue)}.motion-button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}.motion-status{min-height:1.5em;margin:0;color:var(--navy);font-size:14px}.motion-copy{border-top:5px solid var(--navy)}.motion-copy div{padding:17px 0;border-bottom:1px solid var(--gray-3)}.motion-copy b{display:block;margin-bottom:4px;color:var(--teal);font-size:13px;text-transform:uppercase}.motion-copy p{margin:0}.static-equivalent{margin-top:28px;padding:18px 20px;border-left:5px solid var(--teal);background:var(--gray-1)}.static-equivalent p{margin:0}
+    @keyframes wing-point{0%,18%{transform:rotate(0)}35%,72%{transform:rotate(72deg)}100%{transform:rotate(0)}}
+    .provenance{background:var(--gray-1)}.provenance-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--gray-3);border-left:1px solid var(--gray-3)}.record{padding:20px;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3);background:white}.record p{margin-bottom:12px;font-size:14px}.record p:last-child{margin-bottom:0}.record code{font-size:12px;overflow-wrap:anywhere}
+    footer{padding:42px 0;background:var(--navy)}footer p{margin:0;color:white;font-size:14px}
+    @media(max-width:850px){.hero-grid,.motion-layout{grid-template-columns:1fr;gap:30px}.rules,.provenance-grid{grid-template-columns:1fr 1fr}.section{padding:62px 0}.motion-stage{min-height:560px}}
+    @media(max-width:560px){.brand .wrap{align-items:flex-start;flex-direction:column;padding:22px 0;gap:10px}.nav strong{display:none}.rules,.provenance-grid,.identity-tests{grid-template-columns:1fr}.motion-stage{min-height:500px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.is-playing .rig-wing{animation:none}}
+  </style>
+</head>
+<body>
+  <header><div class="brand"><div class="wrap"><div class="lockup"><strong>Dr. Hoots</strong><span>Character exploration</span></div><a class="back" href="design-system.html#mascot">← Shared design system</a></div></div><div class="rule" aria-hidden="true"></div></header>
+  <nav class="nav" aria-label="On this page"><div class="wrap"><strong>On this page</strong><a href="#identity">Identity</a><a href="#expressions">Expressions</a><a href="#gestures">Gestures</a><a href="#motion">Motion</a><a href="#records">Records</a></div></nav>
+  <main>
+    <section class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Character system · v1</p><h1>One model, tested from every side</h1><p>This page tests whether Dr. Hoots stays recognizable across views, expressions, gestures, and restrained motion. It contains no patient instructions.</p></div><div class="status"><div><b>Status</b><span>Independent character design gate passed</span></div><div><b>Source</b><span>Original clay image plus generated identity studies</span></div><div><b>Use</b><span>Concept review only</span></div></div></div></section>
+
+    <section class="section" id="identity"><div class="wrap"><div class="section-head"><p class="eyebrow">01 · Identity</p><h2>Turnaround</h2><p>Front, three-quarter, profile, and back views establish the repeatable model before scene work begins.</p></div><figure><img class="asset" src="assets/character/dr-hoots-turnaround-v1.png" alt="Four full-body views of the same clay owl clinician: front, three-quarter, profile, and back"><figcaption class="caption">Identity candidate: round head, wide cream eye disks, orange beak, brown ear tufts, teal three-pocket scrubs, and a plain gold pin.</figcaption></figure><div class="rules"><div><b>Head</b><p>Round silhouette, wide eye spacing, strong brow feathers.</p></div><div><b>Clothing</b><p>Teal V-neck scrubs with one chest and two lower pockets.</p></div><div><b>Marker</b><p>One plain round gold pin. No logo or medical symbol.</p></div><div><b>Material</b><p>Tactile clay feathers and fabric under neutral studio light.</p></div></div><div class="identity-tests"><div class="identity-test"><b>Thumbnail · grayscale</b><img class="grayscale" src="assets/character/dr-hoots-turnaround-v1.png" alt="Small grayscale version of the turnaround sheet"></div><div class="identity-test"><b>Thumbnail · silhouette</b><img class="silhouette" src="assets/character/dr-hoots-turnaround-v1.png" alt="Small black silhouette version of the turnaround sheet"></div></div></div></section>
+
+    <section class="section" id="expressions"><div class="wrap"><div class="section-head"><p class="eyebrow">02 · Expressions</p><h2>Subtle, adult, and calm</h2><p>Expression changes stay in the eyes and brows. They do not carry medical meaning.</p></div><figure><img class="asset" src="assets/character/dr-hoots-expressions-v1.png" alt="Four close portraits of Dr. Hoots showing neutral, attentive, reassuring, and concerned expressions"><figcaption class="caption">Left to right: neutral, attentive, reassuring, concerned. Final labels remain outside the generated image.</figcaption></figure></div></section>
+
+    <section class="section" id="gestures"><div class="wrap"><div class="section-head"><p class="eyebrow">03 · Gestures</p><h2>Direct attention, do not explain</h2><p>Each silhouette has one job: point, hold, stop, or direct attention. Clinical meaning belongs to text and diagrams.</p></div><figure><img class="asset" src="assets/character/dr-hoots-gestures-v3.png" alt="Four full-body Dr. Hoots poses using intact feathered wings: pointing, holding a blank card, extending a closed wing sideways as a stop barrier, and pointing down"><figcaption class="caption">Corrected v3 uses continuous closed wings without human fingers. The stop gesture is a side-on wing barrier, never a raised palm. Generated lettering will never be used as patient-facing text.</figcaption></figure></div></section>
+
+    <section class="section" id="motion"><div class="wrap"><div class="section-head"><p class="eyebrow">04 · Motion test</p><h2>One gesture, then rest</h2><p>A layered clay rig isolates timing from generated-frame drift. It plays once only when requested and contains no clinical content.</p></div><div class="motion-layout"><div class="motion-stage"><div class="clay-rig" role="img" aria-label="The clay Dr. Hoots puppet raises one feathered wing to point, holds, and returns to rest"><img class="rig-base" src="assets/character/dr-hoots-motion-base-v2.png" alt=""><img class="rig-wing" src="assets/character/dr-hoots-wing-rig-v2.png" alt=""></div><button class="motion-button" type="button" aria-describedby="motion-instructions">Play gesture</button><p class="motion-status" aria-live="polite"></p></div><div class="motion-copy" id="motion-instructions"><div><b>Sequence</b><p>Neutral → raise → point and hold → neutral.</p></div><div><b>Timing</b><p>4.8 seconds with a readable hold. It does not loop.</p></div><div><b>Rig</b><p>The clay base is one locked image. Head, eyes, beak, body, clothing, pin, feet, camera, texture, and light never change; only one transparent clay wing rotates.</p></div><div><b>Reduced motion</b><p>The same button toggles between the two static poses instead of animating.</p></div><div><b>Audio</b><p>None. Captions and a transcript are not applicable to this silent identity test.</p></div></div></div><div class="static-equivalent"><p><strong>Static equivalent:</strong> the corrected gesture sheet above shows both the resting model and the complete closed-wing point. The motion adds no meaning.</p></div></div></section>
+
+    <section class="section provenance" id="records"><div class="wrap"><div class="section-head"><p class="eyebrow">05 · Records</p><h2>Generation and review status</h2><p>The complete prompts, source paths, file hashes, and review decisions live in the asset manifest.</p></div><div class="provenance-grid"><div class="record"><h3>Turnaround + expressions</h3><p><strong>Status:</strong> design gate passed</p><p><code>assets/character/manifest.json</code></p></div><div class="record"><h3>Gestures v3</h3><p><strong>Status:</strong> design gate passed</p><p><code>assets/character/dr-hoots-gestures-v3.png</code></p></div><div class="record"><h3>Clay motion rig v4</h3><p><strong>Status:</strong> design gate passed</p><p><code>character-exploration.html#motion</code></p></div></div></div></section>
+  </main>
+  <footer><div class="wrap"><p>Character exploration · working concept, not an official UCSF website</p></div></footer>
+  <script>
+    const motionStage = document.querySelector('.motion-stage');
+    const motionButton = document.querySelector('.motion-button');
+    const motionStatus = document.querySelector('.motion-status');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+    motionButton.addEventListener('click', () => {
+      if (reducedMotion.matches) {
+        const pointing = motionStage.classList.toggle('is-pointing');
+        motionButton.textContent = pointing ? 'Return to rest' : 'Show point';
+        motionStatus.textContent = pointing ? 'Pointing pose shown.' : 'Neutral pose shown.';
+        return;
+      }
+
+      motionStage.classList.remove('is-playing');
+      void motionStage.offsetWidth;
+      motionStage.classList.add('is-playing');
+      motionButton.disabled = true;
+      motionStatus.textContent = 'Gesture playing once.';
+    });
+
+    document.querySelector('.rig-wing').addEventListener('animationend', () => {
+      motionStage.classList.remove('is-playing');
+      motionButton.disabled = false;
+      motionStatus.textContent = 'Gesture complete. Dr. Hoots is at rest.';
+      motionButton.focus();
+    });
+  </script>
+</body>
+</html>

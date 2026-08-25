@@ -1,0 +1,194 @@
+{
+  "schema_version": "1.0",
+  "artifact": {
+    "id": "ci-phase0",
+    "version": "0.1.0",
+    "status": "unverified_draft",
+    "patient_use": false,
+    "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+    "procedure": "cochlear implantation",
+    "care_site": "UCSF Cochlear Implant Center public-source starting point",
+    "audience_applicability": "adult and pediatric applicability not yet confirmed",
+    "created_at": "2026-08-22",
+    "source_retrieved_at": "2026-08-22",
+    "canonical_order": [
+      "ci/wound-care",
+      "ci/when-to-call",
+      "ci/activation"
+    ],
+    "missing_authorities": [
+      "current UCSF EHR-generated AVS",
+      "partner-surgeon protocol and redline"
+    ],
+    "derivative_rule": "Every medium must render the same ordered sentence IDs without rewriting clinical propositions.",
+    "evidence_gate": {
+      "status": "passed_for_private_concept_prototyping",
+      "date": "2026-08-22",
+      "patient_ready": false,
+      "limitation": "This is not clinical approval. Current EHR AVS and partner-surgeon review are still required."
+    }
+  },
+  "sources": [
+    {
+      "id": "ucsf-ci-surgery-2026-08-22",
+      "publisher": "UCSF Department of Otolaryngology — Head and Neck Surgery",
+      "title": "Surgery (Before, During, and After) & Post-Operative Care",
+      "url": "https://ohns.ucsf.edu/otology-neurotology/cochlear-implant-center/surgery",
+      "retrieved_at": "2026-08-22",
+      "visible_revision_date": null,
+      "passage_locations": [
+        "What is the healing process and post-operative care like?",
+        "When should I call my doctor following surgery?"
+      ],
+      "claim_snapshot_sha256": "b34099fc9817a21d11d9929d1c0d6bd188a7267b42cf604e38d88713bc5fd7ae",
+      "claims": [
+        {"id": "surgery.dressing.day2", "claim": "The patient or a family member removes the mastoid dressing two days after surgery."},
+        {"id": "surgery.no-tape.cleaning", "claim": "When tape is not present, clean the incision edges gently twice each day with equal parts hydrogen peroxide and distilled water, then apply an over-the-counter antibiotic ointment such as bacitracin."},
+        {"id": "surgery.tape.branch", "claim": "When tape covers the incision, keep the area dry for three days and do not clean the wound during that period."},
+        {"id": "surgery.shower.day3", "claim": "The patient may shower and wash their hair three days after surgery."},
+        {"id": "surgery.wound-check.two-weeks", "claim": "A post-operative wound check and ear exam occurs approximately two weeks after surgery."},
+        {"id": "surgery.sutures.dissolvable", "claim": "The sutures dissolve and do not need removal."},
+        {"id": "surgery.call.redness", "claim": "Notify the surgeon or clinic when the wound is red and swollen, does not improve over the next one to two days, and is painful to touch."},
+        {"id": "surgery.call.fever", "claim": "Notify the surgeon or clinic for a fever greater than 101.5 degrees Fahrenheit."},
+        {"id": "surgery.call.fluid", "claim": "Notify the surgeon or clinic for swelling behind the ear or a feeling that fluid is collecting under the skin behind the ear."},
+        {"id": "surgery.call.neuro", "claim": "Notify the surgeon or clinic for headache, light sensitivity, or excessive lethargy after surgery."},
+        {"id": "surgery.call.questions", "claim": "Contact the surgeon or clinic for wound-care questions or medical concerns about the patient or child."}
+      ]
+    },
+    {
+      "id": "ucsf-ci-contact-2026-08-22",
+      "publisher": "UCSF Department of Otolaryngology — Head and Neck Surgery",
+      "title": "Emergency Contact",
+      "url": "https://ohns.ucsf.edu/otology-neurotology/cochlear-implant-center/emergency-contact",
+      "retrieved_at": "2026-08-22",
+      "visible_revision_date": null,
+      "passage_locations": ["Emergency Contact"],
+      "claim_snapshot_sha256": "2c2bb30509cc2d870cb63e89e3220bbb3c740b9ab39f1770b91392c8e8ed35a4",
+      "claims": [
+        {"id": "contact.routine", "claim": "For routine clinic or surgeon questions, leave a message on the nursing line at 415-353-2148."},
+        {"id": "contact.callback", "claim": "The public page says to expect a call back within 12 hours and to call again if no call is received."},
+        {"id": "contact.emergency", "claim": "For an emergency, call the hospital operator at 415-476-1000 and ask for the Otolaryngology resident on call."}
+      ]
+    },
+    {
+      "id": "ucsf-ci-activation-2026-08-22",
+      "publisher": "UCSF Department of Otolaryngology — Head and Neck Surgery",
+      "title": "Cochlear Implantation Activation",
+      "url": "https://ohns.ucsf.edu/otology-neurotology/cochlear-implant-center/activation",
+      "retrieved_at": "2026-08-22",
+      "visible_revision_date": null,
+      "passage_locations": ["What happens after the cochlear implantation surgery?"],
+      "claim_snapshot_sha256": "59f476bfaaad94d5f9e97ba4653b87d2098fd77a18ba53fc67ae61a18ab2b78c",
+      "claims": [
+        {"id": "activation.after-healing", "claim": "After a healing period, the patient returns for programming of the externally worn speech processor."},
+        {"id": "activation.custom", "claim": "Each speech-processor program is customized for the user."},
+        {"id": "activation.follow-up", "claim": "Later visits include implant and equipment checks, performance measurement, and continued follow-up."}
+      ]
+    },
+    {
+      "id": "ucsf-ci-timeline-2023-11",
+      "publisher": "UCSF Department of Otolaryngology — Head and Neck Surgery",
+      "title": "Timeline of Appointments",
+      "url": "https://ohns.ucsf.edu/sites/ohns.ucsf.edu/files/2023-11/Cochlear%20Implant%20Timeline.pdf",
+      "retrieved_at": "2026-08-22",
+      "visible_revision_date": "2023-11",
+      "passage_locations": ["Post-operative appointments"],
+      "claim_snapshot_sha256": "bf6b3f393da4893265d4790da89d316a5977ae866711b9745246a094b5e42178",
+      "claims": [
+        {"id": "timeline.activation.conflict", "claim": "This document places surgeon healing review and audiology activation two to three weeks after surgery, which conflicts with the activation page's about-one-month wording."},
+        {"id": "timeline.activation.audiologist", "claim": "The post-operative timeline says the patient meets with an audiologist for device activation."},
+        {"id": "timeline.activation.fine-tuning", "claim": "Several later post-operative audiology visits are used to fine-tune the device."}
+      ]
+    }
+  ],
+  "modules": [
+    {
+      "id": "ci/wound-care",
+      "version": "0.1.0",
+      "status": "unverified_draft",
+      "phase": "recovery days 0 to 14",
+      "title": "Care for the surgery site",
+      "content_sha256": "b49fe71c58551be16da5291d35d5433319bb929553e50294cfa4eee13e0deeb9",
+      "canonical_sentences": [
+        {"id": "wc.01", "text": "Two days after surgery, remove the mastoid dressing, or head bandage.", "source_claim_ids": ["surgery.dressing.day2"]},
+        {"id": "wc.02", "text": "Next, check whether tape covers the incision, or surgical cut, behind the ear.", "source_claim_ids": ["surgery.no-tape.cleaning", "surgery.tape.branch"]},
+        {"id": "wc.03", "text": "If there is tape, keep the area dry until three days after surgery.", "source_claim_ids": ["surgery.tape.branch"]},
+        {"id": "wc.04", "text": "Do not clean the incision before that time.", "source_claim_ids": ["surgery.tape.branch"]},
+        {"id": "wc.05", "text": "If there is no tape, clean the edges of the incision gently twice a day.", "source_claim_ids": ["surgery.no-tape.cleaning"]},
+        {"id": "wc.06", "text": "Use a mix of equal parts hydrogen peroxide and distilled water.", "source_claim_ids": ["surgery.no-tape.cleaning"]},
+        {"id": "wc.07", "text": "Then apply an over-the-counter antibiotic ointment, such as bacitracin.", "source_claim_ids": ["surgery.no-tape.cleaning"]},
+        {"id": "wc.08", "text": "Three days after surgery, you may shower and wash your hair.", "source_claim_ids": ["surgery.shower.day3"]},
+        {"id": "wc.09", "text": "Your wound check and ear exam are about two weeks after surgery.", "source_claim_ids": ["surgery.wound-check.two-weeks"]},
+        {"id": "wc.10", "text": "The stitches dissolve, so they do not need to be removed.", "source_claim_ids": ["surgery.sutures.dissolvable"]}
+      ],
+      "structured_values": [
+        {"field": "dressing_removal", "value": 2, "unit": "days after surgery"},
+        {"field": "no_tape_cleaning_frequency", "value": 2, "unit": "times per day"},
+        {"field": "cleaning_mix", "value": "50/50", "unit": "hydrogen peroxide/distilled water"},
+        {"field": "tape_keep_dry", "value": 3, "unit": "days after surgery"},
+        {"field": "shower_and_hair_wash", "value": 3, "unit": "days after surgery"},
+        {"field": "wound_check", "value": 2, "unit": "weeks after surgery", "qualifier": "approximately"}
+      ],
+      "unresolved_terms": ["mastoid dressing", "incision", "hydrogen peroxide", "distilled water", "antibiotic ointment", "bacitracin"],
+      "readability": {"method": "flesch_kincaid_estimate", "grade": 6.3, "target_max": 7},
+      "visual_policy": "Text-only until the partner surgeon approves any wound-care illustration or animation.",
+      "review": {"surgical_evaluator": "evidence_draft_pass_2026-08-22", "partner_surgeon": "pending", "patient_ready": false}
+    },
+    {
+      "id": "ci/when-to-call",
+      "version": "0.1.0",
+      "status": "unverified_draft",
+      "phase": "recovery after surgery",
+      "title": "When to call",
+      "content_sha256": "dff3054c8fe845331dafe39b01702859625fca7a974f2c9a0b9e082abe780cc4",
+      "canonical_sentences": [
+        {"id": "call.01", "text": "Call your surgeon or clinic staff if all three signs below are present.", "source_claim_ids": ["surgery.call.redness"]},
+        {"id": "call.01a", "text": "The incision is red and swollen.", "source_claim_ids": ["surgery.call.redness"]},
+        {"id": "call.01b", "text": "It does not get better over the next one to two days.", "source_claim_ids": ["surgery.call.redness"]},
+        {"id": "call.01c", "text": "It hurts when touched.", "source_claim_ids": ["surgery.call.redness"]},
+        {"id": "call.02", "text": "Call if you have a fever above 101.5 degrees Fahrenheit.", "source_claim_ids": ["surgery.call.fever"]},
+        {"id": "call.03", "text": "Call if the skin behind your ear is swollen or feels like fluid is building up under it.", "source_claim_ids": ["surgery.call.fluid"]},
+        {"id": "call.04", "text": "Call if you have a headache, light sensitivity, or excessive lethargy.", "source_claim_ids": ["surgery.call.neuro"]},
+        {"id": "call.05", "text": "Call if you have a wound-care question or another medical concern about you or your child.", "source_claim_ids": ["surgery.call.questions"]},
+        {"id": "call.06", "text": "For routine questions for the clinic or surgeon, leave a message on the nursing line at 415-353-2148.", "source_claim_ids": ["contact.routine"]},
+        {"id": "call.07", "text": "The UCSF page says you should get a call within 12 hours.", "source_claim_ids": ["contact.callback"]},
+        {"id": "call.07a", "text": "If no one calls, call again.", "source_claim_ids": ["contact.callback"]},
+        {"id": "call.08", "text": "For an emergency, call 415-476-1000 and ask for the Otolaryngology resident on call.", "source_claim_ids": ["contact.emergency"]}
+      ],
+      "structured_values": [
+        {"field": "redness_improvement_window", "value": "1-2", "unit": "days", "logic": "red AND swollen AND not improving AND painful to touch"},
+        {"field": "fever_threshold", "operator": ">", "value": 101.5, "unit": "degrees Fahrenheit"},
+        {"field": "routine_nursing_line", "value": "415-353-2148"},
+        {"field": "callback_window", "value": 12, "unit": "hours"},
+        {"field": "hospital_operator", "value": "415-476-1000"},
+        {"field": "on_call_request", "value": "Otolaryngology resident on call"}
+      ],
+      "unresolved_terms": ["incision", "light sensitivity", "excessive lethargy", "Otolaryngology"],
+      "readability": {"method": "flesch_kincaid_estimate", "grade": 5.3, "target_max": 7},
+      "visual_policy": "Warnings remain complete text. No visual may grade severity or assign an urgency tier without surgeon approval.",
+      "review": {"surgical_evaluator": "evidence_draft_pass_2026-08-22", "partner_surgeon": "pending", "patient_ready": false}
+    },
+    {
+      "id": "ci/activation",
+      "version": "0.1.0",
+      "status": "unverified_draft",
+      "phase": "after the surgery site has healed",
+      "title": "Your first programming visits",
+      "content_sha256": "5b052e8073b72e7e951485b36a017464e0bda5f3c95bb840abce41d8387b7e80",
+      "canonical_sentences": [
+        {"id": "act.01", "text": "After the surgery site has healed, you return for your first programming visit.", "source_claim_ids": ["activation.after-healing", "timeline.activation.conflict"]},
+        {"id": "act.02", "text": "At the visit, a hearing specialist called an audiologist programs the speech processor you wear outside your ear.", "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"]},
+        {"id": "act.03", "text": "The program is made for your needs.", "source_claim_ids": ["activation.custom"]},
+        {"id": "act.04", "text": "At later visits, the team checks the implant and equipment and measures how they are working.", "source_claim_ids": ["activation.follow-up"]},
+        {"id": "act.05", "text": "You will keep returning for checks and fine-tuning.", "source_claim_ids": ["activation.follow-up", "timeline.activation.fine-tuning"]}
+      ],
+      "structured_values": [
+        {"field": "activation_timing", "value": null, "status": "blocked_conflicting_official_sources", "conflict": "public activation page says about one month; public timeline says two to three weeks"}
+      ],
+      "unresolved_terms": ["speech processor", "fine-tuning"],
+      "readability": {"method": "flesch_kincaid_estimate", "grade": 6.9, "target_max": 7},
+      "visual_policy": "Show only nonclinical orientation until the partner surgeon approves processor, implant-location, or activation illustrations.",
+      "review": {"surgical_evaluator": "evidence_draft_pass_2026-08-22", "partner_surgeon": "pending", "patient_ready": false}
+    }
+  ]
+}

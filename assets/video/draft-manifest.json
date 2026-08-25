@@ -1,0 +1,54 @@
+{
+  "generatedAt": "2026-08-24T02:50:28.377Z",
+  "records": [
+    {
+      "id": "healing",
+      "file": "preview/assets/media/host-healing-canon.mp4",
+      "model": "fal-ai/kling-video/ai-avatar/v2/standard",
+      "source_image": "assets/character/dr-hoots-motion-base-v3-canon.png",
+      "source_image_note": "canon base cropped from approved turnaround v1 front view \u2014 both wings at rest",
+      "audio": "assets/audio/healing.mp3",
+      "prompt": "Locked camera. Dr. Hoots, the same clay owl in teal scrubs, speaks the supplied narration with clear restrained beak movement and a friendly attentive expression. Use one brief welcoming wing opening near the start, then settle both wings back to rest at the sides. Both wings stay visible, resting at the sides of the body exactly as in the source image, matching the approved turnaround. Preserve the exact eyes, beak, feathers, proportions, scrubs, pin, pockets, feet, pale blue background, framing, and lighting. No pointing, ear touching, device touching, clinical demonstration, repeated waving, extra limbs, hands, morphing, camera motion, text, or background motion.",
+      "requestId": "01a031a0-b5ed-73a2-a37c-52bf075b4bce",
+      "duration_seconds": 4.267007,
+      "status": "accepted",
+      "stage": "draft_preview_only",
+      "postprocess": "bottom 148px cropped (960x960 -> 960x812) to remove provider-generated pseudo-caption text; video-only stream"
+    },
+    {
+      "id": "welcome",
+      "file": "preview/assets/media/host-welcome-canon.mp4",
+      "model": "fal-ai/kling-video/ai-avatar/v2/standard",
+      "source_image": "assets/character/dr-hoots-motion-base-v3-canon.png",
+      "source_image_note": "canon base cropped from approved turnaround v1 front view \u2014 both wings at rest",
+      "audio": "assets/audio/draft/welcome-ci.mp3",
+      "prompt": "Locked camera. Dr. Hoots, the same clay owl in teal scrubs, speaks the supplied narration with clear restrained beak movement, subtle natural head motion, and a warm attentive expression. Both wings stay visible, resting at the sides of the body exactly as in the source image, matching the approved turnaround. Absolutely no text, subtitles, captions, letters, numbers, watermarks, logos, hearts, sparkles, or decorative shapes anywhere in the frame at any time. No gestures. Preserve the exact eyes, beak, feathers, proportions, scrubs, pin, pockets, feet, pale blue background, framing, and lighting. No pointing, ear touching, device touching, clinical demonstration, waving, extra limbs, hands, morphing, camera motion, text, or background motion.",
+      "requestId": "01a031a7-759c-7093-b606-8bddfe7cb144",
+      "duration_seconds": 7.2,
+      "status": "accepted_with_caveats",
+      "stage": "draft_preview_only",
+      "postprocess": "bottom 148px cropped (960x960 -> 960x812) to remove provider-generated pseudo-caption text; video-only stream",
+      "caveats": [
+        "provider burned pseudo-caption text in lower band on both attempts; removed by deterministic crop"
+      ]
+    },
+    {
+      "id": "follow-up",
+      "file": "preview/assets/media/host-follow-up-canon.mp4",
+      "model": "fal-ai/kling-video/ai-avatar/v2/standard",
+      "source_image": "assets/character/dr-hoots-motion-base-v3-canon.png",
+      "source_image_note": "canon base cropped from approved turnaround v1 front view \u2014 both wings at rest",
+      "audio": "assets/audio/follow-up.mp3",
+      "prompt": "Locked camera. Dr. Hoots, the same clay owl in teal scrubs, speaks the supplied narration with clear restrained beak movement, subtle natural head motion, and a calm attentive expression. Use one small invitation wing opening only near the words keep returning: the wing tips open slightly outward at waist height, never rising above the chest and never approaching the face or beak, then settle both wings back to rest at the sides. Both wings stay visible, resting at the sides of the body exactly as in the source image, matching the approved turnaround. Absolutely no text, subtitles, captions, letters, numbers, watermarks, logos, hearts, sparkles, or decorative shapes anywhere in the frame at any time. Preserve the exact eyes, beak, feathers, proportions, scrubs, pin, pockets, feet, pale blue background, framing, and lighting. No pointing, ear touching, device touching, clinical demonstration, repeated waving, extra limbs, hands, morphing, camera motion, text, or background motion.",
+      "requestId": "01a031a9-ef22-7b50-9810-e8be883a628c",
+      "duration_seconds": 8.267007,
+      "status": "accepted_with_caveats",
+      "stage": "draft_preview_only",
+      "postprocess": "bottom 148px cropped (960x960 -> 960x812) to remove provider-generated pseudo-caption text; video-only stream",
+      "caveats": [
+        "provider burned pseudo-caption text in lower band on both attempts; removed by deterministic crop",
+        "wing gesture amplitude above spec (multiple open-wing beats); flagged for regeneration at pipeline graduation"
+      ]
+    }
+  ]
+}

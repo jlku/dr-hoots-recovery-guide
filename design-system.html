@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shared design system — Dr. Hoots</title>
+  <link rel="stylesheet" href="assets/safety-card.css">
+  <style>
+    :root{
+      --navy:#052049;--blue:#0071ad;--cta:#006be9;--teal:#14828c;--yellow:#feb80a;
+      --gray-1:#f2f3f4;--gray-3:#d1d3d3;--blue-gray:#506380;--paper:#fff;
+      --sans:"Helvetica Neue",Helvetica,Arial,sans-serif;--content:min(1230px,calc(100vw - 30px));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:84px}
+    body{margin:0;background:var(--paper);color:var(--navy);font-family:var(--sans);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased}
+    a{color:var(--blue)}
+    h1,h2,h3,h4,p{margin-top:0}
+    h1{max-width:24ch;margin-bottom:18px;font-size:39px;font-weight:200;letter-spacing:-.02em;line-height:1.08}
+    h2{margin-bottom:18px;font-size:34px;font-weight:200;letter-spacing:-.015em;line-height:1.12}
+    h3{margin-bottom:10px;font-size:27px;font-weight:300;line-height:1.15}
+    h4{margin-bottom:8px;font-size:22px;font-weight:300;line-height:1.2}
+    p{color:#29405d}
+    .wrap{width:var(--content);margin:auto}
+    .brand .wrap{min-height:106px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+    .lockup strong{display:block;font-size:27px;font-weight:300}.lockup span{color:var(--blue-gray);font-size:14px}
+    .back{font-size:16px;font-weight:700;text-underline-offset:4px}
+    .rule{height:6px;background:var(--teal)}
+    .nav{position:sticky;top:0;z-index:10;border-bottom:1px solid var(--gray-3);background:rgba(255,255,255,.98)}
+    .nav .wrap{min-height:68px;display:flex;align-items:center;gap:34px;overflow:auto}.nav strong,.nav a{flex:0 0 auto}.nav a{padding:22px 0;color:var(--navy);font-weight:700;text-decoration:none}.nav a:hover{text-decoration:underline;text-underline-offset:5px}
+    .hero{padding:64px 0 74px;border-bottom:1px solid var(--gray-3)}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:80px;align-items:end}.hero p{max-width:58ch;margin-bottom:0;color:var(--blue-gray)}
+    .eyebrow{margin-bottom:13px;color:var(--teal);font-size:13px;font-weight:800;text-transform:uppercase}
+    .source-order{border-top:5px solid var(--navy)}.source{padding:13px 0;display:grid;grid-template-columns:84px 1fr;gap:16px;border-bottom:1px solid var(--gray-3);font-size:14px}.source b{color:var(--teal);text-transform:uppercase}.source span{color:#29405d}
+    .section{padding:88px 0;border-bottom:1px solid var(--gray-3)}
+    .section-head{margin-bottom:34px;display:grid;grid-template-columns:.65fr 1.35fr;gap:80px;align-items:end}.section-head p{max-width:58ch;margin:0;color:var(--blue-gray)}
+    .grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--gray-3);border-left:1px solid var(--gray-3)}
+    .panel{min-height:280px;padding:28px;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3)}
+    .panel-label{margin-bottom:20px;color:var(--teal);font-size:13px;font-weight:800;text-transform:uppercase}
+    .sample-h1{margin-bottom:16px;font-size:39px;font-weight:200;line-height:1.08}.sample-h2{margin-bottom:12px;font-size:34px;font-weight:200;line-height:1.12}.sample-h3{font-size:27px;font-weight:300}.body-sample{max-width:38ch;margin:18px 0 0}
+    .palette{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}.swatch{min-height:116px;padding:10px;display:flex;align-items:flex-end;background:var(--c);color:var(--text);font-size:12px;font-weight:700}
+    .anatomy{display:grid;gap:8px}.band{min-height:42px;padding:10px 12px;display:flex;justify-content:space-between;gap:16px;background:var(--c);color:var(--text);font-size:12px;font-weight:700}.band.brand-band{min-height:74px}.band.content-band{min-height:98px;color:var(--blue-gray);border:1px solid var(--gray-3);background:white}
+    .spec-list{border-top:4px solid var(--navy)}.spec{padding:12px 0;display:grid;grid-template-columns:145px 1fr;gap:18px;border-bottom:1px solid var(--gray-3);font-size:14px}.spec b{color:var(--navy)}
+    .button{display:inline-block;margin:8px 0 18px;padding:.5rem 2rem;border:1px solid #0071ad;border-radius:3px;background:#0071ad;color:white;font-size:18px;line-height:1.5;letter-spacing:1px;text-decoration:none;text-transform:uppercase}.button:hover,.button:focus-visible{background:white;color:#0071ad}.button:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+    .application{background:#f2f3f4}.matrix{margin-top:56px;border-top:5px solid var(--navy)}.matrix-row{display:grid;grid-template-columns:220px 1fr 140px;background:white;border-bottom:1px solid var(--gray-3)}.matrix-row>*{padding:18px}.matrix-row b{font-size:15px}.matrix-row p{margin:0;font-size:14px}.owner{color:var(--teal);font-size:13px;font-weight:800;text-transform:uppercase}
+    .boundary{padding:22px;background:var(--navy)}.boundary b{display:block;margin-bottom:6px;color:var(--yellow);font-size:13px;text-transform:uppercase}.boundary p{margin:0;color:white;font-size:14px}
+    .character-sheet{display:grid;grid-template-columns:1.4fr 1fr;border-top:1px solid var(--gray-3);border-left:1px solid var(--gray-3)}
+    .sheet-cell{min-height:360px;position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3);background:var(--gray-1)}
+    .sheet-cell.primary{background:#ddecf0}.sheet-cell img{width:100%;height:100%;object-fit:cover}.sheet-cell.primary img{object-position:center}
+    .sheet-label{position:absolute;inset:14px auto auto 14px;padding:5px 7px;background:white;color:var(--navy);font-size:11px;font-weight:800;text-transform:uppercase}
+    .pending{position:absolute;inset:auto 14px 14px;color:var(--blue-gray);font-size:11px;text-transform:uppercase}
+    .rule-list{margin-top:24px;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}.project-rule{padding-top:14px;border-top:3px solid var(--teal)}.project-rule b{display:block;margin-bottom:6px}.project-rule p{margin:0;font-size:14px}
+    .primitive-board{display:grid;grid-template-columns:repeat(4,1fr);border-top:5px solid var(--navy);border-left:1px solid var(--gray-3);background:#faf8f1}
+    .primitive{min-height:250px;padding:24px;display:flex;flex-direction:column;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3)}.primitive small{display:block;color:var(--teal);font-size:12px;font-weight:800;text-transform:uppercase}.primitive p{margin:18px 0 0;font-size:14px}.primitive-sample{min-height:112px;margin:auto 0;position:relative;display:flex;align-items:center;justify-content:center}
+    .step-number{width:58px;height:58px;display:grid;place-items:center;border:2px solid var(--navy);background:var(--yellow);font-size:24px;font-weight:800;font-variant-numeric:tabular-nums}
+    .action-object{width:62px;height:48px;border:3px solid var(--navy);background:#ddecf0}.action-arrow{width:72px;height:4px;position:relative;margin-left:14px;background:var(--teal)}.action-arrow:after{content:"";position:absolute;right:-1px;top:-7px;border-top:9px solid transparent;border-bottom:9px solid transparent;border-left:15px solid var(--teal)}
+    .inset-main{width:96px;height:68px;border:3px solid var(--navy);background:white}.inset-detail{width:54px;height:54px;margin-left:-10px;display:grid;place-items:center;border:3px solid var(--navy);border-radius:50%;background:#fff5cf;font-size:12px;font-weight:800}.inset-detail:before{content:"";width:19px;height:19px;border:3px solid var(--teal);background:#ddecf0}
+    .prohibition-object{width:54px;height:54px;border:3px solid var(--navy);background:#ddecf0}.prohibition-mark{width:78px;height:78px;position:absolute;border:7px solid #e61048;border-radius:50%}.prohibition-mark:after{content:"";width:7px;height:80px;position:absolute;left:29px;top:-8px;background:#e61048;transform:rotate(-45deg);transform-origin:center}
+    .diagram-rules{margin-top:24px;padding:25px 28px;display:grid;grid-template-columns:repeat(5,1fr);gap:24px;background:var(--navy);color:white}.diagram-rules b{display:block;margin-bottom:5px;color:var(--yellow);font-size:12px;text-transform:uppercase}.diagram-rules span{font-size:13px}
+    .mechanics-only{margin:0 0 22px;padding:18px 22px;border:1px solid var(--gray-3);background:#fff5cf;color:var(--navy);font-size:14px}.mechanics-only b{display:block;margin-bottom:4px;text-transform:uppercase}
+    .card-brief{margin-bottom:28px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end}.card-brief p{max-width:57ch;margin:0}.chapter-map{display:grid;grid-template-columns:5fr 6fr 3fr;border:1px solid var(--navy);background:white}.chapter-map span{min-height:68px;padding:12px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--navy);font-size:12px;font-weight:800;text-transform:uppercase}.chapter-map span:last-child{border-right:0}.chapter-map b{font-size:18px;font-variant-numeric:tabular-nums}.chapter-map .call{background:#fff5cf}.chapter-map .activation{background:#ddecf0}
+    .sources{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--gray-3);border-left:1px solid var(--gray-3)}.source-link{min-height:110px;padding:22px;display:flex;flex-direction:column;justify-content:space-between;border-right:1px solid var(--gray-3);border-bottom:1px solid var(--gray-3);font-weight:700;text-underline-offset:4px}.source-link span{color:var(--blue-gray);font-size:13px;font-weight:400}
+    footer{padding:46px 0;background:var(--navy);color:white}footer .wrap{display:flex;justify-content:space-between;gap:30px;align-items:center}footer p{margin:0;color:white}
+    @media(max-width:850px){.brand .wrap{min-height:100px}.hero-grid,.section-head,.grid,.card-brief{grid-template-columns:1fr;gap:28px}.palette{grid-template-columns:1fr 1fr}.matrix-row{grid-template-columns:1fr}.matrix-row>*{padding-bottom:0}.matrix-row>:last-child{padding-bottom:18px}.sources,.primitive-board,.diagram-rules,.rule-list{grid-template-columns:1fr 1fr}.character-sheet{grid-template-columns:1fr}.sheet-cell{min-height:300px}.section{padding:68px 0}footer .wrap{align-items:flex-start;flex-direction:column}}
+    @media(max-width:560px){.primitive-board,.diagram-rules{grid-template-columns:1fr}.chapter-map{grid-template-columns:1fr}.chapter-map span{border-right:0;border-bottom:1px solid var(--navy)}.chapter-map span:last-child{border-bottom:0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand"><div class="wrap"><div class="lockup"><strong>Dr. Hoots</strong><span>Shared design system</span></div><a class="back" href="./#variations">← Back to variation review</a></div></div>
+    <div class="rule" aria-hidden="true"></div>
+  </header>
+  <nav class="nav" aria-label="On this page"><div class="wrap"><strong>On this page</strong><a href="#foundation">UCSF foundation</a><a href="#components">Components</a><a href="#mascot">Mascot</a><a href="#diagrams">Safety-card primitives</a><a href="#application">Applied card</a><a href="#sources">Sources</a></div></nav>
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid"><div><p class="eyebrow">Shared design system</p><h1>One foundation for every direction</h1><p>UCSF guidance is the basis of the interface. The Dr. Hoots character and airline-style medical diagrams add project-specific visual languages where UCSF does not provide an answer.</p></div><div class="source-order"><div class="source"><b>Basis</b><span>UCSF identity, web standards and patient-facing patterns</span></div><div class="source"><b>Extend</b><span>Character and diagram systems for recovery instruction</span></div><div class="source"><b>Deviate</b><span>Only when official guidance is absent or unsuitable</span></div><div class="source"><b>Boundary</b><span>This concept is not presented as an official UCSF website</span></div></div></div>
+    </section>
+
+    <section class="section" id="foundation">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">01 · Foundation</p><h2>Tokens used throughout</h2></div><p>The overview now uses the same content width, type stack, heading scale, core palette and institutional geometry documented here.</p></div>
+        <div class="grid">
+          <div class="panel"><p class="panel-label">Typography</p><div class="sample-h1">Page title</div><div class="sample-h2">Section heading</div><div class="sample-h3">Subsection heading</div><p class="body-sample">Helvetica Neue Roman carries patient instructions and interface copy. Arial is the substitute when Helvetica Neue is unavailable.</p></div>
+          <div class="panel"><p class="panel-label">Core palette</p><div class="palette"><div class="swatch" style="--c:#052049;--text:#fff">Navy<br>#052049</div><div class="swatch" style="--c:#0071ad;--text:#fff">Web blue<br>#0071AD</div><div class="swatch" style="--c:#14828c;--text:#fff">Teal<br>#14828C</div><div class="swatch" style="--c:#feb80a;--text:#052049">Yellow<br>#FEB80A</div></div><p class="body-sample">Navy establishes institutional structure. Blue signals links and actions. Teal organizes supporting information. Yellow is an accent and focus cue.</p></div>
+          <div class="panel"><p class="panel-label">Institutional anatomy</p><div class="anatomy"><div class="band" style="--c:#052049;--text:#fff"><span>40px global banner</span><span>14px utilities</span></div><div class="band brand-band" style="--c:#fff;--text:#052049;border:1px solid #d1d3d3"><span>130px primary navigation region</span><span>approved lockup only</span></div><div class="band" style="--c:#f2f3f4;--text:#052049"><span>16px main navigation</span><span>maximum 7 items</span></div><div class="band content-band"><span>Page content</span><span>maximum 1230px</span></div></div></div>
+          <div class="panel"><p class="panel-label">Responsive contract</p><div class="spec-list"><div class="spec"><b>Container</b><span>Maximum 1230px with 15px side padding.</span></div><div class="spec"><b>Desktop</b><span>University name left; standard utility links right.</span></div><div class="spec"><b>Below 830px</b><span>Hide right-side utility links.</span></div><div class="spec"><b>Below 600px</b><span>Keep the university name and preserve the 40px bar.</span></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="components">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">02 · Components</p><h2>Minimum shared behaviors</h2></div><p>Component styling can evolve with the current UCSF Health product, but action hierarchy, focus visibility and interaction behavior must remain consistent across directions.</p></div>
+        <div class="grid">
+          <div class="panel"><p class="panel-label">Primary action</p><a class="button" href="#components">Primary action</a><div class="spec-list"><div class="spec"><b>Padding</b><span>.5rem 2rem</span></div><div class="spec"><b>Type</b><span>18px uppercase, 1px tracking</span></div><div class="spec"><b>Shape</b><span>3px radius, 1px border</span></div><div class="spec"><b>State</b><span>Invert on hover; visible keyboard focus.</span></div></div></div>
+          <div class="panel"><p class="panel-label">Navigation and links</p><div class="spec-list"><div class="spec"><b>Main nav</b><span>16px Helvetica Neue or Arial; no more than seven items.</span></div><div class="spec"><b>Text links</b><span>Web blue, underlined or visibly underlined on interaction.</span></div><div class="spec"><b>Targets</b><span>Patient controls use generous touch targets regardless of visual size.</span></div><div class="spec"><b>Motion</b><span>Honor reduced-motion preferences; never make motion the only carrier of meaning.</span></div></div></div>
+        </div>
+        <div class="boundary"><b>Project deviation</b><p>These concept-review pages do not use the UCSF institutional banner or an official logo lockup because they are not UCSF websites. They retain the underlying type, color, spacing and interaction guidance without implying official status.</p></div>
+      </div>
+    </section>
+
+    <section class="section" id="mascot">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">03 · Mascot</p><h2>Dr. Hoots character system</h2></div><p>Identity, expressions, gestures, and a restrained motion test now live in a separate exploration for independent review.</p></div>
+        <div class="character-sheet">
+          <div class="sheet-cell primary"><span class="sheet-label">Turnaround v1</span><img src="assets/character/dr-hoots-turnaround-v1.png" alt="Dr. Hoots turnaround with front, three-quarter, profile, and back views"><span class="pending">Character design gate passed</span></div>
+          <div class="sheet-cell"><span class="sheet-label">Expressions v1</span><img src="assets/character/dr-hoots-expressions-v1.png" alt="Dr. Hoots expression study"><span class="pending">Character design gate passed</span></div>
+        </div>
+        <p style="margin:22px 0 0"><a class="back" href="character-exploration.html">Open the full character exploration →</a></p>
+        <div class="rule-list"><div class="project-rule"><b>Identity</b><p>Same head, eyes, beak, proportions and scrub color in every asset.</p></div><div class="project-rule"><b>Expression</b><p>Calm and attentive; never alarmist, comic or babyish.</p></div><div class="project-rule"><b>Gesture</b><p>One readable action per frame. Hands never obscure the instruction.</p></div><div class="project-rule"><b>Clinical boundary</b><p>Dr. Hoots directs attention; diagrams carry the medical explanation.</p></div></div>
+      </div>
+    </section>
+
+    <section class="section" id="diagrams">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">04 · Visual grammar</p><h2>Safety-card primitives</h2></div><p>These are the reusable marks around an illustration—not illustrations themselves. The finished guide combines people, objects, actions, close-ups, and warnings in one continuous sequence.</p></div>
+        <p class="mechanics-only"><b>Component legend</b>These examples define the grammar only. They are not patient-facing pictures and contain no medical action, anatomy, threshold, or timing.</p>
+        <div class="primitive-board">
+          <article class="primitive"><small>Numbered frame</small><div class="primitive-sample" aria-hidden="true"><span class="step-number">01</span></div><p>Every action has a fixed place in the sequence.</p></article>
+          <article class="primitive"><small>Action arrow</small><div class="primitive-sample" aria-hidden="true"><span class="action-object"></span><span class="action-arrow"></span></div><p>Arrows show one movement between two clear states.</p></article>
+          <article class="primitive"><small>Detail inset</small><div class="primitive-sample" aria-hidden="true"><span class="inset-main"></span><span class="inset-detail">Detail</span></div><p>A close-up explains the part that cannot be read at full scale.</p></article>
+          <article class="primitive"><small>Do not</small><div class="primitive-sample" aria-hidden="true"><span class="prohibition-object"></span><span class="prohibition-mark"></span></div><p>The red slash marks a specific prohibited action, never decoration.</p></article>
+        </div>
+        <div class="diagram-rules"><div><b>People</b><span>Consistent figure, clothing, viewpoint, and scale</span></div><div><b>Objects</b><span>Recognizable before arrows or labels are added</span></div><div><b>Sequence</b><span>Numbered and readable without motion</span></div><div><b>Close-ups</b><span>Connected to the exact area they explain</span></div><div><b>Motion</b><span>Reveals or compares approved static states</span></div></div>
+      </div>
+    </section>
+
+    <section class="section application" id="application">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">05 · Applied card</p><h2>One continuous recovery card</h2></div><p>Every canonical scene becomes an illustrated frame in one vertical document. Scrolling reveals the next frame; it never hides, rewrites, or times the instruction.</p></div>
+        <div class="card-brief"><p>The current content maps to 14 frames in three sections. The card is authored first as a complete static document. Motion is added afterward as progressive enhancement.</p><div class="chapter-map" aria-label="Fourteen-frame recovery-card structure"><span><b>01–05</b>Wound care</span><span class="call"><b>06–11</b>When to call</span><span class="activation"><b>12–14</b>Activation</span></div></div>
+        <div class="canonical-card" aria-label="Fourteen-frame canonical recovery card">
+          <div class="canonical-card__cover"><span>Unverified draft · no clinical illustrations approved</span><strong>One guide, read from top to bottom</strong></div>
+          <div id="canonical-card-frames"><p class="canonical-card__error">Loading the canonical recovery-card frames…</p></div>
+          <noscript><p class="canonical-card__error">JavaScript is required to resolve the canonical sentence IDs in this design-system demonstration.</p></noscript>
+        </div>
+        <div class="matrix">
+          <div class="matrix-row"><b>Concept-review pages</b><p>Use the UCSF-derived container, type scale, palette, link treatment and responsive rules—but not the institutional banner.</p><span class="owner">Adapted basis</span></div>
+          <div class="matrix-row"><b>Variation A · Linear</b><p>Advances through the same safety-card frames from start to finish with continuous playback controls.</p><span class="owner">Pacing varies</span></div>
+          <div class="matrix-row"><b>Variation B · Chaptered</b><p>Groups the same safety-card frames into topics that patients can open and replay directly.</p><span class="owner">Navigation varies</span></div>
+          <div class="matrix-row"><b>Variation C · Scroll</b><p>Presents the complete safety card as a semantic document with restrained reveal motion.</p><span class="owner">Reader paced</span></div>
+          <div class="matrix-row"><b>Dr. Hoots mascot</b><p>Directs attention around a frame but never replaces the person, object, action, or warning being explained.</p><span class="owner">Presenter layer</span></div>
+          <div class="matrix-row"><b>Clinical illustration</b><p>Uses the safety-card grammar only after the exact scene, asset, and claim mapping receive surgeon review.</p><span class="owner">Blocked by default</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sources">
+      <div class="wrap"><div class="section-head"><div><p class="eyebrow">06 · Sources</p><h2>Official references</h2></div><p>The linked Pattern Lab and banner repository are older than the live UCSF Health interface, so they are treated as specifications—not as a complete modern component library.</p></div>
+        <div class="sources"><a class="source-link" href="https://identity.ucsf.edu/print-digital/websites">UCSF Website Standards<span>Institutional banner, logo and navigation rules</span></a><a class="source-link" href="https://it.ucsf.edu/standards-and-guidelines/standards-guidelines-example-web-style-guide">UCSF IT web style guide<span>Official index of standards and implementation resources</span></a><a class="source-link" href="https://github.com/ucsf-web-services/ucsf_identity_web_banner_templates">Official banner repository<span>Exact banner markup, dimensions and breakpoints</span></a><a class="source-link" href="https://webpatterns.ucsf.edu/">UCSF Pattern Lab<span>Legacy typography and component specifications</span></a></div>
+      </div>
+    </section>
+  </main>
+  <footer><div class="wrap"><p>Shared design system · working concept, not an official UCSF website</p><a class="back" href="./#variations" style="color:white">Return to variation review →</a></div></footer>
+  <script type="module">
+    import { loadSafetyCardModel, renderSafetyCard } from "./assets/safety-card.js";
+
+    const container = document.querySelector("#canonical-card-frames");
+    try {
+      const model = await loadSafetyCardModel();
+      renderSafetyCard(container, model.scenes);
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      if (!reducedMotion && "IntersectionObserver" in window) {
+        document.documentElement.classList.add("card-motion-ready");
+        const observer = new IntersectionObserver((entries) => {
+          for (const entry of entries) {
+            if (!entry.isIntersecting) continue;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        }, { threshold: 0.25 });
+        document.querySelectorAll(".canonical-frame").forEach((frame) => observer.observe(frame));
+      }
+    } catch (error) {
+      container.replaceChildren(Object.assign(document.createElement("p"), {
+        className: "canonical-card__error",
+        textContent: error.message
+      }));
+    }
+  </script>
+</body>
+</html>

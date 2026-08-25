@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Recap · the guide's three parts, replayable in any order · safety-card grammar -->
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="124" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="88" y="61" text-anchor="middle" font-size="19" font-weight="800" fill="#052049">PARTS 1–3</text>
+  <rect x="530" y="30" width="240" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="650" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">THE FULL GUIDE</text>
+
+  <!-- part 1 · care for the surgery site -->
+  <rect x="130" y="121" width="34" height="34" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <text x="147" y="145" text-anchor="middle" font-size="20" font-weight="800" fill="#052049">1</text>
+  <g transform="translate(243,143)">
+    <rect x="-2" y="6" width="44" height="13" fill="#ffffff" stroke="#052049" stroke-width="5" stroke-linejoin="round"/>
+    <circle cx="-8" cy="-6" r="25" fill="#ffffff" stroke="#052049" stroke-width="5.5"/>
+    <circle cx="-8" cy="-6" r="8" fill="#ddecf0" stroke="#052049" stroke-width="4"/>
+  </g>
+  <text x="320" y="145" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">CARE FOR THE SURGERY SITE</text>
+
+  <!-- part 2 · when to call -->
+  <rect x="130" y="215" width="34" height="34" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <text x="147" y="239" text-anchor="middle" font-size="20" font-weight="800" fill="#052049">2</text>
+  <g transform="translate(238,233) rotate(-14) scale(0.62)">
+    <path d="M -40 27
+             C -49 27 -57 19 -57 10
+             C -57 1 -51 -6 -43 -8
+             C -27 -20 -14 -26 0 -26
+             C 14 -26 27 -20 43 -8
+             C 51 -6 57 1 57 10
+             C 57 19 49 27 40 27
+             C 31 26 25 19 25 2
+             C 17 -5 9 -10 0 -10
+             C -9 -10 -17 -5 -25 2
+             C -25 19 -31 26 -40 27 Z"
+      fill="#ffffff" stroke="#052049" stroke-width="9" stroke-linejoin="round"/>
+  </g>
+  <text x="320" y="239" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">WHEN TO CALL</text>
+
+  <!-- part 3 · first programming visits -->
+  <rect x="130" y="309" width="34" height="34" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <text x="147" y="333" text-anchor="middle" font-size="20" font-weight="800" fill="#052049">3</text>
+  <g transform="translate(238,328)">
+    <line x1="-14" y1="-30" x2="-14" y2="-16" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+    <line x1="14" y1="-30" x2="14" y2="-16" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+    <rect x="-28" y="-22" width="56" height="46" fill="#ffffff" stroke="#052049" stroke-width="5.5"/>
+    <line x1="-28" y1="-8" x2="28" y2="-8" stroke="#052049" stroke-width="4"/>
+    <line x1="-9.5" y1="-8" x2="-9.5" y2="24" stroke="#052049" stroke-width="4"/>
+    <line x1="9.5" y1="-8" x2="9.5" y2="24" stroke="#052049" stroke-width="4"/>
+    <line x1="-28" y1="8" x2="28" y2="8" stroke="#052049" stroke-width="4"/>
+  </g>
+  <text x="320" y="333" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">FIRST PROGRAMMING VISITS</text>
+
+  <!-- divider -->
+  <rect x="60" y="384" width="680" height="4" fill="#ddecf0"/>
+
+  <!-- replay · any part, any order -->
+  <g transform="translate(400,466)">
+    <path d="M 41.4 -7.3 A 42 42 0 1 1 7.3 -41.4" fill="none" stroke="#14828c" stroke-width="12"/>
+    <path d="M 42.8 -35.1 L 4.3 -24.7 L 10.3 -58.1 Z" fill="#14828c"/>
+  </g>
+  <text x="400" y="538" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">REPLAY ANY PART</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

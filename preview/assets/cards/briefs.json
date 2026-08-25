@@ -1,0 +1,158 @@
+{
+  "conventions": {
+    "viewBox": "0 0 800 600",
+    "stock": "#fbfaf5",
+    "border": "rect x=3 y=3 w=794 h=594 stroke #052049 width 6",
+    "palette": {
+      "navy": "#052049",
+      "teal": "#14828c \u2014 arrows and motion only",
+      "yellow": "#feb80a \u2014 number chips, step squares, checks",
+      "red": "#e61048 \u2014 prohibition mark ONLY, never decoration or severity",
+      "wash": "#ddecf0",
+      "cream": "#fff5cf \u2014 inset fills",
+      "ink": "#29405d \u2014 labels",
+      "white": "#ffffff"
+    },
+    "strokes": "object outlines 5-6px navy; internal detail 4px; consistent butt/round joins per shape family",
+    "furniture": {
+      "numberChip": "yellow 56px square at 26,26 with navy 4px stroke, 26px 800 navy text (e.g. 02\u201303 uses width 96)",
+      "topicChip": "white rect navy 4px stroke top-right at y 30, 20px 800 tracked caps",
+      "statusTag": "navy rect bottom-right ~y556 h24, white 12px 800 tracked caps: DRAFT ARTWORK \u00b7 PENDING CLINICAL REVIEW"
+    },
+    "labels": "UPPERCASE Helvetica 800, 18-20px, letter-spacing 1.4-1.6, fill #29405d, at most 4 words each, never prose",
+    "figures": "big numbers/durations use font-family Granjon, 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif",
+    "hardRules": [
+      "No wound, incision, blood, or technique-being-performed depiction; the guide figure and objects only",
+      "No red outside the prohibition mark; no urgency tiers; equal visual weight within lists",
+      "Every number/threshold/phone exactly as specified; nothing on-card beyond the brief's text; labels <=4 caps words",
+      "Composition must read in under 2 seconds; generous negative space; one alignment axis per beat; keep all labels clear of the status tag",
+      "Adult calm register \u2014 never babyish (the hair cue on the figure is mandatory), never alarmist"
+    ],
+    "figure": "A consistent neutral ADULT guide figure IS part of the grammar: copy the <defs> group id='head' (profile head with ear, short navy hair, shoulders) VERBATIM from preview/assets/cards/frame-01.svg and reuse via <use href='#head'> at scale ~0.72. Also copy #tape when needed. Never draw wounds, incisions, blood, hands performing technique, or facial features beyond the exemplar's profile.",
+    "stepMarkers": "Beats are NOT numbered (top-to-bottom reading order). True in-panel sequences use small NAVY squares 34px with white 800 numerals. The yellow square is reserved for the frame-number chip, top-left only.",
+    "divider": "Section divider inside a card = solid #ddecf0 bar 4px tall (never gray, never low-opacity navy).",
+    "annotationTag": "Content annotations (like TAPE) are NAVY-FILLED rects with white 17px 800 tracked caps \u2014 visually distinct from the white furniture chips.",
+    "insets": "Detail insets magnify 1:1 what they explain: same object, same angle, same relative position, enlarged; keep all inset content at least 12px inside the rim; yellow #feb80a ring marks the found detail; anchored by navy leader line + source dot.",
+    "statusTag": "Status tag = OUTLINED meta chrome: stock fill, navy 2px stroke, navy 11px 800 caps text, rect x=462 y=554 w=312 h=26. Content annotation tags (like TAPE) are the opposite: navy-filled, white text. Never swap these.",
+    "arrows": "Teal arrows mean STATE CHANGE between two drawn states, nothing else. Detail insets are anchored by a thin navy 4px leader line with a 7px navy dot at the source point \u2014 never an arrow. One arrow spec: 12px shaft, 36x34 solid head.",
+    "yellowRule": "Yellow #feb80a appears ONLY as: frame-number chip, marker ring, checklist tick squares, timeline marker square. Never as object fill or decoration.",
+    "targetRegister": "North star (John, 2026-08-23): classic airline seat-back safety cards \u2014 numbered sequential panels, A/B two-path sequences, red-circle prohibitions on specific objects, circular magnifying insets, arrows for state change, near-zero text, scene-based figures performing the action. V1 draft cards keep that STRUCTURE with a neutral figure + objects (hands-on technique and wound anatomy are surgeon-gated); the post-review illustrated pass upgrades figures to full scene register (like the approved frame-13 illustration) while keeping the UCSF palette: navy/teal/yellow on stock, red = prohibition only."
+  },
+  "cards": [
+    {
+      "file": "frame-0203-paths.svg",
+      "numberChip": "02\u201303",
+      "topicChip": "FOLLOW ONLY YOURS",
+      "story": "Two mutually exclusive care paths after the bandage comes off.",
+      "layout": "Vertical split: full-height navy 3px divider at x=400. Column headers at top of each half.",
+      "left": "Header label TAPE PRESENT. Tape-strip icon (torn-end strip with 3 cross lines, like the exemplar inset). Serif figure '3 days' with label KEEP DRY. Prohibition: red ring+slash over a cotton-swab-and-droplet icon, label NO CLEANING BEFORE DAY 3.",
+      "right": "Header label NO TAPE. Three stacked micro-steps, each: yellow step square (1/2/3) + object icon + label. 1: cotton swab icon, label CLEAN GENTLY \u00b7 2\u00d7 A DAY. 2: two small bottles side by side, label MIX 50 / 50 (peroxide + distilled water are caption content, not card content). 3: ointment tube icon, label APPLY OINTMENT.",
+      "onFrame": [
+        "02\u201303",
+        "FOLLOW ONLY YOURS",
+        "TAPE PRESENT",
+        "KEEP DRY",
+        "3 days",
+        "NO CLEANING BEFORE DAY 3",
+        "NO TAPE",
+        "1 2 3",
+        "CLEAN GENTLY \u00b7 2\u00d7 A DAY",
+        "MIX 50 / 50",
+        "APPLY OINTMENT"
+      ]
+    },
+    {
+      "file": "frame-0405-milestones.svg",
+      "numberChip": "04\u201305",
+      "topicChip": "WHAT COMES NEXT",
+      "story": "Two milestones on the recovery timeline, plus reassurance that stitches need nothing.",
+      "layout": "Horizontal timeline rail (navy 4px line) across upper half with two stops (navy dot + yellow marker square on the active metaphor). Below, one detail inset.",
+      "stop1": "At ~x260: shower-head icon (arc with 3 teal falling drops), serif figure 'Day 3', label SHOWER + HAIR OK.",
+      "stop2": "At ~x560: calendar icon (grid with one teal-marked square), serif figure '\u2248 2 weeks', label WOUND CHECK + EAR EXAM.",
+      "inset": "Cream detail circle bottom-center-left: a thread/knot icon whose tail fades into dashes (dissolving), tag chip STITCHES, label DISSOLVE ON THEIR OWN.",
+      "onFrame": [
+        "04\u201305",
+        "WHAT COMES NEXT",
+        "Day 3",
+        "SHOWER + HAIR OK",
+        "\u2248 2 weeks",
+        "WOUND CHECK + EAR EXAM",
+        "STITCHES",
+        "DISSOLVE ON THEIR OWN"
+      ]
+    },
+    {
+      "file": "frame-06-redness.svg",
+      "numberChip": "06",
+      "topicChip": "ALL 3 TOGETHER",
+      "story": "Call only when all three signs are true at once \u2014 an AND rule, not a menu.",
+      "layout": "Three equal horizontal condition rows (white fill, navy 5px stroke, identical size) joined on the left by a vertical bracket + plus signs between rows to encode AND. Footer action strip.",
+      "rows": "Each row pairs the guide figure with an abstract mark near the ear region (use #head at small scale ~0.4 on the left of each row, identical across rows): Row 1: three navy radiating arcs at the behind-ear area + label RED AND SWOLLEN. Row 2: small calendar (2 marked day squares) + label NOT BETTER IN 1\u20132 DAYS. Row 3: three concentric tenderness arcs converging at the spot + label HURTS WHEN TOUCHED. AND-logic: bold plus signs between rows on the left bracket.",
+      "footer": "Navy strip across bottom above status tag: white phone-handset icon + white label CALL YOUR SURGEON OR CLINIC.",
+      "onFrame": [
+        "06",
+        "ALL 3 TOGETHER",
+        "RED AND SWOLLEN",
+        "NOT BETTER IN 1\u20132 DAYS",
+        "HURTS WHEN TOUCHED",
+        "CALL YOUR SURGEON OR CLINIC"
+      ]
+    },
+    {
+      "file": "frame-0710-anylist.svg",
+      "numberChip": "07\u201310",
+      "topicChip": "ANY OF THESE",
+      "story": "Four independent reasons to call \u2014 any single one is enough. OR rule, equal weight.",
+      "layout": "2\u00d72 grid of equal cells (white fill, navy 5px stroke, identical size, 16px gutters). Footer action strip identical to frame-06's.",
+      "cells": "Cell A: thermometer with navy threshold line + serif '101.5\u00b0F' + label FEVER ABOVE THIS. Cell B: guide figure (#head scale ~0.42) with two droplets at the behind-ear area + label SWELLING OR FLUID. Cell C: three equal glyphs (zigzag ache mark, radiant sun, half-filled battery) + label HEADACHE \u00b7 LIGHT \u00b7 LETHARGY. Cell D: outlined question-mark speech bubble + label ANY QUESTION OR CONCERN.",
+      "footer": "Navy strip: white phone icon + CALL YOUR SURGEON OR CLINIC.",
+      "onFrame": [
+        "07\u201310",
+        "ANY OF THESE",
+        "101.5\u00b0F",
+        "FEVER ABOVE THIS",
+        "SWELLING OR FLUID",
+        "HEADACHE \u00b7 LIGHT \u00b7 LETHARGY",
+        "ANY QUESTION OR CONCERN",
+        "CALL YOUR SURGEON OR CLINIC"
+      ]
+    },
+    {
+      "file": "frame-11-numbers.svg",
+      "numberChip": "11",
+      "topicChip": "SAVE THESE",
+      "story": "Two phone routes, exactly as the source separates them. The numbers are the heroes.",
+      "layout": "Two equal side-by-side panels (identical size). Left panel white fill; right panel cream #fff5cf fill; both navy 5px stroke. No red anywhere.",
+      "leftPanel": "Header label ROUTINE QUESTIONS. Phone-handset icon. Serif tabular figure '415-353-2148' as the dominant element. Sub-labels: NURSING LINE \u00b7 CALLBACK IN 12 HOURS, then NO CALL? CALL AGAIN.",
+      "rightPanel": "Header label EMERGENCY. Phone-handset icon. Serif tabular figure '415-476-1000'. Sub-label: ASK FOR THE OTOLARYNGOLOGY RESIDENT ON CALL (may wrap to two lines, stays caps 14px).",
+      "onFrame": [
+        "11",
+        "SAVE THESE",
+        "ROUTINE QUESTIONS",
+        "415-353-2148",
+        "NURSING LINE \u00b7 CALLBACK IN 12 HOURS",
+        "NO CALL? CALL AGAIN",
+        "EMERGENCY",
+        "415-476-1000",
+        "ASK FOR THE OTOLARYNGOLOGY RESIDENT ON CALL"
+      ]
+    },
+    {
+      "file": "frame-recap.svg",
+      "numberChip": "1\u20133",
+      "topicChip": "THE FULL GUIDE",
+      "story": "Closing recap: the three parts, replayable in any order.",
+      "layout": "Three numbered rows (yellow step squares 1/2/3 + icon + label), then a centered replay mark below.",
+      "rows": "1: bandage-roll icon + CARE FOR THE SURGERY SITE. 2: phone-handset icon + WHEN TO CALL. 3: calendar icon + FIRST PROGRAMMING VISITS.",
+      "replay": "Teal circular-arrow replay glyph (open circle with arrowhead), label REPLAY ANY PART.",
+      "onFrame": [
+        "1\u20133",
+        "THE FULL GUIDE",
+        "CARE FOR THE SURGERY SITE",
+        "WHEN TO CALL",
+        "FIRST PROGRAMMING VISITS",
+        "REPLAY ANY PART"
+      ]
+    }
+  ]
+}

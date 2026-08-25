@@ -1,0 +1,144 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Frames 02–03 · Two mutually exclusive care paths after the bandage comes off · safety-card grammar -->
+  <defs>
+    <!-- consistent guide figure: adult head, left-facing profile, with ear -->
+    <g id="head">
+      <path d="M 6 -88
+               C -40 -86 -70 -60 -75 -24
+               C -76 -14 -74 -8 -77 0
+               L -87 12
+               C -89 16 -86 20 -80 21
+               C -83 28 -83 34 -78 38
+               C -81 44 -79 52 -71 56
+               C -63 70 -48 79 -32 81
+               C -21 83 -11 83 -2 81
+               L 2 106 L 58 106 L 52 64
+               C 72 46 83 20 81 -12
+               C 77 -58 48 -88 6 -88 Z"
+        fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M -10 106 C 18 94 76 96 108 110 L 114 138 L -14 138 Z" fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 8 -4 C 28 -14 44 2 34 22 C 27 35 11 38 3 29 C 7 24 9 18 8 12"
+        fill="#fbfaf5" stroke="#052049" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M 15 4 C 23 2 27 10 21 16" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 6 -88 C -30 -87 -58 -68 -70 -38 C -52 -60 -22 -70 4 -68 C 40 -66 66 -44 74 -12 C 80 -20 81 -32 79 -44 C 70 -74 44 -89 6 -88 Z" fill="#052049"/>
+    </g>
+    <!-- mastoid dressing band over the ear -->
+    <g id="band">
+      <rect x="-14" y="-98" width="50" height="186" rx="24" transform="rotate(6)" fill="#ffffff" stroke="#052049" stroke-width="6.5"/>
+      <line x1="-2" y1="-66" x2="18" y2="-66" transform="rotate(6)" stroke="#052049" stroke-width="4"/>
+      <line x1="-4" y1="58" x2="17" y2="58" transform="rotate(6)" stroke="#052049" stroke-width="4"/>
+      <rect x="-3" y="-97" width="28" height="17" transform="rotate(6)" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+    </g>
+    <!-- tape strip -->
+    <g id="tape">
+      <path d="M-28 -11 L24 -11 L30 -5 L24 11 L-24 11 L-30 4 Z" fill="#ffffff" stroke="#052049" stroke-width="5" stroke-linejoin="round"/>
+      <line x1="-11" y1="-11" x2="-11" y2="11" stroke="#052049" stroke-width="3.5"/>
+      <line x1="4" y1="-11" x2="4" y2="11" stroke="#052049" stroke-width="3.5"/>
+    </g>
+    <!-- cotton swab -->
+    <g id="swab">
+      <line x1="-27" y1="0" x2="27" y2="0" stroke="#052049" stroke-width="5.5"/>
+      <ellipse cx="-34" cy="0" rx="9" ry="7" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+      <ellipse cx="34" cy="0" rx="9" ry="7" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+    </g>
+    <!-- small solution bottle, equal-part fill level -->
+    <g id="bottle">
+      <rect x="-17" y="-15" width="34" height="43" rx="3" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+      <rect x="-14" y="6" width="28" height="19" rx="2" fill="#ddecf0"/>
+      <line x1="-14" y1="6" x2="14" y2="6" stroke="#052049" stroke-width="4"/>
+      <rect x="-6" y="-23" width="12" height="8" fill="#ffffff" stroke="#052049" stroke-width="4.5"/>
+      <rect x="-10" y="-33" width="20" height="10" fill="#ffffff" stroke="#052049" stroke-width="4.5"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="132" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="92" y="61" text-anchor="middle" font-size="19" font-weight="800" fill="#052049">CARDS 02–03</text>
+  <rect x="498" y="30" width="272" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="634" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">FOLLOW ONE PATH</text>
+
+  <!-- Subtle full-column fields keep the mutually exclusive instructions visually bound. -->
+  <rect x="18" y="94" width="364" height="486" fill="#fff7f4"/>
+  <rect x="418" y="94" width="364" height="486" fill="#f3fafb"/>
+
+  <!-- two exclusive paths: full-height divider -->
+  <line x1="400" y1="18" x2="400" y2="582" stroke="#052049" stroke-width="3"/>
+
+  <!-- ============ LEFT PATH · TAPE PRESENT ============ -->
+  <text x="207" y="122" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.3" fill="#29405d">TAPE BEHIND EAR</text>
+
+  <!-- matched anatomy view A: tape visibly sits behind the ear -->
+  <g transform="translate(207,190) scale(0.45)">
+    <use href="#head"/>
+    <use href="#tape" transform="translate(66,26) rotate(-72) scale(0.75)"/>
+  </g>
+
+  <text x="207" y="304" text-anchor="middle" font-family="Granjon, 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif" font-size="40" fill="#052049">Until 3 days</text>
+  <text x="207" y="338" text-anchor="middle" font-size="17" font-weight="800" letter-spacing="1.1" fill="#29405d">AFTER SURGERY</text>
+  <text x="207" y="368" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">KEEP DRY</text>
+
+  <!-- prohibition: no wet cleaning yet; a washcloth replaces the ambiguous two-ended swab icon -->
+  <g transform="translate(207,460)">
+    <g transform="translate(7,9) rotate(-8)">
+      <rect x="-27" y="-18" width="54" height="36" rx="5" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+      <circle cx="-13" cy="-7" r="2.5" fill="#ddecf0"/>
+      <circle cx="0" cy="2" r="2.5" fill="#ddecf0"/>
+      <circle cx="14" cy="-8" r="2.5" fill="#ddecf0"/>
+    </g>
+    <g transform="translate(-21,-20) scale(0.8)">
+      <path d="M 0 -13 C 7 -3 11 3 11 8 A 11 11 0 1 1 -11 8 C -11 3 -7 -3 0 -13 Z" fill="#ddecf0" stroke="#052049" stroke-width="5" stroke-linejoin="round"/>
+    </g>
+    <line x1="-36.8" y1="-36.8" x2="36.8" y2="36.8" stroke="#e61048" stroke-width="8"/>
+    <circle r="52" fill="none" stroke="#e61048" stroke-width="8"/>
+  </g>
+
+  <rect x="76" y="523" width="262" height="56" fill="#ffffff" stroke="#e61048" stroke-width="4"/>
+  <text x="207" y="547" text-anchor="middle" font-size="17" font-weight="800" letter-spacing="1.3" fill="#29405d">NO CLEANING</text>
+  <text x="207" y="569" text-anchor="middle" font-size="17" font-weight="800" letter-spacing="1.3" fill="#29405d">BEFORE THEN</text>
+
+  <!-- ============ RIGHT PATH · NO TAPE ============ -->
+  <text x="593" y="122" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.3" fill="#29405d">NO TAPE BEHIND EAR</text>
+
+  <!-- matched anatomy view B: identical scale and site, with no tape -->
+  <g transform="translate(593,190) scale(0.45)">
+    <use href="#head"/>
+    <line x1="58" y1="11" x2="70" y2="42" stroke="#14828c" stroke-width="6" stroke-linecap="round"/>
+  </g>
+
+  <!-- step 1 · prepare the equal-parts cleaning solution -->
+  <rect x="453" y="273" width="34" height="34" fill="#052049"/>
+  <text x="470" y="297" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">1</text>
+  <g transform="translate(593,290) scale(0.85)">
+    <use href="#bottle" transform="translate(-26,0)"/>
+    <use href="#bottle" transform="translate(26,0)"/>
+  </g>
+  <text x="593" y="332" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="0.6" fill="#29405d">MIX 50 / 50</text>
+  <text x="593" y="350" text-anchor="middle" font-size="12" font-weight="800" letter-spacing="0.4" fill="#29405d">HYDROGEN PEROXIDE + DISTILLED WATER</text>
+
+  <!-- step 2 · clean the edges with that solution -->
+  <rect x="453" y="363" width="34" height="34" fill="#052049"/>
+  <text x="470" y="387" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">2</text>
+  <g transform="translate(593,380) rotate(-28) scale(0.9)">
+    <use href="#swab"/>
+  </g>
+  <text x="593" y="422" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="0.6" fill="#29405d">CLEAN INCISION EDGES GENTLY · 2× A DAY</text>
+
+  <!-- step 3 · ointment tube -->
+  <rect x="453" y="453" width="34" height="34" fill="#052049"/>
+  <text x="470" y="477" text-anchor="middle" font-size="20" font-weight="800" fill="#ffffff">3</text>
+  <g transform="translate(599,470) rotate(-10) scale(0.9)">
+    <path d="M -40 -10 L 26 -14 L 44 -15.5 L 44 15.5 L 26 14 L -40 10 C -45 7 -45 -7 -40 -10 Z" fill="#ffffff" stroke="#052049" stroke-width="5.5" stroke-linejoin="round"/>
+    <rect x="-57" y="-8.5" width="15" height="17" rx="2" fill="#ffffff" stroke="#052049" stroke-width="4.5"/>
+    <line x1="33.5" y1="-12.6" x2="33.5" y2="12.6" stroke="#052049" stroke-width="4"/>
+    <line x1="40.5" y1="-13.2" x2="40.5" y2="13.2" stroke="#052049" stroke-width="4"/>
+  </g>
+  <text x="593" y="516" text-anchor="middle" font-size="15" font-weight="800" letter-spacing="0.7" fill="#29405d">APPLY ANTIBIOTIC OINTMENT TO EDGES</text>
+  <text x="593" y="536" text-anchor="middle" font-size="13" font-weight="700" letter-spacing="0.6" fill="#29405d">SUCH AS BACITRACIN</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

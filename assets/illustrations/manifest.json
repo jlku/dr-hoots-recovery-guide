@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "notice": "UNVERIFIED CONCEPT ART — NOT FOR PATIENT USE",
+  "assets": [
+    {
+      "asset_id": "illustration/ci-activation-programming-v1",
+      "file": "ci-activation-programming-safety-card-v1.png",
+      "alt": "A hearing specialist uses a laptop to program an adult patient's external behind-the-ear speech processor, with a close-up of the processor and adjustment controls.",
+      "sha256": "d092cf2b61ed6c20bd698975ee413da90961635bba0698af19a4b81eb2bf66a4",
+      "width": 1448,
+      "height": 1086,
+      "scene_id": "scene/activation/programming",
+      "canonical_sentence_ids": ["act.02", "act.03"],
+      "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"],
+      "status": "private_concept_unreviewed",
+      "renderable_in_private_prototype": true,
+      "patient_use": false,
+      "allowed_surface": "variations.html only",
+      "clinical_media_manifest_status": "blocked_pending_surgeon_review",
+      "generation": {
+        "mode": "built_in_imagegen",
+        "reference": "User-provided airline safety-card example used for style and information composition only",
+        "prompt_file": "../../docs/ILLUSTRATION_GENERATION_PROMPTS.md",
+        "seed": null,
+        "original_file": null,
+        "provenance_note": "The local generator output path is intentionally omitted from the public repository; this manifested copy is the reviewable source artifact."
+      },
+      "review": {
+        "surgical_equivalence": "independent_evaluator_pass_private_only_2026-08-22",
+        "design_media": "independent_evaluator_pass_private_only_2026-08-22",
+        "partner_surgeon": "pending"
+      }
+    }
+  ]
+}

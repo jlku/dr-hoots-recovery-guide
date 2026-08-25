@@ -1,0 +1,98 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "ci-phase0",
+  "artifact_version": "0.1.0",
+  "adaptation_id": "activation-programming-prototype",
+  "adaptation_version": "0.1.0",
+  "status": "unverified_draft",
+  "patient_use": false,
+  "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "scene_id": "scene/activation/programming",
+  "canonical_sentence_ids": ["act.02", "act.03"],
+  "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"],
+  "editorial_voice": {
+    "audience": "patient or caregiver reviewing recovery guidance",
+    "reading_target": "grade 7 or below",
+    "rules": [
+      "Address the patient as you.",
+      "Use short, direct sentences and familiar words where meaning is preserved.",
+      "Keep clinical roles and device terms needed for accuracy.",
+      "Do not add reassurance, expected outcomes, timing, urgency, or advice.",
+      "Different media may change cadence and grouping, but not clinical propositions."
+    ]
+  },
+  "propositions": [
+    {
+      "id": "activation.audiologist_programs_external_processor",
+      "canonical_sentence_ids": ["act.02"],
+      "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"]
+    },
+    {
+      "id": "activation.program_customized_for_user",
+      "canonical_sentence_ids": ["act.03"],
+      "source_claim_ids": ["activation.custom"]
+    }
+  ],
+  "formats": {
+    "linear_video": {
+      "scene_title": "Your programming visit",
+      "blocks": [
+        {
+          "id": "linear.programming.01",
+          "text": "At your first programming visit, a hearing specialist called an audiologist programs the speech processor you wear outside your ear. The program is made for your needs.",
+          "canonical_sentence_ids": ["act.02", "act.03"],
+          "proposition_ids": ["activation.audiologist_programs_external_processor", "activation.program_customized_for_user"]
+        }
+      ],
+      "channels": {
+        "visible_caption": "visible_by_default_live_text",
+        "transcript": "visible_caption_is_the_active_scene_transcript",
+        "narration": "same_text_as_visible_caption"
+      }
+    },
+    "chaptered_video": {
+      "scene_title": "Programming your processor",
+      "blocks": [
+        {
+          "id": "chaptered.programming.01",
+          "text": "At this visit, a hearing specialist called an audiologist programs the speech processor you wear outside your ear. The program is made for your needs.",
+          "canonical_sentence_ids": ["act.02", "act.03"],
+          "proposition_ids": ["activation.audiologist_programs_external_processor", "activation.program_customized_for_user"]
+        }
+      ],
+      "channels": {
+        "visible_caption": "visible_by_default_live_text",
+        "transcript": "visible_caption_is_the_active_scene_transcript",
+        "narration": "same_text_as_visible_caption"
+      }
+    },
+    "scroll_guide": {
+      "scene_title": "Programming your processor",
+      "blocks": [
+        {
+          "id": "scroll.programming.01",
+          "text": "A hearing specialist called an audiologist programs the speech processor you wear outside your ear.",
+          "canonical_sentence_ids": ["act.02"],
+          "proposition_ids": ["activation.audiologist_programs_external_processor"]
+        },
+        {
+          "id": "scroll.programming.02",
+          "text": "The program is made for your needs.",
+          "canonical_sentence_ids": ["act.03"],
+          "proposition_ids": ["activation.program_customized_for_user"]
+        }
+      ],
+      "channels": {
+        "visible_text": "semantic_live_text",
+        "narration": "not_required"
+      }
+    }
+  },
+  "review": {
+    "surgical_equivalence": "independent_evaluator_pass_private_only_2026-08-22",
+    "editorial_voice": "independent_evaluator_pass_private_only_2026-08-22",
+    "design_media": "independent_evaluator_pass_private_only_2026-08-22",
+    "partner_surgeon": "pending",
+    "patient_ready": false
+  }
+}

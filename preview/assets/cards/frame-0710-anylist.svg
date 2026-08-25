@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Frames 07–10 · Call for ANY single one of these — four independent triggers, equal weight (OR rule) · safety-card grammar -->
+  <defs>
+    <!-- consistent guide figure: adult head, left-facing profile, with ear -->
+    <g id="head">
+      <path d="M 6 -88
+               C -40 -86 -70 -60 -75 -24
+               C -76 -14 -74 -8 -77 0
+               L -87 12
+               C -89 16 -86 20 -80 21
+               C -83 28 -83 34 -78 38
+               C -81 44 -79 52 -71 56
+               C -63 70 -48 79 -32 81
+               C -21 83 -11 83 -2 81
+               L 2 106 L 58 106 L 52 64
+               C 72 46 83 20 81 -12
+               C 77 -58 48 -88 6 -88 Z"
+        fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M -10 106 C 18 94 76 96 108 110 L 114 138 L -14 138 Z" fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 8 -4 C 28 -14 44 2 34 22 C 27 35 11 38 3 29 C 7 24 9 18 8 12"
+        fill="#fbfaf5" stroke="#052049" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M 15 4 C 23 2 27 10 21 16" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 6 -88 C -30 -87 -58 -68 -70 -38 C -52 -60 -22 -70 4 -68 C 40 -66 66 -44 74 -12 C 80 -20 81 -32 79 -44 C 70 -74 44 -89 6 -88 Z" fill="#052049"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="132" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="92" y="61" text-anchor="middle" font-size="19" font-weight="800" fill="#052049">CARDS 07–10</text>
+  <rect x="558" y="30" width="212" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="664" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">ANY OF THESE</text>
+
+  <!-- OR grid: 2×2 equal cells, any single trigger is enough -->
+
+  <!-- cell A · fever above 101.5°F -->
+  <rect x="26" y="112" width="364" height="171" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <path d="M 111 141 A 8 8 0 0 1 127 141 L 127 203 A 14 14 0 1 1 111 203 Z" fill="#ffffff" stroke="#052049" stroke-width="5.5" stroke-linejoin="round"/>
+  <line x1="112" y1="151" x2="118" y2="151" stroke="#052049" stroke-width="3.5"/>
+  <line x1="112" y1="161" x2="118" y2="161" stroke="#052049" stroke-width="3.5"/>
+  <rect x="116" y="171" width="6" height="44" fill="#052049"/>
+  <circle cx="119" cy="215" r="8" fill="#052049"/>
+  <line x1="91" y1="171" x2="325" y2="171" stroke="#052049" stroke-width="5"/>
+  <text x="239" y="161" text-anchor="middle" font-family="Granjon, 'Adobe Garamond Pro', Garamond, 'Times New Roman', serif" font-size="46" fill="#052049">101.5°F</text>
+  <text x="208" y="261" text-anchor="middle" font-size="18" font-weight="800" letter-spacing="1.4" fill="#29405d">FEVER ABOVE THIS</text>
+
+  <!-- cell B · localized swelling / subcutaneous fluid behind the ear -->
+  <rect x="406" y="112" width="364" height="171" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <g transform="translate(536,174) scale(0.42)">
+    <use href="#head"/>
+  </g>
+  <circle cx="568" cy="185" r="6" fill="#14828c" stroke="#052049" stroke-width="3"/>
+  <line x1="574" y1="185" x2="615" y2="185" stroke="#052049" stroke-width="4"/>
+  <circle cx="655" cy="185" r="39" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <line x1="628" y1="171" x2="682" y2="171" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+  <line x1="628" y1="202" x2="682" y2="202" stroke="#052049" stroke-width="5" stroke-linecap="round"/>
+  <ellipse cx="655" cy="187" rx="21" ry="10" fill="#8dd3d8" stroke="#052049" stroke-width="4"/>
+  <text x="588" y="252" text-anchor="middle" font-size="16" font-weight="800" letter-spacing="1.1" fill="#29405d">SWELLING OR FLUID</text>
+  <text x="588" y="272" text-anchor="middle" font-size="16" font-weight="800" letter-spacing="1.1" fill="#29405d">BEHIND THE EAR</text>
+
+  <!-- cell C · headache, light sensitivity, lethargy -->
+  <rect x="26" y="299" width="364" height="171" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <!-- headache -->
+  <circle cx="92" cy="359" r="24" fill="#ddecf0" stroke="#052049" stroke-width="5"/>
+  <path d="M 53 360 L 65 342 L 75 360 L 85 342" fill="none" stroke="#052049" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+
+  <!-- light sensitivity: eye surrounded by bright rays -->
+  <path d="M 177 365 Q 208 338 239 365 Q 208 392 177 365 Z" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <circle cx="208" cy="365" r="9" fill="#052049"/>
+  <g stroke="#052049" stroke-width="5" stroke-linecap="round">
+    <line x1="208" y1="328" x2="208" y2="318"/>
+    <line x1="178" y1="337" x2="171" y2="329"/>
+    <line x1="238" y1="337" x2="245" y2="329"/>
+  </g>
+
+  <!-- excessive lethargy: slumped person resting on crossed arms -->
+  <path d="M 283 383 Q 322 365 359 383" fill="none" stroke="#052049" stroke-width="6" stroke-linecap="round"/>
+  <circle cx="322" cy="351" r="20" fill="#ddecf0" stroke="#052049" stroke-width="5"/>
+  <path d="M 307 355 Q 322 367 337 355" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+
+  <!-- Explicit OR separators: each symptom independently triggers a call. -->
+  <circle cx="150" cy="365" r="15" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <text x="150" y="371" text-anchor="middle" font-size="12" font-weight="900" fill="#052049">OR</text>
+  <circle cx="266" cy="365" r="15" fill="#feb80a" stroke="#052049" stroke-width="3"/>
+  <text x="266" y="371" text-anchor="middle" font-size="12" font-weight="900" fill="#052049">OR</text>
+
+  <text x="92" y="448" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d">HEADACHE</text>
+  <text x="208" y="440" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d"><tspan x="208">LIGHT</tspan><tspan x="208" dy="18">SENSITIVITY</tspan></text>
+  <text x="322" y="440" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d"><tspan x="322">EXCESSIVE</tspan><tspan x="322" dy="18">LETHARGY</tspan></text>
+
+  <!-- cell D · any question or concern -->
+  <rect x="406" y="299" width="364" height="171" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <g transform="translate(588,361)">
+    <path d="M -36 -37 L 36 -37 Q 52 -37 52 -21 L 52 16 Q 52 32 36 32 L 2 32 L -20 54 L -15 32 L -36 32 Q -52 32 -52 16 L -52 -21 Q -52 -37 -36 -37 Z" fill="#ffffff" stroke="#052049" stroke-width="5.5" stroke-linejoin="round"/>
+    <text x="0" y="17" text-anchor="middle" font-size="50" font-weight="800" fill="#052049">?</text>
+  </g>
+  <text x="588" y="448" text-anchor="middle" font-size="18" font-weight="800" letter-spacing="1.4" fill="#29405d">ANY QUESTION OR CONCERN</text>
+
+  <!-- footer action strip -->
+  <rect x="52" y="486" width="696" height="54" fill="#052049"/>
+  <g transform="translate(196,513) rotate(-40) scale(0.75)">
+    <path d="M -26 -4 C -26 -16 26 -16 26 -4 L 26 8 C 26 14 16 14 16 8 L 16 -2 C 7 -7 -7 -7 -16 -2 L -16 8 C -16 14 -26 14 -26 8 Z" fill="#ffffff"/>
+  </g>
+  <text x="242" y="520" font-size="20" font-weight="800" letter-spacing="1.6" fill="#ffffff">CALL YOUR SURGEON OR CLINIC</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Card render harness</title>
+  <link rel="icon" href="data:,">
+  <style>
+    body { margin: 0; display: grid; place-items: center; min-height: 100vh; background: #dcebf4; }
+    #card { width: 800px; }
+    #card img, #card object { display: block; width: 100%; }
+  </style>
+</head>
+<body>
+  <div id="card"></div>
+  <link rel="stylesheet" href="assets/safety-frames.css?v=6">
+  <script type="module">
+    import { frameById, renderFrame } from "./assets/frames.js";
+    const params = new URLSearchParams(location.search);
+    const id = params.get("id");
+    const holder = document.getElementById("card");
+    if (id) {
+      holder.append(renderFrame(frameById(id)));
+    } else {
+      const name = params.get("f") ?? "frame-01";
+      const img = document.createElement("img");
+      img.src = `assets/cards/${name}.svg?cb=${Math.random().toString(36).slice(2)}`;
+      holder.append(img);
+    }
+  </script>
+</body>
+</html>

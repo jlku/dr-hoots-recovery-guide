@@ -1,0 +1,123 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "ci-phase0",
+  "artifact_version": "0.1.0",
+  "status": "unverified_draft",
+  "patient_use": false,
+  "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "presentation_order": ["ci/wound-care", "ci/when-to-call", "ci/activation"],
+  "scenes": [
+    {
+      "id": "scene/wound/dressing",
+      "module_id": "ci/wound-care",
+      "sentence_ids": ["wc.01", "wc.02"],
+      "source_claim_ids": ["surgery.dressing.day2", "surgery.no-tape.cleaning", "surgery.tape.branch"],
+      "target_seconds": 12,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.dressing.day2", "surgery.no-tape.cleaning", "surgery.tape.branch"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/wound/tape",
+      "module_id": "ci/wound-care",
+      "sentence_ids": ["wc.03", "wc.04"],
+      "source_claim_ids": ["surgery.tape.branch"],
+      "target_seconds": 12,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.tape.branch"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/wound/no-tape",
+      "module_id": "ci/wound-care",
+      "sentence_ids": ["wc.05", "wc.06", "wc.07"],
+      "source_claim_ids": ["surgery.no-tape.cleaning"],
+      "target_seconds": 18,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.no-tape.cleaning"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/wound/shower",
+      "module_id": "ci/wound-care",
+      "sentence_ids": ["wc.08"],
+      "source_claim_ids": ["surgery.shower.day3"],
+      "target_seconds": 8,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.shower.day3"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/wound/follow-up",
+      "module_id": "ci/wound-care",
+      "sentence_ids": ["wc.09", "wc.10"],
+      "source_claim_ids": ["surgery.wound-check.two-weeks", "surgery.sutures.dissolvable"],
+      "target_seconds": 10,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.wound-check.two-weeks", "surgery.sutures.dissolvable"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/redness",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.01", "call.01a", "call.01b", "call.01c"],
+      "source_claim_ids": ["surgery.call.redness"],
+      "target_seconds": 18,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.call.redness"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/fever",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.02"],
+      "source_claim_ids": ["surgery.call.fever"],
+      "target_seconds": 8,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.call.fever"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/fluid",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.03"],
+      "source_claim_ids": ["surgery.call.fluid"],
+      "target_seconds": 8,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.call.fluid"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/neuro",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.04"],
+      "source_claim_ids": ["surgery.call.neuro"],
+      "target_seconds": 10,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.call.neuro"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/concerns",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.05"],
+      "source_claim_ids": ["surgery.call.questions"],
+      "target_seconds": 10,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["surgery.call.questions"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/call/contact",
+      "module_id": "ci/when-to-call",
+      "sentence_ids": ["call.06", "call.07", "call.07a", "call.08"],
+      "source_claim_ids": ["contact.routine", "contact.callback", "contact.emergency"],
+      "target_seconds": 18,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["contact.routine", "contact.callback", "contact.emergency"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/activation/healing",
+      "module_id": "ci/activation",
+      "sentence_ids": ["act.01"],
+      "source_claim_ids": ["activation.after-healing", "timeline.activation.conflict"],
+      "target_seconds": 15,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["activation.after-healing", "timeline.activation.conflict"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/activation/programming",
+      "module_id": "ci/activation",
+      "sentence_ids": ["act.02", "act.03"],
+      "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"],
+      "target_seconds": 15,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["activation.after-healing", "activation.custom", "timeline.activation.audiologist"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    },
+    {
+      "id": "scene/activation/follow-up",
+      "module_id": "ci/activation",
+      "sentence_ids": ["act.04", "act.05"],
+      "source_claim_ids": ["activation.follow-up", "timeline.activation.fine-tuning"],
+      "target_seconds": 12,
+      "visual": {"asset_id": null, "renderable": false, "review_status": "blocked_pending_surgeon_review", "source_claim_ids": ["activation.follow-up", "timeline.activation.fine-tuning"], "static_fallback": "live_text_only", "essential_visual_description": "No essential visual; canonical live text carries the complete scene.", "motion_policy": "none_until_visual_approved", "reduced_motion_policy": "same_live_text_no_motion"}
+    }
+  ]
+}

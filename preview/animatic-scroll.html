@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Airline safety-card deck · three-card prototype</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/safety-frames.css?v=6">
+  <link rel="stylesheet" href="assets/animatic-scroll.css?v=11">
+</head>
+<body>
+  <a class="skip-link" href="#card-deck">Skip to the safety cards</a>
+
+  <header class="deck-bar">
+    <div class="deck-bar__identity">
+      <strong>Recovery safety cards</strong>
+      <span>Three-card treatment prototype · not for patient use</span>
+    </div>
+    <div class="deck-bar__actions">
+      <span class="deck-count" aria-live="polite"><b id="current-card-number">01</b><i aria-hidden="true">/</i><span>03</span></span>
+      <a class="pdf-link" href="../output/pdf/airline-safety-card-deck-prototype.pdf" download>
+        <span aria-hidden="true">↓</span> Download PDF
+      </a>
+    </div>
+  </header>
+
+  <main id="card-deck" class="deck-experience">
+    <section class="card-stage" aria-label="Airline-style recovery safety cards">
+      <div class="stage-halo" aria-hidden="true"></div>
+      <div class="deck-stack" id="deck-stack"></div>
+      <div class="deck-progress" aria-hidden="true">
+        <span class="deck-progress__line"><i id="deck-progress-fill"></i></span>
+        <span id="deck-progress-label">Card 1 · Remove the bandage</span>
+      </div>
+      <p class="scroll-hint" id="scroll-hint">
+        <span class="scroll-hint__arrow" aria-hidden="true">↓</span>
+        <span id="scroll-hint-label">Scroll to continue</span>
+      </p>
+    </section>
+
+    <section class="scroll-track" id="scroll-track" aria-label="Card descriptions"></section>
+
+    <noscript>
+      <section class="no-script">
+        <h1>Recovery safety cards</h1>
+        <h2>01 · Bandage off, then check for tape</h2>
+        <p>Two days after surgery, remove the mastoid dressing, or head bandage. Next, check whether tape covers the incision, or surgical cut, behind the ear.</p>
+        <h2>06 · Redness with all three signs</h2>
+        <p>Call your surgeon or clinic staff if all three signs below are present: red and swollen; not better over one to two days; hurts when touched.</p>
+        <h2>13 · Your first programming visit</h2>
+        <p>An audiologist programs the speech processor you wear outside your ear. The program is made for your needs.</p>
+      </section>
+    </noscript>
+  </main>
+
+  <script type="module" src="assets/animatic-scroll.js?v=11"></script>
+</body>
+</html>

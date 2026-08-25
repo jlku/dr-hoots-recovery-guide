@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Frame 11 · Save these numbers: two phone routes, numbers are the heroes · safety-card grammar -->
+  <defs>
+    <!-- telephone handset: slim arched handle, rounded cups splayed outward, signage register -->
+    <g id="phone">
+      <path d="M -64 20
+               C -67 6 -63 -8 -51 -15
+               C -32 -28 -15 -33 0 -33
+               C 15 -33 32 -28 51 -15
+               C 63 -8 67 6 64 20
+               C 61 33 51 41 41 39
+               C 33 37.5 27.5 30 28 21
+               C 28.4 13 31 5 35 -1
+               C 20 -13 -20 -13 -35 -1
+               C -31 5 -28.4 13 -28 21
+               C -27.5 30 -33 37.5 -41 39
+               C -51 41 -61 33 -64 20
+               Z"
+        fill="#ddecf0" stroke="#052049" stroke-width="5.5" stroke-linejoin="round"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="56" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="54" y="63" text-anchor="middle" font-size="26" font-weight="800" fill="#052049">11</text>
+  <rect x="574" y="30" width="196" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="672" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">SAVE THESE</text>
+
+  <!-- left panel · routine route -->
+  <rect x="26" y="122" width="360" height="404" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <text x="206" y="178" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">ROUTINE QUESTIONS</text>
+  <use href="#phone" transform="translate(206,254) scale(1.05)"/>
+  <text x="206" y="378" text-anchor="middle" font-size="44" font-weight="800" letter-spacing="0.2"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    style="font-variant-numeric: lining-nums tabular-nums" fill="#052049">415-353-2148</text>
+  <text x="206" y="442" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d">NURSING LINE · CALLBACK IN 12 HOURS</text>
+  <text x="206" y="476" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d">NO CALL? CALL AGAIN</text>
+
+  <!-- right panel · emergency route -->
+  <rect x="410" y="122" width="360" height="404" fill="#fff5cf" stroke="#052049" stroke-width="5"/>
+  <rect x="410" y="122" width="360" height="60" fill="#052049"/>
+  <text x="590" y="160" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.6" fill="#ffffff">EMERGENCY</text>
+  <use href="#phone" transform="translate(590,254) scale(1.05)"/>
+  <text x="590" y="378" text-anchor="middle" font-size="44" font-weight="800" letter-spacing="0.2"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    style="font-variant-numeric: lining-nums tabular-nums" fill="#052049">415-476-1000</text>
+  <text x="590" y="442" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d">ASK FOR THE OTOLARYNGOLOGY</text>
+  <text x="590" y="476" text-anchor="middle" font-size="14" font-weight="800" letter-spacing="1.1" fill="#29405d">RESIDENT ON CALL</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="'Helvetica Neue', Helvetica, Arial, sans-serif">
+  <!-- Frame 06 · Call only when all three signs are true at once — AND ladder, not a menu · safety-card grammar -->
+  <defs>
+    <!-- consistent guide figure: adult head, left-facing profile, with ear -->
+    <g id="head">
+      <path d="M 6 -88
+               C -40 -86 -70 -60 -75 -24
+               C -76 -14 -74 -8 -77 0
+               L -87 12
+               C -89 16 -86 20 -80 21
+               C -83 28 -83 34 -78 38
+               C -81 44 -79 52 -71 56
+               C -63 70 -48 79 -32 81
+               C -21 83 -11 83 -2 81
+               L 2 106 L 58 106 L 52 64
+               C 72 46 83 20 81 -12
+               C 77 -58 48 -88 6 -88 Z"
+        fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M -10 106 C 18 94 76 96 108 110 L 114 138 L -14 138 Z" fill="#ddecf0" stroke="#052049" stroke-width="7" stroke-linejoin="round"/>
+      <path d="M 8 -4 C 28 -14 44 2 34 22 C 27 35 11 38 3 29 C 7 24 9 18 8 12"
+        fill="#fbfaf5" stroke="#052049" stroke-width="5.5" stroke-linejoin="round" stroke-linecap="round"/>
+      <path d="M 15 4 C 23 2 27 10 21 16" fill="none" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+      <path d="M 6 -88 C -30 -87 -58 -68 -70 -38 C -52 -60 -22 -70 4 -68 C 40 -66 66 -44 74 -12 C 80 -20 81 -32 79 -44 C 70 -74 44 -89 6 -88 Z" fill="#052049"/>
+    </g>
+  </defs>
+
+  <rect x="0" y="0" width="800" height="600" fill="#fbfaf5"/>
+  <rect x="3" y="3" width="794" height="594" fill="none" stroke="#052049" stroke-width="6"/>
+
+  <!-- furniture -->
+  <rect x="26" y="26" width="56" height="56" fill="#feb80a" stroke="#052049" stroke-width="4"/>
+  <text x="54" y="63" text-anchor="middle" font-size="26" font-weight="800" fill="#052049">06</text>
+  <rect x="526" y="30" width="244" height="44" fill="#ffffff" stroke="#052049" stroke-width="4"/>
+  <text x="648" y="59" text-anchor="middle" font-size="20" font-weight="800" letter-spacing="1.5" fill="#052049">ALL 3 TOGETHER</text>
+
+  <!-- AND bracket: one spine joins all three rows, bold plus signs between them -->
+  <g stroke="#052049" fill="none" stroke-linecap="round">
+    <line x1="90" y1="156" x2="90" y2="199" stroke-width="5"/>
+    <line x1="90" y1="243" x2="90" y2="329" stroke-width="5"/>
+    <line x1="90" y1="373" x2="90" y2="416" stroke-width="5"/>
+    <line x1="90" y1="156" x2="136" y2="156" stroke-width="5"/>
+    <line x1="90" y1="286" x2="136" y2="286" stroke-width="5"/>
+    <line x1="90" y1="416" x2="136" y2="416" stroke-width="5"/>
+    <line x1="90" y1="207" x2="90" y2="235" stroke-width="8"/>
+    <line x1="76" y1="221" x2="104" y2="221" stroke-width="8"/>
+    <line x1="90" y1="337" x2="90" y2="365" stroke-width="8"/>
+    <line x1="76" y1="351" x2="104" y2="351" stroke-width="8"/>
+  </g>
+
+  <!-- condition 1 · red and swollen -->
+  <rect x="136" y="104" width="612" height="104" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <g transform="translate(200,148.4) scale(0.38)">
+    <use href="#head"/>
+  </g>
+  <path d="M 225 139 C 247 139 253 151 249 163 C 246 176 235 181 223 174 C 229 164 229 150 225 139 Z" fill="#f6b1c3" stroke="#e61048" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 253 141 L 263 131 M 257 155 L 270 155 M 252 170 L 262 180" fill="none" stroke="#e61048" stroke-width="4" stroke-linecap="round"/>
+  <text x="360" y="163" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">RED AND SWOLLEN</text>
+
+  <!-- condition 2 · not better in 1–2 days -->
+  <rect x="136" y="234" width="612" height="104" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <g transform="translate(200,278.4) scale(0.38)">
+    <use href="#head"/>
+  </g>
+  <g>
+    <rect x="256" y="256" width="68" height="60" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+    <line x1="256" y1="272" x2="324" y2="272" stroke="#052049" stroke-width="4"/>
+    <line x1="274" y1="248" x2="274" y2="262" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+    <line x1="306" y1="248" x2="306" y2="262" stroke="#052049" stroke-width="4" stroke-linecap="round"/>
+    <rect x="266" y="280" width="12" height="12" fill="#052049"/>
+    <rect x="284" y="280" width="12" height="12" fill="#052049"/>
+    <rect x="302" y="280" width="12" height="12" fill="none" stroke="#052049" stroke-width="3.5"/>
+    <rect x="266" y="298" width="12" height="12" fill="none" stroke="#052049" stroke-width="3.5"/>
+    <rect x="284" y="298" width="12" height="12" fill="none" stroke="#052049" stroke-width="3.5"/>
+    <rect x="302" y="298" width="12" height="12" fill="none" stroke="#052049" stroke-width="3.5"/>
+  </g>
+  <text x="360" y="293" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">NOT BETTER IN 1–2 DAYS</text>
+
+  <!-- condition 3 · hurts when touched -->
+  <rect x="136" y="364" width="612" height="104" fill="#ffffff" stroke="#052049" stroke-width="5"/>
+  <g transform="translate(200,408.4) scale(0.38)">
+    <use href="#head"/>
+  </g>
+  <circle cx="239" cy="416" r="5" fill="#e61048"/>
+  <path d="M 294 404 L 263 404 C 253 404 247 409 244 416 C 247 423 253 428 263 428 L 294 428 Z" fill="#f3ceb3" stroke="#052049" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M 236 402 L 231 394 M 232 416 L 222 416 M 236 430 L 230 438" fill="none" stroke="#e61048" stroke-width="4" stroke-linecap="round"/>
+  <text x="360" y="423" font-size="20" font-weight="800" letter-spacing="1.6" fill="#29405d">HURTS WHEN TOUCHED</text>
+
+  <!-- footer action strip -->
+  <rect x="52" y="486" width="696" height="54" fill="#052049"/>
+  <g transform="translate(196,513) rotate(-40) scale(0.75)">
+    <path d="M -26 -4 C -26 -16 26 -16 26 -4 L 26 8 C 26 14 16 14 16 8 L 16 -2 C 7 -7 -7 -7 -16 -2 L -16 8 C -16 14 -26 14 -26 8 Z" fill="#ffffff"/>
+  </g>
+  <text x="242" y="520" font-size="20" font-weight="800" letter-spacing="1.6" fill="#ffffff">CALL YOUR SURGEON OR CLINIC</text>
+
+  <!-- status tag -->
+  <rect x="462" y="554" width="312" height="26" fill="#fbfaf5" stroke="#052049" stroke-width="2"/>
+  <text x="618" y="572" text-anchor="middle" font-size="11" font-weight="800" letter-spacing="0.4" fill="#052049">DRAFT ARTWORK · PENDING CLINICAL REVIEW</text>
+</svg>

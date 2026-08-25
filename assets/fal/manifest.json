@@ -1,0 +1,41 @@
+{
+  "generatedAt": "2026-08-22T23:43:36.044Z",
+  "records": [
+    {
+      "id": "orientation",
+      "file": "assets/fal/dr-hoots-orientation.png",
+      "model": "fal-ai/flux-2/edit",
+      "requestId": "01a02bdb-0247-7eb1-bf87-14a7adbfe934",
+      "seed": 48117,
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Keep the owl's exact face, body, feather texture, teal scrub top, and gold pin. Repose the same clay character waist-up, centered, facing camera, gently presenting a small blank navy card with three connected yellow dots. Pale-blue studio background. No text, logos, medical tools, or extra limbs.",
+      "source": "assets/dr-hoots-clay.png",
+      "status": "source_candidate"
+    },
+    {
+      "id": "showering",
+      "file": "assets/fal/dr-hoots-showering.png",
+      "model": "fal-ai/flux-2/edit",
+      "requestId": "01a02bdb-1e1e-7100-a83b-00f84866d07a",
+      "seed": 48129,
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Keep the owl's exact face, body, feather texture, teal scrub top, and gold pin. Repose the same clay character waist-up holding a small navy umbrella; three water drops fall beside, not onto, the head. Pale-blue studio background. No stethoscope, buttons, text, logos, or extra limbs.",
+      "source": "assets/dr-hoots-clay.png",
+      "status": "rejected_character_drift"
+    },
+    {
+      "id": "activation",
+      "file": "assets/fal/dr-hoots-activation.png",
+      "model": "fal-ai/flux-2/edit",
+      "requestId": "01a02bdb-a43c-7de1-be26-91a2b447395e",
+      "seed": 48143,
+      "width": 1024,
+      "height": 1024,
+      "prompt": "Keep the owl's exact face, body, feather texture, teal scrub top, and gold pin. Repose the same clay character waist-up holding a blank white clay calendar with four raised squares and one navy sound-wave symbol. Deep-navy studio background. No text, logos, medical devices, or extra limbs.",
+      "source": "assets/dr-hoots-clay.png",
+      "status": "rejected_character_drift"
+    }
+  ]
+}
