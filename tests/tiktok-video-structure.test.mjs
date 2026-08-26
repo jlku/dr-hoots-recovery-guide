@@ -29,6 +29,17 @@ test("the TikTok page and homepage describe the complete cut", async () => {
 
   assert.match(page, /href="index\.html#variations">← All experiments<\/a>/);
   assert.match(page, /Download complete MP4/);
+  assert.doesNotMatch(page, /Private working concept|not an official UCSF website/);
   assert.match(homepage, /preview-duration">▶ 2:03<\/span>/);
   assert.match(readme, /complete three-part vertical-video experiment/i);
+});
+
+test("the TikTok layout keeps the full vertical frame in the mobile viewport", async () => {
+  const html = await readFile(resolve(root, "tiktok-video.html"), "utf8");
+
+  assert.match(html, /class="player-info"/);
+  assert.match(html, /class="video-column"/);
+  assert.match(html, /grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
+  assert.match(html, /100svh - 176px/);
+  assert.match(html, /\.chapter-title \{ display: none; \}/);
 });

@@ -45,7 +45,20 @@
     main { padding: 24px 0 34px; }
 
     .player {
-      width: min(100%, 430px);
+      display: grid;
+      grid-template-columns: minmax(0, 430px) minmax(280px, 360px);
+      grid-template-areas: "video info";
+      align-items: start;
+      gap: clamp(28px, 5vw, 64px);
+      width: min(100%, 854px);
+      margin-inline: auto;
+    }
+
+    .player-info { grid-area: info; padding-top: 6px; }
+
+    .video-column {
+      grid-area: video;
+      width: min(100%, 430px, calc((100svh - 132px) * 9 / 16));
       margin-inline: auto;
     }
 
@@ -61,6 +74,8 @@
       color: var(--muted);
       font-size: 15px;
     }
+
+    .lede-short { display: none; }
 
     .phone {
       overflow: hidden;
@@ -126,15 +141,50 @@
 
     .actions span { color: var(--muted); }
 
-    footer {
-      padding: 26px 0;
-      background: var(--wash);
-      color: var(--muted);
-      font-size: 14px;
-    }
-
     @media (max-width: 760px) {
       :root { --content: min(100% - 32px, 1020px); }
+
+      .site-header { padding: 10px 0; border-bottom-width: 4px; }
+      .site-header a { font-size: 14px; }
+      main { padding: 10px 0 24px; }
+
+      .player {
+        grid-template-columns: 1fr;
+        grid-template-areas: "info" "video";
+        gap: 8px;
+        width: 100%;
+      }
+
+      .player-info { padding-top: 0; }
+      h1 { font-size: 25px; }
+      .lede { margin: 3px 0 8px; font-size: 13px; }
+      .lede-long { display: none; }
+      .lede-short { display: inline; }
+
+      .chapters {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-bottom: 0;
+      }
+
+      .chapter {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 0;
+        min-height: 42px;
+        padding: 4px 2px;
+        text-align: center;
+      }
+
+      .chapter-part { font-size: 10px; }
+      .chapter-title { display: none; }
+      .chapter-time { font-size: 10px; }
+
+      .video-column {
+        width: min(100%, calc((100svh - 176px) * 9 / 16));
+      }
+
+      .actions { margin-top: 8px; font-size: 12px; }
     }
   </style>
 </head>
@@ -142,18 +192,21 @@
   <header class="site-header"><div class="wrap"><a href="index.html#variations">← All experiments</a></div></header>
   <main class="wrap">
     <div class="player">
-      <h1>TikTok-style Dr. Hoots guide</h1>
-      <p class="lede">The complete recovery guide in three short-form sections · 2:03 total.</p>
-      <nav class="chapters" aria-label="Video chapters">
-        <button class="chapter" type="button" data-start="0" aria-pressed="true"><span class="chapter-part">Part 1</span><span class="chapter-title">Care for the surgery site</span><span class="chapter-time">0:00</span></button>
-        <button class="chapter" type="button" data-start="42.4" aria-pressed="false"><span class="chapter-part">Part 2</span><span class="chapter-title">When to call</span><span class="chapter-time">0:42</span></button>
-        <button class="chapter" type="button" data-start="95.12" aria-pressed="false"><span class="chapter-part">Part 3</span><span class="chapter-title">First programming visits</span><span class="chapter-time">1:35</span></button>
-      </nav>
-      <div class="phone"><video controls playsinline preload="metadata" poster="assets/video/dr-hoots-full-guide-native-paced-poster.png"><source src="assets/video/dr-hoots-full-guide-native-paced.mp4" type="video/mp4">Your browser does not support the video element.</video></div>
-      <div class="actions"><a href="assets/video/dr-hoots-full-guide-native-paced.mp4" download>Download complete MP4</a><span>Not patient-ready</span></div>
+      <div class="player-info">
+        <h1>TikTok-style Dr. Hoots guide</h1>
+        <p class="lede"><span class="lede-long">The complete recovery guide in three short-form sections · </span><span class="lede-short">Three parts · </span>2:03 total.</p>
+        <nav class="chapters" aria-label="Video chapters">
+          <button class="chapter" type="button" data-start="0" aria-pressed="true" aria-label="Part 1: Care for the surgery site, starts at 0 minutes"><span class="chapter-part">Part 1</span><span class="chapter-title">Care for the surgery site</span><span class="chapter-time">0:00</span></button>
+          <button class="chapter" type="button" data-start="42.4" aria-pressed="false" aria-label="Part 2: When to call, starts at 42 seconds"><span class="chapter-part">Part 2</span><span class="chapter-title">When to call</span><span class="chapter-time">0:42</span></button>
+          <button class="chapter" type="button" data-start="95.12" aria-pressed="false" aria-label="Part 3: First programming visits, starts at 1 minute 35 seconds"><span class="chapter-part">Part 3</span><span class="chapter-title">First programming visits</span><span class="chapter-time">1:35</span></button>
+        </nav>
+      </div>
+      <div class="video-column">
+        <div class="phone"><video controls playsinline preload="metadata" poster="assets/video/dr-hoots-full-guide-native-paced-poster.png"><source src="assets/video/dr-hoots-full-guide-native-paced.mp4" type="video/mp4">Your browser does not support the video element.</video></div>
+        <div class="actions"><a href="assets/video/dr-hoots-full-guide-native-paced.mp4" download>Download complete MP4</a><span>Not patient-ready</span></div>
+      </div>
     </div>
   </main>
-  <footer><div class="wrap">Private working concept · not an official UCSF website.</div></footer>
   <script>
     const video = document.querySelector("video");
     const chapters = [...document.querySelectorAll(".chapter")];
