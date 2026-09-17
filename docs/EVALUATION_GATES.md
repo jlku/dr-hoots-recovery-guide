@@ -1,25 +1,23 @@
-# Dr. Hoots evaluation gates
+# Evaluation gates
+
+> The Dr. Hoots character system, host clips, and mascot-guided formats were retired on 2026-09-17. Character gates below were removed; clinical-content gates are unchanged and still apply to the v2 segmented guide.
 
 No stage advances because an artifact merely exists. The relevant independent evaluator must return `PASS`; a `FAIL` includes required repairs and is re-run after those repairs.
 
 ## Stage order
 
 1. Concept baseline → design evaluator
-2. Dr. Hoots character sheet and motion test → design evaluator
-3. Canonical clinical modules → surgical-content evaluator
-4. Media-variation build approach → both evaluators
-5. Finished media derivatives → design evaluator plus surgical drift check
-
-The surgical-content evaluator checks source fidelity and risk. It does not substitute for the partner surgeon and cannot grant clinical approval.
+2. Canonical clinical modules → surgical-content evaluator
+3. Media build approach → both evaluators
+4. Finished media derivatives → design evaluator plus surgical drift check
 
 ## Gate record
 
 - Concept baseline: `PASS` — independent design evaluator, 2026-08-22.
-- Character sheet and motion test: `PASS` — independent design evaluator, 2026-08-22. Active assets are turnaround v1, expressions v1, gestures v3, and layered clay motion rig v4. Rejected generations remain recorded in the character manifest and are not rendered.
 - Canonical clinical modules: `EVIDENCE-DRAFT PASS` — independent surgical-content evaluator, 2026-08-22. Authorized for private concept prototypes only; current EHR AVS and partner-surgeon approval remain required before patient use.
 - Previous three-shell media approach: `SUPERSEDED` — the 2026-08-22 design/media and evidence-draft passes remain historical evidence for the shared scene contract, but no longer describe the current format structure.
 - Current two-shell consolidation: `PENDING RE-EVALUATION` — the former linear and chaptered video shells are now one mascot-guided video that plays through by default and offers optional chapter navigation. Scrollytelling remains the second shell. The underlying clinical propositions and illustration are unchanged, but the revised interaction and hierarchy still require a fresh design/media and patient-usability gate.
-- FAL Dr. Hoots host clip v3: `DESIGN-VIDEO PASS` — independent design evaluator, 2026-08-23. Identity, anatomy, scrubs, pin, and background remain stable through a calm blink/head tilt; start and end frames match and the motion carries no clinical meaning. The approved source still is the reduced-motion fallback. V1 and v2 remain explicitly rejected in the video manifest.
+- Dr. Hoots character system and host clips: `RETIRED` 2026-09-17. The v2 segmented guide supersedes the mascot-guided formats.
 - Programming-visit v13 regression: `SUPERSEDED FORMAT PASS` — the 2026-08-23 linear, chaptered, scrollytelling, final design/media, and final surgical-content passes remain evidence for the source content and media assets. They do not approve the current two-shell interaction. This was simulated evaluation for private critique, not patient research or clinical approval.
 
 ## Surgical source hierarchy
@@ -117,19 +115,6 @@ Fail for presenting peroxide as universal, adding activity or medication advice,
 - Every repository link and asset works, and the review URL renders the repository version.
 - Clinical examples are source-traced or explicitly marked unapproved.
 
-### Character sheet and motion test
-
-- Front, three-quarter, and profile views preserve head shape, eye spacing, beak, brow feathers, proportions, scrubs, pocket, and pin.
-- Silhouette remains recognizable at thumbnail size and in grayscale.
-- Expressions cover neutral, attentive, reassuring, and concerned without becoming alarmist, comic, or babyish.
-- Gestures cover pointing, holding, stop/do-not, and directing attention without obscuring instructions.
-- No extra limbs, malformed hands, clothing drift, corrupted pins, generated lettering, or fake logos.
-- Camera, clay texture, lighting, background, and color treatment are repeatable and documented.
-- Every asset records its source, prompt, seed, version, and review status.
-- Dr. Hoots directs attention; copy and diagrams carry clinical meaning.
-- Motion test is one action: neutral pose → clear gesture → readable hold → neutral rest.
-- No morphing, texture crawl, pupil jitter, clothing drift, abrupt cuts, decorative loops, or rapid flashes.
-- Static and reduced-motion equivalents exist. Narrated motion includes captions, transcript, and description of essential visuals.
 
 ### Media variations
 
@@ -137,14 +122,13 @@ Shared requirements:
 
 - All formats consume the same versioned canonical modules.
 - Clinical actions, warnings, numbers, terminology, and order do not drift.
-- UCSF-derived interface rules, diagrams, and character rules are shared; only pacing, navigation, and motion vary.
+- UCSF-derived interface rules and diagrams are shared; only pacing, navigation, and motion vary.
 - Critical information is available without color, sound, animation, or image interpretation.
 - Mobile, keyboard, screen-reader order, 200% zoom, visible focus, contrast, and reduced motion pass.
 
 Format requirements:
 
-- Mascot-guided video: start, pause, seek, replay, volume, progress, speed, synchronized full-width captions, and complete verbal narration or audio description; target under three minutes. It plays through by default, and its optional patient-language chapter rail shows current state, completion, and duration without duplicating navigation inside the video.
-- Mascot placement: In diagram-led scenes, Dr. Hoots identifies the speaker beside the caption while the clinical illustration owns the main stage. In the activation healing and follow-up host-led pilot scenes, Dr. Hoots may occupy the main stage while visibly speaking only when the duplicate caption avatar is suppressed, the synchronized caption carries the complete proposition, and gestures carry no clinical meaning.
+- Segmented narrated video (v2): captions synchronized to narration, no generated video, every segment 35 seconds or less, gates by artifact class as listed in the v2 design spec.
 - Scroll guide: semantic clinical text, no scroll-jacking, correct reading order without animation, equivalent diagram text, and no critical instruction dependent on pinning, parallax, or timing.
 
 ### Automatic design failures
@@ -152,8 +136,6 @@ Format requirements:
 - Fake UCSF chrome, unapproved logos, or implied official ownership
 - Oversized editorial heroes, decorative cards, gradients, shadows, pills, or meta-copy that compete with instructions
 - Ambiguous generated medical imagery or fake generated text
-- Character drift in face, proportions, scrubs, pin, limbs, or texture
-- Medical meaning carried only by Dr. Hoots's expression or gesture
 - Different clinical propositions, source-claim scope, numbers, or thresholds across formats, including wording changes without a reviewed adaptation record
 - Text embedded only in images
 - Contrast below WCAG AA, missing keyboard/focus/caption/transcript/alternative/reduced-motion support

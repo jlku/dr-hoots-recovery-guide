@@ -1,6 +1,8 @@
-# Dr. Hoots recovery-guide experiments
+# Recovery-guide experiments
 
-An open prototype exploring how the same cochlear-implant recovery information might work as a mascot-guided video, a short vertical video, or a scroll-driven visual guide.
+> The Dr. Hoots mascot direction was retired on 2026-09-17. Its media, pages, and host-video pipeline were removed; the segmented, narrated guide specified in `docs/superpowers/specs/2026-09-17-avs-v2-segmented-guide-design.md` replaces it.
+
+An open prototype exploring how cochlear-implant recovery information can work as short narrated video segments and as a scroll-driven, printable safety-card guide.
 
 > [!IMPORTANT]
 > This is an independent design and engineering study. It is **not** an official UCSF project, a clinically approved patient resource, or medical advice. All clinical content and instructional visuals remain drafts until reviewed by an authorized clinician and institution.
@@ -8,12 +10,9 @@ An open prototype exploring how the same cochlear-implant recovery information m
 ## What to look at first
 
 1. Open the project locally and start at `index.html`.
-2. Compare the three delivery directions:
-   - **Mascot-guided Watch prototype** — `variations.html?mode=watch`
-   - **Complete three-part vertical-video experiment** — `tiktok-video.html`
-   - **14-card scroll-driven safety guide** — `preview/animatic-scroll.html`
-   - **Two-sheet printable PDF** — `output/pdf/airline-safety-card-deck-prototype.pdf`
-3. Read [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) before treating any surface as finished. It separates what works technically from what still needs design, accessibility, usability, and clinical review.
+2. Read the scroll-driven safety-card guide at `preview/animatic-scroll.html` and the printable PDF it pairs with.
+3. Read the v2 design spec in `docs/superpowers/specs/` and the segment data in `content/segments/`; the segmented player arrives in the next slices.
+4. Read [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) before treating any surface as finished. It separates what works technically from what still needs design, accessibility, usability, and clinical review.
 
 ## Quick start
 
@@ -43,13 +42,13 @@ That command validates canonical content, medium-specific copy mappings, media p
 | `content/canonical/` | Source of truth for clinical propositions, claims, source status, and review status |
 | `content/adaptations/` | Format-specific wording mapped back to canonical sentence and proposition IDs |
 | `content/scenes/` | Shared scene model used by the delivery experiments |
-| `assets/` | Shared interface, character, audio, video, and illustration assets plus manifests |
-| `preview/` | Standalone Watch, scrollytelling, card, and pamphlet prototypes |
+| `assets/` | Shared interface, audio, caption, and illustration assets plus manifests |
+| `preview/` | Standalone scrollytelling, card, and pamphlet prototypes |
 | `scripts/` | Validators and reproducible media/production tooling |
 | `tests/` | Deterministic content, production-boundary, rendering-contract, and evaluation tests |
-| `docs/` | Evaluation gates, current status, media rules, generation notes, and historical plans |
+| `docs/` | Evaluation gates, current status, the image review loop, and the v2 spec and plans |
 
-The central architectural rule is that presentation formats may change pacing, grouping, navigation, and visual treatment, but they may not silently change clinical meaning. Generated Dr. Hoots motion is nonclinical presentation only.
+The central architectural rule is that presentation formats may change pacing, grouping, navigation, and visual treatment, but they may not silently change clinical meaning.
 
 ## Building on it
 

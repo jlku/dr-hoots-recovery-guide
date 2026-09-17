@@ -10,14 +10,14 @@ function waitForReady(child) {
     const timeout = setTimeout(() => reject(new Error("static server did not start")), 5_000);
     child.once("error", reject);
     child.stdout.on("data", (chunk) => {
-      if (!chunk.toString().includes("Dr. Hoots prototype")) return;
+      if (!chunk.toString().includes("Recovery guide prototype")) return;
       clearTimeout(timeout);
       resolveReady();
     });
   });
 }
 
-test("the local server supports byte-range video seeking", async () => {
+test("the local server supports byte-range media seeking", async () => {
   const port = 43_000 + (process.pid % 1_000);
   const child = spawn(process.execPath, ["scripts/serve.mjs"], {
     cwd: root,
@@ -27,7 +27,7 @@ test("the local server supports byte-range video seeking", async () => {
 
   try {
     await waitForReady(child);
-    const videoUrl = `http://127.0.0.1:${port}/assets/video/dr-hoots-full-guide-native-paced.mp4`;
+    const videoUrl = `http://127.0.0.1:${port}/assets/audio/v2/en/incision-day2.mp3`;
     const cases = [
       { range: "bytes=0-99", status: 206, length: "100", contentRange: /^bytes 0-99\/\d+$/ },
       { range: "bytes=100-", status: 206, contentRange: /^bytes 100-\d+\/\d+$/ },

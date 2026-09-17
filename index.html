@@ -133,36 +133,6 @@
       outline-offset: 5px;
     }
 
-    .tiktok-video-preview {
-      position: relative;
-      aspect-ratio: 869 / 591;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px;
-      background: #071b36;
-    }
-
-    .tiktok-video-preview img {
-      width: auto;
-      height: 100%;
-      aspect-ratio: 9 / 16;
-      object-fit: cover;
-      box-shadow: 0 16px 38px rgba(0, 0, 0, .35);
-    }
-
-    .preview-duration {
-      position: absolute;
-      right: 18px;
-      bottom: 18px;
-      padding: 7px 10px;
-      background: #f6df46;
-      color: #052049;
-      font-size: 13px;
-      font-weight: 800;
-      letter-spacing: .03em;
-    }
-
     .variation-number {
       display: block;
       margin-bottom: 20px;
@@ -218,22 +188,12 @@
 
   <main class="wrap">
     <h1>Alternatives to text-only after-visit summaries</h1>
-    <p class="page-lede">Three experimental formats for the same recovery information: guided video, short-form video, and an illustrated guide available as a scrolling story or two-sheet PDF.</p>
+    <p class="page-lede">One experimental format for the recovery information today: an illustrated safety-card guide available as a scrolling story or two-sheet PDF. The segmented, narrated video guide that replaces the retired experiments is being built next.</p>
 
-    <section id="variations" aria-label="Three variations">
+    <section id="variations" aria-label="Variations">
       <ol class="variation-list">
         <li class="variation">
-          <div class="variation-copy"><span class="variation-number">01</span><h3>Mascot-guided video</h3><p>Tests whether a friendly narrator and optional chapters make a complete recovery explanation easier to follow and revisit.</p></div>
-          <a class="thumbnail-link" href="variations.html?mode=watch" aria-label="Open the mascot-guided video"><figure class="variation-preview"><img src="assets/homepage-mascot-guided-video.png" alt="Preview of the Dr. Hoots mascot-guided recovery video"></figure></a>
-          <a class="variation-link" href="variations.html?mode=watch">Open the mascot-guided video →</a>
-        </li>
-        <li class="variation">
-          <div class="variation-copy"><span class="variation-number">02</span><h3>TikTok-style video</h3><p>Tests whether short, captioned Dr. Hoots videos—one recovery idea at a time—make instructions easier to absorb in sequence.</p></div>
-          <a class="thumbnail-link" href="tiktok-video.html" aria-label="Open the complete three-part TikTok-style Dr. Hoots video"><figure class="variation-preview tiktok-video-preview"><img src="assets/video/dr-hoots-full-guide-native-paced-poster.png" alt="Dr. Hoots in a vertical TikTok-style video with outlined captions and yellow instruction callouts"><span class="preview-duration">▶ 2:03</span></figure></a>
-          <a class="variation-link" href="tiktok-video.html">Open the TikTok-style video →</a>
-        </li>
-        <li class="variation">
-          <div class="variation-copy"><span class="variation-number">03</span><h3>Airline safety-style illustrated guide</h3><p>Tests whether we can generate accurate recovery illustrations and use them in a safety-card system people can scan and remember on screen or in a take-home PDF.</p></div>
+          <div class="variation-copy"><span class="variation-number">01</span><h3>Airline safety-style illustrated guide</h3><p>Tests whether we can generate accurate recovery illustrations and use them in a safety-card system people can scan and remember on screen or in a take-home PDF.</p></div>
           <a class="thumbnail-link" href="output/pdf/airline-safety-card-deck-prototype.pdf" aria-label="Open the two-sheet airline safety-style PDF guide"><figure class="variation-preview pdf-preview"><img src="assets/homepage-airline-pdf-guide.png" alt="Preview of the first sheet in the two-sheet airline safety-style PDF guide"></figure></a>
           <div class="variation-links"><a class="variation-link" href="preview/animatic-scroll.html">Open the scrolling guide →</a><a class="variation-link" href="output/pdf/airline-safety-card-deck-prototype.pdf">Download the two-sheet PDF →</a></div>
         </li>
@@ -246,7 +206,6 @@
         <li><a href="baseline.html">Recovery-step baseline</a></li>
         <li><a href="design-system.html">Shared design system</a></li>
         <li><a href="design-system.html#diagrams">Safety-card diagram system</a></li>
-        <li><a href="character-exploration.html">Dr. Hoots character exploration</a></li>
       </ul>
     </section>
   </main>
