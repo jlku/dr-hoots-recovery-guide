@@ -84,7 +84,7 @@ test("reservations count against the cap and refuse to cross it", () => {
 
 test("validation catches duplicates, bad statuses, and an overspent ledger", () => {
   const ledger = fixture(0.05);
-  ledger.entries.push({ id: "a", status: "completed", estimate_usd: 0.03, actual_usd: null }, { id: "a", status: "weird", estimate_usd: 0.03, actual_usd: null });
+  ledger.entries.push({ id: "a", status: "completed", estimate_usd: 0.03, actual_usd: null }, { id: "a", status: "completed", estimate_usd: 0.03, actual_usd: null }, { id: "b", status: "weird", estimate_usd: 0.03, actual_usd: null });
   const result = validateLedger(ledger);
   assert.match(result.errors.join("\n"), /duplicate ledger entry a/);
   assert.match(result.errors.join("\n"), /bad status weird/);
