@@ -71,3 +71,10 @@ test("protected digits must survive translation, with a comma decimal allowed", 
   unknown.sentences["zz.99"] = "extra";
   assert.match(validateLanguagePack({ pack: unknown, canonical: bundle.canonical, segments: bundle.segments }).errors.join("\n"), /unknown sentence zz\.99/);
 });
+
+test("the page label keys are required in every pack", () => {
+  for (const key of ["ui.seek", "ui.coming", "ui.language_fallback", "ui.not_reviewed", "ui.replay", "ui.transcript", "ui.review_status"]) {
+    assert.ok(requiredLabelKeys(bundle.segments).includes(key), key);
+    assert.ok(englishPack.labels[key]?.trim(), key);
+  }
+});

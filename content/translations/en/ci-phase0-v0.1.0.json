@@ -32,7 +32,19 @@
     "ui.card": "Printable card",
     "ui.notice": "Private prototype. Not for patient use.",
     "ui.pending_clinician_text": "Medication details are pending your surgeon's wording.",
-    "ui.follow_up_default": "about two weeks after surgery"
+    "ui.follow_up_default": "about two weeks after surgery",
+    "ui.seek": "Seek",
+    "ui.coming": "coming soon",
+    "ui.language_fallback": "This language is not available yet. Showing English.",
+    "ui.not_reviewed": "Not yet reviewed",
+    "ui.replay": "Replay",
+    "ui.transcript": "Transcript",
+    "ui.review_status": "Review status"
   },
-  "review": { "kind": "source", "label": "English source text", "date": "2026-09-17", "receipt": null }
+  "review": {
+    "kind": "source",
+    "label": "English source text",
+    "date": "2026-09-17",
+    "receipt": null
+  }
 }
