@@ -11,7 +11,7 @@ An open prototype exploring how cochlear-implant recovery information can work a
 
 1. Open the project locally and start at `index.html`.
 2. Read the scroll-driven safety-card guide at `preview/animatic-scroll.html` and the printable PDF it pairs with.
-3. Read the v2 design spec in `docs/superpowers/specs/` and the segment data in `content/segments/`; the segmented player arrives in the next slices.
+3. Open the segmented narrated guide at `guide/index.html`: five short videos with captions and a contents page, English only for now, driven by the segment data in `content/segments/`. The design spec lives in `docs/superpowers/specs/`.
 4. Read [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md) before treating any surface as finished. It separates what works technically from what still needs design, accessibility, usability, and clinical review.
 
 ## Quick start

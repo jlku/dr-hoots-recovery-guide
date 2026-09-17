@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "ci-phase0",
+  "artifact_version": "0.1.0",
+  "status": "unverified_draft",
+  "patient_use": false,
+  "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "frames": {
+    "frame-01": { "kind": "svg", "src": "preview/assets/cards/frame-01.svg", "alt": "Day 2: remove the head dressing, then check behind the ear for tape." },
+    "frame-0203-paths": { "kind": "svg", "src": "preview/assets/cards/frame-0203-paths.svg", "alt": "Two paths. Tape present: keep the area dry until three days after surgery and do not clean it. No tape: clean the incision edges gently twice a day with equal parts hydrogen peroxide and distilled water, then apply antibiotic ointment." },
+    "frame-0405-milestones": { "kind": "svg", "src": "preview/assets/cards/frame-0405-milestones.svg", "alt": "Three days after surgery you may shower and wash your hair. The wound check and ear exam are about two weeks after surgery. The stitches dissolve." },
+    "frame-medication-pending": { "kind": "text", "title_key": "ui.pending_clinician_text" },
+    "frame-06-redness": { "kind": "svg", "src": "preview/assets/cards/frame-06-redness.svg", "alt": "Call your surgeon or clinic if all three signs are present: the incision is red and swollen, it does not get better over one to two days, and it hurts when touched." },
+    "frame-0710-anylist": { "kind": "svg", "src": "preview/assets/cards/frame-0710-anylist.svg", "alt": "Call for any of these: a fever above 101.5 degrees Fahrenheit; swelling or fluid behind the ear; a headache, light sensitivity, or excessive lethargy; or any wound-care question or concern." },
+    "frame-11-numbers": { "kind": "svg", "src": "preview/assets/cards/frame-11-numbers.svg", "alt": "Routine questions: leave a message on the nursing line at 415-353-2148 and expect a call within 12 hours; if no one calls, call again. Emergency: call 415-476-1000 and ask for the Otolaryngology resident on call." },
+    "frame-12-healing": { "kind": "text" },
+    "frame-13-programming": { "kind": "image", "src": "assets/illustrations/ci-activation-programming-safety-card-v1.png", "alt": "A hearing specialist uses a laptop to program an adult patient's external behind-the-ear speech processor, with a close-up of the processor and adjustment controls." },
+    "frame-14-follow-up": { "kind": "text" }
+  }
+}

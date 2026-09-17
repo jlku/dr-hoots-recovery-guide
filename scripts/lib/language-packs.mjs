@@ -14,7 +14,24 @@ export const UI_LABEL_KEYS = Object.freeze([
   "ui.card",
   "ui.notice",
   "ui.pending_clinician_text",
-  "ui.follow_up_default"
+  "ui.follow_up_default",
+  "ui.seek",
+  "ui.coming",
+  "ui.language_fallback",
+  "ui.not_reviewed",
+  "ui.replay",
+  "ui.transcript",
+  "ui.review_status",
+  "ui.call_help",
+  "ui.nursing_line",
+  "ui.emergency",
+  "ui.follow_along",
+  "ui.chapter",
+  "ui.of",
+  "ui.previous_chapter",
+  "ui.next_chapter",
+  "ui.print_card",
+  "ui.captions"
 ]);
 
 export const TRANSLATION_STATUSES = Object.freeze(["machine_draft", "ai_reviewed", "human_reviewed"]);
