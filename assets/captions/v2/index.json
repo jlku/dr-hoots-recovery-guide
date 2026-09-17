@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "generated_by": "scripts/build-segment-media.mjs",
+  "patient_use": false,
+  "entries": [
+    {
+      "segment_id": "seg/incision-day2",
+      "number": 1,
+      "language": "en",
+      "timeline": "assets/captions/v2/en/incision-day2.timeline.json",
+      "captions": "assets/captions/v2/en/incision-day2.vtt",
+      "audio": "assets/audio/v2/en/incision-day2.mp3",
+      "duration_seconds": 28.76,
+      "narration_seconds": 25.76
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 2,
+      "language": "en",
+      "timeline": "assets/captions/v2/en/next-two-weeks.timeline.json",
+      "captions": "assets/captions/v2/en/next-two-weeks.vtt",
+      "audio": "assets/audio/v2/en/next-two-weeks.mp3",
+      "duration_seconds": 13.52,
+      "narration_seconds": 11.12
+    },
+    {
+      "segment_id": "seg/when-to-call",
+      "number": 3,
+      "language": "en",
+      "timeline": "assets/captions/v2/en/when-to-call.timeline.json",
+      "captions": "assets/captions/v2/en/when-to-call.vtt",
+      "audio": "assets/audio/v2/en/when-to-call.mp3",
+      "duration_seconds": 31.72,
+      "narration_seconds": 28.72
+    },
+    {
+      "segment_id": "seg/who-to-call",
+      "number": 4,
+      "language": "en",
+      "timeline": "assets/captions/v2/en/who-to-call.timeline.json",
+      "captions": "assets/captions/v2/en/who-to-call.vtt",
+      "audio": "assets/audio/v2/en/who-to-call.mp3",
+      "duration_seconds": 26.4,
+      "narration_seconds": 24
+    },
+    {
+      "segment_id": "seg/programming-visits",
+      "number": 5,
+      "language": "en",
+      "timeline": "assets/captions/v2/en/programming-visits.timeline.json",
+      "captions": "assets/captions/v2/en/programming-visits.vtt",
+      "audio": "assets/audio/v2/en/programming-visits.mp3",
+      "duration_seconds": 26.64,
+      "narration_seconds": 23.04
+    }
+  ]
+}

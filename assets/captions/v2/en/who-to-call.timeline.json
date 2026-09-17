@@ -1,0 +1,342 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/who-to-call",
+  "number": 4,
+  "language": "en",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/en/who-to-call.mp3",
+  "beats": [
+    {
+      "id": "beat/numbers",
+      "frame": "frame-11-numbers",
+      "sentence_ids": [
+        "call.06",
+        "call.07",
+        "call.07a",
+        "call.08"
+      ],
+      "start": 1.5,
+      "end": 25.5,
+      "speech_seconds": 24,
+      "record_id": "call-numbers",
+      "manifest": "assets/audio/draft/manifest.json",
+      "source_audio": "assets/audio/draft/call-numbers.mp3",
+      "text": "For routine questions, leave a message on the nursing line: 415-353-2148. You should get a call back within 12 hours — if no one calls, call again. For an emergency, call 415-476-1000 and ask for the Otolaryngology resident on call."
+    }
+  ],
+  "words": [
+    {
+      "text": "For",
+      "start": 1.5,
+      "end": 1.58,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "routine",
+      "start": 1.65,
+      "end": 2.14,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "questions,",
+      "start": 2.196,
+      "end": 3.02,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "leave",
+      "start": 3.06,
+      "end": 3.26,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "a",
+      "start": 3.3,
+      "end": 3.34,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "message",
+      "start": 3.39,
+      "end": 3.74,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "on",
+      "start": 3.793,
+      "end": 3.9,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "the",
+      "start": 3.92,
+      "end": 3.98,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "nursing",
+      "start": 4.03,
+      "end": 4.38,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "line:",
+      "start": 4.46,
+      "end": 5.5,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "415-353-2148.",
+      "start": 5.66,
+      "end": 9.98,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "You",
+      "start": 10.22,
+      "end": 10.94,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "should",
+      "start": 10.963,
+      "end": 11.1,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "get",
+      "start": 11.14,
+      "end": 11.26,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "a",
+      "start": 11.34,
+      "end": 11.42,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "call",
+      "start": 11.452,
+      "end": 11.58,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "back",
+      "start": 11.644,
+      "end": 11.9,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "within",
+      "start": 11.934,
+      "end": 12.14,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "12",
+      "start": 12.3,
+      "end": 12.54,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "hours",
+      "start": 12.633,
+      "end": 13.1,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "—",
+      "start": 13.42,
+      "end": 13.74,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "if",
+      "start": 13.793,
+      "end": 13.9,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "no",
+      "start": 13.98,
+      "end": 14.14,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "one",
+      "start": 14.16,
+      "end": 14.22,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "calls,",
+      "start": 14.313,
+      "end": 15.02,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "call",
+      "start": 15.068,
+      "end": 15.26,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "again.",
+      "start": 15.34,
+      "end": 15.82,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "For",
+      "start": 16.08,
+      "end": 16.86,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "an",
+      "start": 16.913,
+      "end": 17.02,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "emergency,",
+      "start": 17.084,
+      "end": 17.98,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "call",
+      "start": 18.044,
+      "end": 18.3,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "415-476-1000",
+      "start": 18.54,
+      "end": 21.98,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "and",
+      "start": 22.12,
+      "end": 22.54,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "ask",
+      "start": 22.62,
+      "end": 22.86,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "for",
+      "start": 22.88,
+      "end": 22.94,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "the",
+      "start": 22.96,
+      "end": 23.02,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "Otolaryngology",
+      "start": 23.1,
+      "end": 24.14,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "resident",
+      "start": 24.193,
+      "end": 24.62,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "on",
+      "start": 24.7,
+      "end": 24.86,
+      "beat": "beat/numbers"
+    },
+    {
+      "text": "call.",
+      "start": 24.956,
+      "end": 25.5,
+      "beat": "beat/numbers"
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 3.98,
+      "text": "For routine questions, leave a message on the",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-02",
+      "start": 4.03,
+      "end": 5.5,
+      "text": "nursing line:",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-03",
+      "start": 5.66,
+      "end": 9.98,
+      "text": "415-353-2148.",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-04",
+      "start": 10.22,
+      "end": 12.54,
+      "text": "You should get a call back within 12",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-05",
+      "start": 12.633,
+      "end": 13.74,
+      "text": "hours —",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-06",
+      "start": 13.793,
+      "end": 15.82,
+      "text": "if no one calls, call again.",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-07",
+      "start": 16.08,
+      "end": 22.94,
+      "text": "For an emergency, call 415-476-1000 and ask for",
+      "beat": "beat/numbers"
+    },
+    {
+      "id": "cue-08",
+      "start": 22.96,
+      "end": 25.5,
+      "text": "the Otolaryngology resident on call.",
+      "beat": "beat/numbers"
+    }
+  ],
+  "narration_seconds": 24,
+  "duration_seconds": 26.4,
+  "source_records": {
+    "call-numbers": "840135f59465ef186b4e3cc1bcce22c131e1339b01e81583dbd501c54df7097f"
+  }
+}
