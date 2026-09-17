@@ -1,0 +1,70 @@
+// tests/v2-anatomy.test.mjs
+import assert from "node:assert/strict";
+import { resolve } from "node:path";
+import test from "node:test";
+
+import { IMAGE_SIZES, acceptedRecord, loadContracts, planAttempt, recordCandidate, setStatus, validateAnatomy, validateContracts } from "../scripts/lib/anatomy.mjs";
+import { loadFrameManifest } from "../scripts/lib/frames.mjs";
+
+const root = resolve(import.meta.dirname, "..");
+const contracts = await loadContracts(root);
+const emptyManifest = { schema_version: "1.0", patient_use: false, records: [] };
+
+test("the repository contracts are valid and every edit names an existing parent", () => {
+  assert.deepEqual(validateContracts(contracts).errors, []);
+  assert.ok(contracts.assets.length >= 5);
+  for (const asset of contracts.assets.filter((item) => item.kind === "edit")) {
+    assert.ok(contracts.assets.some((item) => item.id === asset.parent && item.kind === "master"), asset.id);
+  }
+});
+
+test("attempt plans price the request, lock the seed per attempt, and refuse past the cap", () => {
+  const plan = planAttempt({ contracts, manifest: emptyManifest, assetId: "postauricular-base" });
+  assert.equal(plan.attempt, 1);
+  assert.equal(plan.model, "fal-ai/flux-2-pro");
+  assert.equal(plan.input.image_size, "landscape_4_3");
+  assert.equal(plan.input.output_format, "png");
+  assert.equal(plan.estimateUsd, 0.03);
+  assert.equal(plan.file, "assets/anatomy/postauricular-base-a1.png");
+  assert.equal(plan.ledgerId, "anatomy:postauricular-base:a1");
+  assert.throws(() => planAttempt({ contracts, manifest: emptyManifest, assetId: "postauricular-dressing" }), /needs an accepted postauricular-base/);
+  let manifest = emptyManifest;
+  const asset = contracts.assets.find((item) => item.id === "postauricular-base");
+  for (let attempt = 1; attempt <= asset.max_attempts; attempt += 1) {
+    const next = planAttempt({ contracts, manifest, assetId: "postauricular-base" });
+    assert.equal(next.input.seed, asset.seed + attempt - 1);
+    manifest = recordCandidate(manifest, next, { bytes: Buffer.from(`img${attempt}`), width: 1024, height: 768, requestId: `req-${attempt}`, seed: next.input.seed });
+  }
+  assert.throws(() => planAttempt({ contracts, manifest, assetId: "postauricular-base" }), /attempt cap/);
+  manifest = setStatus(manifest, "postauricular-base-a2", "accepted", "clean incision, no marks");
+  assert.equal(acceptedRecord(manifest, "postauricular-base").id, "postauricular-base-a2");
+  assert.throws(() => setStatus(manifest, "postauricular-base-a1", "accepted"), /already has an accepted record/);
+  const edit = planAttempt({ contracts, manifest, assetId: "postauricular-dressing" });
+  assert.equal(edit.model, "fal-ai/flux-2-pro/edit");
+  assert.equal(edit.parentFile, "assets/anatomy/postauricular-base-a2.png");
+  assert.equal(edit.estimateUsd, 0.04);
+  assert.throws(() => planAttempt({ contracts, manifest, assetId: "postauricular-base" }), /already has an accepted/);
+});
+
+test("contract validation rejects prompts that allow text, missing forbidden readings, and orphan edits", () => {
+  const broken = structuredClone(contracts);
+  broken.assets[0].prompt = "a head";
+  broken.assets[0].claim.forbidden = [];
+  broken.assets.push({ id: "orphan", kind: "edit", parent: "nope", image_size: "landscape_4_3", seed: 1, max_attempts: 2, prompt: "x, no text", claim: { sentence_ids: ["wc.01"], forbidden: ["y"] }, observers_must_recover: ["a", "b"] });
+  const text = validateContracts(broken).errors.join("\n");
+  assert.match(text, /must forbid text/);
+  assert.match(text, /claim\.forbidden must list/);
+  assert.match(text, /parent nope is not an asset/);
+  assert.ok(Object.keys(IMAGE_SIZES).includes("landscape_4_3"));
+});
+
+test("anatomy validation ties frames to accepted records with matching hashes", async () => {
+  const frames = await loadFrameManifest(root);
+  const manifest = { schema_version: "1.0", patient_use: false, records: [{ id: "postauricular-base-a1", asset_id: "postauricular-base", attempt: 1, file: "assets/anatomy/missing.png", sha256: "0".repeat(64), width: 1024, height: 768, status: "accepted" }] };
+  const withUse = structuredClone(frames);
+  withUse.frames["frame-01"] = { kind: "composite", alt: "x", layers: { base: "assets/anatomy/not-accepted.png" }, anchors: {}, states: [], overlays: [] };
+  const result = await validateAnatomy({ contracts, manifest, frames: withUse, root });
+  const text = result.errors.join("\n");
+  assert.match(text, /assets\/anatomy\/missing\.png is missing/);
+  assert.match(text, /frame-01 uses assets\/anatomy\/not-accepted\.png, which is not an accepted anatomy record/);
+});
