@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Recovery guide</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="assets/guide.css">
+</head>
+<body class="toc-page">
+  <header class="masthead">
+    <p class="eyebrow">Cochlear implant recovery</p>
+    <h1 id="guide-title">Your cochlear implant recovery guide</h1>
+    <p class="lede" id="guide-subtitle">Five short videos. Start with the one you are wondering about.</p>
+  </header>
+  <section class="controls" aria-label="Guide settings">
+    <label class="control"><span id="language-label">Language</span><select id="language"></select></label>
+    <label class="control"><input id="subtitles-toggle" type="checkbox" checked><span id="subtitles-label">Subtitles</span></label>
+  </section>
+  <p class="fallback-notice" id="fallback-notice" hidden></p>
+  <main>
+    <ol class="segment-list" id="segment-list" aria-label="Contents"></ol>
+    <p class="card-row"><a id="card-link" class="card-link" href="../output/pdf/airline-safety-card-deck-prototype.pdf">Printable card</a></p>
+  </main>
+  <footer class="status-strip">
+    <p id="notice">Private prototype. Not for patient use.</p>
+    <h2 id="review-heading">Review status</h2>
+    <ul class="badges" id="review-badges" aria-labelledby="review-heading"></ul>
+  </footer>
+  <noscript><p class="status-strip">This guide needs JavaScript. Private prototype. Not for patient use.</p></noscript>
+  <script type="module" src="assets/toc.js"></script>
+</body>
+</html>
