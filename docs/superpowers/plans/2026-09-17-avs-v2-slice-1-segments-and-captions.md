@@ -48,7 +48,7 @@ This is plan 1 of 7. Each later slice gets its own plan once the previous one sh
 - Consumes: ElevenLabs manifest records `{ id, file, text, timestamps: [{ characters[], character_start_times_seconds[], character_end_times_seconds[] }] }` from `assets/audio/draft/manifest.json` and `assets/audio/manifest.json`.
 - Produces: `flattenRecordCharacters(record) -> [{ character, start, end }]`, `speechEndSeconds(record) -> number`, `wordTimings(record) -> [{ text, charStart, start, end }]`. All throw `Error` when timestamps do not reproduce `record.text` or contain a non-finite or reversed time.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-narration-timing.test.mjs
@@ -89,12 +89,12 @@ test("rejects drifted text and malformed timestamps", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-narration-timing.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/narration-timing.mjs'`
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 ```js
 // scripts/lib/narration-timing.mjs
@@ -139,12 +139,12 @@ export function wordTimings(record) {
 }
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `node --test tests/v2-narration-timing.test.mjs`
 Expected: `# pass 3`
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add scripts/lib/narration-timing.mjs tests/v2-narration-timing.test.mjs
@@ -167,7 +167,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Produces: `SEGMENTS_PATH`, `CANVAS`, `NARRATION_CEILING_SECONDS`, `segmentSlug(id)`, `recordKey(binding)`, `resolveRecord(records, binding)`, `canonicalSentenceOrder(canonical) -> string[]`, `loadSegmentBundle(root) -> { segments, canonical, records: Map }`, `beatNarrationSeconds(beat, records, language)`, `segmentNarrationSeconds(segment, records, language)`, `validateSegments({ segments, canonical, records }) -> { valid, errors, warnings }`.
 - The segments file shape (authored in Task 3): `{ schema_version: "1.0", artifact_id, artifact_version, status, patient_use: false, notice, canvas: { width, height, fps, title_card_seconds, beat_gap_seconds, tail_seconds }, segments: [{ id: "seg/<slug>", number, title_key, chip_key, data_fields?, beats: [{ id: "beat/<slug>", sentence_ids: string[], frame: string, condition?: string, status?: "pending_clinician_text", narration: { [language]: { manifest: string, record_id: string } } }] }] }`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 The test needs the real segments file from Task 3 to exist for the positive case. Write the test now with the fixture-based negative cases and one positive case; the positive case will fail until Task 3 lands, which is expected and noted there.
 
@@ -285,12 +285,12 @@ test("the repository segments validate and stay under the ceiling", async () => 
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-segments.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/segments.mjs'`
 
-- [ ] **Step 3: Write the library**
+- [x] **Step 3: Write the library**
 
 ```js
 // scripts/lib/segments.mjs
@@ -449,7 +449,7 @@ export function validateSegments({ segments, canonical, records }) {
 }
 ```
 
-- [ ] **Step 4: Write the CLI**
+- [x] **Step 4: Write the CLI**
 
 ```js
 // scripts/validate-segments.mjs
@@ -488,12 +488,12 @@ main().catch((error) => {
 });
 ```
 
-- [ ] **Step 5: Run the tests**
+- [x] **Step 5: Run the tests**
 
 Run: `node --test tests/v2-segments.test.mjs`
 Expected: 4 pass, 1 fail. The failing test is "the repository segments validate", with `ENOENT ... content/segments/ci-phase0-v0.1.0.segments.json`, because the data file is authored in Task 3.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add scripts/lib/segments.mjs scripts/validate-segments.mjs tests/v2-segments.test.mjs
@@ -514,7 +514,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: the shape from Task 2; narration records `wound-day2`, `wound-paths`, `wound-milestones`, `call-three-signs`, `call-any`, `call-numbers` in `assets/audio/draft/manifest.json` and `healing`, `chaptered-programming`, `follow-up` in `assets/audio/manifest.json`.
 - Produces: the segment file every later task reads, and the English label keys that Task 5 validates: `guide.title`, `guide.subtitle`, `seg.<slug>.title`, `seg.<slug>.chip`, and the `ui.*` keys listed in Task 5.
 
-- [ ] **Step 1: Write the segments file**
+- [x] **Step 1: Write the segments file**
 
 ```json
 {
@@ -641,7 +641,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 }
 ```
 
-- [ ] **Step 2: Write the English label pack**
+- [x] **Step 2: Write the English label pack**
 
 ```json
 {
@@ -684,12 +684,12 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 }
 ```
 
-- [ ] **Step 3: Run the validator and the segment tests**
+- [x] **Step 3: Run the validator and the segment tests**
 
 Run: `node scripts/validate-segments.mjs && node --test tests/v2-segments.test.mjs`
 Expected: a five-line table with narration seconds of roughly 25.8, 11.1, 28.7, 24.0, 23.0, the line `segments valid: 5 segments cover 27 canonical sentences`, and `# pass 5`.
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add content/segments/ci-phase0-v0.1.0.segments.json content/translations/en/ci-phase0-v0.1.0.json
@@ -711,7 +711,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Produces: `buildSegmentTimeline({ segments, segment, records, language = "en", maxWordsPerCue = 8, audioFile = null }) -> timeline`, `groupCues(beatWords, beatId, maxWordsPerCue, startIndex) -> cues`, `vttTime(seconds) -> "HH:MM:SS.mmm"`, `toWebVtt(cues) -> string`.
 - Timeline shape: `{ schema_version: "1.0", segment_id, number, language, canvas: { width, height, fps }, title_card: { start: 0, end }, beat_gap_seconds, tail_seconds, audio_file, beats: [{ id, frame, sentence_ids, start, end, speech_seconds, record_id, manifest, source_audio, text }], words: [{ text, start, end, beat }], cues: [{ id, start, end, text, beat }], narration_seconds, duration_seconds, source_records: { [record_id]: sha256 } }`. Times are segment-local seconds rounded to 3 decimals. Conditional beats without narration in the requested language are omitted.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-segment-timeline.test.mjs
@@ -780,12 +780,12 @@ test("WebVTT output is well formed", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-segment-timeline.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/segment-timeline.mjs'`
 
-- [ ] **Step 3: Write the implementation**
+- [x] **Step 3: Write the implementation**
 
 ```js
 // scripts/lib/segment-timeline.mjs
@@ -904,12 +904,12 @@ export function toWebVtt(cues) {
 }
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `node --test tests/v2-segment-timeline.test.mjs`
 Expected: `# pass 5`
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add scripts/lib/segment-timeline.mjs tests/v2-segment-timeline.test.mjs
@@ -931,7 +931,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: `canonicalSentenceOrder`, `loadSegmentBundle` from Task 2; the English pack from Task 3.
 - Produces: `UI_LABEL_KEYS`, `TRANSLATION_STATUSES`, `requiredLabelKeys(segments) -> string[]`, `digitTokens(text) -> string[]`, `canonicalSentenceText(canonical) -> Map`, `validateLanguagePack({ pack, canonical, segments }) -> { valid, errors }`, `resolveSentences({ pack, canonical }) -> Map<id, text>`. Slice 4 authors `es` and `zh-Hans` packs against exactly these rules: `sentences` covers every canonical ID, digit tokens (phone numbers, `101.5`, `12`) survive translation with `,` accepted as a decimal separator, `status` is one of `machine_draft | ai_reviewed | human_reviewed`, and `review.label` is present.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-language-packs.test.mjs
@@ -1010,12 +1010,12 @@ test("protected digits must survive translation, with a comma decimal allowed", 
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-language-packs.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/language-packs.mjs'`
 
-- [ ] **Step 3: Write the library**
+- [x] **Step 3: Write the library**
 
 ```js
 // scripts/lib/language-packs.mjs
@@ -1094,7 +1094,7 @@ export function resolveSentences({ pack, canonical }) {
 }
 ```
 
-- [ ] **Step 4: Write the CLI**
+- [x] **Step 4: Write the CLI**
 
 ```js
 // scripts/validate-translations.mjs
@@ -1146,12 +1146,12 @@ main().catch((error) => {
 });
 ```
 
-- [ ] **Step 5: Run the test and the CLI**
+- [x] **Step 5: Run the test and the CLI**
 
 Run: `node --test tests/v2-language-packs.test.mjs && node scripts/validate-translations.mjs`
 Expected: `# pass 4` and `content/translations/en/ci-phase0-v0.1.0.json: valid (en, source)`
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add scripts/lib/language-packs.mjs scripts/validate-translations.mjs tests/v2-language-packs.test.mjs
@@ -1175,7 +1175,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: `buildSegmentTimeline`, `toWebVtt` from Task 4; `loadSegmentBundle`, `segmentSlug`, `validateSegments` from Task 2.
 - Produces: `timelineElements(timeline) -> [{ kind: "silence" | "track", seconds, file?, beat? }]`, `buildConcatCommand({ timeline, root, outputPath }) -> { args, elements }`, `renderSegmentAudio({ timeline, root, outputPath, ffmpeg }) -> outputPath`, `probeDurationSeconds(path, ffprobe) -> number`, `mediaPaths(segment, language) -> { timeline, vtt, audio }`, `languagesWithNarration(segments) -> string[]`, `buildMediaPlan(bundle) -> [{ language, segment, paths, timeline, vtt }]`, `buildMediaIndex(plan) -> index`, `buildSegmentMedia({ root, audio }) -> { written, audioSkipped }`. The player in slice 2 reads `assets/captions/v2/index.json` entries `{ segment_id, number, language, timeline, captions, audio, duration_seconds, narration_seconds }`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-segment-media.test.mjs
@@ -1237,12 +1237,12 @@ test("rendered audio matches the timeline duration", { skip: hasFfmpeg ? false :
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-segment-media.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/segment-audio.mjs'`
 
-- [ ] **Step 3: Write the audio library**
+- [x] **Step 3: Write the audio library**
 
 ```js
 // scripts/lib/segment-audio.mjs
@@ -1295,7 +1295,7 @@ export async function probeDurationSeconds(path, ffprobe = "ffprobe") {
 }
 ```
 
-- [ ] **Step 4: Write the builder CLI**
+- [x] **Step 4: Write the builder CLI**
 
 ```js
 // scripts/build-segment-media.mjs
@@ -1397,7 +1397,7 @@ if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.ur
 }
 ```
 
-- [ ] **Step 5: Add the `--media` freshness check to the validator**
+- [x] **Step 5: Add the `--media` freshness check to the validator**
 
 Replace the whole of `scripts/validate-segments.mjs` with:
 
@@ -1469,17 +1469,17 @@ main().catch((error) => {
 });
 ```
 
-- [ ] **Step 6: Run the tests, build the media, and run the freshness check**
+- [x] **Step 6: Run the tests, build the media, and run the freshness check**
 
 Run: `node --test tests/v2-segment-media.test.mjs && node scripts/build-segment-media.mjs && node scripts/validate-segments.mjs --media`
 Expected: `# pass 3`; sixteen written paths (five timelines, five VTTs, five MP3s, the index); then the table and `segments valid: 5 segments cover 27 canonical sentences; committed media is current`.
 
-- [ ] **Step 7: Spot-check one output**
+- [x] **Step 7: Spot-check one output**
 
 Run: `head -12 assets/captions/v2/en/who-to-call.vtt && ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 assets/audio/v2/en/who-to-call.mp3`
 Expected: `WEBVTT`, cue 1 at `00:00:01.500`, and a duration within 0.25 s of the `duration_seconds` in `assets/captions/v2/en/who-to-call.timeline.json`.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add scripts/lib/segment-audio.mjs scripts/build-segment-media.mjs scripts/validate-segments.mjs tests/v2-segment-media.test.mjs assets/captions/v2 assets/audio/v2
@@ -1500,7 +1500,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: the CLIs from Tasks 2, 5, and 6.
 - Produces: `npm run segments:validate`, `npm run segments:build`, `npm run translations:validate`, and an extended `npm run check` that CI runs.
 
-- [ ] **Step 1: Add the scripts**
+- [x] **Step 1: Add the scripts**
 
 In `package.json`, add three entries to `scripts` and extend `check` so the block reads:
 
@@ -1513,7 +1513,7 @@ In `package.json`, add three entries to `scripts` and extend `check` so the bloc
 
 Keep every other script unchanged. `activation:test` already runs `tests/*.test.mjs`, so the five new test files run under it.
 
-- [ ] **Step 2: Document the folders**
+- [x] **Step 2: Document the folders**
 
 Append to `content/README.md`:
 
@@ -1525,12 +1525,12 @@ Append to `content/README.md`:
 `translations/<language>/ci-phase0-v0.1.0.json` holds interface labels per language and, for languages other than English, one translated sentence per canonical ID. English resolves its sentences from `canonical/` and never copies them. `npm run translations:validate` checks coverage and that phone numbers and numeric thresholds survive translation. A validated translation is still a draft until the reviewer named in its `review.label` has passed it; AI review is never clinical approval.
 ```
 
-- [ ] **Step 3: Run the full check**
+- [x] **Step 3: Run the full check**
 
 Run: `npm run check 2>&1 | tail -15`
 Expected: the segment table, `content/translations/en/ci-phase0-v0.1.0.json: valid (en, source)`, and `# pass 113` with `# fail 0` (93 existing tests plus 20 new ones).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add package.json content/README.md
