@@ -8,7 +8,10 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "npm run activation:test",
-    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run activation:validate:contract && npm run activation:test",
+    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run activation:validate:contract && npm run segments:validate && npm run translations:validate && npm run activation:test",
+    "segments:validate": "node scripts/validate-segments.mjs --media",
+    "segments:build": "node scripts/build-segment-media.mjs",
+    "translations:validate": "node scripts/validate-translations.mjs",
     "assets:generate": "node --env-file=.env.local scripts/generate-fal-assets.mjs",
     "narration:generate": "node --env-file=.env.local scripts/generate-fal-narration.mjs",
     "narration:validate": "node scripts/validate-narration.mjs",
