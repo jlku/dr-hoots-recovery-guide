@@ -234,7 +234,11 @@ function markChapter(number) {
   dom.chapterPrev.disabled = number <= 1;
   dom.chapterNext.disabled = number >= total;
   if (dom.follow.checked) {
-    dom.transcript.querySelector(`.transcript__chapter-button[data-number="${number}"]`)?.scrollIntoView({ block: "start", behavior: reducedMotion() ? "auto" : "smooth" });
+    const heading = dom.transcript.querySelector(`.transcript__chapter-button[data-number="${number}"]`);
+    if (heading) {
+      const paneTop = dom.transcript.getBoundingClientRect().top;
+      dom.transcript.scrollTop += heading.getBoundingClientRect().top - paneTop - 8;
+    }
   }
 }
 
