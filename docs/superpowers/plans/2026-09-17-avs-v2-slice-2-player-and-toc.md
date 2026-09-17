@@ -50,7 +50,7 @@
 - Consumes: `loadSegmentBundle(root)` from `scripts/lib/segments.mjs`; beat `frame` ids from the segments file: `frame-01`, `frame-0203-paths`, `frame-0405-milestones`, `frame-medication-pending`, `frame-06-redness`, `frame-0710-anylist`, `frame-11-numbers`, `frame-12-healing`, `frame-13-programming`, `frame-14-follow-up`.
 - Produces: `FRAMES_PATH`, `FRAME_KINDS`, `loadFrameManifest(root) -> manifest`, `validateFrames({ frames, segments, root }) -> { valid, errors, warnings }`. The manifest's `frames[id]` objects are what `guide/assets/frames.js` renders in Task 4.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-frames.test.mjs
@@ -93,12 +93,12 @@ test("the validator rejects unknown frames, missing files, bad kinds, and missin
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-frames.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/frames.mjs'`
 
-- [ ] **Step 3: Write the manifest**
+- [x] **Step 3: Write the manifest**
 
 ```json
 {
@@ -123,7 +123,7 @@ Expected: FAIL with `Cannot find module '.../scripts/lib/frames.mjs'`
 }
 ```
 
-- [ ] **Step 4: Write the library and CLI**
+- [x] **Step 4: Write the library and CLI**
 
 ```js
 // scripts/lib/frames.mjs
@@ -213,16 +213,16 @@ main().catch((error) => {
 });
 ```
 
-- [ ] **Step 5: Wire the npm script**
+- [x] **Step 5: Wire the npm script**
 
 In `package.json` add `"frames:validate": "node scripts/validate-frames.mjs"` next to `segments:validate`, and change `check` to `npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run frames:validate && npm run translations:validate && npm run test:unit`.
 
-- [ ] **Step 6: Run the test and the CLI**
+- [x] **Step 6: Run the test and the CLI**
 
 Run: `node --test tests/v2-frames.test.mjs && node scripts/validate-frames.mjs`
 Expected: `# pass 2` and `frames valid: 10 frames cover every beat`
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add content/frames scripts/lib/frames.mjs scripts/validate-frames.mjs tests/v2-frames.test.mjs package.json
@@ -243,7 +243,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Produces the label keys `ui.seek`, `ui.coming`, `ui.language_fallback`, `ui.not_reviewed`, `ui.replay`, `ui.transcript`, `ui.review_status` that `toc.js` and `player.js` read. Every later language pack must supply them, which the validator enforces.
 
-- [ ] **Step 1: Extend the existing test**
+- [x] **Step 1: Extend the existing test**
 
 Append to `tests/v2-language-packs.test.mjs`:
 
@@ -256,12 +256,12 @@ test("the page label keys are required in every pack", () => {
 });
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `node --test tests/v2-language-packs.test.mjs`
 Expected: 1 failing test naming `ui.seek`.
 
-- [ ] **Step 3: Add the keys**
+- [x] **Step 3: Add the keys**
 
 In `scripts/lib/language-packs.mjs` extend `UI_LABEL_KEYS` with `"ui.seek", "ui.coming", "ui.language_fallback", "ui.not_reviewed", "ui.replay", "ui.transcript", "ui.review_status"`.
 
@@ -277,12 +277,12 @@ In the English pack add inside `labels`:
     "ui.review_status": "Review status"
 ```
 
-- [ ] **Step 4: Run the tests and validator**
+- [x] **Step 4: Run the tests and validator**
 
 Run: `node --test tests/v2-language-packs.test.mjs && node scripts/validate-translations.mjs`
 Expected: `# pass 5` and `content/translations/en/ci-phase0-v0.1.0.json: valid (en, source)`
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add scripts/lib/language-packs.mjs content/translations/en/ci-phase0-v0.1.0.json tests/v2-language-packs.test.mjs
@@ -302,7 +302,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 **Interfaces:**
 - Produces: `LANGUAGES`, `normalizeLanguage(code)`, `parseFragment(hash) -> object`, `buildFragment(params) -> "#..." | ""`, `pickEntry(index, number, language) -> { entry, fallback }`, `availableLanguages(index) -> string[]`, `activeBeat(timeline, seconds) -> beat | null`, `activeCue(timeline, seconds) -> cue | null`, `assignWordsToCues(timeline) -> Map<cueId, word[]>`, `activeWordIndex(words, seconds) -> number`, `formatTime(seconds) -> "m:ss"`, `segmentByNumber(segments, number)`, `pendingConditionalBeats(segment)`. Timeline and index shapes are the slice-one outputs in `assets/captions/v2/`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-guide-logic.test.mjs
@@ -377,12 +377,12 @@ test("time formats as minutes and seconds", () => {
 });
 ```
 
-- [ ] **Step 2: Run the test to verify it fails**
+- [x] **Step 2: Run the test to verify it fails**
 
 Run: `node --test tests/v2-guide-logic.test.mjs`
 Expected: FAIL with `Cannot find module '.../guide/assets/logic.js'`
 
-- [ ] **Step 3: Write the module**
+- [x] **Step 3: Write the module**
 
 ```js
 // guide/assets/logic.js
@@ -466,12 +466,12 @@ export function pendingConditionalBeats(segment) {
 }
 ```
 
-- [ ] **Step 4: Run the test to verify it passes**
+- [x] **Step 4: Run the test to verify it passes**
 
 Run: `node --test tests/v2-guide-logic.test.mjs`
 Expected: `# pass 4`
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add guide/assets/logic.js tests/v2-guide-logic.test.mjs
@@ -497,7 +497,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Produces: `assetUrl(path)`, `fetchJson(path)`, `fetchOptionalJson(path)`, `canonicalSentences(canonical)`, `loadGuide(language) -> { language, segments, canonical, index, frames, pack, packFallback, sentences, reviews }` in `data.js`; `renderFrame(frame, { beat, sentences, pack }) -> Element` and `renderTitleCard(segment, pack) -> Element` in `frames.js`. The player in Task 5 reuses all of them and the same stylesheet.
 - Review index shape read by the badges: `{ entries: [{ label, date, status }] }`; absent file shows the `ui.not_reviewed` label.
 
-- [ ] **Step 1: Write the failing structure tests**
+- [x] **Step 1: Write the failing structure tests**
 
 ```js
 // tests/v2-guide-structure.test.mjs
@@ -531,12 +531,12 @@ test("the stylesheet fixes the caption band height, honors reduced motion, and k
 });
 ```
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `node --test tests/v2-guide-structure.test.mjs`
 Expected: 2 failing tests with `ENOENT` for `guide/index.html`.
 
-- [ ] **Step 3: Write `data.js`**
+- [x] **Step 3: Write `data.js`**
 
 ```js
 // guide/assets/data.js
@@ -588,7 +588,7 @@ export async function loadGuide(requestedLanguage) {
 }
 ```
 
-- [ ] **Step 4: Write `frames.js`**
+- [x] **Step 4: Write `frames.js`**
 
 ```js
 // guide/assets/frames.js
@@ -644,7 +644,7 @@ export function renderTitleCard(segment, pack) {
 }
 ```
 
-- [ ] **Step 5: Write the stylesheet**
+- [x] **Step 5: Write the stylesheet**
 
 ```css
 /* guide/assets/guide.css — tokens from design-system.html; layout for the contents page and the player. */
@@ -747,7 +747,7 @@ a { color: var(--blue); text-underline-offset: 4px; }
 }
 ```
 
-- [ ] **Step 6: Write `guide/index.html`**
+- [x] **Step 6: Write `guide/index.html`**
 
 ```html
 <!doctype html>
@@ -785,7 +785,7 @@ a { color: var(--blue); text-underline-offset: 4px; }
 </html>
 ```
 
-- [ ] **Step 7: Write `toc.js`**
+- [x] **Step 7: Write `toc.js`**
 
 ```js
 // guide/assets/toc.js
@@ -924,16 +924,16 @@ window.addEventListener("hashchange", () => init().catch(showError));
 init().catch(showError);
 ```
 
-- [ ] **Step 8: Run the structure tests**
+- [x] **Step 8: Run the structure tests**
 
 Run: `node --test tests/v2-guide-structure.test.mjs`
 Expected: `# pass 2`
 
-- [ ] **Step 9: Verify in the browser**
+- [x] **Step 9: Verify in the browser**
 
 Add a temporary entry to the ignored `.claude/launch.json` in the main checkout that serves this worktree with `node scripts/serve.mjs` (`PORT=4175`, `runtimeExecutable: "node"`, `runtimeArgs: ["<worktree>/scripts/serve.mjs"]`, `env: {"PORT": "4175"}`), start it with `preview_start`, open `http://localhost:4175/guide/index.html`, and check: no console errors; `read_page` shows five list items with titles, chips, and durations; the language select has English enabled and two disabled "coming soon" options; the printable card link resolves; the badge reads "Not yet reviewed"; at the mobile preset there is no horizontal overflow. Remove the launch entry when done.
 
-- [ ] **Step 10: Commit**
+- [x] **Step 10: Commit**
 
 ```bash
 git add guide/assets/data.js guide/assets/frames.js guide/assets/guide.css guide/index.html guide/assets/toc.js tests/v2-guide-structure.test.mjs
@@ -955,7 +955,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Consumes: everything from Tasks 3 and 4; timelines and MP3s from `assets/captions/v2/index.json`.
 - Produces: `window.__guidePlayer.getState()` returning `{ segment, language, duration, currentTime, frame, cue, subtitles }` for browser verification.
 
-- [ ] **Step 1: Add the failing structure test**
+- [x] **Step 1: Add the failing structure test**
 
 Append to `tests/v2-guide-structure.test.mjs`:
 
@@ -975,12 +975,12 @@ test("the player page has one audio element, a fixed caption band, transport con
 });
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `node --test tests/v2-guide-structure.test.mjs`
 Expected: 2 pass, 1 fail with `ENOENT` for `guide/watch.html`.
 
-- [ ] **Step 3: Write `guide/watch.html`**
+- [x] **Step 3: Write `guide/watch.html`**
 
 ```html
 <!doctype html>
@@ -1024,7 +1024,7 @@ Expected: 2 pass, 1 fail with `ENOENT` for `guide/watch.html`.
 </html>
 ```
 
-- [ ] **Step 4: Write `player.js`**
+- [x] **Step 4: Write `player.js`**
 
 ```js
 // guide/assets/player.js
@@ -1290,16 +1290,16 @@ window.addEventListener("hashchange", () => init().catch(showError));
 init().catch(showError);
 ```
 
-- [ ] **Step 5: Run the structure tests**
+- [x] **Step 5: Run the structure tests**
 
 Run: `node --test tests/v2-guide-structure.test.mjs`
 Expected: `# pass 3`
 
-- [ ] **Step 6: Verify in the browser**
+- [x] **Step 6: Verify in the browser**
 
 With the same preview server as Task 4: open `http://localhost:4175/guide/watch.html#s=1&l=en`; no console errors; the title strip shows "01", the segment title, and the "Day 2" chip; the stage shows the title card at time 0; click Play, wait 3 seconds, `javascript_tool` reads `window.__guidePlayer.getState()` and shows `frame: "beat/dressing-off"`, a `cue` id, and a growing `currentTime`; the caption band shows "Two days after surgery, remove the head bandage." with one highlighted word; press Space to pause; drag the scrubber past the second beat's start and confirm the frame changes to the two-paths card; untick Subtitles and confirm the band is hidden; click Next and confirm the hash becomes `#s=2&l=en` and the status strip shows the pending-medication note; at the mobile preset confirm no horizontal overflow and that the caption band stays two lines tall. Take one desktop and one mobile screenshot.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add guide/watch.html guide/assets/player.js tests/v2-guide-structure.test.mjs
@@ -1317,7 +1317,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Modify: `README.md` ("What to look at first" gains the guide)
 - Modify: `docs/PROJECT_STATUS.md` ("What exists" and "Known gaps" reflect the player)
 
-- [ ] **Step 1: Add the homepage entry**
+- [x] **Step 1: Add the homepage entry**
 
 Insert after the existing `<li class="variation">` block in `index.html`:
 
@@ -1328,18 +1328,18 @@ Insert after the existing `<li class="variation">` block in `index.html`:
         </li>
 ```
 
-- [ ] **Step 2: Update the README and status doc**
+- [x] **Step 2: Update the README and status doc**
 
 In `README.md`, replace the "What to look at first" item 3 with: `3. Open the segmented narrated guide at \`guide/index.html\`: five short videos with captions and a contents page, English only for now, driven by the segment data in \`content/segments/\`.`
 
 In `docs/PROJECT_STATUS.md`, add to "What exists": `4. The v2 contents page and player under \`guide/\`, which play the five English segments with synchronized captions, a language selector, a subtitle toggle, and a live-text transcript.` Replace "Known gaps" item 1 with: `### 1. Diagrams, languages, and the provider file are not built yet` and the paragraph `Slices 3 through 7 add anatomy diagrams with vector overlays, Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The player currently shows the deterministic SVG cards and live-text fallbacks.` Change "Best next contributions" item 1 to `1. Build v2 slice 3: anatomy masters with deterministic overlays, through the image loop.`
 
-- [ ] **Step 3: Run the full check**
+- [x] **Step 3: Run the full check**
 
 Run: `npm run check 2>&1 | tail -12`
-Expected: `frames valid: 10 frames cover every beat`, the segment and translation lines, and `# pass 50` with `# fail 0` (39 from the retirement baseline plus 2 frames, 1 label, 4 logic, 3 structure, and the one added pack test).
+Expected: `frames valid: 10 frames cover every beat`, the segment and translation lines, and `# pass 49` with `# fail 0` (39 from the retirement baseline plus 2 frames, 1 label, 4 logic, and 3 structure tests).
 
-- [ ] **Step 4: Commit**
+- [x] **Step 4: Commit**
 
 ```bash
 git add index.html README.md docs/PROJECT_STATUS.md
@@ -1355,3 +1355,10 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - **Spec coverage:** section 4 (canvas zones, player controls, captions from timestamps with active word, keyboard, reduced motion, TOC as the card with thumbnails and durations, language selector, subtitle toggle, printable card link, status strip with badges and notice) is Tasks 4 and 5; section 6's fallback-to-English notice is Task 4's `loadGuide` plus both pages' status; section 8's badge rendering from `content/reviews/index.json` is Task 4; section 11's `guide/` layout matches; section 12 steps 4 and 5 (player loads model, frames, pack, audio, captions; fragment carries language and later parameters) are Tasks 3 to 5; section 13's missing translation, missing receipts, and pending medication beats are handled in Tasks 4 and 5; section 14's structure tests and browser checks are Tasks 4 to 6. Section 4's provider page and section 7 are slice 5; anatomy overlays are slice 3.
 - **Placeholders:** none; every file's full content is in its task.
 - **Type consistency:** `loadGuide` returns `{ language, segments, canonical, index, frames, pack, packFallback, sentences, reviews }` and both pages read exactly those keys; `pickEntry` returns `{ entry, fallback }` in Tasks 3, 4, 5; `renderFrame(frame, { beat, sentences, pack })` and `renderTitleCard(segment, pack)` match between Task 4's module and Task 5's calls; the label keys added in Task 2 are the ones read in Tasks 4 and 5.
+
+## Execution notes (2026-09-17)
+
+- Tasks 4 and 5 were committed together so that no intermediate commit carries a failing structure test.
+- Two fixes surfaced in browser verification and are in the committed code: language controls shrink on narrow screens (16 px overflow at 375 px), and a favicon suppressor stops a stray 404 on both pages.
+- The Space shortcut accepts `key`, `code`, and the legacy `Spacebar` value; the desktop browser automation cannot synthesize a Space key event, so that path was verified by inspection and by the working ArrowRight path.
+- Seeking was verified against `scripts/serve.mjs`, which supports byte ranges; Python's `http.server` does not, and cannot seek media.
