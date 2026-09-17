@@ -2,33 +2,53 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="color-scheme" content="light">
-  <title>Recovery guide</title>
   <link rel="icon" href="data:,">
+  <title>Cochlear implant recovery guide</title>
   <link rel="stylesheet" href="assets/guide.css">
 </head>
-<body class="toc-page">
-  <header class="masthead">
-    <p class="eyebrow">Cochlear implant recovery</p>
-    <h1 id="guide-title">Your cochlear implant recovery guide</h1>
-    <p class="lede" id="guide-subtitle">Five short videos. Start with the one you are wondering about.</p>
+<body>
+  <header class="topbar">
+    <h1 id="guide-title" class="topbar__title">Cochlear implant recovery guide</h1>
+    <label class="control control--inline"><span id="language-label">Language</span><select id="language"></select></label>
+    <a id="print-link" class="topbar__link" href="../output/pdf/airline-safety-card-deck-prototype.pdf">Print the card</a>
   </header>
-  <section class="controls" aria-label="Guide settings">
-    <label class="control"><span id="language-label">Language</span><select id="language"></select></label>
-    <label class="control"><input id="subtitles-toggle" type="checkbox" checked><span id="subtitles-label">Subtitles</span></label>
-  </section>
-  <p class="fallback-notice" id="fallback-notice" hidden></p>
-  <main>
-    <ol class="segment-list" id="segment-list" aria-label="Contents"></ol>
-    <p class="card-row"><a id="card-link" class="card-link" href="../output/pdf/airline-safety-card-deck-prototype.pdf">Printable card</a></p>
-  </main>
-  <footer class="status-strip">
-    <p id="notice">Private prototype. Not for patient use.</p>
-    <h2 id="review-heading">Review status</h2>
-    <ul class="badges" id="review-badges" aria-labelledby="review-heading"></ul>
-  </footer>
-  <noscript><p class="status-strip">This guide needs JavaScript. Private prototype. Not for patient use.</p></noscript>
-  <script type="module" src="assets/toc.js"></script>
+  <div class="guide-layout">
+    <nav class="rail" aria-label="Chapters">
+      <ol id="chapter-list" class="chapter-list"></ol>
+      <div id="call-block" class="call-block"></div>
+    </nav>
+    <main class="player" aria-label="Player">
+      <div id="stage" class="stage"></div>
+      <div id="caption-band" class="caption-band" role="region" aria-label="Captions"><p id="caption" class="caption"></p></div>
+      <div class="transport" aria-label="Playback controls">
+        <button id="play-toggle" class="button button--primary" type="button" aria-pressed="false">Play</button>
+        <div class="scrubber-wrap">
+          <div id="scrubber-ticks" class="scrubber-ticks" aria-hidden="true"></div>
+          <input id="scrubber" class="scrubber" type="range" min="0" max="1000" step="1" value="0" aria-label="Seek">
+        </div>
+        <output id="time" class="time">0:00 / 0:00</output>
+        <label class="control control--inline"><span id="speed-label">Speed</span><select id="speed"><option value="0.75">0.75×</option><option value="1" selected>1×</option><option value="1.25">1.25×</option><option value="1.5">1.5×</option></select></label>
+        <label class="control control--inline control--captions"><input id="captions-toggle" type="checkbox" checked><span id="captions-label">Captions</span></label>
+      </div>
+      <nav id="chapter-bar" class="chapter-bar" aria-label="Chapter">
+        <button id="chapter-prev" class="icon-button" type="button" aria-label="Previous chapter"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M9 2 L4 7 L9 12" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+        <label class="chapter-bar__picker"><span id="chapter-count" class="chapter-bar__count">Chapter 1 of 5</span><select id="chapter-select" aria-label="Jump to chapter"></select></label>
+        <button id="chapter-next" class="icon-button" type="button" aria-label="Next chapter"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M5 2 L10 7 L5 12" fill="none" stroke="currentColor" stroke-width="2"></path></svg></button>
+      </nav>
+      <p id="status" class="status" hidden></p>
+      <audio id="audio" preload="metadata"></audio>
+    </main>
+    <aside class="transcript-pane" aria-label="Transcript">
+      <div class="transcript-pane__head">
+        <h2 id="transcript-heading" class="transcript-pane__title">Transcript</h2>
+        <label class="control control--inline"><input id="follow-toggle" type="checkbox" checked><span id="follow-label">Follow along</span></label>
+      </div>
+      <div id="transcript" class="transcript"></div>
+    </aside>
+  </div>
+  <noscript><p class="status">This guide needs JavaScript. Private prototype. Not for patient use.</p></noscript>
+  <script type="module" src="assets/guide.js"></script>
 </body>
 </html>

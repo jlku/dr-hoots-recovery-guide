@@ -9,7 +9,7 @@
   "notice": "UNVERIFIED — NOT FOR PATIENT USE",
   "sentences_source": "canonical",
   "labels": {
-    "guide.title": "Your cochlear implant recovery guide",
+    "guide.title": "Cochlear implant recovery guide",
     "guide.subtitle": "Five short videos. Start with the one you are wondering about.",
     "seg.incision-day2.title": "Day 2: bandage off, tape or no tape",
     "seg.incision-day2.chip": "Day 2",
@@ -39,7 +39,17 @@
     "ui.not_reviewed": "Not yet reviewed",
     "ui.replay": "Replay",
     "ui.transcript": "Transcript",
-    "ui.review_status": "Review status"
+    "ui.review_status": "Review status",
+    "ui.call_help": "Call for help",
+    "ui.nursing_line": "Nursing line",
+    "ui.emergency": "Emergency",
+    "ui.follow_along": "Follow along",
+    "ui.chapter": "Chapter",
+    "ui.of": "of",
+    "ui.previous_chapter": "Previous chapter",
+    "ui.next_chapter": "Next chapter",
+    "ui.print_card": "Print the card",
+    "ui.captions": "Captions"
   },
   "review": {
     "kind": "source",

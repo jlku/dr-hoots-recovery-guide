@@ -77,3 +77,57 @@ export function segmentByNumber(segments, number) {
 export function pendingConditionalBeats(segment) {
   return (segment?.beats ?? []).filter((beat) => typeof beat.condition === "string" && beat.status === "pending_clinician_text");
 }
+
+const SENTENCE_END = /[.?!]["')\]]*$/;
+
+export function sentenceSpans(timeline) {
+  const sentences = [];
+  let current = null;
+  const flush = () => {
+    if (!current) return;
+    current.end = current.words.at(-1).end;
+    current.text = current.words.map((word) => word.text).join(" ");
+    sentences.push(current);
+    current = null;
+  };
+  timeline.words.forEach((word, index) => {
+    if (!current) {
+      current = { id: `sent-${String(sentences.length + 1).padStart(2, "0")}`, beat: word.beat, start: word.start, end: word.end, words: [], text: "" };
+    }
+    current.words.push(word);
+    const next = timeline.words[index + 1];
+    if (SENTENCE_END.test(word.text) || !next || next.beat !== word.beat) flush();
+  });
+  flush();
+  return sentences;
+}
+
+export function activeSentence(sentences, seconds) {
+  let current = null;
+  for (const sentence of sentences ?? []) if (seconds >= sentence.start) current = sentence;
+  return current;
+}
+
+export function buildGuideClock(entries) {
+  const sorted = [...entries].sort((left, right) => left.number - right.number);
+  let offset = 0;
+  const segments = sorted.map((entry) => {
+    const segment = { number: entry.number, offset, duration: entry.duration_seconds };
+    offset += entry.duration_seconds;
+    return segment;
+  });
+  return { segments, total: offset };
+}
+
+export function globalToLocal(clock, seconds) {
+  const time = Math.max(0, seconds);
+  let segment = clock.segments[0];
+  for (const candidate of clock.segments) if (time >= candidate.offset) segment = candidate;
+  const local = Math.min(Math.max(0, time - segment.offset), segment.duration);
+  return { number: segment.number, local: Number(local.toFixed(3)) };
+}
+
+export function localToGlobal(clock, number, local) {
+  const segment = clock.segments.find((candidate) => candidate.number === number);
+  return segment ? segment.offset + local : local;
+}

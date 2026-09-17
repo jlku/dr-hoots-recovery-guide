@@ -24,7 +24,7 @@ The replacement is a segmented, narrated, multilingual guide with a provider fil
 1. A scroll-driven safety-card guide with a downloadable PDF, at `preview/animatic-scroll.html`.
 2. The versioned clinical content model in `content/`, which every format derives from.
 3. The v2 segment model, English label pack, and derived caption and audio artifacts, with validators wired into `npm run check`.
-4. The v2 contents page and player under `guide/`, which play the five English segments with synchronized captions, a language selector, a subtitle toggle, and a live-text transcript.
+4. The v2 guide under `guide/`: one page with a chapter rail, one continuous player across the five English segments with synchronized captions, and a transcript that follows playback and seeks on tap. On phones the transcript carries the captions and the phone numbers stay pinned at the bottom.
 
 ## What is technically verified
 
