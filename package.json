@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "npm run test:unit",
-    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run translations:validate && npm run test:unit",
+    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run frames:validate && npm run translations:validate && npm run test:unit",
     "segments:validate": "node scripts/validate-segments.mjs --media",
+    "frames:validate": "node scripts/validate-frames.mjs",
     "segments:build": "node scripts/build-segment-media.mjs",
     "translations:validate": "node scripts/validate-translations.mjs",
     "narration:generate": "node --env-file=.env.local scripts/generate-fal-narration.mjs",
