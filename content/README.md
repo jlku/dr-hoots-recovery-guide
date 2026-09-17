@@ -23,3 +23,9 @@ Current gaps:
 - Approved symptom-to-urgency mapping
 - Reconciled activation timing
 - Clinical approval for every instructional visual
+
+## v2 segments and language packs
+
+`segments/ci-phase0-v0.1.0.segments.json` cuts the canonical sentences into five short segments for the v2 guide. Each beat binds sentence IDs to a frame id and to an existing narration record, so captions always reproduce the spoken text. Every canonical sentence appears in exactly one segment, in canonical order; `npm run segments:validate` enforces that, the 35-second narration ceiling, and that the derived files under `assets/captions/v2/` and `assets/audio/v2/` match the source. Rebuild them with `npm run segments:build`.
+
+`translations/<language>/ci-phase0-v0.1.0.json` holds interface labels per language and, for languages other than English, one translated sentence per canonical ID. English resolves its sentences from `canonical/` and never copies them. `npm run translations:validate` checks coverage and that phone numbers and numeric thresholds survive translation. A validated translation is still a draft until the reviewer named in its `review.label` has passed it; AI review is never clinical approval.
