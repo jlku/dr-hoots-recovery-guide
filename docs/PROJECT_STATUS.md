@@ -7,7 +7,7 @@ Last updated: September 17, 2026
 | Use | Status | Why |
 | --- | --- | --- |
 | Share with a designer or developer for critique and iteration | **Ready, with this document attached** | The project runs locally, the architecture is documented, and deterministic checks pass. |
-| Treat as a finished design direction | **Not ready** | The v2 segmented guide is being built slice by slice; only its data layer exists. |
+| Treat as a finished design direction | **Not ready** | The v2 segmented guide is being built slice by slice; the English player exists, diagrams and languages do not. |
 | Use in a study with participants | **Not approved** | Study protocol, institutional approval, current source material, and fresh usability gates are still required. |
 | Give to patients as recovery instructions | **Do not use** | Clinical copy and visuals remain unverified drafts without partner-clinician approval. |
 
@@ -24,6 +24,7 @@ The replacement is a segmented, narrated, multilingual guide with a provider fil
 1. A scroll-driven safety-card guide with a downloadable PDF, at `preview/animatic-scroll.html`.
 2. The versioned clinical content model in `content/`, which every format derives from.
 3. The v2 segment model, English label pack, and derived caption and audio artifacts, with validators wired into `npm run check`.
+4. The v2 contents page and player under `guide/`, which play the five English segments with synchronized captions, a language selector, a subtitle toggle, and a live-text transcript.
 
 ## What is technically verified
 
@@ -38,9 +39,9 @@ Run `npm run check` to reproduce the content and engineering checks. These resul
 
 ## Known gaps
 
-### 1. The v2 player does not exist yet
+### 1. Diagrams, languages, and the provider file are not built yet
 
-Slices 2 through 7 of the v2 plan add the player and table of contents, anatomy diagrams, Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. Until then the segment data can be validated but not watched.
+Slices 3 through 7 add anatomy diagrams with vector overlays, Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The player currently shows the deterministic SVG cards and live-text fallbacks.
 
 ### 2. Clinical and institutional inputs are missing
 
@@ -60,7 +61,7 @@ Before any participant-facing claim, run whole-experience checks for keyboard an
 
 ## Best next contributions
 
-1. Build v2 slice 2: the TOC and player pages over the committed segment timelines.
+1. Build v2 slice 3: anatomy masters with deterministic overlays, through the image loop.
 2. Add browser-level accessibility and rendered-state tests at desktop, 390px mobile, and 200% zoom.
 3. Keep experimental formats comparable by preserving canonical proposition coverage and measuring delivery differences rather than rewriting the medical content per format.
 
