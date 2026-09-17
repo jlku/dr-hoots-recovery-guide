@@ -90,5 +90,5 @@ const server = createServer(async (request, response) => {
 });
 
 server.listen(port, "127.0.0.1", () => {
-  console.log(`Dr. Hoots prototype: http://localhost:${port}`);
+  console.log(`Recovery guide prototype: http://localhost:${port}`);
 });

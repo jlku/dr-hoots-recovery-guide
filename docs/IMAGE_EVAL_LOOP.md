@@ -1,14 +1,14 @@
 # Safety-card image evaluation loop
 
-This loop prevents a caption from rescuing an image that communicates the wrong medical action, location, state, threshold, or branch. It applies only when the production decision says an image materially improves comprehension. Text-and-Dr.-Hoots is the default for timing, branch logic, warning lists, contact routes, and other claims that are clearer as live text.
+This loop prevents a caption from rescuing an image that communicates the wrong medical action, location, state, threshold, or branch. It applies only when the production decision says an image materially improves comprehension. Text-led cards are the default for timing, branch logic, warning lists, contact routes, and other claims that are clearer as live text.
 
 It does not grant clinical or patient-ready approval. An authorized clinical reviewer and the current EHR after-visit summary remain required for clinical cards.
 
 ## Creation decision
 
-Before researching or generating an image, record why the viewer needs to see anatomy, spatial location, an action, or a physical state. If the same meaning is clearer as live text with Dr. Hoots narration, do not create a diagram.
+Before researching or generating an image, record why the viewer needs to see anatomy, spatial location, an action, or a physical state. If the same meaning is clearer as live text with narration, do not create a diagram.
 
-The current mascot-led guide uses full illustration only for:
+The previous mascot-led guide, retired 2026-09-17, used full illustration only for:
 
 - the day-two mastoid-dressing removal and behind-ear tape check; and
 - the programming appointment with the audiologist and external processor.

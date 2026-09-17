@@ -17,7 +17,7 @@ npm run check
 
 ## Change boundaries
 
-- **Presentation-only work:** HTML, CSS, interaction, pacing, responsive behavior, and nonclinical character treatment may change without rewriting clinical propositions.
+- **Presentation-only work:** HTML, CSS, interaction, pacing, responsive behavior may change without rewriting clinical propositions.
 - **Clinical copy:** change `content/canonical/` first, retain source and review metadata, and then update every mapped adaptation. A passing validator is not human clinical approval.
 - **Clinical visuals:** keep them explicitly marked `patient_use: false`; do not treat AI review as authorization.
 - **Generated media:** do not run generation commands unless you intend to call a paid external service. Keep `FAL_KEY` only in ignored `.env.local` files, never in code, manifests, issues, or commits.

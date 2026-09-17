@@ -15,7 +15,7 @@
       "status": "private_concept_unreviewed",
       "renderable_in_private_prototype": true,
       "patient_use": false,
-      "allowed_surface": "variations.html only",
+      "allowed_surface": "private preview surfaces only",
       "clinical_media_manifest_status": "blocked_pending_surgeon_review",
       "generation": {
         "mode": "built_in_imagegen",
