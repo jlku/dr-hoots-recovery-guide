@@ -2,11 +2,13 @@
 // The API-backed image evaluator.
 //
 // Three caption-blind observers each receive the image inside the request, so none can answer
-// without it, and nothing else: no caption, no claim, no contract. A coder receives only the contract
-// and their answers and records each finding with a verbatim quote from the answer it cites. Code
-// checks every quote, resolves anything it cannot verify in the direction that keeps a bad picture
-// from passing, and computes the verdict with scripts/lib/adjudication.mjs. No model decides pass or
-// fail. Spend is reserved in the ledger before the first call and settled from reported usage.
+// without it, and nothing else: no caption, no claim, no contract. Their answers are split into short
+// numbered units. A coder receives only the contract and those units and supports each finding by
+// citing a unit, never by copying text: a coder asked to copy model outputs word for word was refused
+// under the terms against duplicating model outputs. Code checks every citation, resolves anything it
+// cannot verify in the direction that keeps a bad picture from passing, and computes the verdict with
+// scripts/lib/adjudication.mjs. No model decides pass or fail. Spend is reserved in the ledger before
+// the first call and settled from reported usage.
 import { readFile } from "node:fs/promises";
 import { join } from "node:path";
 
@@ -135,24 +137,46 @@ export function parseObservation(text) {
   return answers;
 }
 
-const quoteString = { type: "string", description: "The observer's exact words: contiguous words copied from the one answer cited, at least two words, no ellipses, no paraphrase." };
+// Short citable units: bullet lines, then sentences and semicolon clauses.
+export function splitUnits(text) {
+  return String(text ?? "")
+    .split("\n")
+    .map((line) => line.replace(/^\s*[-•*]\s+/, "").trim())
+    .filter(Boolean)
+    .flatMap((line) => line.split(/(?<=[.!?;])\s+(?=\S)/))
+    .map((unit) => unit.trim())
+    .filter(Boolean);
+}
+
+// Every unit of every answer, keyed o<observer>.<answer>.<unit>.
+export function citeMap(observations) {
+  const map = new Map();
+  for (const observation of observations) {
+    for (const [answer, text] of Object.entries(observation.answers)) {
+      splitUnits(text).forEach((unit, index) => map.set(`o${observation.number}.${answer}.${index + 1}`, { observer: observation.number, answer: Number(answer), text: unit }));
+    }
+  }
+  return map;
+}
+
 const nullable = (schema) => ({ anyOf: [schema, { type: "null" }] });
 const enumOrString = (values) => (values.length ? { type: "string", enum: values } : { type: "string" });
 const object = (properties) => ({ type: "object", properties, required: Object.keys(properties), additionalProperties: false });
 
-export function coderSchema(contract) {
-  const reading = object({ forbidden: enumOrString(contract.forbidden), answer: { type: "integer", enum: [...READING_ANSWERS] }, quote: quoteString });
+export function coderSchema(contract, citeIds = []) {
+  const cite = { ...enumOrString(citeIds), description: "The id of the one unit, from this observer's answers, that states the finding." };
+  const reading = object({ forbidden: enumOrString(contract.forbidden), cite });
   const observer = object({
     observer: { type: "integer", enum: [1, 2, 3] },
     items: {
       type: "array",
       description: "Every required item exactly once.",
-      items: object({ item: enumOrString(contract.required), recovered: { type: "boolean" }, answer: nullable({ type: "integer", enum: [...RECOVERY_ANSWERS] }), quote: nullable(quoteString) })
+      items: object({ item: enumOrString(contract.required), recovered: { type: "boolean" }, cite: nullable(cite) })
     },
     own_forbidden: { type: "array", items: reading },
     hedges: { type: "array", items: reading },
-    unallowed_marks: { type: "array", items: object({ mark: { type: "string" }, quote: quoteString }) },
-    alternatives: { type: "array", items: object({ key: { type: "string" }, quote: quoteString }) }
+    unallowed_marks: { type: "array", items: object({ mark: { type: "string" }, cite }) },
+    alternatives: { type: "array", items: object({ key: { type: "string" }, cite }) }
   });
   return object({
     observers: { type: "array", description: "Observers 1, 2, and 3, once each.", items: observer },
@@ -179,7 +203,12 @@ export function coderInput({ contract, observations }) {
     "Marks that belong to the picture by design. Any other text, number, arrow, label, or symbol is unallowed:",
     list(contract.allowed_marks),
     "",
-    ...observations.flatMap((observation) => [`Observer ${observation.number}:`, formatObservation(observation.answers), ""])
+    "Each observer's answers, split into units labeled o<observer>.<answer>.<unit>:",
+    "",
+    ...observations.flatMap((observation) => {
+      const units = [...citeMap([observation]).entries()];
+      return [`Observer ${observation.number}:`, ...units.map(([id, unit]) => `[${id}] ${unit.text}`), ""];
+    })
   ].join("\n").trim();
 }
 
@@ -191,7 +220,7 @@ export function coderRequest({ contract, observations, model = DEFAULT_MODEL, sy
     fallbacks: "default",
     system,
     messages: [{ role: "user", content: coderInput({ contract, observations }) }],
-    output_config: { format: { type: "json_schema", schema: coderSchema(contract) } }
+    output_config: { format: { type: "json_schema", schema: coderSchema(contract, [...citeMap(observations).keys()]) } }
   };
 }
 
@@ -219,66 +248,51 @@ export function matchesSchema(value, schema, path = "$") {
   return errors;
 }
 
-const normalize = (text) =>
-  String(text ?? "")
-    .normalize("NFKC")
-    .toLowerCase()
-    .replace(/[‘’‛`´]/g, "'")
-    .replace(/[“”„]/g, '"')
-    .replace(/[‐‑‒–—−]/g, "-")
-    .replace(/\s+/g, " ")
-    .trim();
-const trimEdges = (text) => text.replace(/^[\s"'([{.,;:!?-]+/, "").replace(/[\s"')\]}.,;:!?-]+$/, "");
-
-export function quoteFound(answer, quote) {
-  const needle = trimEdges(normalize(quote));
-  if (needle.split(" ").filter(Boolean).length < 2) return false;
-  return normalize(answer).includes(needle);
-}
-
-// Turns the coder's findings into the adjudicator's input, keeping only what the observers' words
-// support. A recovery whose quote is not in the answer it cites does not count. A forbidden reading,
-// hedge, mark, or misreading whose quote cannot be found is kept, so an unverifiable finding can make
-// a picture fail but never make it pass.
+// Turns the coder's findings into the adjudicator's input, keeping only what the observers' answers
+// support. A recovery counts only when it cites a unit of that observer's answer that can recover an
+// item. A forbidden reading, hedge, mark, or misreading whose citation does not check out is kept, so
+// an unverifiable finding can make a picture fail but never make it pass.
 export function checkCoding({ contract, coding, observations }) {
-  const quoteChecks = [];
+  const units = citeMap(observations);
+  const citationChecks = [];
   const tally = Object.fromEntries(contract.required.map((item) => [item, []]));
   const shared = new Map((coding.alternatives ?? []).map((alternative) => [alternative.key, alternative]));
   const findings = observations.map((observation, index) => {
     const number = index + 1;
     const entries = (coding.observers ?? []).filter((entry) => entry.observer === number);
-    if (entries.length !== 1) quoteChecks.push({ observer: number, finding: "observer", status: entries.length ? "coded more than once" : "not coded", effect: entries.length ? "the first coding is used" : "nothing recovered" });
+    if (entries.length !== 1) citationChecks.push({ observer: number, finding: "observer", status: entries.length ? "coded more than once" : "not coded", effect: entries.length ? "the first coding is used" : "nothing recovered" });
     const entry = entries[0] ?? {};
-    const answers = observation.answers;
-    const verified = (answer, quote) => Boolean(answers[answer]) && quoteFound(answers[answer], quote);
+    const check = (cite, allowed) => {
+      const unit = units.get(cite);
+      if (!unit) return { ok: false, status: `cites ${cite}, which does not exist` };
+      if (unit.observer !== number) return { ok: false, status: `cites ${cite}, which is another observer's answer`, unit };
+      if (!allowed.includes(unit.answer)) return { ok: false, status: `cites answer ${unit.answer}, which cannot support this finding`, unit };
+      return { ok: true, unit };
+    };
     const recovered = [];
     for (const item of contract.required) {
       const rows = (entry.items ?? []).filter((row) => row.item === item);
       if (!rows.length) {
-        quoteChecks.push({ observer: number, finding: item, status: "not coded", effect: "not recovered" });
+        citationChecks.push({ observer: number, finding: item, status: "not coded", effect: "not recovered" });
         continue;
       }
       if (rows.some((row) => !row.recovered)) continue;
       const [row] = rows;
-      if (!RECOVERY_ANSWERS.includes(row.answer)) {
-        quoteChecks.push({ observer: number, finding: item, answer: row.answer, quote: row.quote, status: `cites answer ${row.answer}, which cannot recover an item`, effect: "not recovered" });
-        continue;
-      }
-      if (!verified(row.answer, row.quote)) {
-        quoteChecks.push({ observer: number, finding: item, answer: row.answer, quote: row.quote, status: "quote not found in the cited answer", effect: "not recovered" });
+      const result = check(row.cite, RECOVERY_ANSWERS);
+      if (!result.ok) {
+        citationChecks.push({ observer: number, finding: item, cite: row.cite, text: result.unit?.text ?? null, status: result.status, effect: "not recovered" });
         continue;
       }
       recovered.push(item);
-      tally[item].push({ observer: number, answer: row.answer, quote: row.quote });
+      tally[item].push({ observer: number, answer: result.unit.answer, cite: row.cite, text: result.unit.text });
     }
     const keep = (rows, kind, allowed, label) =>
       rows.map((row) => {
-        if (!(allowed.includes(row.answer) && verified(row.answer, row.quote))) {
-          quoteChecks.push({ observer: number, finding: `${kind}: ${label(row)}`, answer: row.answer, quote: row.quote, status: "quote not found in the cited answer", effect: "kept, so it can only make the picture fail" });
-        }
+        const result = check(row.cite, allowed);
+        if (!result.ok) citationChecks.push({ observer: number, finding: `${kind}: ${label(row)}`, cite: row.cite, text: result.unit?.text ?? null, status: result.status, effect: "kept, so it can only make the picture fail" });
         return row;
       });
-    const alternatives = keep((entry.alternatives ?? []).map((row) => ({ ...row, answer: 4 })), "misreading", [4], (row) => row.key).map((row) => {
+    const alternatives = keep(entry.alternatives ?? [], "misreading", [4], (row) => row.key).map((row) => {
       const found = shared.get(row.key);
       if (!found) throw new Error(`the coder cites misreading "${row.key}" for observer ${number} but never defines it`);
       return { key: found.key, reading: found.reading, forbidden: found.forbidden ?? null, harm: Boolean(found.harm) };
@@ -287,11 +301,11 @@ export function checkCoding({ contract, coding, observations }) {
       recovered,
       own_forbidden: keep(entry.own_forbidden ?? [], "forbidden reading", READING_ANSWERS, (row) => row.forbidden).map((row) => row.forbidden),
       hedges: keep(entry.hedges ?? [], "hedge", READING_ANSWERS, (row) => row.forbidden).map((row) => row.forbidden),
-      unallowed_marks: keep((entry.unallowed_marks ?? []).map((row) => ({ ...row, answer: 3 })), "unallowed mark", [3], (row) => row.mark).map((row) => row.mark),
+      unallowed_marks: keep(entry.unallowed_marks ?? [], "unallowed mark", [3], (row) => row.mark).map((row) => row.mark),
       alternatives
     };
   });
-  return { findings, tally, quote_checks: quoteChecks };
+  return { findings, tally, citation_checks: citationChecks };
 }
 
 export function imageTokens({ width, height }) {
@@ -404,7 +418,7 @@ export function buildReceipt({ target, contract, observations, runs, result, cal
     reviewed_on: reviewedOn,
     method: recoded
       ? `API evaluator ${EVALUATOR_VERSION}, re-coding only: the observers' stored words from ${target.recoded_from} were coded ${runs.length} times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.`
-      : `API evaluator ${EVALUATOR_VERSION}: three caption-blind observers each received only the image inside the request; a coder, run ${runs.length} times, received only the contract and their answers and quoted each finding; code verified every quote and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.`,
+      : `API evaluator ${EVALUATOR_VERSION}: three caption-blind observers each received only the image inside the request; a coder, run ${runs.length} times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.`,
     evaluator: {
       version: EVALUATOR_VERSION,
       library: "scripts/lib/evaluator.mjs",
@@ -423,7 +437,7 @@ export function buildReceipt({ target, contract, observations, runs, result, cal
       observation: formatObservation(observation.answers)
     })),
     adjudication: {
-      label: "Findings coded by Claude from the observers' words and checked against their quotes; verdict computed in code. Not a clinician.",
+      label: "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
       rule: result.rule,
       verdict: result.verdict,
       verdict_strict: result.verdict_strict,
@@ -434,7 +448,7 @@ export function buildReceipt({ target, contract, observations, runs, result, cal
       forbidden_hits: result.forbidden_hits,
       forbidden_hits_strict: result.forbidden_hits_strict,
       design_notes: result.design_notes,
-      quote_checks: runs.flatMap((run, index) => run.check.quote_checks.map((entry) => ({ coding: index + 1, ...entry }))),
+      citation_checks: runs.flatMap((run, index) => run.check.citation_checks.map((entry) => ({ coding: index + 1, ...entry }))),
       codings: runs.map((run, index) => ({
         coding: index + 1,
         verdict: run.result.verdict,

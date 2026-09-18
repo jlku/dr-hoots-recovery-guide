@@ -42,7 +42,9 @@ export async function planCalibration(root, { images = true, recodes = true, onl
 
 // With repeat > 1 every case runs that many times, and a case whose runs disagree is "unsettled":
 // it counts as disagreeing, because a verdict that changes between identical runs cannot gate anything.
-export async function runCalibration({ root, client, dryRun = false, model = DEFAULT_MODEL, images = true, recodes = true, only = null, repeat = 1, codings = DEFAULT_CODINGS, log = () => {} }) {
+// Stops at the first error unless keepGoing is set, so a failure that repeats on every case cannot
+// spend the budget one case at a time.
+export async function runCalibration({ root, client, dryRun = false, model = DEFAULT_MODEL, images = true, recodes = true, only = null, repeat = 1, codings = DEFAULT_CODINGS, keepGoing = false, log = () => {} }) {
   if (!(Number.isInteger(repeat) && repeat >= 1)) throw new Error("repeat must be a whole number of at least 1");
   const planned = await planCalibration(root, { images, recodes, only });
   const ranOn = new Date().toISOString().slice(0, 10);
@@ -65,7 +67,7 @@ export async function runCalibration({ root, client, dryRun = false, model = DEF
     if (failure) {
       rows.push({ id: row.id, mode: row.mode, expect: row.expect, error: failure.message });
       log(`${row.id}: error: ${failure.message}`);
-      if (/spend cap/.test(failure.message)) break;
+      if (/spend cap/.test(failure.message) || !keepGoing) break;
       continue;
     }
     if (dryRun) {

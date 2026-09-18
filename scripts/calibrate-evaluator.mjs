@@ -19,7 +19,8 @@ if (has("--help")) {
 
   npm run review:calibrate -- [--dry-run] [--images-only | --recode-only] [--only <case id>] [--repeat <n>] [--codings <n>] [--model <id>]
 
-  --repeat runs every case n times; a case whose runs disagree is reported as unsettled.`);
+  --repeat runs every case n times; a case whose runs disagree is reported as unsettled.
+  The run stops at the first error; --keep-going continues past errors.`);
   process.exit(0);
 }
 
@@ -33,6 +34,7 @@ try {
     only: value("--only") ?? null,
     repeat: value("--repeat") ? Number(value("--repeat")) : 1,
     codings: value("--codings") ? Number(value("--codings")) : DEFAULT_CODINGS,
+    keepGoing: has("--keep-going"),
     log: (line) => console.log(line)
   });
   if (report.dry_run) {

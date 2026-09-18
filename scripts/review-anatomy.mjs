@@ -57,7 +57,7 @@ try {
     const { adjudication } = outcome.receipt;
     console.log(`verdict: ${outcome.verdict}${adjudication.rule === "strict" ? "" : ` (strict rule: ${outcome.verdict_strict})`}${adjudication.unsettled ? " - the codings disagreed" : ""}`);
     console.log(adjudication.reason);
-    if (adjudication.quote_checks.length) console.log(`quote checks: ${adjudication.quote_checks.length}, see the receipt`);
+    if (adjudication.citation_checks.length) console.log(`citation checks: ${adjudication.citation_checks.length}, see the receipt`);
     console.log(`cost: $${outcome.cost.toFixed(4)}. Receipt: ${outcome.path}`);
   }
 } catch (error) {

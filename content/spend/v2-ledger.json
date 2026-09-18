@@ -424,6 +424,46 @@
       "actual_usd": null,
       "request_id": "01a0b4aa-2f1b-7690-9dc5-a685de9e7d66",
       "status": "completed"
+    },
+    {
+      "id": "review:postauricular-base-a2:2026-09-18T18:50:19.394Z",
+      "at": "2026-09-18T18:50:19.394Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-base-a2: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.107095,
+      "request_id": "msg_011CfBQZXkfR714wXwPJC7j8,msg_011CfBQZXy4bvQxH1U3hS55v,msg_011CfBQZY42HVb59U3tmxf61,msg_011CfBQaaBJYUfRpjiiMrSUk,msg_011CfBQaaC3Wh98gaEBedfyj",
+      "status": "failed"
+    },
+    {
+      "id": "diagnostic:coder-refusal:2026-09-18T18:51:25.433Z",
+      "at": "2026-09-18T18:51:25.434Z",
+      "model": "claude-opus-5",
+      "purpose": "diagnose the coder refusal on the first live run",
+      "units": {
+        "calls": 1
+      },
+      "estimate_usd": 0.43,
+      "actual_usd": 0.019335,
+      "request_id": "msg_011CfBQeP2wXFzfoiN2u5FY4",
+      "status": "failed"
+    },
+    {
+      "id": "diagnostic:coder-citations:2026-09-18T18:53:45.709Z",
+      "at": "2026-09-18T18:53:45.710Z",
+      "model": "claude-opus-5",
+      "purpose": "check that the citation-based coder is not refused",
+      "units": {
+        "calls": 1
+      },
+      "estimate_usd": 0.43,
+      "actual_usd": 0.118565,
+      "request_id": "msg_011CfBQpj5DcWz7ZKPMynrkC",
+      "status": "completed"
     }
   ]
 }

@@ -12,6 +12,7 @@ import {
   DEFAULT_MODEL,
   FALLBACK_BETA,
   checkCoding,
+  citeMap,
   coderRequest,
   formatObservation,
   imageTokens,
@@ -19,10 +20,10 @@ import {
   matchesSchema,
   observerRequest,
   parseObservation,
-  quoteFound,
   reviewContract,
   reviewCostBound,
-  runReview
+  runReview,
+  splitUnits
 } from "../scripts/lib/evaluator.mjs";
 import { createClient, resolveSelection, reviewAndRecord } from "../scripts/lib/review-runner.mjs";
 import { ledgerTotals } from "../scripts/lib/spend-ledger.mjs";
@@ -37,6 +38,13 @@ const cardAnswers = cardReceipt.observers.map((observer) => parseObservation(obs
 const image = { file: "assets/anatomy/diagrams/remove-dressing.png", mediaType: "image/png", base64: "iVBORw0KGgo=", width: 1024, height: 768, bytes: 8, sha256: "0".repeat(64) };
 const target = { id: "diagram.remove-dressing", kind: "diagram", file: image.file, sha256: image.sha256 };
 const [dressingOn, handAway, bareHead, comesOff, lookForTape] = cardContract.required;
+const cardObservations = cardAnswers.map((answers, index) => ({ number: index + 1, answers }));
+const unitsOf = (observations) => citeMap(observations);
+const citeIn = (units) => (observer, phrase) => {
+  for (const [id, unit] of units) if (unit.observer === observer && unit.text.includes(phrase)) return id;
+  throw new Error(`fixture: observer ${observer} never says "${phrase}"`);
+};
+const cite = citeIn(unitsOf(cardObservations));
 
 // The static card's in-session observations, coded by hand the way the coder is asked to.
 const cardCoding = () => ({
@@ -44,50 +52,50 @@ const cardCoding = () => ({
     {
       observer: 1,
       items: [
-        { item: dressingOn, recovered: true, answer: 2, quote: "white rounded pad over the ear" },
-        { item: handAway, recovered: true, answer: 2, quote: "a hand pulls the band's loose tail backward" },
-        { item: bareHead, recovered: true, answer: 2, quote: "Panel 3: no band or pad" },
-        { item: comesOff, recovered: true, answer: 5, quote: "band and pad come off" },
-        { item: lookForTape, recovered: true, answer: 5, quote: "Then look behind the ear for a tan strip" }
+        { item: dressingOn, recovered: true, cite: cite(1, "white rounded pad over the ear") },
+        { item: handAway, recovered: true, cite: cite(1, "a hand pulls the band's loose tail backward") },
+        { item: bareHead, recovered: true, cite: cite(1, "Panel 3: no band or pad") },
+        { item: comesOff, recovered: true, cite: cite(1, "band and pad come off") },
+        { item: lookForTape, recovered: true, cite: cite(1, "Then look behind the ear for a tan strip") }
       ],
       own_forbidden: [],
       hedges: [],
       unallowed_marks: [],
       alternatives: [
-        { key: "reverse-action", quote: "it shows a head being wrapped" },
-        { key: "strip-as-wound", quote: "The tan strip could pass for a wound" }
+        { key: "reverse-action", cite: cite(1, "it shows a head being wrapped") },
+        { key: "strip-as-wound", cite: cite(1, "The tan strip could pass for a wound") }
       ]
     },
     {
       observer: 2,
       items: [
-        { item: dressingOn, recovered: true, answer: 2, quote: "with a white rounded pad over the ear" },
-        { item: handAway, recovered: true, answer: 5, quote: "Untie the white band behind the head and pull it away" },
-        { item: bareHead, recovered: true, answer: 2, quote: "Panel 3: bare head" },
-        { item: comesOff, recovered: true, answer: 5, quote: "The band and ear pad are coming off" },
-        { item: lookForTape, recovered: true, answer: 5, quote: "Then look behind the ear for a beige strip" }
+        { item: dressingOn, recovered: true, cite: cite(2, "with a white rounded pad over the ear") },
+        { item: handAway, recovered: true, cite: cite(2, "Untie the white band behind the head and pull it away") },
+        { item: bareHead, recovered: true, cite: cite(2, "Panel 3: bare head") },
+        { item: comesOff, recovered: true, cite: cite(2, "The band and ear pad are coming off") },
+        { item: lookForTape, recovered: true, cite: cite(2, "Then look behind the ear for a beige strip") }
       ],
       own_forbidden: [],
       hedges: [],
       unallowed_marks: [],
       alternatives: [
-        { key: "apply-tape", quote: 'could read as "put tape on here' },
-        { key: "no-strip-wrong", quote: "no strip means something is wrong" }
+        { key: "apply-tape", cite: cite(2, 'could read as "put tape on here') },
+        { key: "no-strip-wrong", cite: cite(2, "no strip means something is wrong") }
       ]
     },
     {
       observer: 3,
       items: [
-        { item: dressingOn, recovered: true, answer: 2, quote: "A white rounded pad covers the ear" },
-        { item: handAway, recovered: true, answer: 2, quote: "a hand pulls the band's tails behind the head" },
-        { item: bareHead, recovered: true, answer: 2, quote: "Panel 3: nothing is worn" },
-        { item: comesOff, recovered: true, answer: 5, quote: "It is coming off, going by number order" },
-        { item: lookForTape, recovered: true, answer: 5, quote: "Then check behind the ear for a beige strip" }
+        { item: dressingOn, recovered: true, cite: cite(3, "A white rounded pad covers the ear") },
+        { item: handAway, recovered: true, cite: cite(3, "a hand pulls the band's tails behind the head") },
+        { item: bareHead, recovered: true, cite: cite(3, "Panel 3: nothing is worn") },
+        { item: comesOff, recovered: true, cite: cite(3, "It is coming off, going by number order") },
+        { item: lookForTape, recovered: true, cite: cite(3, "Then check behind the ear for a beige strip") }
       ],
       own_forbidden: [],
-      hedges: [{ forbidden: "the dressing being put on", answer: 5, quote: "the arrow alone could mean tightening" }],
+      hedges: [{ forbidden: "the dressing being put on", cite: cite(3, "the arrow alone could mean tightening") }],
       unallowed_marks: [],
-      alternatives: [{ key: "apply-tape", quote: "It could be read as an order to stick tape behind the ear" }]
+      alternatives: [{ key: "apply-tape", cite: cite(3, "It could be read as an order to stick tape behind the ear") }]
     }
   ],
   alternatives: [
@@ -171,6 +179,8 @@ test("the coder sees the observers' words and the contract but never the image, 
   const observer = params.output_config.format.schema.properties.observers.items.properties;
   assert.deepEqual(observer.items.items.properties.item.enum, cardContract.required);
   assert.deepEqual(observer.own_forbidden.items.properties.forbidden.enum, cardContract.forbidden);
+  assert.deepEqual(observer.alternatives.items.properties.cite.enum, [...citeMap(observations).keys()]);
+  assert.ok(!/exact words|verbatim|copy/i.test(params.system + params.messages[0].content), "the coder is never asked to copy model outputs");
   assert.ok(!text.includes(card.claim.state), "the coder is not told what the picture is meant to show");
 });
 
@@ -197,30 +207,40 @@ test("the static card's in-session observations, coded, pass the instruction-pic
   assert.equal(saved[0].entries.at(-1).status, "reserved");
 });
 
-test("a finding counts only when its quote is in the answer it cites, and nothing is recovered from the misreading answer", () => {
-  const observations = cardAnswers.map((answers, index) => ({ number: index + 1, answers }));
+test("a finding counts only when it cites a unit of that observer's answer that can support it", () => {
   const coding = cardCoding();
-  coding.observers[0].items[3].quote = "the bandage slides off";
-  coding.observers[1].items[4] = { item: lookForTape, recovered: true, answer: 4, quote: 'could read as "put tape on here' };
-  const check = checkCoding({ contract: cardContract, coding, observations });
-  assert.ok(!check.findings[0].recovered.includes(comesOff));
-  assert.ok(!check.findings[1].recovered.includes(lookForTape));
-  assert.ok(check.quote_checks.some((entry) => entry.observer === 1 && /quote not found/.test(entry.status)));
-  assert.ok(check.quote_checks.some((entry) => entry.observer === 2 && /cannot recover/.test(entry.status)));
+  coding.observers[0].items[3].cite = cite(1, "it shows a head being wrapped");
+  coding.observers[1].items[4].cite = cite(1, "Then look behind the ear for a tan strip");
+  coding.observers[2].items[0].cite = "o3.9.9";
+  const check = checkCoding({ contract: cardContract, coding, observations: cardObservations });
+  assert.ok(!check.findings[0].recovered.includes(comesOff), "answer 4, the misreading, cannot recover an item");
+  assert.ok(!check.findings[1].recovered.includes(lookForTape), "another observer's words cannot recover an item");
+  assert.ok(!check.findings[2].recovered.includes(dressingOn), "an invented citation cannot recover an item");
+  const statuses = check.citation_checks.map((entry) => entry.status).join("\n");
+  assert.match(statuses, /cannot support this finding/);
+  assert.match(statuses, /another observer's answer/);
+  assert.match(statuses, /does not exist/);
   const undefinedKey = cardCoding();
-  undefinedKey.observers[0].alternatives.push({ key: "invented", quote: "it shows a head being wrapped" });
-  assert.throws(() => checkCoding({ contract: cardContract, coding: undefinedKey, observations }), /never defines/);
+  undefinedKey.observers[0].alternatives.push({ key: "invented", cite: cite(1, "it shows a head being wrapped") });
+  assert.throws(() => checkCoding({ contract: cardContract, coding: undefinedKey, observations: cardObservations }), /never defines/);
   const missing = cardCoding();
   missing.observers.pop();
-  const partial = checkCoding({ contract: cardContract, coding: missing, observations });
-  assert.deepEqual(partial.findings[2].recovered, []);
+  assert.deepEqual(checkCoding({ contract: cardContract, coding: missing, observations: cardObservations }).findings[2].recovered, []);
+  const tally = checkCoding({ contract: cardContract, coding: cardCoding(), observations: cardObservations }).tally;
+  assert.equal(tally[comesOff][0].text, "band and pad come off, per the 1–3 order.", "the receipt shows the words each citation points to");
 });
 
-test("quotes match through case, curly quotes, dashes, and edge punctuation, and need at least two words", () => {
-  assert.ok(quoteFound("Navy circles “1”–“4”, top-left of each panel.", 'circles "1"-"4", top-left'));
-  assert.ok(quoteFound("The band and ear pad are coming off.", "the band and ear pad are coming off."));
-  assert.ok(!quoteFound("The band and ear pad are coming off.", "off"));
-  assert.ok(!quoteFound("The band and ear pad are coming off.", "the pad is coming off"));
+test("answers split into citable units at bullets, sentences, and semicolons, labeled by observer, answer, and unit", () => {
+  assert.deepEqual(splitUnits("Panel 1: a band, bow at the back; a pad over the ear. Panel 2: bare.\n   - Numbers 1–4 at 101.5 °F. \"Tape?\" sits below."), [
+    "Panel 1: a band, bow at the back;",
+    "a pad over the ear.",
+    "Panel 2: bare.",
+    "Numbers 1–4 at 101.5 °F.",
+    "\"Tape?\" sits below."
+  ]);
+  const units = citeMap([{ number: 2, answers: { 1: "Head. Neck.", 4: "A burn." } }]);
+  assert.deepEqual([...units.keys()], ["o2.1.1", "o2.1.2", "o2.4.1"]);
+  assert.deepEqual(units.get("o2.4.1"), { observer: 2, answer: 4, text: "A burn." });
 });
 
 test("stored observations parse back into their numbered answers for every receipt in the repository", async () => {
@@ -315,9 +335,10 @@ test("recording a review writes the receipt, indexes it, updates the manifest, a
   try {
     const answers = { view: "The back of a head, seen from behind and to the right.", state: "Red, raised swelling behind the ear along a thin healed scar; no open wound.", marks: "No text, arrows, or labels.", mistaken_for: "A sunburn." };
     const red = reviewContract(contracts.assets.find((asset) => asset.id === "postauricular-red-swollen"), { kind: "asset" });
-    const quotes = ["Red, raised swelling behind the ear along a thin healed scar", "raised swelling behind the ear", "no open wound"];
+    const redUnits = citeIn(unitsOf([1, 2, 3].map((number) => ({ number, answers: { 1: answers.view, 2: answers.state, 3: answers.marks, 4: answers.mistaken_for } }))));
+    const phrases = ["Red, raised swelling behind the ear along a thin healed scar", "Red, raised swelling behind the ear", "no open wound"];
     const coding = {
-      observers: [1, 2, 3].map((observer) => ({ observer, items: red.required.map((item, index) => ({ item, recovered: true, answer: 2, quote: quotes[index] })), own_forbidden: [], hedges: [], unallowed_marks: [], alternatives: [{ key: "sunburn", quote: "A sunburn" }] })),
+      observers: [1, 2, 3].map((observer) => ({ observer, items: red.required.map((item, index) => ({ item, recovered: true, cite: redUnits(observer, phrases[index]) })), own_forbidden: [], hedges: [], unallowed_marks: [], alternatives: [{ key: "sunburn", cite: redUnits(observer, "A sunburn") }] })),
       alternatives: [{ key: "sunburn", reading: "a sunburn", forbidden: null, harm: false }],
       design_notes: []
     };
@@ -386,7 +407,7 @@ test("calibration can repeat every case, and a case whose runs disagree counts a
             create: async (params) => {
               codings += 1;
               const coding = cardCoding();
-              if (codings % 2 === 0) coding.observers[0].items[3].quote = "the bandage slides off";
+              if (codings % 2 === 0) coding.observers[0].items[3].cite = cite(1, "it shows a head being wrapped");
               return reply(coding, { input: 3000, outputTokens: 2500 });
             }
           }
@@ -418,7 +439,7 @@ test("when two codings of the same answers disagree, the picture fails, is marke
           if (isObserverCall(params)) return reply(toOutput(cardAnswers[(client.calls.length - 1) % 3]));
           codingCalls += 1;
           const coding = cardCoding();
-          if (codingCalls === 2) coding.observers[2].items[3].quote = "the band is sliding down";
+          if (codingCalls === 2) coding.observers[2].items[3].cite = cite(3, "It could be read as an order to stick tape behind the ear");
           return reply(coding, { input: 3000, outputTokens: 2500 });
         }
       }
