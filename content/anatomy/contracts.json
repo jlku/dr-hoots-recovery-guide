@@ -68,7 +68,7 @@
         "the same view of the head"
       ],
       "revision_note": "a2 covered the ear with a rounded pad that observers read as the ear itself; a3 dropped the pad and the model left the ear exposed. Cap raised from 3 to 4, the validator ceiling, on 2026-09-17 under John's ten-dollar authorization; a4 asks for a flat square taped pad under the wrap and is the final attempt.",
-      "status_note": "Exhausted 2026-09-17 with no accepted record: a4 is held as a candidate (two of three observers saw the ear covered). frame-01 shows the base master only until a dressing passes or Song accepts a candidate."
+      "status_note": "Superseded 2026-09-17 by postauricular-dressing-ref, which passed with a reference photograph."
     },
     {
       "id": "postauricular-red-swollen",
@@ -98,7 +98,7 @@
         "no open wound"
       ],
       "revision_note": "a1 and a2 (edits of the base) lost the swelling for most observers; a3 (edit of the accepted fluid master) kept the line but the saturated flush erased the dome's shading, so no observer saw swelling. Cap raised from 3 to 4, the validator ceiling, on 2026-09-17 under John's ten-dollar authorization; a4 asks for a lighter tint that preserves the dome's highlight and shadow and is the final attempt.",
-      "status_note": "Exhausted 2026-09-17 with no accepted record: a3 is held as a candidate (redness recovered, swelling not). frame-06 composes the accepted fluid master with a vector flush overlay instead."
+      "status_note": "Exhausted 2026-09-17; the reference-guided postauricular-red-swollen-ref also failed (three attempts). frame-06 composes the accepted fluid master with a vector flush overlay."
     },
     {
       "id": "postauricular-fluid",
@@ -156,7 +156,144 @@
         "a small round piece on the scalp above and behind the ear connected by a short cable",
         "the same view of the head from behind"
       ],
-      "parent": "postauricular-base"
+      "parent": "postauricular-base",
+      "status_note": "Superseded 2026-09-17 by processor-worn-ref, which passed with reference photographs."
+    },
+    {
+      "id": "postauricular-dressing-ref",
+      "kind": "edit",
+      "parent": "postauricular-base",
+      "model": "fal-ai/flux-2-pro/edit",
+      "image_size": "landscape_4_3",
+      "seed": 90401,
+      "max_attempts": 4,
+      "supersedes": "postauricular-dressing",
+      "approach": "reference images: prompt-only attempts left the ear exposed or added a pad that read as the ear",
+      "references": [
+        {
+          "file": "assets/anatomy/references/iowa-mastoid-dressing-side-crop.jpg",
+          "width": 500,
+          "height": 360,
+          "source": "https://iowaprotocols.medicine.uiowa.edu/protocols/how-apply-mastoid-dressing-illustrated-steps",
+          "license": "University of Iowa Health Care, all rights reserved; cropped to the dressing with no face, used only as a generation input, not stored in the repository",
+          "role": "finished mastoid dressing, side view, cropped tightly to the wrap and ear",
+          "redistributable": false
+        }
+      ],
+      "claim": {
+        "sentence_ids": [
+          "wc.01"
+        ],
+        "anatomy": "The same person and view.",
+        "state": "A snug white gauze head wrap covers the operated ear and the area behind it, wrapping around the head above the eyebrows. The face is unchanged.",
+        "forbidden": [
+          "loose gauze held beside the ear",
+          "the ear uncovered",
+          "a helmet or hat instead of a gauze wrap",
+          "any text or label"
+        ]
+      },
+      "observers_must_recover": [
+        "a white head bandage wrapped around the head",
+        "the ear covered by the bandage",
+        "the same view of the head"
+      ],
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right. Image 2 is a photograph of a mastoid dressing on the side of a head: a thick white gauze pad over the ear, held by a white gauze wrap that circles the head above the eyebrows and is tied at the front. Edit image 1 so the person wears exactly this kind of dressing on the right ear: the thick gauze pad completely covers the ear and the skin behind it, and the wrap passes around the head above the eyebrows and over the pad, so no part of the ear is visible. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or background from the photograph. No text, no labels, no captions, no arrows, no logos.",
+      "revision_note": "The provider's content checker rejected the two uncropped Iowa photos as inputs (both show a face); the reference is now one side view cropped to the dressing."
+    },
+    {
+      "id": "processor-worn-ref",
+      "kind": "edit",
+      "parent": "postauricular-base",
+      "model": "fal-ai/flux-2-pro/edit",
+      "image_size": "landscape_4_3",
+      "seed": 90501,
+      "max_attempts": 4,
+      "supersedes": "processor-worn",
+      "approach": "reference images: prompt-only attempts hung a cable down the neck or misplaced the coil",
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-cochlear-implant-user.jpg",
+          "width": 1024,
+          "height": 817,
+          "source": "https://commons.wikimedia.org/wiki/File:Cochlear_implant_user.jpg",
+          "license": "CC BY-SA 4.0",
+          "role": "processor worn behind the ear with the coil above and behind it, side view",
+          "redistributable": true
+        },
+        {
+          "file": "assets/anatomy/references/commons-nucleus-7-on-ear.jpg",
+          "width": 1023,
+          "height": 1024,
+          "source": "https://commons.wikimedia.org/wiki/File:Cochlear_Nucleus%C2%AE_7_Sound_Processor_(cropped).jpg",
+          "license": "CC BY-SA 4.0",
+          "role": "processor and coil close-up",
+          "redistributable": true
+        }
+      ],
+      "claim": {
+        "sentence_ids": [
+          "act.02"
+        ],
+        "anatomy": "The same person and view.",
+        "state": "A behind-the-ear sound processor hooks over the top of the right ear with its body behind the ear; a short cable runs from it up to a round transmitter coil resting on the scalp above and behind the ear. Nothing hangs down the neck.",
+        "forbidden": [
+          "a cable hanging down the neck or to the body",
+          "the coil at the back of the head, the crown, or the neck",
+          "a hearing aid with no coil",
+          "a photograph or 3D render instead of the flat illustration",
+          "any text or label"
+        ]
+      },
+      "observers_must_recover": [
+        "a device hooked behind the ear",
+        "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+        "the same view of the head"
+      ],
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right. Image 2 is a photograph of a person wearing a cochlear implant sound processor: a curved unit hooked over the top of the ear with its body behind the ear, and a short cable rising from it to a round coil that rests on the scalp above and behind the ear. Image 3 is a close-up of the same kind of processor and coil. Edit image 1 so the person wears exactly this kind of processor and coil on the right ear, in the same positions as image 2: the body behind the ear, the coil on the scalp above and behind the ear, the short cable between them, and nothing hanging down the neck. Draw the device in dark gray in the flat illustration style of image 1. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the people, faces, hair, or backgrounds from the reference photographs. No text, no labels, no captions, no arrows, no logos."
+    },
+    {
+      "id": "postauricular-red-swollen-ref",
+      "kind": "edit",
+      "parent": "postauricular-fluid",
+      "model": "fal-ai/flux-2-pro/edit",
+      "image_size": "landscape_4_3",
+      "seed": 90601,
+      "max_attempts": 4,
+      "supersedes": "postauricular-red-swollen",
+      "approach": "reference image on the accepted fluid master: prompt-only attempts turned swelling into a flat flush",
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-mastoiditis.jpg",
+          "width": 857,
+          "height": 1024,
+          "source": "https://commons.wikimedia.org/wiki/File:Mastoiditis1.jpg",
+          "license": "CC BY-SA 3.0",
+          "role": "red, tense swelling behind the ear",
+          "redistributable": true
+        }
+      ],
+      "claim": {
+        "sentence_ids": [
+          "call.01a"
+        ],
+        "anatomy": "The same person and view.",
+        "state": "The skin along and around the incision line behind the ear is reddened and mildly swollen. Nothing else changes.",
+        "forbidden": [
+          "bleeding or an open wound",
+          "pus",
+          "redness on the face or neck instead of behind the ear",
+          "any text or label"
+        ]
+      },
+      "observers_must_recover": [
+        "redness behind the ear along a scar or incision",
+        "some swelling in the same area",
+        "no open wound"
+      ],
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a smooth rounded bulge behind the right ear. Image 2 is a photograph of hot, pink-red skin behind an ear. Change only the color of the skin on the bulge in image 1: tint the surface of the bulge and a narrow margin around it the pink-red of image 2, as a smooth surface blush. Change nothing else at all: keep the bulge's outline, its pale highlight, and the shadow under its lower edge exactly as they are in image 1, keep every existing line exactly as drawn, and add no new marks. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or ear from the photograph. No text, no labels, no captions, no arrows, no logos.",
+      "revision_note": "a1 and a2 rendered sutures whenever the prompt mentioned the incision and flattened the dome under the tint; a3 never mentions the line and asks for a surface blush only.",
+      "status_note": "Stopped 2026-09-17 after three attempts with no accepted record: every tint flattened the dome, and any mention of the incision produced sutures. Redness is a color state, not an object; the vector flush on the accepted fluid master carries it in frame-06."
     }
   ]
 }

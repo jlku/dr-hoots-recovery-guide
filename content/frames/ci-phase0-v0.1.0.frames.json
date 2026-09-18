@@ -8,9 +8,10 @@
   "frames": {
     "frame-01": {
       "kind": "composite",
-      "alt": "Day 2: the area behind the ear after the head bandage comes off, zoomed in to check for tape over the incision.",
+      "alt": "Day 2: the head bandage comes off, then the area behind the ear is checked for tape over the incision.",
       "layers": {
-        "base": "assets/anatomy/postauricular-base-a2.png"
+        "base": "assets/anatomy/postauricular-base-a2.png",
+        "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png"
       },
       "anchors": {
         "incision": {
@@ -20,8 +21,14 @@
       },
       "states": [
         {
-          "id": "base",
-          "image": "base"
+          "id": "dressing-on",
+          "image": "dressing",
+          "until": "remove"
+        },
+        {
+          "id": "bandage-off",
+          "image": "base",
+          "from": "remove"
         }
       ],
       "overlays": [
@@ -302,38 +309,21 @@
       "kind": "composite",
       "alt": "The external speech processor hooked over the ear with its body behind the ear, and its transmitter coil on the scalp above and behind the ear, at the programming visit.",
       "layers": {
-        "base": "assets/anatomy/postauricular-base-a2.png"
+        "processor": "assets/anatomy/processor-worn-ref-a1.png"
       },
       "anchors": {
-        "ear_top": {
-          "x": 0.625,
-          "y": 0.375
-        },
         "processor": {
-          "x": 0.585,
-          "y": 0.47
-        },
-        "coil": {
-          "x": 0.5,
-          "y": 0.3
+          "x": 0.575,
+          "y": 0.44
         }
       },
       "states": [
         {
-          "id": "base",
-          "image": "base"
+          "id": "processor",
+          "image": "processor"
         }
       ],
       "overlays": [
-        {
-          "id": "device",
-          "type": "device",
-          "anchor": "ear_top",
-          "coil": "coil",
-          "sentence_ids": [
-            "act.02"
-          ]
-        },
         {
           "id": "processor-label",
           "type": "pointer",

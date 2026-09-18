@@ -23,3 +23,6 @@ output/*
 !output/pdf/
 output/pdf/*
 !output/pdf/airline-safety-card-deck-prototype.pdf
+
+# Reference photos used only as generation inputs; not redistributable
+assets/anatomy/references/iowa-*

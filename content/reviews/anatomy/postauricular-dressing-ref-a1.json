@@ -1,0 +1,54 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-dressing-ref-a1",
+  "asset_id": "postauricular-dressing-ref",
+  "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+  "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Reference-guided edit of the base: gauze band around the head tied at the back, rectangular gauze pad completely covering the ear, flat style preserved.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a05b4f103a8a17313",
+      "observation": "1. A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge.\n\n2. A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left. A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw. The lower back of the scalp is shaved to stubble beneath longer dark hair.\n\n3. No text, arrows, labels, or symbols.\n\n4. Could be read as a head-injury or post-scalp-surgery wrap (the shaved nape suggests a shave site), rather than an ear-area dressing.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a15f8d19274db9558",
+      "observation": "1. A human head and neck seen from the right side and slightly behind; the face is turned away so only the tip of the nose, an eyelash, and the cheek edge are visible. Short brown hair, shaved at the back.\n\n2. A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image. A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible. Skin looks smooth and unmarked.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as the ear being fully bandaged after injury or removal, since no ear shows.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a381fb22e9b2252fe",
+      "observation": "1. A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck; hair is short and dark with a shaved-looking patch above the ear.\n\n2. A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left. A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely. A shaved patch of scalp lies above and behind the ear, above the band. No wound, redness, or drainage is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. An eye patch or a dressing over a head injury or scalp wound, since the ear itself is hidden.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "a0e33611ad1950041",
+    "verdict": "pass",
+    "tally": {
+      "a white head bandage wrapped around the head": "1,2,3",
+      "the ear covered by the bandage": "1,2,3",
+      "the same view of the head": "1,2,3"
+    },
+    "recovered": [
+      "a white head bandage wrapped around the head",
+      "the ear covered by the bandage",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "text_detected": false,
+    "reason": "All three observers describe a white gauze band wrapped around the head with a white pad over the right ear hiding it completely, all three describe the same posterior-right view with the face turned away, none report text, and none state a loose-gauze, uncovered-ear, or helmet/hat reading."
+  },
+  "outcome": "accepted",
+  "notes": "First attempt with one reference photograph (the Iowa mastoid dressing side view cropped tightly to the wrap and ear) after four prompt-only attempts failed; the provider's input checker rejected the uncropped photographs.",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

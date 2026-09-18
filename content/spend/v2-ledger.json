@@ -214,6 +214,141 @@
       "actual_usd": null,
       "request_id": "01a0b211-5091-7f01-83df-6dae755fd299",
       "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing-ref:a1",
+      "at": "2026-09-18T02:46:52.641Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 2
+      },
+      "estimate_usd": 0.07,
+      "actual_usd": null,
+      "request_id": null,
+      "status": "failed"
+    },
+    {
+      "id": "anatomy:processor-worn-ref:a1",
+      "at": "2026-09-18T02:46:56.623Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy processor-worn-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 2
+      },
+      "estimate_usd": 0.07,
+      "actual_usd": null,
+      "request_id": "01a0b268-f881-70a2-8d2f-4c0a44587514",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen-ref:a1",
+      "at": "2026-09-18T02:47:20.392Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png",
+        "references": 1
+      },
+      "estimate_usd": 0.06,
+      "actual_usd": null,
+      "request_id": "01a0b269-53b5-7002-be20-d9c76704c88b",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing-ref:a1-r2",
+      "at": "2026-09-18T02:48:46.503Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 2
+      },
+      "estimate_usd": 0.07,
+      "actual_usd": null,
+      "request_id": null,
+      "status": "failed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing-ref:a1-r3",
+      "at": "2026-09-18T02:50:15.885Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 1
+      },
+      "estimate_usd": 0.05,
+      "actual_usd": null,
+      "request_id": null,
+      "status": "failed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing-ref:a1-r4",
+      "at": "2026-09-18T02:53:09.294Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 1
+      },
+      "estimate_usd": 0.05,
+      "actual_usd": null,
+      "request_id": "01a0b26e-a598-7d92-acc5-6db286ae2035",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen-ref:a2",
+      "at": "2026-09-18T02:55:29.216Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen-ref attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png",
+        "references": 1
+      },
+      "estimate_usd": 0.06,
+      "actual_usd": null,
+      "request_id": null,
+      "status": "failed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen-ref:a2-r2",
+      "at": "2026-09-18T02:56:13.423Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen-ref attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png",
+        "references": 1
+      },
+      "estimate_usd": 0.06,
+      "actual_usd": null,
+      "request_id": "01a0b271-898a-70b0-bdd6-35950022bf42",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen-ref:a3",
+      "at": "2026-09-18T02:57:23.692Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen-ref attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png",
+        "references": 1
+      },
+      "estimate_usd": 0.06,
+      "actual_usd": null,
+      "request_id": "01a0b272-889a-7322-9685-1c78fb2f0c80",
+      "status": "completed"
     }
   ]
 }

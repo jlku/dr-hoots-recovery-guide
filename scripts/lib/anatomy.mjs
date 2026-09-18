@@ -77,12 +77,15 @@ export function planAttempt({ contracts, manifest, assetId }) {
     if (!parent) throw new Error(`${assetId} needs an accepted ${asset.parent} first`);
     inputMegapixels = (parent.width * parent.height) / 1e6;
   }
+  const references = (asset.references ?? []).map((reference) => ({ ...reference }));
+  for (const reference of references) inputMegapixels += ((reference.width ?? 0) * (reference.height ?? 0)) / 1e6;
   const attempt = attempts.length + 1;
   return {
     assetId,
     attempt,
     model: MODELS[asset.kind],
     parentFile: parent?.file ?? null,
+    references,
     input: { prompt: asset.prompt, image_size: asset.image_size, seed: asset.seed + attempt - 1, output_format: "png", enable_safety_checker: true },
     estimateUsd: estimateFluxUsd({ outputMegapixels, inputMegapixels }),
     file: `assets/anatomy/${assetId}-a${attempt}.png`,
@@ -90,7 +93,7 @@ export function planAttempt({ contracts, manifest, assetId }) {
   };
 }
 
-export function recordCandidate(manifest, plan, { bytes, width, height, requestId, seed }) {
+export function recordCandidate(manifest, plan, { bytes, width, height, requestId, seed, references = [] }) {
   const record = {
     id: `${plan.assetId}-a${plan.attempt}`,
     asset_id: plan.assetId,
@@ -102,6 +105,7 @@ export function recordCandidate(manifest, plan, { bytes, width, height, requestI
     model: plan.model,
     prompt: plan.input.prompt,
     seed,
+    references,
     request_id: requestId,
     estimate_usd: plan.estimateUsd,
     ledger_entry: plan.ledgerId,
