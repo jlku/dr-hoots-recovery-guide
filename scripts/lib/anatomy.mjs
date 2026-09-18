@@ -50,6 +50,14 @@ export function validateContracts(contracts) {
     if (!asset.claim?.sentence_ids?.length) errors.push(`${asset.id}: claim.sentence_ids is required`);
     if (!Array.isArray(asset.claim?.forbidden) || asset.claim.forbidden.length === 0) errors.push(`${asset.id}: claim.forbidden must list the wrong readings`);
     if (!Array.isArray(asset.observers_must_recover) || asset.observers_must_recover.length < 2) errors.push(`${asset.id}: observers_must_recover needs at least two items`);
+    for (const item of asset.observers_must_recover ?? []) {
+      if (/^(no|not|without|nothing)\b/i.test(item.trim())) errors.push(`${asset.id}: "${item}" is an absence, which no observer states; put it in claim.forbidden instead`);
+    }
+  }
+  for (const diagram of contracts.diagrams ?? []) {
+    for (const item of diagram.observers_must_recover ?? []) {
+      if (/^(no|not|without|nothing)\b/i.test(item.trim())) errors.push(`${diagram.id}: "${item}" is an absence, which no observer states; put it in claim.forbidden instead`);
+    }
   }
   return { valid: errors.length === 0, errors };
 }

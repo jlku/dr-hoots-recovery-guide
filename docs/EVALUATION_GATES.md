@@ -149,6 +149,7 @@ A how-to picture is a static card in the manner of an airline safety card. Three
 - Every required item is recovered by all three observers.
 - A forbidden reading in an observer's own answer fails the card. So does any mark the contract does not allow.
 - A forced alternative reading fails the card only when two or more observers name the same one and it involves harm or the wrong body part. The strict verdict is kept beside it in the receipt.
+- State pictures, which show a body part in a state rather than an action, fail only for what observers report seeing. Imagined misreadings are notes for the clinician. Required items must be visible things; absences go in the forbidden readings. Approved for now by John on 2026-09-18; Song's sign-off is `q.state-picture-misreadings`.
 - `npm run check` runs `reviews:validate`, which refuses a receipt whose verdict does not follow from its findings, and `instructions:validate`, which refuses a verified claim without a passing receipt.
 
 Approved for now by John on 2026-09-18. Song's sign-off is `q.instruction-picture-rule` in `content/clinician/questions-for-song.md`.

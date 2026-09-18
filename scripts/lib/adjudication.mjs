@@ -1,20 +1,28 @@
 // The verdict rules in code. A reviewer decides what each observer's words mean; this decides what
 // follows from that, so a verdict can never drift from the findings recorded beside it.
 //
-// Strict rule (state pictures): fail when any required item is recovered by fewer than three
-// observers, any observer states a forbidden reading anywhere, including as a hedge they set aside
-// or as a possible misreading, or any unallowed mark is reported.
+// Three rules, each computed from the same coded findings.
 //
-// Instruction-picture rule (static how-to cards): the same, except that an alternative reading from
-// question 4 counts only when two or more observers name the same one and it involves harm or the
-// wrong body part. Asked for an alternative to a reversible action, observers always name the
-// reverse, so that answer alone cannot fail a card; nor can a hedge the observer resolves in favor of
-// the intended action. Approved for now by John on 2026-09-18;
-// Song's sign-off is question q.instruction-picture-rule.
+// State pictures (placeholder, approved for now by John on 2026-09-18; Song's sign-off is question
+// q.state-picture-misreadings): a picture that shows a body part in a state fails for what observers
+// report seeing: a required item fewer than three of them recover, a forbidden reading in their own
+// answers, or a mark that should not be there. Imagined misreadings from question 4 and hedges they
+// set aside are notes for the clinician. On these pictures a misreading changes how alarmed a viewer
+// feels, not what they do, and requiring none failed every accepted state picture in the first live
+// calibration.
+//
+// Instruction pictures (placeholder, approved for now by John on 2026-09-18; Song's sign-off is
+// q.instruction-picture-rule): the same, and a misreading also fails the card when two or more
+// observers name the same one and it involves harm or the wrong body part, because a viewer might act
+// on it. That caught gauze read as cloth at the throat and a strip read as "cut here". Asked for an
+// alternative to a reversible action, observers always name the reverse, so that alone cannot fail it.
+//
+// Strict (kept as a reference verdict on every receipt): any forbidden reading anywhere, including a
+// hedge or a misreading, fails the picture.
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
 
-export const ADJUDICATION_RULES = Object.freeze(["strict", "instruction-picture"]);
+export const ADJUDICATION_RULES = Object.freeze(["state-picture", "instruction-picture", "strict"]);
 export const REVIEWS_INDEX = "content/reviews/index.json";
 export const RECEIPTS_DIR = "content/reviews/anatomy";
 export const CALIBRATION_DIR = "content/reviews/calibration";
@@ -34,7 +42,7 @@ export function adjudicate({ required, observers, rule = "instruction-picture" }
   const sharedHarm = alternatives.filter((alternative) => alternative.harm && namedBy.get(alternative.key).size >= 2);
   const anyForbidden = alternatives.filter((alternative) => alternative.forbidden);
   const forbiddenHitsStrict = [...own, ...marks, ...hedges, ...anyForbidden.map(hit)];
-  const forbiddenHits = rule === "strict" ? forbiddenHitsStrict : [...own, ...marks, ...sharedHarm.map(hit)];
+  const forbiddenHits = rule === "strict" ? forbiddenHitsStrict : rule === "instruction-picture" ? [...own, ...marks, ...sharedHarm.map(hit)] : [...own, ...marks];
   return {
     rule,
     verdict: missed.length === 0 && forbiddenHits.length === 0 ? "pass" : "fail",

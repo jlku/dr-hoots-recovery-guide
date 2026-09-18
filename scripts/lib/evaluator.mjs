@@ -70,7 +70,7 @@ export function reviewContract(source, { kind }) {
   return {
     id: source.id,
     kind,
-    rule: kind === "diagram" ? "instruction-picture" : "strict",
+    rule: kind === "diagram" || source.instruction ? "instruction-picture" : "state-picture",
     instruction: kind === "diagram" || Boolean(source.instruction),
     required: [...required],
     forbidden: [...(source.claim?.forbidden ?? [])],
@@ -398,7 +398,13 @@ function describe(result, contract) {
   if (result.forbidden_hits.length) {
     parts.push(`Forbidden: ${result.forbidden_hits.map((hit) => `observer ${hit.observer} (${hit.source}): ${hit.reading}`).join("; ")}.`);
   } else {
-    parts.push(contract.rule === "strict" ? "No observer states a forbidden reading, and no unallowed mark was reported." : "No observer's own answer states a forbidden reading, no unallowed mark was reported, and no harmful misreading is shared by two observers.");
+    parts.push(
+      {
+        strict: "No observer states a forbidden reading, and no unallowed mark was reported.",
+        "instruction-picture": "No observer's own answer states a forbidden reading, no unallowed mark was reported, and no harmful misreading is shared by two observers.",
+        "state-picture": "No observer's own answer states a forbidden reading and no unallowed mark was reported; imagined misreadings are notes for the clinician."
+      }[contract.rule]
+    );
   }
   if (contract.rule !== "strict") parts.push(`Under the strict rule the picture would ${result.verdict_strict}.`);
   return parts.join(" ");

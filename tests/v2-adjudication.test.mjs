@@ -77,3 +77,16 @@ test("a hedge the observer sets aside fails only the strict rule, and reaches th
   assert.ok(result.design_notes.some((note) => /set aside: the dressing being put on/.test(note)));
   assert.equal(adjudicate({ required, rule: "strict", observers: [observer({ hedges: ["x"] }), observer(), observer()] }).verdict, "fail");
 });
+
+test("state pictures fail for what observers report seeing; imagined misreadings and set-aside hedges are notes", () => {
+  const eyePatch = { key: "eye-patch", reading: "the pad is a patch over the eye", forbidden: "the ear uncovered", harm: true };
+  const shared = [observer({ alternatives: [eyePatch] }), observer({ alternatives: [eyePatch] }), observer({ alternatives: [eyePatch], hedges: ["the dressing being put on"] })];
+  const state = adjudicate({ required, rule: "state-picture", observers: shared });
+  assert.equal(state.verdict, "pass", "even a harmful misreading all three share is a note on a state picture");
+  assert.equal(state.verdict_strict, "fail");
+  assert.equal(adjudicate({ required, rule: "instruction-picture", observers: shared }).verdict, "fail", "on an instruction card the same shared harmful misreading fails it");
+  assert.ok(state.design_notes.some((note) => /patch over the eye/.test(note)) && state.design_notes.some((note) => /set aside/.test(note)));
+  assert.equal(adjudicate({ required, rule: "state-picture", observers: [observer({ own_forbidden: ["the ear uncovered"] }), observer(), observer()] }).verdict, "fail", "what an observer reports seeing still fails it");
+  assert.equal(adjudicate({ required, rule: "state-picture", observers: [observer({ unallowed_marks: ["a label"] }), observer(), observer()] }).verdict, "fail");
+  assert.equal(adjudicate({ required, rule: "state-picture", observers: [observer({ recovered: required.slice(1) }), observer(), observer()] }).verdict, "fail");
+});
