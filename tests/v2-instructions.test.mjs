@@ -60,16 +60,18 @@ test("the clinician question list parses ids and statuses from bullets", () => {
   assert.ok(questions.size >= 6);
 });
 
-test("the verified motion claim carries a static-card receipt with both verdicts and the observers' instruction answers", async () => {
+test("the motion claim rests on the redrawn card's live receipt: every observer reads the bandage coming off, and only the tape panel fails", async () => {
   const claim = instructions.claims.find((item) => item.id === "howto.remove-dressing");
-  assert.equal(claim.status, "verified");
-  assert.equal(claim.clinician_confirmed, false, "observers can tell what to do; the clinician has not confirmed the how");
+  assert.equal(claim.status, "illustrated", "the card failed its live review, so the claim is illustrated rather than verified");
+  assert.equal(claim.clinician_confirmed, false, "the clinician has not confirmed the how");
   const receipt = JSON.parse(await readFile(resolve(root, claim.receipt), "utf8"));
-  assert.equal(receipt.adjudication.verdict, "pass");
-  assert.equal(receipt.adjudication.verdict_strict, "fail", "the strict verdict is kept visible while the instruction-sequence rule awaits sign-off");
-  assert.equal(receipt.panels.length, 3);
-  assert.ok(receipt.observers.every((observer) => /com(e|ing) off/i.test(observer.observation)));
   assert.equal(receipt.file, "assets/anatomy/diagrams/remove-dressing.png", "the reviewed picture is the static card, not a timed sequence");
-  assert.equal(instructions.claims.find((item) => item.id === "howto.check-tape").receipt, claim.receipt, "panel 4 of the same card verifies the tape check");
+  assert.equal(receipt.panels.length, 3);
+  assert.equal(receipt.adjudication.verdict, "fail");
+  assert.deepEqual(receipt.adjudication.missed, [], "all three observers recovered every required item");
+  assert.ok(receipt.observers.every((observer) => /unwrap/i.test(observer.observation)), "every observer reads the bandage being unwrapped");
+  assert.ok(receipt.adjudication.forbidden_hits.length > 0 && receipt.adjudication.forbidden_hits.every((hit) => /pull/i.test(hit.reading ?? String(hit))), "the only hits are the pull-off readings of the tape");
+  assert.equal(instructions.claims.find((item) => item.id === "howto.check-tape").receipt, claim.receipt, "panel 4 of the same card carries the tape check");
+  assert.equal(instructions.claims.find((item) => item.id === "howto.check-tape").open_question, "q.tape-appearance");
   assert.ok(receipt.adjudication.design_notes.length > 0);
 });

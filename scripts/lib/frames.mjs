@@ -4,7 +4,7 @@ import { join } from "node:path";
 export const FRAMES_PATH = "content/frames/ci-phase0-v0.1.0.frames.json";
 export const FRAME_KINDS = Object.freeze(["svg", "image", "text", "composite", "panels"]);
 export const MOTION_MODES = Object.freeze(["static", "narration"]);
-export const OVERLAY_TYPES = Object.freeze(["tape-strip", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer", "device", "flush", "motion-arrow"]);
+export const OVERLAY_TYPES = Object.freeze(["incision", "tape-strips", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer", "device", "flush", "motion-arrow"]);
 
 export async function loadFrameManifest(root, path = FRAMES_PATH) {
   return JSON.parse(await readFile(join(root, path), "utf8"));
@@ -30,6 +30,13 @@ function validateOverlays(id, frame, overlays, { labels, spoken, errors }) {
       if (overlay[key] && !frame.anchors?.[overlay[key]]) errors.push(`${id} overlay ${overlay.id} ${key} ${overlay[key]} is not defined`);
     }
     if (overlay.at && !within(overlay.at)) errors.push(`${id} overlay ${overlay.id} position must sit within the image`);
+    if (overlay.type === "incision" && !frame.paths?.[overlay.path]) errors.push(`${id} overlay ${overlay.id} path ${overlay.path} is not defined; the incision is drawn along a measured path`);
+    if (overlay.type === "tape-strips") {
+      if (!frame.paths?.[overlay.path]) errors.push(`${id} overlay ${overlay.id} path ${overlay.path} is not defined; tape is drawn across a measured path`);
+      const span = overlay.span ?? [0.2, 0.8];
+      if (!(Array.isArray(span) && span.length === 2 && span.every((value) => value >= 0 && value <= 1) && span[0] <= span[1])) errors.push(`${id} overlay ${overlay.id} span must be two fractions of the path, in order`);
+      if (overlay.count != null && !(Number.isInteger(overlay.count) && overlay.count >= 1 && overlay.count <= 8)) errors.push(`${id} overlay ${overlay.id} count must be 1 to 8 strips`);
+    }
     const keys = [overlay.label_key, ...(overlay.rows ?? []).map((row) => row.label_key)].filter(Boolean);
     for (const key of keys) {
       if (typeof labels[key] !== "string" || !labels[key].trim()) errors.push(`${id} overlay ${overlay.id} label ${key} is not in the English pack`);
@@ -50,6 +57,10 @@ async function validateLayers(id, frame, { root, errors }) {
   }
   for (const [name, anchor] of Object.entries(frame.anchors ?? {})) {
     if (!within(anchor)) errors.push(`${id} anchor ${name} must sit within the image`);
+  }
+  for (const [name, points] of Object.entries(frame.paths ?? {})) {
+    const valid = Array.isArray(points) && points.length >= 2 && points.every((point) => Array.isArray(point) && point.length === 2 && within({ x: point[0], y: point[1] }));
+    if (!valid) errors.push(`${id} path ${name} needs at least two [x, y] points within the image`);
   }
   if (typeof frame.alt !== "string" || !frame.alt.trim()) errors.push(`${id} needs alt text`);
   return layers;

@@ -1,74 +1,1040 @@
 {
-  "schema_version": "1.0",
+  "schema_version": "1.1",
   "record_id": "diagram.remove-dressing",
-  "asset_id": "sequence",
+  "contract_id": "diagram.remove-dressing",
+  "kind": "diagram",
   "file": "assets/anatomy/diagrams/remove-dressing.png",
-  "sha256": "d6ca542316478fc43e7495c467545ce84a2f00920ad6eec21aaafd6bcebbfdbe",
-  "reviewed_on": "2026-09-17",
-  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
-  "inspection": "Static four-panel card rendered from guide/frame.html: numerals 1 to 4, dressing on, hand drawing the gauze away with one arrow, bare head, magnifier over the incision with a plain tape strip and the label Tape?.",
+  "sha256": "8ee7383164542aeea11c78174b3f1419af2770a8dff3169b3749af2405d95d14",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "instruction-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBddbzXW7HToz9Jbgf8M",
+        "request_id": "req_011CfBddb2z9MpeJBntuFp1d",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1970,
+          "output_tokens": 717,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBddc227bvVCr6nNbMb7",
+        "request_id": "req_011CfBddaxmfs415G1SU23R3",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1970,
+          "output_tokens": 503,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBddbyHqFWuU9LPRJLz3",
+        "request_id": "req_011CfBddauYThiunkxvq2RiH",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1970,
+          "output_tokens": 543,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBdeXPFSqUvKkeNFcehv",
+        "request_id": "req_011CfBdeWviBdgWRaJx9PNR2",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 7648,
+          "output_tokens": 8900,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBdeXPk2cFHu6B5n8oce",
+        "request_id": "req_011CfBdeWvD7o6DRYPFKgYV9",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 7648,
+          "output_tokens": 8349,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.58133
+  },
+  "inspection": null,
   "observers": [
     {
       "label": "Caption-blind observer 1 (Claude)",
-      "task": "a50e90350b6c958ec",
-      "observation": "1. Back of a person's head and neck, from behind and slightly right; the right ear is the focus. Four panels.\n\n2. Panel 1: white cloth band around the head at forehead level, bow at the back; white rounded pad over the ear. Panel 2: a hand pulls the band's loose tail backward; pad already gone, ear bare. Panel 3: no band or pad; a thin pale curved line in the crease behind the ear. Panel 4: magnified ear; a tan rounded strip lies tilted across that line, behind the upper ear.\n\n3. Navy circles \"1\"–\"4\", top-left of each panel (sequence). Teal arrow, panel 2, above the hand, pointing away from the head (pull direction). Magnifying glass, panel 4. Pill label \"Tape?\" beneath it, a question.\n\n4. Reversed, or with the arrow read as \"pull tight,\" it shows a head being wrapped. The tan strip could pass for a wound.\n\n5. Pull the band's tail backward to undo it; band and pad come off, per the 1–3 order. Then look behind the ear for a tan strip. Whether that strip stays, comes off, or goes on: cannot tell."
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBddbzXW7HToz9Jbgf8M",
+      "recoded_from": null,
+      "answers": {
+        "1": "The side of a man's head and neck, seen in profile from behind/side. The hair on the side and back is shaved short, and the ear is fully visible. Four separate panels show the same view.",
+        "2": "Panel 1: a white cloth bandage wrapped around the head, tied in a small bow near the front, with a square white gauze pad sitting over the area just behind and above the ear. Panel 2: two hands at the back of the head holding the unwound end of the bandage, which now hangs loose; the pad is gone and the skin behind the ear is bare. Panel 3: no bandage; a thin curved line runs along the skin just behind the ear, following the ear's curve, with about four small white tape strips laid crosswise over it. Panel 4: a close-up through a magnifying glass of that same curved line behind the ear with four white tape strips across it.",
+        "3": "Dark circles with white numbers 1, 2, 3, 4 in the top-left of each panel, giving the order of steps. A teal arrow in panel 2, upper left, pointing left/backward, showing the direction to pull the bandage. A magnifying-glass shape in panel 4 with a white oval label reading \"Check for tape\" below it.",
+        "4": "Someone might read the curved line and strips as a fresh wound splitting open, or think the small tapes are stitches that must be pulled out.",
+        "5": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place. It does not say what to do if a tape is missing."
+      },
+      "observation": "1. The side of a man's head and neck, seen in profile from behind/side. The hair on the side and back is shaved short, and the ear is fully visible. Four separate panels show the same view.\n\n2. Panel 1: a white cloth bandage wrapped around the head, tied in a small bow near the front, with a square white gauze pad sitting over the area just behind and above the ear. Panel 2: two hands at the back of the head holding the unwound end of the bandage, which now hangs loose; the pad is gone and the skin behind the ear is bare. Panel 3: no bandage; a thin curved line runs along the skin just behind the ear, following the ear's curve, with about four small white tape strips laid crosswise over it. Panel 4: a close-up through a magnifying glass of that same curved line behind the ear with four white tape strips across it.\n\n3. Dark circles with white numbers 1, 2, 3, 4 in the top-left of each panel, giving the order of steps. A teal arrow in panel 2, upper left, pointing left/backward, showing the direction to pull the bandage. A magnifying-glass shape in panel 4 with a white oval label reading \"Check for tape\" below it.\n\n4. Someone might read the curved line and strips as a fresh wound splitting open, or think the small tapes are stitches that must be pulled out.\n\n5. Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place. It does not say what to do if a tape is missing."
     },
     {
       "label": "Caption-blind observer 2 (Claude)",
-      "task": "ad53e94aeddcefc6f",
-      "observation": "1. Head seen from behind and to the right: right ear, neck, cheek edge. Brown hair on top, shaved sides. Panel 4 magnifies the skin behind the ear.\n\n2. Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear. Panel 2: a hand holds the untied ends behind the head; the pad is gone and the ear is exposed. Panel 3: bare head, with a thin pale curved line in the crease behind the ear. Panel 4: a beige outlined strip lies diagonally across that line. No redness or swelling.\n\n3. Navy circles numbered 1–4 sit top-left of each panel and give the order. A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction. A magnifying glass frames panel 4. \"Tape?\" sits beneath it, an unanswered question.\n\n4. \"Tape?\" could read as \"put tape on here,\" or \"no strip means something is wrong.\"\n\n5. Untie the white band behind the head and pull it away. The band and ear pad are coming off, though pad removal is not shown. Then look behind the ear for a beige strip. Whether it stays, comes off, or goes on, I cannot tell."
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBddc227bvVCr6nNbMb7",
+      "recoded_from": null,
+      "answers": {
+        "1": "A man's head and upper neck, seen from the side (left side profile, facing right). Panel 4 is a close-up circle, like a magnifying glass, over the area behind and around the ear.",
+        "2": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow at the back, with a square white pad sitting over the ear area; the hair above is partly shaved. Panel 2: a hand at the back of the head holding the loose, untied end of the bandage, which now hangs down; the head band is still across the forehead. Panel 3: bandage gone; behind the ear there is a thin curved line along the hairline that looks like a stitched or glued cut, with several small pale strips laid across it. Panel 4: the same curved line behind the ear with four small tan/white tape strips crossing it, and the ear looks normal.",
+        "3": "Numbers 1, 2, 3, 4 in dark circles at the top left of each panel, giving the order of steps. A teal arrow in panel 2 at the upper left points left/backwards, showing the direction to pull the bandage. A label in an oval at the bottom of panel 4 reads \"Check for tape\".",
+        "4": "A worried patient might read it as an injury or bleeding wound behind the ear needing re-bandaging, rather than a routine dressing change.",
+        "5": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+      },
+      "observation": "1. A man's head and upper neck, seen from the side (left side profile, facing right). Panel 4 is a close-up circle, like a magnifying glass, over the area behind and around the ear.\n\n2. Panel 1: a white gauze bandage wrapped around the head, tied in a bow at the back, with a square white pad sitting over the ear area; the hair above is partly shaved. Panel 2: a hand at the back of the head holding the loose, untied end of the bandage, which now hangs down; the head band is still across the forehead. Panel 3: bandage gone; behind the ear there is a thin curved line along the hairline that looks like a stitched or glued cut, with several small pale strips laid across it. Panel 4: the same curved line behind the ear with four small tan/white tape strips crossing it, and the ear looks normal.\n\n3. Numbers 1, 2, 3, 4 in dark circles at the top left of each panel, giving the order of steps. A teal arrow in panel 2 at the upper left points left/backwards, showing the direction to pull the bandage. A label in an oval at the bottom of panel 4 reads \"Check for tape\".\n\n4. A worried patient might read it as an injury or bleeding wound behind the ear needing re-bandaging, rather than a routine dressing change.\n\n5. Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
     },
     {
       "label": "Caption-blind observer 3 (Claude)",
-      "task": "ae11f00b674a1f99b",
-      "observation": "1. Head and neck from behind, slightly to one side. The visible ear is apparently the right ear.\n\n2.\n   - Panel 1: a wide white band goes around the head, with a bow at the back. A white rounded pad covers the ear, seemingly on top of the band.\n   - Panel 2: a hand pulls the band's tails behind the head. The pad is gone and the ear is bare.\n   - Panel 3: nothing is worn. A thin pale curved line sits in the crease behind the ear. No redness, blood or stitches are drawn.\n   - Panel 4: a magnified ear, with a beige strip on the skin just behind it, over that line.\n\n3.\n   - Numbers 1–4 in dark circles at each panel's top-left indicate order.\n   - A teal arrow in panel 2 points left, away from the head, indicating pull direction.\n   - A magnifying glass in panel 4 indicates a close look.\n   - A \"Tape?\" label below the magnifying glass questions the strip.\n\n4. It could be read as an order to stick tape behind the ear. Panel 3 shows no strip; panel 4 does.\n\n5. Untie and pull off the white head band, behind the head. It is coming off, going by number order; the arrow alone could mean tightening. Pad removal is not drawn. Then check behind the ear for a beige strip. I cannot tell whether to leave, remove or apply it.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBddbyHqFWuU9LPRJLz3",
+      "recoded_from": null,
+      "answers": {
+        "1": "A man's head and upper neck, seen from the side (left profile view of the back-left side of the head), with the ear in the middle. Panel 4 is a close-up circle (magnifying glass) over the area behind the ear.",
+        "2": "Panel 1: a white cloth headband/bandage wraps around the head with a bow tied at the back-left; a square white gauze pad sits on the side of the head just above and behind the ear. Hair is shaved over the side of the head. Panel 2: the same head, but the wrap is loosened and two hands hold the loose ends of the bandage hanging down behind the head; no pad is visible. Panel 3: no bandage; a thin curved line (looks like a cut or stitched line) runs behind the ear, crossed by four small pale strips of tape. Panel 4: magnified view of that same curved line behind the ear with four small tape strips across it. I am unsure whether the strips are tape or stitches.",
+        "3": "Numbers 1, 2, 3, 4 in dark circles at the top-left of each panel, giving the order of steps. A teal arrow in panel 2 points left/away from the head, showing the wrap being pulled off. A magnifying glass shape in panel 4 with the words \"Check for tape\" in a white oval below it.",
+        "4": "Someone might read it as showing a wound coming open or bleeding behind the ear, or that the tapes must be pulled off.",
+        "5": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+      },
+      "observation": "1. A man's head and upper neck, seen from the side (left profile view of the back-left side of the head), with the ear in the middle. Panel 4 is a close-up circle (magnifying glass) over the area behind the ear.\n\n2. Panel 1: a white cloth headband/bandage wraps around the head with a bow tied at the back-left; a square white gauze pad sits on the side of the head just above and behind the ear. Hair is shaved over the side of the head. Panel 2: the same head, but the wrap is loosened and two hands hold the loose ends of the bandage hanging down behind the head; no pad is visible. Panel 3: no bandage; a thin curved line (looks like a cut or stitched line) runs behind the ear, crossed by four small pale strips of tape. Panel 4: magnified view of that same curved line behind the ear with four small tape strips across it. I am unsure whether the strips are tape or stitches.\n\n3. Numbers 1, 2, 3, 4 in dark circles at the top-left of each panel, giving the order of steps. A teal arrow in panel 2 points left/away from the head, showing the wrap being pulled off. A magnifying glass shape in panel 4 with the words \"Check for tape\" in a white oval below it.\n\n4. Someone might read it as showing a wound coming open or bleeding behind the ear, or that the tapes must be pulled off.\n\n5. Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
     }
   ],
   "adjudication": {
-    "label": "Semantic adjudicator (Claude), not a clinician",
-    "task": "a9a4d682b948e1d19",
-    "verdict": "pass",
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "instruction-picture",
+    "verdict": "fail",
     "verdict_strict": "fail",
+    "unsettled": false,
     "tally": {
-      "a head dressing covering the ear in panel 1": "3/3. Obs 1: 'white cloth band around the head ... white rounded pad over the ear'. Obs 2: 'white band around the head ... with a white rounded pad over the ear'. Obs 3: 'wide white band goes around the head ... A white rounded pad covers the ear'.",
-      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": "3/3, with the white band accepted as the gauze. Obs 1: 'a hand pulls the band's loose tail backward' and 'Teal arrow, panel 2, above the hand, pointing away from the head (pull direction)'. Obs 2: 'a hand holds the untied ends behind the head', arrow 'points left, away from the head: the pull direction', Q5 'pull it away'. Obs 3: 'a hand pulls the band's tails behind the head' and arrow 'points left, away from the head, indicating pull direction'.",
-      "the bare head with the ear uncovered in panel 3": "3/3. Obs 1: 'no band or pad'. Obs 2: 'bare head'. Obs 3: 'nothing is worn'.",
-      "the dressing coming off rather than going on": "3/3, all from question 5. Obs 1: 'band and pad come off, per the 1–3 order'. Obs 2: 'The band and ear pad are coming off'. Obs 3: 'It is coming off, going by number order'.",
-      "looking behind the ear for tape in panel 4": "3/3, from question 5 plus the label read in question 3. Obs 1: 'Then look behind the ear for a tan strip' and 'Pill label \"Tape?\" beneath it, a question'. Obs 2: 'Then look behind the ear for a beige strip' and '\"Tape?\" sits beneath it, an unanswered question'. Obs 3: 'Then check behind the ear for a beige strip' and 'A \"Tape?\" label below the magnifying glass questions the strip'. No observer calls the strip tape in their own words; the identification rests on the label."
+      "a head dressing covering the ear in panel 1": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "Panel 1: a white cloth bandage wrapped around the head, tied in a small bow near the front, with a square white gauze pad sitting over the area just behind and above the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow at the back, with a square white pad sitting over the ear area;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "Panel 1: a white cloth headband/bandage wraps around the head with a bow tied at the back-left;"
+        }
+      ],
+      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "Panel 2: two hands at the back of the head holding the unwound end of the bandage, which now hangs loose;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "Panel 2: a hand at the back of the head holding the loose, untied end of the bandage, which now hangs down;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.4",
+          "text": "Panel 2: the same head, but the wrap is loosened and two hands hold the loose ends of the bandage hanging down behind the head;"
+        }
+      ],
+      "the bare head with the ear uncovered in panel 3": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.4",
+          "text": "Panel 3: no bandage;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.5",
+          "text": "Panel 3: bandage gone;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.6",
+          "text": "Panel 3: no bandage;"
+        }
+      ],
+      "the dressing coming off rather than going on": [
+        {
+          "observer": 1,
+          "answer": 5,
+          "cite": "o1.5.1",
+          "text": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.1",
+          "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.1",
+          "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+        }
+      ],
+      "short strips of tape lying across a thin line behind the ear in panel 4": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.6",
+          "text": "Panel 4: a close-up through a magnifying glass of that same curved line behind the ear with four white tape strips across it."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.7",
+          "text": "Panel 4: the same curved line behind the ear with four small tan/white tape strips crossing it, and the ear looks normal."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.8",
+          "text": "Panel 4: magnified view of that same curved line behind the ear with four small tape strips across it."
+        }
+      ],
+      "looking behind the ear for tape in panel 4": [
+        {
+          "observer": 1,
+          "answer": 5,
+          "cite": "o1.5.1",
+          "text": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.1",
+          "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.1",
+          "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+        }
+      ]
     },
     "recovered": [
       "a head dressing covering the ear in panel 1",
       "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
       "the bare head with the ear uncovered in panel 3",
       "the dressing coming off rather than going on",
+      "short strips of tape lying across a thin line behind the ear in panel 4",
       "looking behind the ear for tape in panel 4"
     ],
     "missed": [],
-    "forbidden_hits": [],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
     "forbidden_hits_strict": [
-      "Obs 1 Q4, 'the dressing being put on': 'Reversed, or with the arrow read as \"pull tight,\" it shows a head being wrapped.'",
-      "Obs 1 Q4, 'the ear injured or bleeding': 'The tan strip could pass for a wound.' Counted because the strict rules count any stated reading, and the wound reading sits in the crease behind the ear.",
-      "Borderline, Obs 3 Q5, 'the dressing being put on': 'the arrow alone could mean tightening'. This says tightening, not putting on, and it does not change the strict verdict."
+      {
+        "observer": 3,
+        "reading": "something stuck in or under the skin",
+        "source": "hedge",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "something stuck in or under the skin",
+        "source": "hedge",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+        "source": "question 4",
+        "coding": 2
+      }
     ],
     "design_notes": [
-      "Q4 Obs 1: 'Reversed, or with the arrow read as \"pull tight,\" it shows a head being wrapped.' Reverse of the action, one observer, not harm or wrong body part.",
-      "Q4 Obs 1: 'The tan strip could pass for a wound.' One observer only, so not a hit under the instruction-picture rules. Obs 2 reports 'No redness or swelling' and Obs 3 'No redness, blood or stitches are drawn'.",
-      "Q4 Obs 2: '\"Tape?\" could read as \"put tape on here,\"' and Q4 Obs 3: 'It could be read as an order to stick tape behind the ear.' Two observers name the same alternative. Not counted: it is the correct body part, applying tape is not harm of the kind in the rule's examples, and the contract treats tape as separate from 'the dressing' in its forbidden list. Clinician to judge whether a viewer applying tape behind the ear would matter.",
-      "Q4 Obs 2: 'or \"no strip means something is wrong.\"' One observer.",
-      "Q4 Obs 3: 'Panel 3 shows no strip; panel 4 does.' Continuity gap between panels 3 and 4. Adjudicator inference: observers fix the direction of the dressing by number order, and the same logic applied to panel 3 then 4 shows a strip appearing, which may drive the 'apply tape' alternative.",
-      "All three, Q5: what to do about the strip is unreadable. Obs 1: 'Whether that strip stays, comes off, or goes on: cannot tell.' Obs 2: 'Whether it stays, comes off, or goes on, I cannot tell.' Obs 3: 'I cannot tell whether to leave, remove or apply it.' The contract asks only for looking, so this affects neither verdict, but the card alone gives no tape instruction.",
-      "Pad removal is not drawn, and the ear is already bare in panel 2. Obs 1: 'pad already gone, ear bare'. Obs 2: 'pad removal is not shown'. Obs 3: 'Pad removal is not drawn.'",
-      "Obs 3, panel 1: the pad is 'seemingly on top of the band'.",
-      "Direction of the action rests on the numerals rather than the arrow. Obs 1: 'per the 1–3 order'. Obs 3: 'It is coming off, going by number order; the arrow alone could mean tightening.' Under the instruction-picture rules this is a hedge about one panel, and Obs 3's own conclusion is the intended action.",
-      "All three see 'a thin pale curved line in the crease behind the ear' in panels 3 and 4, which claim.state does not describe. Treated as depicted anatomy rather than a mark, since every observer lists it in question 2 and none in question 3. None reads it as injury.",
-      "No observer uses the word gauze. The dressing reads as a 'white band' tied in a 'bow' plus a separate 'white rounded pad', and the action reads as 'untie' (Obs 2, Obs 3) or 'undo' (Obs 1). The band was accepted as the gauze for the tally.",
-      "Marks reported in question 3 by all three are exactly the allowed set: numerals 1 to 4 in dark circles, one teal arrow in panel 2, a magnifying glass in panel 4, and a 'Tape?' pill label. No other text was reported."
+      "Observer 1: The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+      "Observer 1: The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+      "Observer 2: The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+      "Observer 3: The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+      "Observer 3: The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+      "Observer 3 raised and set aside: something stuck in or under the skin",
+      "Observer 1 notes the sequence never says what the viewer should do if one of the tape strips is missing, so the check has no follow-up step.",
+      "Observer 3 could not tell whether the small pale strips across the line are tape or stitches, so the tapes may need to be drawn more clearly as adhesive strips.",
+      "Observers 2 and 3 both read the thin curved line behind the ear as looking like a stitched or glued cut, which may alarm a patient reading the picture.",
+      "Observers 1 and 3 report that the gauze pad is already gone in panel 2, so the actual lifting of the pad away from the head is not drawn as a separate step.",
+      "Observer 1 places the bow at the front of the head wrap while Observers 2 and 3 place it at the back, suggesting the tie position reads inconsistently.",
+      "Observer 2 sees only one hand on the loosened bandage in panel 2 while Observers 1 and 3 see two hands, so the hand placement is ambiguous.",
+      "Observer 2 notes the head band is still across the forehead in panel 2, a detail that changes between panels 1 and 2.",
+      "Observer 1: The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+      "Observer 1: The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+      "Observer 2: The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+      "Observer 3: The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+      "Observer 3: The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+      "Observer 2 raised and set aside: something stuck in or under the skin",
+      "Observer 1 notes the picture never says what the viewer should do if one of the tape strips is missing.",
+      "Observer 3 says he cannot tell whether the small strips behind the ear are tape or stitches, so the strips may need to be drawn more clearly.",
+      "Observers 1 and 3 report that the gauze pad is already absent in panel 2 while the wrap is still being pulled loose, so the step of lifting the pad off is never actually drawn.",
+      "Observers 2 and 3 describe the thin line behind the ear as looking like a stitched or glued cut, which risks the line reading as a wound rather than a plain healed line.",
+      "Observer 1 places the bow of the bandage near the front of the head while Observers 2 and 3 place it at the back, so the tie's position reads inconsistently.",
+      "Observer 2 notes that in panel 2 the band is still across the forehead even though the removal is already under way.",
+      "Observer 2 sees a single hand on the bandage in panel 2 while Observers 1 and 3 see two hands, so the hands are drawn ambiguously."
     ],
-    "text_detected": true,
-    "reason": "Passes as an instruction picture because all three observers recovered all five required items, each concluded in question 5 that the band and pad come off and that the viewer then looks behind the ear for the strip, no forbidden reading appears in questions 2, 3 or 5, and the only alternative shared by two observers (apply tape behind the ear) is neither harm nor the wrong body part; fails the strict rules because Observer 1's question-4 alternatives state 'a head being wrapped' and that the strip 'could pass for a wound'."
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Panel 1: a white cloth bandage wrapped around the head, tied in a small bow near the front, with a square white gauze pad sitting over the area just behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow at the back, with a square white pad sitting over the ear area;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Panel 1: a white cloth headband/bandage wraps around the head with a bow tied at the back-left;"
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Panel 2: two hands at the back of the head holding the unwound end of the bandage, which now hangs loose;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Panel 2: a hand at the back of the head holding the loose, untied end of the bandage, which now hangs down;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "Panel 2: the same head, but the wrap is loosened and two hands hold the loose ends of the bandage hanging down behind the head;"
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Panel 3: no bandage;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.5",
+              "text": "Panel 3: bandage gone;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.6",
+              "text": "Panel 3: no bandage;"
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.1",
+              "text": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+            }
+          ],
+          "short strips of tape lying across a thin line behind the ear in panel 4": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.6",
+              "text": "Panel 4: a close-up through a magnifying glass of that same curved line behind the ear with four white tape strips across it."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.7",
+              "text": "Panel 4: the same curved line behind the ear with four small tan/white tape strips crossing it, and the ear looks normal."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.8",
+              "text": "Panel 4: magnified view of that same curved line behind the ear with four small tape strips across it."
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.1",
+              "text": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o1.2.6"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "wound-open-or-bleeding",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "tapes-must-be-pulled-off",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o2.2.7"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "wound-open-or-bleeding",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.6"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o3.2.8"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "something stuck in or under the skin",
+                  "cite": "o3.2.9"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "wound-open-or-bleeding",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "tapes-must-be-pulled-off",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "wound-open-or-bleeding",
+              "reading": "The thin curved line behind the ear is taken for a fresh wound that is splitting open or bleeding, rather than a healing line held by tapes.",
+              "forbidden": "the ear injured or bleeding",
+              "harmful_action": false
+            },
+            {
+              "key": "tapes-must-be-pulled-off",
+              "reading": "The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.",
+              "forbidden": "an instruction to take the tape off or to put tape on",
+              "harmful_action": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 notes the sequence never says what the viewer should do if one of the tape strips is missing, so the check has no follow-up step.",
+            "Observer 3 could not tell whether the small pale strips across the line are tape or stitches, so the tapes may need to be drawn more clearly as adhesive strips.",
+            "Observers 2 and 3 both read the thin curved line behind the ear as looking like a stitched or glued cut, which may alarm a patient reading the picture.",
+            "Observers 1 and 3 report that the gauze pad is already gone in panel 2, so the actual lifting of the pad away from the head is not drawn as a separate step.",
+            "Observer 1 places the bow at the front of the head wrap while Observers 2 and 3 place it at the back, suggesting the tie position reads inconsistently.",
+            "Observer 2 sees only one hand on the loosened bandage in panel 2 while Observers 1 and 3 see two hands, so the hand placement is ambiguous.",
+            "Observer 2 notes the head band is still across the forehead in panel 2, a detail that changes between panels 1 and 2."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Panel 1: a white cloth bandage wrapped around the head, tied in a small bow near the front, with a square white gauze pad sitting over the area just behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow at the back, with a square white pad sitting over the ear area;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Panel 1: a white cloth headband/bandage wraps around the head with a bow tied at the back-left;"
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Panel 2: two hands at the back of the head holding the unwound end of the bandage, which now hangs loose;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Panel 2: a hand at the back of the head holding the loose, untied end of the bandage, which now hangs down;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "Panel 2: the same head, but the wrap is loosened and two hands hold the loose ends of the bandage hanging down behind the head;"
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Panel 3: no bandage;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.5",
+              "text": "Panel 3: bandage gone;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.6",
+              "text": "Panel 3: no bandage;"
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.1",
+              "text": "Untie and unwrap the head bandage, pulling the loose end backward (away from the face) to remove it along with the gauze pad from behind the ear, then look closely at the curved line behind the ear to check that the small tape strips are still in place."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+            }
+          ],
+          "short strips of tape lying across a thin line behind the ear in panel 4": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.6",
+              "text": "Panel 4: a close-up through a magnifying glass of that same curved line behind the ear with four white tape strips across it."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.7",
+              "text": "Panel 4: the same curved line behind the ear with four small tan/white tape strips crossing it, and the ear looks normal."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.8",
+              "text": "Panel 4: magnified view of that same curved line behind the ear with four small tape strips across it."
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 3,
+              "cite": "o1.3.3",
+              "text": "A magnifying-glass shape in panel 4 with a white oval label reading \"Check for tape\" below it."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the head bandage at the back, pull the loose end away/backwards to unwrap it, remove the pad, then look closely at the line behind the ear and check that the small tape strips are still in place."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Take off the head bandage and its pad by unwrapping it away from the head (pull the loose ends off to the side), then look closely behind the ear to check that the small tape strips are still in place across the line."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o1.2.6"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.3.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "pull-off-tape-strips",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o2.2.7"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "something stuck in or under the skin",
+                  "cite": "o2.2.6"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.6"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                },
+                {
+                  "item": "short strips of tape lying across a thin line behind the ear in panel 4",
+                  "recovered": true,
+                  "cite": "o3.2.8"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "something stuck in or under the skin",
+                  "cite": "o3.2.9"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "pull-off-tape-strips",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "line-as-open-wound",
+              "reading": "The thin curved line behind the ear is read as a fresh wound splitting open or a bleeding injury, perhaps one that needs bandaging again.",
+              "forbidden": "the ear injured or bleeding",
+              "harmful_action": false
+            },
+            {
+              "key": "pull-off-tape-strips",
+              "reading": "The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.",
+              "forbidden": "an instruction to take the tape off or to put tape on",
+              "harmful_action": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 notes the picture never says what the viewer should do if one of the tape strips is missing.",
+            "Observer 3 says he cannot tell whether the small strips behind the ear are tape or stitches, so the strips may need to be drawn more clearly.",
+            "Observers 1 and 3 report that the gauze pad is already absent in panel 2 while the wrap is still being pulled loose, so the step of lifting the pad off is never actually drawn.",
+            "Observers 2 and 3 describe the thin line behind the ear as looking like a stitched or glued cut, which risks the line reading as a wound rather than a plain healed line.",
+            "Observer 1 places the bow of the bandage near the front of the head while Observers 2 and 3 place it at the back, so the tie's position reads inconsistently.",
+            "Observer 2 notes that in panel 2 the band is still across the forehead even though the removal is already under way.",
+            "Observer 2 sees a single hand on the bandage in panel 2 while Observers 1 and 3 see two hands, so the hands are drawn ambiguously."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 6 required items. Forbidden: observer 1 (question 4): The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.; observer 3 (question 4): The small strips are taken as stitches or tapes that the viewer is being told to pull off the skin.; observer 1 (question 4): The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.; observer 3 (question 4): The small strips across the line are read as stitches or tapes that the viewer is supposed to pull off the skin.. Under the strict rule the picture would fail."
   },
-  "outcome": "accepted under the instruction-picture rule; fails the strict rule on one observer's forced alternatives",
-  "notes": "Observers were given no hint about panels or reading order. The instruction-picture rule is pending John's and Song's sign-off; both verdicts and the adjudicator's design notes are kept.",
   "panels": [
     {
       "record_id": "postauricular-dressing-ref-a1",
@@ -90,6 +1056,6 @@
     "status": "pending",
     "reviewer": null,
     "date": null,
-    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
   }
 }

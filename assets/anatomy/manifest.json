@@ -621,7 +621,7 @@
       "estimate_usd": 0.04,
       "ledger_entry": "anatomy:dressing-removal-ref:a4",
       "status": "accepted",
-      "note": "Accepted as panel 2 of the static bandage-removal card, under the instruction-picture rule. Alone it does not carry direction; the numerals do.",
+      "note": "Accepted as panel 2 of the static bandage-removal card, under the instruction-picture rule, on the first card's in-session receipt. Alone it does not carry direction; the numerals do. In the live review of the redrawn card on 2026-09-18 all three observers again read this panel as the hand drawing the gauze away; that card failed on its tape panel.",
       "review": {
         "inspection": "Hand behind the head draws the gauze away; knot undone; ear uncovered; neck and face clear. Band reads taut rather than slack.",
         "observers": 3,
@@ -630,7 +630,76 @@
           "verdict_strict": "fail",
           "reason": "Passes as an instruction picture because all three observers recovered all five required items, each concluded in question 5 that the band and pad come off and that the viewer then looks behind the ear for the strip, no forbidden reading appears in questions 2, 3 or 5, and the only alternative shared by two observers (apply tape behind the ear) is neither harm nor the wrong body part; fails the strict rules because Observer 1's question-4 alternatives state 'a head being wrapped' and that the strip 'could pass for a wound'."
         },
-        "receipt": "content/reviews/anatomy/diagram.remove-dressing.json"
+        "receipt": "content/reviews/anatomy/diagram.remove-dressing-v1.json"
+      }
+    },
+    {
+      "id": "postauricular-incision-a1",
+      "asset_id": "postauricular-incision",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-incision-a1.png",
+      "sha256": "6327f4fb41cdb1f38f0f643159dfa51555cecb55b1e69f8431dc6e117525bb1b",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only: make the closed surgical incision behind the ear clearly visible. Remove the faint pale highlight that hugs the back edge of the ear. In its place, draw one thin, continuous incision line on the bare skin just behind the ear: a smooth curve in a dark pinkish-brown, a little thicker than the outline of the ear, following the crease behind the ear from level with the top of the ear down to level with the earlobe, with a narrow band of normal skin between the line and the ear so the line stands on its own. The line is neatly closed and flat: no stitches, no staples, no dots, no cross marks, no scab, no gap, no blood, and no redness or swelling around it. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90901,
+      "references": [],
+      "request_id": "01a0b664-3eec-72c3-bb22-103f83fdf530",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-incision:a1",
+      "status": "rejected",
+      "note": "Rejected on inspection: a dark maroon arc over the top of the ear with tick marks across it and at its ends, like a surgical marking diagram, stopping at mid-ear instead of the earlobe.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-incision-a2",
+      "asset_id": "postauricular-incision",
+      "attempt": 2,
+      "file": "assets/anatomy/postauricular-incision-a2.png",
+      "sha256": "c7e98037ce6e3d4fb345afabc32f554684cf5daa360c04e3f8bff3885c554763",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only: show a healing surgical cut behind the ear. Remove the faint pale highlight that hugs the back edge of the ear. Then paint one thin line of healing skin on the bare skin behind the ear: a single smooth, unbroken, soft-edged line in a muted rose pink, clearly darker than the skin around it, painted with the same soft flat shading as the rest of the illustration rather than as an ink outline. The line starts a short distance behind the top of the ear and runs down behind the ear, parallel to the ear's back edge and about the width of a fingertip away from it, ending level with the earlobe; it never crosses over the top of the ear. The line has plain rounded ends with nothing across them: no tick marks, no cross marks, no stitches, no staples, no dots, no scab, no gap, no blood, and no redness or swelling on the skin around it. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90902,
+      "references": [],
+      "request_id": "01a0b665-5487-7e31-94eb-1e646f25b085",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-incision:a2",
+      "status": "rejected",
+      "note": "Rejected on an in-session pre-screen: the line is clearly visible, but its soft pink glow reads as redness. Three of three observers described a red line or a line of redness; one read an inflamed, possibly infected cut because of the pink glow, and one a fresh, bleeding razor cut. A picture of the normal incision must not look like the red-and-swollen warning sign.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-incision-a3",
+      "asset_id": "postauricular-incision",
+      "attempt": 3,
+      "file": "assets/anatomy/postauricular-incision-a3.png",
+      "sha256": "8f22ad884e07dda34ba83ce9cbabe22992453c1c1a61acbe8446813964fc0ee0",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only. Remove the faint pale highlight that hugs the back edge of the ear. Then draw one thin, crisp, continuous line on the bare skin just behind the ear, the way a closed surgical cut looks a few days after surgery: a single clean stroke about twice as thick as the outline of the ear, in a muted rosy brown only a little darker than the illustration's outlines, with sharp edges and no glow, halo, blush, or pink tint on the skin around it. The line starts just above the top of the ear and curves down behind the ear, a narrow band of skin away from the ear's back edge, ending level with the earlobe. It is one smooth unbroken stroke with plain rounded ends. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90903,
+      "references": [],
+      "request_id": "01a0b66a-326f-7ef1-9f66-dfb5b7c6f4e4",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-incision:a3",
+      "status": "rejected",
+      "note": "Rejected on inspection: a long looping line from above the ear down onto the neck, like the outline of a large flap, ending in a dot at the nape. The neck is a forbidden location.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
       }
     }
   ]

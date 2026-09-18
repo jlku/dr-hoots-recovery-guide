@@ -10,6 +10,9 @@ const TEAL = "#14828c";
 const YELLOW = "#feb80a";
 const RED = "#b3261e";
 const FLUSH = "#e2574a";
+// A closed cut a few days old, in a muted brown a little darker than the drawing's own outlines.
+// A soft pink line read as redness, the warning sign, and a dark red one as a bleeding cut.
+const INCISION = "#7d645f";
 const FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
 
 const normalize = (text) => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
@@ -47,10 +50,12 @@ function wrapLines(text, size, maxWidth) {
   return lines;
 }
 
-function label(x, y, text, { size = 30, weight = 700, fill = NAVY, anchor = "start", maxWidth = 380 } = {}) {
+function label(x, y, text, { size = 30, weight = 700, fill = NAVY, anchor = "start", maxWidth = 380, halo = false } = {}) {
   const group = svg("g");
+  // A halo keeps a label readable where it crosses the drawing.
+  const outline = halo ? { stroke: "#fff", "stroke-width": size * 0.22, "stroke-linejoin": "round", "paint-order": "stroke" } : {};
   wrapLines(text, size, maxWidth).forEach((content, index) => {
-    const node = svg("text", { x, y: y + index * size * 1.25, "font-size": size, "font-weight": weight, fill, "text-anchor": anchor, "font-family": FONT });
+    const node = svg("text", { x, y: y + index * size * 1.25, "font-size": size, "font-weight": weight, fill, "text-anchor": anchor, "font-family": FONT, ...outline });
     node.textContent = content;
     group.append(node);
   });
@@ -62,11 +67,55 @@ function point(frame, ref) {
   return { x: (anchor?.x ?? 0.5) * VIEW.w, y: (anchor?.y ?? 0.5) * VIEW.h };
 }
 
-function tapeStrip(x, y, width, angle) {
-  // A plain strip. A dashed centre line was read by three of three observers as "cut here".
-  return svg("g", { transform: `translate(${x} ${y}) rotate(${angle})` }, [
-    svg("rect", { x: -width / 2, y: -22, width, height: 44, rx: 8, fill: "#f4e3b3", stroke: NAVY, "stroke-width": 4 })
-  ]);
+// A named path in image space, such as the incision, measured from the accepted image.
+function pathPoints(frame, name) {
+  return (frame.paths?.[name] ?? []).map(([x, y]) => ({ x: x * VIEW.w, y: y * VIEW.h }));
+}
+
+// The point a fraction t of the way along a path, by length, with the path's direction there.
+function along(points, t) {
+  const lengths = points.slice(1).map((point, index) => Math.hypot(point.x - points[index].x, point.y - points[index].y));
+  let remaining = Math.max(0, Math.min(1, t)) * lengths.reduce((sum, length) => sum + length, 0);
+  for (let index = 1; index < points.length; index += 1) {
+    const length = lengths[index - 1];
+    if (remaining <= length || index === points.length - 1) {
+      const share = length ? Math.min(remaining / length, 1) : 0;
+      const [from, to] = [points[index - 1], points[index]];
+      return { x: from.x + (to.x - from.x) * share, y: from.y + (to.y - from.y) * share, angle: (Math.atan2(to.y - from.y, to.x - from.x) * 180) / Math.PI };
+    }
+    remaining -= length;
+  }
+  return { ...points[0], angle: 0 };
+}
+
+// A smooth curve through measured points (Catmull-Rom, drawn as cubic Béziers).
+function smoothPath(points) {
+  const r = (value) => Math.round(value * 10) / 10;
+  let d = `M ${r(points[0].x)} ${r(points[0].y)}`;
+  for (let index = 0; index < points.length - 1; index += 1) {
+    const [p0, p1, p2, p3] = [points[index - 1] ?? points[index], points[index], points[index + 1], points[index + 2] ?? points[index + 1]];
+    d += ` C ${r(p1.x + (p2.x - p0.x) / 6)} ${r(p1.y + (p2.y - p0.y) / 6)} ${r(p2.x - (p3.x - p1.x) / 6)} ${r(p2.y - (p3.y - p1.y) / 6)} ${r(p2.x)} ${r(p2.y)}`;
+  }
+  return d;
+}
+
+// Wound-closure tape as it is applied: a few short strips laid across the cut, thin and slightly
+// see-through, with a soft shadow so they read as lying on the skin. The single opaque strip with a
+// navy outline that this replaces was read by two of three observers as something stuck in the skin.
+function tapeStrips(points, { count = 3, span = [0.2, 0.8], length = 46, width = 16 } = {}) {
+  const group = svg("g", { class: "tape-strips" });
+  if (points.length < 2) return group;
+  for (let index = 0; index < count; index += 1) {
+    const t = count === 1 ? (span[0] + span[1]) / 2 : span[0] + ((span[1] - span[0]) * index) / (count - 1);
+    const at = along(points, t);
+    const across = at.angle + 90;
+    const rect = { x: -length / 2, y: -width / 2, width: length, height: width, rx: 3 };
+    group.append(
+      svg("g", { transform: `translate(${at.x + 1.5} ${at.y + 2.5}) rotate(${across})` }, [svg("rect", { ...rect, fill: "#5a3c28", "fill-opacity": 0.16 })]),
+      svg("g", { transform: `translate(${at.x} ${at.y}) rotate(${across})` }, [svg("rect", { ...rect, fill: "#fdfaf2", "fill-opacity": 0.86, stroke: "#bfae94", "stroke-width": 1.4 })])
+    );
+  }
+  return group;
 }
 
 function drawDevice(frame, overlay) {
@@ -95,8 +144,13 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
   const group = svg("g", { class: `overlay overlay--${overlay.type}` });
   const at = point(frame, overlay.at ?? overlay.anchor);
   const anchor = point(frame, overlay.anchor ?? overlay.at);
-  if (overlay.type === "tape-strip") {
-    group.append(tapeStrip(anchor.x, anchor.y, overlay.width ?? 150, overlay.angle ?? -25));
+  if (overlay.type === "incision") {
+    // The incision is drawn here rather than generated: three image edits in a row drew tick marks,
+    // a pink glow, or a loop onto the neck. A measured path gives the same line in every panel.
+    const points = pathPoints(frame, overlay.path);
+    if (points.length >= 2) group.append(svg("path", { d: smoothPath(points), fill: "none", stroke: INCISION, "stroke-width": overlay.width ?? 4.2, "stroke-linecap": "round", "stroke-linejoin": "round" }));
+  } else if (overlay.type === "tape-strips") {
+    group.append(tapeStrips(pathPoints(frame, overlay.path), { count: overlay.count, span: overlay.span, length: overlay.length, width: overlay.width }));
   } else if (overlay.type === "inset") {
     const radius = (overlay.radius ?? 0.18) * VIEW.h;
     const scale = overlay.scale ?? 2;
@@ -112,7 +166,6 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
       "clip-path": `url(#${clipId})`
     });
     group.append(clip, image);
-    if (overlay.tape) group.append(svg("g", { "clip-path": `url(#${clipId})` }, [tapeStrip(at.x, at.y, 70 * scale, -70)]));
     group.append(svg("circle", { cx: at.x, cy: at.y, r: radius, fill: "none", stroke: NAVY, "stroke-width": 6 }));
     group.append(svg("line", { x1: anchor.x, y1: anchor.y, x2: at.x + radius * 0.7, y2: at.y + radius * 0.7, stroke: NAVY, "stroke-width": 4 }));
     if (overlay.label_key) group.append(label(at.x, at.y + radius + 44, labels[overlay.label_key] ?? "", { anchor: "middle", size: 32 }));
@@ -123,10 +176,15 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
       svg("circle", { cx: at.x, cy: at.y, r: 100, fill: "none", stroke: RED, "stroke-width": 12 }),
       svg("line", { x1: at.x - 70, y1: at.y - 70, x2: at.x + 70, y2: at.y + 70, stroke: RED, "stroke-width": 12, "stroke-linecap": "round" })
     );
-    if (overlay.label_key) group.append(label(at.x, at.y + 150, labels[overlay.label_key] ?? "", { anchor: "middle", size: 28, maxWidth: 360 }));
+    // Without words the crossed-out bottle read as "don't take your medicine" to three of three observers.
+    if (overlay.label_key) group.append(label(at.x, at.y + 150, labels[overlay.label_key] ?? "", { anchor: "middle", size: 28, maxWidth: 360, halo: true }));
   } else if (overlay.type === "checklist" || overlay.type === "rows" || overlay.type === "steps") {
+    // Each row takes the room its wrapped label needs, so a long row never runs into the next.
+    const rowSize = 30;
+    const rowWidth = 360;
+    let y = at.y;
     (overlay.rows ?? []).forEach((row, index) => {
-      const y = at.y + index * 104;
+      if (index > 0) y += Math.max(110, 40 + wrapLines(labels[overlay.rows[index - 1].label_key] ?? "", rowSize, rowWidth).length * rowSize * 1.25);
       const rowGroup = svg("g");
       if (overlay.type === "checklist") {
         rowGroup.append(svg("rect", { x: at.x, y: y - 26, width: 44, height: 44, rx: 8, fill: "#fff", stroke: NAVY, "stroke-width": 4 }));
@@ -141,14 +199,14 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
       } else {
         rowGroup.append(svg("rect", { x: at.x, y: y - 18, width: 16, height: 32, rx: 4, fill: YELLOW }));
       }
-      rowGroup.append(label(at.x + 64, y + 6, labels[row.label_key] ?? "", { size: 27, maxWidth: 330 }));
+      rowGroup.append(label(at.x + 64, y + 6, labels[row.label_key] ?? "", { size: rowSize, maxWidth: rowWidth, halo: true }));
       group.append(rowGroup);
       if (overlay.type !== "checklist") register(rowGroup, when(row.from), null);
     });
   } else if (overlay.type === "pointer") {
     const text = labels[overlay.label_key] ?? "";
-    const size = 25;
-    const width = Math.min(440, Math.max(200, text.length * 14));
+    const size = 29;
+    const width = Math.min(480, Math.max(220, text.length * 16));
     const lines = wrapLines(text, size, width - 28);
     const height = 26 + lines.length * size * 1.25;
     group.append(
@@ -245,7 +303,7 @@ function renderPanels(frame, { pack }) {
   grid.className = "panels";
   grid.style.setProperty("--columns", String(columns));
   grid.style.setProperty("--aspect", String((4 * columns) / (3 * rows)));
-  grid.style.setProperty("--captions", listed ? "92px" : titled ? "30px" : "0px");
+  grid.style.setProperty("--captions", listed ? "120px" : titled ? "40px" : "0px");
   const layers = Object.fromEntries(Object.entries(frame.layers ?? {}).map(([name, file]) => [name, assetUrl(file)]));
   const always = () => null;
   const ignore = () => {};
@@ -284,11 +342,17 @@ function renderPanels(frame, { pack }) {
       view.append(svg("circle", { cx: 104, cy: 104, r: 74, fill: NAVY, stroke: "#fff", "stroke-width": 8 }), numeral);
     }
     if (panel.label_key) {
+      // Beside a magnifier the label sits bottom left, so the handle that makes the lens read as a
+      // magnifier stays in view.
       const text = pack.labels[panel.label_key] ?? "";
-      const width = Math.min(VIEW.w - 80, text.length * 50 + 110);
-      const mark = svg("text", { x: VIEW.w / 2, y: VIEW.h - 72, "font-size": 86, "font-weight": 800, fill: NAVY, "text-anchor": "middle", "font-family": FONT });
+      const size = panel.lens ? 72 : 86;
+      const width = Math.min(VIEW.w - 80, text.length * size * 0.58 + size * 1.28);
+      const height = size * 1.44;
+      const left = panel.lens ? 36 : (VIEW.w - width) / 2;
+      const top = VIEW.h - 40 - height;
+      const mark = svg("text", { x: left + width / 2, y: top + height / 2 + size * 0.35, "font-size": size, "font-weight": 800, fill: NAVY, "text-anchor": "middle", "font-family": FONT });
       mark.textContent = text;
-      view.append(svg("rect", { x: (VIEW.w - width) / 2, y: VIEW.h - 164, width, height: 124, rx: 62, fill: "#fff", stroke: NAVY, "stroke-width": 6 }), mark);
+      view.append(svg("rect", { x: left, y: top, width, height, rx: height / 2, fill: "#fff", stroke: NAVY, "stroke-width": 6 }), mark);
     }
     figure.append(view);
     if (panel.title_key || panel.caption_keys?.length) {

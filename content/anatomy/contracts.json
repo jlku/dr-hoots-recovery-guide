@@ -47,6 +47,61 @@
             "no bandage, tape, or device"
           ],
           "why": "Required items must be something a caption-blind observer can see. Absences are covered by the forbidden readings, and diagnostic words such as healed or scar are replaced by what is drawn."
+        },
+        {
+          "on": "2026-09-18",
+          "note": "The live evaluator failed a2: none of three fresh observers saw its incision line, a faint pale arc that hugs the rim of the ear and reads as part of the ear's outline. a2 stays accepted as the parent plate for the other edits. Frames that show the incision use postauricular-incision instead."
+        }
+      ]
+    },
+    {
+      "id": "postauricular-incision",
+      "kind": "edit",
+      "parent": "postauricular-base",
+      "model": "fal-ai/flux-2-pro/edit",
+      "image_size": "landscape_4_3",
+      "seed": 90901,
+      "max_attempts": 3,
+      "claim": {
+        "sentence_ids": [
+          "wc.02",
+          "wc.04",
+          "wc.05"
+        ],
+        "anatomy": "The same person and view as the base: behind and to the right of the head, hair clipped short around the right ear.",
+        "state": "A closed surgical incision a few days after surgery: one thin, clearly visible line on the skin just behind the ear, following the crease from level with the top of the ear down toward the earlobe, set apart from the outline of the ear. No stitches shown, no tape, no dressing, no device.",
+        "forbidden": [
+          "incision on the cheek, jaw, neck, or in front of the ear",
+          "tape or a dressing present",
+          "a hearing device worn",
+          "redness or swelling of the skin around the line",
+          "blood or an open wound",
+          "any text, arrow, or label"
+        ]
+      },
+      "prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only. Remove the faint pale highlight that hugs the back edge of the ear. Then draw one thin, crisp, continuous line on the bare skin just behind the ear, the way a closed surgical cut looks a few days after surgery: a single clean stroke about twice as thick as the outline of the ear, in a muted rosy brown only a little darker than the illustration's outlines, with sharp edges and no glow, halo, blush, or pink tint on the skin around it. The line starts just above the top of the ear and curves down behind the ear, a narrow band of skin away from the ear's back edge, ending level with the earlobe. It is one smooth unbroken stroke with plain rounded ends. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "observers_must_recover": [
+        "the back or side of a person's head with the area behind the ear in view",
+        "a thin line on the skin just behind the ear, not on the face or neck"
+      ],
+      "contract_history": [
+        {
+          "on": "2026-09-18",
+          "note": "New asset for the tweak pass. The base's incision was too faint for fresh observers to see, and the bandage card's tape had no visible cut to cover. This edit draws the line darker and set apart from the ear's outline. Its exact position and look are placeholders until Song answers q.incision-appearance."
+        },
+        {
+          "on": "2026-09-18",
+          "was_prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only: make the closed surgical incision behind the ear clearly visible. Remove the faint pale highlight that hugs the back edge of the ear. In its place, draw one thin, continuous incision line on the bare skin just behind the ear: a smooth curve in a dark pinkish-brown, a little thicker than the outline of the ear, following the crease behind the ear from level with the top of the ear down to level with the earlobe, with a narrow band of normal skin between the line and the ear so the line stands on its own. The line is neatly closed and flat: no stitches, no staples, no dots, no cross marks, no scab, no gap, no blood, and no redness or swelling around it. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+          "why": "Attempt 1 drew a maroon arc over the top of the ear with tick marks, like a surgical marking diagram. The prompt now asks for painted, soft-edged skin rather than an ink line, a set path down behind the ear, and plain ends."
+        },
+        {
+          "on": "2026-09-18",
+          "was_prompt": "Image 1 is a flat medical illustration of an adult's head seen from behind and to the right, with the hair clipped short around the right ear. Edit image 1 in one way only: show a healing surgical cut behind the ear. Remove the faint pale highlight that hugs the back edge of the ear. Then paint one thin line of healing skin on the bare skin behind the ear: a single smooth, unbroken, soft-edged line in a muted rose pink, clearly darker than the skin around it, painted with the same soft flat shading as the rest of the illustration rather than as an ink outline. The line starts a short distance behind the top of the ear and runs down behind the ear, parallel to the ear's back edge and about the width of a fingertip away from it, ending level with the earlobe; it never crosses over the top of the ear. The line has plain rounded ends with nothing across them: no tick marks, no cross marks, no stitches, no staples, no dots, no scab, no gap, no blood, and no redness or swelling on the skin around it. Keep everything else exactly the same: the same person, pose, viewpoint, ear, hair, skin tone, lighting, off-white background, and flat illustration style. No text, no labels, no captions, no arrows, no logos, no watermark.",
+          "why": "Attempt 2 was visible but its soft pink glow read as redness, the warning sign. The prompt now asks for a crisp stroke in a muted rosy brown with no glow on the skin around it, and no longer lists the marks to avoid, since naming them seemed to invite them."
+        },
+        {
+          "on": "2026-09-18",
+          "note": "Stopped at the three-attempt cap. Each attempt failed differently: tick marks like a surgical marking diagram, a pink glow that read as redness, and a long loop onto the neck. An image edit cannot reliably place a thin line of the right colour, so the frames now draw the incision as a vector line along a measured path over the accepted base, the way they draw tape and arrows."
         }
       ]
     },
@@ -390,17 +445,19 @@
           "wc.01",
           "wc.02"
         ],
-        "state": "Four numbered panels. 1: the head dressing on with the ear covered. 2: a hand behind the head draws the gauze away from the head, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the area behind the ear showing a strip of tape, with the question Tape?. The dressing comes off; then the viewer looks behind the ear for tape.",
+        "state": "Four numbered panels. 1: the head dressing on with the ear covered. 2: a hand behind the head draws the gauze away from the head, with an arrow pointing away from the head. 3: the bare head with the ear uncovered and a thin line behind the ear with short strips of tape across it. 4: a magnifier over that line showing the strips of tape across it, with the label Check for tape. The dressing comes off; then the viewer looks behind the ear for tape.",
         "allowed_marks": [
           "the numerals 1 to 4",
           "one motion arrow in panel 2",
           "a magnifier in panel 4",
-          "the label Tape? in panel 4"
+          "the label Check for tape in panel 4"
         ],
         "forbidden": [
           "the dressing being put on",
           "scissors or cutting",
           "the ear injured or bleeding",
+          "an instruction to take the tape off or to put tape on",
+          "something stuck in or under the skin",
           "any text other than the allowed numerals and label"
         ]
       },
@@ -409,6 +466,7 @@
         "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
         "the bare head with the ear uncovered in panel 3",
         "the dressing coming off rather than going on",
+        "short strips of tape lying across a thin line behind the ear in panel 4",
         "looking behind the ear for tape in panel 4"
       ],
       "rule": "instruction-picture rule (reviewers/anatomy/adjudicator.md, scripts/lib/adjudication.mjs); approved for now by John on 2026-09-18, Song's sign-off is q.instruction-picture-rule",
@@ -451,6 +509,32 @@
             "a00b3c921384a87ed",
             "ad9dac65728955fdb"
           ]
+        },
+        {
+          "on": "2026-09-18",
+          "was": {
+            "state": "Four numbered panels. 1: the head dressing on with the ear covered. 2: a hand behind the head draws the gauze away from the head, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the area behind the ear showing a strip of tape, with the question Tape?. The dressing comes off; then the viewer looks behind the ear for tape.",
+            "allowed_marks": [
+              "the numerals 1 to 4",
+              "one motion arrow in panel 2",
+              "a magnifier in panel 4",
+              "the label Tape? in panel 4"
+            ],
+            "forbidden": [
+              "the dressing being put on",
+              "scissors or cutting",
+              "the ear injured or bleeding",
+              "any text other than the allowed numerals and label"
+            ],
+            "observers_must_recover": [
+              "a head dressing covering the ear in panel 1",
+              "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+              "the bare head with the ear uncovered in panel 3",
+              "the dressing coming off rather than going on",
+              "looking behind the ear for tape in panel 4"
+            ]
+          },
+          "why": "Tweak pass after the live evaluator failed the card: two of three fresh observers read the single opaque strip as something stuck in the skin, because the incision it covered was too faint to see and the strip was drawn like a hard chip with a navy outline. Panels 3 and 4 now draw the incision as a line and the tape as short see-through strips across it, as in the earlier drawing grounded in real post-operative photographs. The label says Check for tape, the narration's own verb, because Tape? was read as apply tape. Reading tape as stuck in the skin, or as an instruction to take it off or put it on, is now a forbidden reading, and recovering the strips across the line is required."
         }
       ]
     }

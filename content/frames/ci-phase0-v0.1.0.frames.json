@@ -10,7 +10,7 @@
   "frames": {
     "frame-01": {
       "kind": "panels",
-      "alt": "Four numbered panels. 1: the head bandage on, covering the ear. 2: a hand behind the head draws the gauze away, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the incision behind the ear, showing a strip of tape, with the question: tape?",
+      "alt": "Four numbered panels. 1: the head bandage on, covering the ear. 2: a hand behind the head draws the gauze away, with an arrow pointing away from the head. 3: the bare head with the ear uncovered and short strips of tape across the incision behind the ear. 4: a magnifier over the incision behind the ear, showing the strips of tape across it, with the words: check for tape.",
       "instruction": "howto.remove-dressing",
       "layers": {
         "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png",
@@ -19,13 +19,97 @@
       },
       "anchors": {
         "incision": {
-          "x": 0.565,
-          "y": 0.47
+          "x": 0.585,
+          "y": 0.49
         },
         "pull_start": {
           "x": 0.21,
           "y": 0.3
         }
+      },
+      "paths": {
+        "incision": [
+          [
+            0.555,
+            0.615
+          ],
+          [
+            0.55,
+            0.59
+          ],
+          [
+            0.547,
+            0.564
+          ],
+          [
+            0.544,
+            0.539
+          ],
+          [
+            0.544,
+            0.526
+          ],
+          [
+            0.545,
+            0.513
+          ],
+          [
+            0.546,
+            0.5
+          ],
+          [
+            0.548,
+            0.486
+          ],
+          [
+            0.551,
+            0.473
+          ],
+          [
+            0.555,
+            0.459
+          ],
+          [
+            0.56,
+            0.446
+          ],
+          [
+            0.566,
+            0.432
+          ],
+          [
+            0.573,
+            0.418
+          ],
+          [
+            0.582,
+            0.405
+          ],
+          [
+            0.592,
+            0.392
+          ],
+          [
+            0.603,
+            0.381
+          ],
+          [
+            0.615,
+            0.372
+          ],
+          [
+            0.629,
+            0.367
+          ],
+          [
+            0.643,
+            0.366
+          ],
+          [
+            0.658,
+            0.367
+          ]
+        ]
       },
       "panels": [
         {
@@ -67,6 +151,29 @@
           "image": "base",
           "sentence_ids": [
             "wc.01"
+          ],
+          "overlays": [
+            {
+              "id": "incision",
+              "type": "incision",
+              "path": "incision",
+              "sentence_ids": [
+                "wc.02"
+              ]
+            },
+            {
+              "id": "tape",
+              "type": "tape-strips",
+              "path": "incision",
+              "count": 4,
+              "span": [
+                0.06,
+                0.58
+              ],
+              "sentence_ids": [
+                "wc.02"
+              ]
+            }
           ]
         },
         {
@@ -77,17 +184,28 @@
             "anchor": "incision",
             "scale": 2.2
           },
-          "label_key": "ov.tape_question",
+          "label_key": "ov.tape_check",
           "sentence_ids": [
             "wc.02"
           ],
           "overlays": [
             {
+              "id": "incision",
+              "type": "incision",
+              "path": "incision",
+              "sentence_ids": [
+                "wc.02"
+              ]
+            },
+            {
               "id": "tape",
-              "type": "tape-strip",
-              "anchor": "incision",
-              "width": 120,
-              "angle": -70,
+              "type": "tape-strips",
+              "path": "incision",
+              "count": 4,
+              "span": [
+                0.06,
+                0.58
+              ],
               "sentence_ids": [
                 "wc.02"
               ]
@@ -99,15 +217,99 @@
     },
     "frame-0203-paths": {
       "kind": "panels",
-      "alt": "Two panels. If there is tape over the incision: leave it alone, with a no-cleaning mark. If there is no tape: the bare incision behind the ear, which is cleaned as the narration describes.",
+      "alt": "Two panels. If there is tape: short strips of tape across the incision behind the ear, with a crossed-out bottle and the words do not clean yet. If there is no tape: the bare incision behind the ear, which is cleaned as the narration describes.",
       "layers": {
         "base": "assets/anatomy/postauricular-base-a2.png"
       },
       "anchors": {
         "incision": {
-          "x": 0.565,
-          "y": 0.47
+          "x": 0.585,
+          "y": 0.49
         }
+      },
+      "paths": {
+        "incision": [
+          [
+            0.555,
+            0.615
+          ],
+          [
+            0.55,
+            0.59
+          ],
+          [
+            0.547,
+            0.564
+          ],
+          [
+            0.544,
+            0.539
+          ],
+          [
+            0.544,
+            0.526
+          ],
+          [
+            0.545,
+            0.513
+          ],
+          [
+            0.546,
+            0.5
+          ],
+          [
+            0.548,
+            0.486
+          ],
+          [
+            0.551,
+            0.473
+          ],
+          [
+            0.555,
+            0.459
+          ],
+          [
+            0.56,
+            0.446
+          ],
+          [
+            0.566,
+            0.432
+          ],
+          [
+            0.573,
+            0.418
+          ],
+          [
+            0.582,
+            0.405
+          ],
+          [
+            0.592,
+            0.392
+          ],
+          [
+            0.603,
+            0.381
+          ],
+          [
+            0.615,
+            0.372
+          ],
+          [
+            0.629,
+            0.367
+          ],
+          [
+            0.643,
+            0.366
+          ],
+          [
+            0.658,
+            0.367
+          ]
+        ]
       },
       "panels": [
         {
@@ -124,11 +326,22 @@
           ],
           "overlays": [
             {
+              "id": "incision",
+              "type": "incision",
+              "path": "incision",
+              "sentence_ids": [
+                "wc.03"
+              ]
+            },
+            {
               "id": "tape",
-              "type": "tape-strip",
-              "anchor": "incision",
-              "width": 140,
-              "angle": -70,
+              "type": "tape-strips",
+              "path": "incision",
+              "count": 4,
+              "span": [
+                0.06,
+                0.58
+              ],
               "sentence_ids": [
                 "wc.03"
               ]
@@ -137,12 +350,13 @@
               "id": "no-cleaning",
               "type": "no-cleaning",
               "at": {
-                "x": 0.43,
-                "y": 0.63
+                "x": 0.42,
+                "y": 0.5
               },
               "sentence_ids": [
                 "wc.04"
-              ]
+              ],
+              "label_key": "ov.no_cleaning"
             }
           ]
         },
@@ -158,6 +372,16 @@
             "wc.05",
             "wc.06",
             "wc.07"
+          ],
+          "overlays": [
+            {
+              "id": "incision",
+              "type": "incision",
+              "path": "incision",
+              "sentence_ids": [
+                "wc.05"
+              ]
+            }
           ]
         }
       ]
@@ -300,8 +524,8 @@
           "type": "pointer",
           "anchor": "bulge",
           "at": {
-            "x": 0.3,
-            "y": 0.86
+            "x": 0.4,
+            "y": 0.87
           },
           "from": "swelling",
           "label_key": "ov.fluid_pointer",
