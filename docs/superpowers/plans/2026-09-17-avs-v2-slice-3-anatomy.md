@@ -44,7 +44,7 @@
 **Interfaces:**
 - Produces: `LEDGER_PATH`, `PRICING`, `estimateFluxUsd({ outputMegapixels, inputMegapixels })`, `estimateNarrationUsd(characters)`, `ledgerTotals(ledger) -> { cap, committed, remaining, entries }`, `reserveSpend(ledger, { id, model, purpose, units, estimate_usd }) -> ledger`, `settleSpend(ledger, id, { status, requestId, actualUsd }) -> ledger`, `validateLedger(ledger) -> { valid, errors, totals }`, `loadLedger(root)`, `saveLedger(root, ledger)`. Statuses: `reserved`, `completed`, `failed`; only `reserved` and `completed` count against the cap.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-spend-ledger.test.mjs
@@ -98,12 +98,12 @@ test("the repository ledger is valid and capped at ten dollars", async () => {
 });
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `node --test tests/v2-spend-ledger.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/spend-ledger.mjs'`
 
-- [ ] **Step 3: Write the ledger file, library, and CLI**
+- [x] **Step 3: Write the ledger file, library, and CLI**
 
 ```json
 {
@@ -222,12 +222,12 @@ console.log(`spend ledger valid: $${result.totals.committed.toFixed(2)} committe
 
 Add `"spend:validate": "node scripts/validate-spend.mjs"` to `package.json` and run it in `check` after `translations:validate`.
 
-- [ ] **Step 4: Run the test and the CLI**
+- [x] **Step 4: Run the test and the CLI**
 
 Run: `node --test tests/v2-spend-ledger.test.mjs && node scripts/validate-spend.mjs`
 Expected: `# pass 4` and `spend ledger valid: $0.00 committed of $10 across 0 entries; $10.00 remaining`
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add content/spend scripts/lib/spend-ledger.mjs scripts/validate-spend.mjs tests/v2-spend-ledger.test.mjs package.json
@@ -253,7 +253,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Produces: `CONTRACTS_PATH`, `MANIFEST_PATH`, `MODELS`, `IMAGE_SIZES`, `STATUSES`, `sha256(bytes)`, `loadContracts(root)`, `loadManifest(root)`, `validateContracts(contracts)`, `attemptsFor(manifest, assetId)`, `acceptedRecord(manifest, assetId)`, `planAttempt({ contracts, manifest, assetId }) -> { assetId, attempt, model, parentFile, input, estimateUsd, file, ledgerId }`, `recordCandidate(manifest, plan, { bytes, width, height, requestId, seed }) -> manifest`, `setStatus(manifest, recordId, status, note) -> manifest`, `validateAnatomy({ contracts, manifest, frames, root }) -> { valid, errors }`.
 - Manifest record shape: `{ id, asset_id, attempt, file, sha256, width, height, model, prompt, seed, request_id, estimate_usd, ledger_entry, status, note, review: { inspection, observers, adjudication } }`.
 
-- [ ] **Step 1: Write the failing test**
+- [x] **Step 1: Write the failing test**
 
 ```js
 // tests/v2-anatomy.test.mjs
@@ -328,12 +328,12 @@ test("anatomy validation ties frames to accepted records with matching hashes", 
 });
 ```
 
-- [ ] **Step 2: Run it to verify it fails**
+- [x] **Step 2: Run it to verify it fails**
 
 Run: `node --test tests/v2-anatomy.test.mjs`
 Expected: FAIL with `Cannot find module '.../scripts/lib/anatomy.mjs'`
 
-- [ ] **Step 3: Write the contracts**
+- [x] **Step 3: Write the contracts**
 
 Prompts describe a neutral adult, a clean medical-illustration style with soft shading and accurate anatomy, no text of any kind, and nothing clinical the overlays will draw. Seeds are fixed so attempts are reproducible; each attempt uses `seed + attempt - 1`.
 
@@ -435,7 +435,7 @@ Prompts describe a neutral adult, a clean medical-illustration style with soft s
 }
 ```
 
-- [ ] **Step 4: Write the library**
+- [x] **Step 4: Write the library**
 
 ```js
 // scripts/lib/anatomy.mjs
@@ -590,7 +590,7 @@ export async function validateAnatomy({ contracts, manifest, frames, root }) {
 }
 ```
 
-- [ ] **Step 5: Write the generator and validator CLIs**
+- [x] **Step 5: Write the generator and validator CLIs**
 
 ```js
 // scripts/generate-anatomy.mjs
@@ -679,12 +679,12 @@ console.log(`anatomy valid: ${contracts.assets.length} contracts, ${(manifest.re
 
 Add to `package.json`: `"anatomy:generate": "node --env-file=.env.local scripts/generate-anatomy.mjs"` and `"anatomy:validate": "node scripts/validate-anatomy.mjs"`, the latter in `check` after `frames:validate`. In a worktree without `.env.local`, run the generator as `node --env-file=<main checkout>/.env.local scripts/generate-anatomy.mjs`.
 
-- [ ] **Step 6: Run the tests, the validator, and a dry run**
+- [x] **Step 6: Run the tests, the validator, and a dry run**
 
 Run: `node --test tests/v2-anatomy.test.mjs && node scripts/validate-anatomy.mjs && node scripts/generate-anatomy.mjs --dry-run --asset postauricular-base`
 Expected: `# pass 4`, `anatomy valid: 5 contracts, 0 records, 0 accepted`, the plan JSON with `"estimate_usd": 0.03`, and `dry run: no request, no spend`.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add content/anatomy scripts/lib/anatomy.mjs scripts/generate-anatomy.mjs scripts/validate-anatomy.mjs tests/v2-anatomy.test.mjs package.json
@@ -705,7 +705,7 @@ This task spends money. Order: base master first, shown to John as soon as it ex
 - Create: `content/reviews/anatomy/<record-id>.json` (receipts)
 - Modify: `content/spend/v2-ledger.json` (by the generator)
 
-- [ ] **Step 1: Write the observer and adjudicator personas**
+- [x] **Step 1: Write the observer and adjudicator personas**
 
 ```markdown
 <!-- reviewers/anatomy/observer.md -->
@@ -732,16 +732,16 @@ Return JSON: `{ "verdict": "pass" | "fail", "recovered": [strings each observer 
 Fail when any observer reports text, any observer reports a forbidden reading, or any required item is recovered by fewer than three observers. Text may never rescue a failing picture.
 ```
 
-- [ ] **Step 2: Generate the base master**
+- [x] **Step 2: Generate the base master**
 
 Run: `node --env-file=/Users/johnkuo/Documents/ChatGPT/avs-video/.env.local scripts/generate-anatomy.mjs --asset postauricular-base`
 Then look at `assets/anatomy/postauricular-base-a1.png` with the image reader. Accept only if: the view is behind the ear, one thin healed line sits in the crease behind the ear, nothing is worn or applied, and the image holds no text. Otherwise record a `rejected` status with the reason via a small Node one-liner using `setStatus`, delete the PNG, and run attempt 2 (the seed advances automatically). Stop at 3 attempts and report.
 
-- [ ] **Step 3: Send the accepted base to John**
+- [x] **Step 3: Send the accepted base to John**
 
 Send the PNG with a one-line caption naming the register, so the style can be redirected before the edits spend.
 
-- [ ] **Step 4: Run the observation loop on the base**
+- [x] **Step 4: Run the observation loop on the base**
 
 Launch three fresh observer agents in one message, each with only `reviewers/anatomy/observer.md` and the image path, no other context. Then one adjudicator agent with the contract and the three observations. Write `content/reviews/anatomy/<record-id>.json`:
 
@@ -759,11 +759,11 @@ Launch three fresh observer agents in one message, each with only `reviewers/ana
 
 Store the receipt path and verdict in the manifest record's `review` field. A `fail` verdict rejects the record: delete the PNG, keep the record with the reason, and try the next attempt with the prompt adjusted in the contract to remove the wrong reading.
 
-- [ ] **Step 5: Generate the three edits and the processor master**
+- [x] **Step 5: Generate the three edits and the processor master**
 
 Run the generator once per asset, in this order: `postauricular-dressing`, `postauricular-red-swollen`, `postauricular-fluid`, `processor-worn`. Inspect each; edits must keep the same person and view. Run the observation loop on each accepted record. Expected total spend for the task: between `$0.20` and `$0.60`.
 
-- [ ] **Step 6: Validate and commit**
+- [x] **Step 6: Validate and commit**
 
 Run: `node scripts/validate-anatomy.mjs && node scripts/validate-spend.mjs`
 Expected: `anatomy valid: 5 contracts, N records, 5 accepted` and the ledger line under `$1.00`.
@@ -793,7 +793,7 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - Overlay types: `tape-strip` (`width`, `angle`), `inset` (`at`, `radius`, `scale`, `tape: boolean`), `no-cleaning` (`at`), `checklist` (`at`, `rows`), `rows` (`at`, `rows`), `steps` (`at`, `rows`), `pointer` (`at`, `anchor`).
 - `guide/assets/frames.js` exports `renderFrame(frame, { beat, beatWords, sentences, pack })`, `updateFrame(node, seconds)`, `phraseTime(words, phrase) -> seconds | null`.
 
-- [ ] **Step 1: Extend the tests**
+- [x] **Step 1: Extend the tests**
 
 Append to `tests/v2-guide-logic.test.mjs` (phrase timing lives in `frames.js`, which is DOM-free only for this function, so import it directly):
 
@@ -831,12 +831,12 @@ test("composite frames name accepted layers, anchors within the image, overlays 
 
 `validateFrames` gains a `labels` argument (the English pack's labels); the test file loads it: `const englishLabels = JSON.parse(await readFile(resolve(root, "content/translations/en/ci-phase0-v0.1.0.json"), "utf8")).labels;`.
 
-- [ ] **Step 2: Run them to verify they fail**
+- [x] **Step 2: Run them to verify they fail**
 
 Run: `node --test tests/v2-guide-logic.test.mjs tests/v2-frames.test.mjs`
 Expected: the two new tests fail (`phraseTime` is not exported; no composite frames yet).
 
-- [ ] **Step 3: Extend the frames validator**
+- [x] **Step 3: Extend the frames validator**
 
 In `scripts/lib/frames.mjs`, extend `FRAME_KINDS` with `"composite"` and add to `validateFrames({ frames, segments, root, labels = {} })`, inside the per-frame loop before the `text` branch:
 
@@ -870,7 +870,7 @@ In `scripts/lib/frames.mjs`, extend `FRAME_KINDS` with `"composite"` and add to 
 
 with `export const OVERLAY_TYPES = Object.freeze(["tape-strip", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer"]);` and a `usedBy` map built in the beat loop: `usedBy.set(beat.frame, [...(usedBy.get(beat.frame) ?? []), ...beat.sentence_ids])`. `scripts/validate-frames.mjs` loads the English pack and passes `labels`.
 
-- [ ] **Step 4: Write the composite frames**
+- [x] **Step 4: Write the composite frames**
 
 Replace the anatomy-bearing entries in `content/frames/ci-phase0-v0.1.0.frames.json` (anchor values are calibrated against the accepted images in Task 3 by reading each PNG and noting where the incision, the top of the ear, and the coil sit; start from the values below and adjust):
 
@@ -969,7 +969,7 @@ Add the labels to the English pack, each mapped to its sentence:
     "ov.processor": "Speech processor, worn outside the ear"
 ```
 
-- [ ] **Step 5: Write the composite renderer**
+- [x] **Step 5: Write the composite renderer**
 
 Replace `guide/assets/frames.js` with a version that keeps `renderTitleCard` and the `text` and image branches, and adds:
 
@@ -1145,20 +1145,20 @@ CSS additions:
 .composite__overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
 ```
 
-- [ ] **Step 6: Drive composites from the clock**
+- [x] **Step 6: Drive composites from the clock**
 
 In `guide/assets/guide.js`: `ensureFrame` passes `beatWords: timeline.words.filter((word) => word.beat === beat.id)` and the frame with its id; after the frame branch in `sync`, add `updateFrame(dom.stage.firstElementChild, local);` (imported from `frames.js`).
 
-- [ ] **Step 7: Run the tests and check**
+- [x] **Step 7: Run the tests and check**
 
 Run: `node --test tests/v2-frames.test.mjs tests/v2-guide-logic.test.mjs && npm run check 2>&1 | tail -4`
 Expected: all pass; `frames valid`, `anatomy valid`, and the total test count up by 2.
 
-- [ ] **Step 8: Verify in the browser**
+- [x] **Step 8: Verify in the browser**
 
 Serve the worktree with the repo server, play chapter 1: the dressing image shows until "remove", then the base; the inset appears at "tape". Chapter 1's second beat: the tape strip and "keep dry" pointer during the first sentence, the prohibition at "do not clean", then the three steps landing on their phrases. Chapter 3: checks tick on their phrases; the four rows land in order; the fluid pointer appears at "swelling". Chapter 5: the processor pointer at "speech processor". Frames 2 and 4 show live-text cards. Check 390 px as well.
 
-- [ ] **Step 9: Commit**
+- [x] **Step 9: Commit**
 
 ```bash
 git add content/frames content/translations scripts/lib/frames.mjs scripts/validate-frames.mjs guide/assets tests
@@ -1171,9 +1171,9 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 
 ### Task 5: Docs, status, and the pull request
 
-- [ ] **Step 1:** In `docs/PROJECT_STATUS.md`, "What exists" gains: `5. Generated anatomy masters under \`assets/anatomy/\` with deterministic overlays, contracted in \`content/anatomy/\`, reviewed caption-blind by AI observers with receipts under \`content/reviews/anatomy/\`, clinician review pending.` "Known gaps" item 1 becomes `### 1. Languages and the provider file are not built yet` with the sentence adjusted. "Best next contributions" item 1 becomes `1. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.`
-- [ ] **Step 2:** Run `npm run check` and record the spend line from `node scripts/validate-spend.mjs` in the PR body.
-- [ ] **Step 3:** Commit, push `v2/slice-3-anatomy`, write `pr-body-slice-3.md` in the scratchpad following the contributing guide, and hand over the `gh pr create` command with `--base v2/slice-2-player-toc`.
+- [x] **Step 1:** In `docs/PROJECT_STATUS.md`, "What exists" gains: `5. Generated anatomy masters under \`assets/anatomy/\` with deterministic overlays, contracted in \`content/anatomy/\`, reviewed caption-blind by AI observers with receipts under \`content/reviews/anatomy/\`, clinician review pending.` "Known gaps" item 1 becomes `### 1. Languages and the provider file are not built yet` with the sentence adjusted. "Best next contributions" item 1 becomes `1. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.`
+- [x] **Step 2:** Run `npm run check` and record the spend line from `node scripts/validate-spend.mjs` in the PR body.
+- [x] **Step 3:** Commit, push `v2/slice-3-anatomy`, write `pr-body-slice-3.md` in the scratchpad following the contributing guide, and hand over the `gh pr create` command with `--base v2/slice-2-player-toc`.
 
 ---
 
@@ -1182,3 +1182,14 @@ Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>"
 - **Spec coverage:** section 5 (three masters as one master with state edits plus the processor master; controlled edits; every clinical mark deterministic; motion on timestamps; SVG fallbacks replaced by live text where no anatomy is needed; the image loop once per master with edits inheriting and a lighter check) is Tasks 2 to 4; section 9's gate by artifact class and section 10's ledger with a $10 cap and per-request entries are Tasks 1 and 3; section 13's failure handling (cap reached, missing key, provider error) is the generator; section 14's tests are in every task.
 - **Placeholders:** none. Anchor values are starting values with a stated calibration step, not blanks.
 - **Type consistency:** `planAttempt` returns `{ assetId, attempt, model, parentFile, input, estimateUsd, file, ledgerId }` and the generator and tests read exactly those; `validateFrames` gains `labels` in Task 4 and the test passes it; `renderFrame` takes `beatWords` and `guide.js` supplies it; `updateFrame(node, seconds)` is exported and called each tick.
+
+## Outcome and deviations (2026-09-17)
+
+- Accepted through the loop: `postauricular-base-a2` and `postauricular-fluid-a1`, each with three caption-blind observations, a passing adjudication, and a receipt under `content/reviews/anatomy/`.
+- Not accepted: the head wrap (four attempts) and the red, swollen state (four attempts). Both caps were raised from three to the validator ceiling of four under John's ten-dollar authorization. Their best attempts stay as unaccepted candidates with receipts recording the failures, so Song and John can look at them without the guide using them.
+- The processor master was dropped after four attempts; the guide draws the behind-the-ear processor and coil as a deterministic vector `device` overlay on the accepted base.
+- `frame-06-redness` composes the accepted swelling master with a vector `flush` overlay (multiply-blended red tint), so the picture the patient sees carries both redness and swelling from reviewed material. `frame-01` shows the base master and the tape inset only; no head-bandage state is shown until a dressing passes.
+- Composite frames keep a 4:3 box that fits the stage with container-query units, so the image never overflows the transcript column.
+- Two integrity problems surfaced and are now guarded: three small-model observers answered without opening the image (the receipt tooling refuses any observer transcript without the Read call), and three small-model adjudications contradicted the rules (discarded, re-run on the session model, recorded in the receipts). Both personas now say so.
+- `validateAnatomy` refuses an accepted record that lacks a passing adjudication or a receipt bound to the file hash.
+- Spend: $0.57 of $10 across fifteen ledger entries.

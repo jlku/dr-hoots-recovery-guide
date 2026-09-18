@@ -17,7 +17,7 @@ In short: this is ready to share as an honest working project, not as a finished
 
 The Dr. Hoots mascot direction was retired after clinician feedback. The mascot-guided Watch experience, the vertical TikTok-style cuts, the character system, the host-video generation scripts, and the activation host pipeline were removed from the repository. Git history keeps them.
 
-The replacement is a segmented, narrated, multilingual guide with a provider file, specified in `docs/superpowers/specs/2026-09-17-avs-v2-segmented-guide-design.md`. Slice 1 of that design is in place: five segments cut from the canonical sentences, bound to the existing narration, with per-segment timelines, captions, and audio under `assets/captions/v2/` and `assets/audio/v2/`.
+The replacement is a segmented, narrated, multilingual guide with a provider file, specified in `docs/superpowers/specs/2026-09-17-avs-v2-segmented-guide-design.md`. Slices 1 through 3 of that design are in place: five segments cut from the canonical sentences and bound to the existing narration, with per-segment timelines, captions, and audio under `assets/captions/v2/` and `assets/audio/v2/`; the one-page guide; and generated anatomy masters composed with deterministic overlays on the narration clock, reviewed caption-blind by AI observers with receipts.
 
 ## What exists
 
@@ -25,6 +25,7 @@ The replacement is a segmented, narrated, multilingual guide with a provider fil
 2. The versioned clinical content model in `content/`, which every format derives from.
 3. The v2 segment model, English label pack, and derived caption and audio artifacts, with validators wired into `npm run check`.
 4. The v2 guide under `guide/`: one page with a chapter rail, one continuous player across the five English segments with synchronized captions, and a transcript that follows playback and seeks on tap. On phones the transcript carries the captions and the phone numbers stay pinned at the bottom.
+5. Generated anatomy masters under `assets/anatomy/` with deterministic overlays, contracted in `content/anatomy/`, reviewed caption-blind by AI observers with receipts under `content/reviews/anatomy/`, clinician review pending. Spend is tracked in `content/spend/v2-ledger.json` against a ten-dollar cap.
 
 ## What is technically verified
 
@@ -39,9 +40,9 @@ Run `npm run check` to reproduce the content and engineering checks. These resul
 
 ## Known gaps
 
-### 1. Diagrams, languages, and the provider file are not built yet
+### 1. Languages and the provider file are not built yet
 
-Slices 3 through 7 add anatomy diagrams with vector overlays, Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The player currently shows the deterministic SVG cards and live-text fallbacks.
+Slices 4 through 7 add Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The guide shows generated anatomy composites for the wound-care, warning-sign, and programming beats; the milestone, number, and follow-up beats show live text. Two anatomy states did not pass the image loop within their attempt caps, the head bandage and the red, swollen incision, so the bandage is not pictured and the redness frame tints the accepted swelling master with a vector flush. Their best candidates are held with receipts for the clinician to weigh.
 
 ### 2. Clinical and institutional inputs are missing
 
@@ -61,7 +62,7 @@ Before any participant-facing claim, run whole-experience checks for keyboard an
 
 ## Best next contributions
 
-1. Build v2 slice 3: anatomy masters with deterministic overlays, through the image loop.
+1. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.
 2. Add browser-level accessibility and rendered-state tests at desktop, 390px mobile, and 200% zoom.
 3. Keep experimental formats comparable by preserving canonical proposition coverage and measuring delivery differences rather than rewriting the medical content per format.
 
