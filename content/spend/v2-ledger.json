@@ -464,6 +464,160 @@
       "actual_usd": 0.118565,
       "request_id": "msg_011CfBQpj5DcWz7ZKPMynrkC",
       "status": "completed"
+    },
+    {
+      "id": "review:recode-diagram.remove-dressing:2026-09-18T18:57:02.954Z",
+      "at": "2026-09-18T18:57:02.955Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/diagram.remove-dressing.json",
+      "units": {
+        "image": "assets/anatomy/diagrams/remove-dressing.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.357315,
+      "request_id": "msg_011CfBR5GUzZ6ghRz6ucWHWC,msg_011CfBR5GUV6QpUzpdm27tMA",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-dressing-removal-ref-a1:2026-09-18T18:58:05.947Z",
+      "at": "2026-09-18T18:58:05.947Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/dressing-removal-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/dressing-removal-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.281125,
+      "request_id": "msg_011CfBR9tjgTeUwYfBU5yEd9,msg_011CfBR9tiw7tFfxpL6gWMS7",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-base-a2:2026-09-18T18:58:57.752Z",
+      "at": "2026-09-18T18:58:57.752Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-base-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.21763,
+      "request_id": "msg_011CfBRDiMCp2pqj9BaP9svr,msg_011CfBRDiPge8rJkxjcbWgSy",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-a2:2026-09-18T18:59:39.161Z",
+      "at": "2026-09-18T18:59:39.161Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.242125,
+      "request_id": "msg_011CfBRGmXYL7W9adqoHddhk,msg_011CfBRGmbkAzw2BcDhBgZRi",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-a4:2026-09-18T19:00:24.465Z",
+      "at": "2026-09-18T19:00:24.465Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-a4.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-a4.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.19917,
+      "request_id": "msg_011CfBRL71tAZnKcduwNx5Ah,msg_011CfBRL78b9GXm5EZbW7DhD",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-ref-a1:2026-09-18T19:01:02.613Z",
+      "at": "2026-09-18T19:01:02.613Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.17675,
+      "request_id": "msg_011CfBRNvBbXedH1jh82gnYm,msg_011CfBRNvAcQjnTiwxZ8HtyF",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-fluid-a1:2026-09-18T19:01:33.888Z",
+      "at": "2026-09-18T19:01:33.888Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-fluid-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-fluid-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.19437,
+      "request_id": "msg_011CfBRRDiMotgF9LjF5TNmC,msg_011CfBRRDfsps85shmkUhoPs",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-a2:2026-09-18T19:02:09.859Z",
+      "at": "2026-09-18T19:02:09.859Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.243585,
+      "request_id": "msg_011CfBRTsoNTyJX3wswHcoxo,msg_011CfBRTsaDmb9CkPWjVA97f",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-a3:2026-09-18T19:02:58.843Z",
+      "at": "2026-09-18T19:02:58.843Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-a3.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.29983,
+      "request_id": "msg_011CfBRXUwobCMw6y9Kf9qkJ,msg_011CfBRXUzHqW2h8BonENAnw",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-ref-a1:2026-09-18T19:03:58.964Z",
+      "at": "2026-09-18T19:03:58.964Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.261775,
+      "request_id": "msg_011CfBRbvDwN2h4hsaHfrYXM,msg_011CfBRbvJAYjyjV2dVEZfYi",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-processor-worn-ref-a1:2026-09-18T19:04:50.990Z",
+      "at": "2026-09-18T19:04:50.990Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/processor-worn-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/processor-worn-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.29444,
+      "request_id": "msg_011CfBRfkQiHKkLs1WSpKxAE,msg_011CfBRfkNyCbwMjZQERmCAQ",
+      "status": "completed"
     }
   ]
 }

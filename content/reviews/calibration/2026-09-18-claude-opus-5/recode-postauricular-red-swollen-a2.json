@@ -1,0 +1,642 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-red-swollen-a2",
+  "contract_id": "postauricular-red-swollen",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-red-swollen-a2.png",
+  "sha256": "6d996b87fb32af1267ed8ced006957fe01f7f8ec1fcb3848c1388e8176207c64",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-red-swollen-a2.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRTsoNTyJX3wswHcoxo",
+        "request_id": "req_011CfBRTs8gZd3xESXoYjjBD",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5016,
+          "output_tokens": 4224,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRTsaDmb9CkPWjVA97f",
+        "request_id": "req_011CfBRTs4TznDcT9241955b",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5016,
+          "output_tokens": 3513,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.243585
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "answers": {
+        "1": "A person's head and neck, seen from behind and slightly to the left, showing the back and left side of the head, the left ear, jaw, and neck; the person faces away to the right.",
+        "2": "Bare skin with a short haircut. A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline. The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy. No bandage, tape, tube, or device is present.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "It could be read as a burn or scald, a rash, sunburn, or an ear that has been slept on or struck."
+      },
+      "observation": "1. A person's head and neck, seen from behind and slightly to the left, showing the back and left side of the head, the left ear, jaw, and neck; the person faces away to the right.\n\n2. Bare skin with a short haircut. A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline. The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy. No bandage, tape, tube, or device is present.\n\n3. No text, arrows, labels, or symbols.\n\n4. It could be read as a burn or scald, a rash, sunburn, or an ear that has been slept on or struck."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "answers": {
+        "1": "The back and side of a person's head, seen from behind and slightly to the right, showing the right ear, a short dark haircut with shaved sides, and the neck.",
+        "2": "A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward. The ear itself is tinted pink-red. Nothing is worn or applied; the shading suggests redness only, not obvious raised swelling.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read it as a sunburn or a hot, flushed ear from cold or embarrassment, or as bruising or rash rather than a swelling issue."
+      },
+      "observation": "1. The back and side of a person's head, seen from behind and slightly to the right, showing the right ear, a short dark haircut with shaved sides, and the neck.\n\n2. A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward. The ear itself is tinted pink-red. Nothing is worn or applied; the shading suggests redness only, not obvious raised swelling.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as a sunburn or a hot, flushed ear from cold or embarrassment, or as bruising or rash rather than a swelling issue."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "answers": {
+        "1": "The left side of a person's head and neck, seen from the left and slightly behind. The person has short dark hair with a shaved lower section, and the face is turned away, so only the ear, jaw, cheek, and a bit of an eyebrow and eyelashes are visible.",
+        "2": "The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow. The reddening spreads across the ear itself and into the area behind it. Nothing is worn or applied; no bandage, dressing, jewelry, tape, or hearing device. The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage.",
+        "3": "No. No text, arrows, labels, or symbols of any kind.",
+        "4": "A worried patient could read it as a sunburn, a hot flushed ear, or an allergic reaction from something touching the ear."
+      },
+      "observation": "1. The left side of a person's head and neck, seen from the left and slightly behind. The person has short dark hair with a shaved lower section, and the face is turned away, so only the ear, jaw, cheek, and a bit of an eyebrow and eyelashes are visible.\n\n2. The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow. The reddening spreads across the ear itself and into the area behind it. Nothing is worn or applied; no bandage, dressing, jewelry, tape, or hearing device. The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage.\n\n3. No. No text, arrows, labels, or symbols of any kind.\n\n4. A worried patient could read it as a sunburn, a hot flushed ear, or an allergic reaction from something touching the ear."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "redness behind the ear along a scar or incision": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow."
+        }
+      ],
+      "some swelling in the same area": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy."
+        }
+      ],
+      "no open wound": [
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.5",
+          "text": "The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage."
+        }
+      ]
+    },
+    "recovered": [
+      "redness behind the ear along a scar or incision"
+    ],
+    "missed": [
+      "some swelling in the same area",
+      "no open wound"
+    ],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [],
+    "design_notes": [
+      "Observer 1: The red area is taken as a thermal burn or scald injury to the skin",
+      "Observer 1: The red area is taken as a general skin rash rather than post-operative inflammation",
+      "Observer 1: The red area is taken as sunburned skin from sun exposure",
+      "Observer 1: The red, puffy ear is taken as the result of being slept on or hit",
+      "Observer 2: The red area is taken as sunburned skin from sun exposure",
+      "Observer 2: The redness is taken as a temporary hot flush of the ear from cold air or embarrassment",
+      "Observer 2: The discoloration is taken as a bruise from blunt impact",
+      "Observer 2: The red area is taken as a general skin rash rather than post-operative inflammation",
+      "Observer 3: The red area is taken as sunburned skin from sun exposure",
+      "Observer 3: The redness is taken as a temporary hot flush of the ear from cold air or embarrassment",
+      "Observer 3: The redness is taken as an allergic reaction to something touching the ear",
+      "No observer reported any scar or incision line: Observers 1, 2, and 3 all described only a soft, diffuse red glow with no linear feature to anchor it to surgery.",
+      "Observer 1 read swelling only as a thickened, rounded outline of the outer ear rather than as puffiness in the area behind the ear.",
+      "Observer 2 stated outright that the shading conveys redness alone and no obvious raised swelling, so the swelling item is not carried by the drawing.",
+      "Observer 3 likewise described the skin as smooth with no bump, which means the swelling that should be present is not visible.",
+      "All three observers saw the redness spilling onto the ear itself (and into the shaved hairline or scalp, per Observers 1 and 2), which makes the location read as an ear problem rather than a behind-the-ear surgical site.",
+      "The pictured side and viewpoint are ambiguous: Observer 1 saw a left ear from behind-left, Observer 2 a right ear from behind-right, and Observer 3 the left side from the left, so the view does not read consistently.",
+      "Observer 2's description of the redness as a \"glowing\" area fading outward invites the sunburn and hot-flush misreadings the picture should avoid.",
+      "Only Observer 3 explicitly registered the absence of a cut, scab, or drainage, so the \"no open wound\" point is not reliably conveyed to every viewer.",
+      "Observer 1: The red skin is taken as a thermal burn or scald injury to the ear area.",
+      "Observer 1: The redness is taken as a skin rash rather than post-surgical inflammation.",
+      "Observer 1: The redness is taken as sun-reddened skin.",
+      "Observer 1: The ear is taken as reddened from being slept on or from a blow to it.",
+      "Observer 2: The redness is taken as sun-reddened skin.",
+      "Observer 2: The redness is taken as a harmless hot, flushed ear from cold air or embarrassment.",
+      "Observer 2: The discolored area is taken as a bruise.",
+      "Observer 2: The redness is taken as a skin rash rather than post-surgical inflammation.",
+      "Observer 3: The redness is taken as sun-reddened skin.",
+      "Observer 3: The redness is taken as a harmless hot, flushed ear from cold air or embarrassment.",
+      "Observer 3: The redness is taken as an allergic reaction to something that touched the ear.",
+      "No observer reported a scar or incision line in the red area, so the surgical landmark the picture is supposed to show appears not to be drawn (Observer 3 explicitly saw no cut or scab).",
+      "Observer 2 read the shading as redness only, with no obvious raised swelling, while Observer 1 read the ear outline as thickened and puffy, so the swelling cue is inconsistent across viewers.",
+      "Observer 3 likewise saw no bump, suggesting the swelling is not legible as drawn.",
+      "Observers disagree on which side is shown: Observer 1 and Observer 3 saw the left ear from behind-left, while Observer 2 saw the right ear from behind-right.",
+      "Observer 1 noted the redness extends up into the shaved hairline above the ear rather than staying confined to the area behind the ear.",
+      "Observer 2 and Observer 3 described the redness as covering the ear itself with a diffuse glow, which may read as generalized flushing rather than a localized post-operative site."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area",
+          "no open wound"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow."
+            }
+          ],
+          "some swelling in the same area": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy."
+            }
+          ],
+          "no open wound": [
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "burn-or-scald",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "sunburn",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "ear-slept-on-or-struck",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "sunburn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "flushed-ear",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "bruising",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "sunburn",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "flushed-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "allergic-reaction",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "burn-or-scald",
+              "reading": "The red area is taken as a thermal burn or scald injury to the skin",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "rash",
+              "reading": "The red area is taken as a general skin rash rather than post-operative inflammation",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "sunburn",
+              "reading": "The red area is taken as sunburned skin from sun exposure",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "ear-slept-on-or-struck",
+              "reading": "The red, puffy ear is taken as the result of being slept on or hit",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "flushed-ear",
+              "reading": "The redness is taken as a temporary hot flush of the ear from cold air or embarrassment",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "bruising",
+              "reading": "The discoloration is taken as a bruise from blunt impact",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "allergic-reaction",
+              "reading": "The redness is taken as an allergic reaction to something touching the ear",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "No observer reported any scar or incision line: Observers 1, 2, and 3 all described only a soft, diffuse red glow with no linear feature to anchor it to surgery.",
+            "Observer 1 read swelling only as a thickened, rounded outline of the outer ear rather than as puffiness in the area behind the ear.",
+            "Observer 2 stated outright that the shading conveys redness alone and no obvious raised swelling, so the swelling item is not carried by the drawing.",
+            "Observer 3 likewise described the skin as smooth with no bump, which means the swelling that should be present is not visible.",
+            "All three observers saw the redness spilling onto the ear itself (and into the shaved hairline or scalp, per Observers 1 and 2), which makes the location read as an ear problem rather than a behind-the-ear surgical site.",
+            "The pictured side and viewpoint are ambiguous: Observer 1 saw a left ear from behind-left, Observer 2 a right ear from behind-right, and Observer 3 the left side from the left, so the view does not read consistently.",
+            "Observer 2's description of the redness as a \"glowing\" area fading outward invites the sunburn and hot-flush misreadings the picture should avoid.",
+            "Only Observer 3 explicitly registered the absence of a cut, scab, or drainage, so the \"no open wound\" point is not reliably conveyed to every viewer."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area",
+          "no open wound"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow."
+            }
+          ],
+          "some swelling in the same area": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy."
+            }
+          ],
+          "no open wound": [
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "burn-or-scald",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "sunburn",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "slept-on-or-struck-ear",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "sunburn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "hot-flushed-ear",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "bruising",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "sunburn",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "hot-flushed-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "allergic-reaction-contact",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "burn-or-scald",
+              "reading": "The red skin is taken as a thermal burn or scald injury to the ear area.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "rash",
+              "reading": "The redness is taken as a skin rash rather than post-surgical inflammation.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "sunburn",
+              "reading": "The redness is taken as sun-reddened skin.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "slept-on-or-struck-ear",
+              "reading": "The ear is taken as reddened from being slept on or from a blow to it.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "hot-flushed-ear",
+              "reading": "The redness is taken as a harmless hot, flushed ear from cold air or embarrassment.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "bruising",
+              "reading": "The discolored area is taken as a bruise.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "allergic-reaction-contact",
+              "reading": "The redness is taken as an allergic reaction to something that touched the ear.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "No observer reported a scar or incision line in the red area, so the surgical landmark the picture is supposed to show appears not to be drawn (Observer 3 explicitly saw no cut or scab).",
+            "Observer 2 read the shading as redness only, with no obvious raised swelling, while Observer 1 read the ear outline as thickened and puffy, so the swelling cue is inconsistent across viewers.",
+            "Observer 3 likewise saw no bump, suggesting the swelling is not legible as drawn.",
+            "Observers disagree on which side is shown: Observer 1 and Observer 3 saw the left ear from behind-left, while Observer 2 saw the right ear from behind-right.",
+            "Observer 1 noted the redness extends up into the shaved hairline above the ear rather than staying confined to the area behind the ear.",
+            "Observer 2 and Observer 3 described the redness as covering the ear itself with a diffuse glow, which may read as generalized flushing rather than a localized post-operative site."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: some swelling in the same area; no open wound. No observer states a forbidden reading, and no unallowed mark was reported."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

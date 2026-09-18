@@ -91,6 +91,7 @@ export async function runCalibration({ root, client, dryRun = false, model = DEF
       expect_strict: row.expect_strict,
       got_strict: outcomes.map((outcome) => outcome.verdict_strict),
       receipts: outcomes.map((outcome) => outcome.path),
+      codings_disagreed: outcomes.some((outcome) => outcome.receipt.adjudication.unsettled),
       cost_usd: round(rowCost, 4),
       why: row.why,
       development: Boolean(row.development)
@@ -114,7 +115,8 @@ export async function runCalibration({ root, client, dryRun = false, model = DEF
       image: summarize("image"),
       recode: summarize("recode"),
       errors: rows.filter((row) => row.error).length,
-      unsettled: scored.filter((row) => row.got === "unsettled").length
+      unsettled: scored.filter((row) => row.got === "unsettled").length,
+      codings_disagreed: scored.filter((row) => row.codings_disagreed).length
     },
     repeat,
     codings,

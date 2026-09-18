@@ -420,6 +420,7 @@ test("calibration can repeat every case, and a case whose runs disagree counts a
     assert.equal(report.rows[0].got, "unsettled");
     assert.equal(report.rows[0].agree, false);
     assert.equal(report.agreement.unsettled, 1);
+    assert.equal(report.rows[0].codings_disagreed, false, "one coding per run cannot disagree with itself");
     assert.equal(report.rows[0].development, true);
     assert.equal(report.agreement.held_out.scored, 0);
     assert.ok(report.rows[0].receipts.every((path) => /\.r[12]\.json$/.test(path)));

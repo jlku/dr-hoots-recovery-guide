@@ -1,0 +1,540 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-fluid-a1",
+  "contract_id": "postauricular-fluid",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-fluid-a1.png",
+  "sha256": "f0f1e702d178099b3d8318b3ef8dd0854fbe1b94af7585a4cf59c96123b1a46f",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-fluid-a1.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRRDiMotgF9LjF5TNmC",
+        "request_id": "req_011CfBRRDFKTq5E69suiiM13",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5102,
+          "output_tokens": 3073,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRRDfsps85shmkUhoPs",
+        "request_id": "req_011CfBRRDDLQZPRs2Ympb5AB",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5102,
+          "output_tokens": 2661,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.19437
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-fluid-a1.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right. Short dark hair on top, shaved/faded sides, one ear in profile, the cheek and lashes of a closed or downcast right eye.",
+        "2": "A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward. Its edge is outlined by a thin pale highlight; the surrounding skin is slightly flushed. Nothing is worn or applied; no cut, scab, or open wound.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "Could be mistaken for a large boil, cyst, or tumor behind the ear, or for a swollen lymph node."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right. Short dark hair on top, shaved/faded sides, one ear in profile, the cheek and lashes of a closed or downcast right eye.\n\n2. A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward. Its edge is outlined by a thin pale highlight; the surrounding skin is slightly flushed. Nothing is worn or applied; no cut, scab, or open wound.\n\n3. No text, arrows, labels, or symbols.\n\n4. Could be mistaken for a large boil, cyst, or tumor behind the ear, or for a swollen lymph node."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-fluid-a1.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear, cheek, and one closed eye with eyelashes are visible in profile. The hair is short and dark on top with buzzed, faded sides.",
+        "2": "On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath. The ear itself appears normal. No bandage, dressing, tube, or device is worn.",
+        "3": "No text, arrows, labels, or symbols anywhere in the image.",
+        "4": "A worried patient could read it as a swollen lump or lymph node behind the ear, or as a cyst or abscess forming."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear, cheek, and one closed eye with eyelashes are visible in profile. The hair is short and dark on top with buzzed, faded sides.\n\n2. On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath. The ear itself appears normal. No bandage, dressing, tube, or device is worn.\n\n3. No text, arrows, labels, or symbols anywhere in the image.\n\n4. A worried patient could read it as a swollen lump or lymph node behind the ear, or as a cyst or abscess forming."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-fluid-a1.json",
+      "answers": {
+        "1": "The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear is in profile, and the face is turned away so only the nose tip, brow, and eyelashes are visible. The hair is dark, cropped short on the sides with a longer top.",
+        "2": "A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp. It bulges outward, with a lighter highlight on top and darker shading below; the skin appears stretched but intact. Nothing is worn or applied.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A large boil, cyst, or tumor."
+      },
+      "observation": "1. The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear is in profile, and the face is turned away so only the nose tip, brow, and eyelashes are visible. The hair is dark, cropped short on the sides with a longer top.\n\n2. A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp. It bulges outward, with a lighter highlight on top and darker shading below; the skin appears stretched but intact. Nothing is worn or applied.\n\n3. No text, arrows, labels, or symbols.\n\n4. A large boil, cyst, or tumor."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a rounded swelling or bulge under the skin behind the ear": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp."
+        }
+      ],
+      "no liquid on the surface": [],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+        }
+      ]
+    },
+    "recovered": [
+      "a rounded swelling or bulge under the skin behind the ear",
+      "the same view of the head"
+    ],
+    "missed": [
+      "no liquid on the surface"
+    ],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [],
+    "design_notes": [
+      "Observer 1: The bulge is read as a diseased lump such as a large boil, cyst, abscess, or tumor behind the ear.",
+      "Observer 1: The bulge is read as a swollen lymph node or general swollen lump behind the ear.",
+      "Observer 2: The bulge is read as a swollen lymph node or general swollen lump behind the ear.",
+      "Observer 2: The bulge is read as a diseased lump such as a large boil, cyst, abscess, or tumor behind the ear.",
+      "Observer 3: The bulge is read as a diseased lump such as a large boil, cyst, abscess, or tumor behind the ear.",
+      "No observer said anything about the skin being dry or free of liquid, so the contract's 'no liquid on the surface' point went unconfirmed by all three.",
+      "Observer 2 described the bump as 'shiny', a finish that a clinician may want to dull since it sits close to reading as moisture on the skin.",
+      "Observer 1 reported the surrounding skin as slightly flushed and Observer 3 called the swelling pinkish-red, so the colour is drifting toward redness and is worth checking.",
+      "Observer 1 noted the swelling pushes the outer ear forward, while Observer 2 said the ear itself appears normal, an inconsistency in how the ear's position reads.",
+      "Observer 3 saw the face turned away with only the nose tip, brow, and lashes visible, whereas Observers 1 and 2 saw the cheek and a closed eye, so the facial view is ambiguous.",
+      "Observers 2 and 3 both read the skin as stretched over something underneath, a cue the clinician should confirm is the intended state.",
+      "Observer 1: The bulge is taken to be a large boil, cyst, or tumor growing behind the ear rather than the intended state.",
+      "Observer 1: The bulge is taken to be an enlarged or swollen lymph node behind the ear.",
+      "Observer 2: The bulge is taken to be an enlarged or swollen lymph node behind the ear.",
+      "Observer 2: The bulge is taken to be a large boil, cyst, or tumor growing behind the ear rather than the intended state.",
+      "Observer 2: The bulge is taken to be an abscess in the process of forming under the skin.",
+      "Observer 3: The bulge is taken to be a large boil, cyst, or tumor growing behind the ear rather than the intended state.",
+      "No observer stated that the skin surface is free of liquid, so the required 'no liquid' point went unreported by all three.",
+      "Observer 2 described the bump as shiny, which a clinician may want to check since a wet-looking sheen sits close to the forbidden liquid reading.",
+      "Observer 1 said the swelling pushes the outer ear forward, while Observer 2 said the ear itself appears normal, so the ear's position is read inconsistently.",
+      "Observer 1 reported the surrounding skin as slightly flushed and Observer 3 called the swelling pinkish-red, while Observer 2 called it only pinkish, so the amount of redness reads differently between observers.",
+      "Observer 3 saw the face as turned away with only the nose tip, brow, and eyelashes visible, whereas Observers 1 and 2 saw the cheek and a closed eye, so how much of the face is legible varies."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "no liquid on the surface"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp."
+            }
+          ],
+          "no liquid on the surface": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-cyst-tumor",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "swollen-lymph-node",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "swollen-lymph-node",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "boil-cyst-tumor",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-cyst-tumor",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "boil-cyst-tumor",
+              "reading": "The bulge is read as a diseased lump such as a large boil, cyst, abscess, or tumor behind the ear.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "swollen-lymph-node",
+              "reading": "The bulge is read as a swollen lymph node or general swollen lump behind the ear.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "No observer said anything about the skin being dry or free of liquid, so the contract's 'no liquid on the surface' point went unconfirmed by all three.",
+            "Observer 2 described the bump as 'shiny', a finish that a clinician may want to dull since it sits close to reading as moisture on the skin.",
+            "Observer 1 reported the surrounding skin as slightly flushed and Observer 3 called the swelling pinkish-red, so the colour is drifting toward redness and is worth checking.",
+            "Observer 1 noted the swelling pushes the outer ear forward, while Observer 2 said the ear itself appears normal, an inconsistency in how the ear's position reads.",
+            "Observer 3 saw the face turned away with only the nose tip, brow, and lashes visible, whereas Observers 1 and 2 saw the cheek and a closed eye, so the facial view is ambiguous.",
+            "Observers 2 and 3 both read the skin as stretched over something underneath, a cue the clinician should confirm is the intended state."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "no liquid on the surface"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp."
+            }
+          ],
+          "no liquid on the surface": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-cyst-or-tumor",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "swollen-lymph-node",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "swollen-lymph-node",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "boil-cyst-or-tumor",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "abscess-forming",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "no liquid on the surface",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-cyst-or-tumor",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "boil-cyst-or-tumor",
+              "reading": "The bulge is taken to be a large boil, cyst, or tumor growing behind the ear rather than the intended state.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "swollen-lymph-node",
+              "reading": "The bulge is taken to be an enlarged or swollen lymph node behind the ear.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "abscess-forming",
+              "reading": "The bulge is taken to be an abscess in the process of forming under the skin.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "No observer stated that the skin surface is free of liquid, so the required 'no liquid' point went unreported by all three.",
+            "Observer 2 described the bump as shiny, which a clinician may want to check since a wet-looking sheen sits close to the forbidden liquid reading.",
+            "Observer 1 said the swelling pushes the outer ear forward, while Observer 2 said the ear itself appears normal, so the ear's position is read inconsistently.",
+            "Observer 1 reported the surrounding skin as slightly flushed and Observer 3 called the swelling pinkish-red, while Observer 2 called it only pinkish, so the amount of redness reads differently between observers.",
+            "Observer 3 saw the face as turned away with only the nose tip, brow, and eyelashes visible, whereas Observers 1 and 2 saw the cheek and a closed eye, so how much of the face is legible varies."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: no liquid on the surface. No observer states a forbidden reading, and no unallowed mark was reported."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

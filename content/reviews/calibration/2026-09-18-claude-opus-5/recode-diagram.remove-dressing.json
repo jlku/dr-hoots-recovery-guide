@@ -1,0 +1,856 @@
+{
+  "schema_version": "1.1",
+  "record_id": "diagram.remove-dressing",
+  "contract_id": "diagram.remove-dressing",
+  "kind": "recode",
+  "file": "assets/anatomy/diagrams/remove-dressing.png",
+  "sha256": "d6ca542316478fc43e7495c467545ce84a2f00920ad6eec21aaafd6bcebbfdbe",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/diagram.remove-dressing.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "instruction-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBR5GUzZ6ghRz6ucWHWC",
+        "request_id": "req_011CfBR5FYgJPoU1LwSQ6oK2",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 8089,
+          "output_tokens": 5675,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBR5GUV6QpUzpdm27tMA",
+        "request_id": "req_011CfBR5FWSo4bNRMgJmhpBf",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 8089,
+          "output_tokens": 5382,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.357315
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "answers": {
+        "1": "Back of a person's head and neck, from behind and slightly right; the right ear is the focus. Four panels.",
+        "2": "Panel 1: white cloth band around the head at forehead level, bow at the back; white rounded pad over the ear. Panel 2: a hand pulls the band's loose tail backward; pad already gone, ear bare. Panel 3: no band or pad; a thin pale curved line in the crease behind the ear. Panel 4: magnified ear; a tan rounded strip lies tilted across that line, behind the upper ear.",
+        "3": "Navy circles \"1\"–\"4\", top-left of each panel (sequence). Teal arrow, panel 2, above the hand, pointing away from the head (pull direction). Magnifying glass, panel 4. Pill label \"Tape?\" beneath it, a question.",
+        "4": "Reversed, or with the arrow read as \"pull tight,\" it shows a head being wrapped. The tan strip could pass for a wound.",
+        "5": "Pull the band's tail backward to undo it; band and pad come off, per the 1–3 order. Then look behind the ear for a tan strip. Whether that strip stays, comes off, or goes on: cannot tell."
+      },
+      "observation": "1. Back of a person's head and neck, from behind and slightly right; the right ear is the focus. Four panels.\n\n2. Panel 1: white cloth band around the head at forehead level, bow at the back; white rounded pad over the ear. Panel 2: a hand pulls the band's loose tail backward; pad already gone, ear bare. Panel 3: no band or pad; a thin pale curved line in the crease behind the ear. Panel 4: magnified ear; a tan rounded strip lies tilted across that line, behind the upper ear.\n\n3. Navy circles \"1\"–\"4\", top-left of each panel (sequence). Teal arrow, panel 2, above the hand, pointing away from the head (pull direction). Magnifying glass, panel 4. Pill label \"Tape?\" beneath it, a question.\n\n4. Reversed, or with the arrow read as \"pull tight,\" it shows a head being wrapped. The tan strip could pass for a wound.\n\n5. Pull the band's tail backward to undo it; band and pad come off, per the 1–3 order. Then look behind the ear for a tan strip. Whether that strip stays, comes off, or goes on: cannot tell."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "answers": {
+        "1": "Head seen from behind and to the right: right ear, neck, cheek edge. Brown hair on top, shaved sides. Panel 4 magnifies the skin behind the ear.",
+        "2": "Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear. Panel 2: a hand holds the untied ends behind the head; the pad is gone and the ear is exposed. Panel 3: bare head, with a thin pale curved line in the crease behind the ear. Panel 4: a beige outlined strip lies diagonally across that line. No redness or swelling.",
+        "3": "Navy circles numbered 1–4 sit top-left of each panel and give the order. A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction. A magnifying glass frames panel 4. \"Tape?\" sits beneath it, an unanswered question.",
+        "4": "\"Tape?\" could read as \"put tape on here,\" or \"no strip means something is wrong.\"",
+        "5": "Untie the white band behind the head and pull it away. The band and ear pad are coming off, though pad removal is not shown. Then look behind the ear for a beige strip. Whether it stays, comes off, or goes on, I cannot tell."
+      },
+      "observation": "1. Head seen from behind and to the right: right ear, neck, cheek edge. Brown hair on top, shaved sides. Panel 4 magnifies the skin behind the ear.\n\n2. Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear. Panel 2: a hand holds the untied ends behind the head; the pad is gone and the ear is exposed. Panel 3: bare head, with a thin pale curved line in the crease behind the ear. Panel 4: a beige outlined strip lies diagonally across that line. No redness or swelling.\n\n3. Navy circles numbered 1–4 sit top-left of each panel and give the order. A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction. A magnifying glass frames panel 4. \"Tape?\" sits beneath it, an unanswered question.\n\n4. \"Tape?\" could read as \"put tape on here,\" or \"no strip means something is wrong.\"\n\n5. Untie the white band behind the head and pull it away. The band and ear pad are coming off, though pad removal is not shown. Then look behind the ear for a beige strip. Whether it stays, comes off, or goes on, I cannot tell."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "answers": {
+        "1": "Head and neck from behind, slightly to one side. The visible ear is apparently the right ear.",
+        "2": "- Panel 1: a wide white band goes around the head, with a bow at the back. A white rounded pad covers the ear, seemingly on top of the band.\n   - Panel 2: a hand pulls the band's tails behind the head. The pad is gone and the ear is bare.\n   - Panel 3: nothing is worn. A thin pale curved line sits in the crease behind the ear. No redness, blood or stitches are drawn.\n   - Panel 4: a magnified ear, with a beige strip on the skin just behind it, over that line.",
+        "3": "- Numbers 1–4 in dark circles at each panel's top-left indicate order.\n   - A teal arrow in panel 2 points left, away from the head, indicating pull direction.\n   - A magnifying glass in panel 4 indicates a close look.\n   - A \"Tape?\" label below the magnifying glass questions the strip.",
+        "4": "It could be read as an order to stick tape behind the ear. Panel 3 shows no strip; panel 4 does.",
+        "5": "Untie and pull off the white head band, behind the head. It is coming off, going by number order; the arrow alone could mean tightening. Pad removal is not drawn. Then check behind the ear for a beige strip. I cannot tell whether to leave, remove or apply it."
+      },
+      "observation": "1. Head and neck from behind, slightly to one side. The visible ear is apparently the right ear.\n\n2. - Panel 1: a wide white band goes around the head, with a bow at the back. A white rounded pad covers the ear, seemingly on top of the band.\n   - Panel 2: a hand pulls the band's tails behind the head. The pad is gone and the ear is bare.\n   - Panel 3: nothing is worn. A thin pale curved line sits in the crease behind the ear. No redness, blood or stitches are drawn.\n   - Panel 4: a magnified ear, with a beige strip on the skin just behind it, over that line.\n\n3. - Numbers 1–4 in dark circles at each panel's top-left indicate order.\n   - A teal arrow in panel 2 points left, away from the head, indicating pull direction.\n   - A magnifying glass in panel 4 indicates a close look.\n   - A \"Tape?\" label below the magnifying glass questions the strip.\n\n4. It could be read as an order to stick tape behind the ear. Panel 3 shows no strip; panel 4 does.\n\n5. Untie and pull off the white head band, behind the head. It is coming off, going by number order; the arrow alone could mean tightening. Pad removal is not drawn. Then check behind the ear for a beige strip. I cannot tell whether to leave, remove or apply it."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "instruction-picture",
+    "verdict": "pass",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a head dressing covering the ear in panel 1": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "white rounded pad over the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "A white rounded pad covers the ear, seemingly on top of the band."
+        }
+      ],
+      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "Panel 2: a hand pulls the band's loose tail backward;"
+        },
+        {
+          "observer": 2,
+          "answer": 3,
+          "cite": "o2.3.2",
+          "text": "A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "Panel 2: a hand pulls the band's tails behind the head."
+        }
+      ],
+      "the bare head with the ear uncovered in panel 3": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.5",
+          "text": "Panel 3: no band or pad;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.4",
+          "text": "Panel 3: bare head, with a thin pale curved line in the crease behind the ear."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.5",
+          "text": "Panel 3: nothing is worn."
+        }
+      ],
+      "the dressing coming off rather than going on": [
+        {
+          "observer": 1,
+          "answer": 5,
+          "cite": "o1.5.2",
+          "text": "band and pad come off, per the 1–3 order."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.2",
+          "text": "The band and ear pad are coming off, though pad removal is not shown."
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.2",
+          "text": "It is coming off, going by number order;"
+        }
+      ],
+      "looking behind the ear for tape in panel 4": [
+        {
+          "observer": 1,
+          "answer": 5,
+          "cite": "o1.5.3",
+          "text": "Then look behind the ear for a tan strip."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.3",
+          "text": "Then look behind the ear for a beige strip."
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.5",
+          "text": "Then check behind the ear for a beige strip."
+        }
+      ]
+    },
+    "recovered": [
+      "a head dressing covering the ear in panel 1",
+      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+      "the bare head with the ear uncovered in panel 3",
+      "the dressing coming off rather than going on",
+      "looking behind the ear for tape in panel 4"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [
+      {
+        "observer": 3,
+        "reading": "the dressing being put on",
+        "source": "hedge",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "Taken in reverse order, or with the panel 2 arrow read as pulling tight, the sequence looks like a head being wrapped up rather than unwrapped.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The tan/beige strip on the skin behind the ear is mistaken for a wound on the ear area.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "Taken in reverse order, or with the panel 2 arrow read as pulling the band tight, the sequence looks like a head being wrapped rather than unwrapped.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The tan strip of tape behind the ear is mistaken for a wound on the skin by the ear.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: Taken in reverse order, or with the panel 2 arrow read as pulling tight, the sequence looks like a head being wrapped up rather than unwrapped.",
+      "Observer 1: The tan/beige strip on the skin behind the ear is mistaken for a wound on the ear area.",
+      "Observer 2: The \"Tape?\" label is read as an order to stick tape on the skin behind the ear.",
+      "Observer 2: The absence of the strip is read as a sign that something has gone wrong.",
+      "Observer 3: The \"Tape?\" label is read as an order to stick tape on the skin behind the ear.",
+      "Observer 3 raised and set aside: the dressing being put on",
+      "Observer 1 says the picture never settles whether the strip behind the ear should be left alone, taken off, or put on.",
+      "Observer 1 warns that read backwards, or with the panel 2 arrow taken as \"pull tight,\" the sequence looks like a head being wrapped.",
+      "Observer 2 notes that removal of the ear pad is never drawn, even though the pad is present in panel 1 and gone in panel 2.",
+      "Observer 3 likewise notes the pad removal step is missing from the panels.",
+      "Observer 3 points out that the strip behind the ear is absent in panel 3 but present in panel 4, a change between panels.",
+      "Observer 3 notes the arrow on its own could be read as tightening the band rather than pulling it off.",
+      "Observer 3 observes the pad appears to sit on top of the band in panel 1.",
+      "Observer 2 records that no redness or swelling is drawn, so nothing marks the skin as injured.",
+      "Observer 1: Taken in reverse order, or with the panel 2 arrow read as pulling the band tight, the sequence looks like a head being wrapped rather than unwrapped.",
+      "Observer 1: The tan strip of tape behind the ear is mistaken for a wound on the skin by the ear.",
+      "Observer 2: The 'Tape?' label is read as a direction to stick tape behind the ear rather than as a prompt to check for tape.",
+      "Observer 2: The question mark is read to mean that finding no strip behind the ear signals something is wrong.",
+      "Observer 3: The 'Tape?' label is read as a direction to stick tape behind the ear rather than as a prompt to check for tape.",
+      "Observer 1 notes that in panel 2 the ear pad is already gone and the ear bare, so the step of removing the pad never appears.",
+      "Observer 2 states explicitly that pad removal is not shown even though the pad and band are said to be coming off.",
+      "Observer 3 likewise notes that pad removal is not drawn anywhere in the sequence.",
+      "Observer 3 points out that the beige strip is absent in panel 3 but present in panel 4, a detail that changes between panels.",
+      "Observer 1, Observer 2 and Observer 3 all describe a thin pale curved line in the crease behind the ear that is not among the designed marks, and Observer 1 warns it plus the strip could be taken for a wound.",
+      "Observer 1, Observer 2 and Observer 3 each say they cannot tell from the picture whether the strip behind the ear should be left, removed or applied, so the 'Tape?' question is left unanswered.",
+      "Observer 3 observes that in panel 1 the ear pad seems to sit on top of the band, which muddles how the dressing is layered."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "pass",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "white rounded pad over the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A white rounded pad covers the ear, seemingly on top of the band."
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "Panel 2: a hand pulls the band's loose tail backward;"
+            },
+            {
+              "observer": 2,
+              "answer": 3,
+              "cite": "o2.3.2",
+              "text": "A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Panel 2: a hand pulls the band's tails behind the head."
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.5",
+              "text": "Panel 3: no band or pad;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "Panel 3: bare head, with a thin pale curved line in the crease behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "Panel 3: nothing is worn."
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.2",
+              "text": "band and pad come off, per the 1–3 order."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.2",
+              "text": "The band and ear pad are coming off, though pad removal is not shown."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.2",
+              "text": "It is coming off, going by number order;"
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.3",
+              "text": "Then look behind the ear for a tan strip."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.3",
+              "text": "Then look behind the ear for a beige strip."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.5",
+              "text": "Then check behind the ear for a beige strip."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.5.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "reversed-sequence-shows-wrapping",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "strip-as-wound",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.3.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "tape-label-as-apply-instruction",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "missing-strip-means-problem",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.5"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "the dressing being put on",
+                  "cite": "o3.5.3"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "tape-label-as-apply-instruction",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "reversed-sequence-shows-wrapping",
+              "reading": "Taken in reverse order, or with the panel 2 arrow read as pulling tight, the sequence looks like a head being wrapped up rather than unwrapped.",
+              "forbidden": "the dressing being put on",
+              "harm": false
+            },
+            {
+              "key": "strip-as-wound",
+              "reading": "The tan/beige strip on the skin behind the ear is mistaken for a wound on the ear area.",
+              "forbidden": "the ear injured or bleeding",
+              "harm": true
+            },
+            {
+              "key": "tape-label-as-apply-instruction",
+              "reading": "The \"Tape?\" label is read as an order to stick tape on the skin behind the ear.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "missing-strip-means-problem",
+              "reading": "The absence of the strip is read as a sign that something has gone wrong.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 says the picture never settles whether the strip behind the ear should be left alone, taken off, or put on.",
+            "Observer 1 warns that read backwards, or with the panel 2 arrow taken as \"pull tight,\" the sequence looks like a head being wrapped.",
+            "Observer 2 notes that removal of the ear pad is never drawn, even though the pad is present in panel 1 and gone in panel 2.",
+            "Observer 3 likewise notes the pad removal step is missing from the panels.",
+            "Observer 3 points out that the strip behind the ear is absent in panel 3 but present in panel 4, a change between panels.",
+            "Observer 3 notes the arrow on its own could be read as tightening the band rather than pulling it off.",
+            "Observer 3 observes the pad appears to sit on top of the band in panel 1.",
+            "Observer 2 records that no redness or swelling is drawn, so nothing marks the skin as injured."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "pass",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "white rounded pad over the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "Panel 1: white band around the head at forehead level, tied in a bow at the back, with a white rounded pad over the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A white rounded pad covers the ear, seemingly on top of the band."
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 3,
+              "cite": "o1.3.2",
+              "text": "Teal arrow, panel 2, above the hand, pointing away from the head (pull direction)."
+            },
+            {
+              "observer": 2,
+              "answer": 3,
+              "cite": "o2.3.2",
+              "text": "A teal arrow in panel 2, above the hand, points left, away from the head: the pull direction."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Panel 2: a hand pulls the band's tails behind the head."
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.5",
+              "text": "Panel 3: no band or pad;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "Panel 3: bare head, with a thin pale curved line in the crease behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "Panel 3: nothing is worn."
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.2",
+              "text": "band and pad come off, per the 1–3 order."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.2",
+              "text": "The band and ear pad are coming off, though pad removal is not shown."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.2",
+              "text": "It is coming off, going by number order;"
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.3",
+              "text": "Then look behind the ear for a tan strip."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.3",
+              "text": "Then look behind the ear for a beige strip."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.5",
+              "text": "Then check behind the ear for a beige strip."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.3.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.5.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "read-as-applying-dressing",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "strip-as-wound",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.3.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "tape-instruction",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "missing-strip-means-problem",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.5"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "the dressing being put on",
+                  "cite": "o3.5.3"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "tape-instruction",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "read-as-applying-dressing",
+              "reading": "Taken in reverse order, or with the panel 2 arrow read as pulling the band tight, the sequence looks like a head being wrapped rather than unwrapped.",
+              "forbidden": "the dressing being put on",
+              "harm": false
+            },
+            {
+              "key": "strip-as-wound",
+              "reading": "The tan strip of tape behind the ear is mistaken for a wound on the skin by the ear.",
+              "forbidden": "the ear injured or bleeding",
+              "harm": true
+            },
+            {
+              "key": "tape-instruction",
+              "reading": "The 'Tape?' label is read as a direction to stick tape behind the ear rather than as a prompt to check for tape.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "missing-strip-means-problem",
+              "reading": "The question mark is read to mean that finding no strip behind the ear signals something is wrong.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 notes that in panel 2 the ear pad is already gone and the ear bare, so the step of removing the pad never appears.",
+            "Observer 2 states explicitly that pad removal is not shown even though the pad and band are said to be coming off.",
+            "Observer 3 likewise notes that pad removal is not drawn anywhere in the sequence.",
+            "Observer 3 points out that the beige strip is absent in panel 3 but present in panel 4, a detail that changes between panels.",
+            "Observer 1, Observer 2 and Observer 3 all describe a thin pale curved line in the crease behind the ear that is not among the designed marks, and Observer 1 warns it plus the strip could be taken for a wound.",
+            "Observer 1, Observer 2 and Observer 3 each say they cannot tell from the picture whether the strip behind the ear should be left, removed or applied, so the 'Tape?' question is left unanswered.",
+            "Observer 3 observes that in panel 1 the ear pad seems to sit on top of the band, which muddles how the dressing is layered."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 5 required items. No observer's own answer states a forbidden reading, no unallowed mark was reported, and no harmful misreading is shared by two observers. Under the strict rule the picture would fail."
+  },
+  "panels": [
+    {
+      "record_id": "postauricular-dressing-ref-a1",
+      "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+      "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7"
+    },
+    {
+      "record_id": "dressing-removal-ref-a4",
+      "file": "assets/anatomy/dressing-removal-ref-a4.png",
+      "sha256": "13e71b1d293d065b620b157c295e549aafb9343306cbdfc0f7635062aed02cfa"
+    },
+    {
+      "record_id": "postauricular-base-a2",
+      "file": "assets/anatomy/postauricular-base-a2.png",
+      "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748"
+    }
+  ],
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

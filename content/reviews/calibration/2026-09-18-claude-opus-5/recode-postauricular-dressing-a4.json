@@ -1,0 +1,648 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-dressing-a4",
+  "contract_id": "postauricular-dressing",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-dressing-a4.png",
+  "sha256": "5889c127c0135a837cb5d63e0aa639b3b938022f1f70c62236cd85c7c71ef6eb",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-dressing-a4.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRL71tAZnKcduwNx5Ah",
+        "request_id": "req_011CfBRL6Z6kM8D6oAGUgYT7",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4972,
+          "output_tokens": 2623,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRL78b9GXm5EZbW7DhD",
+        "request_id": "req_011CfBRL6d5BqAs6EJrzy49b",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4972,
+          "output_tokens": 3355,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.19917
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a4.json",
+      "answers": {
+        "1": "A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck. Short dark hair is visible on top.",
+        "2": "A white bandage wrapped in several overlapping turns around the head, passing above the ear. Over the area behind and below the right ear sits a square gauze pad with two strips of tape crossing it in an X. Part of the ear, the cheek, and eyelashes show at the right edge. No skin wound, redness, or fluid is drawn.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A patient might read it as a head-injury or skull-surgery wrap rather than an ear-area dressing, or worry the X-taped pad marks a serious wound or something covered up."
+      },
+      "observation": "1. A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck. Short dark hair is visible on top.\n\n2. A white bandage wrapped in several overlapping turns around the head, passing above the ear. Over the area behind and below the right ear sits a square gauze pad with two strips of tape crossing it in an X. Part of the ear, the cheek, and eyelashes show at the right edge. No skin wound, redness, or fluid is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read it as a head-injury or skull-surgery wrap rather than an ear-area dressing, or worry the X-taped pad marks a serious wound or something covered up."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a4.json",
+      "answers": {
+        "1": "A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view). The ear on the visible side is fully covered; part of the cheek, nose tip, and one eyelash line are just visible at the right edge. Short dark hair is on top.",
+        "2": "A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear. Over the ear region there is a rectangular white pad held with two strips of tape forming an X. No visible skin discoloration, swelling, fluid, or wound is drawn.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read this as a head injury or skull wrap, or assume the eye is also covered."
+      },
+      "observation": "1. A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view). The ear on the visible side is fully covered; part of the cheek, nose tip, and one eyelash line are just visible at the right edge. Short dark hair is on top.\n\n2. A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear. Over the ear region there is a rectangular white pad held with two strips of tape forming an X. No visible skin discoloration, swelling, fluid, or wound is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read this as a head injury or skull wrap, or assume the eye is also covered."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a4.json",
+      "answers": {
+        "1": "The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible; short dark brown hair.",
+        "2": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely. Over the ear area sits a square white gauze pad held down by two white tape strips crossed in an X. The visible skin looks smooth and unmarked.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read it as a head-injury wrap after a skull or scalp wound, or as a covering for an eye or bleeding wound, rather than something about the ear."
+      },
+      "observation": "1. The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible; short dark brown hair.\n\n2. Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely. Over the ear area sits a square white gauze pad held down by two white tape strips crossed in an X. The visible skin looks smooth and unmarked.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as a head-injury wrap after a skull or scalp wound, or as a covering for an eye or bleeding wound, rather than something about the ear."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a white head bandage wrapped around the head": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A white bandage wrapped in several overlapping turns around the head, passing above the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+        }
+      ],
+      "the ear covered by the bandage": [
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.2",
+          "text": "The ear on the visible side is fully covered;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view)."
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible;"
+        }
+      ]
+    },
+    "recovered": [
+      "a white head bandage wrapped around the head",
+      "the same view of the head"
+    ],
+    "missed": [
+      "the ear covered by the bandage"
+    ],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The wrap is taken as a dressing for a skull or scalp injury or post-surgical head wound rather than a dressing for the ear.",
+      "Observer 1: The X-taped pad is taken as marking a serious wound being hidden beneath it.",
+      "Observer 2: The wrap is taken as a dressing for a skull or scalp injury or post-surgical head wound rather than a dressing for the ear.",
+      "Observer 2: The viewer assumes the dressing covers the eye rather than the ear.",
+      "Observer 3: The wrap is taken as a dressing for a skull or scalp injury or post-surgical head wound rather than a dressing for the ear.",
+      "Observer 3: The viewer assumes the dressing covers the eye rather than the ear.",
+      "Observer 3: The dressing is taken as a covering for a bleeding wound.",
+      "Observer 1 reports that part of the ear shows at the right edge and that the bandage passes above the ear, which conflicts with the other two observers describing the ear as fully covered.",
+      "All three observers (Observers 1, 2, and 3) describe a square or rectangular gauze pad held by two tape strips crossed in an X over the ear region, a feature not listed among the required items.",
+      "Observers 1, 2, and 3 each note that no wound, redness, swelling, or fluid is drawn on the visible skin.",
+      "Observer 2 notes that the nose tip is visible at the right edge in addition to the cheek and eyelashes, a facial detail the other observers did not report.",
+      "Observers 1 and 3 warn that the X-taped pad invites reading the image as a skull or scalp injury dressing rather than an ear dressing.",
+      "Observer 1: A viewer takes the wrap to be dressing a head injury or skull/scalp surgery wound rather than a dressing held over the ear.",
+      "Observer 1: A viewer takes the X-taped pad to mean a serious wound is hidden beneath it, or that something is being concealed.",
+      "Observer 2: A viewer takes the wrap to be dressing a head injury or skull/scalp surgery wound rather than a dressing held over the ear.",
+      "Observer 2: A viewer assumes the wrap or pad also covers the eye, i.e. that the dressing concerns the eye rather than the ear.",
+      "Observer 3: A viewer takes the wrap to be dressing a head injury or skull/scalp surgery wound rather than a dressing held over the ear.",
+      "Observer 3: A viewer assumes the wrap or pad also covers the eye, i.e. that the dressing concerns the eye rather than the ear.",
+      "Observer 3: A viewer takes the pad and wrap to be covering a bleeding wound.",
+      "Observer 1 reports that part of the ear, the cheek, and eyelashes show at the right edge, which conflicts with Observers 2 and 3, who say the ear on the visible side is entirely covered.",
+      "Observer 1 places the X-taped gauze pad over the area behind and below the ear, whereas Observers 2 and 3 place the same pad directly over the ear region.",
+      "All three observers describe a square or rectangular pad held by two tape strips crossed in an X, and Observers 1 and 3 note this X could be read as marking a serious or bleeding wound.",
+      "Observers 1, 2, and 3 all note that no wound, redness, swelling, or fluid is drawn on the visible skin.",
+      "Observer 2 notes the nose tip is visible at the right edge, a facial detail the other observers do not report, which may affect how much of the face the view reveals.",
+      "All three observers confirm the picture carries no text, arrows, labels, or symbols."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "the ear covered by the bandage"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white bandage wrapped in several overlapping turns around the head, passing above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.2",
+              "text": "The ear on the visible side is fully covered;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o1.2.3"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-skull-wrap",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "serious-wound-under-pad",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.1.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-skull-wrap",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "eye-also-covered",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-skull-wrap",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "eye-also-covered",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "bleeding-wound-cover",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "head-injury-skull-wrap",
+              "reading": "The wrap is taken as a dressing for a skull or scalp injury or post-surgical head wound rather than a dressing for the ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "serious-wound-under-pad",
+              "reading": "The X-taped pad is taken as marking a serious wound being hidden beneath it.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "eye-also-covered",
+              "reading": "The viewer assumes the dressing covers the eye rather than the ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "bleeding-wound-cover",
+              "reading": "The dressing is taken as a covering for a bleeding wound.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 reports that part of the ear shows at the right edge and that the bandage passes above the ear, which conflicts with the other two observers describing the ear as fully covered.",
+            "All three observers (Observers 1, 2, and 3) describe a square or rectangular gauze pad held by two tape strips crossed in an X over the ear region, a feature not listed among the required items.",
+            "Observers 1, 2, and 3 each note that no wound, redness, swelling, or fluid is drawn on the visible skin.",
+            "Observer 2 notes that the nose tip is visible at the right edge in addition to the cheek and eyelashes, a facial detail the other observers did not report.",
+            "Observers 1 and 3 warn that the X-taped pad invites reading the image as a skull or scalp injury dressing rather than an ear dressing."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "the ear covered by the bandage"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white bandage wrapped in several overlapping turns around the head, passing above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.2",
+              "text": "The ear on the visible side is fully covered;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o1.2.3"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-or-skull-wrap",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "serious-wound-hidden-under-pad",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.1.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-or-skull-wrap",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "dressing-is-for-the-eye",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "head-injury-or-skull-wrap",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "dressing-is-for-the-eye",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "covering-a-bleeding-wound",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "head-injury-or-skull-wrap",
+              "reading": "A viewer takes the wrap to be dressing a head injury or skull/scalp surgery wound rather than a dressing held over the ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "serious-wound-hidden-under-pad",
+              "reading": "A viewer takes the X-taped pad to mean a serious wound is hidden beneath it, or that something is being concealed.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "dressing-is-for-the-eye",
+              "reading": "A viewer assumes the wrap or pad also covers the eye, i.e. that the dressing concerns the eye rather than the ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "covering-a-bleeding-wound",
+              "reading": "A viewer takes the pad and wrap to be covering a bleeding wound.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 reports that part of the ear, the cheek, and eyelashes show at the right edge, which conflicts with Observers 2 and 3, who say the ear on the visible side is entirely covered.",
+            "Observer 1 places the X-taped gauze pad over the area behind and below the ear, whereas Observers 2 and 3 place the same pad directly over the ear region.",
+            "All three observers describe a square or rectangular pad held by two tape strips crossed in an X, and Observers 1 and 3 note this X could be read as marking a serious or bleeding wound.",
+            "Observers 1, 2, and 3 all note that no wound, redness, swelling, or fluid is drawn on the visible skin.",
+            "Observer 2 notes the nose tip is visible at the right edge, a facial detail the other observers do not report, which may affect how much of the face the view reveals.",
+            "All three observers confirm the picture carries no text, arrows, labels, or symbols."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: the ear covered by the bandage. Forbidden: observer 1 (own reading): the ear uncovered."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

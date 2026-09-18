@@ -1,0 +1,685 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-base-a2",
+  "contract_id": "postauricular-base",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-base-a2.png",
+  "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-base-a2.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRDiMCp2pqj9BaP9svr",
+        "request_id": "req_011CfBRDhrgpAXvGevh3Mb65",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5013,
+          "output_tokens": 3584,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRDiPge8rJkxjcbWgSy",
+        "request_id": "req_011CfBRDhsg66dAtq5eeARWF",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5013,
+          "output_tokens": 3116,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.21763
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-base-a2.json",
+      "answers": {
+        "1": "The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge. The hair is dark on top with a sharp, closely shaved fade around the sides and back.",
+        "2": "Nothing is worn or applied. The skin is drawn smooth and uniform. The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A patient might read the faint line behind the ear as a healed surgical scar or a fresh incision from an ear or skin procedure."
+      },
+      "observation": "1. The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge. The hair is dark on top with a sharp, closely shaved fade around the sides and back.\n\n2. Nothing is worn or applied. The skin is drawn smooth and uniform. The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read the faint line behind the ear as a healed surgical scar or a fresh incision from an ear or skin procedure."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-base-a2.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right; the face is turned away, showing only the cheek, eyelashes, and part of the jaw.",
+        "2": "A short undercut haircut with a shaved lower scalp and longer hair on top. Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head. The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "The pale curved line behind the ear could be read as a healed scar or surgical incision, or simply as a highlight or skin fold rather than anything on the skin."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right; the face is turned away, showing only the cheek, eyelashes, and part of the jaw.\n\n2. A short undercut haircut with a shaved lower scalp and longer hair on top. Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head. The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device.\n\n3. No text, arrows, labels, or symbols.\n\n4. The pale curved line behind the ear could be read as a healed scar or surgical incision, or simply as a highlight or skin fold rather than anything on the skin."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-base-a2.json",
+      "answers": {
+        "1": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view). Part of the eyebrow, eyelashes, and cheek are visible at the right edge.",
+        "2": "Short hair on top with a shaved fade on the sides and back, with fine stubble drawn along the hairline. The skin looks smooth and unmarked. There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head. Nothing is worn on the ear or neck.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read the pale curved line behind the ear as a scar, a fresh surgical incision, or a healing cut rather than a natural skin fold."
+      },
+      "observation": "1. The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view). Part of the eyebrow, eyelashes, and cheek are visible at the right edge.\n\n2. Short hair on top with a shaved fade on the sides and back, with fine stubble drawn along the hairline. The skin looks smooth and unmarked. There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head. Nothing is worn on the ear or neck.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read the pale curved line behind the ear as a scar, a fresh surgical incision, or a healing cut rather than a natural skin fold."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": true,
+    "tally": {
+      "the back or side of a person's head with the area behind the ear in view": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right;"
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+        }
+      ],
+      "a thin healed line or scar behind the ear, not on the face or neck": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head."
+        }
+      ],
+      "no bandage, tape, or device": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "Nothing is worn or applied."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.4",
+          "text": "Nothing is worn on the ear or neck."
+        }
+      ]
+    },
+    "recovered": [
+      "the back or side of a person's head with the area behind the ear in view",
+      "a thin healed line or scar behind the ear, not on the face or neck",
+      "no bandage, tape, or device"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The pale curved line behind the ear is taken to be an already healed surgical scar.",
+      "Observer 1: The line is taken to be a fresh surgical incision from a recent ear or skin procedure rather than a healed mark.",
+      "Observer 2: The pale curved line behind the ear is taken to be an already healed surgical scar.",
+      "Observer 2: The line is taken to be a fresh surgical incision from a recent ear or skin procedure rather than a healed mark.",
+      "Observer 2: The line is taken to be only a drawing highlight or a natural crease of skin, with nothing actually on the skin.",
+      "Observer 3: The pale curved line behind the ear is taken to be an already healed surgical scar.",
+      "Observer 3: The line is taken to be a fresh surgical incision from a recent ear or skin procedure rather than a healed mark.",
+      "Observer 3: The line is taken to be a cut that is still in the process of healing.",
+      "Observer 1 found the line behind the ear to be faint, which may make the intended healed scar hard to see.",
+      "Observer 3 read the line as slightly raised, while Observers 1 and 2 described it as flat and pale, so the rendering of the scar reads inconsistently.",
+      "Observer 2 noted the line could be taken as merely a highlight or skin fold rather than a mark on the skin, suggesting it needs clearer definition.",
+      "Observer 3 noted fine stubble drawn along the hairline, an added texture detail near the scar area.",
+      "Observers 1, 2, and 3 all reported part of the face (cheek, jaw, eyelashes, eyebrow) visible at the edge, which brings facial skin into a picture meant to focus behind the ear.",
+      "Observer 1: The pale curved line behind the ear is taken to be a healed surgical scar, which is the intended state.",
+      "Observer 1: The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+      "Observer 2: The pale curved line behind the ear is taken to be a healed surgical scar, which is the intended state.",
+      "Observer 2: The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+      "Observer 2: The line is taken to be only a lighting highlight or a natural crease of the ear, so no scar is seen on the skin at all.",
+      "Observer 3: The pale curved line behind the ear is taken to be a healed surgical scar, which is the intended state.",
+      "Observer 3: The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+      "Observer 3: The line is taken to be a cut that is still in the process of healing rather than a fully healed scar.",
+      "Observer 1 describes the scar line as faint, and Observer 2 says it could be mistaken for a highlight or a plain skin fold rather than a mark on the skin, so the line may be rendered too subtly to read as a scar.",
+      "Observer 3 reads the line as slightly raised, whereas Observers 1 and 2 read it as flat and pale, so the rendering of the scar's relief is inconsistent between viewers.",
+      "All three observers note facial parts showing at the edge of the view (cheek, jaw, eyelashes, and per Observer 3 the eyebrow), which brings areas where an incision is forbidden into frame.",
+      "All three observers report no text, arrows, labels, or symbols anywhere in the picture."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "pass",
+        "verdict_strict": "pass",
+        "missed": [],
+        "forbidden_hits": [],
+        "tally": {
+          "the back or side of a person's head with the area behind the ear in view": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+            }
+          ],
+          "a thin healed line or scar behind the ear, not on the face or neck": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head."
+            }
+          ],
+          "no bandage, tape, or device": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Nothing is worn or applied."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "Nothing is worn on the ear or neck."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "fresh-incision",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "fresh-incision",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "highlight-or-skin-fold",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "fresh-incision",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "healing-cut",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "healed-scar",
+              "reading": "The pale curved line behind the ear is taken to be an already healed surgical scar.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "fresh-incision",
+              "reading": "The line is taken to be a fresh surgical incision from a recent ear or skin procedure rather than a healed mark.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "healing-cut",
+              "reading": "The line is taken to be a cut that is still in the process of healing.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "highlight-or-skin-fold",
+              "reading": "The line is taken to be only a drawing highlight or a natural crease of skin, with nothing actually on the skin.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 found the line behind the ear to be faint, which may make the intended healed scar hard to see.",
+            "Observer 3 read the line as slightly raised, while Observers 1 and 2 described it as flat and pale, so the rendering of the scar reads inconsistently.",
+            "Observer 2 noted the line could be taken as merely a highlight or skin fold rather than a mark on the skin, suggesting it needs clearer definition.",
+            "Observer 3 noted fine stubble drawn along the hairline, an added texture detail near the scar area.",
+            "Observers 1, 2, and 3 all reported part of the face (cheek, jaw, eyelashes, eyebrow) visible at the edge, which brings facial skin into a picture meant to focus behind the ear."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "the back or side of a person's head with the area behind the ear in view": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+            }
+          ],
+          "a thin healed line or scar behind the ear, not on the face or neck": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head."
+            }
+          ],
+          "no bandage, tape, or device": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Nothing is worn or applied."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "Nothing is worn on the ear or neck."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "fresh-incision-behind-ear",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "fresh-incision-behind-ear",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "highlight-or-skin-fold",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                },
+                {
+                  "item": "a thin healed line or scar behind the ear, not on the face or neck",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "no bandage, tape, or device",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "healed-scar",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "fresh-incision-behind-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "healing-cut",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "healed-scar",
+              "reading": "The pale curved line behind the ear is taken to be a healed surgical scar, which is the intended state.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "fresh-incision-behind-ear",
+              "reading": "The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.",
+              "forbidden": "blood or an open wound",
+              "harm": true
+            },
+            {
+              "key": "healing-cut",
+              "reading": "The line is taken to be a cut that is still in the process of healing rather than a fully healed scar.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "highlight-or-skin-fold",
+              "reading": "The line is taken to be only a lighting highlight or a natural crease of the ear, so no scar is seen on the skin at all.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 describes the scar line as faint, and Observer 2 says it could be mistaken for a highlight or a plain skin fold rather than a mark on the skin, so the line may be rendered too subtly to read as a scar.",
+            "Observer 3 reads the line as slightly raised, whereas Observers 1 and 2 read it as flat and pale, so the rendering of the scar's relief is inconsistent between viewers.",
+            "All three observers note facial parts showing at the edge of the view (cheek, jaw, eyelashes, and per Observer 3 the eyebrow), which brings areas where an incision is forbidden into frame.",
+            "All three observers report no text, arrows, labels, or symbols anywhere in the picture."
+          ]
+        }
+      }
+    ],
+    "reason": "The codings disagreed (pass, fail), and a picture passes only when every coding passes, so a clinician should look at it. All three observers recovered all 3 required items. Forbidden: observer 1 (question 4): The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.; observer 2 (question 4): The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.; observer 3 (question 4): The line is taken to be a fresh surgical incision, i.e. a newly cut opening in the skin behind the ear rather than a closed healed mark.."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

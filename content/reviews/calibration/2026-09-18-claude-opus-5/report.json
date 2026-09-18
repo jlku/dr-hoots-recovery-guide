@@ -1,0 +1,266 @@
+{
+  "run": "2026-09-18-claude-opus-5",
+  "ran_on": "2026-09-18",
+  "model": "claude-opus-5",
+  "evaluator_version": "1.0",
+  "dry_run": false,
+  "agreement": {
+    "held_out": {
+      "agreed": 4,
+      "scored": 7
+    },
+    "all": {
+      "agreed": 7,
+      "scored": 11
+    },
+    "image": {
+      "agreed": 0,
+      "scored": 0
+    },
+    "recode": {
+      "agreed": 7,
+      "scored": 11
+    },
+    "errors": 0,
+    "unsettled": 0,
+    "codings_disagreed": 1
+  },
+  "repeat": 1,
+  "codings": 2,
+  "bound_usd": 0,
+  "cost_usd": 2.7681,
+  "rows": [
+    {
+      "id": "recode-diagram.remove-dressing",
+      "mode": "recode",
+      "expect": "pass",
+      "got": "pass",
+      "agree": true,
+      "verdicts": [
+        "pass"
+      ],
+      "expect_strict": "fail",
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-diagram.remove-dressing.json"
+      ],
+      "cost_usd": 0.3573,
+      "why": "in-session verdict in content/reviews/anatomy/diagram.remove-dressing.json",
+      "development": true,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-dressing-removal-ref-a1",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-dressing-removal-ref-a1.json"
+      ],
+      "cost_usd": 0.2811,
+      "why": "in-session verdict in content/reviews/anatomy/dressing-removal-ref-a1.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-base-a2",
+      "mode": "recode",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-base-a2.json"
+      ],
+      "cost_usd": 0.2176,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-base-a2.json",
+      "development": true,
+      "codings_disagreed": true
+    },
+    {
+      "id": "recode-postauricular-dressing-a2",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-dressing-a2.json"
+      ],
+      "cost_usd": 0.2421,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-dressing-a2.json",
+      "development": true,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-dressing-a4",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-dressing-a4.json"
+      ],
+      "cost_usd": 0.1992,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-dressing-a4.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-dressing-ref-a1",
+      "mode": "recode",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-dressing-ref-a1.json"
+      ],
+      "cost_usd": 0.1767,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-fluid-a1",
+      "mode": "recode",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-fluid-a1.json"
+      ],
+      "cost_usd": 0.1944,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-fluid-a1.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-red-swollen-a2",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-red-swollen-a2.json"
+      ],
+      "cost_usd": 0.2436,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-red-swollen-a3",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-red-swollen-a3.json"
+      ],
+      "cost_usd": 0.2998,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "development": true,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-postauricular-red-swollen-ref-a1",
+      "mode": "recode",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-postauricular-red-swollen-ref-a1.json"
+      ],
+      "cost_usd": 0.2618,
+      "why": "in-session verdict in content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "development": false,
+      "codings_disagreed": false
+    },
+    {
+      "id": "recode-processor-worn-ref-a1",
+      "mode": "recode",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5/recode-processor-worn-ref-a1.json"
+      ],
+      "cost_usd": 0.2944,
+      "why": "in-session verdict in content/reviews/anatomy/processor-worn-ref-a1.json",
+      "development": false,
+      "codings_disagreed": false
+    }
+  ],
+  "finding": "Every in-session failure was reproduced, but every accepted state picture failed: question 4 asks each observer for a worried patient's misreading, and the coder mapped single imagined misreadings onto forbidden readings (an eye patch as the ear uncovered, an ordinary hearing aid as a hearing aid with no coil, a fresh incision as an open wound), and the swelling image failed on the negative item \"no liquid on the surface\", which no observer states. Re-scoring the recorded codings offline: the current rule agrees 7 of 11; failing only when two observers share a harmful misreading agrees 6 of 11; treating misreadings as notes for the clinician agrees 9 of 11. The image cases were not run, because a gate that fails every accepted picture passes the negative controls trivially."
+}

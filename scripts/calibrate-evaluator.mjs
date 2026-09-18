@@ -42,8 +42,8 @@ try {
     console.log(`If every call used its whole token ceiling the run would cost $${report.bound_usd.toFixed(2)}; real calls use a fraction of that.`);
     console.log("dry run: no request, no spend");
   } else {
-    const { held_out: heldOut, all, image, recode, errors, unsettled } = report.agreement;
-    console.log(`agreement on held-out cases: ${heldOut.agreed}/${heldOut.scored}; all cases ${all.agreed}/${all.scored} (new observers ${image.agreed}/${image.scored}, re-coded ${recode.agreed}/${recode.scored}); ${unsettled} unsettled; ${errors} errors; $${report.cost_usd.toFixed(4)}`);
+    const { held_out: heldOut, all, image, recode, errors, unsettled, codings_disagreed: codingsDisagreed } = report.agreement;
+    console.log(`agreement on held-out cases: ${heldOut.agreed}/${heldOut.scored}; all cases ${all.agreed}/${all.scored} (new observers ${image.agreed}/${image.scored}, re-coded ${recode.agreed}/${recode.scored}); codings disagreed within ${codingsDisagreed} reviews; ${unsettled} cases changed between repeats; ${errors} errors; $${report.cost_usd.toFixed(4)}`);
     console.log(`report: content/reviews/calibration/${report.run}/report.json`);
   }
 } catch (error) {

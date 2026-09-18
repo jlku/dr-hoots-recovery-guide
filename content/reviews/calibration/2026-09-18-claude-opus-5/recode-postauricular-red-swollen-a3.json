@@ -1,0 +1,740 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-red-swollen-a3",
+  "contract_id": "postauricular-red-swollen",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-red-swollen-a3.png",
+  "sha256": "2b8660143c5ea0f77018a1b7b3e0ff44e9467ff5e65b95ff4314092006d563c5",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-red-swollen-a3.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRXUwobCMw6y9Kf9qkJ",
+        "request_id": "req_011CfBRXUTHS5PePcwfPffyS",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4738,
+          "output_tokens": 5196,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRXUzHqW2h8BonENAnw",
+        "request_id": "req_011CfBRXUWWXQxLtemeAJ9Ui",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4738,
+          "output_tokens": 4902,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.29983
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear and a sliver of the right cheek, brow, and eyelashes are visible. Short dark hair, cropped on the sides.",
+        "2": "A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward. Nothing is worn or applied; the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen.",
+        "3": "One black curved line, a crescent arc, is drawn inside the red area following the back edge of the ear. No text, arrows, or labels.",
+        "4": "A worried patient might read the red patch as a rash, a bruise, or a burn behind the ear, and the black arc as a cut or a dark line of dirt."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear and a sliver of the right cheek, brow, and eyelashes are visible. Short dark hair, cropped on the sides.\n\n2. A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward. Nothing is worn or applied; the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen.\n\n3. One black curved line, a crescent arc, is drawn inside the red area following the back edge of the ear. No text, arrows, or labels.\n\n4. A worried patient might read the red patch as a rash, a bruise, or a burn behind the ear, and the black arc as a cut or a dark line of dirt."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "answers": {
+        "1": "The back-right side of a head and upper neck, seen from behind and slightly to the side, so the right ear is in profile and the hair sits above a shaved fade.",
+        "2": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing. Nothing is worn or applied.",
+        "3": "Yes: a single thin black curved line hugging the back rim of the ear, sitting inside the red area. No lettering.",
+        "4": "A patient might read the red patch as a bruise, sunburn, or razor irritation from the haircut, and the black arc as a scar, a cut, or the edge of a hearing-aid loop."
+      },
+      "observation": "1. The back-right side of a head and upper neck, seen from behind and slightly to the side, so the right ear is in profile and the hair sits above a shaved fade.\n\n2. A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing. Nothing is worn or applied.\n\n3. Yes: a single thin black curved line hugging the back rim of the ear, sitting inside the red area. No lettering.\n\n4. A patient might read the red patch as a bruise, sunburn, or razor irritation from the haircut, and the black arc as a scar, a cut, or the edge of a hearing-aid loop."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "answers": {
+        "1": "The back and side of a person's head and neck, seen from behind and slightly to the right, showing the right ear, a short haircut with a shaved fade, and part of the right cheek and brow.",
+        "2": "A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear. Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge.",
+        "3": "Yes, one black curved line behind the ear. No words, numbers, arrows, or labels.",
+        "4": "A worried patient might read the red patch as a burn, rash, or bruise on the scalp."
+      },
+      "observation": "1. The back and side of a person's head and neck, seen from behind and slightly to the right, showing the right ear, a short haircut with a shaved fade, and part of the right cheek and brow.\n\n2. A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear. Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge.\n\n3. Yes, one black curved line behind the ear. No words, numbers, arrows, or labels.\n\n4. A worried patient might read the red patch as a burn, rash, or bruise on the scalp."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "redness behind the ear along a scar or incision": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear."
+        }
+      ],
+      "some swelling in the same area": [],
+      "no open wound": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge."
+        }
+      ]
+    },
+    "recovered": [
+      "redness behind the ear along a scar or incision",
+      "no open wound"
+    ],
+    "missed": [
+      "some swelling in the same area"
+    ],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: black crescent arc line drawn inside the red area behind the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black curved line hugging the back rim of the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: one black curved line behind the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: black crescent arc line drawn inside the red area behind the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black curved line hugging the back rim of the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: one black curved line behind the ear",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The red area is taken for an everyday skin problem or injury - a rash, bruise, burn, sunburn, or razor irritation from a haircut - rather than expected redness along a healing surgical site.",
+      "Observer 1: The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+      "Observer 1: The black curved line is taken for a smear or line of dirt on the skin.",
+      "Observer 2: The red area is taken for an everyday skin problem or injury - a rash, bruise, burn, sunburn, or razor irritation from a haircut - rather than expected redness along a healing surgical site.",
+      "Observer 2: The black curved line is taken for a scar.",
+      "Observer 2: The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+      "Observer 2: The black curved line is taken for the edge of a hearing-aid loop worn behind the ear.",
+      "Observer 3: The red area is taken for an everyday skin problem or injury - a rash, bruise, burn, sunburn, or razor irritation from a haircut - rather than expected redness along a healing surgical site.",
+      "No observer saw any swelling: observer 1 says the ear is not drawn as swollen, observer 2 notes there is no lump outline, and observer 3 says the skin has no bumps, so the required swelling appears to be undrawn.",
+      "All three observers (1, 2, and 3) singled out the black crescent line behind the ear when asked about marks, and observers 1 and 2 say a patient could read that line as a cut rather than a scar, so the scar line may need clearer rendering.",
+      "Observer 2 notes the shaved fade in the haircut invites reading the redness as razor irritation from the haircut rather than as surgical-site redness.",
+      "Observer 3 places the red patch on the scalp around the ear, suggesting the red area may spread further than the intended mastoid site.",
+      "Observer 2 notes the curved line could be mistaken for the edge of a hearing-aid loop, even though observers agree nothing is worn or applied.",
+      "Observer 1: The diffuse redness is taken for an ordinary rash, a bruise, or a burn rather than expected post-surgical redness along a healing site.",
+      "Observer 1: The black curved line behind the ear is taken for a cut in the skin.",
+      "Observer 2: The diffuse redness is taken for an ordinary rash, a bruise, or a burn rather than expected post-surgical redness along a healing site.",
+      "Observer 2: The redness is taken for skin irritation left by the clippers or razor used for the haircut.",
+      "Observer 2: The black curved line behind the ear is taken for a cut in the skin.",
+      "Observer 2: The black curved line is taken for the edge of a hearing-aid loop worn over the ear.",
+      "Observer 3: The diffuse redness is taken for an ordinary rash, a bruise, or a burn rather than expected post-surgical redness along a healing site.",
+      "All three observers describe redness but none reports any swelling: Observer 1 says the ear is not drawn as swollen, Observer 2 says there is no lump outline, and Observer 3 says the skin has no bumps, so the required swelling is simply not depicted.",
+      "Observer 1, Observer 2, and Observer 3 each report a single black curved line hugging the back edge of the ear, and none of them identifies it as a scar or incision in their description of what the picture shows, so the line reads as an unexplained stray mark.",
+      "Observer 2 notes the line could just as easily be read as a cut or as a hearing-aid loop, which suggests the scar needs clearer rendering.",
+      "Observer 3 locates the red patch on the scalp behind and around the ear when describing how a patient might misread it, which hints the redness may extend further up than the intended post-auricular site.",
+      "All three observers confirm there is no lettering, numbering, arrows, or labels anywhere in the illustration."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear."
+            }
+          ],
+          "some swelling in the same area": [],
+          "no open wound": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "redness-as-rash-bruise-or-burn",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "arc-as-cut",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "arc-as-dirt",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "redness-as-rash-bruise-or-burn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-scar",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-cut",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-hearing-aid-loop",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "redness-as-rash-bruise-or-burn",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "redness-as-rash-bruise-or-burn",
+              "reading": "The red area is taken for an everyday skin problem or injury - a rash, bruise, burn, sunburn, or razor irritation from a haircut - rather than expected redness along a healing surgical site.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "arc-as-cut",
+              "reading": "The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.",
+              "forbidden": "bleeding or an open wound",
+              "harm": true
+            },
+            {
+              "key": "arc-as-dirt",
+              "reading": "The black curved line is taken for a smear or line of dirt on the skin.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "arc-as-scar",
+              "reading": "The black curved line is taken for a scar.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "arc-as-hearing-aid-loop",
+              "reading": "The black curved line is taken for the edge of a hearing-aid loop worn behind the ear.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "No observer saw any swelling: observer 1 says the ear is not drawn as swollen, observer 2 notes there is no lump outline, and observer 3 says the skin has no bumps, so the required swelling appears to be undrawn.",
+            "All three observers (1, 2, and 3) singled out the black crescent line behind the ear when asked about marks, and observers 1 and 2 say a patient could read that line as a cut rather than a scar, so the scar line may need clearer rendering.",
+            "Observer 2 notes the shaved fade in the haircut invites reading the redness as razor irritation from the haircut rather than as surgical-site redness.",
+            "Observer 3 places the red patch on the scalp around the ear, suggesting the red area may spread further than the intended mastoid site.",
+            "Observer 2 notes the curved line could be mistaken for the edge of a hearing-aid loop, even though observers agree nothing is worn or applied."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "unallowed mark: black crescent arc line drawn inside the red area behind the ear",
+            "source": "question 3"
+          },
+          {
+            "observer": 2,
+            "reading": "unallowed mark: thin black curved line hugging the back rim of the ear",
+            "source": "question 3"
+          },
+          {
+            "observer": 3,
+            "reading": "unallowed mark: one black curved line behind the ear",
+            "source": "question 3"
+          },
+          {
+            "observer": 1,
+            "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear."
+            }
+          ],
+          "some swelling in the same area": [],
+          "no open wound": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "black crescent arc line drawn inside the red area behind the ear",
+                  "cite": "o1.3.1"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "red-patch-as-rash-bruise-burn",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "arc-as-cut",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "arc-as-dirt",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "thin black curved line hugging the back rim of the ear",
+                  "cite": "o2.3.1"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "red-patch-as-rash-bruise-burn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "red-patch-as-razor-irritation",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-scar",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-cut",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "arc-as-hearing-aid-loop",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "one black curved line behind the ear",
+                  "cite": "o3.3.1"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "red-patch-as-rash-bruise-burn",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "red-patch-as-rash-bruise-burn",
+              "reading": "The diffuse redness is taken for an ordinary rash, a bruise, or a burn rather than expected post-surgical redness along a healing site.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "red-patch-as-razor-irritation",
+              "reading": "The redness is taken for skin irritation left by the clippers or razor used for the haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "arc-as-cut",
+              "reading": "The black curved line behind the ear is taken for a cut in the skin.",
+              "forbidden": "bleeding or an open wound",
+              "harm": true
+            },
+            {
+              "key": "arc-as-dirt",
+              "reading": "The black curved line is taken for a smear or line of dirt on the skin.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "arc-as-scar",
+              "reading": "The black curved line is taken for a scar.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "arc-as-hearing-aid-loop",
+              "reading": "The black curved line is taken for the edge of a hearing-aid loop worn over the ear.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "All three observers describe redness but none reports any swelling: Observer 1 says the ear is not drawn as swollen, Observer 2 says there is no lump outline, and Observer 3 says the skin has no bumps, so the required swelling is simply not depicted.",
+            "Observer 1, Observer 2, and Observer 3 each report a single black curved line hugging the back edge of the ear, and none of them identifies it as a scar or incision in their description of what the picture shows, so the line reads as an unexplained stray mark.",
+            "Observer 2 notes the line could just as easily be read as a cut or as a hearing-aid loop, which suggests the scar needs clearer rendering.",
+            "Observer 3 locates the red patch on the scalp behind and around the ear when describing how a patient might misread it, which hints the redness may extend further up than the intended post-auricular site.",
+            "All three observers confirm there is no lettering, numbering, arrows, or labels anywhere in the illustration."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: some swelling in the same area. Forbidden: observer 1 (question 4): The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.; observer 2 (question 4): The black curved line at the back rim of the ear is taken for a fresh cut in the skin rather than a healed scar line.; observer 1 (question 3): unallowed mark: black crescent arc line drawn inside the red area behind the ear; observer 2 (question 3): unallowed mark: thin black curved line hugging the back rim of the ear; observer 3 (question 3): unallowed mark: one black curved line behind the ear; observer 1 (question 4): The black curved line behind the ear is taken for a cut in the skin.; observer 2 (question 4): The black curved line behind the ear is taken for a cut in the skin.."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}
