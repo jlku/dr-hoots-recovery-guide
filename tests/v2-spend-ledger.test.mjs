@@ -47,3 +47,16 @@ test("the repository ledger is valid and capped at ten dollars", async () => {
   assert.equal(ledger.cap_usd, 10);
   assert.equal(validateLedger(ledger).valid, true);
 });
+
+test("a failed entry counts what it actually billed, and Claude calls are priced from reported usage", async () => {
+  const { claudeUsd, estimateClaudeUsd, ledgerTotals: totals } = await import("../scripts/lib/spend-ledger.mjs");
+  const ledger = { cap_usd: 10, entries: [
+    { id: "a", status: "completed", estimate_usd: 1, actual_usd: 0.25 },
+    { id: "b", status: "failed", estimate_usd: 1, actual_usd: 0.12 },
+    { id: "c", status: "failed", estimate_usd: 1, actual_usd: null }
+  ] };
+  assert.equal(totals(ledger).committed, 0.37);
+  assert.equal(claudeUsd({ model: "claude-opus-5", inputTokens: 1500, outputTokens: 900 }), 0.03);
+  assert.equal(estimateClaudeUsd([{ model: "claude-opus-5", inputTokens: 6000, outputTokens: 16000 }]), 0.43);
+  assert.throws(() => claudeUsd({ model: "claude-unknown", inputTokens: 1 }), /no price/);
+});

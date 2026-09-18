@@ -2,12 +2,14 @@
 // follows from that, so a verdict can never drift from the findings recorded beside it.
 //
 // Strict rule (state pictures): fail when any required item is recovered by fewer than three
-// observers, any observer states a forbidden reading anywhere, or any unallowed mark is reported.
+// observers, any observer states a forbidden reading anywhere, including as a hedge they set aside
+// or as a possible misreading, or any unallowed mark is reported.
 //
 // Instruction-picture rule (static how-to cards): the same, except that an alternative reading from
 // question 4 counts only when two or more observers name the same one and it involves harm or the
 // wrong body part. Asked for an alternative to a reversible action, observers always name the
-// reverse, so that answer alone cannot fail a card. Approved for now by John on 2026-09-18;
+// reverse, so that answer alone cannot fail a card; nor can a hedge the observer resolves in favor of
+// the intended action. Approved for now by John on 2026-09-18;
 // Song's sign-off is question q.instruction-picture-rule.
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
@@ -15,6 +17,7 @@ import { join } from "node:path";
 export const ADJUDICATION_RULES = Object.freeze(["strict", "instruction-picture"]);
 export const REVIEWS_INDEX = "content/reviews/index.json";
 export const RECEIPTS_DIR = "content/reviews/anatomy";
+export const CALIBRATION_DIR = "content/reviews/calibration";
 
 const hit = (alternative) => ({ observer: alternative.observer, reading: alternative.reading ?? alternative.key, source: "question 4" });
 
@@ -24,12 +27,13 @@ export function adjudicate({ required, observers, rule = "instruction-picture" }
   const missed = required.filter((item) => !observers.every((observer) => (observer.recovered ?? []).includes(item)));
   const own = observers.flatMap((observer, index) => (observer.own_forbidden ?? []).map((reading) => ({ observer: index + 1, reading, source: "own reading" })));
   const marks = observers.flatMap((observer, index) => (observer.unallowed_marks ?? []).map((mark) => ({ observer: index + 1, reading: `unallowed mark: ${mark}`, source: "question 3" })));
+  const hedges = observers.flatMap((observer, index) => (observer.hedges ?? []).map((reading) => ({ observer: index + 1, reading, source: "hedge" })));
   const alternatives = observers.flatMap((observer, index) => (observer.alternatives ?? []).map((alternative) => ({ observer: index + 1, ...alternative })));
   const namedBy = new Map();
   for (const alternative of alternatives) namedBy.set(alternative.key, new Set([...(namedBy.get(alternative.key) ?? []), alternative.observer]));
   const sharedHarm = alternatives.filter((alternative) => alternative.harm && namedBy.get(alternative.key).size >= 2);
   const anyForbidden = alternatives.filter((alternative) => alternative.forbidden);
-  const forbiddenHitsStrict = [...own, ...marks, ...anyForbidden.map(hit)];
+  const forbiddenHitsStrict = [...own, ...marks, ...hedges, ...anyForbidden.map(hit)];
   const forbiddenHits = rule === "strict" ? forbiddenHitsStrict : [...own, ...marks, ...sharedHarm.map(hit)];
   return {
     rule,
@@ -38,7 +42,10 @@ export function adjudicate({ required, observers, rule = "instruction-picture" }
     missed,
     forbidden_hits: forbiddenHits,
     forbidden_hits_strict: forbiddenHitsStrict,
-    design_notes: alternatives.map((alternative) => `Observer ${alternative.observer}: ${alternative.reading ?? alternative.key}`)
+    design_notes: [
+      ...alternatives.map((alternative) => `Observer ${alternative.observer}: ${alternative.reading ?? alternative.key}`),
+      ...hedges.map((hedge) => `Observer ${hedge.observer} raised and set aside: ${hedge.reading}`)
+    ]
   };
 }
 
@@ -80,6 +87,19 @@ export async function validateReviews(root) {
     if (doc.adjudication?.verdict === "fail") summary.fail += 1;
     if (doc.adjudication && "verdict_strict" in doc.adjudication) summary.strict_kept += 1;
     errors.push(...receiptVerdictErrors(doc));
+  }
+  const calibration = join(root, CALIBRATION_DIR);
+  let names = [];
+  try {
+    names = (await readdir(calibration, { recursive: true })).filter((name) => name.endsWith(".json"));
+  } catch {
+    names = [];
+  }
+  for (const name of names) {
+    const doc = JSON.parse(await readFile(join(calibration, name), "utf8"));
+    if (!doc.adjudication || !doc.observers) continue;
+    summary.calibration = (summary.calibration ?? 0) + 1;
+    errors.push(...receiptVerdictErrors(doc).map((error) => `calibration ${name}: ${error}`));
   }
   return { valid: errors.length === 0, errors, summary };
 }

@@ -69,3 +69,11 @@ test("every receipt in the repository records a verdict that follows from its ow
   assert.match(text, /verdict pass does not follow from 0 missed items and 1 forbidden hits/);
   assert.match(text, /strict verdict pass does not follow/);
 });
+
+test("a hedge the observer sets aside fails only the strict rule, and reaches the clinician as a note", () => {
+  const result = adjudicate({ required, observers: [observer({ hedges: ["the dressing being put on"] }), observer(), observer()] });
+  assert.equal(result.verdict, "pass");
+  assert.equal(result.verdict_strict, "fail");
+  assert.ok(result.design_notes.some((note) => /set aside: the dressing being put on/.test(note)));
+  assert.equal(adjudicate({ required, rule: "strict", observers: [observer({ hedges: ["x"] }), observer(), observer()] }).verdict, "fail");
+});

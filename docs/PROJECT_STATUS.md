@@ -26,6 +26,7 @@ The replacement is a segmented, narrated, multilingual guide with a provider fil
 3. The v2 segment model, English label pack, and derived caption and audio artifacts, with validators wired into `npm run check`.
 4. The v2 guide under `guide/`: one page with a chapter rail, one continuous player across the five English segments with synchronized captions, and a transcript that follows playback and seeks on tap. On phones the transcript carries the captions and the phone numbers stay pinned at the bottom.
 5. Generated anatomy masters under `assets/anatomy/` with deterministic overlays, contracted in `content/anatomy/`, reviewed caption-blind by AI observers with receipts under `content/reviews/anatomy/`, clinician review pending. Spend is tracked in `content/spend/v2-ledger.json` against a ten-dollar cap.
+6. An API-backed image evaluator (`npm run review`) that runs with only an API key: three caption-blind observers receive the image inside the request, a coder quotes each finding from their words, and code computes the verdict. It writes receipts, keeps the manifest in step, records spend in the ledger, and chains onto generation with `--review`. A labeled calibration set checks it against the in-session loop (`npm run review:calibrate`).
 
 ## What is technically verified
 
@@ -62,9 +63,10 @@ Before any participant-facing claim, run whole-experience checks for keyboard an
 
 ## Best next contributions
 
-1. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.
-2. Add browser-level accessibility and rendered-state tests at desktop, 390px mobile, and 200% zoom.
-3. Keep experimental formats comparable by preserving canonical proposition coverage and measuring delivery differences rather than rewriting the medical content per format.
+1. Add `ANTHROPIC_API_KEY` to `.env.local` and run `npm run review:calibrate`. The evaluator replaces the in-session review loop only after its report agrees with the in-session verdicts.
+2. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.
+3. Add browser-level accessibility and rendered-state tests at desktop, 390px mobile, and 200% zoom.
+4. Keep experimental formats comparable by preserving canonical proposition coverage and measuring delivery differences rather than rewriting the medical content per format.
 
 ## Source-of-truth rules
 

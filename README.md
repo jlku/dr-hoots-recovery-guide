@@ -54,7 +54,7 @@ The central architectural rule is that presentation formats may change pacing, g
 
 Good starting points are listed in [`docs/PROJECT_STATUS.md`](docs/PROJECT_STATUS.md). Please read [`CONTRIBUTING.md`](CONTRIBUTING.md) before changing clinical copy, generated media, or anything that calls an external model.
 
-The repository includes generation commands that require `FAL_KEY` in an ignored `.env.local` file and may spend money. Normal development and `npm run check` do not require credentials or paid generation.
+The repository includes generation commands that require `FAL_KEY` in an ignored `.env.local` file and may spend money. The image evaluator (`npm run review`) requires `ANTHROPIC_API_KEY` in the same file and also spends money; both record their spend in `content/spend/v2-ledger.json` against its cap. Normal development and `npm run check` do not require credentials or paid calls.
 
 ## License and notices
 
