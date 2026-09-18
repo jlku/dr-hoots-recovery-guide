@@ -63,9 +63,9 @@ function point(frame, ref) {
 }
 
 function tapeStrip(x, y, width, angle) {
+  // A plain strip. A dashed centre line was read by three of three observers as "cut here".
   return svg("g", { transform: `translate(${x} ${y}) rotate(${angle})` }, [
-    svg("rect", { x: -width / 2, y: -22, width, height: 44, rx: 8, fill: "#f4e3b3", stroke: NAVY, "stroke-width": 4 }),
-    svg("line", { x1: -width / 2 + 16, y1: 0, x2: width / 2 - 16, y2: 0, stroke: NAVY, "stroke-width": 2, "stroke-dasharray": "6 8" })
+    svg("rect", { x: -width / 2, y: -22, width, height: 44, rx: 8, fill: "#f4e3b3", stroke: NAVY, "stroke-width": 4 })
   ]);
 }
 
@@ -91,7 +91,7 @@ function drawDevice(frame, overlay) {
   return svg("g", {}, [cable, body, hook, disc]);
 }
 
-function drawOverlay(overlay, frame, layers, labels, register, words) {
+function drawOverlay(overlay, frame, layers, labels, register, when) {
   const group = svg("g", { class: `overlay overlay--${overlay.type}` });
   const at = point(frame, overlay.at ?? overlay.anchor);
   const anchor = point(frame, overlay.anchor ?? overlay.at);
@@ -132,7 +132,7 @@ function drawOverlay(overlay, frame, layers, labels, register, words) {
         rowGroup.append(svg("rect", { x: at.x, y: y - 26, width: 44, height: 44, rx: 8, fill: "#fff", stroke: NAVY, "stroke-width": 4 }));
         const check = svg("path", { d: `M ${at.x + 9} ${y - 3} l 11 12 l 18 -24`, fill: "none", stroke: TEAL, "stroke-width": 7, "stroke-linecap": "round", "stroke-linejoin": "round" });
         rowGroup.append(check);
-        register(check, phraseTime(words, row.from), null);
+        register(check, when(row.from), null);
       } else if (overlay.type === "steps") {
         rowGroup.append(svg("circle", { cx: at.x + 22, cy: y - 4, r: 24, fill: NAVY }));
         const number = svg("text", { x: at.x + 22, y: y + 7, "font-size": 30, "font-weight": 800, fill: "#fff", "text-anchor": "middle", "font-family": FONT });
@@ -143,7 +143,7 @@ function drawOverlay(overlay, frame, layers, labels, register, words) {
       }
       rowGroup.append(label(at.x + 64, y + 6, labels[row.label_key] ?? "", { size: 27, maxWidth: 330 }));
       group.append(rowGroup);
-      if (overlay.type !== "checklist") register(rowGroup, phraseTime(words, row.from), null);
+      if (overlay.type !== "checklist") register(rowGroup, when(row.from), null);
     });
   } else if (overlay.type === "pointer") {
     const text = labels[overlay.label_key] ?? "";
@@ -169,14 +169,15 @@ function drawOverlay(overlay, frame, layers, labels, register, words) {
     const control = { x: (anchor.x + at.x) / 2 - (dy / length) * bend, y: (anchor.y + at.y) / 2 + (dx / length) * bend };
     const angle = Math.atan2(at.y - control.y, at.x - control.x);
     const head = overlay.head ?? 54;
+    const weight = overlay.weight ?? 14;
     const spread = 0.5;
     const shaftEnd = { x: at.x - Math.cos(angle) * head * 0.7, y: at.y - Math.sin(angle) * head * 0.7 };
     const corner = (sign) => `${at.x - head * Math.cos(angle + sign * spread)},${at.y - head * Math.sin(angle + sign * spread)}`;
     const shaft = `M ${anchor.x} ${anchor.y} Q ${control.x} ${control.y} ${shaftEnd.x} ${shaftEnd.y}`;
     group.append(
-      svg("path", { d: shaft, fill: "none", stroke: "#fff", "stroke-width": 26, "stroke-linecap": "round" }),
-      svg("polygon", { points: `${at.x},${at.y} ${corner(1)} ${corner(-1)}`, fill: "#fff", stroke: "#fff", "stroke-width": 12, "stroke-linejoin": "round" }),
-      svg("path", { d: shaft, fill: "none", stroke: TEAL, "stroke-width": 14, "stroke-linecap": "round" }),
+      svg("path", { d: shaft, fill: "none", stroke: "#fff", "stroke-width": weight + 14, "stroke-linecap": "round" }),
+      svg("polygon", { points: `${at.x},${at.y} ${corner(1)} ${corner(-1)}`, fill: "#fff", stroke: "#fff", "stroke-width": 14, "stroke-linejoin": "round" }),
+      svg("path", { d: shaft, fill: "none", stroke: TEAL, "stroke-width": weight, "stroke-linecap": "round" }),
       svg("polygon", { points: `${at.x},${at.y} ${corner(1)} ${corner(-1)}`, fill: TEAL })
     );
   } else if (overlay.type === "flush") {
@@ -191,7 +192,7 @@ function drawOverlay(overlay, frame, layers, labels, register, words) {
   return group;
 }
 
-function renderComposite(frame, { beatWords, pack }) {
+function renderComposite(frame, { beatWords, pack, motion }) {
   const root = document.createElement("div");
   root.className = "frame frame--composite";
   root.setAttribute("role", "img");
@@ -200,28 +201,117 @@ function renderComposite(frame, { beatWords, pack }) {
   box.className = "composite";
   const schedule = [];
   const register = (node, from, until) => schedule.push({ node, from, until });
+  // Static is the default for this version: nothing appears, disappears, or swaps during a beat.
+  const when = (phrase) => (motion === "narration" ? phraseTime(beatWords, phrase) : null);
   const layers = Object.fromEntries(Object.entries(frame.layers ?? {}).map(([name, file]) => [name, assetUrl(file)]));
   const states = frame.states?.length ? frame.states : [{ id: "base", image: Object.keys(layers)[0] }];
-  for (const state of states) {
+  for (const state of motion === "narration" ? states : states.slice(0, 1)) {
     const image = document.createElement("img");
     image.className = "composite__image";
     image.src = layers[state.image];
     image.alt = "";
     image.decoding = "async";
     box.append(image);
-    register(image, phraseTime(beatWords, state.from), phraseTime(beatWords, state.until));
+    register(image, when(state.from), when(state.until));
   }
   const tint = svg("svg", { class: "composite__tint", viewBox: `0 0 ${VIEW.w} ${VIEW.h}`, "aria-hidden": "true" });
   const overlay = svg("svg", { class: "composite__overlay", viewBox: `0 0 ${VIEW.w} ${VIEW.h}`, "aria-hidden": "true" });
   for (const item of frame.overlays ?? []) {
-    const group = drawOverlay(item, frame, layers, pack.labels, register, beatWords);
+    const group = drawOverlay(item, frame, layers, pack.labels, register, when);
     (item.type === "flush" ? tint : overlay).append(group);
-    register(group, phraseTime(beatWords, item.from), phraseTime(beatWords, item.until));
+    register(group, when(item.from), when(item.until));
   }
   box.append(tint, overlay);
   root.append(box);
   root.__schedule = schedule;
   updateFrame(root, 0);
+  return root;
+}
+
+// A static instruction figure in the style of an airline safety card: numbered panels read in
+// order, an arrow where something moves, no animation. Each panel is one accepted image, optionally
+// zoomed on an anchor, with vector marks drawn in image space and captions as real text below.
+function renderPanels(frame, { pack }) {
+  const root = document.createElement("div");
+  root.className = "frame frame--panels";
+  root.setAttribute("role", "img");
+  root.setAttribute("aria-label", frame.alt ?? "");
+  const panels = frame.panels ?? [];
+  const columns = frame.columns ?? (panels.length <= 3 ? Math.max(panels.length, 1) : 2);
+  const rows = Math.max(Math.ceil(panels.length / columns), 1);
+  const listed = panels.some((panel) => panel.caption_keys?.length);
+  const titled = panels.some((panel) => panel.title_key);
+  const grid = document.createElement("div");
+  grid.className = "panels";
+  grid.style.setProperty("--columns", String(columns));
+  grid.style.setProperty("--aspect", String((4 * columns) / (3 * rows)));
+  grid.style.setProperty("--captions", listed ? "92px" : titled ? "30px" : "0px");
+  const layers = Object.fromEntries(Object.entries(frame.layers ?? {}).map(([name, file]) => [name, assetUrl(file)]));
+  const always = () => null;
+  const ignore = () => {};
+  panels.forEach((panel, index) => {
+    const figure = document.createElement("figure");
+    figure.className = "panel";
+    const view = svg("svg", { class: "panel__view", viewBox: `0 0 ${VIEW.w} ${VIEW.h}`, "aria-hidden": "true" });
+    const clipId = `panel-${frame.id ?? "frame"}-${index}`;
+    view.append(svg("clipPath", { id: clipId }, [svg("rect", { x: 0, y: 0, width: VIEW.w, height: VIEW.h, rx: 28 })]));
+    const zoomed = svg("g");
+    if (panel.zoom) {
+      const center = point(frame, panel.zoom.anchor);
+      zoomed.setAttribute("transform", `translate(${VIEW.w / 2} ${VIEW.h / 2}) scale(${panel.zoom.scale ?? 2}) translate(${-center.x} ${-center.y})`);
+    }
+    zoomed.append(svg("image", { href: layers[panel.image], x: 0, y: 0, width: VIEW.w, height: VIEW.h, preserveAspectRatio: "xMidYMid slice" }));
+    for (const item of panel.overlays ?? []) zoomed.append(drawOverlay(item, frame, layers, pack.labels, ignore, always));
+    if (panel.lens) {
+      // A magnifier says "look closely": the zoomed view sits inside a lens with a handle.
+      const lens = { x: VIEW.w / 2, y: 318, r: 286 };
+      const lensId = `${clipId}-lens`;
+      view.append(
+        svg("clipPath", { id: lensId }, [svg("circle", { cx: lens.x, cy: lens.y, r: lens.r })]),
+        svg("rect", { x: 0, y: 0, width: VIEW.w, height: VIEW.h, rx: 28, fill: "#fbfaf3" }),
+        svg("line", { x1: lens.x + lens.r * 0.72, y1: lens.y + lens.r * 0.72, x2: lens.x + lens.r * 1.32, y2: lens.y + lens.r * 1.32, stroke: NAVY, "stroke-width": 58, "stroke-linecap": "round" }),
+        svg("g", { "clip-path": `url(#${lensId})` }, [zoomed]),
+        svg("circle", { cx: lens.x, cy: lens.y, r: lens.r, fill: "none", stroke: NAVY, "stroke-width": 26 })
+      );
+      zoomed.setAttribute("transform", `translate(${lens.x} ${lens.y}) scale(${panel.zoom?.scale ?? 2}) translate(${-point(frame, panel.zoom?.anchor).x} ${-point(frame, panel.zoom?.anchor).y})`);
+    } else {
+      view.append(svg("g", { "clip-path": `url(#${clipId})` }, [zoomed]));
+    }
+    view.append(svg("rect", { x: 3, y: 3, width: VIEW.w - 6, height: VIEW.h - 6, rx: 28, fill: "none", stroke: "#9fb0bc", "stroke-width": 6 }));
+    if (panel.number != null) {
+      const numeral = svg("text", { x: 104, y: 138, "font-size": 100, "font-weight": 800, fill: "#fff", "text-anchor": "middle", "font-family": FONT });
+      numeral.textContent = String(panel.number);
+      view.append(svg("circle", { cx: 104, cy: 104, r: 74, fill: NAVY, stroke: "#fff", "stroke-width": 8 }), numeral);
+    }
+    if (panel.label_key) {
+      const text = pack.labels[panel.label_key] ?? "";
+      const width = Math.min(VIEW.w - 80, text.length * 50 + 110);
+      const mark = svg("text", { x: VIEW.w / 2, y: VIEW.h - 72, "font-size": 86, "font-weight": 800, fill: NAVY, "text-anchor": "middle", "font-family": FONT });
+      mark.textContent = text;
+      view.append(svg("rect", { x: (VIEW.w - width) / 2, y: VIEW.h - 164, width, height: 124, rx: 62, fill: "#fff", stroke: NAVY, "stroke-width": 6 }), mark);
+    }
+    figure.append(view);
+    if (panel.title_key || panel.caption_keys?.length) {
+      const caption = document.createElement("figcaption");
+      if (panel.title_key) {
+        const title = document.createElement("strong");
+        title.textContent = pack.labels[panel.title_key] ?? "";
+        caption.append(title);
+      }
+      if (panel.caption_keys?.length) {
+        const list = document.createElement(panel.numbered ? "ol" : "ul");
+        for (const key of panel.caption_keys) {
+          const item = document.createElement("li");
+          item.textContent = pack.labels[key] ?? "";
+          list.append(item);
+        }
+        caption.append(list);
+      }
+      figure.append(caption);
+    }
+    grid.append(figure);
+  });
+  root.append(grid);
   return root;
 }
 
@@ -240,14 +330,15 @@ function pendingMarker(pending, pack) {
   return marker;
 }
 
-export function renderFrame(frame, { beat, beatWords = [], sentences, pack, pending = [] }) {
-  const root = renderFrameBody(frame, { beat, beatWords, sentences, pack });
+export function renderFrame(frame, { beat, beatWords = [], sentences, pack, pending = [], motion = "static" }) {
+  const root = renderFrameBody(frame, { beat, beatWords, sentences, pack, motion });
   if (pending.length) root.append(pendingMarker(pending, pack));
   return root;
 }
 
-function renderFrameBody(frame, { beat, beatWords = [], sentences, pack }) {
-  if (frame.kind === "composite") return renderComposite(frame, { beatWords, pack });
+function renderFrameBody(frame, { beat, beatWords = [], sentences, pack, motion }) {
+  if (frame.kind === "composite") return renderComposite(frame, { beatWords, pack, motion });
+  if (frame.kind === "panels") return renderPanels(frame, { pack });
   const stage = document.createElement("div");
   stage.className = `frame frame--${frame.kind}`;
   if (frame.kind === "text") {

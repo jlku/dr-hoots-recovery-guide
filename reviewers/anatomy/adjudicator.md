@@ -24,16 +24,16 @@ Label: Semantic adjudicator (Claude), not a clinician.
 
 Run on the session model. Smaller-model runs credited items the observers denied, invented a forbidden hit, and failed an image on a criterion outside the contract; those verdicts were discarded and re-run, and the receipts say so.
 
-## Instruction sequences
+## Instruction pictures
 
-An instruction picture is judged on what the observers say they would do, which is question 5. Question 4 makes every observer name an alternative, and for a reversible action the reverse action is always available, so that answer alone cannot fail the picture. Twelve observations of bandage removal showed this: observers who read the sequence as coming off still offered "going on" when asked for an alternative.
-
-For an instruction sequence:
+An instruction picture is a static card in the manner of an airline safety card: numbered panels, an arrow where something moves, no animation. It is judged on what the observers say the picture tells them to do, which is question 5. Question 4 makes every observer name an alternative, and for a reversible action the reverse action is always available, so that answer alone cannot fail the picture. Observations of bandage removal showed this repeatedly: observers who read the card as coming off still offered "going on" when asked for an alternative.
 
 - Every required item must be recovered by all three observers, from questions 2, 3, and 5.
-- A forbidden hit counts when an observer's own reading in questions 2, 3, or 5 states it.
-- An alternative from question 4 counts as a forbidden hit only when two or more observers name the same alternative and it involves harm or the wrong body part, such as cloth across the throat. That marks a defect in the drawing, not the reversibility of the action.
+- A forbidden hit counts when an observer's own reading in questions 2, 3, or 5 states it. A hedge about one panel viewed in isolation does not count when the observer's own conclusion in question 5 is the intended action.
+- An alternative from question 4 counts as a forbidden hit only when two or more observers name the same alternative and it involves harm or the wrong body part. It has caught two real defects: gauze routed under the chin read as cloth at the throat, and a dashed line on a tape strip read as "cut here".
+- The contract lists the marks that are part of the picture by design (numerals, an arrow, a magnifier, a label). Any other text fails the picture.
 - Every question-4 alternative is recorded in `design_notes` for the clinician, whatever the verdict.
+- Observers get no hint about panels or reading order; the numerals must carry it.
 
 Return `verdict_strict` under the general rules as well as `verdict`, so the receipt shows both.
 

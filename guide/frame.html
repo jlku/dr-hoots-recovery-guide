@@ -10,7 +10,7 @@
 </style>
 <!-- Review tool, not a patient page: renders one frame exactly as the guide draws it, at a moment
      on the narration clock, so reviewers judge what the patient sees.
-     frame.html?frame=<frame id>&at=<spoken phrase>&plus=<seconds after it> -->
+     frame.html?frame=<frame id>   (add &at=<spoken phrase>&plus=<seconds> only when the manifest's motion is "narration") -->
 <div id="stage" class="stage"></div>
 <script type="module">
   import { fetchJson, loadGuide } from "./assets/data.js";
@@ -28,7 +28,7 @@
   const timeline = await fetchJson(entry.timeline);
   const words = timeline.words.filter((word) => word.beat === found.beat.id);
   const seconds = (params.get("at") ? phraseTime(words, params.get("at")) ?? 0 : 0) + Number(params.get("plus") ?? 0);
-  const root = renderFrame({ ...guide.frames.frames[frameId], id: frameId }, { beat: found.beat, beatWords: words, sentences: guide.sentences, pack: guide.pack });
+  const root = renderFrame({ ...guide.frames.frames[frameId], id: frameId }, { beat: found.beat, beatWords: words, sentences: guide.sentences, pack: guide.pack, motion: guide.frames.motion ?? "static" });
   root.querySelectorAll(".composite__image").forEach((image) => { image.style.transition = "none"; });
   document.getElementById("stage").append(root);
   updateFrame(root, seconds);

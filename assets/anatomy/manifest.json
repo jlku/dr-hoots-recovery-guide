@@ -621,16 +621,16 @@
       "estimate_usd": 0.04,
       "ledger_entry": "anatomy:dressing-removal-ref:a4",
       "status": "accepted",
-      "note": "Accepted as the middle panel of the reviewed removal sequence, under the instruction-sequence rule. Alone it does not carry direction.",
+      "note": "Accepted as panel 2 of the static bandage-removal card, under the instruction-picture rule. Alone it does not carry direction; the numerals do.",
       "review": {
         "inspection": "Hand behind the head draws the gauze away; knot undone; ear uncovered; neck and face clear. Band reads taut rather than slack.",
         "observers": 3,
         "adjudication": {
           "verdict": "pass",
           "verdict_strict": "fail",
-          "reason": "Instruction-sequence pass: all three observers recover all four items and each concludes in question 5 that the dressing comes off, the tying-on alternative named by all three is the reverse action, and the only harm alternative (O2's \"open, uncovered cut\") comes from a single observer; strict fail: all three name tying on and O2 names an open cut, which the general rules count wherever they appear, and the pass rests on panel order because O1 and O3 say panel 2 alone could read as tying or tightening."
+          "reason": "Passes as an instruction picture because all three observers recovered all five required items, each concluded in question 5 that the band and pad come off and that the viewer then looks behind the ear for the strip, no forbidden reading appears in questions 2, 3 or 5, and the only alternative shared by two observers (apply tape behind the ear) is neither harm nor the wrong body part; fails the strict rules because Observer 1's question-4 alternatives state 'a head being wrapped' and that the strip 'could pass for a wound'."
         },
-        "receipt": "content/reviews/anatomy/sequence.remove-dressing.json"
+        "receipt": "content/reviews/anatomy/diagram.remove-dressing.json"
       }
     }
   ]

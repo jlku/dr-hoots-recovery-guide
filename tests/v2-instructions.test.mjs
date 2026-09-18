@@ -60,7 +60,7 @@ test("the clinician question list parses ids and statuses from bullets", () => {
   assert.ok(questions.size >= 6);
 });
 
-test("the verified motion claim carries a sequence receipt with both verdicts and the observers' instruction answers", async () => {
+test("the verified motion claim carries a static-card receipt with both verdicts and the observers' instruction answers", async () => {
   const claim = instructions.claims.find((item) => item.id === "howto.remove-dressing");
   assert.equal(claim.status, "verified");
   assert.equal(claim.clinician_confirmed, false, "observers can tell what to do; the clinician has not confirmed the how");
@@ -68,6 +68,8 @@ test("the verified motion claim carries a sequence receipt with both verdicts an
   assert.equal(receipt.adjudication.verdict, "pass");
   assert.equal(receipt.adjudication.verdict_strict, "fail", "the strict verdict is kept visible while the instruction-sequence rule awaits sign-off");
   assert.equal(receipt.panels.length, 3);
-  assert.ok(receipt.observers.every((observer) => /coming off/i.test(observer.observation)));
+  assert.ok(receipt.observers.every((observer) => /com(e|ing) off/i.test(observer.observation)));
+  assert.equal(receipt.file, "assets/anatomy/diagrams/remove-dressing.png", "the reviewed picture is the static card, not a timed sequence");
+  assert.equal(instructions.claims.find((item) => item.id === "howto.check-tape").receipt, claim.receipt, "panel 4 of the same card verifies the tape check");
   assert.ok(receipt.adjudication.design_notes.length > 0);
 });

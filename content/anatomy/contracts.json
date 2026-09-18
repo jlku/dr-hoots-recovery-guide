@@ -329,39 +329,50 @@
       "revision_note": "a3 in the three-panel composite read as coming off, but two observers saw the gauze under the chin as cloth across the throat or a strip being tightened there. a4, the last attempt, moves the hand behind the head and keeps the gauze clear of the neck."
     }
   ],
-  "sequences": [
+  "diagrams": [
     {
-      "id": "sequence.remove-dressing",
-      "instruction": "howto.remove-dressing",
-      "file": "assets/anatomy/sequences/remove-dressing-v3.png",
+      "id": "diagram.remove-dressing",
+      "style": "static instruction card in the manner of an airline safety card: numbered panels, one arrow where something moves, no animation",
+      "instructions": [
+        "howto.remove-dressing",
+        "howto.check-tape"
+      ],
+      "frame": "frame-01",
+      "file": "assets/anatomy/diagrams/remove-dressing.png",
+      "rendered_from": "guide/frame.html?frame=frame-01, captured with headless Chrome, so the reviewed picture is the card the patient sees",
       "panels": [
         "postauricular-dressing-ref-a1",
         "dressing-removal-ref-a4",
         "postauricular-base-a2"
       ],
-      "why": "A single still cannot carry the direction of an action: three observers could not tell whether the gauze was coming off or going on, and the first three-panel strip still drew 'putting it on' as a reading because a hand and gauze at a head look the same forwards and backwards. Version 2 undoes the knot, lets the gauze hang slack, and adds a vector motion arrow in the composite.",
       "claim": {
         "sentence_ids": [
-          "wc.01"
+          "wc.01",
+          "wc.02"
         ],
-        "state": "Left to right: the head dressing on with the ear covered; the knot undone and a hand behind the head drawing the gauze away from the head, with a motion arrow pointing away from the head; the bare head with the ear uncovered. The dressing comes off.",
+        "state": "Four numbered panels. 1: the head dressing on with the ear covered. 2: a hand behind the head draws the gauze away from the head, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the area behind the ear showing a strip of tape, with the question Tape?. The dressing comes off; then the viewer looks behind the ear for tape.",
+        "allowed_marks": [
+          "the numerals 1 to 4",
+          "one motion arrow in panel 2",
+          "a magnifier in panel 4",
+          "the label Tape? in panel 4"
+        ],
         "forbidden": [
           "the dressing being put on",
           "scissors or cutting",
           "the ear injured or bleeding",
-          "any text or label"
-        ],
-        "allowed_marks": [
-          "one motion arrow in the middle panel, part of the picture by design"
+          "any text other than the allowed numerals and label"
         ]
       },
       "observers_must_recover": [
-        "a head dressing covering the ear in the first panel",
-        "a hand taking gauze away from the head in the middle panel",
-        "the bare head with the ear uncovered in the last panel",
-        "the dressing coming off across the panels rather than going on"
+        "a head dressing covering the ear in panel 1",
+        "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+        "the bare head with the ear uncovered in panel 3",
+        "the dressing coming off rather than going on",
+        "looking behind the ear for tape in panel 4"
       ],
-      "rendered_from": "guide/frame.html?frame=frame-01 at three moments on the narration clock, captured with headless Chrome, so the reviewed picture is the composite the patient sees",
+      "rule": "instruction-picture rule in reviewers/anatomy/adjudicator.md, introduced 2026-09-18, pending sign-off",
+      "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
       "history": [
         {
           "file": "assets/anatomy/sequences/remove-dressing-a1.png",
@@ -381,10 +392,27 @@
           ],
           "outcome": "failed: direction recovered by all three, but the gauze under the chin read as cloth or a strap at the throat",
           "receipt": "content/reviews/anatomy/sequence.remove-dressing-v2.json"
+        },
+        {
+          "file": "assets/anatomy/sequences/remove-dressing-v3.png",
+          "panels": [
+            "postauricular-dressing-ref-a1",
+            "dressing-removal-ref-a4",
+            "postauricular-base-a2"
+          ],
+          "outcome": "a three-panel strip shown on the narration clock passed the instruction rule, but John rejected animating the states: this version is static",
+          "receipt": "content/reviews/anatomy/sequence.remove-dressing.json"
+        },
+        {
+          "file": "assets/anatomy/diagrams/remove-dressing.png (first render)",
+          "outcome": "motion read correctly by all three with no hint, but all three read the tape strip's dashed centre line as cut here; the strip is now plain and panel 4 is a magnifier",
+          "observer_tasks": [
+            "afc282420c757dd4e",
+            "a00b3c921384a87ed",
+            "ad9dac65728955fdb"
+          ]
         }
-      ],
-      "rule": "instruction-sequence rule in reviewers/anatomy/adjudicator.md, introduced 2026-09-18, pending sign-off",
-      "receipt": "content/reviews/anatomy/sequence.remove-dressing.json"
+      ]
     }
   ]
 }

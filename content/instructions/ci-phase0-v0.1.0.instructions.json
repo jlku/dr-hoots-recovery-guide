@@ -57,9 +57,9 @@
       "status": "verified",
       "clinician_confirmed": false,
       "open_question": "q.remove-dressing",
-      "note": "Three states on the narration clock: dressing on, a hand behind the head drawing the gauze away with a motion arrow, bare head. Observers recover that the dressing comes off from the sequence; the middle frame alone does not carry direction. The how pictured here is an assumption until Song answers.",
-      "receipt": "content/reviews/anatomy/sequence.remove-dressing.json",
-      "rule": "instruction-sequence rule, pending sign-off"
+      "note": "A static four-panel card in the airline safety card style: dressing on, a hand drawing the gauze away with one arrow, bare head. Given no hint, three of three observers read it as untie and pull away, the bandage comes off. Direction rests on the numerals. The pad's removal is not drawn. The how pictured here is an assumption until Song answers.",
+      "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "rule": "instruction-picture rule, pending sign-off"
     },
     {
       "id": "howto.check-tape",
@@ -72,10 +72,12 @@
       "tool": "a mirror or a helper (unconfirmed)",
       "location": "the incision in the crease behind the ear",
       "end_state": "knowing which of the two care paths applies",
-      "status": "illustrated",
+      "status": "verified",
       "clinician_confirmed": false,
       "open_question": "q.tape-appearance",
-      "note": "The inset zooms on the incision with one drawn tape strip. Whether real tape looks like that is the open question."
+      "note": "Panel 4 of the same card: a magnifier over the incision with a plain strip and the label Tape?. Three of three observers read it as look behind the ear for a strip. None could tell what to do about the strip, which the next frame answers, and two read it as possibly an order to apply tape. What real tape looks like is still Song's question.",
+      "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "rule": "instruction-picture rule, pending sign-off"
     },
     {
       "id": "howto.keep-dry",

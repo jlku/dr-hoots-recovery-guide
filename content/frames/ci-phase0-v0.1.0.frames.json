@@ -5,82 +5,101 @@
   "status": "unverified_draft",
   "patient_use": false,
   "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "motion": "static",
+  "motion_note": "This version shows static diagrams only: nothing appears, disappears, or swaps during a beat. A motion is drawn the way an airline safety card draws it, as numbered panels with an arrow. Setting motion to narration re-enables phrase-timed overlays.",
   "frames": {
     "frame-01": {
-      "kind": "composite",
-      "alt": "Day 2: the head bandage is unwound and comes off, then the area behind the ear is checked for tape over the incision.",
+      "kind": "panels",
+      "alt": "Four numbered panels. 1: the head bandage on, covering the ear. 2: a hand behind the head draws the gauze away, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the incision behind the ear, showing a strip of tape, with the question: tape?",
       "instruction": "howto.remove-dressing",
       "layers": {
-        "base": "assets/anatomy/postauricular-base-a2.png",
         "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png",
-        "removal": "assets/anatomy/dressing-removal-ref-a4.png"
+        "removal": "assets/anatomy/dressing-removal-ref-a4.png",
+        "base": "assets/anatomy/postauricular-base-a2.png"
       },
       "anchors": {
         "incision": {
           "x": 0.565,
           "y": 0.47
         },
-        "unwind_start": {
-          "x": 0.2,
-          "y": 0.2
+        "pull_start": {
+          "x": 0.21,
+          "y": 0.3
         }
       },
-      "states": [
+      "panels": [
         {
-          "id": "dressing-on",
+          "id": "on",
+          "number": 1,
           "image": "dressing",
-          "until": "remove"
-        },
-        {
-          "id": "unwinding",
-          "image": "removal",
-          "from": "remove",
-          "until": "check"
-        },
-        {
-          "id": "bandage-off",
-          "image": "base",
-          "from": "check"
-        }
-      ],
-      "overlays": [
-        {
-          "id": "unwind",
-          "type": "motion-arrow",
-          "anchor": "unwind_start",
-          "at": {
-            "x": 0.04,
-            "y": 0.34
-          },
-          "bend": -0.22,
-          "from": "remove",
-          "until": "check",
           "sentence_ids": [
             "wc.01"
           ]
         },
         {
-          "id": "tape-question",
-          "type": "inset",
-          "anchor": "incision",
-          "at": {
-            "x": 0.22,
-            "y": 0.3
+          "id": "pull-away",
+          "number": 2,
+          "image": "removal",
+          "sentence_ids": [
+            "wc.01"
+          ],
+          "overlays": [
+            {
+              "id": "pull",
+              "type": "motion-arrow",
+              "anchor": "pull_start",
+              "at": {
+                "x": 0.03,
+                "y": 0.36
+              },
+              "bend": 0.1,
+              "head": 96,
+              "sentence_ids": [
+                "wc.01"
+              ],
+              "weight": 30
+            }
+          ]
+        },
+        {
+          "id": "off",
+          "number": 3,
+          "image": "base",
+          "sentence_ids": [
+            "wc.01"
+          ]
+        },
+        {
+          "id": "tape-check",
+          "number": 4,
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 2.2
           },
-          "radius": 0.2,
-          "scale": 2.2,
-          "tape": true,
-          "from": "tape",
           "label_key": "ov.tape_question",
           "sentence_ids": [
             "wc.02"
-          ]
+          ],
+          "overlays": [
+            {
+              "id": "tape",
+              "type": "tape-strip",
+              "anchor": "incision",
+              "width": 120,
+              "angle": -70,
+              "sentence_ids": [
+                "wc.02"
+              ]
+            }
+          ],
+          "lens": true
         }
       ]
     },
     "frame-0203-paths": {
-      "kind": "composite",
-      "alt": "Two paths behind the ear: with tape, keep it dry for three days and do not clean; without tape, clean gently twice a day with equal parts hydrogen peroxide and distilled water, then ointment.",
+      "kind": "panels",
+      "alt": "Two panels. If there is tape over the incision: leave it alone, with a no-cleaning mark. If there is no tape: the bare incision behind the ear, which is cleaned as the narration describes.",
       "layers": {
         "base": "assets/anatomy/postauricular-base-a2.png"
       },
@@ -90,85 +109,51 @@
           "y": 0.47
         }
       },
-      "states": [
-        {
-          "id": "base",
-          "image": "base"
-        }
-      ],
-      "overlays": [
+      "panels": [
         {
           "id": "tape",
-          "type": "tape-strip",
-          "anchor": "incision",
-          "width": 140,
-          "angle": -70,
-          "from": "If there is tape",
-          "until": "If there is no tape",
-          "sentence_ids": [
-            "wc.03"
-          ]
-        },
-        {
-          "id": "keep-dry",
-          "type": "pointer",
-          "anchor": "incision",
-          "at": {
-            "x": 0.24,
-            "y": 0.2
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 1.7
           },
-          "from": "keep the area dry",
-          "until": "If there is no tape",
-          "label_key": "ov.keep_dry",
+          "title_key": "ov.path_tape",
           "sentence_ids": [
-            "wc.03"
-          ]
-        },
-        {
-          "id": "no-cleaning",
-          "type": "no-cleaning",
-          "at": {
-            "x": 0.2,
-            "y": 0.62
-          },
-          "from": "do not clean",
-          "until": "If there is no tape",
-          "label_key": "ov.no_cleaning",
-          "sentence_ids": [
+            "wc.03",
             "wc.04"
-          ]
-        },
-        {
-          "id": "clean-steps",
-          "type": "steps",
-          "at": {
-            "x": 0.04,
-            "y": 0.2
-          },
-          "from": "If there is no tape",
-          "rows": [
+          ],
+          "overlays": [
             {
-              "label_key": "ov.clean_twice",
-              "from": "clean the edges",
+              "id": "tape",
+              "type": "tape-strip",
+              "anchor": "incision",
+              "width": 140,
+              "angle": -70,
               "sentence_ids": [
-                "wc.05"
+                "wc.03"
               ]
             },
             {
-              "label_key": "ov.mix",
-              "from": "equal parts",
+              "id": "no-cleaning",
+              "type": "no-cleaning",
+              "at": {
+                "x": 0.43,
+                "y": 0.63
+              },
               "sentence_ids": [
-                "wc.06"
-              ]
-            },
-            {
-              "label_key": "ov.ointment",
-              "from": "then apply",
-              "sentence_ids": [
-                "wc.07"
+                "wc.04"
               ]
             }
-          ],
+          ]
+        },
+        {
+          "id": "no-tape",
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 1.7
+          },
+          "title_key": "ov.path_no_tape",
           "sentence_ids": [
             "wc.05",
             "wc.06",

@@ -82,6 +82,14 @@ button, select, input { font-family: inherit; }
 .composite__image { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; transition: opacity .35s ease; }
 .composite__tint { position: absolute; inset: 0; width: 100%; height: 100%; mix-blend-mode: multiply; pointer-events: none; }
 .composite__overlay { position: absolute; inset: 0; width: 100%; height: 100%; }
+.frame--panels { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; overflow: hidden; }
+.panels { display: grid; grid-template-columns: repeat(var(--columns), minmax(0, 1fr)); gap: 8px; margin: 0; width: min(100%, calc((100cqh - var(--captions)) * var(--aspect))); }
+.panel { margin: 0; min-width: 0; }
+.panel__view { display: block; width: 100%; height: auto; }
+.panel figcaption { margin-top: 4px; color: var(--navy); font-size: 12px; line-height: 1.3; }
+.panel figcaption strong { display: block; }
+.panel figcaption ul, .panel figcaption ol { margin: 2px 0 0; padding-left: 16px; }
+.frame--panels .frame__pending { position: static; max-width: 100%; }
 
 /* Chapter bar (phones only) */
 .chapter-bar { display: none; }

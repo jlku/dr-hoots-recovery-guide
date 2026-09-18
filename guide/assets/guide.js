@@ -279,7 +279,8 @@ function sync(local) {
       beatWords: timeline.words.filter((word) => word.beat === beat.id),
       sentences: state.guide.sentences,
       pack: state.guide.pack,
-      pending: (state.guide.instructions?.claims ?? []).filter((claim) => claim.frame === beat.frame && claim.status === "placeholder")
+      pending: (state.guide.instructions?.claims ?? []).filter((claim) => claim.frame === beat.frame && claim.status === "placeholder"),
+      motion: state.guide.frames.motion ?? "static"
     }));
   }
   updateFrame(dom.stage.firstElementChild, local);

@@ -65,7 +65,9 @@
     "ov.any_concern": "Any question or concern",
     "ov.fluid_pointer": "Fluid under the skin",
     "ov.processor": "Speech processor, worn outside the ear",
-    "ov.pending_howto": "How-to picture pending"
+    "ov.pending_howto": "How-to picture pending",
+    "ov.path_tape": "If there is tape",
+    "ov.path_no_tape": "If there is no tape"
   },
   "review": {
     "kind": "source",
