@@ -1,6 +1,6 @@
 # Project status and handoff
 
-Last updated: September 17, 2026
+Last updated: September 18, 2026
 
 ## Readiness verdict
 
@@ -19,14 +19,18 @@ The Dr. Hoots mascot direction was retired after clinician feedback. The mascot-
 
 The replacement is a segmented, narrated, multilingual guide with a provider file, specified in `docs/superpowers/specs/2026-09-17-avs-v2-segmented-guide-design.md`. Slices 1 through 3 of that design are in place: five segments cut from the canonical sentences and bound to the existing narration, with per-segment timelines, captions, and audio under `assets/captions/v2/` and `assets/audio/v2/`; the one-page guide; and generated anatomy masters composed with deterministic overlays on the narration clock, reviewed caption-blind by AI observers with receipts.
 
+## What changed on September 18, 2026
+
+The API evaluator ran live. Under placeholder rules approved by John until Song weighs in, it failed two pictures the in-session loop had passed: the base head, whose incision was too faint to see, and the bandage card, whose tape read as something stuck in the skin. A tweak pass followed. The incision is now drawn in code along a measured path, because three image edits in a row drew tick marks, a pink glow that read as redness, or a loop onto the neck. The tape is drawn as short see-through strips across it. Panel 4 says "Check for tape", the crossed-out bottle in the two-paths frame says "Do not clean yet", and the guide's type is larger throughout.
+
 ## What exists
 
 1. A scroll-driven safety-card guide with a downloadable PDF, at `preview/animatic-scroll.html`.
 2. The versioned clinical content model in `content/`, which every format derives from.
 3. The v2 segment model, English label pack, and derived caption and audio artifacts, with validators wired into `npm run check`.
 4. The v2 guide under `guide/`: one page with a chapter rail, one continuous player across the five English segments with synchronized captions, and a transcript that follows playback and seeks on tap. On phones the transcript carries the captions and the phone numbers stay pinned at the bottom.
-5. Generated anatomy masters under `assets/anatomy/` with deterministic overlays, contracted in `content/anatomy/`, reviewed caption-blind by AI observers with receipts under `content/reviews/anatomy/`, clinician review pending. Spend is tracked in `content/spend/v2-ledger.json` against a ten-dollar cap.
-6. An API-backed image evaluator (`npm run review`) that runs with only an API key: three caption-blind observers receive the image inside the request, a coder quotes each finding from their words, and code computes the verdict. It writes receipts, keeps the manifest in step, records spend in the ledger, and chains onto generation with `--review`. A labeled calibration set checks it against the in-session loop (`npm run review:calibrate`).
+5. Generated anatomy masters under `assets/anatomy/` with deterministic overlays, including the incision and its tape drawn along a measured path, contracted in `content/anatomy/`, reviewed caption-blind by AI observers with receipts under `content/reviews/anatomy/`, clinician review pending. Spend is tracked in `content/spend/v2-ledger.json` against a ten-dollar cap.
+6. An API-backed image evaluator (`npm run review`) that runs with only an API key: three caption-blind observers receive the image inside the request, a coder cites each finding in their numbered answers, and code computes the verdict. It writes receipts, keeps the manifest in step, records spend in the ledger, and chains onto generation with `--review`. A labeled calibration set checks it against the in-session loop (`npm run review:calibrate`).
 
 ## What is technically verified
 
@@ -43,7 +47,7 @@ Run `npm run check` to reproduce the content and engineering checks. These resul
 
 ### 1. Languages and the provider file are not built yet
 
-Slices 4 through 7 add Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The guide shows generated anatomy composites for the wound-care, warning-sign, and programming beats; the milestone, number, and follow-up beats show live text. Two anatomy states did not pass the image loop within their attempt caps, the head bandage and the red, swollen incision, so the bandage is not pictured and the redness frame tints the accepted swelling master with a vector flush. Their best candidates are held with receipts for the clinician to weigh.
+Slices 4 through 7 add Spanish and Mandarin, the provider file, AI reviewers with labeled receipts, and file export. The guide shows generated anatomy composites for the wound-care, warning-sign, and programming beats; the milestone, number, and follow-up beats show live text. The red, swollen incision did not pass the image loop within its attempt cap, so the redness frame tints the accepted swelling master with a vector flush. The bandage card fails its live review on its tape panel: every observer reads the removal correctly, but two of three imagine a patient pulling the tape off. Across fifteen observers in five reviews, most said the picture never says whether the tape stays on, and the guide's text does not say either. That waits on Song (`q.tape-after-three-days`).
 
 ### 2. Clinical and institutional inputs are missing
 
@@ -63,7 +67,7 @@ Before any participant-facing claim, run whole-experience checks for keyboard an
 
 ## Best next contributions
 
-1. Add `ANTHROPIC_API_KEY` to `.env.local` and run `npm run review:calibrate`. The evaluator replaces the in-session review loop only after its report agrees with the in-session verdicts.
+1. Song answers `q.tape-after-three-days` and `q.incision-appearance` in `content/clinician/questions-for-song.md`. The card then says what to do with the tape, and one live review, which the remaining budget covers, re-judges it.
 2. Build v2 slice 4: Spanish and Mandarin packs with AI language reviewers.
 3. Add browser-level accessibility and rendered-state tests at desktop, 390px mobile, and 200% zoom.
 4. Keep experimental formats comparable by preserving canonical proposition coverage and measuring delivery differences rather than rewriting the medical content per format.
