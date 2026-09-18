@@ -213,7 +213,20 @@ export function updateFrame(root, seconds) {
   }
 }
 
-export function renderFrame(frame, { beat, beatWords = [], sentences, pack }) {
+function pendingMarker(pending, pack) {
+  const marker = document.createElement("p");
+  marker.className = "frame__pending";
+  marker.textContent = `${pack.labels["ov.pending_howto"] ?? "How-to picture pending"}: ${pending.map((claim) => claim.action).join("; ")}`;
+  return marker;
+}
+
+export function renderFrame(frame, { beat, beatWords = [], sentences, pack, pending = [] }) {
+  const root = renderFrameBody(frame, { beat, beatWords, sentences, pack });
+  if (pending.length) root.append(pendingMarker(pending, pack));
+  return root;
+}
+
+function renderFrameBody(frame, { beat, beatWords = [], sentences, pack }) {
   if (frame.kind === "composite") return renderComposite(frame, { beatWords, pack });
   const stage = document.createElement("div");
   stage.className = `frame frame--${frame.kind}`;

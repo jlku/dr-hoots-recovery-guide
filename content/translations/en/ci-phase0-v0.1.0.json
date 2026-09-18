@@ -64,7 +64,8 @@
     "ov.neuro": "Headache, light sensitivity, or excessive lethargy",
     "ov.any_concern": "Any question or concern",
     "ov.fluid_pointer": "Fluid under the skin",
-    "ov.processor": "Speech processor, worn outside the ear"
+    "ov.processor": "Speech processor, worn outside the ear",
+    "ov.pending_howto": "How-to picture pending"
   },
   "review": {
     "kind": "source",

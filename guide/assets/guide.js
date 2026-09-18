@@ -278,7 +278,8 @@ function sync(local) {
       beat: segment.beats.find((item) => item.id === beat.id),
       beatWords: timeline.words.filter((word) => word.beat === beat.id),
       sentences: state.guide.sentences,
-      pack: state.guide.pack
+      pack: state.guide.pack,
+      pending: (state.guide.instructions?.claims ?? []).filter((claim) => claim.frame === beat.frame && claim.status === "placeholder")
     }));
   }
   updateFrame(dom.stage.firstElementChild, local);
