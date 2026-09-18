@@ -99,6 +99,7 @@ export async function validateInstructions({ instructions, canonical, segments, 
         errors.push(`${claim.id}: receipt ${claim.receipt} is missing`);
       }
     }
+    if (claim.rule_question && !questions.get(claim.rule_question)) errors.push(`${claim.id} rests on a rule whose question ${claim.rule_question} is not on the clinician's list`);
     if (claim.open_question) {
       const question = questions.get(claim.open_question);
       if (!question) errors.push(`${claim.id} points at ${claim.open_question}, which is not on the clinician's list`);

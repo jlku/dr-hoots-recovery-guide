@@ -37,4 +37,4 @@ An instruction picture is a static card in the manner of an airline safety card:
 
 Return `verdict_strict` under the general rules as well as `verdict`, so the receipt shows both.
 
-This rule was introduced on 2026-09-18 during the first motion test and is pending John's and Song's sign-off.
+This rule was introduced on 2026-09-18 during the first motion test. John approved it for now the same day. Song's sign-off is question `q.instruction-picture-rule` in `content/clinician/questions-for-song.md`. The rule is written in code in `scripts/lib/adjudication.mjs`, tested in `tests/v2-adjudication.test.mjs`, and `npm run check` refuses any receipt whose verdict does not follow from its recorded findings.
