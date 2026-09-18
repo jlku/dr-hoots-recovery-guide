@@ -49,7 +49,22 @@
     "ui.previous_chapter": "Previous chapter",
     "ui.next_chapter": "Next chapter",
     "ui.print_card": "Print the card",
-    "ui.captions": "Captions"
+    "ui.captions": "Captions",
+    "ov.tape_question": "Tape?",
+    "ov.keep_dry": "Keep dry until 3 days after surgery",
+    "ov.no_cleaning": "No cleaning before then",
+    "ov.clean_twice": "Clean the edges gently, twice a day",
+    "ov.mix": "Equal parts hydrogen peroxide and distilled water",
+    "ov.ointment": "Then an antibiotic ointment, such as bacitracin",
+    "ov.red_swollen": "Red and swollen",
+    "ov.not_better": "Not getting better over one to two days",
+    "ov.hurts": "Hurts when touched",
+    "ov.fever": "Fever above 101.5 °F",
+    "ov.fluid": "Swelling or fluid behind the ear",
+    "ov.neuro": "Headache, light sensitivity, or excessive lethargy",
+    "ov.any_concern": "Any question or concern",
+    "ov.fluid_pointer": "Fluid under the skin",
+    "ov.processor": "Speech processor, worn outside the ear"
   },
   "review": {
     "kind": "source",

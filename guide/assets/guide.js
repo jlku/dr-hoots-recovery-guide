@@ -2,7 +2,7 @@
 // One page: chapter rail, one continuous player across the five segments, synchronized captions,
 // and a transcript that follows playback and seeks on tap.
 import { assetUrl, fetchJson, loadGuide } from "./data.js";
-import { renderFrame, renderTitleCard } from "./frames.js";
+import { renderFrame, renderTitleCard, updateFrame } from "./frames.js";
 import {
   LANGUAGES,
   activeBeat,
@@ -101,6 +101,16 @@ function span(className, text) {
   node.className = className;
   node.textContent = text;
   return node;
+}
+
+function preloadLayers(frames) {
+  // Warm the browser cache so a composite's first paint does not wait on a decode at the beat boundary.
+  const files = new Set(Object.values(frames.frames ?? {}).flatMap((frame) => Object.values(frame.layers ?? {})));
+  for (const file of files) {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = assetUrl(file);
+  }
 }
 
 function ensureFrame(id, build) {
@@ -264,12 +274,14 @@ function sync(local) {
   if (!beat) {
     ensureFrame(`title-${number}`, () => renderTitleCard(segment, state.guide.pack));
   } else {
-    ensureFrame(`${number}:${beat.id}`, () => renderFrame(state.guide.frames.frames[beat.frame], {
+    ensureFrame(`${number}:${beat.id}`, () => renderFrame({ ...state.guide.frames.frames[beat.frame], id: beat.frame }, {
       beat: segment.beats.find((item) => item.id === beat.id),
+      beatWords: timeline.words.filter((word) => word.beat === beat.id),
       sentences: state.guide.sentences,
       pack: state.guide.pack
     }));
   }
+  updateFrame(dom.stage.firstElementChild, local);
   const cue = activeCue(timeline, local);
   const nextCueKey = cue ? `${number}:${cue.id}` : null;
   if (nextCueKey !== cueKey) renderCue(cue, nextCueKey);
@@ -376,6 +388,7 @@ async function init() {
   dom.audio.pause();
   const params = parseFragment(location.hash);
   const guide = await loadGuide(params.l);
+  preloadLayers(guide.frames);
   const picks = guide.segments.segments.map((segment) => pickEntry(guide.index, segment.number, guide.language));
   const entries = picks.map((pick) => pick.entry).filter(Boolean);
   const clock = buildGuideClock(entries);

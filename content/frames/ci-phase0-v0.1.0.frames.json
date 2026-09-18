@@ -6,15 +6,352 @@
   "patient_use": false,
   "notice": "UNVERIFIED — NOT FOR PATIENT USE",
   "frames": {
-    "frame-01": { "kind": "svg", "src": "preview/assets/cards/frame-01.svg", "alt": "Day 2: remove the head dressing, then check behind the ear for tape." },
-    "frame-0203-paths": { "kind": "svg", "src": "preview/assets/cards/frame-0203-paths.svg", "alt": "Two paths. Tape present: keep the area dry until three days after surgery and do not clean it. No tape: clean the incision edges gently twice a day with equal parts hydrogen peroxide and distilled water, then apply antibiotic ointment." },
-    "frame-0405-milestones": { "kind": "svg", "src": "preview/assets/cards/frame-0405-milestones.svg", "alt": "Three days after surgery you may shower and wash your hair. The wound check and ear exam are about two weeks after surgery. The stitches dissolve." },
-    "frame-medication-pending": { "kind": "text", "title_key": "ui.pending_clinician_text" },
-    "frame-06-redness": { "kind": "svg", "src": "preview/assets/cards/frame-06-redness.svg", "alt": "Call your surgeon or clinic if all three signs are present: the incision is red and swollen, it does not get better over one to two days, and it hurts when touched." },
-    "frame-0710-anylist": { "kind": "svg", "src": "preview/assets/cards/frame-0710-anylist.svg", "alt": "Call for any of these: a fever above 101.5 degrees Fahrenheit; swelling or fluid behind the ear; a headache, light sensitivity, or excessive lethargy; or any wound-care question or concern." },
-    "frame-11-numbers": { "kind": "svg", "src": "preview/assets/cards/frame-11-numbers.svg", "alt": "Routine questions: leave a message on the nursing line at 415-353-2148 and expect a call within 12 hours; if no one calls, call again. Emergency: call 415-476-1000 and ask for the Otolaryngology resident on call." },
-    "frame-12-healing": { "kind": "text" },
-    "frame-13-programming": { "kind": "image", "src": "assets/illustrations/ci-activation-programming-safety-card-v1.png", "alt": "A hearing specialist uses a laptop to program an adult patient's external behind-the-ear speech processor, with a close-up of the processor and adjustment controls." },
-    "frame-14-follow-up": { "kind": "text" }
+    "frame-01": {
+      "kind": "composite",
+      "alt": "Day 2: the area behind the ear after the head bandage comes off, zoomed in to check for tape over the incision.",
+      "layers": {
+        "base": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "anchors": {
+        "incision": {
+          "x": 0.565,
+          "y": 0.47
+        }
+      },
+      "states": [
+        {
+          "id": "base",
+          "image": "base"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "tape-question",
+          "type": "inset",
+          "anchor": "incision",
+          "at": {
+            "x": 0.22,
+            "y": 0.3
+          },
+          "radius": 0.2,
+          "scale": 2.2,
+          "tape": true,
+          "from": "tape",
+          "label_key": "ov.tape_question",
+          "sentence_ids": [
+            "wc.02"
+          ]
+        }
+      ]
+    },
+    "frame-0203-paths": {
+      "kind": "composite",
+      "alt": "Two paths behind the ear: with tape, keep it dry for three days and do not clean; without tape, clean gently twice a day with equal parts hydrogen peroxide and distilled water, then ointment.",
+      "layers": {
+        "base": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "anchors": {
+        "incision": {
+          "x": 0.565,
+          "y": 0.47
+        }
+      },
+      "states": [
+        {
+          "id": "base",
+          "image": "base"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "tape",
+          "type": "tape-strip",
+          "anchor": "incision",
+          "width": 140,
+          "angle": -70,
+          "from": "If there is tape",
+          "until": "If there is no tape",
+          "sentence_ids": [
+            "wc.03"
+          ]
+        },
+        {
+          "id": "keep-dry",
+          "type": "pointer",
+          "anchor": "incision",
+          "at": {
+            "x": 0.24,
+            "y": 0.2
+          },
+          "from": "keep the area dry",
+          "until": "If there is no tape",
+          "label_key": "ov.keep_dry",
+          "sentence_ids": [
+            "wc.03"
+          ]
+        },
+        {
+          "id": "no-cleaning",
+          "type": "no-cleaning",
+          "at": {
+            "x": 0.2,
+            "y": 0.62
+          },
+          "from": "do not clean",
+          "until": "If there is no tape",
+          "label_key": "ov.no_cleaning",
+          "sentence_ids": [
+            "wc.04"
+          ]
+        },
+        {
+          "id": "clean-steps",
+          "type": "steps",
+          "at": {
+            "x": 0.04,
+            "y": 0.2
+          },
+          "from": "If there is no tape",
+          "rows": [
+            {
+              "label_key": "ov.clean_twice",
+              "from": "clean the edges",
+              "sentence_ids": [
+                "wc.05"
+              ]
+            },
+            {
+              "label_key": "ov.mix",
+              "from": "equal parts",
+              "sentence_ids": [
+                "wc.06"
+              ]
+            },
+            {
+              "label_key": "ov.ointment",
+              "from": "then apply",
+              "sentence_ids": [
+                "wc.07"
+              ]
+            }
+          ],
+          "sentence_ids": [
+            "wc.05",
+            "wc.06",
+            "wc.07"
+          ]
+        }
+      ]
+    },
+    "frame-0405-milestones": {
+      "kind": "text"
+    },
+    "frame-medication-pending": {
+      "kind": "text",
+      "title_key": "ui.pending_clinician_text"
+    },
+    "frame-06-redness": {
+      "kind": "composite",
+      "alt": "Swelling behind the ear tinted red, with the three signs that must all be present before calling.",
+      "layers": {
+        "fluid": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "anchors": {
+        "bulge": {
+          "x": 0.575,
+          "y": 0.5
+        }
+      },
+      "states": [
+        {
+          "id": "fluid",
+          "image": "fluid"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "flush",
+          "type": "flush",
+          "anchor": "bulge",
+          "rx": 0.13,
+          "ry": 0.17,
+          "opacity": 0.6,
+          "sentence_ids": [
+            "call.01a"
+          ]
+        },
+        {
+          "id": "signs",
+          "type": "checklist",
+          "at": {
+            "x": 0.04,
+            "y": 0.2
+          },
+          "rows": [
+            {
+              "label_key": "ov.red_swollen",
+              "from": "red and swollen",
+              "sentence_ids": [
+                "call.01a"
+              ]
+            },
+            {
+              "label_key": "ov.not_better",
+              "from": "not getting better",
+              "sentence_ids": [
+                "call.01b"
+              ]
+            },
+            {
+              "label_key": "ov.hurts",
+              "from": "hurts",
+              "sentence_ids": [
+                "call.01c"
+              ]
+            }
+          ],
+          "sentence_ids": [
+            "call.01"
+          ]
+        }
+      ]
+    },
+    "frame-0710-anylist": {
+      "kind": "composite",
+      "alt": "Four separate reasons to call: a fever above 101.5 degrees Fahrenheit, swelling or fluid behind the ear, headache or light sensitivity or excessive lethargy, or any question or concern.",
+      "layers": {
+        "fluid": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "anchors": {
+        "bulge": {
+          "x": 0.575,
+          "y": 0.5
+        }
+      },
+      "states": [
+        {
+          "id": "fluid",
+          "image": "fluid"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "any",
+          "type": "rows",
+          "at": {
+            "x": 0.04,
+            "y": 0.16
+          },
+          "rows": [
+            {
+              "label_key": "ov.fever",
+              "from": "a fever",
+              "sentence_ids": [
+                "call.02"
+              ]
+            },
+            {
+              "label_key": "ov.fluid",
+              "from": "swelling",
+              "sentence_ids": [
+                "call.03"
+              ]
+            },
+            {
+              "label_key": "ov.neuro",
+              "from": "a headache",
+              "sentence_ids": [
+                "call.04"
+              ]
+            },
+            {
+              "label_key": "ov.any_concern",
+              "from": "or any question",
+              "sentence_ids": [
+                "call.05"
+              ]
+            }
+          ],
+          "sentence_ids": [
+            "call.02"
+          ]
+        },
+        {
+          "id": "bulge-pointer",
+          "type": "pointer",
+          "anchor": "bulge",
+          "at": {
+            "x": 0.3,
+            "y": 0.86
+          },
+          "from": "swelling",
+          "label_key": "ov.fluid_pointer",
+          "sentence_ids": [
+            "call.03"
+          ]
+        }
+      ]
+    },
+    "frame-11-numbers": {
+      "kind": "text"
+    },
+    "frame-12-healing": {
+      "kind": "text"
+    },
+    "frame-13-programming": {
+      "kind": "composite",
+      "alt": "The external speech processor hooked over the ear with its body behind the ear, and its transmitter coil on the scalp above and behind the ear, at the programming visit.",
+      "layers": {
+        "base": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "anchors": {
+        "ear_top": {
+          "x": 0.625,
+          "y": 0.375
+        },
+        "processor": {
+          "x": 0.585,
+          "y": 0.47
+        },
+        "coil": {
+          "x": 0.5,
+          "y": 0.3
+        }
+      },
+      "states": [
+        {
+          "id": "base",
+          "image": "base"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "device",
+          "type": "device",
+          "anchor": "ear_top",
+          "coil": "coil",
+          "sentence_ids": [
+            "act.02"
+          ]
+        },
+        {
+          "id": "processor-label",
+          "type": "pointer",
+          "anchor": "processor",
+          "at": {
+            "x": 0.22,
+            "y": 0.74
+          },
+          "from": "speech processor",
+          "label_key": "ov.processor",
+          "sentence_ids": [
+            "act.02"
+          ]
+        }
+      ]
+    },
+    "frame-14-follow-up": {
+      "kind": "text"
+    }
   }
 }
