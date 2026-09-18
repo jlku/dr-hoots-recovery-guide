@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-base-a2",
+  "asset_id": "postauricular-base",
+  "file": "assets/anatomy/postauricular-base-a2.png",
+  "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Flat illustration from behind and to the right, hair clipped, one thin healed line in the crease behind the ear, nothing worn.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a7d8e3ad0d25720cd",
+      "observation": "1. The back and side of a human head and neck, seen from behind and slightly to the right, showing the right ear, the right cheek and jaw line, and closed eyelashes at the far edge. The hair is dark on top with a sharp, closely shaved fade around the sides and back.\n\n2. Nothing is worn or applied. The skin is drawn smooth and uniform. The only feature is a thin, faint pale line curving along the crease directly behind the ear, running from its top down toward the lobe.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read the faint line behind the ear as a healed surgical scar or a fresh incision from an ear or skin procedure."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a44da0f22fc31d1c1",
+      "observation": "1. The back and right side of a person's head, neck, and upper right ear, viewed from behind and slightly to the right; the face is turned away, showing only the cheek, eyelashes, and part of the jaw.\n2. A short undercut haircut with a shaved lower scalp and longer hair on top. Behind the right ear there is a thin, pale, curved line following the crease where the ear meets the head. The skin otherwise looks smooth and unmarked, with no redness, swelling, dressing, or device.\n3. No text, arrows, labels, or symbols.\n4. The pale curved line behind the ear could be read as a healed scar or surgical incision, or simply as a highlight or skin fold rather than anything on the skin."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "ad7324e35403f38f3",
+      "observation": "1. The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view). Part of the eyebrow, eyelashes, and cheek are visible at the right edge.\n\n2. Short hair on top with a shaved fade on the sides and back, with fine stubble drawn along the hairline. The skin looks smooth and unmarked. There is a thin, pale, slightly raised line that runs in a curve along the crease where the back of the ear meets the head. Nothing is worn on the ear or neck.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read the pale curved line behind the ear as a scar, a fresh surgical incision, or a healing cut rather than a natural skin fold."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "ad5c4da518462cd9f",
+    "verdict": "pass",
+    "recovered": [
+      "(a) back or side of a person's head with the area behind the ear in view - recovered by observers 1, 2, and 3",
+      "(b) thin healed line or scar behind the ear, not on the face or neck - recovered by observers 1, 2, and 3 (all place a thin pale curved line in the crease where the back of the ear meets the head)",
+      "(c) no bandage, tape, or device - recovered by observers 1, 2, and 3"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "text_detected": false,
+    "reason": "All three observers independently describe a rear three-quarter view of the head with a thin pale curved line in the crease directly behind the right ear, nothing worn or applied, no redness or swelling, and no text, and the only ambiguity reported (healed scar versus fresh incision versus skin fold) is not a forbidden reading."
+  },
+  "outcome": "accepted",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

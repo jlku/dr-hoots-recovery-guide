@@ -4,5 +4,216 @@
   "authorized_by": "John",
   "authorized_on": "2026-09-17",
   "notice": "Every provider request reserves its estimate here before it runs.",
-  "entries": []
+  "entries": [
+    {
+      "id": "anatomy:postauricular-base:a1",
+      "at": "2026-09-17T22:11:06.815Z",
+      "model": "fal-ai/flux-2-pro",
+      "purpose": "anatomy postauricular-base attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": null
+      },
+      "estimate_usd": 0.03,
+      "actual_usd": null,
+      "request_id": "01a0b16c-68b9-7092-a375-c67e8939ccc6",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-base:a2",
+      "at": "2026-09-17T22:11:58.944Z",
+      "model": "fal-ai/flux-2-pro",
+      "purpose": "anatomy postauricular-base attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": null
+      },
+      "estimate_usd": 0.03,
+      "actual_usd": null,
+      "request_id": "01a0b16d-3428-7942-b5fa-13dc43b3346d",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing:a1",
+      "at": "2026-09-17T22:12:40.343Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b16d-dad6-74c1-883d-9effbb8ac5ec",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen:a1",
+      "at": "2026-09-17T22:12:56.680Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b16e-1950-7812-b968-cd0452f99977",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-fluid:a1",
+      "at": "2026-09-17T22:13:11.235Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-fluid attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b16e-51b2-7f60-881b-154aeb05c8cd",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:processor-worn:a1",
+      "at": "2026-09-17T22:13:27.308Z",
+      "model": "fal-ai/flux-2-pro",
+      "purpose": "anatomy processor-worn attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": null
+      },
+      "estimate_usd": 0.03,
+      "actual_usd": null,
+      "request_id": "01a0b16e-8d51-77c0-97b6-c341668c17ca",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing:a2",
+      "at": "2026-09-17T22:14:48.614Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b16f-ce71-7733-b1f2-07774fb8fae3",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:processor-worn:a2",
+      "at": "2026-09-17T22:15:03.222Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy processor-worn attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b170-070f-7bb0-a350-a72a57ddf8fc",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:processor-worn:a3",
+      "at": "2026-09-17T22:16:11.550Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy processor-worn attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b171-135c-7632-842a-3a94abfab81b",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen:a2",
+      "at": "2026-09-17T22:17:23.912Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b172-2d27-72f0-bf5f-431aedc54f2b",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:processor-worn:a4",
+      "at": "2026-09-17T22:18:16.359Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy processor-worn attempt 4",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b172-fa8e-7531-af31-9282f83eff82",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing:a3",
+      "at": "2026-09-18T01:03:23.236Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b20a-24f2-7532-8c68-1c1b06ea7021",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen:a3",
+      "at": "2026-09-18T01:03:38.589Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b20a-605e-7bc0-8bc8-7d959ec01650",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-dressing:a4",
+      "at": "2026-09-18T01:06:24.220Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-dressing attempt 4",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b20c-e78d-7c51-9659-5d724c30e2bd",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-red-swollen:a4",
+      "at": "2026-09-18T01:11:13.042Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-red-swollen attempt 4",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b211-5091-7f01-83df-6dae755fd299",
+      "status": "completed"
+    }
+  ]
 }

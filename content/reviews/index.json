@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "patient_use": false,
+  "anatomy": [
+    "content/reviews/anatomy/postauricular-base-a2.json",
+    "content/reviews/anatomy/postauricular-dressing-a2.json",
+    "content/reviews/anatomy/postauricular-dressing-a4.json",
+    "content/reviews/anatomy/postauricular-fluid-a1.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a1.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a2.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a3.json"
+  ]
+}

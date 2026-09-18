@@ -1,0 +1,48 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-fluid-a1",
+  "asset_id": "postauricular-fluid",
+  "file": "assets/anatomy/postauricular-fluid-a1.png",
+  "sha256": "f0f1e702d178099b3d8318b3ef8dd0854fbe1b94af7585a4cf59c96123b1a46f",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Smooth rounded bulge under the skin behind the ear near the incision, no surface liquid, same person and view.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a9bebb8e7b9b4fde3",
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, viewed from behind and slightly to the right. Short dark hair on top, shaved/faded sides, one ear in profile, the cheek and lashes of a closed or downcast right eye.\n\n2. A round, smooth, pinkish dome-shaped swelling sits directly behind the ear, pushing the outer ear forward. Its edge is outlined by a thin pale highlight; the surrounding skin is slightly flushed. Nothing is worn or applied; no cut, scab, or open wound.\n\n3. No text, arrows, labels, or symbols.\n\n4. Could be mistaken for a large boil, cyst, or tumor behind the ear, or for a swollen lymph node."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "ab1ceae7b6701dd9d",
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear, cheek, and one closed eye with eyelashes are visible in profile. The hair is short and dark on top with buzzed, faded sides.\n\n2. On the skin directly behind the right ear there is a rounded, dome-shaped bump, pinkish and shiny, with a thin lighter highlight along its upper-left curve, as if the skin is stretched over something underneath. The ear itself appears normal. No bandage, dressing, tube, or device is worn.\n\n3. No text, arrows, labels, or symbols anywhere in the image.\n\n4. A worried patient could read it as a swollen lump or lymph node behind the ear, or as a cyst or abscess forming."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a401e1c69ccb5f237",
+      "observation": "1. The back and side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear is in profile, and the face is turned away so only the nose tip, brow, and eyelashes are visible. The hair is dark, cropped short on the sides with a longer top.\n\n2. A round, smooth, pinkish-red swelling sits directly behind the ear, filling the space between the ear and the shaved scalp. It bulges outward, with a lighter highlight on top and darker shading below; the skin appears stretched but intact. Nothing is worn or applied.\n\n3. No text, arrows, labels, or symbols.\n\n4. A large boil, cyst, or tumor."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "acdff52906422419b",
+    "verdict": "pass",
+    "recovered": [
+      "(a) rounded swelling/bulge under the skin behind the ear — all three observers report a round, smooth, dome-shaped swelling directly behind the right ear with skin stretched but intact",
+      "(b) no liquid on the surface — no observer reports droplets, sweat, or running liquid; the only 'shiny'/highlight mentions are surface reflections on the stretched skin",
+      "(c) same view of the head from behind — all three observers describe the back and right side of the head seen from behind and slightly to the right, right ear in profile"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "text_detected": false,
+    "reason": "All three observers independently recovered the rounded subcutaneous bulge behind the right ear, the from-behind view, and an intact, liquid-free surface; Observer 1's 'slightly flushed' and Observer 3's 'pinkish-red' fall short of strong redness, and the boil/cyst/tumor/lymph node/abscess alternative readings are permitted under this contract."
+  },
+  "outcome": "accepted",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

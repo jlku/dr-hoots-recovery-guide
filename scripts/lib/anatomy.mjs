@@ -135,6 +135,21 @@ export async function validateAnatomy({ contracts, manifest, frames, root }) {
     } catch {
       errors.push(`${record.id}: ${record.file} is missing`);
     }
+    if (record.status === "accepted") {
+      if (record.review?.adjudication?.verdict !== "pass") errors.push(`${record.id}: accepted without a passing adjudication`);
+      const receipt = record.review?.receipt;
+      if (!receipt) {
+        errors.push(`${record.id}: accepted without a review receipt`);
+      } else {
+        try {
+          const doc = JSON.parse(await readFile(join(root, receipt), "utf8"));
+          if (doc.record_id !== record.id || doc.sha256 !== record.sha256) errors.push(`${record.id}: receipt ${receipt} does not match the record`);
+          if (doc.adjudication?.verdict !== "pass") errors.push(`${record.id}: receipt ${receipt} does not record a pass`);
+        } catch {
+          errors.push(`${record.id}: receipt ${receipt} is missing`);
+        }
+      }
+    }
   }
   for (const id of assetIds) {
     const accepted = attemptsFor(manifest, id).filter((record) => record.status === "accepted");

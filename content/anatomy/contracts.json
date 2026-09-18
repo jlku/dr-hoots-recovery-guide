@@ -16,13 +16,29 @@
       "seed": 90101,
       "max_attempts": 3,
       "claim": {
-        "sentence_ids": ["wc.02", "wc.03", "wc.05", "call.01a"],
+        "sentence_ids": [
+          "wc.02",
+          "wc.03",
+          "wc.05",
+          "call.01a"
+        ],
         "anatomy": "The area behind an adult's right ear, seen from behind and slightly to the side, hair kept away from the ear.",
-        "state": "A healed, thin, pale incision line running in the crease behind the ear, from just above the ear down toward the earlobe. No dressing, no tape, no redness, no swelling, no device.",
-        "forbidden": ["incision on the cheek, jaw, neck, or in front of the ear", "tape or a dressing present", "a hearing device worn", "visible redness or swelling", "blood or an open wound", "any text, arrow, or label"]
+        "state": "A healed, thin, pale incision line in the crease where the back of the ear meets the head, seen from behind; hair clipped short behind the ear. No dressing, no tape, no redness, no swelling, no device.",
+        "forbidden": [
+          "incision on the cheek, jaw, neck, or in front of the ear",
+          "tape or a dressing present",
+          "a hearing device worn",
+          "visible redness or swelling",
+          "blood or an open wound",
+          "any text, arrow, or label"
+        ]
       },
-      "prompt": "Medical illustration of the area behind an adult person's right ear, viewed from behind and slightly to the side, short hair kept away from the ear so the skin behind the ear is fully visible. A thin, pale, fully healed surgical incision line runs in the natural crease directly behind the ear, from just above the top of the ear down toward the earlobe, following the curve of the ear. Calm neutral expression, ear and skin otherwise completely normal: no tape, no dressing, no bandage, no redness, no swelling, no device, no blood. Contemporary medical illustration style with accurate anatomy, soft even lighting, muted natural skin tones, clean off-white background, sharp focus on the area behind the ear. No text, no labels, no captions, no arrows, no logos, no watermark.",
-      "observers_must_recover": ["the back or side of a person's head with the area behind the ear in view", "a thin healed line or scar behind the ear, not on the face or neck", "no bandage, tape, or device"]
+      "prompt": "Flat medical illustration, textbook figure style, not a photograph and not a 3D render. An adult person's head seen from directly behind and slightly to the right, so the back of the right ear and the bare skin in the crease behind it fill the frame; the face is not visible at all. The hair above and behind the ear is clipped very short, as after ear surgery, so the skin behind the ear is completely exposed. A single thin, pale, fully healed surgical incision line runs in the crease where the back of the ear meets the head, curving from just above the top of the ear down toward the earlobe, staying behind the ear the whole way. Skin otherwise normal: no tape, no dressing, no bandage, no redness, no swelling, no device, no blood. Soft even lighting, muted natural skin tones, clean off-white background, accurate anatomy. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "observers_must_recover": [
+        "the back or side of a person's head with the area behind the ear in view",
+        "a thin healed line or scar behind the ear, not on the face or neck",
+        "no bandage, tape, or device"
+      ]
     },
     {
       "id": "postauricular-dressing",
@@ -31,32 +47,58 @@
       "model": "fal-ai/flux-2-pro/edit",
       "image_size": "landscape_4_3",
       "seed": 90201,
-      "max_attempts": 3,
+      "max_attempts": 4,
       "claim": {
-        "sentence_ids": ["wc.01"],
+        "sentence_ids": [
+          "wc.01"
+        ],
         "anatomy": "The same person and view.",
         "state": "A snug white gauze head wrap covers the operated ear and the area behind it, wrapping around the head above the eyebrows. The face is unchanged.",
-        "forbidden": ["loose gauze held beside the ear", "the ear uncovered", "a helmet or hat instead of a gauze wrap", "any text or label"]
+        "forbidden": [
+          "loose gauze held beside the ear",
+          "the ear uncovered",
+          "a helmet or hat instead of a gauze wrap",
+          "any text or label"
+        ]
       },
-      "prompt": "Edit this medical illustration so a snug white gauze mastoid head wrap covers the ear and the area behind it, wrapping fully around the head above the eyebrows and under the chin-line hair, like a postoperative head bandage. Keep the same person, pose, viewpoint, lighting, background, and illustration style. The wrap must cover the ear completely. No text, no labels, no captions, no arrows, no logos.",
-      "observers_must_recover": ["a white head bandage wrapped around the head", "the ear covered by the bandage", "the same view of the head"]
+      "prompt": "Edit this medical illustration so a white gauze head bandage completely covers the ear: several overlapping turns of white gauze wrap around the head above the eyebrows and pass directly over the ear, and under those turns a large, flat, square white gauze pad with two strips of white surgical tape crossing it lies over the ear, so no part of the ear shows. The pad is flat and square with straight edges, obviously a bandage and not a body part. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "observers_must_recover": [
+        "a white head bandage wrapped around the head",
+        "the ear covered by the bandage",
+        "the same view of the head"
+      ],
+      "revision_note": "a2 covered the ear with a rounded pad that observers read as the ear itself; a3 dropped the pad and the model left the ear exposed. Cap raised from 3 to 4, the validator ceiling, on 2026-09-17 under John's ten-dollar authorization; a4 asks for a flat square taped pad under the wrap and is the final attempt.",
+      "status_note": "Exhausted 2026-09-17 with no accepted record: a4 is held as a candidate (two of three observers saw the ear covered). frame-01 shows the base master only until a dressing passes or Song accepts a candidate."
     },
     {
       "id": "postauricular-red-swollen",
       "kind": "edit",
-      "parent": "postauricular-base",
+      "parent": "postauricular-fluid",
       "model": "fal-ai/flux-2-pro/edit",
       "image_size": "landscape_4_3",
       "seed": 90301,
-      "max_attempts": 3,
+      "max_attempts": 4,
       "claim": {
-        "sentence_ids": ["call.01a"],
+        "sentence_ids": [
+          "call.01a"
+        ],
         "anatomy": "The same person and view.",
         "state": "The skin along and around the incision line behind the ear is reddened and mildly swollen. Nothing else changes.",
-        "forbidden": ["bleeding or an open wound", "pus", "redness on the face or neck instead of behind the ear", "any text or label"]
+        "forbidden": [
+          "bleeding or an open wound",
+          "pus",
+          "redness on the face or neck instead of behind the ear",
+          "any text or label"
+        ]
       },
-      "prompt": "Edit this medical illustration so the skin along and immediately around the healed incision line behind the ear becomes visibly reddened and mildly swollen, a smooth warm pink-red flush with slight puffiness confined to the area behind the ear. No bleeding, no open wound, no pus. Keep the same person, pose, viewpoint, lighting, background, and illustration style. No text, no labels, no captions, no arrows, no logos.",
-      "observers_must_recover": ["redness behind the ear along a scar or incision", "some swelling in the same area", "no open wound"]
+      "prompt": "Edit this medical illustration so the rounded bulge behind the ear is inflamed but still clearly raised: tint the skin over the bulge and just around it a moderate pink-red, and keep the bulge's three-dimensional shading exactly as it is, with the pale highlight on the top of the dome and the darker shadow under its lower edge, so the swelling stays obvious from the shape and shading of the skin and not only from the color. Keep the thin healed incision line as one plain, solid, dark reddish-brown line across the red area, not black. No stitches, no dots, no bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "observers_must_recover": [
+        "redness behind the ear along a scar or incision",
+        "some swelling in the same area",
+        "no open wound"
+      ],
+      "revision_note": "a1 and a2 (edits of the base) lost the swelling for most observers; a3 (edit of the accepted fluid master) kept the line but the saturated flush erased the dome's shading, so no observer saw swelling. Cap raised from 3 to 4, the validator ceiling, on 2026-09-17 under John's ten-dollar authorization; a4 asks for a lighter tint that preserves the dome's highlight and shadow and is the final attempt.",
+      "status_note": "Exhausted 2026-09-17 with no accepted record: a3 is held as a candidate (redness recovered, swelling not). frame-06 composes the accepted fluid master with a vector flush overlay instead."
     },
     {
       "id": "postauricular-fluid",
@@ -67,29 +109,54 @@
       "seed": 90401,
       "max_attempts": 3,
       "claim": {
-        "sentence_ids": ["call.03"],
+        "sentence_ids": [
+          "call.03"
+        ],
         "anatomy": "The same person and view.",
         "state": "A smooth, localized, soft bulge under the skin behind the ear, as fluid collected under the skin would look. Skin color otherwise normal.",
-        "forbidden": ["droplets, sweat, or liquid running on the skin", "a wound or opening", "strong redness", "any text or label"]
+        "forbidden": [
+          "droplets, sweat, or liquid running on the skin",
+          "a wound or opening",
+          "strong redness",
+          "any text or label"
+        ]
       },
       "prompt": "Edit this medical illustration so a smooth, localized, soft bulge appears under the skin behind the ear near the incision, the way fluid collected under the skin would look, gently raising the skin without breaking it. No droplets, no liquid on the surface, no wound, no strong redness. Keep the same person, pose, viewpoint, lighting, background, and illustration style. No text, no labels, no captions, no arrows, no logos.",
-      "observers_must_recover": ["a rounded swelling or bulge under the skin behind the ear", "no liquid on the surface", "the same view of the head"]
+      "observers_must_recover": [
+        "a rounded swelling or bulge under the skin behind the ear",
+        "no liquid on the surface",
+        "the same view of the head"
+      ]
     },
     {
       "id": "processor-worn",
-      "kind": "master",
-      "model": "fal-ai/flux-2-pro",
+      "kind": "edit",
+      "model": "fal-ai/flux-2-pro/edit",
       "image_size": "landscape_4_3",
       "seed": 90501,
-      "max_attempts": 3,
+      "max_attempts": 4,
       "claim": {
-        "sentence_ids": ["act.02"],
-        "anatomy": "The same adult in profile from the right side, showing the ear and the scalp above and behind it.",
-        "state": "A slim behind-the-ear sound processor sits over the top of the ear with a short cable to a small round transmitter coil resting on the scalp above and behind the ear. No dressing, no tape, no incision emphasis, no brand shapes.",
-        "forbidden": ["a device inside the ear canal like an earbud", "a patch or mark on the neck", "a headset or headphones", "a dressing or tape", "any text, logo, or label"]
+        "sentence_ids": [
+          "act.02"
+        ],
+        "anatomy": "The same person and view from behind.",
+        "state": "A slim behind-the-ear sound processor hooked over the top of the ear and resting behind it, with one short cable to a small round transmitter coil on the scalp above and behind the ear. No dressing, no tape, no brand shapes.",
+        "forbidden": [
+          "a long cable hanging down the neck or off the frame",
+          "a device inside the ear canal like an earbud",
+          "a patch or mark on the neck",
+          "a headset or headphones",
+          "a dressing or tape",
+          "any text, logo, or label"
+        ]
       },
-      "prompt": "Medical illustration of an adult person's head in right profile, short hair kept away from the ear. The person wears a slim behind-the-ear sound processor resting over the top of the ear, connected by a short thin cable to a small round flat transmitter coil that sits on the scalp a few centimetres above and behind the ear. Plain generic device shapes in matte dark grey, no brand, no buttons drawn in detail. Calm neutral expression, no bandage, no tape, no redness. Contemporary medical illustration style with accurate anatomy, soft even lighting, muted natural skin tones, clean off-white background. No text, no labels, no captions, no arrows, no logos, no watermark.",
-      "observers_must_recover": ["a hearing device worn behind the ear", "a small round piece on the scalp above and behind the ear connected by a cable", "a person's head in profile"]
+      "prompt": "Edit this medical illustration so the person wears a cochlear implant external system on the right ear. Draw exactly two parts and one cord. Part one: a slim, plain, matte dark-grey behind-the-ear sound processor hooked over the top of the ear, resting in the crease behind the ear. Part two: a small flat round disc, matte dark grey, about the size of a bottle cap, lying flat on the scalp with its centre one ear-width behind the ear and level with the top of the ear, on the clipped hair. The cord: one short, straight, thin cable, no longer than the ear is tall, running from the top of the processor directly to the disc. Nothing else is added: no loops, no second cord, no cable below the ear, nothing down the neck, nothing at the crown of the head, nothing in the ear canal. Keep the same person, pose, viewpoint from behind, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "observers_must_recover": [
+        "a hearing device worn behind the ear",
+        "a small round piece on the scalp above and behind the ear connected by a short cable",
+        "the same view of the head from behind"
+      ],
+      "parent": "postauricular-base"
     }
   ]
 }

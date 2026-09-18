@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-red-swollen-a1",
+  "asset_id": "postauricular-red-swollen",
+  "file": "assets/anatomy/postauricular-red-swollen-a1.png",
+  "sha256": "8adc54813757afd5075c3aa02e2568ce8a9c34bd3029902b5d83aef205c928a0",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Redness present but the line rendered dashed with dots, which reads as stitches.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a71a727fcdf0ae93e",
+      "observation": "1. The back and right side of a person's head and upper neck, viewed from behind and slightly to the side, so the right ear is in profile.\n\n2. Skin behind and above the right ear has a diffuse pink-red flush that fades outward into the shaved hair area. Along the crease where the ear meets the head there is a thin curved red dashed or dotted line, with a small darker mark near its middle. Hair is close-cropped on the sides, longer on top. Nothing is worn; no bandage, device, or jewelry.\n\n3. No text, arrows, or labels. The dashed red line along the ear crease reads as a marking rather than a symbol.\n\n4. A rash or sunburn behind the ear, or a healing surgical incision with stitches."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a6163a982325a53d6",
+      "observation": "1. The back and right side of a person's head and neck, seen from behind and slightly to the right. Short brown hair on top, closely shaved sides, the right ear visible in profile, and the jaw and neck below.\n\n2. A soft pink-red glow on the shaved skin surrounding the ear, strongest in the crease directly behind the ear and fading outward. Along that crease sits a thin red dashed line with a small dark dot at its lower end. No bandage, dressing, device, or drainage is drawn.\n\n3. No text, arrows, or labels. The only mark is the red dashed line with a dot behind the ear.\n\n4. The dashed line could be read as stitches or a planned incision, and the red glow as a rash, sunburn, or a bruise."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a3654dcd8d7cb35c4",
+      "observation": "1. A person's head and neck, seen from behind and slightly to the right side, showing the right ear, the shaved lower back of the scalp, and the neck.\n\n2. A diffuse pink-red flushed area on the skin behind and above the ear, extending onto the shaved scalp; a thin red dashed curved line hugs the crease directly behind the ear, with two small dark gray marks along it. Nothing appears worn or applied.\n\n3. No text, arrows, labels, or symbols. Only the red dashed line and small marks behind the ear, which could read as a marking.\n\n4. The dashed line with small marks could be mistaken for a surgical incision with stitches, and the red glow could be read as an infection or burn rather than mere redness."
+    }
+  ],
+  "adjudication": null,
+  "outcome": "rejected before adjudication: no observer recovered swelling and all three read the dashed line as stitches",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-dressing-a2",
+  "asset_id": "postauricular-dressing",
+  "file": "assets/anatomy/postauricular-dressing-a2.png",
+  "sha256": "18973ecc680778c3b83576c58c7782c08ce1d050d9af974ae649cff3b633a5c6",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Head wrap with a padded gauze cup fully covering the ear; same person and view.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a5bc0249cc49b5844",
+      "observation": "1. The back and right side of a person's head, seen from behind and slightly to the right; the right jawline, cheek, eyebrow, and eyelashes are visible at the edge, along with the neck and short dark hair.\n\n2. A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head. A large white rounded pad sits over the right ear region. The skin drawn is smooth and uniform, with no marks or discoloration.\n\n3. No text, arrows, labels, or symbols.\n\n4. It could be read as a wound or injury to the ear itself, or as a hearing aid or earmuff-like device rather than a dressing."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a4b80e7b977b3e7de",
+      "observation": "1. A human head and neck, seen from behind and slightly to the right side; the face is turned away, with only the right cheek, nose tip, and eyelashes visible. Short dark hair is shown on top of the scalp.\n\n2. A white gauze bandage is wrapped in several overlapping bands around the head at ear level. Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap. The skin looks smooth and uniform; no redness, swelling, cut, drainage, bruising, or other marks are drawn.\n\n3. No text, arrows, labels, numbers, or symbols.\n\n4. A worried patient might read the round pad as the ear itself, swollen, pale, and bulging outward, rather than a cushion placed over it."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a59babbc54a17fa49",
+      "observation": "1. The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right; short brown hair with a shaved lower area.\n\n2. White gauze bandage wrapped in overlapping strips around the head; a large round pale pad sits over the right ear. The visible skin is smooth, uniform, with no redness, swelling, marks, or stitches drawn.\n\n3. No text, arrows, labels, or symbols. Faint lines on the pad suggest gauze texture only.\n\n4. It could be read as a large swelling or growth behind the ear rather than a pad, or as a bandage after a serious head injury or head surgery, not an ear procedure."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "a1026ac21173dcb84",
+    "verdict": "fail",
+    "recovered": [
+      "(a) white head bandage wrapped around the head — 3/3 observers",
+      "(b) ear covered by the bandage — 3/3 observers (pad over the right ear held by the wrap)",
+      "(c) same view of the head from behind and slightly to the right — 3/3 observers"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      "the ear uncovered — as an alternative reading: Observer 2 (pad read as the ear itself, swollen, pale, bulging outward) and Observer 1 (pad read as a wound or injury to the ear itself rather than a dressing)"
+    ],
+    "text_detected": false,
+    "reason": "All three observers recovered the white wrap, the pad covering the right ear, and the from-behind view, and none saw text, but Observer 2's alternative reading (the pad read as the ear itself, swollen and bulging) and Observer 1's similar reading (the pad read as a wound or injury to the ear itself) amount to the ear reading as uncovered, a forbidden reading; no alternative reading amounts to a helmet or hat (Observer 1's earmuff-like device is the nearest but is neither), and the other alternatives were a hearing aid (Observer 1), a swelling or growth behind the ear or a dressing for a serious head injury rather than an ear procedure (Observer 3), with Observer 3 also noting part of the right ear/cheek visible at the edge."
+  },
+  "outcome": "adjudication failed; held as a fallback candidate while later attempts are tried",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

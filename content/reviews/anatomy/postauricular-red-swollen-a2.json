@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-red-swollen-a2",
+  "asset_id": "postauricular-red-swollen",
+  "file": "assets/anatomy/postauricular-red-swollen-a2.png",
+  "sha256": "6d996b87fb32af1267ed8ced006957fe01f7f8ec1fcb3848c1388e8176207c64",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Raised puffy red swelling behind the ear with a plain line on inspection, but the flush washes the line out.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "af5f79098f96c49c6",
+      "observation": "1. A person's head and neck, seen from behind and slightly to the left, showing the back and left side of the head, the left ear, jaw, and neck; the person faces away to the right.\n\n2. Bare skin with a short haircut. A pink-to-red patch spreads over the skin behind and above the ear, with a deeper red zone above the ear extending into the shaved hairline. The outer ear itself is tinged pink and drawn with a soft, thickened, rounded outline, as if puffy. No bandage, tape, tube, or device is present.\n\n3. No text, arrows, labels, or symbols.\n\n4. It could be read as a burn or scald, a rash, sunburn, or an ear that has been slept on or struck."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a3f16fe9bec72f668",
+      "observation": "1. The back and side of a person's head, seen from behind and slightly to the right, showing the right ear, a short dark haircut with shaved sides, and the neck.\n\n2. A red, glowing area of skin spread across the ear and the scalp behind and above it, fading outward. The ear itself is tinted pink-red. Nothing is worn or applied; the shading suggests redness only, not obvious raised swelling.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as a sunburn or a hot, flushed ear from cold or embarrassment, or as bruising or rash rather than a swelling issue."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a0a960a5e5faa50f5",
+      "observation": "1. The left side of a person's head and neck, seen from the left and slightly behind. The person has short dark hair with a shaved lower section, and the face is turned away, so only the ear, jaw, cheek, and a bit of an eyebrow and eyelashes are visible.\n\n2. The outer ear and the skin directly behind and above it are tinted pink-to-red, with a soft, diffuse glow. The reddening spreads across the ear itself and into the area behind it. Nothing is worn or applied; no bandage, dressing, jewelry, tape, or hearing device. The skin appears smooth, with no visible cut, scab, bump, bruise, or drainage.\n\n3. No. No text, arrows, labels, or symbols of any kind.\n\n4. A worried patient could read it as a sunburn, a hot flushed ear, or an allergic reaction from something touching the ear."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "a4836e176884e5dc3",
+    "verdict": "fail",
+    "tally": {
+      "redness behind the ear along a scar or incision": "1,2,3 for redness behind/above the ear; none for a scar or incision (3 states 'no visible cut, scab')",
+      "some swelling in the same area": "1 only (puffy outer ear, 'as if puffy'); 2 states 'not obvious raised swelling'; 3 states 'no visible ... bump'",
+      "no open wound": "1,2,3 (1 describes the patch with no wound; 2 'redness only'; 3 'no visible cut, scab, bump, bruise, or drainage')"
+    },
+    "recovered": [
+      "no open wound"
+    ],
+    "missed": [
+      "redness behind the ear along a scar or incision",
+      "some swelling in the same area"
+    ],
+    "forbidden_hits": [],
+    "text_detected": false,
+    "reason": "All three observers saw redness behind and above the ear with no wound and no text, but none saw a scar or incision line and only observer 1 saw any swelling (of the ear itself), while observers 2 and 3 explicitly saw no swelling or bump."
+  },
+  "outcome": "rejected: only one observer saw any swelling and none saw the incision line",
+  "notes": "A first adjudication (task abd8e9e768b1e9749, smaller model) was discarded because it credited swelling that two observers explicitly denied; this one tallies each item per observer.",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}
