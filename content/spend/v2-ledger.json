@@ -349,6 +349,81 @@
       "actual_usd": null,
       "request_id": "01a0b272-889a-7322-9685-1c78fb2f0c80",
       "status": "completed"
+    },
+    {
+      "id": "anatomy:dressing-removal-ref:a1",
+      "at": "2026-09-18T03:16:55.233Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy dressing-removal-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "references": 1
+      },
+      "estimate_usd": 0.06,
+      "actual_usd": null,
+      "request_id": null,
+      "status": "failed"
+    },
+    {
+      "id": "anatomy:dressing-removal-ref:a1-r2",
+      "at": "2026-09-18T03:17:20.405Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy dressing-removal-ref attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b284-c78d-77b0-8296-b06c98ac3b11",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:dressing-removal-ref:a2",
+      "at": "2026-09-18T03:18:25.221Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy dressing-removal-ref attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b285-c520-7ea1-9c46-8954098803ec",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:dressing-removal-ref:a3",
+      "at": "2026-09-18T13:11:43.076Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy dressing-removal-ref attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b4a4-f2e0-7c02-8cab-0b2c8adaba11",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:dressing-removal-ref:a4",
+      "at": "2026-09-18T13:17:26.216Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy dressing-removal-ref attempt 4",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b4aa-2f1b-7690-9dc5-a685de9e7d66",
+      "status": "completed"
     }
   ]
 }

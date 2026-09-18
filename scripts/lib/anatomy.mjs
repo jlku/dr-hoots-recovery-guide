@@ -147,7 +147,9 @@ export async function validateAnatomy({ contracts, manifest, frames, root }) {
       } else {
         try {
           const doc = JSON.parse(await readFile(join(root, receipt), "utf8"));
-          if (doc.record_id !== record.id || doc.sha256 !== record.sha256) errors.push(`${record.id}: receipt ${receipt} does not match the record`);
+          const direct = doc.record_id === record.id && doc.sha256 === record.sha256;
+          const asPanel = (doc.panels ?? []).some((panel) => panel.record_id === record.id && panel.sha256 === record.sha256);
+          if (!direct && !asPanel) errors.push(`${record.id}: receipt ${receipt} does not match the record`);
           if (doc.adjudication?.verdict !== "pass") errors.push(`${record.id}: receipt ${receipt} does not record a pass`);
         } catch {
           errors.push(`${record.id}: receipt ${receipt} is missing`);

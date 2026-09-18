@@ -294,6 +294,97 @@
       "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a smooth rounded bulge behind the right ear. Image 2 is a photograph of hot, pink-red skin behind an ear. Change only the color of the skin on the bulge in image 1: tint the surface of the bulge and a narrow margin around it the pink-red of image 2, as a smooth surface blush. Change nothing else at all: keep the bulge's outline, its pale highlight, and the shadow under its lower edge exactly as they are in image 1, keep every existing line exactly as drawn, and add no new marks. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or ear from the photograph. No text, no labels, no captions, no arrows, no logos.",
       "revision_note": "a1 and a2 rendered sutures whenever the prompt mentioned the incision and flattened the dome under the tint; a3 never mentions the line and asks for a surface blush only.",
       "status_note": "Stopped 2026-09-17 after three attempts with no accepted record: every tint flattened the dome, and any mention of the incision produced sutures. Redness is a color state, not an object; the vector flush on the accepted fluid master carries it in frame-06."
+    },
+    {
+      "id": "dressing-removal-ref",
+      "kind": "edit",
+      "parent": "postauricular-dressing-ref",
+      "model": "fal-ai/flux-2-pro/edit",
+      "image_size": "landscape_4_3",
+      "seed": 90701,
+      "max_attempts": 4,
+      "approach": "instruction picture: the action of taking the dressing off, mid-motion, as a still; reviewed with the observers' instruction question",
+      "instruction": "howto.remove-dressing",
+      "references": [],
+      "claim": {
+        "sentence_ids": [
+          "wc.01"
+        ],
+        "anatomy": "The same person and view.",
+        "state": "The head wrap has been untied and is being unwound: the person's own hand holds the loosened end of the gauze away from the head, the remaining turns sit slack, and the pad over the ear has slipped so the top of the ear shows. The dressing is coming off, not going on.",
+        "forbidden": [
+          "scissors or cutting",
+          "the wrap being put on, tightened, or tied",
+          "the ear injured or bleeding",
+          "a photograph or 3D render instead of the flat illustration",
+          "any text or label"
+        ]
+      },
+      "observers_must_recover": [
+        "a hand holding loosened gauze away from the head",
+        "a head wrap coming off rather than going on",
+        "the same view of the head"
+      ],
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the wrap is visibly being unwound behind the head: there is no bow and no knot any more; a hand at the lower left of the picture, behind the person's head, holds the free end of the gauze and draws it away from the back of the head, so a slack length of gauze hangs from the back of the head down to that hand; only one loose turn still rests around the head. The gauze stays entirely behind the head and to the left of it, so the neck, jaw, and face are completely clear. The gauze pad is gone and the whole right ear is uncovered. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "revision_note": "a3 in the three-panel composite read as coming off, but two observers saw the gauze under the chin as cloth across the throat or a strip being tightened there. a4, the last attempt, moves the hand behind the head and keeps the gauze clear of the neck."
+    }
+  ],
+  "sequences": [
+    {
+      "id": "sequence.remove-dressing",
+      "instruction": "howto.remove-dressing",
+      "file": "assets/anatomy/sequences/remove-dressing-v3.png",
+      "panels": [
+        "postauricular-dressing-ref-a1",
+        "dressing-removal-ref-a4",
+        "postauricular-base-a2"
+      ],
+      "why": "A single still cannot carry the direction of an action: three observers could not tell whether the gauze was coming off or going on, and the first three-panel strip still drew 'putting it on' as a reading because a hand and gauze at a head look the same forwards and backwards. Version 2 undoes the knot, lets the gauze hang slack, and adds a vector motion arrow in the composite.",
+      "claim": {
+        "sentence_ids": [
+          "wc.01"
+        ],
+        "state": "Left to right: the head dressing on with the ear covered; the knot undone and a hand behind the head drawing the gauze away from the head, with a motion arrow pointing away from the head; the bare head with the ear uncovered. The dressing comes off.",
+        "forbidden": [
+          "the dressing being put on",
+          "scissors or cutting",
+          "the ear injured or bleeding",
+          "any text or label"
+        ],
+        "allowed_marks": [
+          "one motion arrow in the middle panel, part of the picture by design"
+        ]
+      },
+      "observers_must_recover": [
+        "a head dressing covering the ear in the first panel",
+        "a hand taking gauze away from the head in the middle panel",
+        "the bare head with the ear uncovered in the last panel",
+        "the dressing coming off across the panels rather than going on"
+      ],
+      "rendered_from": "guide/frame.html?frame=frame-01 at three moments on the narration clock, captured with headless Chrome, so the reviewed picture is the composite the patient sees",
+      "history": [
+        {
+          "file": "assets/anatomy/sequences/remove-dressing-a1.png",
+          "outcome": "failed: two observers named putting the dressing on as a reading and one said nothing in the drawing fixed the direction",
+          "observer_tasks": [
+            "a6c56e67384e16c4e",
+            "acbb49cd0a56e55cf",
+            "acbc355d8edf657d9"
+          ]
+        },
+        {
+          "file": "assets/anatomy/sequences/remove-dressing-v2.png",
+          "panels": [
+            "postauricular-dressing-ref-a1",
+            "dressing-removal-ref-a3",
+            "postauricular-base-a2"
+          ],
+          "outcome": "failed: direction recovered by all three, but the gauze under the chin read as cloth or a strap at the throat",
+          "receipt": "content/reviews/anatomy/sequence.remove-dressing-v2.json"
+        }
+      ],
+      "rule": "instruction-sequence rule in reviewers/anatomy/adjudicator.md, introduced 2026-09-18, pending sign-off",
+      "receipt": "content/reviews/anatomy/sequence.remove-dressing.json"
     }
   ]
 }

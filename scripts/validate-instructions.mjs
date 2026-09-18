@@ -12,7 +12,8 @@ import { loadSegmentBundle } from "./lib/segments.mjs";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const bundle = await loadSegmentBundle(root);
 const canonical = JSON.parse(await readFile(join(root, "content/canonical/ci-phase0-v0.1.0.json"), "utf8"));
-const result = validateInstructions({
+const result = await validateInstructions({
+  root,
   instructions: await loadInstructions(root),
   canonical,
   segments: bundle.segments,

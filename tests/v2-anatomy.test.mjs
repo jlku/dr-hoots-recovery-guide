@@ -85,8 +85,13 @@ test("accepted records need a passing adjudication and a receipt bound to the fi
   for (const record of accepted) {
     assert.equal(record.review.adjudication.verdict, "pass", record.id);
     const receipt = JSON.parse(await readFile(resolve(root, record.review.receipt), "utf8"));
-    assert.equal(receipt.record_id, record.id);
-    assert.equal(receipt.sha256, record.sha256);
+    if (receipt.panels) {
+      // A motion is reviewed as a sequence; each panel's record is bound to the receipt by id and hash.
+      assert.ok(receipt.panels.some((panel) => panel.record_id === record.id && panel.sha256 === record.sha256), `${record.id} is a panel of ${receipt.record_id}`);
+    } else {
+      assert.equal(receipt.record_id, record.id);
+      assert.equal(receipt.sha256, record.sha256);
+    }
     assert.equal(receipt.observers.length, 3);
     assert.equal(receipt.clinician_review.status, "pending");
   }

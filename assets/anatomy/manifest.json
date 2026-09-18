@@ -531,6 +531,107 @@
         "observers": [],
         "adjudication": null
       }
+    },
+    {
+      "id": "dressing-removal-ref-a1",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 1,
+      "file": "assets/anatomy/dressing-removal-ref-a1.png",
+      "sha256": "7410e55a27e8a88c0fc2830fa5a0808af2ece49f7395b7de1ea2a2a37e5ac71b",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the dressing is being taken off: the wrap has been untied, the person's own right hand comes up from the lower right and holds the loosened end of the gauze, pulling it away from the head so a length of gauze hangs slack in the air, the remaining turns around the head sit loose and partly unwound, and the pad over the ear has slipped down so the top of the ear shows. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90701,
+      "references": [],
+      "request_id": "01a0b284-c78d-77b0-8296-b06c98ac3b11",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a1-r2",
+      "status": "rejected",
+      "note": "Failed alone: no observer could tell coming off from going on. As the middle of the first strip it still drew putting-on readings; the bow stays tied.",
+      "review": {
+        "inspection": "Hand pulls a gauze tail beside the ear; the bow stays tied and the pad is gone.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "All three observers state outright that they cannot tell whether the gauze is coming off or going on, so the central state was recovered by no one, and Observer 1 additionally reported the forbidden tightened-or-tied-on reading."
+        },
+        "receipt": "content/reviews/anatomy/dressing-removal-ref-a1.json"
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a2",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 2,
+      "file": "assets/anatomy/dressing-removal-ref-a2.png",
+      "sha256": "d2feba5fa8248fe935410039534206d4d7b4aa313fd4773fe345ffd032d466e3",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the dressing is clearly halfway off: the knot at the back is undone and both loose ends hang down, the wrap has slid down and sits slack and crooked around the head with one turn unwound, and the person's own right hand, coming up from the lower right, holds the gauze pad after lifting it off the ear, so the whole ear is uncovered and the pad is in the hand a little away from the head. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90702,
+      "references": [],
+      "request_id": "01a0b285-c520-7ea1-9c46-8954098803ec",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a2",
+      "status": "rejected",
+      "note": "Rejected on inspection: the pad is held in front of the eye, which reads as an eye pad going on; a1 is the cleaner middle panel.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a3",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 3,
+      "file": "assets/anatomy/dressing-removal-ref-a3.png",
+      "sha256": "a59a8b6e60e0b9ec66aff9821b045ab261f054f6062df93474ebdfd82e00de3e",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the wrap is visibly being unwound: there is no bow and no knot any more, the gauze band has come loose from the head and hangs in a long slack curve from the back of the head down past the shoulder, only one loose turn still rests around the head, and a hand at the lower right holds the free end of the gauze well away from the head. The gauze pad is gone and the whole right ear is uncovered. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90703,
+      "references": [],
+      "request_id": "01a0b4a4-f2e0-7c02-8cab-0b2c8adaba11",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a3",
+      "status": "rejected",
+      "note": "In the second strip all three observers read coming off, but all three also read the gauze under the chin as cloth or a strap at the throat.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a4",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 4,
+      "file": "assets/anatomy/dressing-removal-ref-a4.png",
+      "sha256": "13e71b1d293d065b620b157c295e549aafb9343306cbdfc0f7635062aed02cfa",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the wrap is visibly being unwound behind the head: there is no bow and no knot any more; a hand at the lower left of the picture, behind the person's head, holds the free end of the gauze and draws it away from the back of the head, so a slack length of gauze hangs from the back of the head down to that hand; only one loose turn still rests around the head. The gauze stays entirely behind the head and to the left of it, so the neck, jaw, and face are completely clear. The gauze pad is gone and the whole right ear is uncovered. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90704,
+      "references": [],
+      "request_id": "01a0b4aa-2f1b-7690-9dc5-a685de9e7d66",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a4",
+      "status": "accepted",
+      "note": "Accepted as the middle panel of the reviewed removal sequence, under the instruction-sequence rule. Alone it does not carry direction.",
+      "review": {
+        "inspection": "Hand behind the head draws the gauze away; knot undone; ear uncovered; neck and face clear. Band reads taut rather than slack.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "verdict_strict": "fail",
+          "reason": "Instruction-sequence pass: all three observers recover all four items and each concludes in question 5 that the dressing comes off, the tying-on alternative named by all three is the reverse action, and the only harm alternative (O2's \"open, uncovered cut\") comes from a single observer; strict fail: all three name tying on and O2 names an open cut, which the general rules count wherever they appear, and the pass rests on panel order because O1 and O3 say panel 2 alone could read as tying or tightening."
+        },
+        "receipt": "content/reviews/anatomy/sequence.remove-dressing.json"
+      }
     }
   ]
 }

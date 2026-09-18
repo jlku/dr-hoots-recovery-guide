@@ -11,7 +11,20 @@
     "illustrated": "a picture exists but no caption-blind observer has yet answered what to do from it",
     "verified": "caption-blind observers recovered what to do, with what, and where; a receipt is attached"
   },
-  "instruction_sentence_ids": ["wc.01", "wc.02", "wc.03", "wc.04", "wc.05", "wc.06", "wc.07", "wc.08", "call.06", "call.07", "call.07a", "call.08"],
+  "instruction_sentence_ids": [
+    "wc.01",
+    "wc.02",
+    "wc.03",
+    "wc.04",
+    "wc.05",
+    "wc.06",
+    "wc.07",
+    "wc.08",
+    "call.06",
+    "call.07",
+    "call.07a",
+    "call.08"
+  ],
   "non_instruction_sentence_ids": {
     "wc.09": "information: when the wound check happens",
     "wc.10": "information: the stitches dissolve",
@@ -32,21 +45,27 @@
   "claims": [
     {
       "id": "howto.remove-dressing",
-      "sentence_ids": ["wc.01"],
+      "sentence_ids": [
+        "wc.01"
+      ],
       "frame": "frame-01",
       "actor": "the patient or a caregiver, at home",
       "action": "take the head dressing off",
-      "tool": "hands (unconfirmed: untie and unwind, or cut)",
+      "tool": "hands: untie the knot and unwind the gauze (pictured as an assumption; unconfirmed)",
       "location": "the wrap around the head and the pad over the operated ear",
       "end_state": "bare head with the incision behind the ear uncovered",
-      "status": "placeholder",
+      "status": "verified",
       "clinician_confirmed": false,
       "open_question": "q.remove-dressing",
-      "note": "The frame cuts from the accepted dressing image to the bare head at the word remove. That shows before and after, not how."
+      "note": "Three states on the narration clock: dressing on, a hand behind the head drawing the gauze away with a motion arrow, bare head. Observers recover that the dressing comes off from the sequence; the middle frame alone does not carry direction. The how pictured here is an assumption until Song answers.",
+      "receipt": "content/reviews/anatomy/sequence.remove-dressing.json",
+      "rule": "instruction-sequence rule, pending sign-off"
     },
     {
       "id": "howto.check-tape",
-      "sentence_ids": ["wc.02"],
+      "sentence_ids": [
+        "wc.02"
+      ],
       "frame": "frame-01",
       "actor": "the patient or a caregiver",
       "action": "look at the incision behind the ear and decide whether tape covers it",
@@ -60,7 +79,10 @@
     },
     {
       "id": "howto.keep-dry",
-      "sentence_ids": ["wc.03", "wc.04"],
+      "sentence_ids": [
+        "wc.03",
+        "wc.04"
+      ],
       "frame": "frame-0203-paths",
       "actor": "the patient",
       "action": "keep the taped incision dry and leave it alone until three days after surgery",
@@ -74,7 +96,10 @@
     },
     {
       "id": "howto.clean-edges",
-      "sentence_ids": ["wc.05", "wc.06"],
+      "sentence_ids": [
+        "wc.05",
+        "wc.06"
+      ],
       "frame": "frame-0203-paths",
       "actor": "the patient or a caregiver",
       "action": "clean the edges of the incision gently, twice a day, with the mix",
@@ -88,7 +113,9 @@
     },
     {
       "id": "howto.apply-ointment",
-      "sentence_ids": ["wc.07"],
+      "sentence_ids": [
+        "wc.07"
+      ],
       "frame": "frame-0203-paths",
       "actor": "the patient or a caregiver",
       "action": "apply antibiotic ointment after cleaning",
@@ -102,7 +129,9 @@
     },
     {
       "id": "howto.shower",
-      "sentence_ids": ["wc.08"],
+      "sentence_ids": [
+        "wc.08"
+      ],
       "frame": "frame-0405-milestones",
       "actor": "the patient",
       "action": "shower and wash hair from three days after surgery",
@@ -116,7 +145,11 @@
     },
     {
       "id": "contact.nursing-line",
-      "sentence_ids": ["call.06", "call.07", "call.07a"],
+      "sentence_ids": [
+        "call.06",
+        "call.07",
+        "call.07a"
+      ],
       "frame": "frame-11-numbers",
       "actor": "the patient or a caregiver",
       "action": "leave a message on the nursing line for routine questions and call again if no one calls back within 12 hours",
@@ -130,7 +163,9 @@
     },
     {
       "id": "contact.emergency",
-      "sentence_ids": ["call.08"],
+      "sentence_ids": [
+        "call.08"
+      ],
       "frame": "frame-11-numbers",
       "actor": "the patient or a caregiver",
       "action": "call the emergency number and ask for the Otolaryngology resident on call",

@@ -23,3 +23,18 @@ Fail when any observer reports text, any observer reports a forbidden reading, o
 Label: Semantic adjudicator (Claude), not a clinician.
 
 Run on the session model. Smaller-model runs credited items the observers denied, invented a forbidden hit, and failed an image on a criterion outside the contract; those verdicts were discarded and re-run, and the receipts say so.
+
+## Instruction sequences
+
+An instruction picture is judged on what the observers say they would do, which is question 5. Question 4 makes every observer name an alternative, and for a reversible action the reverse action is always available, so that answer alone cannot fail the picture. Twelve observations of bandage removal showed this: observers who read the sequence as coming off still offered "going on" when asked for an alternative.
+
+For an instruction sequence:
+
+- Every required item must be recovered by all three observers, from questions 2, 3, and 5.
+- A forbidden hit counts when an observer's own reading in questions 2, 3, or 5 states it.
+- An alternative from question 4 counts as a forbidden hit only when two or more observers name the same alternative and it involves harm or the wrong body part, such as cloth across the throat. That marks a defect in the drawing, not the reversibility of the action.
+- Every question-4 alternative is recorded in `design_notes` for the clinician, whatever the verdict.
+
+Return `verdict_strict` under the general rules as well as `verdict`, so the receipt shows both.
+
+This rule was introduced on 2026-09-18 during the first motion test and is pending John's and Song's sign-off.

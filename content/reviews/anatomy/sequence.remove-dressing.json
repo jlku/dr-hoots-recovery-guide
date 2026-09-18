@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0",
+  "record_id": "sequence.remove-dressing",
+  "asset_id": "sequence",
+  "file": "assets/anatomy/sequences/remove-dressing-v3.png",
+  "sha256": "d0575e1ee2d884b670916f60f48f448a10a08b75caee291e9373992a8c518598",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Rendered composite from guide/frame.html at three moments: dressing on; knot undone with a hand behind the head drawing the gauze away and a motion arrow; bare head.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "afc8d4b2e0775fe5d",
+      "observation": "1. Head and neck, from behind and to the person's right; right ear central.\n\n2. Panel 1: wide white band around the head at forehead level, bow-tied at the back; white rounded-rectangle pad covers the ear, drawn over the band's lower edge. Panel 2: bow undone; a hand from lower left grips the band's long loose tail behind the head; band still on but narrower, above the now-bare ear; pad gone, removal unshown; dark blob at the eyebrow. Panel 3: bare head; thin pale curved line in the crease behind the ear, ear-top to mid-ear; no redness or stitches.\n\n3. No text. One teal curved arrow, panel 2: from near the upper back of the head, pointing down-left into empty space; suggests pulling the band backward.\n\n4. That the band is being tied or tightened on, not removed.\n\n5. A hand (unclear whose) grips the band's loose end behind the head and pulls it backward. Coming off, judging by panel order; panel 2 alone could be tying."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a4f27d0c2f9164add",
+      "observation": "1. Head and neck from behind and the person's right; ear, cheek, lashes visible. Short dark hair, shaved sides.\n\n2. Panel 1: white cloth band round the head at brow/ear level, bow at back; rounded gauze pad covering the right ear, drawn on top of the band. Panel 2: pad gone, ear bare; narrower band still on, above ear; a hand behind grips the untied tails, one hanging long; dark blotch at the brow. Panel 3: nothing worn; thin pale curved line in the crease behind the ear; shaved area looks larger. No redness, stitches, swelling.\n\n3. No text or labels. One teal arrow, panel 2: starts above the back of the head, curves down-left, points away behind it; suggests pulling the band backward, off.\n\n4. A sports headband being tied on. Worried reading: the pale line is an open, uncovered cut.\n\n5. A hand (whose, unclear) unties the band behind the head and pulls it away; pad and band end up gone: coming off. Pad removal isn't shown."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a44d31c7387d1c32e",
+      "observation": "1. Head and neck seen from behind and slightly to the right. The right ear, cheek and edge of the eye are visible. Dark hair on top, clipped sides.\n2. Panel 1: a wide white band circles the head at forehead level, bow-tied at the back. A white rounded-rectangle pad covers the right ear. Panel 2: the pad is gone and the ear is bare. The band still circles the head above the ear, and a hand from lower left grips its loose tails behind. A dark squared patch sits behind the ear under the band, absent in the other panels. Panel 3: nothing worn. A thin pale curved line follows the crease behind the ear. No redness, stitches or swelling.\n3. No text or labels. One teal curved arrow in panel 2 starts beside the upper back of the head and sweeps down-left, pointing away. It suggests pulling the tails backward.\n4. Tying on or tightening a headband. The pale line could also be read as an earphone wire.\n5. A hand pulls the band's tails backward. By sequence the band is coming off, though panel 2 alone could read as tightening. Pad removal is not shown.\n\nCaption-blind observer (Claude), not a clinician."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude), not a clinician",
+    "task": "aee6d708e29f2e9de",
+    "verdict": "pass",
+    "verdict_strict": "fail",
+    "tally": {
+      "a head dressing covering the ear in the first panel": "1, 2, 3. O1: \"wide white band around the head ... white rounded-rectangle pad covers the ear\". O2: \"white cloth band round the head ... rounded gauze pad covering the right ear\". O3: \"a wide white band circles the head ... A white rounded-rectangle pad covers the right ear\".",
+      "a hand taking gauze away from the head in the middle panel": "1, 2, 3 (1 and 3 hedged). O1: \"grips the band's loose end behind the head and pulls it backward\", then \"panel 2 alone could be tying\". O2: \"unties the band behind the head and pulls it away\". O3: \"A hand pulls the band's tails backward\", then \"panel 2 alone could read as tightening\".",
+      "the bare head with the ear uncovered in the last panel": "1, 2, 3. O1: \"Panel 3: bare head\" after \"now-bare ear\". O2: \"Panel 3: nothing worn\" and \"pad and band end up gone\". O3: \"Panel 3: nothing worn\" after \"the ear is bare\".",
+      "the dressing coming off across the panels rather than going on": "1, 2, 3. O1: \"Coming off, judging by panel order\". O2: \"pad and band end up gone: coming off\". O3: \"By sequence the band is coming off\"."
+    },
+    "recovered": [
+      "a head dressing covering the ear in the first panel",
+      "a hand taking gauze away from the head in the middle panel",
+      "the bare head with the ear uncovered in the last panel",
+      "the dressing coming off across the panels rather than going on"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [
+      "the dressing being put on, O1 Q4: \"That the band is being tied or tightened on, not removed.\"",
+      "the dressing being put on, O1 Q5: \"panel 2 alone could be tying\"",
+      "the dressing being put on, O2 Q4: \"A sports headband being tied on.\"",
+      "the dressing being put on, O3 Q4: \"Tying on or tightening a headband.\"",
+      "the dressing being put on (tightening variant), O3 Q5: \"panel 2 alone could read as tightening\"",
+      "the ear injured or bleeding, O2 Q4: \"Worried reading: the pale line is an open, uncovered cut.\""
+    ],
+    "design_notes": [
+      "Adjudication call (instruction-sequence rules): O1 and O3 each put a hedge inside Q5. O1: \"panel 2 alone could be tying\". O3: \"panel 2 alone could read as tightening\". I did not count these as forbidden hits, because each observer's own Q5 reading is \"coming off\" and the hedge is the reverse action, conditional on viewing panel 2 in isolation. They are counted under the strict rules. If the loop owner reads 'own reading in Q5' as 'any words in Q5', the instruction-sequence verdict flips to fail.",
+      "Q4 alternative, O1: \"That the band is being tied or tightened on, not removed.\" This is the reverse action.",
+      "Q4 alternative, O2: \"A sports headband being tied on.\" This is the reverse action, and it also reads the dressing as a sports headband.",
+      "Q4 alternative, O3: \"Tying on or tightening a headband.\" This is the reverse action, and it also reads the dressing as a headband.",
+      "Q4 alternative, O2: \"Worried reading: the pale line is an open, uncovered cut.\" This involves harm, but only one observer names it, which is below the two-observer threshold. For the clinician: the pale line behind the ear in panel 3 is not part of claim.state.",
+      "Q4 alternative, O3: \"The pale line could also be read as an earphone wire.\" Two of the three observers offered an alternative reading of the same mark, and the readings differ.",
+      "The direction is carried by panel order, not by the middle panel. All three observers say the band is still on the head in panel 2. O1: \"band still on but narrower\". O2: \"narrower band still on, above ear\". O3: \"The band still circles the head above the ear\". Only the tails are in the hand, and no observer describes gauze leaving the head.",
+      "Arrow (allowed mark): all three observers report exactly one teal curved arrow in panel 2. As described, it starts at the head rather than at the hand or the gauze tail. O1: \"from near the upper back of the head\". O2: \"starts above the back of the head\". O3: \"starts beside the upper back of the head\". It curves down-left and points away, and O1 says \"into empty space\". All three read it as pulling backward; only O2 adds \"off\".",
+      "Pad continuity, all three observers: the ear pad vanishes between panels 1 and 2 with no removal step. O1: \"pad gone, removal unshown\". O2: \"Pad removal isn't shown\". O3: \"Pad removal is not shown\".",
+      "Pad layering in panel 1: the pad sits on top of the band rather than under it. O1: \"drawn over the band's lower edge\". O2: \"drawn on top of the band\".",
+      "Band continuity: the band is narrower in panel 2 than in panel 1 (O1, O2), and it sits above the ear instead of at forehead or ear level (O1, O2, O3).",
+      "Stray dark mark in panel 2. O1: \"dark blob at the eyebrow\". O2: \"dark blotch at the brow\". O3: \"A dark squared patch sits behind the ear under the band, absent in the other panels\". O3's location differs from O1 and O2, so there may be two artifacts. No observer read it as blood or injury.",
+      "Hair continuity, O2: \"shaved area looks larger\" in panel 3.",
+      "Panel 3 pale line: all three observers report a \"thin pale curved line\" in the crease behind the ear. All three also state no redness or stitches, and O2 and O3 add no swelling. No observer's own Q2 contains an injury reading.",
+      "Hand ownership is unclear. O1: \"unclear whose\". O2: \"whose, unclear\".",
+      "Vocabulary: no observer wrote 'dressing' or 'bandage'. O1 and O3 wrote \"band\" and \"pad\". O2 wrote \"white cloth band\" and \"gauze pad\". I counted item 1 on a band plus a pad covering the ear."
+    ],
+    "text_detected": false,
+    "reason": "Instruction-sequence pass: all three observers recover all four items and each concludes in question 5 that the dressing comes off, the tying-on alternative named by all three is the reverse action, and the only harm alternative (O2's \"open, uncovered cut\") comes from a single observer; strict fail: all three name tying on and O2 names an open cut, which the general rules count wherever they appear, and the pass rests on panel order because O1 and O3 say panel 2 alone could read as tying or tightening."
+  },
+  "outcome": "accepted under the instruction-sequence rule; fails the strict rule because all three observers named the reverse action when asked for an alternative",
+  "notes": "First motion test. The instruction-sequence rule was introduced during this test and is pending John's and Song's sign-off; the receipt carries both verdicts and the adjudicator's design notes.",
+  "panels": [
+    {
+      "record_id": "postauricular-dressing-ref-a1",
+      "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+      "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7"
+    },
+    {
+      "record_id": "dressing-removal-ref-a4",
+      "file": "assets/anatomy/dressing-removal-ref-a4.png",
+      "sha256": "13e71b1d293d065b620b157c295e549aafb9343306cbdfc0f7635062aed02cfa"
+    },
+    {
+      "record_id": "postauricular-base-a2",
+      "file": "assets/anatomy/postauricular-base-a2.png",
+      "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748"
+    }
+  ],
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

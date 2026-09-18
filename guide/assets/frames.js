@@ -159,6 +159,26 @@ function drawOverlay(overlay, frame, layers, labels, register, words) {
     );
   } else if (overlay.type === "device") {
     group.append(drawDevice(frame, overlay));
+  } else if (overlay.type === "motion-arrow") {
+    // Direction of an action. A still of a hand and gauze reads the same forwards and backwards;
+    // the arrow is what says which way it goes. It runs from the named anchor to `at`.
+    const dx = at.x - anchor.x;
+    const dy = at.y - anchor.y;
+    const length = Math.hypot(dx, dy) || 1;
+    const bend = (overlay.bend ?? 0.25) * length;
+    const control = { x: (anchor.x + at.x) / 2 - (dy / length) * bend, y: (anchor.y + at.y) / 2 + (dx / length) * bend };
+    const angle = Math.atan2(at.y - control.y, at.x - control.x);
+    const head = overlay.head ?? 54;
+    const spread = 0.5;
+    const shaftEnd = { x: at.x - Math.cos(angle) * head * 0.7, y: at.y - Math.sin(angle) * head * 0.7 };
+    const corner = (sign) => `${at.x - head * Math.cos(angle + sign * spread)},${at.y - head * Math.sin(angle + sign * spread)}`;
+    const shaft = `M ${anchor.x} ${anchor.y} Q ${control.x} ${control.y} ${shaftEnd.x} ${shaftEnd.y}`;
+    group.append(
+      svg("path", { d: shaft, fill: "none", stroke: "#fff", "stroke-width": 26, "stroke-linecap": "round" }),
+      svg("polygon", { points: `${at.x},${at.y} ${corner(1)} ${corner(-1)}`, fill: "#fff", stroke: "#fff", "stroke-width": 12, "stroke-linejoin": "round" }),
+      svg("path", { d: shaft, fill: "none", stroke: TEAL, "stroke-width": 14, "stroke-linecap": "round" }),
+      svg("polygon", { points: `${at.x},${at.y} ${corner(1)} ${corner(-1)}`, fill: TEAL })
+    );
   } else if (overlay.type === "flush") {
     const id = `flush-${frame.id ?? "frame"}-${overlay.id}`;
     const gradient = svg("radialGradient", { id }, [

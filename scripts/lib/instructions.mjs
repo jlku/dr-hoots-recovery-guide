@@ -1,7 +1,7 @@
 // Instruction claims: every sentence that tells the patient to do something must name who, what,
 // with what, where, and the end state, and must be a placeholder tied to an open clinician
 // question until a picture shows the how.
-import { readFile } from "node:fs/promises";
+import { access, readFile } from "node:fs/promises";
 import { join } from "node:path";
 
 export const INSTRUCTIONS_PATH = "content/instructions/ci-phase0-v0.1.0.instructions.json";
@@ -40,7 +40,7 @@ export function pendingClaims(instructions, frameId) {
   return (instructions?.claims ?? []).filter((claim) => claim.frame === frameId && claim.status === "placeholder");
 }
 
-export function validateInstructions({ instructions, canonical, segments, frames, questions }) {
+export async function validateInstructions({ instructions, canonical, segments, frames, questions, root = null }) {
   const errors = [];
   const warnings = [];
   if (instructions.patient_use !== false) errors.push("patient_use must be false");
@@ -90,6 +90,15 @@ export function validateInstructions({ instructions, canonical, segments, frames
     }
     if (claim.status === "placeholder" && !claim.open_question) errors.push(`${claim.id} is a placeholder without an open question`);
     if (claim.status === "verified" && !claim.receipt) errors.push(`${claim.id} is verified without a receipt`);
+    else if (claim.status === "verified" && root) {
+      try {
+        const doc = JSON.parse(await readFile(join(root, claim.receipt), "utf8"));
+        if (doc.adjudication?.verdict !== "pass") errors.push(`${claim.id}: receipt ${claim.receipt} does not record a pass`);
+        if (!doc.observers?.every((observer) => /\b5\./.test(observer.observation ?? ""))) errors.push(`${claim.id}: receipt ${claim.receipt} lacks the observers' instruction answers`);
+      } catch {
+        errors.push(`${claim.id}: receipt ${claim.receipt} is missing`);
+      }
+    }
     if (claim.open_question) {
       const question = questions.get(claim.open_question);
       if (!question) errors.push(`${claim.id} points at ${claim.open_question}, which is not on the clinician's list`);

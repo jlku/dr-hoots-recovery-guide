@@ -8,15 +8,21 @@
   "frames": {
     "frame-01": {
       "kind": "composite",
-      "alt": "Day 2: the head bandage comes off, then the area behind the ear is checked for tape over the incision.",
+      "alt": "Day 2: the head bandage is unwound and comes off, then the area behind the ear is checked for tape over the incision.",
+      "instruction": "howto.remove-dressing",
       "layers": {
         "base": "assets/anatomy/postauricular-base-a2.png",
-        "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png"
+        "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "removal": "assets/anatomy/dressing-removal-ref-a4.png"
       },
       "anchors": {
         "incision": {
           "x": 0.565,
           "y": 0.47
+        },
+        "unwind_start": {
+          "x": 0.2,
+          "y": 0.2
         }
       },
       "states": [
@@ -26,12 +32,33 @@
           "until": "remove"
         },
         {
+          "id": "unwinding",
+          "image": "removal",
+          "from": "remove",
+          "until": "check"
+        },
+        {
           "id": "bandage-off",
           "image": "base",
-          "from": "remove"
+          "from": "check"
         }
       ],
       "overlays": [
+        {
+          "id": "unwind",
+          "type": "motion-arrow",
+          "anchor": "unwind_start",
+          "at": {
+            "x": 0.04,
+            "y": 0.34
+          },
+          "bend": -0.22,
+          "from": "remove",
+          "until": "check",
+          "sentence_ids": [
+            "wc.01"
+          ]
+        },
         {
           "id": "tape-question",
           "type": "inset",

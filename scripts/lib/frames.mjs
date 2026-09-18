@@ -3,7 +3,7 @@ import { join } from "node:path";
 
 export const FRAMES_PATH = "content/frames/ci-phase0-v0.1.0.frames.json";
 export const FRAME_KINDS = Object.freeze(["svg", "image", "text", "composite"]);
-export const OVERLAY_TYPES = Object.freeze(["tape-strip", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer", "device", "flush"]);
+export const OVERLAY_TYPES = Object.freeze(["tape-strip", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer", "device", "flush", "motion-arrow"]);
 
 export async function loadFrameManifest(root, path = FRAMES_PATH) {
   return JSON.parse(await readFile(join(root, path), "utf8"));
