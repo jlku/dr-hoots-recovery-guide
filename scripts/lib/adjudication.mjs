@@ -13,8 +13,9 @@
 //
 // Instruction pictures (placeholder, approved for now by John on 2026-09-18; Song's sign-off is
 // q.instruction-picture-rule): the same, and a misreading also fails the card when two or more
-// observers name the same one and it involves harm or the wrong body part, because a viewer might act
-// on it. That caught gauze read as cloth at the throat and a strip read as "cut here". Asked for an
+// observers name the same one and a viewer who believed it might do something harmful, such as cut,
+// pull at the skin, tie something at the throat, or act on the wrong body part. A misreading that only
+// looks alarming, such as a line that looks like a wound, is a note. That caught gauze read as cloth at the throat and a strip read as "cut here". Asked for an
 // alternative to a reversible action, observers always name the reverse, so that alone cannot fail it.
 //
 // Strict (kept as a reference verdict on every receipt): any forbidden reading anywhere, including a

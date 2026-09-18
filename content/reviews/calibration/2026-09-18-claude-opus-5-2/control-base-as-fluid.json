@@ -1,0 +1,507 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-base-a2",
+  "contract_id": "postauricular-fluid",
+  "kind": "record",
+  "file": "assets/anatomy/postauricular-base-a2.png",
+  "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWoyPrkuxZJ3XykSRSK",
+        "request_id": "req_011CfBWoxsrUEnCyX5iukfBx",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 541,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWoy4mbYs4kCNsU8WjA",
+        "request_id": "req_011CfBWoxigCAiH6BoWYHC8j",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWoyUaEHjq6vif8ubjj",
+        "request_id": "req_011CfBWoxx4pp4429oRfZZNH",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 474,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWqEWE97SAryuDjnRSu",
+        "request_id": "req_011CfBWqDgrvZZfxmBN8vseK",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6001,
+          "output_tokens": 2503,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWqES1r9961gf1ziTG8",
+        "request_id": "req_011CfBWqDbep4by7UZBWeDQc",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6001,
+          "output_tokens": 2244,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.244
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWoyPrkuxZJ3XykSRSK",
+      "recoded_from": null,
+      "answers": {
+        "1": "The head and upper neck of a person, drawn as a simple illustration. We see them from behind and slightly to the right side, so the face is turned away and only the nose, one eye area, eyebrow and lashes peek out at the right edge. The right ear is fully in view.",
+        "2": "Two clear zones of hair. On top and toward the front there is a thick mound of dark brown hair, swept up and back, with a soft fringe of loose strands along its lower edge. Below and behind that line — over the side of the head above and behind the ear, and all the way down the back of the head to the nape — the scalp is bare skin with only a faint shadow of very short stubble, shown as fine hatch marks in a band just under the thick hair. The skin of the bare scalp, ear, cheek and neck looks smooth and even; I see no rash, scab, scar, redness, or lump, and nothing worn or applied.",
+        "3": "There is no text, number, arrow, label, or symbol anywhere in the picture. The background is plain off-white.",
+        "4": "It could be read as hair loss or a bald patch spreading up the back and side of the head, or as a head shaved for surgery, rather than as an ordinary undercut haircut. I cannot tell from the drawing alone which it is."
+      },
+      "observation": "1. The head and upper neck of a person, drawn as a simple illustration. We see them from behind and slightly to the right side, so the face is turned away and only the nose, one eye area, eyebrow and lashes peek out at the right edge. The right ear is fully in view.\n\n2. Two clear zones of hair. On top and toward the front there is a thick mound of dark brown hair, swept up and back, with a soft fringe of loose strands along its lower edge. Below and behind that line — over the side of the head above and behind the ear, and all the way down the back of the head to the nape — the scalp is bare skin with only a faint shadow of very short stubble, shown as fine hatch marks in a band just under the thick hair. The skin of the bare scalp, ear, cheek and neck looks smooth and even; I see no rash, scab, scar, redness, or lump, and nothing worn or applied.\n\n3. There is no text, number, arrow, label, or symbol anywhere in the picture. The background is plain off-white.\n\n4. It could be read as hair loss or a bald patch spreading up the back and side of the head, or as a head shaved for surgery, rather than as an ordinary undercut haircut. I cannot tell from the drawing alone which it is."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWoy4mbYs4kCNsU8WjA",
+      "recoded_from": null,
+      "answers": {
+        "1": "The head and upper neck of a person, seen from behind and slightly to the right side, so you can see the back of the head, the right ear and the edge of the face (eyelashes, nose tip, jaw).",
+        "2": "Top of the head: a thick swept mass of dark brown hair sitting high, with a soft feathered edge. Below and behind that: a wide bare, skin-coloured area covering the whole back and side of the head, from just above the ear down to the neck. Between the long hair and the bare skin is a band of very short bristles (stubble), drawn as fine short lines, running in a curve from the front hairline back over the crown — it looks like a faded shaved-in line rather than a wound. The skin itself is even in colour, with no rash, cut, scab, redness, dressing or scar. The ear is uncovered, and nothing is worn on the head. The neck and bare shoulder are plain.",
+        "3": "No text, numbers, arrows, labels or symbols anywhere; the background is plain off-white.",
+        "4": "Someone could read the bare area as sudden hair loss — a large bald patch from alopecia, chemotherapy, or a head shaved for surgery — rather than as a deliberate undercut haircut."
+      },
+      "observation": "1. The head and upper neck of a person, seen from behind and slightly to the right side, so you can see the back of the head, the right ear and the edge of the face (eyelashes, nose tip, jaw).\n\n2. Top of the head: a thick swept mass of dark brown hair sitting high, with a soft feathered edge. Below and behind that: a wide bare, skin-coloured area covering the whole back and side of the head, from just above the ear down to the neck. Between the long hair and the bare skin is a band of very short bristles (stubble), drawn as fine short lines, running in a curve from the front hairline back over the crown — it looks like a faded shaved-in line rather than a wound. The skin itself is even in colour, with no rash, cut, scab, redness, dressing or scar. The ear is uncovered, and nothing is worn on the head. The neck and bare shoulder are plain.\n\n3. No text, numbers, arrows, labels or symbols anywhere; the background is plain off-white.\n\n4. Someone could read the bare area as sudden hair loss — a large bald patch from alopecia, chemotherapy, or a head shaved for surgery — rather than as a deliberate undercut haircut."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWoyUaEHjq6vif8ubjj",
+      "recoded_from": null,
+      "answers": {
+        "1": "A person's head and upper neck, seen mostly from behind and slightly to the side, so you see the back of the head, one ear, and a sliver of the face (eyebrow, eyelashes, nose tip, chin line) on the right.",
+        "2": "Thick brown hair sits only on the top and upper back of the head, swept upward. Below a curved line that runs from the front top, back over the ear, and down toward the lower back of the head, the scalp is bare skin with a short stubble shading just under the hair edge — it looks like a closely clipped or shaved undercut, though I can't be certain whether it is shaved or hairless. The skin of the bare area and neck looks smooth and even, with no rash, sores, scars, redness or bruising drawn. One ear is fully visible with normal folds; nothing is worn on it. No bandage, dressing, device, cream or marking is on the skin. The neck and a bit of shoulder are bare.",
+        "3": "There is no text, number, arrow, label, measurement, or symbol anywhere in the picture. The background is plain off-white.",
+        "4": "A worried person could read the wide bare band as sudden hair loss — a large bald patch or shedding around the ear and back of the head — rather than a deliberate haircut, or think the head was shaved for surgery."
+      },
+      "observation": "1. A person's head and upper neck, seen mostly from behind and slightly to the side, so you see the back of the head, one ear, and a sliver of the face (eyebrow, eyelashes, nose tip, chin line) on the right.\n\n2. Thick brown hair sits only on the top and upper back of the head, swept upward. Below a curved line that runs from the front top, back over the ear, and down toward the lower back of the head, the scalp is bare skin with a short stubble shading just under the hair edge — it looks like a closely clipped or shaved undercut, though I can't be certain whether it is shaved or hairless. The skin of the bare area and neck looks smooth and even, with no rash, sores, scars, redness or bruising drawn. One ear is fully visible with normal folds; nothing is worn on it. No bandage, dressing, device, cream or marking is on the skin. The neck and a bit of shoulder are bare.\n\n3. There is no text, number, arrow, label, measurement, or symbol anywhere in the picture. The background is plain off-white.\n\n4. A worried person could read the wide bare band as sudden hair loss — a large bald patch or shedding around the ear and back of the head — rather than a deliberate haircut, or think the head was shaved for surgery."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a rounded swelling or bulge under the skin behind the ear": [],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.2",
+          "text": "We see them from behind and slightly to the right side, so the face is turned away and only the nose, one eye area, eyebrow and lashes peek out at the right edge."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "The head and upper neck of a person, seen from behind and slightly to the right side, so you can see the back of the head, the right ear and the edge of the face (eyelashes, nose tip, jaw)."
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "A person's head and upper neck, seen mostly from behind and slightly to the side, so you see the back of the head, one ear, and a sliver of the face (eyebrow, eyelashes, nose tip, chin line) on the right."
+        }
+      ]
+    },
+    "recovered": [
+      "the same view of the head"
+    ],
+    "missed": [
+      "a rounded swelling or bulge under the skin behind the ear"
+    ],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [
+      {
+        "observer": 2,
+        "reading": "a wound or opening",
+        "source": "hedge",
+        "coding": 1
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The wide bare area is taken as sudden hair loss or a large bald patch (alopecia or chemotherapy shedding) rather than a deliberate undercut haircut.",
+      "Observer 1: The bare scalp is taken to mean the head was shaved in preparation for surgery.",
+      "Observer 2: The wide bare area is taken as sudden hair loss or a large bald patch (alopecia or chemotherapy shedding) rather than a deliberate undercut haircut.",
+      "Observer 2: The bare scalp is taken to mean the head was shaved in preparation for surgery.",
+      "Observer 3: The wide bare area is taken as sudden hair loss or a large bald patch (alopecia or chemotherapy shedding) rather than a deliberate undercut haircut.",
+      "Observer 3: The bare scalp is taken to mean the head was shaved in preparation for surgery.",
+      "Observer 2 raised and set aside: a wound or opening",
+      "Observer 1 states outright that the skin shows no lump, rash, scab, scar or redness, so the required rounded swelling behind the ear appears not to be drawn at all.",
+      "Observer 2 says the band of short stubble between the long hair and the bare scalp could be taken for something other than a haircut and has to be argued down as a faded shaved-in line rather than a wound, suggesting the line reads ambiguously.",
+      "Observer 3 reports being unable to tell whether the bare area is closely clipped, shaved, or naturally hairless, indicating the drawing does not settle the state it means to show.",
+      "All three observers report a plain off-white background with no text, number, arrow, label, measurement or symbol anywhere in the picture.",
+      "Observer 1: The bare band of scalp is taken as sudden or pathological hair loss — a spreading bald patch from alopecia or chemotherapy — instead of a deliberate undercut haircut.",
+      "Observer 1: The bare scalp is taken as a head shaved in preparation for an operation.",
+      "Observer 2: The bare band of scalp is taken as sudden or pathological hair loss — a spreading bald patch from alopecia or chemotherapy — instead of a deliberate undercut haircut.",
+      "Observer 2: The bare scalp is taken as a head shaved in preparation for an operation.",
+      "Observer 3: The bare band of scalp is taken as sudden or pathological hair loss — a spreading bald patch from alopecia or chemotherapy — instead of a deliberate undercut haircut.",
+      "Observer 3: The bare scalp is taken as a head shaved in preparation for an operation.",
+      "All three observers describe smooth, even skin behind and around the ear and none of them reports any rounded swelling or bulge, so the required state is not coming across (Observer 1 explicitly says he sees no lump).",
+      "Observer 2 says the stubble band between the long hair and the bare scalp reads like a faded shaved-in line and had to rule out its looking like a wound, suggesting that edge is drawn ambiguously.",
+      "Observer 3 says he cannot tell whether the bare area is shaved or naturally hairless, so the intended haircut reading is not secure.",
+      "All three observers read the wide bare area as possible hair loss or a surgical shave rather than a styled undercut, which may pull attention away from the area behind the ear.",
+      "Observers 1, 2 and 3 all confirm a plain off-white background with no text, numbers, arrows, labels or symbols anywhere."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a rounded swelling or bulge under the skin behind the ear"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.2",
+              "text": "We see them from behind and slightly to the right side, so the face is turned away and only the nose, one eye area, eyebrow and lashes peek out at the right edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The head and upper neck of a person, seen from behind and slightly to the right side, so you can see the back of the head, the right ear and the edge of the face (eyelashes, nose tip, jaw)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head and upper neck, seen mostly from behind and slightly to the side, so you see the back of the head, one ear, and a sliver of the face (eyebrow, eyelashes, nose tip, chin line) on the right."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-baldness",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "a wound or opening",
+                  "cite": "o2.2.3"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-baldness",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-baldness",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss-baldness",
+              "reading": "The wide bare area is taken as sudden hair loss or a large bald patch (alopecia or chemotherapy shedding) rather than a deliberate undercut haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "shaved-for-surgery",
+              "reading": "The bare scalp is taken to mean the head was shaved in preparation for surgery.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 states outright that the skin shows no lump, rash, scab, scar or redness, so the required rounded swelling behind the ear appears not to be drawn at all.",
+            "Observer 2 says the band of short stubble between the long hair and the bare scalp could be taken for something other than a haircut and has to be argued down as a faded shaved-in line rather than a wound, suggesting the line reads ambiguously.",
+            "Observer 3 reports being unable to tell whether the bare area is closely clipped, shaved, or naturally hairless, indicating the drawing does not settle the state it means to show.",
+            "All three observers report a plain off-white background with no text, number, arrow, label, measurement or symbol anywhere in the picture."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a rounded swelling or bulge under the skin behind the ear"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.2",
+              "text": "We see them from behind and slightly to the right side, so the face is turned away and only the nose, one eye area, eyebrow and lashes peek out at the right edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The head and upper neck of a person, seen from behind and slightly to the right side, so you can see the back of the head, the right ear and the edge of the face (eyelashes, nose tip, jaw)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head and upper neck, seen mostly from behind and slightly to the side, so you see the back of the head, one ear, and a sliver of the face (eyebrow, eyelashes, nose tip, chin line) on the right."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-bald-patch",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [
+                {
+                  "forbidden": "a wound or opening",
+                  "cite": "o2.2.3"
+                }
+              ],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-bald-patch",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-bald-patch",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss-bald-patch",
+              "reading": "The bare band of scalp is taken as sudden or pathological hair loss — a spreading bald patch from alopecia or chemotherapy — instead of a deliberate undercut haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "shaved-for-surgery",
+              "reading": "The bare scalp is taken as a head shaved in preparation for an operation.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "All three observers describe smooth, even skin behind and around the ear and none of them reports any rounded swelling or bulge, so the required state is not coming across (Observer 1 explicitly says he sees no lump).",
+            "Observer 2 says the stubble band between the long hair and the bare scalp reads like a faded shaved-in line and had to rule out its looking like a wound, suggesting that edge is drawn ambiguously.",
+            "Observer 3 says he cannot tell whether the bare area is shaved or naturally hairless, so the intended haircut reading is not secure.",
+            "All three observers read the wide bare area as possible hair loss or a surgical shave rather than a styled undercut, which may pull attention away from the area behind the ear.",
+            "Observers 1, 2 and 3 all confirm a plain off-white background with no text, numbers, arrows, labels or symbols anywhere."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: a rounded swelling or bulge under the skin behind the ear. No observer's own answer states a forbidden reading and no unallowed mark was reported; imagined misreadings are notes for the clinician. Under the strict rule the picture would fail."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

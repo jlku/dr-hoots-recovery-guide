@@ -99,10 +99,10 @@ const cardCoding = () => ({
     }
   ],
   alternatives: [
-    { key: "reverse-action", reading: "a head being wrapped rather than unwrapped", forbidden: "the dressing being put on", harm: false },
-    { key: "strip-as-wound", reading: "the strip could pass for a wound", forbidden: "the ear injured or bleeding", harm: true },
-    { key: "apply-tape", reading: "an order to put tape on behind the ear", forbidden: null, harm: false },
-    { key: "no-strip-wrong", reading: "no strip means something is wrong", forbidden: null, harm: false }
+    { key: "reverse-action", reading: "a head being wrapped rather than unwrapped", forbidden: "the dressing being put on", harmful_action: false },
+    { key: "strip-as-wound", reading: "the strip could pass for a wound", forbidden: "the ear injured or bleeding", harmful_action: true },
+    { key: "apply-tape", reading: "an order to put tape on behind the ear", forbidden: null, harmful_action: false },
+    { key: "no-strip-wrong", reading: "no strip means something is wrong", forbidden: null, harmful_action: false }
   ],
   design_notes: ["Observers 2 and 3 note that the pad's removal is not drawn."]
 });
@@ -339,7 +339,7 @@ test("recording a review writes the receipt, indexes it, updates the manifest, a
     const phrases = ["Red, raised swelling behind the ear along a thin healed scar", "Red, raised swelling behind the ear", "no open wound"];
     const coding = {
       observers: [1, 2, 3].map((observer) => ({ observer, items: red.required.map((item, index) => ({ item, recovered: true, cite: redUnits(observer, phrases[index]) })), own_forbidden: [], hedges: [], unallowed_marks: [], alternatives: [{ key: "sunburn", cite: redUnits(observer, "A sunburn") }] })),
-      alternatives: [{ key: "sunburn", reading: "a sunburn", forbidden: null, harm: false }],
+      alternatives: [{ key: "sunburn", reading: "a sunburn", forbidden: null, harmful_action: false }],
       design_notes: []
     };
     const client = fakeClient({ observers: [answers, answers, answers], coding });

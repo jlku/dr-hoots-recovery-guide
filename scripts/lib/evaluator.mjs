@@ -183,7 +183,12 @@ export function coderSchema(contract, citeIds = []) {
     alternatives: {
       type: "array",
       description: "Every distinct misreading named in answer 4 by any observer, once each.",
-      items: object({ key: { type: "string" }, reading: { type: "string" }, forbidden: nullable(enumOrString(contract.forbidden)), harm: { type: "boolean" } })
+      items: object({
+        key: { type: "string" },
+        reading: { type: "string" },
+        forbidden: nullable(enumOrString(contract.forbidden)),
+        harmful_action: { type: "boolean", description: "Whether a viewer who believed this misreading might do something harmful. Looking alarming is not enough." }
+      })
     },
     design_notes: { type: "array", items: { type: "string" } }
   });
@@ -295,7 +300,7 @@ export function checkCoding({ contract, coding, observations }) {
     const alternatives = keep(entry.alternatives ?? [], "misreading", [4], (row) => row.key).map((row) => {
       const found = shared.get(row.key);
       if (!found) throw new Error(`the coder cites misreading "${row.key}" for observer ${number} but never defines it`);
-      return { key: found.key, reading: found.reading, forbidden: found.forbidden ?? null, harm: Boolean(found.harm) };
+      return { key: found.key, reading: found.reading, forbidden: found.forbidden ?? null, harm: Boolean(found.harmful_action ?? found.harm) };
     });
     return {
       recovered,

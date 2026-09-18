@@ -1,0 +1,605 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-base-a2",
+  "contract_id": "postauricular-dressing-ref",
+  "kind": "record",
+  "file": "assets/anatomy/postauricular-base-a2.png",
+  "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWkdedMAj2M7Ud673ST",
+        "request_id": "req_011CfBWkdA78v3YZAuyVgoAx",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 516,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWke5vNuDazqQQ1gwHn",
+        "request_id": "req_011CfBWkdQVHXiqpWLsUKnu7",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 444,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWkdvkdoPAuKkTHiJfo",
+        "request_id": "req_011CfBWkdREXSTXsbBY56i6F",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 447,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWmcyDnD7TivBd5jxzv",
+        "request_id": "req_011CfBWmVgRyKmiDAJx6cxPo",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6083,
+          "output_tokens": 2323,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWmWDfpEroQMefNXHX2",
+        "request_id": "req_011CfBWmVnP855TKLKuosVKw",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6083,
+          "output_tokens": 2711,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.24917
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWkdedMAj2M7Ud673ST",
+      "recoded_from": null,
+      "answers": {
+        "1": "The head and upper neck of a person, seen from behind and slightly to the side. The face is turned away to the right, so only the edge of the nose, eye, eyebrow and the right ear are visible.",
+        "2": "One continuous drawing, no separate panels. On top of the head there is thick, dark brown hair, swept up and over toward the right. Below a sharp line that runs from the front hairline back over the ear and down toward the nape, the scalp is bare skin — a shaved-in undercut. Just under the parting line there is a band of very short stubble, drawn as fine dark flecks, which fades into completely smooth, pale skin over the back and side of the head, behind and below the ear, and down the neck. The ear is uncovered and looks normal. I see no rash, redness, scars, cuts, bumps, stitches, dressings, glasses, jewellery or anything applied to the skin.",
+        "3": "No text, numbers, arrows, labels, measurement lines or symbols anywhere in the picture. The background is plain off-white.",
+        "4": "A worried patient might read the bare area as hair loss — a large bald patch or shedding on the back and sides — rather than a deliberate haircut. It could also be mistaken for a pre-operation head shave."
+      },
+      "observation": "1. The head and upper neck of a person, seen from behind and slightly to the side. The face is turned away to the right, so only the edge of the nose, eye, eyebrow and the right ear are visible.\n\n2. One continuous drawing, no separate panels. On top of the head there is thick, dark brown hair, swept up and over toward the right. Below a sharp line that runs from the front hairline back over the ear and down toward the nape, the scalp is bare skin — a shaved-in undercut. Just under the parting line there is a band of very short stubble, drawn as fine dark flecks, which fades into completely smooth, pale skin over the back and side of the head, behind and below the ear, and down the neck. The ear is uncovered and looks normal. I see no rash, redness, scars, cuts, bumps, stitches, dressings, glasses, jewellery or anything applied to the skin.\n\n3. No text, numbers, arrows, labels, measurement lines or symbols anywhere in the picture. The background is plain off-white.\n\n4. A worried patient might read the bare area as hair loss — a large bald patch or shedding on the back and sides — rather than a deliberate haircut. It could also be mistaken for a pre-operation head shave."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWke5vNuDazqQQ1gwHn",
+      "recoded_from": null,
+      "answers": {
+        "1": "A drawing of a person's head and upper neck, seen mostly from behind and slightly to the side, with the face turned to the right so only the edge of the eyebrow, eyelashes, nose tip and cheek show. The whole right ear, the side and back of the scalp, and the top of the neck are in view.",
+        "2": "The top of the head has thick dark brown hair that is longer and swept upward. Below a clear, sharp line that curves from the front hairline back over the ear and down toward the back of the head, the hair is very short or gone, leaving pale skin. Just under the long hair there is a band of short stubble shown as fine dark specks, which fades out and becomes bare, smooth skin over the side and back of the head, above and behind the ear and down to the nape. The skin looks even in colour, with no rash, redness, scabs, scars, stitches or dressings drawn. Nothing is worn: no cap, bandage, glasses or device. The ear is plain and uncovered.",
+        "3": "There is no text, number, arrow, label, outline marker or symbol anywhere in the picture. The background is plain off-white.",
+        "4": "A worried person might read it as sudden hair loss or a shaved patch for surgery, rather than simply a short undercut haircut."
+      },
+      "observation": "1. A drawing of a person's head and upper neck, seen mostly from behind and slightly to the side, with the face turned to the right so only the edge of the eyebrow, eyelashes, nose tip and cheek show. The whole right ear, the side and back of the scalp, and the top of the neck are in view.\n\n2. The top of the head has thick dark brown hair that is longer and swept upward. Below a clear, sharp line that curves from the front hairline back over the ear and down toward the back of the head, the hair is very short or gone, leaving pale skin. Just under the long hair there is a band of short stubble shown as fine dark specks, which fades out and becomes bare, smooth skin over the side and back of the head, above and behind the ear and down to the nape. The skin looks even in colour, with no rash, redness, scabs, scars, stitches or dressings drawn. Nothing is worn: no cap, bandage, glasses or device. The ear is plain and uncovered.\n\n3. There is no text, number, arrow, label, outline marker or symbol anywhere in the picture. The background is plain off-white.\n\n4. A worried person might read it as sudden hair loss or a shaved patch for surgery, rather than simply a short undercut haircut."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWkdvkdoPAuKkTHiJfo",
+      "recoded_from": null,
+      "answers": {
+        "1": "A person's head and upper neck, seen from behind and slightly to the right side, so the back of the head, the right ear, and a sliver of the face (eyebrow, eyelashes, nose tip, jaw) are visible. Shoulders are cut off at the bottom.",
+        "2": "The top of the head has thick, longer dark brown hair, swept upward and forward. Below a clear curved line that runs from above the forehead, back over the crown and down toward the nape, the hair is very short or gone: the whole back and right side of the head is bare skin with only faint fine stubble marks just under the hairline. The skin there looks smooth, even in colour, with no rash, redness, scab, lump, or bruise. The ear is uncovered, and a thin light highlight runs along the skin just in front of and above the ear. Nothing is worn on the head; no dressing, cap, or device.",
+        "3": "No text, numbers, arrows, labels, or symbols anywhere. The background is plain off-white.",
+        "4": "Someone might read the bare area as sudden large-patch hair loss or a shaved area for surgery, rather than simply a short-back-and-sides haircut with long hair on top."
+      },
+      "observation": "1. A person's head and upper neck, seen from behind and slightly to the right side, so the back of the head, the right ear, and a sliver of the face (eyebrow, eyelashes, nose tip, jaw) are visible. Shoulders are cut off at the bottom.\n\n2. The top of the head has thick, longer dark brown hair, swept upward and forward. Below a clear curved line that runs from above the forehead, back over the crown and down toward the nape, the hair is very short or gone: the whole back and right side of the head is bare skin with only faint fine stubble marks just under the hairline. The skin there looks smooth, even in colour, with no rash, redness, scab, lump, or bruise. The ear is uncovered, and a thin light highlight runs along the skin just in front of and above the ear. Nothing is worn on the head; no dressing, cap, or device.\n\n3. No text, numbers, arrows, labels, or symbols anywhere. The background is plain off-white.\n\n4. Someone might read the bare area as sudden large-patch hair loss or a shaved area for surgery, rather than simply a short-back-and-sides haircut with long hair on top."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a white head bandage wrapped around the head": [],
+      "the ear covered by the bandage": [],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "One continuous drawing, no separate panels."
+        }
+      ]
+    },
+    "recovered": [],
+    "missed": [
+      "a white head bandage wrapped around the head",
+      "the ear covered by the bandage",
+      "the same view of the head"
+    ],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "the ear uncovered",
+        "source": "own reading",
+        "coding": 1
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The bare scalp on the back and side is taken as sudden hair loss or a large bald patch rather than a deliberate undercut haircut.",
+      "Observer 1: The bare scalp is taken as an area shaved in preparation for an operation rather than a haircut.",
+      "Observer 2: The bare scalp on the back and side is taken as sudden hair loss or a large bald patch rather than a deliberate undercut haircut.",
+      "Observer 2: The bare scalp is taken as an area shaved in preparation for an operation rather than a haircut.",
+      "Observer 3: The bare scalp on the back and side is taken as sudden hair loss or a large bald patch rather than a deliberate undercut haircut.",
+      "Observer 3: The bare scalp is taken as an area shaved in preparation for an operation rather than a haircut.",
+      "Observer 1 reports that no dressing or anything applied to the skin is drawn anywhere on the head, so the intended bandage appears to be missing.",
+      "Observer 2 reports that nothing at all is worn on the head — no cap, bandage, glasses or device.",
+      "Observer 3 reports the ear is uncovered with only a thin light highlight on the skin in front of and above it, and no dressing, cap, or device.",
+      "Observer 3 notes the shoulders are cut off at the bottom edge of the drawing.",
+      "Observer 1 notes the illustration is a single continuous drawing with no separate panels.",
+      "All three observers report a plain off-white background with no text, numbers, arrows, labels, or symbols (Observer 1, Observer 2, Observer 3).",
+      "Observer 1: The bare, shaved-looking area of scalp is taken for sudden hair loss or a large bald patch rather than a deliberate haircut.",
+      "Observer 1: The bare area is taken for a head shave done in preparation for surgery rather than a style choice.",
+      "Observer 2: The bare, shaved-looking area of scalp is taken for sudden hair loss or a large bald patch rather than a deliberate haircut.",
+      "Observer 2: The bare area is taken for a head shave done in preparation for surgery rather than a style choice.",
+      "Observer 3: The bare, shaved-looking area of scalp is taken for sudden hair loss or a large bald patch rather than a deliberate haircut.",
+      "Observer 3: The bare area is taken for a head shave done in preparation for surgery rather than a style choice.",
+      "All three observers report that no bandage, dressing, cap or device is drawn on the head at all (Observer 1, Observer 2 and Observer 3 each say the head is bare), so the required white head wrap is simply absent from the illustration.",
+      "All three observers state the ear is fully visible and uncovered, which is the opposite of the state the picture is meant to show.",
+      "Observer 3 points out a thin light highlight running along the skin just in front of and above the ear, a stray rendering detail that could be mistaken for an edge or mark.",
+      "Observer 1 notes the illustration is one continuous drawing with no separate panels, so there is no second view for comparison.",
+      "Observers 1, 2 and 3 all describe a band of fine dark stubble fading into smooth pale skin below a sharp hairline, a texture that each of them says invites a hair-loss or pre-surgery-shave reading."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a white head bandage wrapped around the head",
+          "the ear covered by the bandage",
+          "the same view of the head"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          },
+          {
+            "observer": 2,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          },
+          {
+            "observer": 3,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [],
+          "the ear covered by the bandage": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "One continuous drawing, no separate panels."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o1.2.5"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "surgical-shave",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o2.2.6"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "surgical-shave",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o3.2.4"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "surgical-shave",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss",
+              "reading": "The bare scalp on the back and side is taken as sudden hair loss or a large bald patch rather than a deliberate undercut haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "surgical-shave",
+              "reading": "The bare scalp is taken as an area shaved in preparation for an operation rather than a haircut.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 reports that no dressing or anything applied to the skin is drawn anywhere on the head, so the intended bandage appears to be missing.",
+            "Observer 2 reports that nothing at all is worn on the head — no cap, bandage, glasses or device.",
+            "Observer 3 reports the ear is uncovered with only a thin light highlight on the skin in front of and above it, and no dressing, cap, or device.",
+            "Observer 3 notes the shoulders are cut off at the bottom edge of the drawing.",
+            "Observer 1 notes the illustration is a single continuous drawing with no separate panels.",
+            "All three observers report a plain off-white background with no text, numbers, arrows, labels, or symbols (Observer 1, Observer 2, Observer 3)."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a white head bandage wrapped around the head",
+          "the ear covered by the bandage"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          },
+          {
+            "observer": 2,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          },
+          {
+            "observer": 3,
+            "reading": "the ear uncovered",
+            "source": "own reading"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [],
+          "the ear covered by the bandage": [],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "One continuous drawing, no separate panels."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A drawing of a person's head and upper neck, seen mostly from behind and slightly to the side, with the face turned to the right so only the edge of the eyebrow, eyelashes, nose tip and cheek show."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head and upper neck, seen from behind and slightly to the right side, so the back of the head, the right ear, and a sliver of the face (eyebrow, eyelashes, nose tip, jaw) are visible."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o1.2.5"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "pre-op-shave",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o2.2.6"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "pre-op-shave",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "the ear uncovered",
+                  "cite": "o3.2.4"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "pre-op-shave",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss",
+              "reading": "The bare, shaved-looking area of scalp is taken for sudden hair loss or a large bald patch rather than a deliberate haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "pre-op-shave",
+              "reading": "The bare area is taken for a head shave done in preparation for surgery rather than a style choice.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "All three observers report that no bandage, dressing, cap or device is drawn on the head at all (Observer 1, Observer 2 and Observer 3 each say the head is bare), so the required white head wrap is simply absent from the illustration.",
+            "All three observers state the ear is fully visible and uncovered, which is the opposite of the state the picture is meant to show.",
+            "Observer 3 points out a thin light highlight running along the skin just in front of and above the ear, a stray rendering detail that could be mistaken for an edge or mark.",
+            "Observer 1 notes the illustration is one continuous drawing with no separate panels, so there is no second view for comparison.",
+            "Observers 1, 2 and 3 all describe a band of fine dark stubble fading into smooth pale skin below a sharp hairline, a texture that each of them says invites a hair-loss or pre-surgery-shave reading."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: a white head bandage wrapped around the head; the ear covered by the bandage; the same view of the head. Forbidden: observer 1 (own reading): the ear uncovered; observer 2 (own reading): the ear uncovered; observer 3 (own reading): the ear uncovered. Under the strict rule the picture would fail."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}
