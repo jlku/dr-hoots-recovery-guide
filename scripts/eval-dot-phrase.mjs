@@ -50,7 +50,7 @@ async function runCase(browser, base, item) {
   const provider = await page.evaluate(() => ({
     text: document.querySelector(".provider__result")?.innerText ?? "",
     rows: [...document.querySelectorAll("#parsed tbody tr")].map((row) => [...row.children].map((cell) => cell.textContent.trim())),
-    notInGuide: [...document.querySelectorAll("#unread li, [data-not-in-guide] li, tr.needs-choice")].map((node) => node.textContent),
+    notInGuide: [...document.querySelectorAll("#unread li, [data-not-in-guide] li, li[data-not-in-guide], p[data-not-in-guide], tr.needs-choice")].map((node) => node.textContent),
     other: document.getElementById("other")?.textContent ?? "",
     link: document.getElementById("patient-link")?.textContent ?? ""
   }));

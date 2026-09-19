@@ -55,12 +55,18 @@ function apply(field, value) {
   render();
 }
 
+// A note is a string, or { text, notInGuide } for one that names something the patient will not see.
 function row(field, control, from, notes = [], needsChoice = false) {
   const tr = element("tr", { className: needsChoice ? "needs-choice" : from === "preset" ? "is-preset" : "" });
   tr.dataset.field = field;
+  const paragraphs = notes.map((note) => {
+    const paragraph = element("p", { className: "row-note", textContent: typeof note === "string" ? note : note.text });
+    if (note.notInGuide) paragraph.dataset.notInGuide = "";
+    return paragraph;
+  });
   tr.append(
     element("th", { scope: "row", textContent: LABELS[field] }),
-    element("td", {}, control, ...notes.map((text) => element("p", { className: "row-note", textContent: text }))),
+    element("td", {}, control, ...paragraphs),
     element("td", { className: "row-from", textContent: from })
   );
   return tr;
@@ -87,26 +93,30 @@ function medicationRow(field, parsed, values, fromPresets) {
   const conflict = parsed.conflicts.find((entry) => entry.field === field);
   if (conflict) notes.push(`Your block says both ${conflict.lines.map((line) => `"${line}"`).join(" and ")}. Choose one.`);
   else if (needsChoice) notes.push(`This page cannot read "${parsed.unclear[field]}" as a yes or a no. Choose one.`);
-  if (value === true) {
-    notes.push(`The guide says: "${sentences.get(MEDICATION_SENTENCE[field])}"${parsed.details[field] ? ` It does not name "${parsed.details[field]}"; that stays in your note.` : ""}`);
-  } else if (value === false) {
-    notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}; that waits on Song.${parsed.details[field] ? ` Your "${parsed.details[field]}" stays in your note.` : ""}`);
-  }
+  if (value === true) notes.push(`The guide says: "${sentences.get(MEDICATION_SENTENCE[field])}"`);
+  else if (value === false) notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}; that waits on Song.`);
+  if (value !== null && parsed.details[field]) notes.push({ text: `Not shown to the patient: "${parsed.details[field]}". It stays in your note.`, notInGuide: true });
   const from = needsChoice ? "Choose one" : fromPresets.includes(field) ? "preset" : "your block";
   return row(field, yesNo(field, value, false), from, notes, needsChoice);
 }
 
-function followUpRow(values, fromPresets, language) {
+function followUpRow(values, fromPresets, language, parsed) {
+  const needsChoice = parsed.needs_choice.includes("follow_up_date");
   const wrap = element("div", { className: "row-control" });
   const input = element("input", { type: "date", value: values.follow_up_date ?? "", className: "row-input" });
   input.setAttribute("aria-label", "Follow-up date");
   input.dataset.focus = "follow-up";
   input.addEventListener("change", () => apply("follow_up_date", input.value || null));
   wrap.append(input);
-  if (values.follow_up_date) {
-    const clear = element("button", { type: "button", className: "row-clear", textContent: "Clear" });
+  if (values.follow_up_date || needsChoice) {
+    const clear = element("button", { type: "button", className: "row-clear", textContent: needsChoice ? "Use \u201cabout two weeks\u201d" : "Clear" });
     clear.addEventListener("click", () => apply("follow_up_date", null));
     wrap.append(clear);
+  }
+  if (needsChoice) {
+    const conflict = parsed.conflicts.find((entry) => entry.field === "follow_up_date");
+    const said = conflict ? conflict.lines.map((line) => `"${line}"`).join(" and ") : `"${parsed.unclear.follow_up_date}"`;
+    return row("follow_up_date", wrap, "Choose one", [`This page cannot read ${said} as one date. Pick the date, or use "about two weeks".`], true);
   }
   const notes = values.follow_up_date
     ? [`The guide shows "Your wound check and ear exam: ${formatFollowUp(values.follow_up_date, "en")}" and still says "about two weeks after surgery" when it speaks.${language !== "en" ? " (Shown in the patient's language.)" : ""}`]
@@ -147,6 +157,7 @@ function reviewedRow(reviewed) {
 
 function lineItem(entry) {
   const item = element("li", { className: `line line--${entry.status}` });
+  if (entry.status !== "same") item.dataset.notInGuide = "";
   item.append(element("code", { className: "line__text", textContent: entry.text }));
   let message;
   if (entry.status === "changed") {
@@ -177,7 +188,7 @@ function render() {
   dom.rows.replaceChildren(
     medicationRow("antibiotic", parsed, values, fromPresets),
     medicationRow("pain_medication", parsed, values, fromPresets),
-    followUpRow(values, fromPresets, values.language),
+    followUpRow(values, fromPresets, values.language, parsed),
     languageRow(values, fromPresets, parsed.needs_choice.includes("language")),
     reviewedRow(parsed.fields.reviewed)
   );
