@@ -4,7 +4,7 @@
   "script": "Hans",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "machine_draft",
+  "status": "ai_reviewed",
   "patient_use": false,
   "notice": "未经核实——不得用于患者",
   "sentences": {
@@ -98,9 +98,9 @@
     "ov.path_no_tape": "如果没有胶布"
   },
   "review": {
-    "kind": "none",
-    "label": "机器翻译草稿，尚未审核",
+    "kind": "ai",
+    "label": "经人工智能（Claude）审核，并非认证医学翻译",
     "date": "2026-09-18",
-    "receipt": null
+    "receipt": "content/reviews/zh/5b36ae45173d02c7.json"
   }
 }

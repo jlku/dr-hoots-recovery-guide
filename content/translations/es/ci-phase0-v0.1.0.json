@@ -59,7 +59,7 @@
     "ui.contents": "Contenido",
     "ui.card": "Tarjeta para imprimir",
     "ui.notice": "Prototipo privado. No es para uso con pacientes.",
-    "ui.pending_clinician_text": "Los detalles de las medicinas esperan la redacción de su cirujano.",
+    "ui.pending_clinician_text": "Los detalles de las medicinas están pendientes hasta que su cirujano los escriba.",
     "ui.follow_up_default": "unas dos semanas después de la cirugía",
     "ui.seek": "Posición de reproducción",
     "ui.coming": "próximamente",
