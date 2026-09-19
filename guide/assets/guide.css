@@ -130,6 +130,11 @@ button, select, input { font-family: inherit; }
 @media (max-width: 760px) {
   .topbar { gap: 12px; padding: 0 16px; }
   .topbar__title { font-size: 18px; font-weight: 700; }
+  /* The language menu shows its whole value, which already names the language, so its visible label
+     steps aside (screen readers still hear it) and the title gives way first. */
+  .topbar .control { flex: none; }
+  .topbar .control > span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .topbar .control select { flex: none; width: auto; min-width: 7.5em; }
   .topbar__link { display: none; }
   .guide-layout { display: flex; flex-direction: column; }
   .player { order: 1; flex: none; }

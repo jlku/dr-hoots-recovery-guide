@@ -260,9 +260,14 @@ async function screenshots(browser, base, out) {
     for (const [width, options] of [["desktop", DESKTOP], ["phone", PHONE]]) {
       const context = await browser.newContext(options);
       const page = await openGuide(context, base, `s=1&l=${language}`);
+      // Past the title card, so the screenshot shows the chapter's picture and a caption.
+      await page.click("#transcript .sentence");
+      await page.waitForTimeout(700);
+      await page.evaluate(() => document.getElementById("audio").pause());
+      await page.waitForTimeout(300);
       const file = `guide-${language}-${width}.png`;
       await page.screenshot({ path: join(out, file) });
-      shots.push({ file, shows: `The guide opened in ${names[language]} at ${width === "desktop" ? "1280 by 800" : "375 by 812 phone"} width, chapter 1, before playing.` });
+      shots.push({ file, shows: `The guide in ${names[language]} at ${width === "desktop" ? "1280 by 800" : "375 by 812 phone"} width, paused on the first sentence of chapter 1, with its picture.` });
       await context.close();
     }
   }

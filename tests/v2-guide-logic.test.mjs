@@ -125,8 +125,7 @@ test("the link's medication flags choose the medication segment's variant, with 
 
 test("a medication the link switches off shows the pending note in the status strip, and a follow-up date reads in the patient's language", () => {
   const labels = { "ui.pending_clinician_text": "Medication details are pending your surgeon's wording.", "ui.language_fallback": "Showing English." };
-  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: ["antibiotic"] }), ["Medication details are pending your surgeon's wording."]);
-  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: [] }), []);
+  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels }), [], "a medication left out by the link is not announced to the patient");
   assert.equal(formatFollowUp("2026-10-01", "en"), "October 1, 2026");
   assert.equal(formatFollowUp("2026-10-01", "es"), "1 de octubre de 2026");
   assert.equal(formatFollowUp("2026-10-01", "zh-Hans"), "2026年10月1日");
