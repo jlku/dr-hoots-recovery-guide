@@ -57,7 +57,8 @@ export function wrapLines(text, size, maxWidth) {
   // Spaced text wraps between words. Chinese wraps between characters, keeps runs of Latin letters
   // and digits together, and never starts a line with closing punctuation.
   const spaced = !WIDE.test(text);
-  const units = spaced ? text.split(" ") : text.match(/[A-Za-z0-9.,°%+-]+|\s+|./gu) ?? [];
+  // A no-break space joins a number to its unit, so 101.5 °F never splits across lines.
+  const units = spaced ? text.split(" ") : text.match(/[A-Za-z0-9.,°%+\u00a0-]+|\s+|./gu) ?? [];
   const joiner = spaced ? " " : "";
   const lines = [];
   let line = "";
@@ -231,7 +232,8 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
   } else if (overlay.type === "pointer") {
     const text = labels[overlay.label_key] ?? "";
     const size = 29;
-    const width = Math.min(480, Math.max(220, measure(text, size, 16 / size)));
+    // Sized to the text plus its padding, so the last word or character never wraps alone.
+    const width = Math.min(480, Math.max(220, measure(text, size, 16 / size) + 28));
     const lines = wrapLines(text, size, width - 28);
     const height = 26 + lines.length * size * 1.25;
     group.append(
