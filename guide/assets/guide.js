@@ -1,5 +1,5 @@
 // guide/assets/guide.js
-// One page: chapter rail, one continuous player across the five segments, synchronized captions,
+// One page: chapter rail, one continuous player across the segments, synchronized captions,
 // and a transcript that follows playback and seeks on tap.
 import { assetUrl, fetchJson, loadGuide } from "./data.js";
 import { renderFrame, renderTitleCard, updateFrame } from "./frames.js";

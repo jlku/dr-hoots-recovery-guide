@@ -110,7 +110,7 @@ async function openGuide(context, base, fragment) {
   return page;
 }
 
-async function tocFacts(browser, base, index) {
+async function tocFacts(browser, base, index, numbers) {
   const context = await browser.newContext(DESKTOP);
   const page = await openGuide(context, base, "s=1&l=en");
   const presets = (await readJson("content/provider/presets.json")).presets;
@@ -118,7 +118,7 @@ async function tocFacts(browser, base, index) {
   const duration = (number) => index.entries.find((entry) => entry.language === "en" && entry.number === number && (!entry.variant || entry.variant === variant))?.duration_seconds ?? 0;
   const chapters = [];
   let start = 0;
-  for (const number of [1, 2, 3, 4, 5]) {
+  for (const number of numbers) {
     await page.click(`#chapter-list .chapter[data-number="${number}"]`);
     await page.waitForTimeout(400);
     const at = Number(await page.inputValue("#scrubber")) / 1000;
@@ -271,7 +271,7 @@ const media = await mediaFacts();
 const server = await startServer();
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 try {
-  const toc = await tocFacts(browser, server.base, media.index);
+  const toc = await tocFacts(browser, server.base, media.index, media.segments);
   const languages = await languageFacts(browser, server.base);
   const provider = await providerFacts(browser, server.base, out);
   const reviewLine = await reviewLineFacts(browser, server.base, provider.link, out);

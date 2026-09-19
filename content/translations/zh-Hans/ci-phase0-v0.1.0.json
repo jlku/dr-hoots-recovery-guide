@@ -4,7 +4,7 @@
   "script": "Hans",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "ai_reviewed",
+  "status": "machine_draft",
   "patient_use": false,
   "notice": "未经核实——不得用于患者",
   "sentences": {
@@ -43,12 +43,16 @@
   "labels": {
     "guide.title": "人工耳蜗术后恢复指南",
     "guide.subtitle": "五个短视频。先看您最想了解的那一个。",
-    "seg.incision-day2.title": "术后2天：拆绷带，看有没有胶布",
-    "seg.incision-day2.chip": "术后2天",
+    "seg.bandage-off.title": "术后2天：拆绷带",
+    "seg.bandage-off.chip": "术后2天",
+    "seg.tape-or-no-tape.title": "术后2天：看有没有胶布",
+    "seg.tape-or-no-tape.chip": "术后2天",
     "seg.next-two-weeks.title": "接下来两周：淋浴、用药、伤口复查",
     "seg.next-two-weeks.chip": "术后3天到2周",
-    "seg.when-to-call.title": "什么时候打电话：症状",
-    "seg.when-to-call.chip": "任何一天",
+    "seg.call-all-three.title": "什么时候打电话：三种情况同时出现",
+    "seg.call-all-three.chip": "任何一天",
+    "seg.call-any-one.title": "什么时候打电话：出现以下任何一种",
+    "seg.call-any-one.chip": "任何一天",
     "seg.who-to-call.title": "打给谁：电话号码",
     "seg.who-to-call.chip": "任何一天",
     "seg.programming-visits.title": "愈合以后：调机就诊",
@@ -105,13 +109,9 @@
     "ui.reviewed_by_clinician": "医护人员已审核"
   },
   "review": {
-    "kind": "ai",
-    "label": "经人工智能（Claude）审核，并非认证医学翻译",
+    "kind": "none",
+    "label": "机器翻译草稿，尚未审核",
     "date": "2026-09-19",
-    "receipts": [
-      "content/reviews/zh/a90912e7c4c58ba8.json",
-      "content/reviews/zh/a90912e7c4c58ba8.2.json",
-      "content/reviews/zh/a90912e7c4c58ba8.3.json"
-    ]
+    "receipts": []
   }
 }

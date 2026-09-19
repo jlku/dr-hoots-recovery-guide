@@ -40,6 +40,8 @@ Cut on the patient's question, not on module boundaries. Durations are from the 
 | 4 | `seg/who-to-call` | Who to call: the numbers | Any day | call.06 to call.08 | about 22 s |
 | 5 | `seg/programming-visits` | After healing: programming visits | After healing | act.01 to act.05 | about 26 s |
 
+> **Revised 2026-09-19: seven segments.** Spanish and Mandarin narration ran over the ceiling in segments 1 and 3 (Spanish about 40 s each, Mandarin 37.8 s and 48.6 s): the translated text is 30 to 40 percent longer, and the English-origin voices speak Mandarin slowly. John chose to split both, in every language, so chapter numbers mean the same thing in every language. Segment 1 became `seg/bandage-off` (wc.01, wc.02) and `seg/tape-or-no-tape` (wc.03 to wc.07); segment 3 became `seg/call-all-three` (call.01 to call.01c) and `seg/call-any-one` (call.02 to call.05). The medication segment is now number 3; the fixed, exportable segments are 1, 2, and 4 to 7. Each beat keeps its recorded narration, so the split needed no new speech.
+
 Rules:
 
 - Hard ceiling 35 s of narration per segment, checked by a validator against the timestamp manifest.

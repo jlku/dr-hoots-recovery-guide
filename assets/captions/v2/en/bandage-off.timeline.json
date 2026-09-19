@@ -1,0 +1,214 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/bandage-off",
+  "number": 1,
+  "language": "en",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/en/bandage-off.mp3",
+  "beats": [
+    {
+      "id": "beat/dressing-off",
+      "frame": "frame-01",
+      "sentence_ids": [
+        "wc.01",
+        "wc.02"
+      ],
+      "start": 1.5,
+      "end": 8.86,
+      "speech_seconds": 7.36,
+      "record_id": "wound-day2",
+      "manifest": "assets/audio/draft/manifest.json",
+      "source_audio": "assets/audio/draft/wound-day2.mp3",
+      "text": "Two days after surgery, remove the head bandage. Then check: is there tape over the incision behind your ear?"
+    }
+  ],
+  "words": [
+    {
+      "text": "Two",
+      "start": 1.5,
+      "end": 1.66,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "days",
+      "start": 1.724,
+      "end": 1.98,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "after",
+      "start": 2.033,
+      "end": 2.3,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "surgery,",
+      "start": 2.36,
+      "end": 3.1,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "remove",
+      "start": 3.157,
+      "end": 3.5,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 3.52,
+      "end": 3.58,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "head",
+      "start": 3.628,
+      "end": 3.82,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "bandage.",
+      "start": 3.868,
+      "end": 4.46,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "Then",
+      "start": 4.604,
+      "end": 5.18,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "check:",
+      "start": 5.26,
+      "end": 6.02,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "is",
+      "start": 6.14,
+      "end": 6.38,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "there",
+      "start": 6.42,
+      "end": 6.62,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "tape",
+      "start": 6.684,
+      "end": 6.94,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "over",
+      "start": 7.004,
+      "end": 7.26,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 7.28,
+      "end": 7.34,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "incision",
+      "start": 7.4,
+      "end": 7.9,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "behind",
+      "start": 7.946,
+      "end": 8.22,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "your",
+      "start": 8.252,
+      "end": 8.38,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "ear?",
+      "start": 8.48,
+      "end": 8.86,
+      "beat": "beat/dressing-off",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 4.46,
+      "text": "Two days after surgery, remove the head bandage.",
+      "beat": "beat/dressing-off",
+      "first_word": 0,
+      "word_count": 8
+    },
+    {
+      "id": "cue-02",
+      "start": 4.604,
+      "end": 6.02,
+      "text": "Then check:",
+      "beat": "beat/dressing-off",
+      "first_word": 8,
+      "word_count": 2
+    },
+    {
+      "id": "cue-03",
+      "start": 6.14,
+      "end": 8.38,
+      "text": "is there tape over the incision behind your",
+      "beat": "beat/dressing-off",
+      "first_word": 10,
+      "word_count": 8
+    },
+    {
+      "id": "cue-04",
+      "start": 8.48,
+      "end": 8.86,
+      "text": "ear?",
+      "beat": "beat/dressing-off",
+      "first_word": 18,
+      "word_count": 1
+    }
+  ],
+  "narration_seconds": 7.36,
+  "duration_seconds": 9.76,
+  "source_records": {
+    "wound-day2": "25c2375fc5e39c9cb667d412d3d611ebf0f68eaa5e658ad15f3c7a6d23bf3cea"
+  }
+}

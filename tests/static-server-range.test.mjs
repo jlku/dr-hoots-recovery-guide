@@ -27,7 +27,7 @@ test("the local server supports byte-range media seeking", async () => {
 
   try {
     await waitForReady(child);
-    const videoUrl = `http://127.0.0.1:${port}/assets/audio/v2/en/incision-day2.mp3`;
+    const videoUrl = `http://127.0.0.1:${port}/assets/audio/v2/en/bandage-off.mp3`;
     const cases = [
       { range: "bytes=0-99", status: 206, length: "100", contentRange: /^bytes 0-99\/\d+$/ },
       { range: "bytes=100-", status: 206, contentRange: /^bytes 100-\d+\/\d+$/ },
