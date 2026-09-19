@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { applyPresets, buildPatientLink, lineStatuses, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine } from "../guide/assets/provider.js";
+import { applyPresets, buildPatientLink, lineStatuses, missingFromBlock, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine } from "../guide/assets/provider.js";
 
 const root = resolve(import.meta.dirname, "..");
 const presets = JSON.parse(await readFile(resolve(root, "content/provider/presets.json"), "utf8")).presets;
@@ -42,7 +42,7 @@ test("the block reads only its five driving lines, lists what it could not read,
   assert.deepEqual(parsed.fields, { antibiotic: false, follow_up_date: "2026-10-01", language: "es", reviewed: { by: "Song", date: "2026-09-17" } });
   assert.deepEqual(parsed.unread, ["Pain medication: {Yes: *** / No: acetaminophen as needed}"]);
   assert.deepEqual(parsed.other.map((entry) => entry.key), [null, "surgery date"]);
-  assert.deepEqual(parsed.needs_choice, [], "an unfilled template line keeps its preset");
+  assert.deepEqual(parsed.needs_choice, ["pain_medication"], "an unfilled template line is still a choice the provider has not made");
   const merged = applyPresets(parsed.fields, presets);
   assert.equal(merged.values.pain_medication, true);
   assert.deepEqual(merged.from_presets, ["pain_medication"]);
@@ -67,7 +67,8 @@ test("the spec's unfilled draft block reads as all presets, with its unchosen li
   const parsed = parseProviderBlock(draft);
   assert.deepEqual(parsed.fields, {});
   assert.equal(parsed.unread.length, 4);
-  assert.equal(buildPatientLink(applyPresets(parsed.fields, presets).values), "guide/index.html#a=1&p=1&l=en");
+  assert.deepEqual(parsed.needs_choice, ["antibiotic", "pain_medication", "follow_up_date", "language"], "the draft's own lines are choices, not presets");
+  assert.equal(buildPatientLink(applyPresets(parsed.fields, presets).values), "guide/index.html#a=1&p=1&l=en", "presets still answer a block that leaves the line out");
 });
 
 test("the words a clinician would type for the five driving lines are read", () => {
@@ -135,4 +136,19 @@ test("a choice in the table writes the matching line back into the block", () =>
   assert.doesNotMatch(setFieldLine(dated, "follow_up_date", null), /Follow-up:/, "clearing the date removes its line");
   const reviewed = setFieldLine("Antibiotic: No", "reviewed", { by: "Dr. Lee", date: "2026-09-20" });
   assert.deepEqual(parseProviderBlock(reviewed).fields.reviewed, { by: "Dr. Lee", date: "2026-09-20" });
+});
+
+test("an unlabeled line counts as an instruction, and the header stays a note", () => {
+  const template = parseProviderBlock(draftText).other;
+  const block = [".CIPOSTOP  Cochlear implant post-operative instructions (UCSF OHNS)", "No NSAIDs (aspirin, ibuprofen, naproxen) x 10 days post-op -- bleeding risk."].join("\n");
+  const statuses = lineStatuses(parseProviderBlock(block).other, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
+  assert.deepEqual(statuses.map((entry) => entry.status), ["note", "not_covered"], "only the practice's own unlabeled lines are notes");
+});
+
+test("the guide's own steps that the block never mentions are listed, so deleting a line hides nothing", () => {
+  const block = ["Antibiotic: No", "Shower: may shower and wash hair 5 days after surgery."].join("\n");
+  const missing = missingFromBlock(parseProviderBlock(block).other, { covered: lineMap.covered });
+  assert.deepEqual(missing.map((entry) => entry.key), ["dressing", "incision", "activation", "when to call", "contact"], "shower is mentioned, the rest are not");
+  assert.deepEqual(missing[0].sentences, ["wc.01", "wc.02"]);
+  assert.deepEqual(missingFromBlock(parseProviderBlock(draftText).other, { covered: lineMap.covered }), [], "the practice's own draft mentions every covered step");
 });

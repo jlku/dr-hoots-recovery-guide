@@ -1,8 +1,9 @@
 // guide/assets/provider.js
 // Reads the provider's dot-phrase block. Pure functions shared by the provider page and the tests.
 // Only five lines drive the guide; every other line stays in the provider's note and is listed by name.
-// An unfilled template line (an Epic {Yes/No} list or ***) keeps its preset. A line the provider wrote
-// that cannot be read, or two lines that disagree, need a choice: a yes or a no is never guessed.
+// A driving line that is present but unresolved, whether unreadable or an unfilled template list, needs
+// a choice; so do two lines that disagree. A yes or a no is never guessed. Leaving the line out of the
+// block is how a preset applies.
 
 const LANGUAGE_NAMES = [
   [/^(english|inglés|ingles|英文|英语)$/iu, "en"],
@@ -130,10 +131,8 @@ export function parseProviderBlock(text) {
         if (read.details) details[field] = read.details;
       } else {
         unread.push(line);
-        if (!isPlaceholder(value)) {
-          needsChoice.add(field);
-          unclear[field] = line;
-        }
+        needsChoice.add(field);
+        unclear[field] = line;
       }
       previous = { key, text: line };
     } else if (reviewedAt !== 0) {
@@ -196,14 +195,25 @@ export function comparable(text) {
 // the guide has nothing for).
 export function lineStatuses(other, { template = [], covered = {}, noteOnly = [] }) {
   const practice = new Map(template.filter((entry) => entry.key).map((entry) => [entry.key, comparable(entry.text)]));
+  // The practice's own unlabeled lines, such as the .CIPOSTOP header, are notes. Anything else the
+  // provider types without a label is an instruction they mean the patient to get.
+  const headers = new Set(template.filter((entry) => !entry.key).map((entry) => comparable(entry.text)));
   return other.map((entry) => {
     const placeholder = isPlaceholder(entry.text);
-    if (!entry.key || noteOnly.includes(entry.key)) return { ...entry, status: "note", placeholder };
+    if (entry.key ? noteOnly.includes(entry.key) : headers.has(comparable(entry.text))) return { ...entry, status: "note", placeholder };
+    if (!entry.key) return { ...entry, status: "not_covered", placeholder };
     if (covered[entry.key]) {
       return { ...entry, status: practice.get(entry.key) === comparable(entry.text) ? "same" : "changed", sentences: covered[entry.key], placeholder };
     }
     return { ...entry, status: "not_covered", placeholder };
   });
+}
+
+// What the guide says that the provider's block never mentions. Deleting a line from the note does not
+// delete it from the guide, so the page lists these too.
+export function missingFromBlock(other, { covered = {} }) {
+  const mentioned = new Set(other.map((entry) => entry.key));
+  return Object.entries(covered).filter(([key]) => !mentioned.has(key)).map(([key, sentences]) => ({ key, sentences }));
 }
 
 const LANGUAGE_WORDS = { en: "English", es: "Spanish", "zh-Hans": "Mandarin" };

@@ -5,7 +5,7 @@
 // the provider pastes leaves the browser tab.
 import { assetUrl, canonicalSentences, fetchJson } from "./data.js";
 import { LANGUAGES, formatFollowUp } from "./logic.js";
-import { FIELD_ORDER, applyPresets, buildPatientLink, lineStatuses, parseProviderBlock, setFieldLine } from "./provider.js";
+import { FIELD_ORDER, applyPresets, buildPatientLink, lineStatuses, missingFromBlock, parseProviderBlock, setFieldLine } from "./provider.js";
 
 const byId = (id) => document.getElementById(id);
 const dom = {
@@ -16,6 +16,8 @@ const dom = {
   notUsedList: byId("not-used-list"),
   unreadBlock: byId("unread-block"),
   unread: byId("unread"),
+  alsoSays: byId("also-says"),
+  alsoSaysList: byId("also-says-list"),
   kept: byId("kept"),
   keptSummary: byId("kept-summary"),
   keptList: byId("kept-list"),
@@ -94,7 +96,7 @@ function medicationRow(field, parsed, values, fromPresets) {
   if (conflict) notes.push(`Your block says both ${conflict.lines.map((line) => `"${line}"`).join(" and ")}. Choose one.`);
   else if (needsChoice) notes.push(`This page cannot read "${parsed.unclear[field]}" as a yes or a no. Choose one.`);
   if (value === true) notes.push(`The guide says: "${sentences.get(MEDICATION_SENTENCE[field])}"`);
-  else if (value === false) notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}; that waits on Song.`);
+  else if (value === false) notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}, and says nothing about it until your clinic gives us that wording.`);
   if (value !== null && parsed.details[field]) notes.push({ text: `Not shown to the patient: "${parsed.details[field]}". It stays in your note.`, notInGuide: true });
   const from = needsChoice ? "Choose one" : fromPresets.includes(field) ? "preset" : "your block";
   return row(field, yesNo(field, value, false), from, notes, needsChoice);
@@ -199,6 +201,13 @@ function render() {
   dom.notUsedList.replaceChildren(...warnings.map(lineItem));
   dom.notUsedSummary.textContent = warnings.length === 1 ? "1 line in your block will not reach this patient." : `${warnings.length} lines in your block will not reach this patient.`;
   dom.notUsed.hidden = warnings.length === 0;
+  const missing = missingFromBlock(parsed.other, { covered: lineMap.covered });
+  dom.alsoSaysList.replaceChildren(...missing.map((entry) => {
+    const item = element("li", { className: "line line--also" });
+    item.append(element("p", { className: "line__note", textContent: `Chapter ${chapterOf.get(entry.sentences[0])}: "${quote(entry.sentences)}"` }));
+    return item;
+  }));
+  dom.alsoSays.hidden = missing.length === 0;
   const kept = statuses.filter((entry) => entry.status === "same" || entry.status === "note");
   dom.keptList.replaceChildren(...kept.map(lineItem));
   dom.keptSummary.textContent = kept.length === 1 ? "1 other line: matches the guide or stays in your note" : `${kept.length} other lines: match the guide or stay in your note`;

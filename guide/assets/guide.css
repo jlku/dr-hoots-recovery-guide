@@ -192,6 +192,9 @@ button, select, input { font-family: inherit; }
 .line__text { display: block; color: var(--navy); font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; white-space: pre-wrap; overflow-wrap: anywhere; }
 .line__note { margin: 2px 0 0; color: var(--blue-gray); font-size: 15px; }
 .line--changed .line__note, .line--not_covered .line__note { color: #7a1a14; }
+/* What the guide says that the block never mentions: deleting a line does not delete the instruction. */
+.provider__also { margin-top: 16px; padding: 4px 16px 12px; border-left: 4px solid var(--teal); background: var(--wash); }
+.provider__also .line__note { color: var(--navy); }
 .provider__kept { margin-top: 12px; }
 .provider__kept summary { color: var(--blue-gray); font-size: 15px; cursor: pointer; }
 /* The editable table: each value is a control, and a change rewrites its line in the block. */
