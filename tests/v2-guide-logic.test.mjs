@@ -18,7 +18,8 @@ import {
   pendingConditionalBeats,
   pickEntry,
   segmentByNumber,
-  sentenceSpans
+  sentenceSpans,
+  statusMessages
 } from "../guide/assets/logic.js";
 import { phraseTime } from "../guide/assets/frames.js";
 
@@ -91,4 +92,11 @@ test("the guide takes each cue's words from its recorded range and ends Chinese 
   const sentences = sentenceSpans(timeline);
   assert.deepEqual(sentences.map((sentence) => sentence.text), ["两天后，取下绷带。", "然后检查。"]);
   assert.equal(joinWords([{ text: "a", space: true }, { text: "b" }]), "a b");
+});
+
+test("a translated guide always says who reviewed the translation, and says when it fell back to English", () => {
+  const labels = { "ui.language_fallback": "This language is not available yet. Showing English." };
+  assert.deepEqual(statusMessages({ pack: { language: "en", review: { label: "English source text" } }, fallback: false, labels }), []);
+  assert.deepEqual(statusMessages({ pack: { language: "es", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado" } }, fallback: false, labels }), ["Revisado por IA (Claude), no por un traductor médico certificado"]);
+  assert.deepEqual(statusMessages({ pack: { language: "en", review: {} }, fallback: true, labels }), ["This language is not available yet. Showing English."]);
 });

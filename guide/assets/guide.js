@@ -20,7 +20,8 @@ import {
   parseFragment,
   pendingConditionalBeats,
   pickEntry,
-  sentenceSpans
+  sentenceSpans,
+  statusMessages
 } from "./logic.js";
 
 const CAPTIONS_KEY = "recovery-guide-captions";
@@ -436,7 +437,7 @@ async function init() {
   dom.follow.checked = readFlag(FOLLOW_KEY);
 
   const fallback = guide.packFallback || picks.some((pick) => pick.fallback);
-  setStatus([fallback ? text["ui.language_fallback"] : null]);
+  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text }));
 
   const requested = Number.parseInt(params.s ?? "1", 10) || 1;
   await loadSegment(segmentByNumber(requested) && entryFor(requested) ? requested : entries[0]?.number ?? 1);

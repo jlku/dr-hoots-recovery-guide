@@ -138,3 +138,12 @@ export function localToGlobal(clock, number, local) {
   const segment = clock.segments.find((candidate) => candidate.number === number);
   return segment ? segment.offset + local : local;
 }
+
+// The status strip: a visible notice when a language fell back to English, and, whenever a
+// translation is showing, who reviewed it. AI review is always labeled as AI.
+export function statusMessages({ pack, fallback, labels }) {
+  const messages = [];
+  if (fallback) messages.push(labels["ui.language_fallback"]);
+  if (pack?.language !== "en" && pack?.review?.label) messages.push(pack.review.label);
+  return messages.filter(Boolean);
+}
