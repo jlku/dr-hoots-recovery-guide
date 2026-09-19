@@ -22,13 +22,14 @@ export async function loadLanguagePacks(root, artifactFile = "ci-phase0-v0.1.0.j
 async function main() {
   const bundle = await loadSegmentBundle(repositoryRoot);
   const packs = await loadLanguagePacks(repositoryRoot);
-  if (!packs.some((entry) => entry.pack.language === "en")) {
+  const english = packs.find((entry) => entry.pack.language === "en")?.pack;
+  if (!english) {
     console.error("error: the English pack content/translations/en is required");
     process.exit(1);
   }
   let failed = false;
   for (const { language, path, pack } of packs) {
-    const errors = [...validateLanguagePack({ pack, canonical: bundle.canonical, segments: bundle.segments }).errors];
+    const errors = [...validateLanguagePack({ pack, canonical: bundle.canonical, segments: bundle.segments, source: english }).errors];
     if (pack.language !== language) errors.push(`language ${pack.language} does not match directory ${language}`);
     if (errors.length) {
       failed = true;
