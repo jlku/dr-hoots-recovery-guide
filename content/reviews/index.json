@@ -47,8 +47,12 @@
       "status": "not_reviewed",
       "label": "Simulated Song review (AI), not Song's approval",
       "date": null,
-      "target": null,
-      "receipts": []
+      "target": "71d251f8520b073347790c1da36d248e255513a4f8e1348dd868abfa98c12ac0",
+      "receipts": [
+        "content/reviews/song/71d251f8520b0733.json",
+        "content/reviews/song/71d251f8520b0733.2.json",
+        "content/reviews/song/71d251f8520b0733.3.json"
+      ]
     }
   }
 }
