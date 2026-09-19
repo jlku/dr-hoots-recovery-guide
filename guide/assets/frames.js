@@ -456,6 +456,7 @@ function renderFrameBody(frame, { beat, beatWords = [], sentences, pack, motion,
       line.className = "text-card__data";
       line.textContent = (pack.labels[`ui.${frame.data_field.replace(/_date$/, "")}_on`] ?? "{date}").replace("{date}", data[frame.data_field]);
       card.append(line);
+      card.classList.add("text-card--data");
     }
     stage.append(card);
     return stage;

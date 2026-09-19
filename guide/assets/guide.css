@@ -93,6 +93,9 @@ button, select, input { font-family: inherit; }
 .panel figcaption strong { display: block; }
 .panel figcaption ul, .panel figcaption ol { margin: 2px 0 0; padding-left: 16px; }
 .frame--panels .frame__pending { position: static; max-width: 100%; }
+/* A text frame stacks its pending note under the card, so the note never covers a line of it. */
+.frame--text { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; overflow: hidden; }
+.frame--text .frame__pending { position: static; max-width: 100%; }
 
 /* Chapter bar (phones only) */
 .chapter-bar { display: none; }
@@ -144,6 +147,10 @@ button, select, input { font-family: inherit; }
   .transcript { padding-bottom: 12px; }
   .sentence { padding: 10px 16px; font-size: 20px; line-height: 1.45; }
   .sentence.is-current { background: var(--paper); }
+  /* The transcript right below carries the sentences, so a text frame with a date from the provider's
+     link shows only the date: it is the one thing on the frame the transcript does not have. */
+  .text-card--data .text-card__list { display: none; }
+  .text-card--data .text-card__data { margin-top: 0; }
 }
 
 @media (prefers-reduced-motion: reduce) {
