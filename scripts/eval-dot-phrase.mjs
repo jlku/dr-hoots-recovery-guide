@@ -2,7 +2,8 @@
 // pastes the edited block into the provider page, opens the patient link it produces, and scores:
 //   effective  the guide reflects the edit
 //   honest     when it does not, the provider page names that line as not reaching the patient
-//   safe       the guide never tells the patient the opposite of what the provider wrote
+//   safe       the guide never tells the patient the opposite of what the provider wrote; a link the
+//              page withholds until the provider chooses reaches no patient, so it is safe
 // Chrome has to run outside a command sandbox.
 //   node scripts/eval-dot-phrase.mjs [--out artifacts/dot-phrase-eval] [--case <id>]
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -49,25 +50,31 @@ async function runCase(browser, base, item) {
   const provider = await page.evaluate(() => ({
     text: document.querySelector(".provider__result")?.innerText ?? "",
     rows: [...document.querySelectorAll("#parsed tbody tr")].map((row) => [...row.children].map((cell) => cell.textContent.trim())),
-    notInGuide: [...document.querySelectorAll("#unread li, [data-not-in-guide] li")].map((node) => node.textContent),
+    notInGuide: [...document.querySelectorAll("#unread li, [data-not-in-guide] li, tr.needs-choice")].map((node) => node.textContent),
     other: document.getElementById("other")?.textContent ?? "",
     link: document.getElementById("patient-link")?.textContent ?? ""
   }));
   await page.screenshot({ path: join(out, `${item.id}-provider.png`), fullPage: true });
-  await page.goto(provider.link.replace(/^https?:\/\/[^/]+/, base));
-  await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
-  await page.waitForTimeout(800);
-  const guide = await page.evaluate(() => document.body.innerText);
+  const withheld = !provider.link;
+  let guide = "";
+  if (!withheld) {
+    await page.goto(provider.link.replace(/^https?:\/\/[^/]+/, base));
+    await page.waitForSelector("body[data-ready]", { state: "attached", timeout: 15000 });
+    await page.waitForTimeout(300);
+    guide = await page.evaluate(() => document.body.innerText);
+  }
   await context.close();
-  const link = Object.fromEntries(new URLSearchParams(new URL(provider.link).hash.slice(1)));
+  const link = withheld ? {} : Object.fromEntries(new URLSearchParams(new URL(provider.link).hash.slice(1)));
   const evidence = { guide, page: provider.text, link };
-  const effectiveMisses = check(item.effective, evidence);
-  const safeMisses = check(item.safe, evidence);
+  const effectiveMisses = check(withheld ? { page_mentions: item.effective?.page_mentions } : item.effective, evidence);
+  if (withheld && (item.effective?.contains || item.effective?.link)) effectiveMisses.push("the page withholds the link until the provider chooses");
+  const safeMisses = withheld ? [] : check(item.safe, evidence);
   const named = provider.notInGuide.some((line) => line.includes(item.line));
   return {
     id: item.id,
     kind: item.kind,
     intent: item.intent,
+    withheld,
     effective: effectiveMisses.length === 0,
     honest: effectiveMisses.length === 0 || named,
     safe: safeMisses.length === 0,
