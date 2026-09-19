@@ -9,6 +9,26 @@ export const NARRATION_CEILING_SECONDS = 35;
 export const NARRATION_TARGET_SECONDS = 30;
 export const CANVAS = Object.freeze({ width: 1080, height: 1920, fps: 30 });
 
+// Conditions a provider's block can switch, and the fragment parameter each one travels in.
+export const CONDITION_PARAMS = Object.freeze({ antibiotic: "a", pain_medication: "p" });
+export const WHEN_FALSE = Object.freeze(["pending_clinician_text"]);
+
+// Every combination of a segment's conditions, pre-rendered so the player only picks a file:
+// segment 2 has a0p0, a0p1, a1p0, and a1p1; a segment without conditions has one, "".
+export function segmentVariants(segment) {
+  const conditions = [...new Set((segment.beats ?? []).map((beat) => beat.condition).filter((condition) => typeof condition === "string"))]
+    .sort((left, right) => CONDITION_PARAMS[left].localeCompare(CONDITION_PARAMS[right]));
+  let variants = [{ id: "", conditions: {} }];
+  for (const condition of conditions) {
+    variants = variants.flatMap((variant) => [false, true].map((on) => ({ id: `${variant.id}${CONDITION_PARAMS[condition]}${on ? 1 : 0}`, conditions: { ...variant.conditions, [condition]: on } })));
+  }
+  return variants;
+}
+
+export function beatPlays(beat, conditions = {}) {
+  return typeof beat.condition !== "string" || conditions[beat.condition] === true;
+}
+
 export function segmentSlug(segmentId) {
   return segmentId.replace(/^seg\//, "");
 }
@@ -104,11 +124,13 @@ export function validateSegments({ segments, canonical, records }) {
         continue;
       }
       if (typeof beat.condition === "string") {
-        if (beat.sentence_ids.length === 0 && beat.status !== "pending_clinician_text") {
-          errors.push(`${beat.id} is conditional without sentences and must be status pending_clinician_text`);
+        if (!CONDITION_PARAMS[beat.condition]) errors.push(`${beat.id}: unknown condition ${beat.condition}`);
+        if (beat.sentence_ids.length === 0) {
+          if (beat.status !== "pending_clinician_text") errors.push(`${beat.id} is conditional without sentences and must be status pending_clinician_text`);
+          continue;
         }
-        if (beat.sentence_ids.length > 0) errors.push(`${beat.id}: conditional beats with sentences are not supported yet`);
-        continue;
+        if (beat.when_false !== undefined && !WHEN_FALSE.includes(beat.when_false)) errors.push(`${beat.id}: when_false must be one of ${WHEN_FALSE.join(", ")}`);
+        // A conditional beat with sentences is checked like any beat: coverage, English narration, mapping.
       }
       if (beat.sentence_ids.length === 0) errors.push(`${beat.id} needs sentence_ids`);
       covered.push(...beat.sentence_ids);

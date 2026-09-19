@@ -61,6 +61,7 @@ button, select, input { font-family: inherit; }
 .chip { padding: 2px 10px; border-radius: 999px; background: var(--yellow); color: var(--navy); font-size: 14px; font-weight: 800; letter-spacing: .04em; text-transform: uppercase; }
 .text-card { width: min(100%, 560px); padding: 8px; }
 .text-card__lead { margin: 0 0 10px; color: var(--blue-gray); font-size: 17px; }
+.text-card__data { margin: 14px 0 0; padding: 10px 14px; border-left: 4px solid var(--teal); background: var(--wash); font-size: clamp(19px, 2vw, 24px); font-weight: 700; }
 .text-card__list { margin: 0; padding-left: 1.1em; display: grid; gap: 10px; font-size: clamp(19px, 2vw, 24px); line-height: 1.35; }
 .caption-band { flex: none; min-height: calc(2 * 1.35em + 32px); padding: 16px 24px; border-top: 5px solid var(--teal); background: var(--navy); color: #fff; font-size: 24px; font-weight: 600; line-height: 1.35; }
 .caption-band[hidden] { display: none; }

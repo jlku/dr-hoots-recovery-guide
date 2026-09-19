@@ -4,6 +4,8 @@ import { join } from "node:path";
 export const FRAMES_PATH = "content/frames/ci-phase0-v0.1.0.frames.json";
 export const FRAME_KINDS = Object.freeze(["svg", "image", "text", "composite", "panels"]);
 export const MOTION_MODES = Object.freeze(["static", "narration"]);
+// Values a provider's link carries that a text frame may draw as live text.
+export const DATA_FIELDS = Object.freeze(["follow_up_date"]);
 export const OVERLAY_TYPES = Object.freeze(["incision", "tape-strips", "inset", "no-cleaning", "checklist", "rows", "steps", "pointer", "device", "flush", "motion-arrow"]);
 
 export async function loadFrameManifest(root, path = FRAMES_PATH) {
@@ -124,6 +126,7 @@ export async function validateFrames({ frames, segments, root, labels = {} }) {
     }
     if (frame.kind === "text") {
       if (frame.src) errors.push(`${id} is a text frame and must not have src`);
+      if (frame.data_field && !DATA_FIELDS.includes(frame.data_field)) errors.push(`${id} data_field ${frame.data_field} is not a provider field`);
       continue;
     }
     if (frame.kind === "composite") {

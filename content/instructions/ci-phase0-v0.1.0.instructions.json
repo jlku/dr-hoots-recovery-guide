@@ -23,7 +23,10 @@
     "call.06",
     "call.07",
     "call.07a",
-    "call.08"
+    "call.08",
+    "med.01",
+    "med.03",
+    "med.04"
   ],
   "non_instruction_sentence_ids": {
     "wc.09": "information: when the wound check happens",
@@ -40,7 +43,8 @@
     "act.02": "information: what the processor is and who programs it",
     "act.03": "information",
     "act.04": "information",
-    "act.05": "information"
+    "act.05": "information",
+    "med.02": "The reason for the antibiotic, not an action."
   },
   "claims": [
     {
@@ -180,6 +184,39 @@
       "clinician_confirmed": false,
       "open_question": null,
       "note": "The number is the instruction; the frame shows it as live text."
+    },
+    {
+      "id": "howto.take-antibiotic",
+      "sentence_ids": [
+        "med.01"
+      ],
+      "frame": "frame-medication",
+      "actor": "the patient",
+      "action": "take the antibiotic",
+      "tool": "the prescribed antibiotic",
+      "location": "as the prescription label says",
+      "end_state": "the antibiotic taken as prescribed",
+      "status": "text",
+      "clinician_confirmed": false,
+      "open_question": "q.medication-text",
+      "note": "Drafted from the UCSF EARS page. Plays only when the provider's block says yes to an antibiotic. The wording for no antibiotic is Song's to supply."
+    },
+    {
+      "id": "howto.take-pain-medicine",
+      "sentence_ids": [
+        "med.03",
+        "med.04"
+      ],
+      "frame": "frame-medication",
+      "actor": "the patient",
+      "action": "take the prescribed pain medicine before the pain gets bad",
+      "tool": "the prescribed pain medicine",
+      "location": "as the prescription label says",
+      "end_state": "pain kept under control",
+      "status": "text",
+      "clinician_confirmed": false,
+      "open_question": "q.medication-text",
+      "note": "Drafted from the UCSF EARS page. Which over-the-counter medicine follows, and whether to avoid NSAIDs, is left to Song."
     }
   ]
 }

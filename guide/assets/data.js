@@ -44,5 +44,6 @@ export async function loadGuide(requestedLanguage) {
   const sentences = pack.language === "en" ? canonicalSentences(canonical) : new Map(Object.entries(pack.sentences ?? {}));
   const reviews = await fetchOptionalJson("content/reviews/index.json");
   const instructions = await fetchJson(`content/instructions/${ARTIFACT}.instructions.json`);
-  return { language, segments, canonical, index, frames, pack, packFallback, sentences, reviews, instructions };
+  const presets = (await fetchOptionalJson("content/provider/presets.json"))?.presets ?? {};
+  return { language, segments, canonical, index, frames, pack, packFallback, sentences, reviews, instructions, presets };
 }

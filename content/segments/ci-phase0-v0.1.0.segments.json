@@ -5,7 +5,14 @@
   "status": "unverified_draft",
   "patient_use": false,
   "notice": "UNVERIFIED — NOT FOR PATIENT USE",
-  "canvas": { "width": 1080, "height": 1920, "fps": 30, "title_card_seconds": 1.5, "beat_gap_seconds": 0.6, "tail_seconds": 0.9 },
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30,
+    "title_card_seconds": 1.5,
+    "beat_gap_seconds": 0.6,
+    "tail_seconds": 0.9
+  },
   "segments": [
     {
       "id": "seg/incision-day2",
@@ -15,15 +22,34 @@
       "beats": [
         {
           "id": "beat/dressing-off",
-          "sentence_ids": ["wc.01", "wc.02"],
+          "sentence_ids": [
+            "wc.01",
+            "wc.02"
+          ],
           "frame": "frame-01",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "wound-day2" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "wound-day2"
+            }
+          }
         },
         {
           "id": "beat/two-paths",
-          "sentence_ids": ["wc.03", "wc.04", "wc.05", "wc.06", "wc.07"],
+          "sentence_ids": [
+            "wc.03",
+            "wc.04",
+            "wc.05",
+            "wc.06",
+            "wc.07"
+          ],
           "frame": "frame-0203-paths",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "wound-paths" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "wound-paths"
+            }
+          }
         }
       ]
     },
@@ -32,29 +58,56 @@
       "number": 2,
       "title_key": "seg.next-two-weeks.title",
       "chip_key": "seg.next-two-weeks.chip",
-      "data_fields": ["follow_up_date"],
+      "data_fields": [
+        "follow_up_date"
+      ],
       "beats": [
         {
           "id": "beat/milestones",
-          "sentence_ids": ["wc.08", "wc.09", "wc.10"],
+          "sentence_ids": [
+            "wc.08",
+            "wc.09",
+            "wc.10"
+          ],
           "frame": "frame-0405-milestones",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "wound-milestones" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "wound-milestones"
+            }
+          }
         },
         {
           "id": "beat/medication-antibiotic",
           "condition": "antibiotic",
-          "status": "pending_clinician_text",
-          "sentence_ids": [],
-          "frame": "frame-medication-pending",
-          "narration": {}
+          "when_false": "pending_clinician_text",
+          "sentence_ids": [
+            "med.01",
+            "med.02"
+          ],
+          "frame": "frame-medication",
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "medication-antibiotic"
+            }
+          }
         },
         {
           "id": "beat/medication-pain",
           "condition": "pain_medication",
-          "status": "pending_clinician_text",
-          "sentence_ids": [],
-          "frame": "frame-medication-pending",
-          "narration": {}
+          "when_false": "pending_clinician_text",
+          "sentence_ids": [
+            "med.03",
+            "med.04"
+          ],
+          "frame": "frame-medication",
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "medication-pain"
+            }
+          }
         }
       ]
     },
@@ -66,15 +119,35 @@
       "beats": [
         {
           "id": "beat/three-signs",
-          "sentence_ids": ["call.01", "call.01a", "call.01b", "call.01c"],
+          "sentence_ids": [
+            "call.01",
+            "call.01a",
+            "call.01b",
+            "call.01c"
+          ],
           "frame": "frame-06-redness",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "call-three-signs" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "call-three-signs"
+            }
+          }
         },
         {
           "id": "beat/any-of-these",
-          "sentence_ids": ["call.02", "call.03", "call.04", "call.05"],
+          "sentence_ids": [
+            "call.02",
+            "call.03",
+            "call.04",
+            "call.05"
+          ],
           "frame": "frame-0710-anylist",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "call-any" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "call-any"
+            }
+          }
         }
       ]
     },
@@ -86,9 +159,19 @@
       "beats": [
         {
           "id": "beat/numbers",
-          "sentence_ids": ["call.06", "call.07", "call.07a", "call.08"],
+          "sentence_ids": [
+            "call.06",
+            "call.07",
+            "call.07a",
+            "call.08"
+          ],
           "frame": "frame-11-numbers",
-          "narration": { "en": { "manifest": "assets/audio/draft/manifest.json", "record_id": "call-numbers" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/draft/manifest.json",
+              "record_id": "call-numbers"
+            }
+          }
         }
       ]
     },
@@ -100,21 +183,44 @@
       "beats": [
         {
           "id": "beat/healing",
-          "sentence_ids": ["act.01"],
+          "sentence_ids": [
+            "act.01"
+          ],
           "frame": "frame-12-healing",
-          "narration": { "en": { "manifest": "assets/audio/manifest.json", "record_id": "healing" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/manifest.json",
+              "record_id": "healing"
+            }
+          }
         },
         {
           "id": "beat/programming",
-          "sentence_ids": ["act.02", "act.03"],
+          "sentence_ids": [
+            "act.02",
+            "act.03"
+          ],
           "frame": "frame-13-programming",
-          "narration": { "en": { "manifest": "assets/audio/manifest.json", "record_id": "chaptered-programming" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/manifest.json",
+              "record_id": "chaptered-programming"
+            }
+          }
         },
         {
           "id": "beat/follow-up",
-          "sentence_ids": ["act.04", "act.05"],
+          "sentence_ids": [
+            "act.04",
+            "act.05"
+          ],
           "frame": "frame-14-follow-up",
-          "narration": { "en": { "manifest": "assets/audio/manifest.json", "record_id": "follow-up" } }
+          "narration": {
+            "en": {
+              "manifest": "assets/audio/manifest.json",
+              "record_id": "follow-up"
+            }
+          }
         }
       ]
     }

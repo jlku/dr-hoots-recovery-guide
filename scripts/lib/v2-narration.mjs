@@ -7,9 +7,10 @@ import { estimateNarrationUsd } from "./spend-ledger.mjs";
 
 export const NARRATION_MODEL = "fal-ai/elevenlabs/tts/eleven-v3";
 
-// Beats that are spoken: conditional beats wait on the surgeon's wording and have no narration.
+// Beats that are spoken: every beat with sentences, including a conditional beat that plays only in
+// some variants. A conditional beat without sentences waits on the surgeon's wording.
 export function narratedBeats(segments) {
-  return segments.segments.flatMap((segment) => segment.beats).filter((beat) => typeof beat.condition !== "string" && beat.sentence_ids.length > 0);
+  return segments.segments.flatMap((segment) => segment.beats).filter((beat) => beat.sentence_ids.length > 0);
 }
 
 export function beatRecordId(beat) {

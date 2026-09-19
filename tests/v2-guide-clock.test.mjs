@@ -4,6 +4,7 @@ import { resolve } from "node:path";
 import test from "node:test";
 
 import { buildGuideClock, globalToLocal, localToGlobal, sentenceSpans, activeSentence } from "../guide/assets/logic.js";
+import { pickEntry } from "../guide/assets/logic.js";
 
 const root = resolve(import.meta.dirname, "..");
 const timeline = JSON.parse(await readFile(resolve(root, "assets/captions/v2/en/incision-day2.timeline.json"), "utf8"));
@@ -41,7 +42,8 @@ test("the active sentence is the last one that has started", () => {
 });
 
 test("the guide clock maps one continuous timeline onto per-segment audio", () => {
-  const entries = index.entries.filter((entry) => entry.language === "en");
+  // One entry per segment: segment 2 plays the variant the link asks for, here every medication beat.
+  const entries = [1, 2, 3, 4, 5].map((number) => pickEntry(index, number, "en", "a1p1").entry);
   const clock = buildGuideClock(entries);
   assert.equal(clock.segments.length, 5);
   assert.equal(clock.segments[0].offset, 0);

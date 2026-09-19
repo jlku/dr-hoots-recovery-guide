@@ -1,5 +1,6 @@
 // tests/v2-translation-review.test.mjs
 import assert from "node:assert/strict";
+import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 
@@ -26,7 +27,8 @@ function passingReceipt(packet) {
 test("a packet lists every sentence and label with the pack's content hash", async () => {
   const packet = await buildPacket({ root, reviewer: "es" });
   assert.equal(packet.target.language, "es");
-  assert.equal(packet.items.filter((item) => item.kind === "sentence").length, 27);
+  const canonical = JSON.parse(await readFile(resolve(root, "content/canonical/ci-phase0-v0.1.0.json"), "utf8"));
+  assert.equal(packet.items.filter((item) => item.kind === "sentence").length, canonical.modules.flatMap((module) => module.canonical_sentences).length);
   assert.ok(packet.items.some((item) => item.id === "ov.fever" && item.kind === "label"));
   assert.match(packet.target.sha256, /^[0-9a-f]{64}$/);
   assert.equal(receiptPath("es", packet.target.sha256), `content/reviews/es/${packet.target.sha256.slice(0, 16)}.json`);

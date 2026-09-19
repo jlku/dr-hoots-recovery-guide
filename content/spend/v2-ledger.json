@@ -919,6 +919,36 @@
       "actual_usd": null,
       "request_id": "01a0b7e7-1616-7ef0-ab68-f16b68ed7fc1",
       "status": "completed"
+    },
+    {
+      "id": "tts:en:medication-antibiotic:2026-09-19T04:37:27.285Z",
+      "at": "2026-09-19T04:37:27.288Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "en narration for beat/medication-antibiotic",
+      "units": {
+        "characters": 75,
+        "language": "en",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b7f4-79d8-7ca2-ac98-4e6310152bac",
+      "status": "completed"
+    },
+    {
+      "id": "tts:en:medication-pain:2026-09-19T04:37:27.285Z",
+      "at": "2026-09-19T04:37:32.301Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "en narration for beat/medication-pain",
+      "units": {
+        "characters": 84,
+        "language": "en",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b7f4-8c1a-72f2-8820-4ff5c846e1de",
+      "status": "completed"
     }
   ]
 }

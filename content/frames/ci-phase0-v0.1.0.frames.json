@@ -387,11 +387,11 @@
       ]
     },
     "frame-0405-milestones": {
-      "kind": "text"
-    },
-    "frame-medication-pending": {
       "kind": "text",
-      "title_key": "ui.pending_clinician_text"
+      "data_field": "follow_up_date"
+    },
+    "frame-medication": {
+      "kind": "text"
     },
     "frame-06-redness": {
       "kind": "composite",

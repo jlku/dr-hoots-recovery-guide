@@ -11,6 +11,8 @@ import {
   assignWordsToCues,
   availableLanguages,
   buildFragment,
+  conditionsFor,
+  formatFollowUp,
   formatTime,
   joinWords,
   normalizeLanguage,
@@ -19,7 +21,8 @@ import {
   pickEntry,
   segmentByNumber,
   sentenceSpans,
-  statusMessages
+  statusMessages,
+  variantFor
 } from "../guide/assets/logic.js";
 import { phraseTime } from "../guide/assets/frames.js";
 
@@ -48,7 +51,9 @@ test("media entries pick the requested language or fall back to English with a f
   assert.equal(pickEntry(index, 9, "en").entry, null);
   assert.equal(segmentByNumber(segments, 2).id, "seg/next-two-weeks");
   assert.equal(segmentByNumber(segments, 9), null);
-  assert.equal(pendingConditionalBeats(segmentByNumber(segments, 2)).length, 2);
+  // A medication beat is pending only when the link switches it off: its "no" wording waits on Song.
+  assert.deepEqual(pendingConditionalBeats(segmentByNumber(segments, 2), { antibiotic: false, pain_medication: true }).map((beat) => beat.id), ["beat/medication-antibiotic"]);
+  assert.equal(pendingConditionalBeats(segmentByNumber(segments, 2), { antibiotic: true, pain_medication: true }).length, 0);
   assert.equal(pendingConditionalBeats(segmentByNumber(segments, 1)).length, 0);
 });
 
@@ -99,4 +104,25 @@ test("a translated guide always says who reviewed the translation, and says when
   assert.deepEqual(statusMessages({ pack: { language: "en", review: { label: "English source text" } }, fallback: false, labels }), []);
   assert.deepEqual(statusMessages({ pack: { language: "es", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado" } }, fallback: false, labels }), ["Revisado por IA (Claude), no por un traductor médico certificado"]);
   assert.deepEqual(statusMessages({ pack: { language: "en", review: {} }, fallback: true, labels }), ["This language is not available yet. Showing English."]);
+});
+
+test("the link's medication flags choose segment 2's variant, with presets for missing flags", () => {
+  const presets = { antibiotic: true, pain_medication: true };
+  assert.equal(variantFor({ a: "0", p: "1" }, presets), "a0p1");
+  assert.equal(variantFor({}, presets), "a1p1");
+  assert.equal(variantFor({}, { antibiotic: false, pain_medication: true }), "a0p1");
+  assert.deepEqual(conditionsFor("a0p1"), { antibiotic: false, pain_medication: true });
+  const variants = { entries: [{ number: 2, language: "en", variant: "a0p1" }, { number: 2, language: "en", variant: "a1p1" }, { number: 1, language: "en", variant: "" }] };
+  assert.equal(pickEntry(variants, 2, "en", "a0p1").entry.variant, "a0p1");
+  assert.equal(pickEntry(variants, 2, "en").entry.variant, "a1p1", "without flags, every medication beat plays");
+  assert.equal(pickEntry(variants, 1, "en", "a0p1").entry.variant, "", "a segment without variants ignores the flags");
+});
+
+test("a medication the link switches off shows the pending note in the status strip, and a follow-up date reads in the patient's language", () => {
+  const labels = { "ui.pending_clinician_text": "Medication details are pending your surgeon's wording.", "ui.language_fallback": "Showing English." };
+  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: ["antibiotic"] }), ["Medication details are pending your surgeon's wording."]);
+  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: [] }), []);
+  assert.equal(formatFollowUp("2026-10-01", "en"), "October 1, 2026");
+  assert.equal(formatFollowUp("2026-10-01", "es"), "1 de octubre de 2026");
+  assert.equal(formatFollowUp("2026-10-01", "zh-Hans"), "2026年10月1日");
 });
