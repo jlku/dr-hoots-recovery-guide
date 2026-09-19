@@ -10,21 +10,23 @@
 </style>
 <!-- Review tool, not a patient page: renders one frame exactly as the guide draws it, at a moment
      on the narration clock, so reviewers judge what the patient sees.
-     frame.html?frame=<frame id>   (add &at=<spoken phrase>&plus=<seconds> only when the manifest's motion is "narration") -->
+     frame.html?frame=<frame id>&lang=<language>   (add &at=<spoken phrase>&plus=<seconds> only when the manifest's motion is "narration") -->
 <div id="stage" class="stage"></div>
 <script type="module">
   import { fetchJson, loadGuide } from "./assets/data.js";
   import { phraseTime, renderFrame, updateFrame } from "./assets/frames.js";
+  import { pickEntry } from "./assets/logic.js";
 
   const params = new URLSearchParams(location.search);
   const frameId = params.get("frame");
-  const guide = await loadGuide("en");
+  const guide = await loadGuide(params.get("lang") ?? "en");
+  document.documentElement.lang = guide.pack.language;
   let found = null;
   for (const segment of guide.segments.segments) {
     const beat = segment.beats.find((item) => item.frame === frameId);
     if (beat) { found = { segment, beat }; break; }
   }
-  const entry = guide.index.entries.find((item) => item.language === "en" && item.number === found.segment.number);
+  const entry = pickEntry(guide.index, found.segment.number, guide.language).entry;
   const timeline = await fetchJson(entry.timeline);
   const words = timeline.words.filter((word) => word.beat === found.beat.id);
   const seconds = (params.get("at") ? phraseTime(words, params.get("at")) ?? 0 : 0) + Number(params.get("plus") ?? 0);

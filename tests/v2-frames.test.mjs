@@ -5,6 +5,7 @@ import test from "node:test";
 
 import { FRAME_KINDS, loadFrameManifest, validateFrames } from "../scripts/lib/frames.mjs";
 import { readFile } from "node:fs/promises";
+import { textWidth, wrapLines } from "../guide/assets/frames.js";
 
 import { loadSegmentBundle } from "../scripts/lib/segments.mjs";
 
@@ -100,4 +101,15 @@ test("the incision and its tape are drawn along a measured path, so the tape alw
   assert.match(text, /frame-01 panel tape-check overlay cut path nowhere is not defined; the incision is drawn along a measured path/);
   assert.match(text, /frame-01 panel tape-check overlay tape span must be two fractions of the path, in order/);
   assert.match(text, /frame-01 panel tape-check overlay tape count must be 1 to 8 strips/);
+});
+
+test("labels measure Chinese at one em per character and wrap it between characters", () => {
+  assert.equal(textWidth("发烧", 30), 60);
+  assert.equal(Math.round(textWidth("ab", 30)), 31);
+  const lines = wrapLines("头痛、怕光或异常嗜睡，请打电话", 30, 200);
+  assert.ok(lines.length > 1);
+  assert.ok(lines.every((line) => textWidth(line, 30) <= 200), lines.join(" | "));
+  assert.equal(lines.join(""), "头痛、怕光或异常嗜睡，请打电话");
+  assert.ok(!lines.slice(1).some((line) => /^[，。、；：！？）]/.test(line)), "no line starts with punctuation");
+  assert.deepEqual(wrapLines("Red and swollen", 30, 1000), ["Red and swollen"]);
 });

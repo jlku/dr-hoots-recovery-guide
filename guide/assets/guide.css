@@ -10,7 +10,7 @@
   --gray-3: #d1d3d3;
   --blue-gray: #506380;
   --paper: #fff;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   --topbar: 57px;
 }
 
