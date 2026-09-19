@@ -200,7 +200,7 @@ function renderTranscript() {
       button.dataset.start = String(sentence.start);
       sentence.words.forEach((word, index) => {
         button.append(span("sentence__word", word.text));
-        if (index < sentence.words.length - 1) button.append(document.createTextNode(" "));
+        if (index < sentence.words.length - 1 && (word.space ?? true)) button.append(document.createTextNode(" "));
       });
       nodes.push(button);
     }
@@ -229,7 +229,7 @@ function renderCue(cue, key) {
   dom.caption.replaceChildren();
   words.forEach((word, index) => {
     dom.caption.append(span("word", word.text));
-    if (index < words.length - 1) dom.caption.append(document.createTextNode(" "));
+    if (index < words.length - 1 && (word.space ?? true)) dom.caption.append(document.createTextNode(" "));
   });
 }
 

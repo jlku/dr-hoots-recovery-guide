@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import test from "node:test";
 
 import { loadSegmentBundle } from "../scripts/lib/segments.mjs";
-import { buildSegmentTimeline, groupCues, toWebVtt, vttTime } from "../scripts/lib/segment-timeline.mjs";
+import { buildSegmentTimeline, groupCues, joinWords, toWebVtt, vttTime } from "../scripts/lib/segment-timeline.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const bundle = await loadSegmentBundle(root);
@@ -60,4 +60,13 @@ test("WebVTT output is well formed", () => {
   const vtt = toWebVtt(timeline.cues);
   assert.match(vtt, /^WEBVTT\n\n1\n00:00:01\.500 --> 00:00:/);
   assert.ok(vtt.endsWith("\n"));
+});
+
+test("cues record which words they hold, and Chinese cues join without spaces and break at Chinese punctuation", () => {
+  const words = ["两天后，", "取下", "头部", "绷带。", "接下来", "检查"].map((text, index) => ({ text, start: index, end: index + 0.9, space: false }));
+  const cues = groupCues(words, "beat/a", 8, 0, { maxChars: 16, firstWord: 10 });
+  assert.deepEqual(cues.map((cue) => cue.text), ["两天后，", "取下头部绷带。", "接下来检查"]);
+  assert.deepEqual(cues.map((cue) => [cue.first_word, cue.word_count]), [[10, 1], [11, 3], [14, 2]]);
+  assert.equal(joinWords([{ text: "Hola,", space: true }, { text: "mundo.", space: false }]), "Hola, mundo.");
+  assert.equal(joinWords([{ text: "old" }, { text: "timeline" }]), "old timeline", "a word without a space flag counts as spaced");
 });

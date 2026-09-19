@@ -56,421 +56,491 @@
       "text": "Call",
       "start": 1.5,
       "end": 1.66,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "your",
       "start": 1.708,
       "end": 1.9,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "surgeon",
       "start": 1.96,
       "end": 2.38,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "or",
       "start": 2.433,
       "end": 2.54,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "clinic",
       "start": 2.609,
       "end": 3.02,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "if",
       "start": 3.127,
       "end": 3.34,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "all",
       "start": 3.4,
       "end": 3.58,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "three",
       "start": 3.62,
       "end": 3.82,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "of",
       "start": 3.873,
       "end": 3.98,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "these",
       "start": 4.007,
       "end": 4.14,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "are",
       "start": 4.18,
       "end": 4.3,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "true:",
       "start": 4.38,
       "end": 4.78,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "the",
       "start": 5,
       "end": 5.66,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "incision",
       "start": 5.74,
       "end": 6.22,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "is",
       "start": 6.273,
       "end": 6.38,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "red",
       "start": 6.46,
       "end": 6.7,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "and",
       "start": 6.74,
       "end": 6.86,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "swollen,",
       "start": 6.93,
       "end": 8.06,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "it",
       "start": 8.113,
       "end": 8.22,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "is",
       "start": 8.247,
       "end": 8.3,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "not",
       "start": 8.36,
       "end": 8.54,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "getting",
       "start": 8.58,
       "end": 8.86,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "better",
       "start": 8.917,
       "end": 9.26,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "over",
       "start": 9.308,
       "end": 9.5,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "one",
       "start": 9.54,
       "end": 9.66,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "to",
       "start": 9.74,
       "end": 9.9,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "two",
       "start": 9.94,
       "end": 10.06,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "days,",
       "start": 10.156,
       "end": 11.1,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "and",
       "start": 11.12,
       "end": 11.18,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "it",
       "start": 11.233,
       "end": 11.34,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "hurts",
       "start": 11.407,
       "end": 11.74,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "when",
       "start": 11.788,
       "end": 11.98,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": true
     },
     {
       "text": "touched.",
       "start": 12.04,
       "end": 12.54,
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "space": false
     },
     {
       "text": "Also",
       "start": 13.14,
       "end": 13.46,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "call",
       "start": 13.524,
       "end": 13.78,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "for",
       "start": 13.84,
       "end": 14.02,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "any",
       "start": 14.06,
       "end": 14.18,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "of",
       "start": 14.233,
       "end": 14.34,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "these:",
       "start": 14.407,
       "end": 14.82,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "a",
       "start": 15.22,
       "end": 15.62,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "fever",
       "start": 15.7,
       "end": 16.1,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "above",
       "start": 16.167,
       "end": 16.5,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "101.5",
       "start": 16.58,
       "end": 18.1,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "degrees",
       "start": 18.15,
       "end": 18.5,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "Fahrenheit;",
       "start": 18.558,
       "end": 19.3,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "swelling,",
       "start": 19.424,
       "end": 20.5,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "or",
       "start": 20.527,
       "end": 20.58,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "fluid",
       "start": 20.66,
       "end": 21.06,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "building",
       "start": 21.096,
       "end": 21.38,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "up,",
       "start": 21.46,
       "end": 21.7,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "behind",
       "start": 21.746,
       "end": 22.02,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "your",
       "start": 22.052,
       "end": 22.18,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "ear;",
       "start": 22.28,
       "end": 22.66,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "a",
       "start": 23.1,
       "end": 23.54,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "headache,",
       "start": 23.602,
       "end": 24.34,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "light",
       "start": 24.393,
       "end": 24.66,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "sensitivity,",
       "start": 24.727,
       "end": 25.7,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "or",
       "start": 25.753,
       "end": 25.86,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "excessive",
       "start": 25.908,
       "end": 26.34,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "lethargy;",
       "start": 26.388,
       "end": 27.7,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "or",
       "start": 27.753,
       "end": 27.86,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "any",
       "start": 27.92,
       "end": 28.1,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "question",
       "start": 28.153,
       "end": 28.58,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "or",
       "start": 28.633,
       "end": 28.74,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "concern",
       "start": 28.8,
       "end": 29.22,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "about",
       "start": 29.273,
       "end": 29.54,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "you",
       "start": 29.62,
       "end": 29.86,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "or",
       "start": 29.94,
       "end": 30.1,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "your",
       "start": 30.132,
       "end": 30.26,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": true
     },
     {
       "text": "child.",
       "start": 30.34,
       "end": 30.82,
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "space": false
     }
   ],
   "cues": [
@@ -479,77 +549,99 @@
       "start": 1.5,
       "end": 3.82,
       "text": "Call your surgeon or clinic if all three",
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "first_word": 0,
+      "word_count": 8
     },
     {
       "id": "cue-02",
       "start": 3.873,
       "end": 4.78,
       "text": "of these are true:",
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "first_word": 8,
+      "word_count": 4
     },
     {
       "id": "cue-03",
       "start": 5,
       "end": 8.3,
       "text": "the incision is red and swollen, it is",
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "first_word": 12,
+      "word_count": 8
     },
     {
       "id": "cue-04",
       "start": 8.36,
       "end": 11.1,
       "text": "not getting better over one to two days,",
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "first_word": 20,
+      "word_count": 8
     },
     {
       "id": "cue-05",
       "start": 11.12,
       "end": 12.54,
       "text": "and it hurts when touched.",
-      "beat": "beat/three-signs"
+      "beat": "beat/three-signs",
+      "first_word": 28,
+      "word_count": 5
     },
     {
       "id": "cue-06",
       "start": 13.14,
       "end": 14.82,
       "text": "Also call for any of these:",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 33,
+      "word_count": 6
     },
     {
       "id": "cue-07",
       "start": 15.22,
       "end": 19.3,
       "text": "a fever above 101.5 degrees Fahrenheit;",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 39,
+      "word_count": 6
     },
     {
       "id": "cue-08",
       "start": 19.424,
       "end": 22.66,
       "text": "swelling, or fluid building up, behind your ear;",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 45,
+      "word_count": 8
     },
     {
       "id": "cue-09",
       "start": 23.1,
       "end": 27.7,
       "text": "a headache, light sensitivity, or excessive lethargy;",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 53,
+      "word_count": 7
     },
     {
       "id": "cue-10",
       "start": 27.753,
       "end": 30.1,
       "text": "or any question or concern about you or",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 60,
+      "word_count": 8
     },
     {
       "id": "cue-11",
       "start": 30.132,
       "end": 30.82,
       "text": "your child.",
-      "beat": "beat/any-of-these"
+      "beat": "beat/any-of-these",
+      "first_word": 68,
+      "word_count": 2
     }
   ],
   "narration_seconds": 28.72,
