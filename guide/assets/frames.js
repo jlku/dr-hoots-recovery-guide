@@ -417,7 +417,9 @@ export function updateFrame(root, seconds) {
 function pendingMarker(pending, pack) {
   const marker = document.createElement("p");
   marker.className = "frame__pending";
-  marker.textContent = `${pack.labels["ov.pending_howto"] ?? "How-to picture pending"}: ${pending.map((claim) => claim.action).join("; ")}`;
+  // The claims' actions are English working notes; a translated guide shows only its own label.
+  const label = pack.labels["ov.pending_howto"] ?? "How-to picture pending";
+  marker.textContent = pack.language === "en" ? `${label}: ${pending.map((claim) => claim.action).join("; ")}` : label;
   return marker;
 }
 
