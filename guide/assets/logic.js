@@ -198,3 +198,16 @@ export function reviewBadges({ badges, pack, clinicianDate, labels }) {
   if (/^\d{4}-\d{2}-\d{2}$/.test(clinicianDate ?? "")) items.push({ kind: "clinician", label: labels["ui.reviewed_by_clinician"], value: date(clinicianDate) });
   return items;
 }
+
+// Segments that are the same for every patient: no beat depends on the provider's link and no frame
+// draws a patient's data. Only these export as video.
+export function fixedSegments(segments) {
+  return segments.filter((segment) => !(segment.data_fields ?? []).length && !(segment.beats ?? []).some((beat) => beat.condition));
+}
+
+// Pictures are static, so a video of a segment is a sequence of stills that change only where the
+// title card ends, a beat starts, a caption starts, or a spoken word starts.
+export function exportChangePoints(timeline) {
+  const times = [0, timeline.title_card.end, ...timeline.beats.map((beat) => beat.start), ...timeline.cues.map((cue) => cue.start), ...timeline.words.map((word) => word.start)];
+  return [...new Set(times.filter((time) => time >= 0 && time < timeline.duration_seconds))].sort((a, b) => a - b);
+}
