@@ -974,6 +974,8 @@ git commit -m "feat: language reviewers whose receipts bind to the exact pack th
 
 ### Task 6: Run the language reviews and mark the packs reviewed
 
+> **Revised during execution (2026-09-18): three reviewers per pack version.** One reviewer run does not report every problem it could find. The Spanish round-one reviewer passed `ui.pending_clinician_text` and round two failed it; the first Mandarin panel failed `act.02`, which two single rounds had passed. So a pack now counts as reviewed only when `PANEL_SIZE` (3) independent reviewers, dispatched in parallel on the same packet and none seeing another's receipt, each pass it. `review-record.mjs` files receipts into slots `<hash16>.json`, `<hash16>.2.json`, `<hash16>.3.json`; the pack's review block lists all three under `receipts`; `validate-translations.mjs` requires the full panel to pass. After a failing panel, fix every finding and sweep the pack for the same kind of problem before the next panel.
+
 **Files:**
 - Create: `content/reviews/es/<hash>.json`, `content/reviews/zh/<hash>.json`
 - Modify: both packs (`status`, `review`), and their sentences or labels when a reviewer finds a problem

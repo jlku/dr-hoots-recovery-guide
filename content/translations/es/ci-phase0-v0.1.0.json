@@ -4,7 +4,7 @@
   "script": "Latn",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "machine_draft",
+  "status": "ai_reviewed",
   "patient_use": false,
   "notice": "SIN VERIFICAR — NO PARA USO CON PACIENTES",
   "sentences": {
@@ -98,9 +98,13 @@
     "ov.path_no_tape": "Si no hay cinta"
   },
   "review": {
-    "kind": "none",
-    "label": "Borrador de traducción automática, aún sin revisar",
+    "kind": "ai",
+    "label": "Revisado por IA (Claude), no por un traductor médico certificado",
     "date": "2026-09-18",
-    "receipt": null
+    "receipts": [
+      "content/reviews/es/16740ac841bb7c37.json",
+      "content/reviews/es/16740ac841bb7c37.2.json",
+      "content/reviews/es/16740ac841bb7c37.3.json"
+    ]
   }
 }

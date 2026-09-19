@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { REVIEWER_LABEL, buildPacket, packContentHash, receiptPath, validateReceipt } from "../scripts/lib/translation-review.mjs";
+import { PANEL_SIZE, REVIEWER_LABEL, buildPacket, packContentHash, panelErrors, panelReceiptPaths, receiptPath, validateReceipt } from "../scripts/lib/translation-review.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 
@@ -60,4 +60,24 @@ test("a receipt must bind to the pack, cover every item on every criterion, carr
   assert.match(validateReceipt(inconsistent, packet).join("\n"), /failing item wc\.01 needs a finding/);
   inconsistent.findings = [{ id: "wc.01", criterion: "equivalence", problem: "p", suggestion: "s" }];
   assert.deepEqual(validateReceipt(inconsistent, packet), [], "a failing receipt with its finding is valid evidence");
+});
+
+test("a pack counts as reviewed only when three independent reviewers each pass the same pack", async () => {
+  const packet = await buildPacket({ root, reviewer: "es" });
+  const hash = packet.target.sha256;
+  const base = `content/reviews/es/${hash.slice(0, 16)}`;
+  assert.equal(PANEL_SIZE, 3);
+  assert.deepEqual(panelReceiptPaths("es", hash), [`${base}.json`, `${base}.2.json`, `${base}.3.json`]);
+  assert.equal(receiptPath("es", hash, 2), `${base}.2.json`);
+  const pass = () => passingReceipt(packet);
+  assert.deepEqual(panelErrors([pass(), pass(), pass()], packet), []);
+  assert.match(panelErrors([pass(), pass()], packet).join("\n"), /needs 3 independent passing receipts; 2 recorded/);
+  const failing = pass();
+  failing.items[0].verdict = "fail";
+  failing.items[0].criteria.phrasing = "fail";
+  failing.findings = [{ id: "wc.01", criterion: "phrasing", problem: "p", suggestion: "s" }];
+  failing.verdict = "fail";
+  assert.match(panelErrors([pass(), failing, pass()], packet).join("\n"), /reviewer 2 failed the pack/);
+  const stale = { ...pass(), target: { ...packet.target, sha256: "0".repeat(64) } };
+  assert.match(panelErrors([pass(), pass(), stale], packet).join("\n"), /reviewer 3: receipt does not bind to the current pack/);
 });

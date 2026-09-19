@@ -24,8 +24,18 @@ export function packContentHash(pack) {
   return sha256(JSON.stringify({ language: pack.language, script: pack.script, sentences: sorted(pack.sentences), labels: sorted(pack.labels) }));
 }
 
-export function receiptPath(reviewer, hash) {
-  return `${TRANSLATION_REVIEWERS[reviewer].dir}/${hash.slice(0, 16)}.json`;
+// One reviewer run does not report every problem it could find: the Spanish round-one reviewer
+// passed the label that round two failed. So a pack counts as reviewed only when this many
+// independent reviewers, none seeing another's receipt, each pass the same pack.
+export const PANEL_SIZE = 3;
+
+export function receiptPath(reviewer, hash, member = 1) {
+  const base = `${TRANSLATION_REVIEWERS[reviewer].dir}/${hash.slice(0, 16)}`;
+  return member === 1 ? `${base}.json` : `${base}.${member}.json`;
+}
+
+export function panelReceiptPaths(reviewer, hash) {
+  return Array.from({ length: PANEL_SIZE }, (_, index) => receiptPath(reviewer, hash, index + 1));
 }
 
 export function reviewerForLanguage(language) {
@@ -112,5 +122,16 @@ export function validateReceipt(receipt, packet) {
   for (const id of failing) {
     if (!(receipt?.findings ?? []).some((finding) => finding.id === id)) errors.push(`failing item ${id} needs a finding`);
   }
+  return errors;
+}
+
+// Errors for a pack marked ai_reviewed, given the receipts recorded for its current hash.
+export function panelErrors(receipts, packet) {
+  const errors = [];
+  if (receipts.length < PANEL_SIZE) errors.push(`an ai_reviewed pack needs ${PANEL_SIZE} independent passing receipts; ${receipts.length} recorded`);
+  receipts.forEach((receipt, index) => {
+    errors.push(...validateReceipt(receipt, packet).map((error) => `reviewer ${index + 1}: ${error}`));
+    if (receipt?.verdict !== "pass") errors.push(`reviewer ${index + 1} failed the pack`);
+  });
   return errors;
 }
