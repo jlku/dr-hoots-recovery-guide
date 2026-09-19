@@ -21,8 +21,29 @@ export function buildFragment(params) {
   return entries.length ? `#${new URLSearchParams(entries).toString()}` : "";
 }
 
-export function pickEntry(index, number, language) {
-  const entries = (index?.entries ?? []).filter((entry) => entry.number === number);
+// Conditions the provider's block can switch, and the fragment parameter each one travels in. These
+// mirror CONDITION_PARAMS in scripts/lib/segments.mjs.
+const CONDITION_PARAMS = Object.freeze({ antibiotic: "a", pain_medication: "p" });
+
+// Segment 2's variant from the link: a flag present in the link wins, otherwise its preset.
+export function variantFor(params = {}, presets = {}) {
+  return Object.entries(CONDITION_PARAMS)
+    .sort(([, left], [, right]) => left.localeCompare(right))
+    .map(([condition, key]) => `${key}${params[key] === "1" ? 1 : params[key] === "0" ? 0 : presets[condition] === false ? 0 : 1}`)
+    .join("");
+}
+
+export function conditionsFor(variant) {
+  return Object.fromEntries(Object.entries(CONDITION_PARAMS).map(([condition, key]) => [condition, variant.includes(`${key}1`)]));
+}
+
+// One media entry per segment: the requested language, or English with a fallback flag. A segment with
+// variants plays the requested one, or, without one, the variant where every conditional beat plays.
+export function pickEntry(index, number, language, variant = "") {
+  const all = (index?.entries ?? []).filter((entry) => entry.number === number);
+  const variants = [...new Set(all.map((entry) => entry.variant ?? ""))].filter(Boolean).sort();
+  const wanted = variants.length ? (variants.includes(variant) ? variant : variants.at(-1)) : "";
+  const entries = all.filter((entry) => (entry.variant ?? "") === wanted);
   const exact = entries.find((entry) => entry.language === language);
   if (exact) return { entry: exact, fallback: false };
   const english = entries.find((entry) => entry.language === "en");
@@ -81,8 +102,13 @@ export function segmentByNumber(segments, number) {
   return segments.segments.find((segment) => segment.number === number) ?? null;
 }
 
-export function pendingConditionalBeats(segment) {
-  return (segment?.beats ?? []).filter((beat) => typeof beat.condition === "string" && beat.status === "pending_clinician_text");
+// Beats whose wording waits on the surgeon: a conditional beat with no sentences yet, or a conditional
+// beat the link switched off whose "no" wording is still pending.
+export function pendingConditionalBeats(segment, conditions = {}) {
+  return (segment?.beats ?? []).filter((beat) => typeof beat.condition === "string" && (
+    ((beat.sentence_ids ?? []).length === 0 && beat.status === "pending_clinician_text") ||
+    (conditions[beat.condition] === false && beat.when_false === "pending_clinician_text")
+  ));
 }
 
 const SENTENCE_END = /[.?!。？！]["')\]”’」』）]*$/;
@@ -139,11 +165,20 @@ export function localToGlobal(clock, number, local) {
   return segment ? segment.offset + local : local;
 }
 
-// The status strip: a visible notice when a language fell back to English, and, whenever a
-// translation is showing, who reviewed it. AI review is always labeled as AI.
-export function statusMessages({ pack, fallback, labels }) {
+// The status strip: a visible notice when a language fell back to English, a note when a medication
+// the link switched off still waits on the surgeon's wording, and, whenever a translation is showing,
+// who reviewed it. AI review is always labeled as AI. None of these enters the reading flow.
+export function statusMessages({ pack, fallback, labels, pendingConditions = [] }) {
   const messages = [];
   if (fallback) messages.push(labels["ui.language_fallback"]);
+  if (pendingConditions.length) messages.push(labels["ui.pending_clinician_text"]);
   if (pack?.language !== "en" && pack?.review?.label) messages.push(pack.review.label);
   return messages.filter(Boolean);
+}
+
+// The follow-up date is live text in the patient's language; it never passes through narration.
+export function formatFollowUp(date, language) {
+  const [year, month, day] = String(date).split("-").map(Number);
+  if (!year || !month || !day) return null;
+  return new Intl.DateTimeFormat(language, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(year, month - 1, day)));
 }

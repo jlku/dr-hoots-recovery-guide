@@ -1,6 +1,6 @@
 import { createHash } from "node:crypto";
 
-import { resolveRecord } from "./segments.mjs";
+import { beatPlays, resolveRecord } from "./segments.mjs";
 import { isSpacelessLanguage, speechEndSeconds, wordTimings } from "./narration-timing.mjs";
 
 const CUE_BREAK = /[.;:!?…。；：！？，]$|—$/;
@@ -43,7 +43,7 @@ export function groupCues(beatWords, beatId, maxWordsPerCue, startIndex, { maxCh
   return cues;
 }
 
-export function buildSegmentTimeline({ segments, segment, records, language = "en", maxWordsPerCue = 8, audioFile = null }) {
+export function buildSegmentTimeline({ segments, segment, records, language = "en", maxWordsPerCue = 8, audioFile = null, conditions = {}, variant = "" }) {
   const canvas = segments.canvas;
   const titleCard = { start: 0, end: round(canvas.title_card_seconds) };
   let clock = titleCard.end;
@@ -52,6 +52,7 @@ export function buildSegmentTimeline({ segments, segment, records, language = "e
   const cues = [];
   const sourceRecords = {};
   for (const beat of segment.beats) {
+    if (!beatPlays(beat, conditions)) continue;
     const binding = beat.narration?.[language];
     if (!binding) continue;
     const record = resolveRecord(records, binding);
@@ -90,6 +91,7 @@ export function buildSegmentTimeline({ segments, segment, records, language = "e
     segment_id: segment.id,
     number: segment.number,
     language,
+    variant,
     canvas: { width: canvas.width, height: canvas.height, fps: canvas.fps },
     title_card: titleCard,
     beat_gap_seconds: canvas.beat_gap_seconds,

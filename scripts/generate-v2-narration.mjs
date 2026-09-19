@@ -7,6 +7,7 @@ import { mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { canonicalSentenceText } from "./lib/language-packs.mjs";
 import { loadSegmentBundle } from "./lib/segments.mjs";
 import { estimateNarrationUsd, loadLedger, reserveSpend, saveLedger, settleSpend } from "./lib/spend-ledger.mjs";
 import { NARRATION_MODEL, beatRecordId, narratedBeats, narrationManifestPath, planNarration } from "./lib/v2-narration.mjs";
@@ -20,8 +21,13 @@ const voiceTest = process.argv.includes("--voice-test");
 const voices = JSON.parse(await readFile(join(root, "assets/audio/v2/voices.json"), "utf8")).languages;
 const settings = voices[language];
 if (!settings) throw new Error(`--language must be one of ${Object.keys(voices).join(", ")}`);
-const pack = JSON.parse(await readFile(join(root, `content/translations/${language}/ci-phase0-v0.1.0.json`), "utf8"));
 const bundle = await loadSegmentBundle(root);
+// English speaks the canonical sentences; a translated language speaks its pack.
+const pack = language === "en"
+  ? { language: "en", sentences: Object.fromEntries(canonicalSentenceText(bundle.canonical)) }
+  : JSON.parse(await readFile(join(root, `content/translations/${language}/ci-phase0-v0.1.0.json`), "utf8"));
+const unboundOnly = process.argv.includes("--unbound-only");
+const bound = new Set(narratedBeats(bundle.segments).filter((beat) => beat.narration?.[language]).map((beat) => beat.id));
 
 async function speak({ text, voice, seed, ledgerId, purpose }) {
   await saveLedger(root, reserveSpend(await loadLedger(root), { id: ledgerId, model: NARRATION_MODEL, purpose, units: { characters: text.length, language, voice }, estimate_usd: estimateNarrationUsd(text.length) }));
@@ -66,14 +72,16 @@ if (voiceTest) {
 if (!settings.voice) throw new Error(`pick a voice for ${language} in assets/audio/v2/voices.json after the voice test`);
 const manifestPath = narrationManifestPath(language);
 const manifest = JSON.parse(await readFile(join(root, manifestPath), "utf8").catch(() => '{"records":[]}'));
-const plan = planNarration({ segments: bundle.segments, pack, voice: settings, manifest });
+// --unbound-only narrates just the beats with no track in this language, such as a new medication
+// beat, and leaves every existing track where it is.
+const plan = planNarration({ segments: bundle.segments, pack, voice: settings, manifest }).filter((item) => !unboundOnly || !bound.has(item.beat_id));
 const todo = plan.filter((item) => force || !item.keep);
 console.log(`${language}: ${todo.length} of ${plan.length} beats to narrate with ${settings.voice}, about $${todo.reduce((sum, item) => sum + item.estimate_usd, 0).toFixed(2)}`);
 if (dryRun) process.exit(0);
 let records = manifest.records ?? [];
-for (const [index, item] of plan.entries()) {
+for (const item of plan) {
   if (!force && item.keep) continue;
-  const seed = settings.seed_base + index;
+  const seed = settings.seed_base + narratedBeats(bundle.segments).findIndex((beat) => beat.id === item.beat_id);
   const { bytes, requestId, timestamps } = await speak({ text: item.text, voice: settings.voice, seed, ledgerId: `tts:${language}:${item.record_id}:${stamp}`, purpose: `${language} narration for ${item.beat_id}` });
   const file = `assets/audio/v2/${language}/beats/${item.record_id}.mp3`;
   await mkdir(dirname(join(root, file)), { recursive: true });
@@ -90,6 +98,7 @@ for (const [index, item] of plan.entries()) {
 // Bind every narrated beat to its record, so the language is complete or absent.
 const segmentsPath = join(root, "content/segments/ci-phase0-v0.1.0.segments.json");
 const segments = JSON.parse(await readFile(segmentsPath, "utf8"));
-for (const beat of narratedBeats(segments)) beat.narration[language] = { manifest: manifestPath, record_id: beatRecordId(beat) };
+const planned = new Set(plan.map((item) => item.beat_id));
+for (const beat of narratedBeats(segments)) if (planned.has(beat.id)) beat.narration[language] = { manifest: manifestPath, record_id: beatRecordId(beat) };
 await writeFile(segmentsPath, `${JSON.stringify(segments, null, 2)}\n`);
-console.log(`bound ${language} narration on every beat`);
+console.log(`bound ${language} narration on ${planned.size} ${planned.size === 1 ? "beat" : "beats"}`);

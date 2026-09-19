@@ -18,6 +18,10 @@
     "wc.08": "Tres días después de la cirugía, puede ducharse y lavarse el cabello.",
     "wc.09": "La revisión de la herida y el examen del oído son unas dos semanas después de la cirugía.",
     "wc.10": "Los puntos se disuelven solos, así que no hay que quitarlos.",
+    "med.01": "Tome su antibiótico tal como se lo recetaron.",
+    "med.02": "Ayuda a prevenir una infección.",
+    "med.03": "Tome su medicina para el dolor tal como se la recetaron.",
+    "med.04": "Tómela antes de que el dolor sea fuerte.",
     "call.01": "Llame a su cirujano o al personal de la clínica si tiene las tres señales de abajo.",
     "call.01a": "La incisión está roja e hinchada.",
     "call.01b": "No mejora en los siguientes uno o dos días.",
@@ -61,6 +65,7 @@
     "ui.notice": "Prototipo privado. No es para uso con pacientes.",
     "ui.pending_clinician_text": "Los detalles de las medicinas están pendientes hasta que su cirujano los escriba.",
     "ui.follow_up_default": "unas dos semanas después de la cirugía",
+    "ui.follow_up_on": "Su revisión de la herida y examen del oído: {date}",
     "ui.seek": "Posición de reproducción",
     "ui.coming": "próximamente",
     "ui.language_fallback": "Este idioma aún no está disponible. Se muestra en inglés.",
@@ -79,7 +84,7 @@
     "ui.print_card": "Imprimir la tarjeta",
     "ui.captions": "Subtítulos",
     "ov.tape_check": "Revise si hay cinta",
-    "ov.keep_dry": "Mantenga seco hasta 3 días después de la cirugía",
+    "ov.keep_dry": "Mantenga la zona seca hasta 3 días después de la cirugía",
     "ov.no_cleaning": "No limpie todavía",
     "ov.clean_twice": "Limpie los bordes con cuidado, dos veces al día",
     "ov.mix": "Partes iguales de agua oxigenada y agua destilada",
@@ -100,11 +105,11 @@
   "review": {
     "kind": "ai",
     "label": "Revisado por IA (Claude), no por un traductor médico certificado",
-    "date": "2026-09-18",
+    "date": "2026-09-19",
     "receipts": [
-      "content/reviews/es/16740ac841bb7c37.json",
-      "content/reviews/es/16740ac841bb7c37.2.json",
-      "content/reviews/es/16740ac841bb7c37.3.json"
+      "content/reviews/es/c6e7ee031b6b64ac.json",
+      "content/reviews/es/c6e7ee031b6b64ac.2.json",
+      "content/reviews/es/c6e7ee031b6b64ac.3.json"
     ]
   }
 }

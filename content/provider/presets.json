@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0",
+  "status": "placeholder_for_song",
+  "patient_use": false,
+  "note": "Placeholders until Song confirms them. A missing line in the provider's block uses these.",
+  "presets": { "antibiotic": true, "pain_medication": true, "language": "en", "follow_up_date": null }
+}

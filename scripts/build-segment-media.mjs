@@ -5,13 +5,13 @@ import { fileURLToPath } from "node:url";
 
 import { renderSegmentAudio } from "./lib/segment-audio.mjs";
 import { buildSegmentTimeline, toWebVtt } from "./lib/segment-timeline.mjs";
-import { loadSegmentBundle, segmentSlug, validateSegments } from "./lib/segments.mjs";
+import { loadSegmentBundle, segmentSlug, segmentVariants, validateSegments } from "./lib/segments.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 export const MEDIA_INDEX_PATH = "assets/captions/v2/index.json";
 
-export function mediaPaths(segment, language) {
-  const slug = segmentSlug(segment.id);
+export function mediaPaths(segment, language, variant = "") {
+  const slug = `${segmentSlug(segment.id)}${variant ? `.${variant}` : ""}`;
   return {
     timeline: `assets/captions/v2/${language}/${slug}.timeline.json`,
     vtt: `assets/captions/v2/${language}/${slug}.vtt`,
@@ -33,9 +33,11 @@ export function buildMediaPlan(bundle) {
   const plan = [];
   for (const language of languagesWithNarration(bundle.segments)) {
     for (const segment of bundle.segments.segments) {
-      const paths = mediaPaths(segment, language);
-      const timeline = buildSegmentTimeline({ segments: bundle.segments, segment, records: bundle.records, language, audioFile: paths.audio });
-      plan.push({ language, segment, paths, timeline, vtt: toWebVtt(timeline.cues) });
+      for (const variant of segmentVariants(segment)) {
+        const paths = mediaPaths(segment, language, variant.id);
+        const timeline = buildSegmentTimeline({ segments: bundle.segments, segment, records: bundle.records, language, audioFile: paths.audio, conditions: variant.conditions, variant: variant.id });
+        plan.push({ language, segment, variant: variant.id, paths, timeline, vtt: toWebVtt(timeline.cues) });
+      }
     }
   }
   return plan;
@@ -50,6 +52,7 @@ export function buildMediaIndex(plan) {
       segment_id: item.segment.id,
       number: item.segment.number,
       language: item.language,
+      variant: item.variant,
       timeline: item.paths.timeline,
       captions: item.paths.vtt,
       audio: item.paths.audio,

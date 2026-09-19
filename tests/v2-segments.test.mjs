@@ -8,6 +8,7 @@ import {
   loadSegmentBundle,
   segmentNarrationSeconds,
   segmentSlug,
+  segmentVariants,
   validateSegments
 } from "../scripts/lib/segments.mjs";
 
@@ -107,4 +108,12 @@ test("the repository segments validate and stay under the ceiling", async () => 
   for (const segment of bundle.segments.segments) {
     assert.ok(segmentNarrationSeconds(segment, bundle.records) <= NARRATION_CEILING_SECONDS, segment.id);
   }
+});
+
+test("segment 2 has four variants, one per combination of its medication beats", async () => {
+  const bundle = await loadSegmentBundle(root);
+  const segment = bundle.segments.segments.find((item) => item.number === 2);
+  assert.deepEqual(segmentVariants(segment).map((variant) => variant.id), ["a0p0", "a0p1", "a1p0", "a1p1"]);
+  assert.deepEqual(segmentVariants(segment)[1].conditions, { antibiotic: false, pain_medication: true });
+  assert.deepEqual(segmentVariants(bundle.segments.segments[0]).map((variant) => variant.id), [""]);
 });

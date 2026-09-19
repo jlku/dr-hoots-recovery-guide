@@ -15,7 +15,8 @@ test("a beat's narration is its sentences from the pack, spaced in Spanish and u
   assert.equal(beatRecordId(beat), beat.id.replace(/^beat\//, ""));
   assert.equal(beatText(beat, pack("es", ".")), beat.sentence_ids.map((id) => `es:${id}.`).join(" "));
   assert.equal(beatText(beat, pack("zh-Hans", "。")), beat.sentence_ids.map((id) => `zh-Hans:${id}。`).join(""));
-  assert.ok(narratedBeats(bundle.segments).every((item) => typeof item.condition !== "string"), "conditional beats are not narrated");
+  assert.ok(narratedBeats(bundle.segments).some((item) => typeof item.condition === "string"), "a conditional beat with sentences is narrated too");
+  assert.ok(narratedBeats(bundle.segments).every((item) => item.sentence_ids.length > 0));
 });
 
 test("the plan prices each beat, and keeps a beat whose recorded text and voice are unchanged", () => {

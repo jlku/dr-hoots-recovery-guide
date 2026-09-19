@@ -16,7 +16,10 @@ const hasFfmpeg = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status 
 test("the media plan covers every segment for every narrated language", () => {
   assert.deepEqual(languagesWithNarration(bundle.segments), ["en"]);
   const plan = buildMediaPlan(bundle);
-  assert.equal(plan.length, 5);
+  // Four variants of segment 2, one per combination of its medication beats, and one of each other segment.
+  assert.equal(plan.length, 8);
+  assert.deepEqual(plan.filter((item) => item.segment.number === 2).map((item) => item.variant), ["a0p0", "a0p1", "a1p0", "a1p1"]);
+  assert.equal(mediaPaths(bundle.segments.segments[1], "en", "a1p0").audio, "assets/audio/v2/en/next-two-weeks.a1p0.mp3");
   assert.deepEqual(mediaPaths(bundle.segments.segments[0], "en"), {
     timeline: "assets/captions/v2/en/incision-day2.timeline.json",
     vtt: "assets/captions/v2/en/incision-day2.vtt",
@@ -25,9 +28,10 @@ test("the media plan covers every segment for every narrated language", () => {
   assert.equal(plan[0].timeline.audio_file, "assets/audio/v2/en/incision-day2.mp3");
   assert.match(plan[0].vtt, /^WEBVTT/);
   const index = buildMediaIndex(plan);
-  assert.equal(index.entries.length, 5);
-  assert.equal(index.entries[3].segment_id, "seg/who-to-call");
-  assert.equal(index.entries[3].captions, "assets/captions/v2/en/who-to-call.vtt");
+  assert.equal(index.entries.length, 8);
+  const whoToCall = index.entries.find((entry) => entry.segment_id === "seg/who-to-call");
+  assert.equal(whoToCall.captions, "assets/captions/v2/en/who-to-call.vtt");
+  assert.equal(whoToCall.variant, "");
 });
 
 test("the concat command mirrors the timeline: title silence, trimmed tracks, gaps, tail", () => {

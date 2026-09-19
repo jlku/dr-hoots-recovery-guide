@@ -421,13 +421,13 @@ function pendingMarker(pending, pack) {
   return marker;
 }
 
-export function renderFrame(frame, { beat, beatWords = [], sentences, pack, pending = [], motion = "static" }) {
-  const root = renderFrameBody(frame, { beat, beatWords, sentences, pack, motion });
+export function renderFrame(frame, { beat, beatWords = [], sentences, pack, pending = [], motion = "static", data = {} }) {
+  const root = renderFrameBody(frame, { beat, beatWords, sentences, pack, motion, data });
   if (pending.length) root.append(pendingMarker(pending, pack));
   return root;
 }
 
-function renderFrameBody(frame, { beat, beatWords = [], sentences, pack, motion }) {
+function renderFrameBody(frame, { beat, beatWords = [], sentences, pack, motion, data = {} }) {
   if (frame.kind === "composite") return renderComposite(frame, { beatWords, pack, motion });
   if (frame.kind === "panels") return renderPanels(frame, { pack });
   const stage = document.createElement("div");
@@ -450,6 +450,14 @@ function renderFrameBody(frame, { beat, beatWords = [], sentences, pack, motion 
       list.append(item);
     }
     card.append(list);
+    // A data field from the provider's link, drawn as live text: it never passes through narration.
+    if (frame.data_field && data[frame.data_field]) {
+      const line = document.createElement("p");
+      line.className = "text-card__data";
+      line.textContent = (pack.labels[`ui.${frame.data_field.replace(/_date$/, "")}_on`] ?? "{date}").replace("{date}", data[frame.data_field]);
+      card.append(line);
+      card.classList.add("text-card--data");
+    }
     stage.append(card);
     return stage;
   }

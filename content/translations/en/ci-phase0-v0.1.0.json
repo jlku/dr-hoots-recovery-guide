@@ -33,6 +33,7 @@
     "ui.notice": "Private prototype. Not for patient use.",
     "ui.pending_clinician_text": "Medication details are pending your surgeon's wording.",
     "ui.follow_up_default": "about two weeks after surgery",
+    "ui.follow_up_on": "Your wound check and ear exam: {date}",
     "ui.seek": "Seek",
     "ui.coming": "coming soon",
     "ui.language_fallback": "This language is not available yet. Showing English.",

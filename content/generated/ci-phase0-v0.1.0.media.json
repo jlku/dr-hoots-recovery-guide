@@ -33,6 +33,18 @@
       "clinical_visual_status": "blocked_pending_surgeon_review"
     },
     {
+      "module_id": "ci/medications",
+      "module_version": "0.1.0",
+      "content_sha256": "0cf6d39536503593e8c07b3dec7b93b641b7f1fd48c08fe266000ea5992bbf91",
+      "sentence_ids": [
+        "med.01",
+        "med.02",
+        "med.03",
+        "med.04"
+      ],
+      "clinical_visual_status": "blocked_pending_surgeon_review"
+    },
+    {
       "module_id": "ci/when-to-call",
       "module_version": "0.1.0",
       "content_sha256": "dff3054c8fe845331dafe39b01702859625fca7a974f2c9a0b9e082abe780cc4",
@@ -192,6 +204,56 @@
         "motion_policy": "none_until_visual_approved",
         "reduced_motion_policy": "same_live_text_no_motion"
       }
+    },
+    {
+      "id": "scene/medications/antibiotic",
+      "module_id": "ci/medications",
+      "sentence_ids": [
+        "med.01",
+        "med.02"
+      ],
+      "source_claim_ids": [
+        "ears.antibiotic.as_prescribed"
+      ],
+      "target_seconds": 6,
+      "visual": {
+        "asset_id": null,
+        "renderable": false,
+        "review_status": "blocked_pending_surgeon_review",
+        "source_claim_ids": [
+          "ears.antibiotic.as_prescribed"
+        ],
+        "static_fallback": "live_text_only",
+        "essential_visual_description": "No essential visual; canonical live text carries the complete scene.",
+        "motion_policy": "none_until_visual_approved",
+        "reduced_motion_policy": "same_live_text_no_motion"
+      },
+      "conditional": "antibiotic"
+    },
+    {
+      "id": "scene/medications/pain",
+      "module_id": "ci/medications",
+      "sentence_ids": [
+        "med.03",
+        "med.04"
+      ],
+      "source_claim_ids": [
+        "ears.pain.as_prescribed"
+      ],
+      "target_seconds": 6,
+      "visual": {
+        "asset_id": null,
+        "renderable": false,
+        "review_status": "blocked_pending_surgeon_review",
+        "source_claim_ids": [
+          "ears.pain.as_prescribed"
+        ],
+        "static_fallback": "live_text_only",
+        "essential_visual_description": "No essential visual; canonical live text carries the complete scene.",
+        "motion_policy": "none_until_visual_approved",
+        "reduced_motion_policy": "same_live_text_no_motion"
+      },
+      "conditional": "pain_medication"
     },
     {
       "id": "scene/call/redness",
@@ -425,6 +487,7 @@
     "linear_video": {
       "module_ids": [
         "ci/wound-care",
+        "ci/medications",
         "ci/when-to-call",
         "ci/activation"
       ],
@@ -439,6 +502,10 @@
         "wc.08",
         "wc.09",
         "wc.10",
+        "med.01",
+        "med.02",
+        "med.03",
+        "med.04",
         "call.01",
         "call.01a",
         "call.01b",
@@ -463,6 +530,8 @@
         "scene/wound/no-tape",
         "scene/wound/shower",
         "scene/wound/follow-up",
+        "scene/medications/antibiotic",
+        "scene/medications/pain",
         "scene/call/redness",
         "scene/call/fever",
         "scene/call/fluid",
@@ -476,6 +545,7 @@
       "navigation": "global_progress_no_topic_chooser",
       "media_asset_policy": "same_scene_assets_as_chaptered_video",
       "target_seconds": 174,
+      "conditional_seconds": 12,
       "timing_budget_seconds": 180,
       "channels": {
         "visible_text": {
@@ -492,6 +562,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -525,6 +599,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -558,6 +636,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -591,6 +673,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -615,6 +701,7 @@
     "chaptered_video": {
       "module_ids": [
         "ci/wound-care",
+        "ci/medications",
         "ci/when-to-call",
         "ci/activation"
       ],
@@ -629,6 +716,10 @@
         "wc.08",
         "wc.09",
         "wc.10",
+        "med.01",
+        "med.02",
+        "med.03",
+        "med.04",
         "call.01",
         "call.01a",
         "call.01b",
@@ -653,6 +744,8 @@
         "scene/wound/no-tape",
         "scene/wound/shower",
         "scene/wound/follow-up",
+        "scene/medications/antibiotic",
+        "scene/medications/pain",
         "scene/call/redness",
         "scene/call/fever",
         "scene/call/fluid",
@@ -666,6 +759,7 @@
       "navigation": "direct_topic_access",
       "media_asset_policy": "same_scene_assets_as_linear_video",
       "target_seconds": 174,
+      "conditional_seconds": 12,
       "timing_budget_seconds": 180,
       "channels": {
         "visible_text": {
@@ -682,6 +776,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -715,6 +813,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -748,6 +850,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -781,6 +887,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -805,6 +915,7 @@
     "scroll_guide": {
       "module_ids": [
         "ci/wound-care",
+        "ci/medications",
         "ci/when-to-call",
         "ci/activation"
       ],
@@ -819,6 +930,10 @@
         "wc.08",
         "wc.09",
         "wc.10",
+        "med.01",
+        "med.02",
+        "med.03",
+        "med.04",
         "call.01",
         "call.01a",
         "call.01b",
@@ -843,6 +958,8 @@
         "scene/wound/no-tape",
         "scene/wound/shower",
         "scene/wound/follow-up",
+        "scene/medications/antibiotic",
+        "scene/medications/pain",
         "scene/call/redness",
         "scene/call/fever",
         "scene/call/fluid",
@@ -870,6 +987,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -908,6 +1029,10 @@
             "wc.08",
             "wc.09",
             "wc.10",
+            "med.01",
+            "med.02",
+            "med.03",
+            "med.04",
             "call.01",
             "call.01a",
             "call.01b",
@@ -935,5 +1060,5 @@
       }
     }
   },
-  "projection_sha256": "691b2d2969ef3528345fcd43f1a9a72a93677c77811bf3f311c80ed50ae120ff"
+  "projection_sha256": "7cbe62b6ad5d10ee8c7422c75cf7ba886a774374549df8fc3a666ceffb6146d1"
 }

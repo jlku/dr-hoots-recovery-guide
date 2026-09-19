@@ -13,6 +13,8 @@ import {
   availableLanguages,
   buildFragment,
   buildGuideClock,
+  conditionsFor,
+  formatFollowUp,
   formatTime,
   globalToLocal,
   localToGlobal,
@@ -21,7 +23,8 @@ import {
   pendingConditionalBeats,
   pickEntry,
   sentenceSpans,
-  statusMessages
+  statusMessages,
+  variantFor
 } from "./logic.js";
 
 const CAPTIONS_KEY = "recovery-guide-captions";
@@ -90,7 +93,7 @@ function segmentByNumber(number) {
 }
 
 function entryFor(number) {
-  return pickEntry(state.guide.index, number, state.guide.language).entry;
+  return pickEntry(state.guide.index, number, state.guide.language, state.variant).entry;
 }
 
 function currentOffset() {
@@ -205,12 +208,6 @@ function renderTranscript() {
       });
       nodes.push(button);
     }
-    if (pendingConditionalBeats(segment).length) {
-      const note = document.createElement("p");
-      note.className = "transcript__note";
-      note.textContent = labels()["ui.pending_clinician_text"];
-      nodes.push(note);
-    }
   }
   dom.transcript.replaceChildren(...nodes);
 }
@@ -281,7 +278,8 @@ function sync(local) {
       sentences: state.guide.sentences,
       pack: state.guide.pack,
       pending: (state.guide.instructions?.claims ?? []).filter((claim) => claim.frame === beat.frame && claim.status === "placeholder"),
-      motion: state.guide.frames.motion ?? "static"
+      motion: state.guide.frames.motion ?? "static",
+      data: { follow_up_date: state.followUp }
     }));
   }
   updateFrame(dom.stage.firstElementChild, local);
@@ -392,7 +390,9 @@ async function init() {
   const params = parseFragment(location.hash);
   const guide = await loadGuide(params.l);
   preloadLayers(guide.frames);
-  const picks = guide.segments.segments.map((segment) => pickEntry(guide.index, segment.number, guide.language));
+  const variant = variantFor(params, guide.presets);
+  const conditions = conditionsFor(variant);
+  const picks = guide.segments.segments.map((segment) => pickEntry(guide.index, segment.number, guide.language, variant));
   const entries = picks.map((pick) => pick.entry).filter(Boolean);
   const clock = buildGuideClock(entries);
   const timelines = new Map();
@@ -404,7 +404,8 @@ async function init() {
     sentences.set(entry.number, sentenceSpans(timeline));
     cues.set(entry.number, assignWordsToCues(timeline));
   }));
-  state = { guide, clock, timelines, sentences, cues, current: null, params };
+  const followUp = params.f ? formatFollowUp(params.f, guide.pack.language) : null;
+  state = { guide, clock, timelines, sentences, cues, current: null, params, variant, conditions, followUp };
   frameId = null;
   cueKey = null;
   sentenceKey = null;
@@ -437,7 +438,8 @@ async function init() {
   dom.follow.checked = readFlag(FOLLOW_KEY);
 
   const fallback = guide.packFallback || picks.some((pick) => pick.fallback);
-  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text }));
+  const pendingConditions = guide.segments.segments.flatMap((segment) => pendingConditionalBeats(segment, conditions)).map((beat) => beat.condition);
+  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text, pendingConditions }));
 
   const requested = Number.parseInt(params.s ?? "1", 10) || 1;
   await loadSegment(segmentByNumber(requested) && entryFor(requested) ? requested : entries[0]?.number ?? 1);

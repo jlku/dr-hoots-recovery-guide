@@ -18,6 +18,10 @@
     "wc.08": "手术三天后，您可以淋浴和洗头。",
     "wc.09": "伤口复查和耳部检查大约在手术后两周。",
     "wc.10": "缝线会自己溶解，所以不需要拆线。",
+    "med.01": "请按照处方服用抗生素。",
+    "med.02": "抗生素可以帮助预防感染。",
+    "med.03": "请按照处方服用止痛药。",
+    "med.04": "在疼痛变严重之前服用。",
     "call.01": "如果下面三种情况同时出现，请打电话给您的外科医生或诊所工作人员。",
     "call.01a": "切口发红、肿胀。",
     "call.01b": "在接下来的一到两天内没有好转。",
@@ -61,6 +65,7 @@
     "ui.notice": "内部原型，不得用于患者。",
     "ui.pending_clinician_text": "用药细节有待您的外科医生确定措辞。",
     "ui.follow_up_default": "手术后大约两周",
+    "ui.follow_up_on": "伤口复查和耳部检查：{date}",
     "ui.seek": "播放进度",
     "ui.coming": "即将推出",
     "ui.language_fallback": "这个语言还没有准备好，现在显示英文。",
@@ -100,11 +105,11 @@
   "review": {
     "kind": "ai",
     "label": "经人工智能（Claude）审核，并非认证医学翻译",
-    "date": "2026-09-18",
+    "date": "2026-09-19",
     "receipts": [
-      "content/reviews/zh/8058cd40ae344096.json",
-      "content/reviews/zh/8058cd40ae344096.2.json",
-      "content/reviews/zh/8058cd40ae344096.3.json"
+      "content/reviews/zh/b1860cd113ccdcce.json",
+      "content/reviews/zh/b1860cd113ccdcce.2.json",
+      "content/reviews/zh/b1860cd113ccdcce.3.json"
     ]
   }
 }

@@ -3,6 +3,7 @@
   "segment_id": "seg/next-two-weeks",
   "number": 2,
   "language": "en",
+  "variant": "a0p1",
   "canvas": {
     "width": 1080,
     "height": 1920,
@@ -14,7 +15,7 @@
   },
   "beat_gap_seconds": 0.6,
   "tail_seconds": 0.9,
-  "audio_file": "assets/audio/v2/en/next-two-weeks.mp3",
+  "audio_file": "assets/audio/v2/en/next-two-weeks.a0p1.mp3",
   "beats": [
     {
       "id": "beat/milestones",
@@ -31,6 +32,21 @@
       "manifest": "assets/audio/draft/manifest.json",
       "source_audio": "assets/audio/draft/wound-milestones.mp3",
       "text": "Three days after surgery, you may shower and wash your hair. Your wound check and ear exam are about two weeks after surgery — the stitches dissolve on their own."
+    },
+    {
+      "id": "beat/medication-pain",
+      "frame": "frame-medication",
+      "sentence_ids": [
+        "med.03",
+        "med.04"
+      ],
+      "start": 13.22,
+      "end": 18.1,
+      "speech_seconds": 4.88,
+      "record_id": "medication-pain",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/medication-pain.mp3",
+      "text": "Take your pain medicine the way it was prescribed. Take it before the pain gets bad."
     }
   ],
   "words": [
@@ -243,6 +259,118 @@
       "end": 12.62,
       "beat": "beat/milestones",
       "space": false
+    },
+    {
+      "text": "Take",
+      "start": 13.22,
+      "end": 13.46,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "your",
+      "start": 13.492,
+      "end": 13.62,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "pain",
+      "start": 13.668,
+      "end": 13.86,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "medicine",
+      "start": 13.913,
+      "end": 14.34,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 14.36,
+      "end": 14.42,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "way",
+      "start": 14.46,
+      "end": 14.58,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "it",
+      "start": 14.607,
+      "end": 14.66,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "was",
+      "start": 14.7,
+      "end": 14.82,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "prescribed.",
+      "start": 14.878,
+      "end": 15.62,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "Take",
+      "start": 15.78,
+      "end": 16.42,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "it",
+      "start": 16.473,
+      "end": 16.58,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "before",
+      "start": 16.626,
+      "end": 16.9,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 16.92,
+      "end": 16.98,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "pain",
+      "start": 17.044,
+      "end": 17.3,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "gets",
+      "start": 17.364,
+      "end": 17.62,
+      "beat": "beat/medication-pain",
+      "space": true
+    },
+    {
+      "text": "bad.",
+      "start": 17.72,
+      "end": 18.1,
+      "beat": "beat/medication-pain",
+      "space": false
     }
   ],
   "cues": [
@@ -290,11 +418,39 @@
       "beat": "beat/milestones",
       "first_word": 24,
       "word_count": 6
+    },
+    {
+      "id": "cue-06",
+      "start": 13.22,
+      "end": 14.82,
+      "text": "Take your pain medicine the way it was",
+      "beat": "beat/medication-pain",
+      "first_word": 30,
+      "word_count": 8
+    },
+    {
+      "id": "cue-07",
+      "start": 14.878,
+      "end": 15.62,
+      "text": "prescribed.",
+      "beat": "beat/medication-pain",
+      "first_word": 38,
+      "word_count": 1
+    },
+    {
+      "id": "cue-08",
+      "start": 15.78,
+      "end": 18.1,
+      "text": "Take it before the pain gets bad.",
+      "beat": "beat/medication-pain",
+      "first_word": 39,
+      "word_count": 7
     }
   ],
-  "narration_seconds": 11.12,
-  "duration_seconds": 13.52,
+  "narration_seconds": 16,
+  "duration_seconds": 19,
   "source_records": {
-    "wound-milestones": "1ee31c98ad3ecd26c76f212e77dbbeb227aba3c95c5363ec55849405c17afd7b"
+    "wound-milestones": "1ee31c98ad3ecd26c76f212e77dbbeb227aba3c95c5363ec55849405c17afd7b",
+    "medication-pain": "78dc12904f9d01e615d5103b6f2a06dd263d5fea35e0682c8b6634eb1b26a0bb"
   }
 }

@@ -3,6 +3,7 @@
   "segment_id": "seg/who-to-call",
   "number": 4,
   "language": "en",
+  "variant": "",
   "canvas": {
     "width": 1080,
     "height": 1920,
