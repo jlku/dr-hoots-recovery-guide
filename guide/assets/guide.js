@@ -37,6 +37,7 @@ const dom = {
   language: byId("language"),
   languageLabel: byId("language-label"),
   print: byId("print-link"),
+  transportCard: byId("transport-card"),
   chapterList: byId("chapter-list"),
   callBlock: byId("call-block"),
   stage: byId("stage"),
@@ -176,18 +177,23 @@ function badgeList() {
   return list;
 }
 
-// Phones hide the rail footer and the print link, so the transcript ends with them.
+// The transcript ends with the review badges; on phones, which hide the rail footer, with the notice too.
 function transcriptFooter() {
   const footer = document.createElement("div");
   footer.className = "transcript-footer";
-  const card = document.createElement("a");
-  card.className = "transcript-footer__card";
-  card.href = dom.print.getAttribute("href");
-  card.textContent = labels()["ui.print_card"];
   const notice = document.createElement("p");
+  notice.className = "transcript-footer__notice";
   notice.textContent = labels()["ui.notice"];
-  footer.append(card, notice, badgeList());
+  footer.append(notice, badgeList());
   return footer;
+}
+
+// A date from the provider's link, shown in the reading flow right after the sentence it belongs to.
+function dataNote(frame) {
+  const note = document.createElement("p");
+  note.className = "transcript__data";
+  note.textContent = (labels()[`ui.${frame.data_field.replace(/_date$/, "")}_on`] ?? "{date}").replace("{date}", state.followUp);
+  return note;
 }
 
 function renderCallBlock() {
@@ -210,8 +216,7 @@ function renderCallBlock() {
     heading,
     link(labels()["ui.nursing_line"], values.get("routine_nursing_line")),
     link(labels()["ui.emergency"], values.get("hospital_operator")),
-    notice,
-    badgeList()
+    notice
   );
 }
 
@@ -227,7 +232,8 @@ function renderTranscript() {
     jump.textContent = `${segment.number} · ${labels()[segment.title_key] ?? ""}`;
     heading.append(jump);
     nodes.push(heading);
-    for (const sentence of state.sentences.get(segment.number) ?? []) {
+    const list = state.sentences.get(segment.number) ?? [];
+    list.forEach((sentence, position) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "sentence";
@@ -239,7 +245,10 @@ function renderTranscript() {
         if (index < sentence.words.length - 1 && (word.space ?? true)) button.append(document.createTextNode(" "));
       });
       nodes.push(button);
-    }
+      const beat = segment.beats.find((item) => item.id === sentence.beat);
+      const frame = beat ? state.guide.frames.frames[beat.frame] : null;
+      if (frame?.data_field && state.followUp && list[position + 1]?.beat !== sentence.beat) nodes.push(dataNote(frame));
+    });
   }
   nodes.push(transcriptFooter());
   dom.transcript.replaceChildren(...nodes);
@@ -450,6 +459,7 @@ async function init() {
   dom.title.textContent = text["guide.title"];
   dom.languageLabel.textContent = text["ui.language"];
   dom.print.textContent = text["ui.print_card"];
+  dom.transportCard.textContent = text["ui.print_card"];
   dom.speedLabel.textContent = text["ui.speed"];
   dom.captionsLabel.textContent = text["ui.captions"];
   dom.transcriptHeading.textContent = text["ui.transcript"];

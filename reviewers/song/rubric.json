@@ -23,7 +23,7 @@
     {
       "id": "subtitles",
       "asked": "Subtitles.",
-      "question": "Are there captions for every segment in English, Spanish, and Mandarin, readable at desktop and phone widths?",
+      "question": "Are there captions for every segment in English, Spanish, and Mandarin, readable at desktop and phone widths? At phone width the transcript under the player is the caption track and highlights the spoken word; that layout was chosen on purpose.",
       "measured": true
     },
     {

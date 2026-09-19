@@ -127,7 +127,20 @@ async function tocFacts(browser, base, index) {
     start += duration(number);
   }
   await context.close();
-  return { ok: chapters.every((chapter) => chapter.ok), listed: chapters.length, chapters };
+  const visible = {};
+  for (const language of LANGUAGES) {
+    const view = await browser.newContext(DESKTOP);
+    const guide = await openGuide(view, base, `s=1&l=${language}`);
+    visible[language] = await guide.evaluate(() => {
+      const list = document.getElementById("chapter-list").getBoundingClientRect();
+      return [...document.querySelectorAll("#chapter-list .chapter")].map((button) => {
+        const box = button.getBoundingClientRect();
+        return box.top >= list.top - 1 && box.bottom <= list.bottom + 1;
+      }).every(Boolean);
+    });
+    await view.close();
+  }
+  return { ok: chapters.every((chapter) => chapter.ok) && Object.values(visible).every(Boolean), listed: chapters.length, chapters, every_chapter_visible_at_1280x800: visible };
 }
 
 async function languageFacts(browser, base) {
@@ -209,9 +222,13 @@ async function reviewLineFacts(browser, base, link, out) {
   await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
   await page.waitForTimeout(800);
   const badge = await page.evaluate(() => [...document.querySelectorAll(".badge--clinician")].find((node) => node.offsetParent !== null)?.textContent.trim() ?? null);
+  const followUp = await page.evaluate(() => document.querySelector(".transcript__data")?.textContent ?? null);
+  await page.evaluate(() => document.querySelector(".transcript__data")?.scrollIntoView({ block: "center" }));
   await page.screenshot({ path: join(out, "guide-from-link.png") });
+  await page.evaluate(() => document.querySelector(".transcript-footer")?.scrollIntoView({ block: "end" }));
+  await page.screenshot({ path: join(out, "guide-from-link-badges.png") });
   await context.close();
-  return { ok: lines.length === 1 && Boolean(badge) && /2026/.test(badge ?? ""), lines_in_block: lines, clinician_badge: badge };
+  return { ok: lines.length === 1 && Boolean(badge) && /2026/.test(badge ?? ""), lines_in_block: lines, clinician_badge: badge, follow_up_in_transcript: followUp };
 }
 
 async function cardFacts(browser, base) {
@@ -219,15 +236,17 @@ async function cardFacts(browser, base) {
   for (const [name, options] of [["desktop", DESKTOP], ["phone", PHONE]]) {
     const context = await browser.newContext(options);
     const page = await openGuide(context, base, "s=1&l=en");
+    // On the first screen without scrolling, and not covered by anything.
     widths[name] = await page.$$eval(`a[href$="${CARD.split("/").pop()}"]`, (links) => links.some((link) => {
       const box = link.getBoundingClientRect();
-      const style = getComputedStyle(link);
-      return box.width > 0 && box.height > 0 && style.visibility !== "hidden" && link.offsetParent !== null;
+      if (!box.width || !box.height || link.offsetParent === null) return false;
+      if (box.top < 0 || box.bottom > innerHeight || box.left < 0 || box.right > innerWidth) return false;
+      return link.contains(document.elementFromPoint(box.left + box.width / 2, box.top + box.height / 2));
     }));
     await context.close();
   }
   const status = await fetch(`${base}/${CARD}`, { method: "HEAD" }).then((response) => response.status, () => 0);
-  return { ok: widths.desktop && widths.phone && status === 200, visible_without_a_menu: widths, card_status: status };
+  return { ok: widths.desktop && widths.phone && status === 200, on_first_screen: widths, card_status: status };
 }
 
 async function screenshots(browser, base, out) {
@@ -256,12 +275,17 @@ try {
   const languages = await languageFacts(browser, server.base);
   const provider = await providerFacts(browser, server.base, out);
   const reviewLine = await reviewLineFacts(browser, server.base, provider.link, out);
+  // The link's follow-up date has to reach the patient's reading flow, not only one picture.
+  provider.follow_up_in_transcript = reviewLine.follow_up_in_transcript;
+  provider.ok = provider.ok && /2026/.test(provider.follow_up_in_transcript ?? "");
+  delete reviewLine.follow_up_in_transcript;
   const card = await cardFacts(browser, server.base);
   const shots = [
     ...(await screenshots(browser, server.base, out)),
     { file: "provider-draft.png", shows: "The provider page after pasting the draft dot phrase exactly as written, with its *** placeholders." },
     { file: "provider-filled.png", shows: "The provider page after pasting a filled-in example block: antibiotic no, pain medication yes, a follow-up date, Spanish, and a review line with a placeholder name." },
-    { file: "guide-from-link.png", shows: "The guide opened from the filled-in example's patient link." }
+    { file: "guide-from-link.png", shows: "The guide opened from the filled-in example's patient link, its transcript scrolled to the follow-up date the link carries." },
+    { file: "guide-from-link-badges.png", shows: "The same guide, its transcript scrolled to the end, where the review badges are." }
   ];
   const facts = {
     captured_on: new Date().toISOString().slice(0, 10),
