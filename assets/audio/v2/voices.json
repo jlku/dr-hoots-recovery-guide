@@ -24,7 +24,7 @@
       "stability": 0.68,
       "similarity_boost": 0.78,
       "seed_base": 91000,
-      "provisional": "Chosen by Claude on 2026-09-19 so the build could be finished and checked end to end; John picks the voice for each language from the voice tests."
+      "chosen": "George, confirmed by John on 2026-09-19 after hearing the voice tests"
     },
     "zh-Hans": {
       "language_code": "zh",
@@ -37,7 +37,7 @@
       "stability": 0.68,
       "similarity_boost": 0.78,
       "seed_base": 92000,
-      "provisional": "Chosen by Claude on 2026-09-19 so the build could be finished and checked end to end; John picks the voice for each language from the voice tests."
+      "chosen": "George, confirmed by John on 2026-09-19 after hearing the voice tests"
     }
   }
 }
