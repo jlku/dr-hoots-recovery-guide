@@ -1294,6 +1294,36 @@
       "actual_usd": null,
       "request_id": "01a0b833-073d-77b2-b1c7-c03216a64220",
       "status": "completed"
+    },
+    {
+      "id": "tts:es:three-signs:2026-09-19T10:42:14.795Z",
+      "at": "2026-09-19T10:42:14.800Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/three-signs",
+      "units": {
+        "characters": 182,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b942-7358-7513-af06-23c1ed4a3415",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:any-of-these:2026-09-19T10:42:22.624Z",
+      "at": "2026-09-19T10:42:22.629Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/any-of-these",
+      "units": {
+        "characters": 118,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b942-91db-7dd1-b142-f7b46df5c370",
+      "status": "completed"
     }
   ]
 }

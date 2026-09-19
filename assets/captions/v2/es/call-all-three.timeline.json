@@ -27,12 +27,12 @@
         "call.01c"
       ],
       "start": 1.5,
-      "end": 14.94,
-      "speech_seconds": 13.44,
+      "end": 15.02,
+      "speech_seconds": 13.52,
       "record_id": "three-signs",
       "manifest": "assets/audio/v2/es/narration.json",
       "source_audio": "assets/audio/v2/es/beats/three-signs.mp3",
-      "text": "Llame a su cirujano o al personal de la clínica si tiene las tres señales de abajo. La incisión está roja e hinchada. No mejora en los siguientes uno o dos días. Le duele cuando la toca."
+      "text": "Llame a su cirujano o al personal de la clínica si tiene las tres señales de abajo. La incisión está roja e hinchada. No mejora en los siguientes uno o dos días. Le duele al tocarla."
     }
   ],
   "words": [
@@ -66,35 +66,35 @@
     },
     {
       "text": "o",
-      "start": 2.74,
-      "end": 2.86,
+      "start": 2.78,
+      "end": 2.94,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "al",
-      "start": 2.913,
+      "start": 2.967,
       "end": 3.02,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "personal",
-      "start": 3.073,
-      "end": 3.5,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "de",
-      "start": 3.527,
+      "start": 3.082,
       "end": 3.58,
       "beat": "beat/three-signs",
       "space": true
     },
     {
+      "text": "de",
+      "start": 3.607,
+      "end": 3.66,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
       "text": "la",
-      "start": 3.633,
+      "start": 3.687,
       "end": 3.74,
       "beat": "beat/three-signs",
       "space": true
@@ -102,62 +102,62 @@
     {
       "text": "clínica",
       "start": 3.793,
-      "end": 4.22,
+      "end": 4.3,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "si",
-      "start": 4.38,
+      "start": 4.433,
       "end": 4.7,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "tiene",
-      "start": 4.753,
-      "end": 5.02,
+      "start": 4.74,
+      "end": 4.94,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "las",
-      "start": 5.06,
+      "start": 5,
       "end": 5.18,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "tres",
-      "start": 5.228,
-      "end": 5.42,
+      "start": 5.212,
+      "end": 5.34,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "señales",
-      "start": 5.48,
-      "end": 5.98,
+      "start": 5.42,
+      "end": 5.82,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "de",
-      "start": 6.007,
-      "end": 6.06,
+      "start": 5.873,
+      "end": 5.98,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "abajo.",
-      "start": 6.087,
-      "end": 7.14,
+      "start": 6.007,
+      "end": 6.46,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "La",
-      "start": 7.34,
+      "start": 6.887,
       "end": 7.74,
       "beat": "beat/three-signs",
       "space": true
@@ -192,106 +192,99 @@
     },
     {
       "text": "hinchada.",
-      "start": 9.08,
-      "end": 9.58,
+      "start": 9.06,
+      "end": 10.02,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "No",
-      "start": 9.82,
-      "end": 10.3,
+      "start": 10.167,
+      "end": 10.46,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "mejora",
-      "start": 10.38,
-      "end": 10.7,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "en",
-      "start": 10.753,
+      "start": 10.52,
       "end": 10.86,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "los",
-      "start": 10.88,
+      "text": "en",
+      "start": 10.887,
       "end": 10.94,
       "beat": "beat/three-signs",
       "space": true
     },
     {
+      "text": "los",
+      "start": 10.98,
+      "end": 11.1,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
       "text": "siguientes",
-      "start": 10.991,
-      "end": 11.5,
+      "start": 11.151,
+      "end": 11.66,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "uno",
-      "start": 11.6,
-      "end": 11.9,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "o",
-      "start": 11.98,
+      "start": 11.76,
       "end": 12.06,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "dos",
-      "start": 12.1,
+      "text": "o",
+      "start": 12.14,
       "end": 12.22,
       "beat": "beat/three-signs",
       "space": true
     },
     {
+      "text": "dos",
+      "start": 12.26,
+      "end": 12.38,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
       "text": "días.",
-      "start": 12.316,
-      "end": 12.86,
+      "start": 12.476,
+      "end": 12.94,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "Le",
-      "start": 13.1,
-      "end": 13.58,
+      "start": 13.26,
+      "end": 13.9,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "duele",
-      "start": 13.64,
-      "end": 13.98,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "cuando",
-      "start": 14.014,
+      "start": 13.96,
       "end": 14.22,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "la",
+      "text": "al",
       "start": 14.273,
       "end": 14.38,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "toca.",
+      "text": "tocarla.",
       "start": 14.433,
-      "end": 14.94,
+      "end": 15.02,
       "beat": "beat/three-signs",
       "space": false
     }
@@ -300,7 +293,7 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.58,
+      "end": 3.66,
       "text": "Llame a su cirujano o al personal de",
       "beat": "beat/three-signs",
       "first_word": 0,
@@ -308,8 +301,8 @@
     },
     {
       "id": "cue-02",
-      "start": 3.633,
-      "end": 6.06,
+      "start": 3.687,
+      "end": 5.98,
       "text": "la clínica si tiene las tres señales de",
       "beat": "beat/three-signs",
       "first_word": 8,
@@ -317,8 +310,8 @@
     },
     {
       "id": "cue-03",
-      "start": 6.087,
-      "end": 7.14,
+      "start": 6.007,
+      "end": 6.46,
       "text": "abajo.",
       "beat": "beat/three-signs",
       "first_word": 16,
@@ -326,8 +319,8 @@
     },
     {
       "id": "cue-04",
-      "start": 7.34,
-      "end": 9.58,
+      "start": 6.887,
+      "end": 10.02,
       "text": "La incisión está roja e hinchada.",
       "beat": "beat/three-signs",
       "first_word": 17,
@@ -335,8 +328,8 @@
     },
     {
       "id": "cue-05",
-      "start": 9.82,
-      "end": 12.22,
+      "start": 10.167,
+      "end": 12.38,
       "text": "No mejora en los siguientes uno o dos",
       "beat": "beat/three-signs",
       "first_word": 23,
@@ -344,8 +337,8 @@
     },
     {
       "id": "cue-06",
-      "start": 12.316,
-      "end": 12.86,
+      "start": 12.476,
+      "end": 12.94,
       "text": "días.",
       "beat": "beat/three-signs",
       "first_word": 31,
@@ -353,17 +346,17 @@
     },
     {
       "id": "cue-07",
-      "start": 13.1,
-      "end": 14.94,
-      "text": "Le duele cuando la toca.",
+      "start": 13.26,
+      "end": 15.02,
+      "text": "Le duele al tocarla.",
       "beat": "beat/three-signs",
       "first_word": 32,
-      "word_count": 5
+      "word_count": 4
     }
   ],
-  "narration_seconds": 13.44,
-  "duration_seconds": 15.84,
+  "narration_seconds": 13.52,
+  "duration_seconds": 15.92,
   "source_records": {
-    "three-signs": "5ceffdc6917d6bb6ab6b305294db4747fd69a5553d5fca0b43b1897e6ab51209"
+    "three-signs": "aa137824c8ac1f324b7b37804a682d98df6d972e613acc164d8e815818813c88"
   }
 }

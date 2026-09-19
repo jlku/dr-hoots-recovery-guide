@@ -4,7 +4,7 @@
   "script": "Hans",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "machine_draft",
+  "status": "ai_reviewed",
   "patient_use": false,
   "notice": "未经核实——不得用于患者",
   "sentences": {
@@ -28,7 +28,7 @@
     "call.01c": "一碰就疼。",
     "call.02": "如果发烧超过华氏101.5度，请打电话。",
     "call.03": "如果耳朵后面的皮肤肿起来，或者感觉皮肤下面有液体在积聚，请打电话。",
-    "call.04": "如果出现头痛、怕光，或者特别嗜睡、没精神，请打电话。",
+    "call.04": "如果出现头痛、怕光，或者特别嗜睡、特别没精神，请打电话。",
     "call.05": "如果您对伤口护理有疑问，或者对您自己或孩子有其他医疗方面的担心，请打电话。",
     "call.06": "如果是给诊所或外科医生的一般问题，请拨打护理热线415-353-2148留言。",
     "call.07": "UCSF网页上说，您应该会在12小时内接到回电。",
@@ -42,7 +42,7 @@
   },
   "labels": {
     "guide.title": "人工耳蜗术后恢复指南",
-    "guide.subtitle": "五个短视频。先看您最想了解的那一个。",
+    "guide.subtitle": "短视频。先看您最想了解的那一个。",
     "seg.bandage-off.title": "术后2天：拆绷带",
     "seg.bandage-off.chip": "术后2天",
     "seg.tape-or-no-tape.title": "术后2天：看有没有胶布",
@@ -109,9 +109,13 @@
     "ui.reviewed_by_clinician": "医护人员已审核"
   },
   "review": {
-    "kind": "none",
-    "label": "机器翻译草稿，尚未审核",
+    "kind": "ai",
+    "label": "经人工智能（Claude）审核，并非认证医学翻译",
     "date": "2026-09-19",
-    "receipts": []
+    "receipts": [
+      "content/reviews/zh/eed5fa9312c3683a.json",
+      "content/reviews/zh/eed5fa9312c3683a.2.json",
+      "content/reviews/zh/eed5fa9312c3683a.3.json"
+    ]
   }
 }

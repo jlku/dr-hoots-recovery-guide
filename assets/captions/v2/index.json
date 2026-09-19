@@ -187,8 +187,8 @@
       "timeline": "assets/captions/v2/es/call-all-three.timeline.json",
       "captions": "assets/captions/v2/es/call-all-three.vtt",
       "audio": "assets/audio/v2/es/call-all-three.mp3",
-      "duration_seconds": 15.84,
-      "narration_seconds": 13.44
+      "duration_seconds": 15.92,
+      "narration_seconds": 13.52
     },
     {
       "segment_id": "seg/call-any-one",
@@ -308,8 +308,8 @@
       "timeline": "assets/captions/v2/zh-Hans/call-any-one.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/call-any-one.vtt",
       "audio": "assets/audio/v2/zh-Hans/call-any-one.mp3",
-      "duration_seconds": 34.4,
-      "narration_seconds": 32
+      "duration_seconds": 34.24,
+      "narration_seconds": 31.84
     },
     {
       "segment_id": "seg/who-to-call",

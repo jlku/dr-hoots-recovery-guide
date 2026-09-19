@@ -27,284 +27,291 @@
         "call.05"
       ],
       "start": 1.5,
-      "end": 33.5,
-      "speech_seconds": 32,
+      "end": 33.34,
+      "speech_seconds": 31.84,
       "record_id": "any-of-these",
       "manifest": "assets/audio/v2/zh-Hans/narration.json",
       "source_audio": "assets/audio/v2/zh-Hans/beats/any-of-these.mp3",
-      "text": "如果发烧超过华氏101.5度，请打电话。如果耳朵后面的皮肤肿起来，或者感觉皮肤下面有液体在积聚，请打电话。如果出现头痛、怕光，或者特别嗜睡、没精神，请打电话。如果您对伤口护理有疑问，或者对您自己或孩子有其他医疗方面的担心，请打电话。"
+      "text": "如果发烧超过华氏101.5度，请打电话。如果耳朵后面的皮肤肿起来，或者感觉皮肤下面有液体在积聚，请打电话。如果出现头痛、怕光，或者特别嗜睡、特别没精神，请打电话。如果您对伤口护理有疑问，或者对您自己或孩子有其他医疗方面的担心，请打电话。"
     }
   ],
   "words": [
     {
       "text": "如果",
       "start": 1.5,
-      "end": 1.9,
+      "end": 1.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "发烧",
-      "start": 1.9,
-      "end": 2.62,
+      "start": 1.82,
+      "end": 2.46,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "超过",
-      "start": 2.62,
-      "end": 3.02,
+      "start": 2.46,
+      "end": 2.86,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "华氏",
-      "start": 3.02,
-      "end": 3.74,
+      "start": 2.86,
+      "end": 3.42,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "101.5",
-      "start": 3.74,
-      "end": 4.86,
+      "start": 3.42,
+      "end": 4.46,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "度，",
-      "start": 4.86,
+      "start": 4.46,
+      "end": 5.1,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 5.1,
       "end": 5.5,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
-      "text": "请",
-      "start": 5.5,
-      "end": 5.9,
-      "beat": "beat/any-of-these",
-      "space": false
-    },
-    {
       "text": "打电话。",
-      "start": 5.9,
-      "end": 7.047,
+      "start": 5.5,
+      "end": 6.7,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "如果",
-      "start": 7.047,
-      "end": 8.06,
+      "start": 6.7,
+      "end": 7.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "耳朵",
-      "start": 8.06,
-      "end": 8.46,
+      "start": 7.82,
+      "end": 8.14,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "后面",
-      "start": 8.46,
-      "end": 8.74,
+      "start": 8.14,
+      "end": 8.46,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "的",
-      "start": 8.74,
-      "end": 8.86,
+      "start": 8.46,
+      "end": 8.62,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "皮肤",
-      "start": 8.86,
-      "end": 9.58,
+      "start": 8.62,
+      "end": 9.18,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "肿起来，",
-      "start": 9.58,
-      "end": 10.7,
+      "start": 9.18,
+      "end": 10.22,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "或者",
-      "start": 10.7,
-      "end": 11.02,
+      "start": 10.22,
+      "end": 10.54,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "感觉",
-      "start": 11.02,
-      "end": 11.5,
+      "start": 10.54,
+      "end": 11.26,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "皮肤",
-      "start": 11.5,
-      "end": 11.82,
+      "start": 11.26,
+      "end": 11.58,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "下面",
-      "start": 11.82,
-      "end": 12.62,
+      "start": 11.58,
+      "end": 12.06,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "有",
-      "start": 12.62,
-      "end": 12.86,
+      "start": 12.06,
+      "end": 12.3,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "液体",
-      "start": 12.86,
-      "end": 13.34,
+      "start": 12.3,
+      "end": 12.7,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "在",
-      "start": 13.34,
-      "end": 13.5,
+      "start": 12.7,
+      "end": 12.86,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "积",
-      "start": 13.5,
-      "end": 13.74,
+      "start": 12.86,
+      "end": 13.26,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "聚，",
-      "start": 13.74,
-      "end": 14.42,
+      "start": 13.26,
+      "end": 13.78,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "请",
-      "start": 14.42,
-      "end": 14.86,
+      "start": 13.78,
+      "end": 14.22,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "打电话。",
-      "start": 14.86,
-      "end": 16.007,
+      "start": 14.22,
+      "end": 15.393,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "如果",
-      "start": 16.007,
-      "end": 16.86,
+      "start": 15.393,
+      "end": 16.46,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "出现",
-      "start": 16.86,
-      "end": 17.34,
+      "start": 16.46,
+      "end": 16.86,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "头痛、",
-      "start": 17.34,
-      "end": 18.38,
+      "start": 16.86,
+      "end": 17.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "怕",
-      "start": 18.38,
-      "end": 18.62,
+      "start": 17.82,
+      "end": 18.06,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "光，",
-      "start": 18.62,
-      "end": 19.5,
+      "start": 18.06,
+      "end": 18.86,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "或者",
-      "start": 19.5,
-      "end": 19.9,
+      "start": 18.86,
+      "end": 19.26,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "特别",
-      "start": 19.9,
-      "end": 20.3,
+      "start": 19.26,
+      "end": 19.66,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "嗜",
-      "start": 20.3,
-      "end": 20.7,
+      "start": 19.66,
+      "end": 20.06,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "睡、",
-      "start": 20.7,
-      "end": 21.26,
+      "start": 20.06,
+      "end": 20.62,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "特别",
+      "start": 20.62,
+      "end": 21.02,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "没",
-      "start": 21.26,
-      "end": 21.5,
+      "start": 21.02,
+      "end": 21.26,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "精神，",
-      "start": 21.5,
-      "end": 22.5,
+      "start": 21.26,
+      "end": 22.22,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "请",
-      "start": 22.5,
-      "end": 22.86,
+      "start": 22.22,
+      "end": 22.7,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "打电话。",
-      "start": 22.86,
-      "end": 23.98,
+      "start": 22.7,
+      "end": 23.873,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "如果",
-      "start": 23.98,
+      "start": 23.873,
       "end": 24.94,
       "beat": "beat/any-of-these",
       "space": false
@@ -312,140 +319,140 @@
     {
       "text": "您",
       "start": 24.94,
-      "end": 25.1,
+      "end": 25.18,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "对",
-      "start": 25.1,
-      "end": 25.34,
+      "start": 25.18,
+      "end": 25.42,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "伤口",
-      "start": 25.34,
-      "end": 25.74,
+      "start": 25.42,
+      "end": 25.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "护理",
-      "start": 25.74,
-      "end": 26.14,
+      "start": 25.82,
+      "end": 26.22,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "有",
-      "start": 26.14,
-      "end": 26.3,
+      "start": 26.22,
+      "end": 26.38,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "疑问，",
-      "start": 26.3,
-      "end": 27.34,
+      "start": 26.38,
+      "end": 27.5,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "或者",
-      "start": 27.34,
-      "end": 27.74,
+      "start": 27.5,
+      "end": 27.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "对",
-      "start": 27.74,
-      "end": 27.9,
+      "start": 27.82,
+      "end": 27.98,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "您",
-      "start": 27.9,
-      "end": 28.14,
+      "start": 27.98,
+      "end": 28.22,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "自己",
-      "start": 28.14,
-      "end": 28.94,
+      "start": 28.22,
+      "end": 28.86,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "或",
-      "start": 28.94,
-      "end": 29.1,
+      "start": 28.86,
+      "end": 29.02,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "孩子",
-      "start": 29.1,
-      "end": 29.9,
+      "start": 29.02,
+      "end": 29.82,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "有",
-      "start": 29.9,
-      "end": 30.22,
+      "start": 29.82,
+      "end": 30.06,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "其他",
-      "start": 30.22,
-      "end": 30.7,
+      "start": 30.06,
+      "end": 30.46,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "医疗",
-      "start": 30.7,
-      "end": 31.02,
+      "start": 30.46,
+      "end": 30.78,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "方面",
-      "start": 31.02,
-      "end": 31.34,
+      "start": 30.78,
+      "end": 31.1,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "的",
-      "start": 31.34,
-      "end": 31.5,
+      "start": 31.1,
+      "end": 31.18,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "担心，",
-      "start": 31.5,
-      "end": 32.42,
+      "start": 31.18,
+      "end": 32.18,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "请",
-      "start": 32.42,
-      "end": 32.78,
+      "start": 32.18,
+      "end": 32.62,
       "beat": "beat/any-of-these",
       "space": false
     },
     {
       "text": "打电话。",
-      "start": 32.78,
-      "end": 33.5,
+      "start": 32.62,
+      "end": 33.34,
       "beat": "beat/any-of-these",
       "space": false
     }
@@ -454,7 +461,7 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.5,
+      "end": 5.1,
       "text": "如果发烧超过华氏101.5度，",
       "beat": "beat/any-of-these",
       "first_word": 0,
@@ -462,8 +469,8 @@
     },
     {
       "id": "cue-02",
-      "start": 5.5,
-      "end": 7.047,
+      "start": 5.1,
+      "end": 6.7,
       "text": "请打电话。",
       "beat": "beat/any-of-these",
       "first_word": 6,
@@ -471,8 +478,8 @@
     },
     {
       "id": "cue-03",
-      "start": 7.047,
-      "end": 10.7,
+      "start": 6.7,
+      "end": 10.22,
       "text": "如果耳朵后面的皮肤肿起来，",
       "beat": "beat/any-of-these",
       "first_word": 8,
@@ -480,8 +487,8 @@
     },
     {
       "id": "cue-04",
-      "start": 10.7,
-      "end": 13.74,
+      "start": 10.22,
+      "end": 13.26,
       "text": "或者感觉皮肤下面有液体在积",
       "beat": "beat/any-of-these",
       "first_word": 14,
@@ -489,8 +496,8 @@
     },
     {
       "id": "cue-05",
-      "start": 13.74,
-      "end": 14.42,
+      "start": 13.26,
+      "end": 13.78,
       "text": "聚，",
       "beat": "beat/any-of-these",
       "first_word": 22,
@@ -498,8 +505,8 @@
     },
     {
       "id": "cue-06",
-      "start": 14.42,
-      "end": 16.007,
+      "start": 13.78,
+      "end": 15.393,
       "text": "请打电话。",
       "beat": "beat/any-of-these",
       "first_word": 23,
@@ -507,8 +514,8 @@
     },
     {
       "id": "cue-07",
-      "start": 16.007,
-      "end": 19.5,
+      "start": 15.393,
+      "end": 18.86,
       "text": "如果出现头痛、怕光，",
       "beat": "beat/any-of-these",
       "first_word": 25,
@@ -516,62 +523,62 @@
     },
     {
       "id": "cue-08",
-      "start": 19.5,
-      "end": 22.5,
-      "text": "或者特别嗜睡、没精神，",
+      "start": 18.86,
+      "end": 22.22,
+      "text": "或者特别嗜睡、特别没精神，",
       "beat": "beat/any-of-these",
       "first_word": 30,
-      "word_count": 6
+      "word_count": 7
     },
     {
       "id": "cue-09",
-      "start": 22.5,
-      "end": 23.98,
+      "start": 22.22,
+      "end": 23.873,
       "text": "请打电话。",
       "beat": "beat/any-of-these",
-      "first_word": 36,
+      "first_word": 37,
       "word_count": 2
     },
     {
       "id": "cue-10",
-      "start": 23.98,
-      "end": 27.34,
+      "start": 23.873,
+      "end": 27.5,
       "text": "如果您对伤口护理有疑问，",
       "beat": "beat/any-of-these",
-      "first_word": 38,
+      "first_word": 39,
       "word_count": 7
     },
     {
       "id": "cue-11",
-      "start": 27.34,
-      "end": 30.7,
+      "start": 27.5,
+      "end": 30.46,
       "text": "或者对您自己或孩子有其他",
       "beat": "beat/any-of-these",
-      "first_word": 45,
+      "first_word": 46,
       "word_count": 8
     },
     {
       "id": "cue-12",
-      "start": 30.7,
-      "end": 32.42,
+      "start": 30.46,
+      "end": 32.18,
       "text": "医疗方面的担心，",
       "beat": "beat/any-of-these",
-      "first_word": 53,
+      "first_word": 54,
       "word_count": 4
     },
     {
       "id": "cue-13",
-      "start": 32.42,
-      "end": 33.5,
+      "start": 32.18,
+      "end": 33.34,
       "text": "请打电话。",
       "beat": "beat/any-of-these",
-      "first_word": 57,
+      "first_word": 58,
       "word_count": 2
     }
   ],
-  "narration_seconds": 32,
-  "duration_seconds": 34.4,
+  "narration_seconds": 31.84,
+  "duration_seconds": 34.24,
   "source_records": {
-    "any-of-these": "b18e48de1076851ac6e294a1031c08ea0d6643b222ffcbe5a5b19ca82deb2331"
+    "any-of-these": "00b4432f2204edb977f8fdd0690f299645322369b74b69e63189ee44d3dff44c"
   }
 }
