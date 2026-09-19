@@ -3,10 +3,9 @@
 // Pictures are static, so each video is a sequence of stills captured from guide/export.html at the
 // moments a beat, caption, or spoken word starts. ffmpeg joins them with their exact durations and the
 // segment's narration; ffprobe checks the result. Chrome has to run outside a command sandbox.
-import { execFile, spawn } from "node:child_process";
+import { execFile } from "node:child_process";
 import { createHash } from "node:crypto";
 import { mkdir, readFile, rm, writeFile } from "node:fs/promises";
-import { createServer } from "node:net";
 import { dirname, join, relative, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 import { promisify } from "node:util";
@@ -15,6 +14,7 @@ import { chromium } from "playwright-core";
 
 import { fixedSegments } from "../guide/assets/logic.js";
 import { buildHash } from "./lib/build-hash.mjs";
+import { serveBuild } from "./lib/serve-build.mjs";
 
 const run = promisify(execFile);
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -25,29 +25,6 @@ const FPS = 30;
 const TOLERANCE_SECONDS = 0.15;
 const sha256 = (data) => createHash("sha256").update(data).digest("hex");
 const readJson = async (path) => JSON.parse(await readFile(join(root, path), "utf8"));
-
-async function freePort() {
-  return new Promise((resolvePort, reject) => {
-    const server = createServer();
-    server.listen(0, "127.0.0.1", () => {
-      const { port } = server.address();
-      server.close(() => resolvePort(port));
-    });
-    server.on("error", reject);
-  });
-}
-
-async function startServer() {
-  const port = await freePort();
-  const child = spawn(process.execPath, ["scripts/serve.mjs"], { cwd: root, env: { ...process.env, PORT: String(port) }, stdio: "ignore" });
-  const base = `http://127.0.0.1:${port}`;
-  for (let attempt = 0; attempt < 50; attempt += 1) {
-    if (await fetch(`${base}/guide/export.html`).then((response) => response.ok, () => false)) return { base, stop: () => child.kill() };
-    await new Promise((wait) => setTimeout(wait, 100));
-  }
-  child.kill();
-  throw new Error("the static server did not start");
-}
 
 async function probe(file) {
   const { stdout } = await run("ffprobe", ["-v", "error", "-show_entries", "stream=codec_type,codec_name,width,height:format=duration", "-of", "json", file]);
@@ -107,7 +84,7 @@ for (const segment of fixedSegments(segments)) {
   }
 }
 if (!jobs.length) throw new Error("nothing to export for that segment and language");
-const server = await startServer();
+const server = await serveBuild(root, "/guide/export.html");
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 const files = [];
 try {
