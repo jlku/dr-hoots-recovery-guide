@@ -9,16 +9,17 @@ const html = await readFile(resolve(root, "guide/provider.html"), "utf8");
 const script = await readFile(resolve(root, "guide/assets/provider-page.js"), "utf8");
 
 test("the provider page has one block to paste, the parsed table, what it could not read, the link, and the open questions", () => {
-  for (const id of ["block", "parsed", "unread", "patient-link", "copy-link", "asks"]) assert.match(html, new RegExp(`id="${id}"`), id);
+  for (const id of ["block", "parsed", "not-used", "unread", "patient-link", "link-state", "copy-link", "open-guide", "asks"]) assert.match(html, new RegExp(`id="${id}"`), id);
   assert.match(html, /<textarea[^>]+id="block"/);
   assert.match(html, /<label[^>]+for="block"/, "the paste box has a visible label");
   assert.match(html, /Private prototype\. Not for patient use\./);
 });
 
-test("nothing leaves the page: no form posts, no credentials, and one fetch for the presets", () => {
+test("nothing leaves the page: no form posts, no credentials, and it reads only static content files", () => {
   assert.doesNotMatch(html, /<form[^>]+action=/);
   assert.doesNotMatch(html + script, /api[_-]?key|FAL_KEY|anthropic|fal\.subscribe/i);
-  const fetches = script.match(/fetch(Json)?\(/g) ?? [];
-  assert.equal(fetches.length, 1, "the presets are the only thing the page loads");
+  assert.doesNotMatch(script, /method\s*:|body\s*:|sendBeacon|XMLHttpRequest|WebSocket/, "nothing is sent");
+  const reads = [...script.matchAll(/(?:fetchJson|assetUrl)\("([^"]+)"\)/g)].map((match) => match[1]);
+  assert.ok(reads.length >= 1 && reads.every((path) => path.startsWith("content/")), reads.join(", "));
   assert.match(script, /content\/provider\/presets\.json/);
 });

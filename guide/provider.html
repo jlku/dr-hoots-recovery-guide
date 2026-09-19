@@ -10,13 +10,13 @@
 <body class="provider-body">
   <header class="topbar">
     <h1 class="topbar__title">Patient link from your dot phrase</h1>
-    <a class="topbar__link" href="index.html">Open the guide</a>
+    <a id="open-guide" class="topbar__link" href="index.html" target="_blank" rel="noopener">Open this patient's guide</a>
   </header>
   <main class="provider">
     <section class="provider__paste" aria-labelledby="paste-label">
       <label id="paste-label" class="provider__label" for="block">Paste the block from your note</label>
-      <textarea id="block" class="provider__block" rows="14" spellcheck="false" autocomplete="off" placeholder="Antibiotic: Yes&#10;Pain medication: No&#10;Follow-up: wound check and ear exam on 10/1/2026&#10;Video guide: language Spanish    Reviewed by … on …"></textarea>
-      <p class="provider__hint">Nothing you paste leaves this page. A missing line uses its preset.</p>
+      <textarea id="block" class="provider__block" rows="16" spellcheck="false" autocomplete="off" placeholder="Antibiotic: Yes&#10;Pain medication: No&#10;Follow-up: wound check and ear exam on 10/1/2026&#10;Video guide: language Spanish    Reviewed by … on …"></textarea>
+      <p class="provider__hint">Nothing you paste leaves this browser tab. A line you leave out uses its preset.</p>
     </section>
     <section class="provider__result">
       <h2 class="provider__heading">What the guide will use</h2>
@@ -24,17 +24,26 @@
         <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">From</th></tr></thead>
         <tbody></tbody>
       </table>
-      <p id="other" class="provider__hint"></p>
+      <p class="provider__hint">Change a value here and the matching line in your block changes too, so your note and the link agree.</p>
+      <div id="not-used" class="provider__alert" data-not-in-guide hidden>
+        <h2 class="provider__heading">Not in this patient's guide</h2>
+        <p id="not-used-summary" class="provider__alert-summary"></p>
+        <ul id="not-used-list" class="provider__lines"></ul>
+      </div>
       <div id="unread-block" class="provider__unread" hidden>
         <h2 class="provider__heading">Lines we could not read</h2>
-        <p class="provider__hint">Their presets apply. Choose Yes or No, or write the date, to override them.</p>
-        <ul id="unread"></ul>
+        <ul id="unread" class="provider__lines"></ul>
       </div>
+      <details id="kept" class="provider__kept" hidden>
+        <summary id="kept-summary"></summary>
+        <ul id="kept-list" class="provider__lines"></ul>
+      </details>
       <h2 class="provider__heading">Patient link</h2>
       <div class="provider__link-row">
-        <output id="patient-link" class="provider__link" for="block"></output>
+        <a id="patient-link" class="provider__link" target="_blank" rel="noopener"></a>
         <button id="copy-link" class="button button--primary" type="button">Copy link</button>
       </div>
+      <p id="link-state" class="provider__link-state" role="status" aria-live="polite"></p>
       <p class="provider__hint">The link carries the medication choices, the follow-up date, the language, and the review date. It never carries a name.</p>
       <h2 class="provider__heading">Open questions for you</h2>
       <ul id="asks" class="provider__asks">
@@ -42,7 +51,7 @@
         <li>Confirm the presets: antibiotic yes, pain medication yes, English, no follow-up date.</li>
         <li>Pick the follow-up interval and the activation window your practice uses.</li>
         <li>Give us the wording for patients who get no antibiotic, and for patients who get no prescription pain medicine.</li>
-        <li>Say whether activity restrictions deserve a sixth video.</li>
+        <li>Say whether pain relievers to avoid, and activity limits, deserve chapters of their own.</li>
         <li>Name the views of the ear and incision that patients ask about most.</li>
       </ul>
     </section>
