@@ -44,7 +44,8 @@ for (const source of content.sources) {
   sourceResults[source.id] = computedHash;
   assert(source.claim_snapshot_sha256 === computedHash, `${source.id}: claim snapshot hash mismatch`);
   assert(source.url.startsWith("https://"), `${source.id}: source URL must use HTTPS`);
-  assert(source.retrieved_at === content.artifact.source_retrieved_at, `${source.id}: retrieval date differs from artifact`);
+  // Sources added after the first snapshot carry their own, later retrieval date.
+  assert(/^\d{4}-\d{2}-\d{2}$/.test(source.retrieved_at) && source.retrieved_at >= content.artifact.source_retrieved_at, `${source.id}: retrieval date must be on or after the artifact's first snapshot`);
   for (const claim of source.claims) {
     assert(!sourceClaims.has(claim.id), `${claim.id}: duplicate source claim ID`);
     sourceClaims.set(claim.id, claim);
@@ -66,7 +67,9 @@ for (const module of content.modules) {
   assert(module.content_sha256 === computedHash, `${module.id}: content hash mismatch`);
   assert(module.readability.grade === computedGrade, `${module.id}: readability grade mismatch`);
   assert(computedGrade <= module.readability.target_max, `${module.id}: grade ${computedGrade} exceeds target ${module.readability.target_max}`);
-  assert(module.status === "unverified_draft", `${module.id}: status must remain unverified_draft`);
+  // surgeon_review is stricter than a draft: medication wording must be reviewed by the partner surgeon.
+  assert(["unverified_draft", "surgeon_review"].includes(module.status), `${module.id}: status must be unverified_draft or surgeon_review`);
+  if (module.status === "surgeon_review") assert(module.review.partner_surgeon === "required", `${module.id}: surgeon_review needs the partner surgeon marked required`);
   assert(module.review.patient_ready === false, `${module.id}: patient_ready must be false`);
   for (const sentence of module.canonical_sentences) {
     assert(sentence.source_claim_ids.length > 0, `${sentence.id}: missing source claims`);

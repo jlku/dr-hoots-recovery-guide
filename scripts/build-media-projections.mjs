@@ -17,7 +17,10 @@ const modules = canonical.modules.map((module) => ({
 
 const canonicalSequence = modules.flatMap(({ sentence_ids }) => sentence_ids);
 const sceneIds = sceneSource.scenes.map(({ id }) => id);
-const targetSeconds = sceneSource.scenes.reduce((sum, { target_seconds }) => sum + target_seconds, 0);
+// Conditional scenes play only for some patients, such as a medication the provider switched on, so
+// the three-minute budget covers the fixed scenes and conditional time is reported beside it.
+const targetSeconds = sceneSource.scenes.filter((scene) => !scene.conditional).reduce((sum, { target_seconds }) => sum + target_seconds, 0);
+const conditionalSeconds = sceneSource.scenes.filter((scene) => scene.conditional).reduce((sum, { target_seconds }) => sum + target_seconds, 0);
 const requiredChannel = (mode) => ({ required: true, mode, sentence_ids: canonicalSequence });
 const unusedChannel = (mode) => ({ required: false, mode, sentence_ids: [] });
 const projection = {
@@ -41,6 +44,7 @@ const projection = {
       navigation: "global_progress_no_topic_chooser",
       media_asset_policy: "same_scene_assets_as_chaptered_video",
       target_seconds: targetSeconds,
+      conditional_seconds: conditionalSeconds,
       timing_budget_seconds: 180,
       channels: {
         visible_text: requiredChannel("live_html_from_canonical"),
@@ -56,6 +60,7 @@ const projection = {
       navigation: "direct_topic_access",
       media_asset_policy: "same_scene_assets_as_linear_video",
       target_seconds: targetSeconds,
+      conditional_seconds: conditionalSeconds,
       timing_budget_seconds: 180,
       channels: {
         visible_text: requiredChannel("live_html_from_canonical"),
