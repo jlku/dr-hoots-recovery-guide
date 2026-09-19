@@ -1,0 +1,1053 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "zh",
+  "kind": "ai",
+  "label": "AI reviewer (Claude), not a certified medical translator",
+  "model": "claude-opus-5 (session subagent)",
+  "reviewed_on": "2026-09-18",
+  "target": {
+    "file": "content/translations/zh-Hans/ci-phase0-v0.1.0.json",
+    "language": "zh-Hans",
+    "sha256": "56a2b2c5e3aaa31106b6712e3aca8cd33022b79a0649735fad49e83f03fa8eec"
+  },
+  "rubric": {
+    "id": "zh-translation-v1",
+    "sha256": "ec1bd753dd0c989a17030d5514b52c3ae6159210b3b63d59f967e175673d2c84"
+  },
+  "items": [
+    {
+      "id": "wc.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Technical term 乳突敷料 is glossed as 头上的绷带, matching the English gloss."
+    },
+    {
+      "id": "wc.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Condition and end time (三天) preserved."
+    },
+    {
+      "id": "wc.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Condition, frequency, and gently all kept."
+    },
+    {
+      "id": "wc.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Equal parts rendered as 等量; elliptical like the English and clear after wc.05."
+    },
+    {
+      "id": "wc.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Over-the-counter kept as 非处方; English drug name kept in parentheses."
+    },
+    {
+      "id": "wc.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.09",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.10",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "All-three condition kept as 三种情况同时出现; who to call kept."
+    },
+    {
+      "id": "call.01a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01b",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01c",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Comparator 超过, value 101.5, and unit 华氏 intact."
+    },
+    {
+      "id": "call.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Excessive lethargy rendered as 特别嗜睡、没精神."
+    },
+    {
+      "id": "call.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Phone number 415-353-2148 intact; leave-a-message instruction kept."
+    },
+    {
+      "id": "call.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "12 hours intact; hedge 应该会 matches should."
+    },
+    {
+      "id": "call.07a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Phone number 415-476-1000 intact; on-call ENT resident kept."
+    },
+    {
+      "id": "act.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "调机 is the usual patient term for programming."
+    },
+    {
+      "id": "act.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Passive restructure keeps who acts (the audiologist) and what is programmed."
+    },
+    {
+      "id": "act.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "act.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Clear as written; optional polish: 检测 reads a little more idiomatically than 测量 with 工作情况."
+    },
+    {
+      "id": "act.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "guide.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "术后 makes the implied post-surgery sense explicit; no change in meaning."
+    },
+    {
+      "id": "guide.subtitle",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.incision-day2.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "术后2天 matches wc.01 (two days after surgery)."
+    },
+    {
+      "id": "seg.incision-day2.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.next-two-weeks.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "洗澡 is the everyday word for showering; the sentence wc.08 specifies 淋浴."
+    },
+    {
+      "id": "seg.next-two-weeks.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.when-to-call.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.when-to-call.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.programming-visits.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.programming-visits.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.play",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.pause",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.previous",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.subtitles",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.language",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.speed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.contents",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.notice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.pending_clinician_text",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.follow_up_default",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.seek",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "播放进度 is the standard label for a seek bar."
+    },
+    {
+      "id": "ui.coming",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.language_fallback",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Colloquial but clear; 这种语言 would be slightly more standard."
+    },
+    {
+      "id": "ui.not_reviewed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.replay",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.transcript",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.review_status",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.call_help",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.nursing_line",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.emergency",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.follow_along",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.of",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Slash is the natural Chinese form for n of m in a counter."
+    },
+    {
+      "id": "ui.previous_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.print_card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.captions",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.tape_check",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.keep_dry",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Numeral 3 and end point intact."
+    },
+    {
+      "id": "ov.no_cleaning",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.clean_twice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.mix",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "各一半 correctly expresses equal parts."
+    },
+    {
+      "id": "ov.ointment",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.red_swollen",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.not_better",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.hurts",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fever",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Comparator 超过, 101.5, and °F intact."
+    },
+    {
+      "id": "ov.fluid",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.neuro",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.any_concern",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fluid_pointer",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.processor",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.pending_howto",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.path_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.path_no_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    }
+  ],
+  "findings": [],
+  "verdict": "pass"
+}

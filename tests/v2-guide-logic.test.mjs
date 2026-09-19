@@ -12,11 +12,14 @@ import {
   availableLanguages,
   buildFragment,
   formatTime,
+  joinWords,
   normalizeLanguage,
   parseFragment,
   pendingConditionalBeats,
   pickEntry,
-  segmentByNumber
+  segmentByNumber,
+  sentenceSpans,
+  statusMessages
 } from "../guide/assets/logic.js";
 import { phraseTime } from "../guide/assets/frames.js";
 
@@ -76,4 +79,24 @@ test("phrases resolve to the start of their first word, ignoring case and punctu
   assert.equal(phraseTime(words, "Then check:"), words.find((word) => word.text === "Then").start);
   assert.equal(phraseTime(words, "not in the narration"), null);
   assert.equal(phraseTime(words, ""), null);
+});
+
+test("the guide takes each cue's words from its recorded range and ends Chinese sentences at 。", () => {
+  const words = [
+    { text: "两天后，", start: 1, end: 1.5, beat: "b", space: false },
+    { text: "取下绷带。", start: 1.5, end: 2.5, beat: "b", space: false },
+    { text: "然后检查。", start: 2.6, end: 3.5, beat: "b", space: false }
+  ];
+  const timeline = { words, cues: [{ id: "cue-01", text: "两天后，", first_word: 0, word_count: 1 }, { id: "cue-02", text: "取下绷带。然后检查。", first_word: 1, word_count: 2 }] };
+  assert.deepEqual(assignWordsToCues(timeline).get("cue-02").map((word) => word.text), ["取下绷带。", "然后检查。"]);
+  const sentences = sentenceSpans(timeline);
+  assert.deepEqual(sentences.map((sentence) => sentence.text), ["两天后，取下绷带。", "然后检查。"]);
+  assert.equal(joinWords([{ text: "a", space: true }, { text: "b" }]), "a b");
+});
+
+test("a translated guide always says who reviewed the translation, and says when it fell back to English", () => {
+  const labels = { "ui.language_fallback": "This language is not available yet. Showing English." };
+  assert.deepEqual(statusMessages({ pack: { language: "en", review: { label: "English source text" } }, fallback: false, labels }), []);
+  assert.deepEqual(statusMessages({ pack: { language: "es", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado" } }, fallback: false, labels }), ["Revisado por IA (Claude), no por un traductor médico certificado"]);
+  assert.deepEqual(statusMessages({ pack: { language: "en", review: {} }, fallback: true, labels }), ["This language is not available yet. Showing English."]);
 });

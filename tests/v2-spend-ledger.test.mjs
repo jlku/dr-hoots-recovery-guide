@@ -42,9 +42,11 @@ test("validation catches duplicates, bad statuses, and an overspent ledger", () 
   assert.match(result.errors.join("\n"), /exceeds the \$0.05 cap/);
 });
 
-test("the repository ledger is valid and capped at ten dollars", async () => {
+test("the repository ledger is valid, capped at twelve dollars, and records who raised the cap", async () => {
   const ledger = await loadLedger(root);
-  assert.equal(ledger.cap_usd, 10);
+  assert.equal(ledger.cap_usd, 12);
+  assert.deepEqual(ledger.cap_history.map((entry) => [entry.cap_usd, entry.authorized_by, entry.authorized_on]), [[10, "John", "2026-09-17"], [12, "John", "2026-09-18"]]);
+  assert.equal(ledger.cap_history.at(-1).cap_usd, ledger.cap_usd, "the current cap is the last one authorized");
   assert.equal(validateLedger(ledger).valid, true);
 });
 

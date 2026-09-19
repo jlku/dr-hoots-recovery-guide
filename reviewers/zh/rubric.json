@@ -1,0 +1,23 @@
+{
+  "id": "zh-translation-v1",
+  "language": "zh-Hans",
+  "criteria": [
+    {
+      "id": "equivalence",
+      "question": "Does the Chinese say exactly what the English says: the same action, time, threshold, condition, and who does it, with nothing added or dropped?"
+    },
+    {
+      "id": "protected_values",
+      "question": "Are phone numbers, numerals, and the fever comparator and unit intact?"
+    },
+    {
+      "id": "register",
+      "question": "Is it plain, everyday Mandarin written in Simplified Chinese, at about a grade 7 reading level?"
+    },
+    {
+      "id": "phrasing",
+      "question": "Would a Mandarin speaker in the Bay Area find it natural and unambiguous?"
+    }
+  ],
+  "verdict_rule": "An item passes only when every criterion passes. The receipt passes only when every item passes."
+}

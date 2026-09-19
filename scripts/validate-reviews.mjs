@@ -10,5 +10,5 @@ const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const result = await validateReviews(root);
 for (const error of result.errors) console.error(`error: ${error}`);
 if (!result.valid) process.exit(1);
-const { receipts, pass, fail, strict_kept: strictKept } = result.summary;
-console.log(`reviews valid: ${receipts} receipts, ${pass} pass, ${fail} fail, ${strictKept} keep a strict verdict beside the instruction-picture verdict`);
+const { receipts, pass, fail, strict_kept: strictKept, translations } = result.summary;
+console.log(`reviews valid: ${receipts} receipts, ${pass} pass, ${fail} fail, ${strictKept} keep a strict verdict beside the instruction-picture verdict; ${translations} language review receipts`);

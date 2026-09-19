@@ -10,7 +10,7 @@
   --gray-3: #d1d3d3;
   --blue-gray: #506380;
   --paper: #fff;
-  --sans: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --sans: "Helvetica Neue", Helvetica, Arial, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", "Microsoft YaHei", sans-serif;
   --topbar: 57px;
 }
 
@@ -26,6 +26,7 @@ button, select, input { font-family: inherit; }
 .topbar__title { margin: 0; flex: 1 1 auto; min-width: 0; font-size: 22px; font-weight: 600; letter-spacing: -.01em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .topbar__link { font-size: 16px; font-weight: 600; white-space: nowrap; }
 .control { display: flex; align-items: center; gap: 8px; min-width: 0; font-size: 16px; font-weight: 600; }
+.control > span { flex: none; white-space: nowrap; }
 .control select { flex: 1 1 auto; min-width: 0; min-height: 40px; padding: 4px 8px; border: 1px solid var(--gray-3); border-radius: 6px; background: var(--paper); color: var(--navy); font-size: 16px; }
 .control input[type="checkbox"] { width: 18px; height: 18px; margin: 0; accent-color: var(--teal); }
 

@@ -46,13 +46,20 @@ export function activeCue(timeline, seconds) {
   return current;
 }
 
+export function joinWords(words) {
+  return words.map((word, index) => word.text + ((word.space ?? true) && index < words.length - 1 ? " " : "")).join("");
+}
+
+// Each cue records which words it holds, because Chinese cues cannot be counted by their spaces.
+// Timelines built before that fall back to counting.
 export function assignWordsToCues(timeline) {
   const assignment = new Map();
   let cursor = 0;
   for (const cue of timeline.cues) {
-    const count = cue.text.split(/\s+/).filter(Boolean).length;
-    assignment.set(cue.id, timeline.words.slice(cursor, cursor + count));
-    cursor += count;
+    const first = Number.isInteger(cue.first_word) ? cue.first_word : cursor;
+    const count = Number.isInteger(cue.word_count) ? cue.word_count : cue.text.split(/\s+/).filter(Boolean).length;
+    assignment.set(cue.id, timeline.words.slice(first, first + count));
+    cursor = first + count;
   }
   return assignment;
 }
@@ -78,7 +85,7 @@ export function pendingConditionalBeats(segment) {
   return (segment?.beats ?? []).filter((beat) => typeof beat.condition === "string" && beat.status === "pending_clinician_text");
 }
 
-const SENTENCE_END = /[.?!]["')\]]*$/;
+const SENTENCE_END = /[.?!。？！]["')\]”’」』）]*$/;
 
 export function sentenceSpans(timeline) {
   const sentences = [];
@@ -86,7 +93,7 @@ export function sentenceSpans(timeline) {
   const flush = () => {
     if (!current) return;
     current.end = current.words.at(-1).end;
-    current.text = current.words.map((word) => word.text).join(" ");
+    current.text = joinWords(current.words);
     sentences.push(current);
     current = null;
   };
@@ -130,4 +137,13 @@ export function globalToLocal(clock, seconds) {
 export function localToGlobal(clock, number, local) {
   const segment = clock.segments.find((candidate) => candidate.number === number);
   return segment ? segment.offset + local : local;
+}
+
+// The status strip: a visible notice when a language fell back to English, and, whenever a
+// translation is showing, who reviewed it. AI review is always labeled as AI.
+export function statusMessages({ pack, fallback, labels }) {
+  const messages = [];
+  if (fallback) messages.push(labels["ui.language_fallback"]);
+  if (pack?.language !== "en" && pack?.review?.label) messages.push(pack.review.label);
+  return messages.filter(Boolean);
 }

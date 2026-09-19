@@ -20,7 +20,8 @@ import {
   parseFragment,
   pendingConditionalBeats,
   pickEntry,
-  sentenceSpans
+  sentenceSpans,
+  statusMessages
 } from "./logic.js";
 
 const CAPTIONS_KEY = "recovery-guide-captions";
@@ -200,7 +201,7 @@ function renderTranscript() {
       button.dataset.start = String(sentence.start);
       sentence.words.forEach((word, index) => {
         button.append(span("sentence__word", word.text));
-        if (index < sentence.words.length - 1) button.append(document.createTextNode(" "));
+        if (index < sentence.words.length - 1 && (word.space ?? true)) button.append(document.createTextNode(" "));
       });
       nodes.push(button);
     }
@@ -229,7 +230,7 @@ function renderCue(cue, key) {
   dom.caption.replaceChildren();
   words.forEach((word, index) => {
     dom.caption.append(span("word", word.text));
-    if (index < words.length - 1) dom.caption.append(document.createTextNode(" "));
+    if (index < words.length - 1 && (word.space ?? true)) dom.caption.append(document.createTextNode(" "));
   });
 }
 
@@ -436,7 +437,7 @@ async function init() {
   dom.follow.checked = readFlag(FOLLOW_KEY);
 
   const fallback = guide.packFallback || picks.some((pick) => pick.fallback);
-  setStatus([fallback ? text["ui.language_fallback"] : null]);
+  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text }));
 
   const requested = Number.parseInt(params.s ?? "1", 10) || 1;
   await loadSegment(segmentByNumber(requested) && entryFor(requested) ? requested : entries[0]?.number ?? 1);

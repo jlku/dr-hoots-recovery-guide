@@ -22,6 +22,7 @@
 // hedge or a misreading, fails the picture.
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
+import { REVIEWER_LABEL, TRANSLATION_REVIEWERS, panelReceiptPaths } from "./translation-review.mjs";
 
 export const ADJUDICATION_RULES = Object.freeze(["state-picture", "instruction-picture", "strict"]);
 export const REVIEWS_INDEX = "content/reviews/index.json";
@@ -109,6 +110,21 @@ export async function validateReviews(root) {
     if (!doc.adjudication || !doc.observers) continue;
     summary.calibration = (summary.calibration ?? 0) + 1;
     errors.push(...receiptVerdictErrors(doc).map((error) => `calibration ${name}: ${error}`));
+  }
+  // Language review receipts: each is named by the pack hash it binds to and its panel slot, carries the AI label, and
+  // records a verdict that follows from its items. Receipts for earlier hashes stay as history.
+  summary.translations = 0;
+  for (const [reviewer, config] of Object.entries(TRANSLATION_REVIEWERS)) {
+    const files = await readdir(join(root, config.dir)).then((list) => list.filter((name) => name.endsWith(".json")), () => []);
+    for (const name of files) {
+      const file = `${config.dir}/${name}`;
+      const receipt = JSON.parse(await readFile(join(root, file), "utf8"));
+      summary.translations += 1;
+      if (!panelReceiptPaths(reviewer, receipt.target?.sha256 ?? "").includes(file)) errors.push(`${file} is not named by the pack hash it binds to`);
+      if (receipt.label !== REVIEWER_LABEL) errors.push(`${file} must carry the label "${REVIEWER_LABEL}"`);
+      const allPass = Array.isArray(receipt.items) && receipt.items.length > 0 && receipt.items.every((item) => item.verdict === "pass");
+      if ((receipt.verdict === "pass") !== allPass) errors.push(`${file} verdict does not follow from its items`);
+    }
   }
   return { valid: errors.length === 0, errors, summary };
 }

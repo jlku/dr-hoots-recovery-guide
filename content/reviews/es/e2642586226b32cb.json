@@ -1,0 +1,1066 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "es",
+  "kind": "ai",
+  "label": "AI reviewer (Claude), not a certified medical translator",
+  "model": "claude-opus-5 (session subagent)",
+  "reviewed_on": "2026-09-18",
+  "target": {
+    "file": "content/translations/es/ci-phase0-v0.1.0.json",
+    "language": "es",
+    "sha256": "e2642586226b32cbb211dc0cda2930ca05716fb6b5d82cbbe50ab46a6d117329"
+  },
+  "rubric": {
+    "id": "es-translation-v1",
+    "sha256": "25dcd298692c96bd668f8f291f2a1b77dce6f7aa3bb8589665f42722d7253e19"
+  },
+  "items": [
+    {
+      "id": "wc.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "The technical term is kept and explained with 'es decir', as in the English."
+    },
+    {
+      "id": "wc.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Condition and 'until three days after surgery' kept."
+    },
+    {
+      "id": "wc.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'agua oxigenada' is the everyday name for hydrogen peroxide."
+    },
+    {
+      "id": "wc.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.09",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.10",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'solos' only states what 'dissolve' already means; no change in meaning."
+    },
+    {
+      "id": "call.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'las tres señales' keeps the all-three condition."
+    },
+    {
+      "id": "call.01a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01b",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01c",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'cuando la toca' reads as touch in general, same as 'when touched'."
+    },
+    {
+      "id": "call.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'más de' keeps the strict comparator; 101.5 and Fahrenheit intact."
+    },
+    {
+      "id": "call.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'demasiado sueño o cansancio' is a plain-language rendering of excessive lethargy."
+    },
+    {
+      "id": "call.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Phone number intact."
+    },
+    {
+      "id": "call.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'en las próximas 12 horas' avoids the ambiguity of 'dentro de 12 horas'."
+    },
+    {
+      "id": "call.07a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Phone number intact. The department name is technical in both languages; a caller may still need an interpreter to reach the resident. This is not a translation defect."
+    },
+    {
+      "id": "act.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'la herida de la cirugía' is how a patient would say 'surgery site'."
+    },
+    {
+      "id": "act.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'procesador de sonido' is the usual Spanish name for the device the English calls the speech processor."
+    },
+    {
+      "id": "act.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "act.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'equipo médico' vs 'aparatos' keeps team and equipment apart."
+    },
+    {
+      "id": "act.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "guide.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "guide.subtitle",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Reworded as 'the one that answers your question'; the intent is the same for a label."
+    },
+    {
+      "id": "seg.incision-day2.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.incision-day2.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.next-two-weeks.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.next-two-weeks.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.when-to-call.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.when-to-call.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.programming-visits.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.programming-visits.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.play",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.pause",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.previous",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.subtitles",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.language",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.speed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.contents",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.notice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.pending_clinician_text",
+      "kind": "label",
+      "verdict": "fail",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "fail",
+        "phrasing": "fail"
+      },
+      "note": "Meaning is intact, but the wording is stiff and uses a formal word. See findings."
+    },
+    {
+      "id": "ui.follow_up_default",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.seek",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Names the slider by what it shows, which suits a control label."
+    },
+    {
+      "id": "ui.coming",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.language_fallback",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.not_reviewed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.replay",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.transcript",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.review_status",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.call_help",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.nursing_line",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.emergency",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.follow_along",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'Seguir la lectura' is the everyday phrase for following along with text read aloud."
+    },
+    {
+      "id": "ui.chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.of",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.previous_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.print_card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.captions",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Same text as ui.subtitles. That is fine unless both labels appear on one screen as different controls."
+    },
+    {
+      "id": "ov.tape_check",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.keep_dry",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Numeral 3 and 'until' kept."
+    },
+    {
+      "id": "ov.no_cleaning",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.clean_twice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.mix",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.ointment",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.red_swollen",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.not_better",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.hurts",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fever",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "'más de' and 101.5 °F intact."
+    },
+    {
+      "id": "ov.fluid",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.neuro",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.any_concern",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fluid_pointer",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.processor",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Matches act.02."
+    },
+    {
+      "id": "ov.pending_howto",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.path_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.path_no_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    }
+  ],
+  "findings": [
+    {
+      "id": "ui.pending_clinician_text",
+      "criterion": "register",
+      "problem": "'redacción' is a formal, school or office word. A grade 7 patient would not use it for what a surgeon writes, and it is harder than the English 'wording'.",
+      "suggestion": "Los detalles de las medicinas están pendientes hasta que su cirujano los escriba."
+    },
+    {
+      "id": "ui.pending_clinician_text",
+      "criterion": "phrasing",
+      "problem": "'Los detalles ... esperan la redacción de su cirujano' is a word-for-word copy of 'are pending': details that 'wait for' the surgeon's 'redacción'. A Bay Area reader would find it stiff and would have to stop to work out that the surgeon still has to write this part.",
+      "suggestion": "Los detalles de las medicinas están pendientes hasta que su cirujano los escriba."
+    }
+  ],
+  "verdict": "fail"
+}

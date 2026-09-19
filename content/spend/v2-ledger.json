@@ -1,8 +1,22 @@
 {
   "schema_version": "1.0",
-  "cap_usd": 10,
+  "cap_usd": 12,
   "authorized_by": "John",
-  "authorized_on": "2026-09-17",
+  "authorized_on": "2026-09-18",
+  "cap_history": [
+    {
+      "cap_usd": 10,
+      "authorized_by": "John",
+      "authorized_on": "2026-09-17",
+      "why": "the v2 prototype"
+    },
+    {
+      "cap_usd": 12,
+      "authorized_by": "John",
+      "authorized_on": "2026-09-18",
+      "why": "for this version: Spanish and Mandarin narration, and a re-review of the bandage card after Song answers"
+    }
+  ],
   "notice": "Every provider request reserves its estimate here before it runs.",
   "entries": [
     {
@@ -844,6 +858,66 @@
       "estimate_usd": 1.5,
       "actual_usd": 0.58133,
       "request_id": "msg_011CfBddbzXW7HToz9Jbgf8M,msg_011CfBddc227bvVCr6nNbMb7,msg_011CfBddbyHqFWuU9LPRJLz3,msg_011CfBdeXPFSqUvKkeNFcehv,msg_011CfBdeXPk2cFHu6B5n8oce",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:voice-test:George:2026-09-19T04:22:28.485Z",
+      "at": "2026-09-19T04:22:28.488Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "voice test for es: George",
+      "units": {
+        "characters": 114,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b7e6-c737-7d70-b74c-11c8ab4e00c0",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:voice-test:Aria:2026-09-19T04:22:28.485Z",
+      "at": "2026-09-19T04:22:36.637Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "voice test for es: Aria",
+      "units": {
+        "characters": 114,
+        "language": "es",
+        "voice": "Aria"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b7e6-e16c-7c03-a831-5caadb0c9a34",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:voice-test:George:2026-09-19T04:22:43.438Z",
+      "at": "2026-09-19T04:22:43.440Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "voice test for zh-Hans: George",
+      "units": {
+        "characters": 39,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b7e6-fc86-7b62-8d6e-235795d926b3",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:voice-test:Aria:2026-09-19T04:22:43.438Z",
+      "at": "2026-09-19T04:22:50.120Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "voice test for zh-Hans: Aria",
+      "units": {
+        "characters": 39,
+        "language": "zh-Hans",
+        "voice": "Aria"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b7e7-1616-7ef0-ab68-f16b68ed7fc1",
       "status": "completed"
     }
   ]

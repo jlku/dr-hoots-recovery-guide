@@ -13,7 +13,10 @@ const FLUSH = "#e2574a";
 // A closed cut a few days old, in a muted brown a little darker than the drawing's own outlines.
 // A soft pink line read as redness, the warning sign, and a dark red one as a bleeding cut.
 const INCISION = "#7d645f";
-const FONT = "'Helvetica Neue', Helvetica, Arial, sans-serif";
+const FONT = "'Helvetica Neue', Helvetica, Arial, 'PingFang SC', 'Hiragino Sans GB', 'Noto Sans SC', 'Microsoft YaHei', sans-serif";
+// Chinese characters and full-width punctuation are about one em wide; Latin letters about half.
+const WIDE = /[\u2E80-\u9FFF\uF900-\uFAFF\uFF00-\uFFEF\u3000-\u303F]/u;
+const CLOSING = /^[，。、；：！？）」』”’]/u;
 
 const normalize = (text) => text.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, " ").trim();
 
@@ -34,14 +37,37 @@ function svg(name, attributes = {}, children = []) {
   return node;
 }
 
-function wrapLines(text, size, maxWidth) {
+// Width in drawing units: a Latin character is \`latinEm\` of the font size, a Chinese character a full
+// em. Latin text measures exactly as it did before Chinese was supported.
+function measure(text, size, latinEm) {
+  let latin = 0;
+  let wide = 0;
+  for (const character of text) {
+    if (WIDE.test(character)) wide += 1;
+    else latin += 1;
+  }
+  return latin * size * latinEm + wide * size;
+}
+
+export function textWidth(text, size) {
+  return measure(text, size, 0.52);
+}
+
+export function wrapLines(text, size, maxWidth) {
+  // Spaced text wraps between words. Chinese wraps between characters, keeps runs of Latin letters
+  // and digits together, and never starts a line with closing punctuation.
+  const spaced = !WIDE.test(text);
+  // A no-break space joins a number to its unit, so 101.5 °F never splits across lines.
+  const units = spaced ? text.split(" ") : text.match(/[A-Za-z0-9.,°%+\u00a0-]+|\s+|./gu) ?? [];
+  const joiner = spaced ? " " : "";
   const lines = [];
   let line = "";
-  for (const word of text.split(" ")) {
-    const next = line ? `${line} ${word}` : word;
-    if (next.length * size * 0.52 > maxWidth && line) {
+  for (const unit of units) {
+    if (!spaced && /^\s+$/.test(unit) && !line) continue;
+    const next = line ? `${line}${joiner}${unit}` : unit;
+    if (textWidth(next, size) > maxWidth && line && !CLOSING.test(unit)) {
       lines.push(line);
-      line = word;
+      line = unit.trim();
     } else {
       line = next;
     }
@@ -206,7 +232,8 @@ function drawOverlay(overlay, frame, layers, labels, register, when) {
   } else if (overlay.type === "pointer") {
     const text = labels[overlay.label_key] ?? "";
     const size = 29;
-    const width = Math.min(480, Math.max(220, text.length * 16));
+    // Sized to the text plus its padding, so the last word or character never wraps alone.
+    const width = Math.min(480, Math.max(220, measure(text, size, 16 / size) + 28));
     const lines = wrapLines(text, size, width - 28);
     const height = 26 + lines.length * size * 1.25;
     group.append(
@@ -346,7 +373,7 @@ function renderPanels(frame, { pack }) {
       // magnifier stays in view.
       const text = pack.labels[panel.label_key] ?? "";
       const size = panel.lens ? 72 : 86;
-      const width = Math.min(VIEW.w - 80, text.length * size * 0.58 + size * 1.28);
+      const width = Math.min(VIEW.w - 80, measure(text, size, 0.58) + size * 1.28);
       const height = size * 1.44;
       const left = panel.lens ? 36 : (VIEW.w - width) / 2;
       const top = VIEW.h - 40 - height;

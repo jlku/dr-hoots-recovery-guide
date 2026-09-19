@@ -1,32 +1,40 @@
 import { createHash } from "node:crypto";
 
 import { resolveRecord } from "./segments.mjs";
-import { speechEndSeconds, wordTimings } from "./narration-timing.mjs";
+import { isSpacelessLanguage, speechEndSeconds, wordTimings } from "./narration-timing.mjs";
 
-const CUE_BREAK = /[.;:!?…]$|—$/;
+const CUE_BREAK = /[.;:!?…。；：！？，]$|—$/;
 const round = (value) => Number(value.toFixed(3));
 
 function recordHash(record) {
   return createHash("sha256").update(JSON.stringify({ text: record.text, timestamps: record.timestamps })).digest("hex");
 }
 
-export function groupCues(beatWords, beatId, maxWordsPerCue, startIndex) {
+export function joinWords(words) {
+  return words.map((word, index) => word.text + ((word.space ?? true) && index < words.length - 1 ? " " : "")).join("");
+}
+
+export function groupCues(beatWords, beatId, maxWordsPerCue, startIndex, { maxChars = Infinity, firstWord = 0 } = {}) {
   const cues = [];
   let current = [];
+  let cursor = firstWord;
   const flush = () => {
     if (!current.length) return;
     cues.push({
       id: `cue-${String(startIndex + cues.length + 1).padStart(2, "0")}`,
       start: current[0].start,
       end: current.at(-1).end,
-      text: current.map((word) => word.text).join(" "),
-      beat: beatId
+      text: joinWords(current),
+      beat: beatId,
+      first_word: cursor,
+      word_count: current.length
     });
+    cursor += current.length;
     current = [];
   };
   for (const word of beatWords) {
     current.push(word);
-    if (current.length >= maxWordsPerCue || CUE_BREAK.test(word.text)) flush();
+    if (current.length >= maxWordsPerCue || joinWords(current).length >= maxChars || CUE_BREAK.test(word.text)) flush();
   }
   flush();
   for (let index = 1; index < cues.length; index += 1) {
@@ -51,14 +59,16 @@ export function buildSegmentTimeline({ segments, segment, records, language = "e
     const speechSeconds = round(speechEndSeconds(record));
     const start = round(clock);
     const end = round(start + speechSeconds);
-    const beatWords = wordTimings(record).map((word) => ({
+    const beatWords = wordTimings(record, language).map((word) => ({
       text: word.text,
       start: round(start + word.start),
       end: round(start + word.end),
-      beat: beat.id
+      beat: beat.id,
+      space: word.space
     }));
+    const firstWord = words.length;
     words.push(...beatWords);
-    cues.push(...groupCues(beatWords, beat.id, maxWordsPerCue, cues.length));
+    cues.push(...groupCues(beatWords, beat.id, maxWordsPerCue, cues.length, { maxChars: isSpacelessLanguage(language) ? 16 : Infinity, firstWord }));
     beats.push({
       id: beat.id,
       frame: beat.frame,
