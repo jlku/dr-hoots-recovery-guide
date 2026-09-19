@@ -22,6 +22,7 @@
 // hedge or a misreading, fails the picture.
 import { readFile, readdir } from "node:fs/promises";
 import { join } from "node:path";
+import { SONG_DIR, SONG_LABEL, songPanelPaths } from "./song-review.mjs";
 import { REVIEWER_LABEL, TRANSLATION_REVIEWERS, panelReceiptPaths } from "./translation-review.mjs";
 
 export const ADJUDICATION_RULES = Object.freeze(["state-picture", "instruction-picture", "strict"]);
@@ -124,6 +125,23 @@ export async function validateReviews(root) {
       if (receipt.label !== REVIEWER_LABEL) errors.push(`${file} must carry the label "${REVIEWER_LABEL}"`);
       const allPass = Array.isArray(receipt.items) && receipt.items.length > 0 && receipt.items.every((item) => item.verdict === "pass");
       if ((receipt.verdict === "pass") !== allPass) errors.push(`${file} verdict does not follow from its items`);
+    }
+  }
+  // Simulated Song review receipts: named by the build hash and panel slot, labeled, stored with the
+  // measured facts, and never passing a check whose fact failed.
+  summary.song = 0;
+  const songFiles = await readdir(join(root, SONG_DIR)).then((list) => list.filter((name) => name.endsWith(".json")), () => []);
+  for (const name of songFiles) {
+    const file = `${SONG_DIR}/${name}`;
+    const receipt = JSON.parse(await readFile(join(root, file), "utf8"));
+    summary.song += 1;
+    if (!songPanelPaths(receipt.target?.sha256 ?? "").includes(file)) errors.push(`${file} is not named by the build hash it binds to`);
+    if (receipt.label !== SONG_LABEL) errors.push(`${file} must carry the label "${SONG_LABEL}"`);
+    const checks = Array.isArray(receipt.checks) ? receipt.checks : [];
+    const allPass = checks.length > 0 && checks.every((check) => check.verdict === "pass");
+    if ((receipt.verdict === "pass") !== allPass) errors.push(`${file} verdict does not follow from its checks`);
+    for (const check of checks) {
+      if (check.verdict === "pass" && receipt.facts?.[check.id]?.ok === false) errors.push(`${file} passes ${check.id} although its measured fact failed`);
     }
   }
   return { valid: errors.length === 0, errors, summary };
