@@ -1,8 +1,22 @@
 {
   "schema_version": "1.0",
-  "cap_usd": 10,
+  "cap_usd": 12,
   "authorized_by": "John",
-  "authorized_on": "2026-09-17",
+  "authorized_on": "2026-09-18",
+  "cap_history": [
+    {
+      "cap_usd": 10,
+      "authorized_by": "John",
+      "authorized_on": "2026-09-17",
+      "why": "the v2 prototype"
+    },
+    {
+      "cap_usd": 12,
+      "authorized_by": "John",
+      "authorized_on": "2026-09-18",
+      "why": "for this version: Spanish and Mandarin narration, and a re-review of the bandage card after Song answers"
+    }
+  ],
   "notice": "Every provider request reserves its estimate here before it runs.",
   "entries": [
     {

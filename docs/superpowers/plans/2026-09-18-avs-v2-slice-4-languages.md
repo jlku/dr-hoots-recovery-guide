@@ -29,7 +29,7 @@
 
 ## Budget
 
-The ledger stands at $8.16 of $10, so $1.84 remains. A live image review reserves $1.50, and one was promised for re-judging the bandage card after Song answers.
+The ledger stands at $8.16. John raised the cap from $10 to $12 on 2026-09-18 for this version, so $3.84 remains. A live image review reserves $1.50, and one is kept for re-judging the bandage card after Song answers.
 
 | Paid step | Estimate |
 | --- | --- |
@@ -37,7 +37,7 @@ The ledger stands at $8.16 of $10, so $1.84 remains. A live image review reserve
 | Spanish narration, 11 beats | $0.25 |
 | Mandarin narration, 11 beats | $0.11 |
 
-After these, about $1.40 remains, which is below one image review's reservation. John must raise the cap before the card is re-reviewed. Everything else in this slice costs nothing: translation drafts and language reviews run in session.
+After these, about $3.40 remains, enough for the card's re-review and one retry. Everything else in this slice costs nothing: translation drafts and language reviews run in session.
 
 ## File Structure
 
