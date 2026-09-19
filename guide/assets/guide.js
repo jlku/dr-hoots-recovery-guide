@@ -427,6 +427,7 @@ function showError(error) {
 }
 
 async function init() {
+  delete document.body.dataset.ready;
   cancelAnimationFrame(rafHandle);
   dom.audio.pause();
   const params = parseFragment(location.hash);
@@ -501,6 +502,8 @@ async function init() {
       playing: isPlaying()
     })
   };
+  // Scripts that capture the page wait for this: chapters draw early, labels and timing come last.
+  document.body.dataset.ready = `${guide.language}:${state.current}`;
 }
 
 dom.play.addEventListener("click", () => {

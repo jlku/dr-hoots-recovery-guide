@@ -109,8 +109,8 @@ async function mediaFacts() {
 async function openGuide(context, base, fragment) {
   const page = await context.newPage();
   await page.goto(`${base}/guide/index.html#${fragment}`);
-  await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
-  await page.waitForTimeout(600);
+  await page.waitForSelector("body[data-ready]", { state: "attached", timeout: 15000 });
+  await page.waitForTimeout(300);
   return page;
 }
 
@@ -153,8 +153,8 @@ async function languageFacts(browser, base) {
     const context = await browser.newContext(DESKTOP);
     const page = await openGuide(context, base, "s=1&l=en");
     await page.selectOption("#language", language);
-    await page.waitForFunction((code) => document.documentElement.lang === code, language, { timeout: 5000 }).catch(() => {});
-    await page.waitForTimeout(800);
+    await page.waitForSelector(`body[data-ready^="${language}:"]`, { state: "attached", timeout: 15000 });
+    await page.waitForTimeout(300);
     const pack = await readJson(`content/translations/${language}/${ARTIFACT}.json`);
     const shown = await page.evaluate(() => ({
       lang: document.documentElement.lang,
@@ -223,8 +223,8 @@ async function reviewLineFacts(browser, base, link, out) {
   const context = await browser.newContext(DESKTOP);
   const page = await context.newPage();
   await page.goto(link.replace(/^https?:\/\/[^/]+/, base));
-  await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
-  await page.waitForTimeout(800);
+  await page.waitForSelector("body[data-ready]", { state: "attached", timeout: 15000 });
+  await page.waitForTimeout(300);
   const badge = await page.evaluate(() => [...document.querySelectorAll(".badge--clinician")].find((node) => node.offsetParent !== null)?.textContent.trim() ?? null);
   const followUp = await page.evaluate(() => document.querySelector(".transcript__data")?.textContent ?? null);
   await page.evaluate(() => document.querySelector(".transcript__data")?.scrollIntoView({ block: "center" }));
