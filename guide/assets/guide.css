@@ -189,3 +189,24 @@ button, select, input { font-family: inherit; }
   .provider { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 16px; }
   .provider__block { min-height: 220px; }
 }
+
+/* Export canvas (guide/export.html): 1080 by 1920, keeping the top 150 px and bottom 250 px clear of
+   the platform controls that cover them. Title strip, square picture stage, fixed two-line captions. */
+.export-body { width: 1080px; height: 1920px; overflow: hidden; display: block; background: var(--paper); }
+.export { box-sizing: border-box; width: 1080px; height: 1920px; padding: 150px 72px 250px; display: grid; grid-template-rows: auto 936px auto 1fr; align-content: start; gap: 28px; }
+.export__title { display: grid; justify-items: start; gap: 12px; }
+.export__title .title-card__number { font-size: 34px; }
+.export__heading { margin: 0; color: var(--navy); font-size: 60px; font-weight: 700; line-height: 1.12; letter-spacing: -.01em; }
+.export__title .chip { padding: 4px 18px; font-size: 30px; }
+.export__stage { width: 936px; height: 936px; padding: 0; border-radius: 12px; background: var(--gray-1); overflow: hidden; }
+.export__stage .frame__pending { font-size: 26px; }
+.export__stage .panels { gap: 16px; }
+.export__stage .panel figcaption { font-size: 30px; }
+.export__stage .text-card { width: 100%; padding: 24px 40px; }
+.export__stage .text-card__lead { font-size: 32px; }
+.export__stage .text-card__list { gap: 24px; font-size: 40px; }
+.export__stage .text-card__data { font-size: 40px; }
+.export__band { box-sizing: border-box; height: calc(2 * 1.25 * 52px + 40px); padding: 20px 28px; border-top: 6px solid var(--teal); border-radius: 0 0 12px 12px; background: var(--navy); }
+.export__caption { margin: 0; max-height: calc(2 * 1.25em); overflow: hidden; color: #fff; font-size: 52px; font-weight: 700; line-height: 1.25; }
+.export__caption .word.is-active { padding: 0 6px; border-radius: 6px; }
+.export__notice { margin: 0; align-self: end; color: var(--blue-gray); font-size: 26px; }

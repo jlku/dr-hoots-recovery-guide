@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=1080">
+  <meta name="robots" content="noindex">
+  <meta name="color-scheme" content="light">
+  <link rel="icon" href="data:,">
+  <title>Segment export</title>
+  <link rel="stylesheet" href="assets/guide.css">
+</head>
+<!-- Export tool, not a patient page: a fixed segment on one 1080 by 1920 canvas at any moment of its
+     narration, drawn with the guide's own frames and captions. scripts/export-segments.mjs captures it.
+     export.html?segment=<number>&lang=<language> -->
+<body class="export-body">
+  <main class="export" aria-label="Segment">
+    <header class="export__title">
+      <span id="export-number" class="title-card__number"></span>
+      <h1 id="export-heading" class="export__heading"></h1>
+      <span id="export-chip" class="chip"></span>
+    </header>
+    <div id="stage" class="stage export__stage"></div>
+    <div class="export__band"><p id="caption" class="export__caption"></p></div>
+    <p id="notice" class="export__notice"></p>
+  </main>
+  <script type="module" src="assets/export.js"></script>
+</body>
+</html>
