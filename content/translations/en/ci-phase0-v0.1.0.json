@@ -68,7 +68,9 @@
     "ov.processor": "Speech processor, worn outside the ear",
     "ov.pending_howto": "How-to picture pending",
     "ov.path_tape": "If there is tape",
-    "ov.path_no_tape": "If there is no tape"
+    "ov.path_no_tape": "If there is no tape",
+    "ui.song_review": "Simulated Song review (AI), not Song's approval",
+    "ui.reviewed_by_clinician": "Reviewed by clinician"
   },
   "review": {
     "kind": "source",

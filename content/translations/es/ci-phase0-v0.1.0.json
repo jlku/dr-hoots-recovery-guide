@@ -4,7 +4,7 @@
   "script": "Latn",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "ai_reviewed",
+  "status": "machine_draft",
   "patient_use": false,
   "notice": "SIN VERIFICAR — NO PARA USO CON PACIENTES",
   "sentences": {
@@ -100,16 +100,14 @@
     "ov.processor": "Procesador de sonido, se usa por fuera de la oreja",
     "ov.pending_howto": "Imagen de cómo hacerlo, pendiente",
     "ov.path_tape": "Si hay cinta",
-    "ov.path_no_tape": "Si no hay cinta"
+    "ov.path_no_tape": "Si no hay cinta",
+    "ui.song_review": "Revisión simulada de Song (IA), no es la aprobación de Song",
+    "ui.reviewed_by_clinician": "Revisado por el médico"
   },
   "review": {
-    "kind": "ai",
-    "label": "Revisado por IA (Claude), no por un traductor médico certificado",
+    "kind": "none",
+    "label": "Borrador de traducción automática, aún sin revisar",
     "date": "2026-09-19",
-    "receipts": [
-      "content/reviews/es/c6e7ee031b6b64ac.json",
-      "content/reviews/es/c6e7ee031b6b64ac.2.json",
-      "content/reviews/es/c6e7ee031b6b64ac.3.json"
-    ]
+    "receipts": []
   }
 }

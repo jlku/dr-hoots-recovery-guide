@@ -22,6 +22,7 @@ import {
   parseFragment,
   pendingConditionalBeats,
   pickEntry,
+  reviewBadges,
   sentenceSpans,
   statusMessages,
   variantFor
@@ -159,6 +160,36 @@ function renderChapters() {
   }));
 }
 
+// Who reviewed what: the translation, the simulated Song review, and Song's own review line from the
+// provider's link. Desktop shows it in the rail footer, phones at the end of the transcript.
+function badgeList() {
+  const list = document.createElement("ul");
+  list.className = "badges";
+  list.setAttribute("aria-label", labels()["ui.review_status"] ?? "");
+  for (const badge of reviewBadges({ badges: state.guide.reviews?.badges, pack: state.guide.pack, clinicianDate: state.params.r, labels: labels() })) {
+    const item = document.createElement("li");
+    item.className = `badge badge--${badge.kind}`;
+    item.append(span("badge__label", badge.label));
+    if (badge.value) item.append(document.createTextNode(" "), span("badge__value", badge.value));
+    list.append(item);
+  }
+  return list;
+}
+
+// Phones hide the rail footer and the print link, so the transcript ends with them.
+function transcriptFooter() {
+  const footer = document.createElement("div");
+  footer.className = "transcript-footer";
+  const card = document.createElement("a");
+  card.className = "transcript-footer__card";
+  card.href = dom.print.getAttribute("href");
+  card.textContent = labels()["ui.print_card"];
+  const notice = document.createElement("p");
+  notice.textContent = labels()["ui.notice"];
+  footer.append(card, notice, badgeList());
+  return footer;
+}
+
 function renderCallBlock() {
   const module = state.guide.canonical.modules.find((item) => item.id === "ci/when-to-call");
   const values = new Map((module?.structured_values ?? []).map((value) => [value.field, value.value]));
@@ -179,7 +210,8 @@ function renderCallBlock() {
     heading,
     link(labels()["ui.nursing_line"], values.get("routine_nursing_line")),
     link(labels()["ui.emergency"], values.get("hospital_operator")),
-    notice
+    notice,
+    badgeList()
   );
 }
 
@@ -209,6 +241,7 @@ function renderTranscript() {
       nodes.push(button);
     }
   }
+  nodes.push(transcriptFooter());
   dom.transcript.replaceChildren(...nodes);
 }
 

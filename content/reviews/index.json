@@ -21,26 +21,18 @@
   "badges": {
     "translations": {
       "es": {
-        "status": "reviewed",
+        "status": "not_reviewed",
         "label": "AI reviewer (Claude), not a certified medical translator",
-        "date": "2026-09-19",
-        "target": "c6e7ee031b6b64ac70806a6478253383e16071a7e3b56babd48a8d0d3d401fdc",
-        "receipts": [
-          "content/reviews/es/c6e7ee031b6b64ac.json",
-          "content/reviews/es/c6e7ee031b6b64ac.2.json",
-          "content/reviews/es/c6e7ee031b6b64ac.3.json"
-        ]
+        "date": null,
+        "target": null,
+        "receipts": []
       },
       "zh-Hans": {
-        "status": "reviewed",
+        "status": "not_reviewed",
         "label": "AI reviewer (Claude), not a certified medical translator",
-        "date": "2026-09-19",
-        "target": "b1860cd113ccdcce2469a40ca488b0e2d533938182dccb562f50a386505acab2",
-        "receipts": [
-          "content/reviews/zh/b1860cd113ccdcce.json",
-          "content/reviews/zh/b1860cd113ccdcce.2.json",
-          "content/reviews/zh/b1860cd113ccdcce.3.json"
-        ]
+        "date": null,
+        "target": null,
+        "receipts": []
       }
     },
     "song": {
