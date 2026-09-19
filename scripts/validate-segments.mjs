@@ -3,7 +3,9 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { MEDIA_INDEX_PATH, buildMediaIndex, buildMediaPlan, serializeJson } from "./build-segment-media.mjs";
+import { loadLanguagePacks } from "./lib/language-packs.mjs";
 import { loadSegmentBundle, segmentNarrationSeconds, validateSegments } from "./lib/segments.mjs";
+import { validateTranslatedNarration } from "./lib/v2-narration.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -39,15 +41,19 @@ async function main() {
   const bundle = await loadSegmentBundle(repositoryRoot);
   const result = validateSegments(bundle);
   const errors = [...result.errors];
+  const packs = (await loadLanguagePacks(repositoryRoot)).map((entry) => entry.pack);
+  errors.push(...validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs }));
   if (result.valid && checkMedia) errors.push(...(await checkCommittedMedia(bundle, repositoryRoot)));
+  const languages = [...new Set(bundle.segments.segments.flatMap((segment) => segment.beats).flatMap((beat) => Object.keys(beat.narration ?? {})))].sort();
   for (const segment of bundle.segments.segments) {
-    let seconds = "n/a";
-    try {
-      seconds = `${segmentNarrationSeconds(segment, bundle.records, "en").toFixed(1)}s`;
-    } catch {
-      seconds = "unbound";
-    }
-    console.log(`${String(segment.number).padStart(2, "0")}  ${segment.id.padEnd(26)} ${seconds}`);
+    const seconds = languages.map((language) => {
+      try {
+        return `${language} ${segmentNarrationSeconds(segment, bundle.records, language).toFixed(1)}s`;
+      } catch {
+        return `${language} unbound`;
+      }
+    });
+    console.log(`${String(segment.number).padStart(2, "0")}  ${segment.id.padEnd(26)} ${seconds.join("  ")}`);
   }
   for (const warning of result.warnings) console.warn(`warning: ${warning}`);
   if (errors.length) {

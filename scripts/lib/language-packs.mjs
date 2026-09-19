@@ -1,3 +1,6 @@
+import { readdir, readFile } from "node:fs/promises";
+import { join } from "node:path";
+
 import { canonicalSentenceOrder } from "./segments.mjs";
 
 export const UI_LABEL_KEYS = Object.freeze([
@@ -115,4 +118,17 @@ export function validateLanguagePack({ pack, canonical, segments, source = null 
 export function resolveSentences({ pack, canonical }) {
   if (pack.language === "en") return canonicalSentenceText(canonical);
   return new Map(Object.entries(pack.sentences ?? {}));
+}
+
+// Every pack under content/translations, one directory per language.
+export async function loadLanguagePacks(root, artifactFile = "ci-phase0-v0.1.0.json") {
+  const base = join(root, "content/translations");
+  const entries = await readdir(base, { withFileTypes: true });
+  const languages = entries.filter((entry) => entry.isDirectory()).map((entry) => entry.name).sort();
+  const packs = [];
+  for (const language of languages) {
+    const path = `content/translations/${language}/${artifactFile}`;
+    packs.push({ language, path, pack: JSON.parse(await readFile(join(root, path), "utf8")) });
+  }
+  return packs;
 }

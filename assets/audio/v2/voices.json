@@ -1,0 +1,8 @@
+{
+  "schema_version": "1.0",
+  "note": "The English narration uses George at speed 0.92. Each translated language keeps the voice John picks from the voice test.",
+  "languages": {
+    "es": { "language_code": "es", "voice": null, "candidates": ["George", "Aria"], "speed": 1.0, "stability": 0.68, "similarity_boost": 0.78, "seed_base": 91000 },
+    "zh-Hans": { "language_code": "zh", "voice": null, "candidates": ["George", "Aria"], "speed": 1.0, "stability": 0.68, "similarity_boost": 0.78, "seed_base": 92000 }
+  }
+}

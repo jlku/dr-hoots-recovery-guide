@@ -142,6 +142,37 @@ export function validateSegments({ segments, canonical, records }) {
       errors.push(error.message);
     }
   }
+  // Every other narrated language gets the same record, timestamp, mapping, and ceiling checks.
+  const languages = new Set((segments.segments ?? []).flatMap((segment) => segment.beats ?? []).flatMap((beat) => Object.keys(beat.narration ?? {})));
+  languages.delete("en");
+  for (const language of languages) {
+    for (const segment of segments.segments ?? []) {
+      for (const beat of segment.beats ?? []) {
+        const binding = beat.narration?.[language];
+        if (!binding) continue;
+        const record = resolveRecord(records, binding);
+        if (!record) {
+          errors.push(`${beat.id} references missing ${language} narration record ${binding.record_id}`);
+          continue;
+        }
+        try {
+          speechEndSeconds(record);
+        } catch (error) {
+          errors.push(`${beat.id} ${language}: ${error.message}`);
+        }
+        if (Array.isArray(record.canonicalSentenceIds) && !sameSet(record.canonicalSentenceIds, beat.sentence_ids)) {
+          errors.push(`${beat.id} ${language} narration covers ${record.canonicalSentenceIds.join(",")} but the beat declares ${beat.sentence_ids.join(",")}`);
+        }
+      }
+      try {
+        const seconds = segmentNarrationSeconds(segment, records, language);
+        if (seconds > NARRATION_CEILING_SECONDS) errors.push(`${segment.id} ${language} narration is ${seconds}s, over the ${NARRATION_CEILING_SECONDS}s ceiling`);
+        else if (seconds > NARRATION_TARGET_SECONDS) warnings.push(`${segment.id} ${language} narration is ${seconds}s, above the ${NARRATION_TARGET_SECONDS}s target`);
+      } catch (error) {
+        errors.push(error.message);
+      }
+    }
+  }
   const expected = canonicalSentenceOrder(canonical);
   if (covered.join("\n") !== expected.join("\n")) {
     const missing = expected.filter((id) => !covered.includes(id));
