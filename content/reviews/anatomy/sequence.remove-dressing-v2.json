@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "record_id": "sequence.remove-dressing-v2",
+  "asset_id": "sequence",
+  "file": "assets/anatomy/sequences/remove-dressing-v2.png",
+  "sha256": "617feb26824d766da6e06d7e17854dc30bc4489b802d5b1ac2c77e160fa2398e",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Rendered composite: slack gauze loop under the chin to a hand at lower right, with a motion arrow.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a13f4a53f343a3494",
+      "observation": "Label: Caption-blind observer (Claude), not a clinician.\n\n1. Head and neck from behind the right shoulder: back of head, right ear, cheek edge. Short brown hair, clipped sides.\n2. Panel 1: white band around the head at forehead height, bow-tied at the back; a white rounded pad covers the right ear, drawn over the band. Panel 2: bow undone, pad gone, ear exposed; band still circles the head; its loose tail runs from the back, forward under the jaw, to a hand at lower right. Panel 3: bare head; a thin pale line runs just behind the ear, following its curve. No redness, swelling, stitches, blood.\n3. No text. One teal curved arrow, panel 2: starts behind the head at band height, curves down and forward along the hanging tail, tip near the neck base. Suggests pulling or unwinding direction.\n4. Cloth being pulled across the throat, since the tail passes under the chin.\n5. Coming off: bow untied, band unwound by hand, then bare head. Pad removal not shown; whose hand unclear."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "ab7f2b4f326e080e9",
+      "observation": "1. Head and neck, short brown hair, clipped sides, seen from behind-right; right ear central.\n\n2. Panel 1: wide white band around the head at forehead level, bow at the back; white rounded gauze pad over the right ear, overlapping the band. Panel 2: pad gone, ear bare, normal-looking; band still on, behind the ear; bow undone, loose tail running under the jaw to a hand at lower right. Panel 3: nothing worn; thin pale curved line in the crease behind the ear; no redness, swelling, stitches.\n\n3. No text. Teal curved arrow, panel 2: starts behind the head at band level, sweeps down and forward, ends beside the loose tail below the jaw; suggests pull direction.\n\n4. Panel 2 could read as a strip being wrapped or tightened under the chin or neck.\n\n5. A hand (owner unclear) pinches the loose end, pulling it down and forward. Panel order (tied, loose, bare) reads as coming off; panel 2 alone is ambiguous. Pad removal isn't shown.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "ac1a24801996e6d5f",
+      "observation": "1. Head and neck, seen from behind-right; right ear area, face turned away, scalp clipped short.\n2. Panel 1: wide white cloth band around the head at forehead height, bow at back; white rounded gauze pad hides the ear, overlapping the band. Panel 2: band still on, bow undone, pad gone, ear exposed (dark patch in its bowl); a hand at lower right pinches the loose tail, running from behind the head under the jaw. Panel 3: nothing worn; thin pale curved line directly behind the ear. No redness, stitches, swelling.\n3. No text. Teal curved arrow in panel 2: starts behind the head at band height, curves down to beside the neck, pointing forward along the loose tail; seems to show pull direction.\n4. Panel 2 could read as a strap going on, tied under the chin or around the throat.\n5. A hand (owner unclear) pulls the untied tail down and forward. Coming off, judging by panel order; panel 2 alone is ambiguous. Pad removal isn't shown."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "ab5ef215ca8e0d357",
+    "verdict": "fail",
+    "tally": {
+      "a head dressing covering the ear in the first panel": "1,2,3",
+      "a hand taking gauze away from the head in the middle panel": "1,2,3",
+      "the bare head with the ear uncovered in the last panel": "1,2,3",
+      "the dressing coming off across the panels rather than going on": "1,2,3"
+    },
+    "recovered": [
+      "a head dressing covering the ear in the first panel",
+      "a hand taking gauze away from the head in the middle panel",
+      "the bare head with the ear uncovered in the last panel",
+      "the dressing coming off across the panels rather than going on"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      "the dressing being put on - Observer 2: 'Panel 2 could read as a strip being wrapped or tightened under the chin or neck'",
+      "the dressing being put on - Observer 3: 'Panel 2 could read as a strap going on, tied under the chin or around the throat'"
+    ],
+    "text_detected": false,
+    "reason": "All three observers recovered every required item and saw no text, but observers 2 and 3 each state that panel 2 could read as the strap being wrapped or going on under the chin, which is the forbidden 'dressing being put on' reading; observer 1's 'Cloth being pulled across the throat' traces to the same loose tail routed under the jaw."
+  },
+  "outcome": "failed: every required item recovered by all three, but all three read the under-chin gauze as cloth or a strap at the throat",
+  "notes": "Strict rules. The throat reading is a drawing defect, not the reversibility of the action.",
+  "panels": [
+    {
+      "record_id": "postauricular-dressing-ref-a1",
+      "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+      "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7"
+    },
+    {
+      "record_id": "dressing-removal-ref-a3",
+      "file": "assets/anatomy/dressing-removal-ref-a3.png",
+      "sha256": "a59a8b6e60e0b9ec66aff9821b045ab261f054f6062df93474ebdfd82e00de3e"
+    },
+    {
+      "record_id": "postauricular-base-a2",
+      "file": "assets/anatomy/postauricular-base-a2.png",
+      "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748"
+    }
+  ],
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

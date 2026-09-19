@@ -141,3 +141,14 @@ Format requirements:
 - Contrast below WCAG AA, missing keyboard/focus/caption/transcript/alternative/reduced-motion support
 - Autoplaying audio, keyboard traps, essential timed content, rapid flashes, or unpausable motion
 - Broken links, missing assets, or a review URL that differs from the repository
+
+## Instruction-picture gate (v2 guide)
+
+A how-to picture is a static card in the manner of an airline safety card. Three caption-blind observers see only the rendered card, with no hint about panels or order, and answer what it tells them to do. The verdict rules are code, not prose: `scripts/lib/adjudication.mjs`.
+
+- Every required item is recovered by all three observers.
+- A forbidden reading in an observer's own answer fails the card. So does any mark the contract does not allow.
+- A forced alternative reading fails the card only when two or more observers name the same one and it involves harm or the wrong body part. The strict verdict is kept beside it in the receipt.
+- `npm run check` runs `reviews:validate`, which refuses a receipt whose verdict does not follow from its findings, and `instructions:validate`, which refuses a verified claim without a passing receipt.
+
+Approved for now by John on 2026-09-18. Song's sign-off is `q.instruction-picture-rule` in `content/clinician/questions-for-song.md`.

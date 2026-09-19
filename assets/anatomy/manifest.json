@@ -1,0 +1,637 @@
+{
+  "schema_version": "1.0",
+  "notice": "UNVERIFIED CONCEPT ART — NOT FOR PATIENT USE",
+  "patient_use": false,
+  "records": [
+    {
+      "id": "postauricular-base-a1",
+      "asset_id": "postauricular-base",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-base-a1.png",
+      "sha256": "11aa5681b402bc6ba6160b66db087bb992a989ceb3a04975adc3175c6ca3c640",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro",
+      "prompt": "Medical illustration of the area behind an adult person's right ear, viewed from behind and slightly to the side, short hair kept away from the ear so the skin behind the ear is fully visible. A thin, pale, fully healed surgical incision line runs in the natural crease directly behind the ear, from just above the top of the ear down toward the earlobe, following the curve of the ear. Calm neutral expression, ear and skin otherwise completely normal: no tape, no dressing, no bandage, no redness, no swelling, no device, no blood. Contemporary medical illustration style with accurate anatomy, soft even lighting, muted natural skin tones, clean off-white background, sharp focus on the area behind the ear. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90101,
+      "request_id": "01a0b16c-68b9-7092-a375-c67e8939ccc6",
+      "estimate_usd": 0.03,
+      "ledger_entry": "anatomy:postauricular-base:a1",
+      "status": "rejected",
+      "note": "Viewed from the front: the line runs in front of the ear toward the cheek and the skin behind the ear is hidden under hair. Wrong side; contract requires the postauricular crease seen from behind.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-base-a2",
+      "asset_id": "postauricular-base",
+      "attempt": 2,
+      "file": "assets/anatomy/postauricular-base-a2.png",
+      "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro",
+      "prompt": "Flat medical illustration, textbook figure style, not a photograph and not a 3D render. An adult person's head seen from directly behind and slightly to the right, so the back of the right ear and the bare skin in the crease behind it fill the frame; the face is not visible at all. The hair above and behind the ear is clipped very short, as after ear surgery, so the skin behind the ear is completely exposed. A single thin, pale, fully healed surgical incision line runs in the crease where the back of the ear meets the head, curving from just above the top of the ear down toward the earlobe, staying behind the ear the whole way. Skin otherwise normal: no tape, no dressing, no bandage, no redness, no swelling, no device, no blood. Soft even lighting, muted natural skin tones, clean off-white background, accurate anatomy. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90102,
+      "request_id": "01a0b16d-3428-7942-b5fa-13dc43b3346d",
+      "estimate_usd": 0.03,
+      "ledger_entry": "anatomy:postauricular-base:a2",
+      "status": "accepted",
+      "note": "Flat illustration from behind and to the right; hair clipped; one thin healed line in the crease behind the ear; nothing worn, no text. Anchor incision at x 0.565, y 0.47.",
+      "review": {
+        "inspection": "Flat illustration from behind and to the right, hair clipped, one thin healed line in the crease behind the ear, nothing worn.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "reason": "All three observers independently describe a rear three-quarter view of the head with a thin pale curved line in the crease directly behind the right ear, nothing worn or applied, no redness or swelling, and no text, and the only ambiguity reported (healed scar versus fresh incision versus skin fold) is not a forbidden reading."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-base-a2.json"
+      }
+    },
+    {
+      "id": "postauricular-dressing-a1",
+      "asset_id": "postauricular-dressing",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-dressing-a1.png",
+      "sha256": "4a331b5068d5b4b1d38138ca101fcd8030cb16d00049ef313a1d78963e48daf7",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so a snug white gauze mastoid head wrap covers the ear and the area behind it, wrapping fully around the head above the eyebrows and under the chin-line hair, like a postoperative head bandage. Keep the same person, pose, viewpoint, lighting, background, and illustration style. The wrap must cover the ear completely. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90201,
+      "request_id": "01a0b16d-dad6-74c1-883d-9effbb8ac5ec",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-dressing:a1",
+      "status": "rejected",
+      "note": "Recognizable head wrap but the ear stays visible; the mastoid dressing must cover the operated ear.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-a1",
+      "asset_id": "postauricular-red-swollen",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-red-swollen-a1.png",
+      "sha256": "8adc54813757afd5075c3aa02e2568ce8a9c34bd3029902b5d83aef205c928a0",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the skin along and immediately around the healed incision line behind the ear becomes visibly reddened and mildly swollen, a smooth warm pink-red flush with slight puffiness confined to the area behind the ear. No bleeding, no open wound, no pus. Keep the same person, pose, viewpoint, lighting, background, and illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90301,
+      "request_id": "01a0b16e-1950-7812-b968-cd0452f99977",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-red-swollen:a1",
+      "status": "rejected",
+      "note": "Three caption-blind observers recovered the redness but none recovered swelling, and all three read the red dashed incision as stitches. Redrawn with visible puffiness and a plain thin line.",
+      "review": {
+        "inspection": "Redness present but the line rendered dashed with dots, which reads as stitches.",
+        "observers": 3,
+        "adjudication": null,
+        "receipt": "content/reviews/anatomy/postauricular-red-swollen-a1.json"
+      }
+    },
+    {
+      "id": "postauricular-fluid-a1",
+      "asset_id": "postauricular-fluid",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-fluid-a1.png",
+      "sha256": "f0f1e702d178099b3d8318b3ef8dd0854fbe1b94af7585a4cf59c96123b1a46f",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so a smooth, localized, soft bulge appears under the skin behind the ear near the incision, the way fluid collected under the skin would look, gently raising the skin without breaking it. No droplets, no liquid on the surface, no wound, no strong redness. Keep the same person, pose, viewpoint, lighting, background, and illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90401,
+      "request_id": "01a0b16e-51b2-7f60-881b-154aeb05c8cd",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-fluid:a1",
+      "status": "accepted",
+      "note": "Smooth rounded bulge under the skin behind the ear near the incision; no surface liquid; same person and view as the base.",
+      "review": {
+        "inspection": "Smooth rounded bulge under the skin behind the ear near the incision, no surface liquid, same person and view.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "reason": "All three observers independently recovered the rounded subcutaneous bulge behind the right ear, the from-behind view, and an intact, liquid-free surface; Observer 1's 'slightly flushed' and Observer 3's 'pinkish-red' fall short of strong redness, and the boil/cyst/tumor/lymph node/abscess alternative readings are permitted under this contract."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-fluid-a1.json"
+      }
+    },
+    {
+      "id": "processor-worn-a1",
+      "asset_id": "processor-worn",
+      "attempt": 1,
+      "file": "assets/anatomy/processor-worn-a1.png",
+      "sha256": "c0b418b406f95a415efcc67971a7a9b0b84adcdd12a07034918dc77bbefc3241",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro",
+      "prompt": "Medical illustration of an adult person's head in right profile, short hair kept away from the ear. The person wears a slim behind-the-ear sound processor resting over the top of the ear, connected by a short thin cable to a small round flat transmitter coil that sits on the scalp a few centimetres above and behind the ear. Plain generic device shapes in matte dark grey, no brand, no buttons drawn in detail. Calm neutral expression, no bandage, no tape, no redness. Contemporary medical illustration style with accurate anatomy, soft even lighting, muted natural skin tones, clean off-white background. No text, no labels, no captions, no arrows, no logos, no watermark.",
+      "seed": 90501,
+      "request_id": "01a0b16e-8d51-77c0-97b6-c341668c17ca",
+      "estimate_usd": 0.03,
+      "ledger_entry": "anatomy:processor-worn:a1",
+      "status": "rejected",
+      "note": "Photoreal 3D render of a different person with a long cable hanging down the neck; inconsistent with the flat illustration register and a wrong reading of the device. Re-contracted as an edit of the base master.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-dressing-a2",
+      "asset_id": "postauricular-dressing",
+      "attempt": 2,
+      "file": "assets/anatomy/postauricular-dressing-a2.png",
+      "sha256": "18973ecc680778c3b83576c58c7782c08ce1d050d9af974ae649cff3b633a5c6",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so a bulky white gauze mastoid head bandage completely covers the ear and the whole area behind it: several layers of gauze wrap around the head above the eyebrows and pass fully over the ear, with a thick padded gauze cup over the ear so that no part of the ear is visible at all. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90202,
+      "request_id": "01a0b16f-ce71-7733-b1f2-07774fb8fae3",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-dressing:a2",
+      "status": "rejected",
+      "note": "Adjudication failed: two observers read the rounded ear pad as the ear itself or a wound. Superseded by a4, which is held as the candidate.",
+      "review": {
+        "inspection": "Head wrap with a padded gauze cup fully covering the ear; same person and view.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "All three observers recovered the white wrap, the pad covering the right ear, and the from-behind view, and none saw text, but Observer 2's alternative reading (the pad read as the ear itself, swollen and bulging) and Observer 1's similar reading (the pad read as a wound or injury to the ear itself) amount to the ear reading as uncovered, a forbidden reading; no alternative reading amounts to a helmet or hat (Observer 1's earmuff-like device is the nearest but is neither), and the other alternatives were a hearing aid (Observer 1), a swelling or growth behind the ear or a dressing for a serious head injury rather than an ear procedure (Observer 3), with Observer 3 also noting part of the right ear/cheek visible at the edge."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-dressing-a2.json"
+      }
+    },
+    {
+      "id": "processor-worn-a2",
+      "asset_id": "processor-worn",
+      "attempt": 2,
+      "file": "assets/anatomy/processor-worn-a2.png",
+      "sha256": "d4eb7d93e09188d40bdaa2dfdefc3d3a9832ca267a38b8b7b06eb4a5c84ada96",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the person now wears a cochlear implant external system on the right ear: a slim, plain, matte dark-grey behind-the-ear sound processor hooked over the top of the ear and resting behind it, connected by one short thin cable to a small flat round transmitter coil that sits on the scalp a few centimetres above and behind the ear. No other cables, nothing hanging down the neck, no earbud in the ear canal, no brand, no buttons. Keep the same person, pose, viewpoint from behind, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90502,
+      "request_id": "01a0b170-070f-7bb0-a350-a72a57ddf8fc",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:processor-worn:a2",
+      "status": "rejected",
+      "note": "Processor behind the ear is right, but the coil sits at the back of the head near the neck with a long cable running out of the frame: a forbidden reading.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "processor-worn-a3",
+      "asset_id": "processor-worn",
+      "attempt": 3,
+      "file": "assets/anatomy/processor-worn-a3.png",
+      "sha256": "cff0dd1257fc0add3d640f8b5b4b769051ab12e3eb654cfd9f935e50e09f9161",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the person now wears a cochlear implant external system on the right ear, drawn exactly like this: a slim, plain, matte dark-grey behind-the-ear sound processor hooks over the top of the ear and rests behind it; from the top of that processor one short, thin cable, about the length of the ear, goes upward and backward to a small flat round disc about the size of a large coin that sits flat on the scalp directly above and behind the top of the ear. That disc and that short cable are the only accessories in the picture. There is no cable anywhere below the ear, nothing runs down the neck, nothing leaves the frame, nothing is in the ear canal. Keep the same person, pose, viewpoint from behind, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90503,
+      "request_id": "01a0b171-135c-7632-842a-3a94abfab81b",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:processor-worn:a3",
+      "status": "rejected",
+      "note": "Processor placement right and no neck cable, but the coil sits at the crown of the head, oversized, with a stray cable loop. One further attempt allowed (cap raised to 4) with the coil position described geometrically.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-a2",
+      "asset_id": "postauricular-red-swollen",
+      "attempt": 2,
+      "file": "assets/anatomy/postauricular-red-swollen-a2.png",
+      "sha256": "6d996b87fb32af1267ed8ced006957fe01f7f8ec1fcb3848c1388e8176207c64",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the skin along and immediately around the healed incision line behind the ear is both red and clearly swollen: a warm pink-red flush plus a visibly raised, puffy, taut bulge of skin along the crease behind the ear, so the swelling itself is obvious from the shape of the skin, not only from the color. Keep the incision as one thin, plain, solid line, not dashed, with no stitches, no dots, no bleeding, no open wound, no pus. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90302,
+      "request_id": "01a0b172-2d27-72f0-bf5f-431aedc54f2b",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-red-swollen:a2",
+      "status": "rejected",
+      "note": "Adjudication failed: two of three observers saw redness without raised swelling and none saw the incision line under the flush.",
+      "review": {
+        "inspection": "Raised puffy red swelling behind the ear with a plain line on inspection, but the flush washes the line out.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "All three observers saw redness behind and above the ear with no wound and no text, but none saw a scar or incision line and only observer 1 saw any swelling (of the ear itself), while observers 2 and 3 explicitly saw no swelling or bump."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-red-swollen-a2.json"
+      }
+    },
+    {
+      "id": "processor-worn-a4",
+      "asset_id": "processor-worn",
+      "attempt": 4,
+      "file": "assets/anatomy/processor-worn-a4.png",
+      "sha256": "48eca7de06f21ec74831871b01e036dd4d7e27fd5764ea468cc96ef007648ff9",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the person wears a cochlear implant external system on the right ear. Draw exactly two parts and one cord. Part one: a slim, plain, matte dark-grey behind-the-ear sound processor hooked over the top of the ear, resting in the crease behind the ear. Part two: a small flat round disc, matte dark grey, about the size of a bottle cap, lying flat on the scalp with its centre one ear-width behind the ear and level with the top of the ear, on the clipped hair. The cord: one short, straight, thin cable, no longer than the ear is tall, running from the top of the processor directly to the disc. Nothing else is added: no loops, no second cord, no cable below the ear, nothing down the neck, nothing at the crown of the head, nothing in the ear canal. Keep the same person, pose, viewpoint from behind, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90504,
+      "request_id": "01a0b172-fa8e-7531-af31-9282f83eff82",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:processor-worn:a4",
+      "status": "rejected",
+      "note": "Cap reached. Every attempt hung a cable down the neck or misplaced the coil; the device is drawn as a deterministic vector overlay on the base master instead.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-dressing-a3",
+      "asset_id": "postauricular-dressing",
+      "attempt": 3,
+      "file": "assets/anatomy/postauricular-dressing-a3.png",
+      "sha256": "0e836571945590879e4287b753728ea81ca5b5f1804832ab4a02d4075209adb1",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so a snug white gauze head bandage is wrapped around the head and passes directly over the ear: several smooth, overlapping turns of gauze run around the head above the eyebrows and straight over the ear, so the ear is completely hidden under flat layers of wrap with no ear shape showing through. There is no separate round pad or cup over the ear; the bandage is smooth, flat, and matte white, clearly a wrapped bandage and nothing else. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90203,
+      "request_id": "01a0b20a-24f2-7532-8c68-1c1b06ea7021",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-dressing:a3",
+      "status": "rejected",
+      "note": "Rejected on inspection: the wrap sits above the ear and the whole ear is exposed, the forbidden uncovered-ear reading.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-a3",
+      "asset_id": "postauricular-red-swollen",
+      "attempt": 3,
+      "file": "assets/anatomy/postauricular-red-swollen-a3.png",
+      "sha256": "2b8660143c5ea0f77018a1b7b3e0ff44e9467ff5e65b95ff4314092006d563c5",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the rounded swelling behind the ear looks inflamed: the skin over the bulge and just around it is a strong pink-red flush, and the thin healed incision line running across the red area stays one plain, dark, solid line that is clearly visible. Keep the bulge exactly the same size and shape so the swelling stays obvious from the outline of the skin. No stitches, no dots, no bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90303,
+      "request_id": "01a0b20a-605e-7bc0-8bc8-7d959ec01650",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-red-swollen:a3",
+      "status": "candidate",
+      "note": null,
+      "review": {
+        "inspection": "Edit of the accepted fluid master: strong flush over the dome with a dark plain line, but the flush hides the dome's shading.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "All three observers saw diffuse redness behind the ear and no open wound, but none saw any swelling and only one read the black arc as a scar or incision (the third explicitly reported no cuts), so two required items fall short of three-observer recovery."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-red-swollen-a3.json"
+      }
+    },
+    {
+      "id": "postauricular-dressing-a4",
+      "asset_id": "postauricular-dressing",
+      "attempt": 4,
+      "file": "assets/anatomy/postauricular-dressing-a4.png",
+      "sha256": "5889c127c0135a837cb5d63e0aa639b3b938022f1f70c62236cd85c7c71ef6eb",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so a white gauze head bandage completely covers the ear: several overlapping turns of white gauze wrap around the head above the eyebrows and pass directly over the ear, and under those turns a large, flat, square white gauze pad with two strips of white surgical tape crossing it lies over the ear, so no part of the ear shows. The pad is flat and square with straight edges, obviously a bandage and not a body part. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90204,
+      "request_id": "01a0b20c-e78d-7c51-9659-5d724c30e2bd",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-dressing:a4",
+      "status": "rejected",
+      "note": "Superseded by postauricular-dressing-ref-a1, which passed the loop with a reference photograph.",
+      "review": {
+        "inspection": "Wrap above the eyebrows with a flat square taped gauze pad over the ear; no ear visible on inspection.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "Observers 2 and 3 saw the ear fully covered, but Observer 1 saw the bandage passing above the ear with the pad behind and below it and part of the ear showing, so the ear-covered item was recovered by only two observers and one observer's words read the ear as partly uncovered."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-dressing-a4.json"
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-a4",
+      "asset_id": "postauricular-red-swollen",
+      "attempt": 4,
+      "file": "assets/anatomy/postauricular-red-swollen-a4.png",
+      "sha256": "073115897350108b26e7c98a122f9c19c2cada56aca1e3ce69564bfef71ae97a",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Edit this medical illustration so the rounded bulge behind the ear is inflamed but still clearly raised: tint the skin over the bulge and just around it a moderate pink-red, and keep the bulge's three-dimensional shading exactly as it is, with the pale highlight on the top of the dome and the darker shadow under its lower edge, so the swelling stays obvious from the shape and shading of the skin and not only from the color. Keep the thin healed incision line as one plain, solid, dark reddish-brown line across the red area, not black. No stitches, no dots, no bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90304,
+      "request_id": "01a0b211-5091-7f01-83df-6dae755fd299",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:postauricular-red-swollen:a4",
+      "status": "rejected",
+      "note": "Rejected on inspection: the lighter tint erased the fluid master dome entirely, leaving a flat flush around the line; no swelling to recover. Attempt cap of 4 exhausted; frame-06 composes the accepted fluid master with a vector flush instead.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "processor-worn-ref-a1",
+      "asset_id": "processor-worn-ref",
+      "attempt": 1,
+      "file": "assets/anatomy/processor-worn-ref-a1.png",
+      "sha256": "6fcee11654dccd51c5c6ebf25403cf8c14030179e63ec9fc1276f735fee3c326",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right. Image 2 is a photograph of a person wearing a cochlear implant sound processor: a curved unit hooked over the top of the ear with its body behind the ear, and a short cable rising from it to a round coil that rests on the scalp above and behind the ear. Image 3 is a close-up of the same kind of processor and coil. Edit image 1 so the person wears exactly this kind of processor and coil on the right ear, in the same positions as image 2: the body behind the ear, the coil on the scalp above and behind the ear, the short cable between them, and nothing hanging down the neck. Draw the device in dark gray in the flat illustration style of image 1. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the people, faces, hair, or backgrounds from the reference photographs. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90501,
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-cochlear-implant-user.jpg",
+          "sha256": "83210c75626199aa5ebef82511b18a6625993a3e0e5e7fb44dfd01b5639ce7c6",
+          "source": "https://commons.wikimedia.org/wiki/File:Cochlear_implant_user.jpg",
+          "license": "CC BY-SA 4.0",
+          "role": "processor worn behind the ear with the coil above and behind it, side view"
+        },
+        {
+          "file": "assets/anatomy/references/commons-nucleus-7-on-ear.jpg",
+          "sha256": "904d8c6e782844f865b7a6965c9681d3e14893a0564a8e4a975eb1d4698297b1",
+          "source": "https://commons.wikimedia.org/wiki/File:Cochlear_Nucleus%C2%AE_7_Sound_Processor_(cropped).jpg",
+          "license": "CC BY-SA 4.0",
+          "role": "processor and coil close-up"
+        }
+      ],
+      "request_id": "01a0b268-f881-70a2-8d2f-4c0a44587514",
+      "estimate_usd": 0.07,
+      "ledger_entry": "anatomy:processor-worn-ref:a1",
+      "status": "accepted",
+      "note": "Passed the caption-blind loop on the first reference-guided attempt.",
+      "review": {
+        "inspection": "Reference-guided edit of the base: hook over the ear, body behind it, short cable to a round coil above and behind the ear, nothing down the neck, flat style preserved.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "reason": "All three observers independently described an oblong unit hooked over the top of the ear resting behind it, a round disc on the scalp above and behind the ear joined to it by a cable, and a side view of the head from slightly behind; none reported text, a cable running down the neck, a coil at the back of the head or crown, a coil-less hearing aid, or a photographic/3D style."
+        },
+        "receipt": "content/reviews/anatomy/processor-worn-ref-a1.json"
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-ref-a1",
+      "asset_id": "postauricular-red-swollen-ref",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-red-swollen-ref-a1.png",
+      "sha256": "02795fa831cfa9c04ce1aa9dcd8f6a5e656e92a4a830944931009b35ec76dea3",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a rounded swelling behind the right ear. Image 2 is a photograph of red, swollen skin behind an ear. Edit image 1 so the skin over the swelling and just around it looks like image 2: hot pink-red, tight and shiny, while the swelling keeps exactly its raised rounded shape with its highlight on top and shadow underneath. Keep the thin healed incision line as one plain, solid, dark line across the red area. No stitches, no dots, no bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the people, faces, hair, or backgrounds from the reference photographs. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90601,
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-mastoiditis.jpg",
+          "sha256": "58a6459414a0e26ad37c6aa05919f799252c10a81d573251eae9d59c6d0288a9",
+          "source": "https://commons.wikimedia.org/wiki/File:Mastoiditis1.jpg",
+          "license": "CC BY-SA 3.0",
+          "role": "red, tense swelling behind the ear"
+        }
+      ],
+      "request_id": "01a0b269-53b5-7002-be20-d9c76704c88b",
+      "estimate_usd": 0.06,
+      "ledger_entry": "anatomy:postauricular-red-swollen-ref:a1",
+      "status": "rejected",
+      "note": "Adjudication failed: swelling recovered by two of three observers; one read the flush as a flat patch and an oozing wound; the line rendered with suture marks.",
+      "review": {
+        "inspection": "Reference-guided edit of the fluid master: strong red raised dome with a highlight, but the incision rendered as a sutured line.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "Observer 2 described a flat red-pink patch that fades into the skin with no swelling, so swelling was recovered by only observers 1 and 3, and Observer 2 also reported the red area could be read as an infected, oozing wound."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-red-swollen-ref-a1.json"
+      }
+    },
+    {
+      "id": "postauricular-dressing-ref-a1",
+      "asset_id": "postauricular-dressing-ref",
+      "attempt": 1,
+      "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+      "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right. Image 2 is a photograph of a mastoid dressing on the side of a head: a thick white gauze pad over the ear, held by a white gauze wrap that circles the head above the eyebrows and is tied at the front. Edit image 1 so the person wears exactly this kind of dressing on the right ear: the thick gauze pad completely covers the ear and the skin behind it, and the wrap passes around the head above the eyebrows and over the pad, so no part of the ear is visible. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or background from the photograph. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90401,
+      "references": [
+        {
+          "file": "assets/anatomy/references/iowa-mastoid-dressing-side-crop.jpg",
+          "sha256": "87ece047062013ed36faa011998be70c52554344f30d4cb208ea5dc69c8afc7e",
+          "source": "https://iowaprotocols.medicine.uiowa.edu/protocols/how-apply-mastoid-dressing-illustrated-steps",
+          "license": "University of Iowa Health Care, all rights reserved; cropped to the dressing with no face, used only as a generation input, not stored in the repository",
+          "role": "finished mastoid dressing, side view, cropped tightly to the wrap and ear"
+        }
+      ],
+      "request_id": "01a0b26e-a598-7d92-acc5-6db286ae2035",
+      "estimate_usd": 0.05,
+      "ledger_entry": "anatomy:postauricular-dressing-ref:a1-r4",
+      "status": "accepted",
+      "note": "Passed the caption-blind loop on the first reference-guided attempt.",
+      "review": {
+        "inspection": "Reference-guided edit of the base: gauze band around the head tied at the back, rectangular gauze pad completely covering the ear, flat style preserved.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "reason": "All three observers describe a white gauze band wrapped around the head with a white pad over the right ear hiding it completely, all three describe the same posterior-right view with the face turned away, none report text, and none state a loose-gauze, uncovered-ear, or helmet/hat reading."
+        },
+        "receipt": "content/reviews/anatomy/postauricular-dressing-ref-a1.json"
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-ref-a2",
+      "asset_id": "postauricular-red-swollen-ref",
+      "attempt": 2,
+      "file": "assets/anatomy/postauricular-red-swollen-ref-a2.png",
+      "sha256": "b86ae5e150ed96020f768c763e5149fdff1b30d98d953f7722aca80599587dc7",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a rounded swelling behind the right ear. Image 2 is a photograph of red, swollen skin behind an ear. Edit image 1 so the swelling looks inflamed like image 2 while staying clearly raised: a moderate pink-red tint over the bulge and just around it, with the bulge's pale highlight on top and a distinct soft shadow under its lower edge kept fully visible, so the lump stands out from the skin by its shape and shading and not only by its color. The healed incision across the red area is a single thin, plain, solid dark line with no stitch marks, no cross-hatching, no dots, and no gap. No bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or ear from the photograph. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90602,
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-mastoiditis.jpg",
+          "sha256": "58a6459414a0e26ad37c6aa05919f799252c10a81d573251eae9d59c6d0288a9",
+          "source": "https://commons.wikimedia.org/wiki/File:Mastoiditis1.jpg",
+          "license": "CC BY-SA 3.0",
+          "role": "red, tense swelling behind the ear"
+        }
+      ],
+      "request_id": "01a0b271-898a-70b0-bdd6-35950022bf42",
+      "estimate_usd": 0.06,
+      "ledger_entry": "anatomy:postauricular-red-swollen-ref:a2-r2",
+      "status": "rejected",
+      "note": "Rejected on inspection: the moderate tint flattened the dome to a faint highlight and the line rendered as a sutured incision again despite the prompt.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "postauricular-red-swollen-ref-a3",
+      "asset_id": "postauricular-red-swollen-ref",
+      "attempt": 3,
+      "file": "assets/anatomy/postauricular-red-swollen-ref-a3.png",
+      "sha256": "625f30b65e67d1d5b33c417962eff498f9a27fb0340b3df76ff8ad07512ce01a",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a smooth rounded bulge behind the right ear. Image 2 is a photograph of hot, pink-red skin behind an ear. Change only the color of the skin on the bulge in image 1: tint the surface of the bulge and a narrow margin around it the pink-red of image 2, as a smooth surface blush. Change nothing else at all: keep the bulge's outline, its pale highlight, and the shadow under its lower edge exactly as they are in image 1, keep every existing line exactly as drawn, and add no new marks. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or ear from the photograph. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90603,
+      "references": [
+        {
+          "file": "assets/anatomy/references/commons-mastoiditis.jpg",
+          "sha256": "58a6459414a0e26ad37c6aa05919f799252c10a81d573251eae9d59c6d0288a9",
+          "source": "https://commons.wikimedia.org/wiki/File:Mastoiditis1.jpg",
+          "license": "CC BY-SA 3.0",
+          "role": "red, tense swelling behind the ear"
+        }
+      ],
+      "request_id": "01a0b272-889a-7322-9685-1c78fb2f0c80",
+      "estimate_usd": 0.06,
+      "ledger_entry": "anatomy:postauricular-red-swollen-ref:a3",
+      "status": "rejected",
+      "note": "Rejected on inspection: a surface blush only, with the dome and the line both gone. Stopped after three reference-guided attempts; redness is a color state, and the vector flush on the accepted fluid master carries it.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a1",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 1,
+      "file": "assets/anatomy/dressing-removal-ref-a1.png",
+      "sha256": "7410e55a27e8a88c0fc2830fa5a0808af2ece49f7395b7de1ea2a2a37e5ac71b",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the dressing is being taken off: the wrap has been untied, the person's own right hand comes up from the lower right and holds the loosened end of the gauze, pulling it away from the head so a length of gauze hangs slack in the air, the remaining turns around the head sit loose and partly unwound, and the pad over the ear has slipped down so the top of the ear shows. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90701,
+      "references": [],
+      "request_id": "01a0b284-c78d-77b0-8296-b06c98ac3b11",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a1-r2",
+      "status": "rejected",
+      "note": "Failed alone: no observer could tell coming off from going on. As the middle of the first strip it still drew putting-on readings; the bow stays tied.",
+      "review": {
+        "inspection": "Hand pulls a gauze tail beside the ear; the bow stays tied and the pad is gone.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "fail",
+          "reason": "All three observers state outright that they cannot tell whether the gauze is coming off or going on, so the central state was recovered by no one, and Observer 1 additionally reported the forbidden tightened-or-tied-on reading."
+        },
+        "receipt": "content/reviews/anatomy/dressing-removal-ref-a1.json"
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a2",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 2,
+      "file": "assets/anatomy/dressing-removal-ref-a2.png",
+      "sha256": "d2feba5fa8248fe935410039534206d4d7b4aa313fd4773fe345ffd032d466e3",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the dressing is clearly halfway off: the knot at the back is undone and both loose ends hang down, the wrap has slid down and sits slack and crooked around the head with one turn unwound, and the person's own right hand, coming up from the lower right, holds the gauze pad after lifting it off the ear, so the whole ear is uncovered and the pad is in the hand a little away from the head. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90702,
+      "references": [],
+      "request_id": "01a0b285-c520-7ea1-9c46-8954098803ec",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a2",
+      "status": "rejected",
+      "note": "Rejected on inspection: the pad is held in front of the eye, which reads as an eye pad going on; a1 is the cleaner middle panel.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a3",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 3,
+      "file": "assets/anatomy/dressing-removal-ref-a3.png",
+      "sha256": "a59a8b6e60e0b9ec66aff9821b045ab261f054f6062df93474ebdfd82e00de3e",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the wrap is visibly being unwound: there is no bow and no knot any more, the gauze band has come loose from the head and hangs in a long slack curve from the back of the head down past the shoulder, only one loose turn still rests around the head, and a hand at the lower right holds the free end of the gauze well away from the head. The gauze pad is gone and the whole right ear is uncovered. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90703,
+      "references": [],
+      "request_id": "01a0b4a4-f2e0-7c02-8cab-0b2c8adaba11",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a3",
+      "status": "rejected",
+      "note": "In the second strip all three observers read coming off, but all three also read the gauze under the chin as cloth or a strap at the throat.",
+      "review": {
+        "inspection": null,
+        "observers": [],
+        "adjudication": null
+      }
+    },
+    {
+      "id": "dressing-removal-ref-a4",
+      "asset_id": "dressing-removal-ref",
+      "attempt": 4,
+      "file": "assets/anatomy/dressing-removal-ref-a4.png",
+      "sha256": "13e71b1d293d065b620b157c295e549aafb9343306cbdfc0f7635062aed02cfa",
+      "width": 1024,
+      "height": 768,
+      "model": "fal-ai/flux-2-pro/edit",
+      "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, wearing a white gauze head wrap with a gauze pad over the right ear. Edit image 1 so the wrap is visibly being unwound behind the head: there is no bow and no knot any more; a hand at the lower left of the picture, behind the person's head, holds the free end of the gauze and draws it away from the back of the head, so a slack length of gauze hangs from the back of the head down to that hand; only one loose turn still rests around the head. The gauze stays entirely behind the head and to the left of it, so the neck, jaw, and face are completely clear. The gauze pad is gone and the whole right ear is uncovered. Draw the hand and the gauze in the same flat medical illustration style. Keep the same person, pose, viewpoint, lighting, off-white background, and style. No text, no labels, no captions, no arrows, no logos.",
+      "seed": 90704,
+      "references": [],
+      "request_id": "01a0b4aa-2f1b-7690-9dc5-a685de9e7d66",
+      "estimate_usd": 0.04,
+      "ledger_entry": "anatomy:dressing-removal-ref:a4",
+      "status": "accepted",
+      "note": "Accepted as panel 2 of the static bandage-removal card, under the instruction-picture rule. Alone it does not carry direction; the numerals do.",
+      "review": {
+        "inspection": "Hand behind the head draws the gauze away; knot undone; ear uncovered; neck and face clear. Band reads taut rather than slack.",
+        "observers": 3,
+        "adjudication": {
+          "verdict": "pass",
+          "verdict_strict": "fail",
+          "reason": "Passes as an instruction picture because all three observers recovered all five required items, each concluded in question 5 that the band and pad come off and that the viewer then looks behind the ear for the strip, no forbidden reading appears in questions 2, 3 or 5, and the only alternative shared by two observers (apply tape behind the ear) is neither harm nor the wrong body part; fails the strict rules because Observer 1's question-4 alternatives state 'a head being wrapped' and that the strip 'could pass for a wound'."
+        },
+        "receipt": "content/reviews/anatomy/diagram.remove-dressing.json"
+      }
+    }
+  ]
+}

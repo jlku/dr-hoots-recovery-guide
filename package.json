@@ -8,11 +8,14 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "npm run test:unit",
-    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run frames:validate && npm run translations:validate && npm run test:unit",
+    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run frames:validate && npm run instructions:validate && npm run anatomy:validate && npm run reviews:validate && npm run translations:validate && npm run spend:validate && npm run test:unit",
     "segments:validate": "node scripts/validate-segments.mjs --media",
     "frames:validate": "node scripts/validate-frames.mjs",
+    "anatomy:validate": "node scripts/validate-anatomy.mjs",
+    "anatomy:generate": "node --env-file=.env.local scripts/generate-anatomy.mjs",
     "segments:build": "node scripts/build-segment-media.mjs",
     "translations:validate": "node scripts/validate-translations.mjs",
+    "spend:validate": "node scripts/validate-spend.mjs",
     "narration:generate": "node --env-file=.env.local scripts/generate-fal-narration.mjs",
     "narration:validate": "node scripts/validate-narration.mjs",
     "test:unit": "node --test tests/*.test.mjs",
@@ -20,7 +23,9 @@
     "content:validate": "node scripts/validate-canonical-content.mjs",
     "copy:validate": "node scripts/validate-copy-adaptations.mjs",
     "media:build": "node scripts/build-media-projections.mjs",
-    "media:validate": "node scripts/validate-media-projections.mjs"
+    "media:validate": "node scripts/validate-media-projections.mjs",
+    "instructions:validate": "node scripts/validate-instructions.mjs",
+    "reviews:validate": "node scripts/validate-reviews.mjs"
   },
   "dependencies": {
     "@fal-ai/client": "^1.9.0"

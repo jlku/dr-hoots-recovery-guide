@@ -1,0 +1,55 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-red-swollen-a3",
+  "asset_id": "postauricular-red-swollen",
+  "file": "assets/anatomy/postauricular-red-swollen-a3.png",
+  "sha256": "2b8660143c5ea0f77018a1b7b3e0ff44e9467ff5e65b95ff4314092006d563c5",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Edit of the accepted fluid master: strong flush over the dome with a dark plain line, but the flush hides the dome's shading.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a735a48ac2c86faf4",
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right; the right ear and a sliver of the right cheek, brow, and eyelashes are visible. Short dark hair, cropped on the sides.\n\n2. A diffuse red blush on the bare skin directly behind the right ear, over the mastoid area, fading outward. Nothing is worn or applied; the skin otherwise looks normal, and the ear itself is not discolored or drawn as swollen.\n\n3. One black curved line, a crescent arc, is drawn inside the red area following the back edge of the ear. No text, arrows, or labels.\n\n4. A worried patient might read the red patch as a rash, a bruise, or a burn behind the ear, and the black arc as a cut or a dark line of dirt.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a0b1778ca5b40e83e",
+      "observation": "1. The back-right side of a head and upper neck, seen from behind and slightly to the side, so the right ear is in profile and the hair sits above a shaved fade.\n\n2. A soft red glow on the scalp/skin directly behind and around the ear, without a lump outline, cut, or dressing. Nothing is worn or applied.\n\n3. Yes: a single thin black curved line hugging the back rim of the ear, sitting inside the red area. No lettering.\n\n4. A patient might read the red patch as a bruise, sunburn, or razor irritation from the haircut, and the black arc as a scar, a cut, or the edge of a hearing-aid loop.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "ad20d1d7b0395504a",
+      "observation": "1. The back and side of a person's head and neck, seen from behind and slightly to the right, showing the right ear, a short haircut with a shaved fade, and part of the right cheek and brow.\n\n2. A diffuse red-pink patch on the skin behind and around the right ear, fading outward with no sharp edge, with a black crescent line curving around the back edge of the ear. Nothing worn or applied is shown, and the skin has no bumps, cuts, blisters, or discharge.\n\n3. Yes, one black curved line behind the ear. No words, numbers, arrows, or labels.\n\n4. A worried patient might read the red patch as a burn, rash, or bruise on the scalp.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "a78fe8e6614989acd",
+    "verdict": "fail",
+    "tally": {
+      "redness behind the ear along a scar or incision": "redness behind the ear: 1,2,3; along a scar or incision: 2 only ('a scar, a cut'), 1 partial ('a cut or a dark line of dirt'), 3 not ('black crescent line', 'no bumps, cuts')",
+      "some swelling in the same area": "none (1: 'not discolored or drawn as swollen', 'otherwise looks normal'; 2: 'without a lump outline'; 3: 'no bumps')",
+      "no open wound": "1,2,3"
+    },
+    "recovered": [
+      "no open wound"
+    ],
+    "missed": [
+      "redness behind the ear along a scar or incision",
+      "some swelling in the same area"
+    ],
+    "forbidden_hits": [],
+    "text_detected": false,
+    "reason": "All three observers saw diffuse redness behind the ear and no open wound, but none saw any swelling and only one read the black arc as a scar or incision (the third explicitly reported no cuts), so two required items fall short of three-observer recovery."
+  },
+  "outcome": "held as a candidate, not accepted: no observer saw swelling and only one read the line as an incision; cap of four exhausted after a4 was rejected on inspection",
+  "notes": "A first observer panel (tasks a01fb0d1c6e1988e6, a9297a1547678dde6, aabc790a89800f247) was discarded because none of the three opened the image, and a first adjudication (task a23252438379a2e12, smaller model) was discarded for inventing a forbidden hit no observer reported.",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

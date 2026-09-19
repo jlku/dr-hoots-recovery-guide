@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<title>Frame render</title>
+<meta name="robots" content="noindex">
+<link rel="stylesheet" href="assets/guide.css">
+<style>
+  html, body { margin: 0; height: auto; overflow: visible; display: block; background: #fff; }
+  #stage { width: 1024px; height: 768px; padding: 0; }
+</style>
+<!-- Review tool, not a patient page: renders one frame exactly as the guide draws it, at a moment
+     on the narration clock, so reviewers judge what the patient sees.
+     frame.html?frame=<frame id>   (add &at=<spoken phrase>&plus=<seconds> only when the manifest's motion is "narration") -->
+<div id="stage" class="stage"></div>
+<script type="module">
+  import { fetchJson, loadGuide } from "./assets/data.js";
+  import { phraseTime, renderFrame, updateFrame } from "./assets/frames.js";
+
+  const params = new URLSearchParams(location.search);
+  const frameId = params.get("frame");
+  const guide = await loadGuide("en");
+  let found = null;
+  for (const segment of guide.segments.segments) {
+    const beat = segment.beats.find((item) => item.frame === frameId);
+    if (beat) { found = { segment, beat }; break; }
+  }
+  const entry = guide.index.entries.find((item) => item.language === "en" && item.number === found.segment.number);
+  const timeline = await fetchJson(entry.timeline);
+  const words = timeline.words.filter((word) => word.beat === found.beat.id);
+  const seconds = (params.get("at") ? phraseTime(words, params.get("at")) ?? 0 : 0) + Number(params.get("plus") ?? 0);
+  const root = renderFrame({ ...guide.frames.frames[frameId], id: frameId }, { beat: found.beat, beatWords: words, sentences: guide.sentences, pack: guide.pack, motion: guide.frames.motion ?? "static" });
+  root.querySelectorAll(".composite__image").forEach((image) => { image.style.transition = "none"; });
+  document.getElementById("stage").append(root);
+  updateFrame(root, seconds);
+  await Promise.all([...root.querySelectorAll("img")].map((image) => image.decode().catch(() => {})));
+  document.body.dataset.ready = String(seconds);
+</script>
+</html>

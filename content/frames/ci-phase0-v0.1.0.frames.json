@@ -5,16 +5,355 @@
   "status": "unverified_draft",
   "patient_use": false,
   "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "motion": "static",
+  "motion_note": "This version shows static diagrams only: nothing appears, disappears, or swaps during a beat. A motion is drawn the way an airline safety card draws it, as numbered panels with an arrow. Setting motion to narration re-enables phrase-timed overlays.",
   "frames": {
-    "frame-01": { "kind": "svg", "src": "preview/assets/cards/frame-01.svg", "alt": "Day 2: remove the head dressing, then check behind the ear for tape." },
-    "frame-0203-paths": { "kind": "svg", "src": "preview/assets/cards/frame-0203-paths.svg", "alt": "Two paths. Tape present: keep the area dry until three days after surgery and do not clean it. No tape: clean the incision edges gently twice a day with equal parts hydrogen peroxide and distilled water, then apply antibiotic ointment." },
-    "frame-0405-milestones": { "kind": "svg", "src": "preview/assets/cards/frame-0405-milestones.svg", "alt": "Three days after surgery you may shower and wash your hair. The wound check and ear exam are about two weeks after surgery. The stitches dissolve." },
-    "frame-medication-pending": { "kind": "text", "title_key": "ui.pending_clinician_text" },
-    "frame-06-redness": { "kind": "svg", "src": "preview/assets/cards/frame-06-redness.svg", "alt": "Call your surgeon or clinic if all three signs are present: the incision is red and swollen, it does not get better over one to two days, and it hurts when touched." },
-    "frame-0710-anylist": { "kind": "svg", "src": "preview/assets/cards/frame-0710-anylist.svg", "alt": "Call for any of these: a fever above 101.5 degrees Fahrenheit; swelling or fluid behind the ear; a headache, light sensitivity, or excessive lethargy; or any wound-care question or concern." },
-    "frame-11-numbers": { "kind": "svg", "src": "preview/assets/cards/frame-11-numbers.svg", "alt": "Routine questions: leave a message on the nursing line at 415-353-2148 and expect a call within 12 hours; if no one calls, call again. Emergency: call 415-476-1000 and ask for the Otolaryngology resident on call." },
-    "frame-12-healing": { "kind": "text" },
-    "frame-13-programming": { "kind": "image", "src": "assets/illustrations/ci-activation-programming-safety-card-v1.png", "alt": "A hearing specialist uses a laptop to program an adult patient's external behind-the-ear speech processor, with a close-up of the processor and adjustment controls." },
-    "frame-14-follow-up": { "kind": "text" }
+    "frame-01": {
+      "kind": "panels",
+      "alt": "Four numbered panels. 1: the head bandage on, covering the ear. 2: a hand behind the head draws the gauze away, with an arrow pointing away from the head. 3: the bare head with the ear uncovered. 4: a magnifier over the incision behind the ear, showing a strip of tape, with the question: tape?",
+      "instruction": "howto.remove-dressing",
+      "layers": {
+        "dressing": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "removal": "assets/anatomy/dressing-removal-ref-a4.png",
+        "base": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "anchors": {
+        "incision": {
+          "x": 0.565,
+          "y": 0.47
+        },
+        "pull_start": {
+          "x": 0.21,
+          "y": 0.3
+        }
+      },
+      "panels": [
+        {
+          "id": "on",
+          "number": 1,
+          "image": "dressing",
+          "sentence_ids": [
+            "wc.01"
+          ]
+        },
+        {
+          "id": "pull-away",
+          "number": 2,
+          "image": "removal",
+          "sentence_ids": [
+            "wc.01"
+          ],
+          "overlays": [
+            {
+              "id": "pull",
+              "type": "motion-arrow",
+              "anchor": "pull_start",
+              "at": {
+                "x": 0.03,
+                "y": 0.36
+              },
+              "bend": 0.1,
+              "head": 96,
+              "sentence_ids": [
+                "wc.01"
+              ],
+              "weight": 30
+            }
+          ]
+        },
+        {
+          "id": "off",
+          "number": 3,
+          "image": "base",
+          "sentence_ids": [
+            "wc.01"
+          ]
+        },
+        {
+          "id": "tape-check",
+          "number": 4,
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 2.2
+          },
+          "label_key": "ov.tape_question",
+          "sentence_ids": [
+            "wc.02"
+          ],
+          "overlays": [
+            {
+              "id": "tape",
+              "type": "tape-strip",
+              "anchor": "incision",
+              "width": 120,
+              "angle": -70,
+              "sentence_ids": [
+                "wc.02"
+              ]
+            }
+          ],
+          "lens": true
+        }
+      ]
+    },
+    "frame-0203-paths": {
+      "kind": "panels",
+      "alt": "Two panels. If there is tape over the incision: leave it alone, with a no-cleaning mark. If there is no tape: the bare incision behind the ear, which is cleaned as the narration describes.",
+      "layers": {
+        "base": "assets/anatomy/postauricular-base-a2.png"
+      },
+      "anchors": {
+        "incision": {
+          "x": 0.565,
+          "y": 0.47
+        }
+      },
+      "panels": [
+        {
+          "id": "tape",
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 1.7
+          },
+          "title_key": "ov.path_tape",
+          "sentence_ids": [
+            "wc.03",
+            "wc.04"
+          ],
+          "overlays": [
+            {
+              "id": "tape",
+              "type": "tape-strip",
+              "anchor": "incision",
+              "width": 140,
+              "angle": -70,
+              "sentence_ids": [
+                "wc.03"
+              ]
+            },
+            {
+              "id": "no-cleaning",
+              "type": "no-cleaning",
+              "at": {
+                "x": 0.43,
+                "y": 0.63
+              },
+              "sentence_ids": [
+                "wc.04"
+              ]
+            }
+          ]
+        },
+        {
+          "id": "no-tape",
+          "image": "base",
+          "zoom": {
+            "anchor": "incision",
+            "scale": 1.7
+          },
+          "title_key": "ov.path_no_tape",
+          "sentence_ids": [
+            "wc.05",
+            "wc.06",
+            "wc.07"
+          ]
+        }
+      ]
+    },
+    "frame-0405-milestones": {
+      "kind": "text"
+    },
+    "frame-medication-pending": {
+      "kind": "text",
+      "title_key": "ui.pending_clinician_text"
+    },
+    "frame-06-redness": {
+      "kind": "composite",
+      "alt": "Swelling behind the ear tinted red, with the three signs that must all be present before calling.",
+      "layers": {
+        "fluid": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "anchors": {
+        "bulge": {
+          "x": 0.575,
+          "y": 0.5
+        }
+      },
+      "states": [
+        {
+          "id": "fluid",
+          "image": "fluid"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "flush",
+          "type": "flush",
+          "anchor": "bulge",
+          "rx": 0.13,
+          "ry": 0.17,
+          "opacity": 0.6,
+          "sentence_ids": [
+            "call.01a"
+          ]
+        },
+        {
+          "id": "signs",
+          "type": "checklist",
+          "at": {
+            "x": 0.04,
+            "y": 0.2
+          },
+          "rows": [
+            {
+              "label_key": "ov.red_swollen",
+              "from": "red and swollen",
+              "sentence_ids": [
+                "call.01a"
+              ]
+            },
+            {
+              "label_key": "ov.not_better",
+              "from": "not getting better",
+              "sentence_ids": [
+                "call.01b"
+              ]
+            },
+            {
+              "label_key": "ov.hurts",
+              "from": "hurts",
+              "sentence_ids": [
+                "call.01c"
+              ]
+            }
+          ],
+          "sentence_ids": [
+            "call.01"
+          ]
+        }
+      ]
+    },
+    "frame-0710-anylist": {
+      "kind": "composite",
+      "alt": "Four separate reasons to call: a fever above 101.5 degrees Fahrenheit, swelling or fluid behind the ear, headache or light sensitivity or excessive lethargy, or any question or concern.",
+      "layers": {
+        "fluid": "assets/anatomy/postauricular-fluid-a1.png"
+      },
+      "anchors": {
+        "bulge": {
+          "x": 0.575,
+          "y": 0.5
+        }
+      },
+      "states": [
+        {
+          "id": "fluid",
+          "image": "fluid"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "any",
+          "type": "rows",
+          "at": {
+            "x": 0.04,
+            "y": 0.16
+          },
+          "rows": [
+            {
+              "label_key": "ov.fever",
+              "from": "a fever",
+              "sentence_ids": [
+                "call.02"
+              ]
+            },
+            {
+              "label_key": "ov.fluid",
+              "from": "swelling",
+              "sentence_ids": [
+                "call.03"
+              ]
+            },
+            {
+              "label_key": "ov.neuro",
+              "from": "a headache",
+              "sentence_ids": [
+                "call.04"
+              ]
+            },
+            {
+              "label_key": "ov.any_concern",
+              "from": "or any question",
+              "sentence_ids": [
+                "call.05"
+              ]
+            }
+          ],
+          "sentence_ids": [
+            "call.02"
+          ]
+        },
+        {
+          "id": "bulge-pointer",
+          "type": "pointer",
+          "anchor": "bulge",
+          "at": {
+            "x": 0.3,
+            "y": 0.86
+          },
+          "from": "swelling",
+          "label_key": "ov.fluid_pointer",
+          "sentence_ids": [
+            "call.03"
+          ]
+        }
+      ]
+    },
+    "frame-11-numbers": {
+      "kind": "text"
+    },
+    "frame-12-healing": {
+      "kind": "text"
+    },
+    "frame-13-programming": {
+      "kind": "composite",
+      "alt": "The external speech processor hooked over the ear with its body behind the ear, and its transmitter coil on the scalp above and behind the ear, at the programming visit.",
+      "layers": {
+        "processor": "assets/anatomy/processor-worn-ref-a1.png"
+      },
+      "anchors": {
+        "processor": {
+          "x": 0.575,
+          "y": 0.44
+        }
+      },
+      "states": [
+        {
+          "id": "processor",
+          "image": "processor"
+        }
+      ],
+      "overlays": [
+        {
+          "id": "processor-label",
+          "type": "pointer",
+          "anchor": "processor",
+          "at": {
+            "x": 0.22,
+            "y": 0.74
+          },
+          "from": "speech processor",
+          "label_key": "ov.processor",
+          "sentence_ids": [
+            "act.02"
+          ]
+        }
+      ]
+    },
+    "frame-14-follow-up": {
+      "kind": "text"
+    }
   }
 }

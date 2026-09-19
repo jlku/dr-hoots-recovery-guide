@@ -1,0 +1,58 @@
+{
+  "schema_version": "1.0",
+  "record_id": "dressing-removal-ref-a1",
+  "asset_id": "dressing-removal-ref",
+  "file": "assets/anatomy/dressing-removal-ref-a1.png",
+  "sha256": "7410e55a27e8a88c0fc2830fa5a0808af2ece49f7395b7de1ea2a2a37e5ac71b",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Hand pulls a gauze tail beside the ear; the bow stays tied and the pad is gone.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a9cba4be3adc4f34b",
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, seen from behind and slightly to the right. The right ear is visible; short dark hair is shaved close at the nape.\n\n2. A white gauze strip wraps horizontally around the head at brow level, above the ear, with a large bow knot at the back-left. A second white strip runs from under the wrap, down along the right ear, into a hand. A hand at the right edge holds that strip between thumb and forefinger. The skin looks unmarked; no wound, redness, or sutures are drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read this as a bandage being tightened or tied on, or as a blindfold or head injury wrap.\n\n5. A hand holds the loose tail of the gauze at the right ear, pulling it outward and down. It looks like the strip is being drawn away from the head, but the direction is ambiguous; I cannot tell for sure whether it is coming off or going on.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a705f779b9c120dd1",
+      "observation": "1. A human head and neck from behind, slightly to the right; the right ear and the tip of the right eyelashes are visible. Short dark hair, shaved at the nape.\n2. A white gauze band circles the head at eyebrow level, passing above both ears, tied in a bow at the back-left with two long fringed tails hanging to neck level. A second gauze strip runs from the band beside the right ear diagonally down across the cheek. A hand from the right pinches that strip between thumb and fingers. Skin, ear and hair look plain: no wound, blood, redness or stain is drawn.\n3. None.\n4. A blindfold or eye dressing, since the band sits at eyebrow level and hides the eye; or a bandage over a head injury.\n5. A hand (whose, unclear) pulls a gauze strip down and away beside the right ear while the bow stays tied. Whether the strip is coming off or going on, I cannot tell.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "a56ce6387c720c56e",
+      "observation": "1. The back of a head and neck, seen from behind and slightly to the right; the right ear and eyelash tips are visible; short dark hair, shaved at the nape.\n\n2. A white gauze band wraps horizontally around the head at forehead level, passes over the top of the right ear, and is tied in a bow with two hanging tails at the back-left. A second gauze strip emerges from under the band just in front of the right ear and runs down to the lower right. Skin looks unmarked; no wound, redness, or pad is visible.\n\n3. None: no text, arrows, labels, or symbols.\n\n4. A blindfold or eye covering: the band sits at brow/eye level, and the bow could also read as a decorative headband.\n\n5. A hand at the right pinches the loose strip between thumb and index finger beside the ear. Whether the strip is coming off or going on cannot be told: the bow is already tied, but there are no motion cues.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "a23e9773797927420",
+    "verdict": "fail",
+    "tally": {
+      "a hand holding loosened gauze away from the head": "1,2,3",
+      "a head wrap coming off rather than going on": "none",
+      "the same view of the head": "1,2,3"
+    },
+    "recovered": [
+      "a hand holding loosened gauze away from the head",
+      "the same view of the head"
+    ],
+    "missed": [
+      "a head wrap coming off rather than going on"
+    ],
+    "forbidden_hits": [
+      "Observer 1: \"A patient might read this as a bandage being tightened or tied on\""
+    ],
+    "text_detected": false,
+    "reason": "All three observers state outright that they cannot tell whether the gauze is coming off or going on, so the central state was recovered by no one, and Observer 1 additionally reported the forbidden tightened-or-tied-on reading."
+  },
+  "outcome": "failed alone: no observer could tell whether the gauze was coming off or going on",
+  "notes": null,
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

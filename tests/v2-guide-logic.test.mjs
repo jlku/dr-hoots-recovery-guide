@@ -18,6 +18,7 @@ import {
   pickEntry,
   segmentByNumber
 } from "../guide/assets/logic.js";
+import { phraseTime } from "../guide/assets/frames.js";
 
 const root = resolve(import.meta.dirname, "..");
 const timeline = JSON.parse(await readFile(resolve(root, "assets/captions/v2/en/incision-day2.timeline.json"), "utf8"));
@@ -67,4 +68,12 @@ test("time formats as minutes and seconds", () => {
   assert.equal(formatTime(0), "0:00");
   assert.equal(formatTime(65.4), "1:05");
   assert.equal(formatTime(28.76), "0:29");
+});
+
+test("phrases resolve to the start of their first word, ignoring case and punctuation", () => {
+  const words = timeline.words;
+  assert.equal(phraseTime(words, "remove the head bandage"), words.find((word) => word.text === "remove").start);
+  assert.equal(phraseTime(words, "Then check:"), words.find((word) => word.text === "Then").start);
+  assert.equal(phraseTime(words, "not in the narration"), null);
+  assert.equal(phraseTime(words, ""), null);
 });

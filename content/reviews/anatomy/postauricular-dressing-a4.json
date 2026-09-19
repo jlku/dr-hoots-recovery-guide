@@ -1,0 +1,57 @@
+{
+  "schema_version": "1.0",
+  "record_id": "postauricular-dressing-a4",
+  "asset_id": "postauricular-dressing",
+  "file": "assets/anatomy/postauricular-dressing-a4.png",
+  "sha256": "5889c127c0135a837cb5d63e0aa639b3b938022f1f70c62236cd85c7c71ef6eb",
+  "reviewed_on": "2026-09-17",
+  "method": "Three caption-blind observers (Claude) each saw only the image; a semantic adjudicator (Claude) saw only the contract and their observations, never the image. AI review is not clinical approval.",
+  "inspection": "Wrap above the eyebrows with a flat square taped gauze pad over the ear; no ear visible on inspection.",
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "task": "a04ee0f0f2244c0c3",
+      "observation": "1. A human head and neck seen from behind and slightly to the right, showing the back of the head, the right ear region, and the right side of the neck. Short dark hair is visible on top.\n\n2. A white bandage wrapped in several overlapping turns around the head, passing above the ear. Over the area behind and below the right ear sits a square gauze pad with two strips of tape crossing it in an X. Part of the ear, the cheek, and eyelashes show at the right edge. No skin wound, redness, or fluid is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read it as a head-injury or skull-surgery wrap rather than an ear-area dressing, or worry the X-taped pad marks a serious wound or something covered up.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "task": "a0f509ddff2197ec2",
+      "observation": "1. A human head and upper neck, seen from behind and slightly to one side (a three-quarter rear view). The ear on the visible side is fully covered; part of the cheek, nose tip, and one eyelash line are just visible at the right edge. Short dark hair is on top.\n\n2. A wide white bandage is wrapped several times around the head, crossing above and below the hidden ear. Over the ear region there is a rectangular white pad held with two strips of tape forming an X. No visible skin discoloration, swelling, fluid, or wound is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read this as a head injury or skull wrap, or assume the eye is also covered.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "task": "ad5422585b7c4c297",
+      "observation": "1. The back and right side of a person's head, seen from behind and slightly to the right, with the neck and a sliver of the right cheek, jawline, and eyelashes visible; short dark brown hair.\n\n2. Several overlapping white bandage strips wrapped horizontally around the head, covering the right ear entirely. Over the ear area sits a square white gauze pad held down by two white tape strips crossed in an X. The visible skin looks smooth and unmarked.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as a head-injury wrap after a skull or scalp wound, or as a covering for an eye or bleeding wound, rather than something about the ear.\n\nLabel: Caption-blind observer (Claude), not a clinician."
+    }
+  ],
+  "adjudication": {
+    "label": "Semantic adjudicator (Claude)",
+    "task": "addbb2203b4ddde2b",
+    "verdict": "fail",
+    "tally": {
+      "a white head bandage wrapped around the head": "1,2,3",
+      "the ear covered by the bandage": "2,3",
+      "the same view of the head": "1,2,3"
+    },
+    "recovered": [
+      "a white head bandage wrapped around the head",
+      "the same view of the head"
+    ],
+    "missed": [
+      "the ear covered by the bandage"
+    ],
+    "forbidden_hits": [
+      "the ear uncovered (partial) — Observer 1: \"A white bandage wrapped in several overlapping turns around the head, passing above the ear. Over the area behind and below the right ear sits a square gauze pad ... Part of the ear, the cheek, and eyelashes show at the right edge.\""
+    ],
+    "text_detected": false,
+    "reason": "Observers 2 and 3 saw the ear fully covered, but Observer 1 saw the bandage passing above the ear with the pad behind and below it and part of the ear showing, so the ear-covered item was recovered by only two observers and one observer's words read the ear as partly uncovered."
+  },
+  "outcome": "held as a candidate, not accepted: two observers saw the ear fully covered, one saw part of the ear at the edge; cap of four exhausted",
+  "notes": "A first adjudication (task a5e0fa25d4c007208, smaller model) was discarded because it tallied every required item as recovered and still failed the image on a criterion not in the contract.",
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the accepted image against the claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

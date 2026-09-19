@@ -1,0 +1,185 @@
+{
+  "schema_version": "1.0",
+  "artifact_id": "ci-phase0",
+  "artifact_version": "0.1.0",
+  "patient_use": false,
+  "notice": "UNVERIFIED — NOT FOR PATIENT USE",
+  "purpose": "Every sentence that tells the patient to do something is an instruction claim: who does it, what they do, with what, where, and what they should see when done. A picture of a thing is not a picture of an instruction. While the how is unknown, the claim is a placeholder tied to an open question on the clinician's list, and the guide shows a pending marker on that frame.",
+  "statuses": {
+    "placeholder": "no picture yet shows the how; the guide shows a pending marker and the open question is on Song's list",
+    "text": "the words carry the instruction fully, such as a phone number; no picture is needed",
+    "illustrated": "a picture exists but no caption-blind observer has yet answered what to do from it",
+    "verified": "caption-blind observers recovered what to do, with what, and where; a receipt is attached"
+  },
+  "instruction_sentence_ids": [
+    "wc.01",
+    "wc.02",
+    "wc.03",
+    "wc.04",
+    "wc.05",
+    "wc.06",
+    "wc.07",
+    "wc.08",
+    "call.06",
+    "call.07",
+    "call.07a",
+    "call.08"
+  ],
+  "non_instruction_sentence_ids": {
+    "wc.09": "information: when the wound check happens",
+    "wc.10": "information: the stitches dissolve",
+    "call.01": "condition for calling; the act of calling is the contact claim",
+    "call.01a": "warning sign, a state to recognize",
+    "call.01b": "warning sign, a state to recognize",
+    "call.01c": "warning sign, a state to recognize",
+    "call.02": "condition for calling",
+    "call.03": "condition for calling",
+    "call.04": "condition for calling",
+    "call.05": "condition for calling",
+    "act.01": "information: what happens after healing",
+    "act.02": "information: what the processor is and who programs it",
+    "act.03": "information",
+    "act.04": "information",
+    "act.05": "information"
+  },
+  "claims": [
+    {
+      "id": "howto.remove-dressing",
+      "sentence_ids": [
+        "wc.01"
+      ],
+      "frame": "frame-01",
+      "actor": "the patient or a caregiver, at home",
+      "action": "take the head dressing off",
+      "tool": "hands: untie the knot and unwind the gauze (pictured as an assumption; unconfirmed)",
+      "location": "the wrap around the head and the pad over the operated ear",
+      "end_state": "bare head with the incision behind the ear uncovered",
+      "status": "verified",
+      "clinician_confirmed": false,
+      "open_question": "q.remove-dressing",
+      "note": "A static four-panel card in the airline safety card style: dressing on, a hand drawing the gauze away with one arrow, bare head. Given no hint, three of three observers read it as untie and pull away, the bandage comes off. Direction rests on the numerals. The pad's removal is not drawn. The how pictured here is an assumption until Song answers.",
+      "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "rule": "instruction-picture rule; approved for now by John on 2026-09-18, Song's sign-off pending",
+      "rule_question": "q.instruction-picture-rule"
+    },
+    {
+      "id": "howto.check-tape",
+      "sentence_ids": [
+        "wc.02"
+      ],
+      "frame": "frame-01",
+      "actor": "the patient or a caregiver",
+      "action": "look at the incision behind the ear and decide whether tape covers it",
+      "tool": "a mirror or a helper (unconfirmed)",
+      "location": "the incision in the crease behind the ear",
+      "end_state": "knowing which of the two care paths applies",
+      "status": "verified",
+      "clinician_confirmed": false,
+      "open_question": "q.tape-appearance",
+      "note": "Panel 4 of the same card: a magnifier over the incision with a plain strip and the label Tape?. Three of three observers read it as look behind the ear for a strip. None could tell what to do about the strip, which the next frame answers, and two read it as possibly an order to apply tape. What real tape looks like is still Song's question.",
+      "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
+      "rule": "instruction-picture rule; approved for now by John on 2026-09-18, Song's sign-off pending",
+      "rule_question": "q.instruction-picture-rule"
+    },
+    {
+      "id": "howto.keep-dry",
+      "sentence_ids": [
+        "wc.03",
+        "wc.04"
+      ],
+      "frame": "frame-0203-paths",
+      "actor": "the patient",
+      "action": "keep the taped incision dry and leave it alone until three days after surgery",
+      "tool": "none",
+      "location": "the taped incision behind the ear",
+      "end_state": "tape still in place and dry",
+      "status": "illustrated",
+      "clinician_confirmed": false,
+      "open_question": "q.tape-after-three-days",
+      "note": "A keep-dry pointer and a no-cleaning mark. What happens to the tape after day three is unstated."
+    },
+    {
+      "id": "howto.clean-edges",
+      "sentence_ids": [
+        "wc.05",
+        "wc.06"
+      ],
+      "frame": "frame-0203-paths",
+      "actor": "the patient or a caregiver",
+      "action": "clean the edges of the incision gently, twice a day, with the mix",
+      "tool": "unconfirmed: a cotton swab, gauze, or something else; dab or wipe",
+      "location": "the edges of the incision behind the ear, not the line itself (unconfirmed)",
+      "end_state": "clean edges with no crusting (unconfirmed)",
+      "status": "placeholder",
+      "clinician_confirmed": false,
+      "open_question": "q.cleaning-technique",
+      "note": "The frame lists the steps as text rows. Nothing shows the hand, the tool, or the motion."
+    },
+    {
+      "id": "howto.apply-ointment",
+      "sentence_ids": [
+        "wc.07"
+      ],
+      "frame": "frame-0203-paths",
+      "actor": "the patient or a caregiver",
+      "action": "apply antibiotic ointment after cleaning",
+      "tool": "unconfirmed: a clean swab or fingertip; how much",
+      "location": "unconfirmed: along the incision line or its edges",
+      "end_state": "a thin layer of ointment over the area (unconfirmed)",
+      "status": "placeholder",
+      "clinician_confirmed": false,
+      "open_question": "q.ointment-application",
+      "note": "Text row only."
+    },
+    {
+      "id": "howto.shower",
+      "sentence_ids": [
+        "wc.08"
+      ],
+      "frame": "frame-0405-milestones",
+      "actor": "the patient",
+      "action": "shower and wash hair from three days after surgery",
+      "tool": "unconfirmed: whether water may run over the incision, whether to avoid scrubbing, how to dry it",
+      "location": "head and the incision behind the ear",
+      "end_state": "clean hair, incision dried (unconfirmed)",
+      "status": "placeholder",
+      "clinician_confirmed": false,
+      "open_question": "q.shower-water-on-incision",
+      "note": "Live text only."
+    },
+    {
+      "id": "contact.nursing-line",
+      "sentence_ids": [
+        "call.06",
+        "call.07",
+        "call.07a"
+      ],
+      "frame": "frame-11-numbers",
+      "actor": "the patient or a caregiver",
+      "action": "leave a message on the nursing line for routine questions and call again if no one calls back within 12 hours",
+      "tool": "a phone",
+      "location": "415-353-2148",
+      "end_state": "a call back from the clinic",
+      "status": "text",
+      "clinician_confirmed": false,
+      "open_question": null,
+      "note": "The number is the instruction; the frame shows it as live text."
+    },
+    {
+      "id": "contact.emergency",
+      "sentence_ids": [
+        "call.08"
+      ],
+      "frame": "frame-11-numbers",
+      "actor": "the patient or a caregiver",
+      "action": "call the emergency number and ask for the Otolaryngology resident on call",
+      "tool": "a phone",
+      "location": "415-476-1000",
+      "end_state": "speaking with the resident on call",
+      "status": "text",
+      "clinician_confirmed": false,
+      "open_question": null,
+      "note": "The number is the instruction; the frame shows it as live text."
+    }
+  ]
+}
