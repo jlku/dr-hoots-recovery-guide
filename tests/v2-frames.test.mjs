@@ -74,3 +74,30 @@ test("this version is static: no composite swaps states during a beat, and a mot
   assert.match(text, /frame-01 panel numbers must run 1, 2, 3 in order/);
   assert.match(text, /frame-01 panel tape-check label ov\.nope is not in the English pack/);
 });
+
+test("the incision and its tape are drawn along a measured path, so the tape always lies across the cut", async () => {
+  for (const id of ["frame-01", "frame-0203-paths"]) {
+    const frame = frames.frames[id];
+    assert.ok(frame.paths?.incision?.length >= 2, `${id} measures the incision path`);
+    const overlays = frame.panels.flatMap((panel) => panel.overlays ?? []);
+    assert.ok(overlays.some((overlay) => overlay.type === "incision" && overlay.path === "incision"), `${id} draws the incision`);
+    for (const tape of overlays.filter((overlay) => overlay.type === "tape-strips")) assert.equal(tape.path, "incision");
+  }
+  const tapeCheck = frames.frames["frame-01"].panels.find((panel) => panel.id === "tape-check");
+  assert.equal(englishLabels[tapeCheck.label_key], "Check for tape");
+  const broken = structuredClone(frames);
+  broken.frames["frame-01"].paths.incision = [[0.5, 0.5]];
+  broken.frames["frame-0203-paths"].paths.incision.push([1.4, 0.5]);
+  const panel = broken.frames["frame-01"].panels.find((item) => item.id === "tape-check");
+  panel.overlays = [
+    { id: "cut", type: "incision", path: "nowhere", sentence_ids: ["wc.02"] },
+    { id: "tape", type: "tape-strips", path: "incision", span: [0.9, 0.1], count: 12, sentence_ids: ["wc.02"] }
+  ];
+  const result = await validateFrames({ frames: broken, segments: bundle.segments, root, labels: englishLabels });
+  const text = result.errors.join("\n");
+  assert.match(text, /frame-01 path incision needs at least two \[x, y\] points within the image/);
+  assert.match(text, /frame-0203-paths path incision needs at least two \[x, y\] points within the image/);
+  assert.match(text, /frame-01 panel tape-check overlay cut path nowhere is not defined; the incision is drawn along a measured path/);
+  assert.match(text, /frame-01 panel tape-check overlay tape span must be two fractions of the path, in order/);
+  assert.match(text, /frame-01 panel tape-check overlay tape count must be 1 to 8 strips/);
+});

@@ -54,10 +54,10 @@
       "tool": "hands: untie the knot and unwind the gauze (pictured as an assumption; unconfirmed)",
       "location": "the wrap around the head and the pad over the operated ear",
       "end_state": "bare head with the incision behind the ear uncovered",
-      "status": "verified",
+      "status": "illustrated",
       "clinician_confirmed": false,
       "open_question": "q.remove-dressing",
-      "note": "A static four-panel card in the airline safety card style: dressing on, a hand drawing the gauze away with one arrow, bare head. Given no hint, three of three observers read it as untie and pull away, the bandage comes off. Direction rests on the numerals. The pad's removal is not drawn. The how pictured here is an assumption until Song answers.",
+      "note": "A static four-panel card in the airline safety card style: dressing on, a hand drawing the gauze away with one arrow, bare head. In the live review of the redrawn card on 2026-09-18, all three observers read untie and pull away, the bandage and pad come off. The card as a whole failed on its tape panel, so this claim is illustrated rather than verified until the card passes again. The how pictured here is an assumption until Song answers.",
       "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
       "rule": "instruction-picture rule; approved for now by John on 2026-09-18, Song's sign-off pending",
       "rule_question": "q.instruction-picture-rule"
@@ -73,10 +73,10 @@
       "tool": "a mirror or a helper (unconfirmed)",
       "location": "the incision in the crease behind the ear",
       "end_state": "knowing which of the two care paths applies",
-      "status": "verified",
+      "status": "illustrated",
       "clinician_confirmed": false,
       "open_question": "q.tape-appearance",
-      "note": "Panel 4 of the same card: a magnifier over the incision with a plain strip and the label Tape?. Three of three observers read it as look behind the ear for a strip. None could tell what to do about the strip, which the next frame answers, and two read it as possibly an order to apply tape. What real tape looks like is still Song's question.",
+      "note": "Panels 3 and 4 of the same card: the incision drawn as a line with short tape strips across it, magnified in panel 4 with the label Check for tape. In the live review on 2026-09-18 all three observers saw the strips across the line and read the panel as check that the strips are still in place. Two of three imagined a worried patient pulling the tapes or stitches off, a shared harmful misreading, so the card failed. Across fifteen observers in five reviews, most said the picture never says whether the tape stays on. The guide's text does not say either, so the fix waits on q.tape-after-three-days.",
       "receipt": "content/reviews/anatomy/diagram.remove-dressing.json",
       "rule": "instruction-picture rule; approved for now by John on 2026-09-18, Song's sign-off pending",
       "rule_question": "q.instruction-picture-rule"
@@ -96,7 +96,7 @@
       "status": "illustrated",
       "clinician_confirmed": false,
       "open_question": "q.tape-after-three-days",
-      "note": "A keep-dry pointer and a no-cleaning mark. What happens to the tape after day three is unstated."
+      "note": "The tape panel of the two-paths frame: the incision with short tape strips across it and a crossed-out bottle labeled Do not clean yet. Leaving the tape alone is an inference from keep the area dry and do not clean; what happens to the tape after day three is unstated."
     },
     {
       "id": "howto.clean-edges",

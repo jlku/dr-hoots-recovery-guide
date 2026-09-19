@@ -786,6 +786,65 @@
       "actual_usd": 0.15372,
       "request_id": "msg_011CfBXEZmFTqSYhA6WppSTq,msg_011CfBXEZjGDXejEoL4BCfmE",
       "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-incision:a1",
+      "at": "2026-09-18T21:20:16.942Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-incision attempt 1",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b664-3eec-72c3-bb22-103f83fdf530",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-incision:a2",
+      "at": "2026-09-18T21:21:28.049Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-incision attempt 2",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b665-5487-7e31-94eb-1e646f25b085",
+      "status": "completed"
+    },
+    {
+      "id": "anatomy:postauricular-incision:a3",
+      "at": "2026-09-18T21:26:46.980Z",
+      "model": "fal-ai/flux-2-pro/edit",
+      "purpose": "anatomy postauricular-incision attempt 3",
+      "units": {
+        "image_size": "landscape_4_3",
+        "parent": "assets/anatomy/postauricular-base-a2.png",
+        "references": 0
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b66a-326f-7ef1-9f66-dfb5b7c6f4e4",
+      "status": "completed"
+    },
+    {
+      "id": "review:diagram.remove-dressing:2026-09-18T21:41:43.414Z",
+      "at": "2026-09-18T21:41:43.414Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of diagram.remove-dressing: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/diagrams/remove-dressing.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.58133,
+      "request_id": "msg_011CfBddbzXW7HToz9Jbgf8M,msg_011CfBddc227bvVCr6nNbMb7,msg_011CfBddbyHqFWuU9LPRJLz3,msg_011CfBdeXPFSqUvKkeNFcehv,msg_011CfBdeXPk2cFHu6B5n8oce",
+      "status": "completed"
     }
   ]
 }

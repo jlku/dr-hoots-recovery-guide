@@ -58,9 +58,10 @@ test("state pictures use the strict rule, and the panel must be three observers"
 test("every receipt in the repository records a verdict that follows from its own findings", async () => {
   const result = await validateReviews(root);
   assert.deepEqual(result.errors, []);
-  assert.ok(result.summary.receipts >= 14);
+  assert.ok(result.summary.receipts >= 15);
   assert.ok(result.summary.strict_kept >= 1, "instruction-picture passes keep their strict verdict visible");
-  const card = JSON.parse(await readFile(resolve(root, "content/reviews/anatomy/diagram.remove-dressing.json"), "utf8"));
+  // The first card's receipt passed under the instruction-picture rule, so tampering with it must be caught.
+  const card = JSON.parse(await readFile(resolve(root, "content/reviews/anatomy/diagram.remove-dressing-v1.json"), "utf8"));
   assert.deepEqual(receiptVerdictErrors(card), []);
   const tampered = structuredClone(card);
   tampered.adjudication.verdict_strict = "pass";

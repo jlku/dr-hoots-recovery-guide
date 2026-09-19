@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { cp, mkdir, mkdtemp, readdir, readFile, rm, stat } from "node:fs/promises";
+import { cp, mkdir, mkdtemp, readdir, readFile, rm, stat, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import { join, resolve } from "node:path";
 import test from "node:test";
@@ -31,9 +31,11 @@ import { ledgerTotals } from "../scripts/lib/spend-ledger.mjs";
 const root = resolve(import.meta.dirname, "..");
 const contracts = JSON.parse(await readFile(resolve(root, "content/anatomy/contracts.json"), "utf8"));
 const prompts = await loadPrompts(root);
-const card = contracts.diagrams.find((diagram) => diagram.id === "diagram.remove-dressing");
+// The first bandage card as the in-session review saw it: its receipt, kept as a versioned receipt, and the
+// contract it was judged against, frozen as a fixture. The card has since been redrawn and reviewed again.
+const card = JSON.parse(await readFile(resolve(root, "tests/fixtures/card-in-session/contract.json"), "utf8"));
 const cardContract = reviewContract(card, { kind: "diagram" });
-const cardReceipt = JSON.parse(await readFile(resolve(root, "content/reviews/anatomy/diagram.remove-dressing.json"), "utf8"));
+const cardReceipt = JSON.parse(await readFile(resolve(root, "content/reviews/anatomy/diagram.remove-dressing-v1.json"), "utf8"));
 const cardAnswers = cardReceipt.observers.map((observer) => parseObservation(observer.observation));
 const image = { file: "assets/anatomy/diagrams/remove-dressing.png", mediaType: "image/png", base64: "iVBORw0KGgo=", width: 1024, height: 768, bytes: 8, sha256: "0".repeat(64) };
 const target = { id: "diagram.remove-dressing", kind: "diagram", file: image.file, sha256: image.sha256 };
@@ -306,15 +308,20 @@ test("the client talks to the public API with the user's own key, not the deskto
 });
 
 test("re-coding an in-session receipt sends only the codings, from the observers' stored words", async () => {
-  const selection = await resolveSelection(root, { recode: "content/reviews/anatomy/diagram.remove-dressing.json" });
-  assert.equal(selection.contract.id, "diagram.remove-dressing");
-  assert.equal(selection.observations.length, 3);
-  const client = fakeClient();
-  const { receipt } = await runReview({ client, contract: selection.contract, image: null, target: selection.target, prompts, ledger: freshLedger(), persistLedger: async () => {}, observations: selection.observations, reviewedOn: "2026-09-18" });
-  assert.equal(client.calls.length, 2);
-  assert.ok(client.calls.every((params) => !isObserverCall(params)));
-  assert.equal(receipt.adjudication.verdict, "pass");
-  assert.equal(receipt.observers[0].recoded_from, "content/reviews/anatomy/diagram.remove-dressing.json");
+  const dir = await fixtureRoot();
+  try {
+    const selection = await resolveSelection(dir, { recode: "content/reviews/anatomy/diagram.remove-dressing.json" });
+    assert.equal(selection.contract.id, "diagram.remove-dressing");
+    assert.equal(selection.observations.length, 3);
+    const client = fakeClient();
+    const { receipt } = await runReview({ client, contract: selection.contract, image: null, target: selection.target, prompts, ledger: freshLedger(), persistLedger: async () => {}, observations: selection.observations, reviewedOn: "2026-09-18" });
+    assert.equal(client.calls.length, 2);
+    assert.ok(client.calls.every((params) => !isObserverCall(params)));
+    assert.equal(receipt.adjudication.verdict, "pass");
+    assert.equal(receipt.observers[0].recoded_from, "content/reviews/anatomy/diagram.remove-dressing.json");
+  } finally {
+    await rm(dir, { recursive: true, force: true });
+  }
 });
 
 async function scratchRoot() {
@@ -323,6 +330,24 @@ async function scratchRoot() {
     await mkdir(join(dir, path, ".."), { recursive: true });
     await cp(join(root, path), join(dir, path), { recursive: true });
   }
+  return dir;
+}
+// A scratch copy of the repository in which the card's receipt and contract are the frozen in-session ones.
+async function fixtureRoot() {
+  const dir = await scratchRoot();
+  const contractsPath = join(dir, "content/anatomy/contracts.json");
+  const all = JSON.parse(await readFile(contractsPath, "utf8"));
+  const { fixture_note: _note, ...frozen } = card;
+  all.diagrams = all.diagrams.map((diagram) => (diagram.id === frozen.id ? frozen : diagram));
+  await writeFile(contractsPath, `${JSON.stringify(all, null, 2)}\n`);
+  await writeFile(join(dir, "content/reviews/anatomy/diagram.remove-dressing.json"), `${JSON.stringify(cardReceipt, null, 2)}\n`);
+  // The card's in-session receipt was a development case in the calibration set before the redraw.
+  const casesPath = join(dir, "content/reviews/calibration/cases.json");
+  const cases = JSON.parse(await readFile(casesPath, "utf8"));
+  const receiptPath = "content/reviews/anatomy/diagram.remove-dressing.json";
+  cases.recode_cases = [...new Set([...cases.recode_cases, receiptPath])];
+  cases.development_cases = [...new Set([...cases.development_cases, receiptPath])];
+  await writeFile(casesPath, `${JSON.stringify(cases, null, 2)}\n`);
   return dir;
 }
 async function snapshot(dir) {
@@ -383,7 +408,7 @@ test("a dry run makes no call and changes no file", async () => {
 test("every calibration case resolves against the repository, and a dry run prices the whole set without spending", async () => {
   const before = ledgerTotals(JSON.parse(await readFile(resolve(root, "content/spend/v2-ledger.json"), "utf8")));
   const plan = await runCalibration({ root, dryRun: true });
-  assert.ok(plan.rows.length >= 20);
+  assert.ok(plan.rows.length >= 18);
   assert.ok(plan.rows.every((row) => !row.error), plan.rows.filter((row) => row.error).map((row) => `${row.id}: ${row.error}`).join("; "));
   assert.ok(plan.rows.some((row) => row.expect === "fail" && row.mode === "image"), "the set includes images that must fail");
   const cases = JSON.parse(await readFile(resolve(root, "content/reviews/calibration/cases.json"), "utf8"));
@@ -395,7 +420,7 @@ test("every calibration case resolves against the repository, and a dry run pric
 });
 
 test("calibration can repeat every case, and a case whose runs disagree counts as unsettled", async () => {
-  const dir = await scratchRoot();
+  const dir = await fixtureRoot();
   try {
     await mkdir(join(dir, "content/reviews/calibration"), { recursive: true });
     const flip = (() => {
