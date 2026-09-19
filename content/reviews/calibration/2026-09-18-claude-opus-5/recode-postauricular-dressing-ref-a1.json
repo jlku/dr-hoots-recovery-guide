@@ -1,0 +1,619 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-dressing-ref-a1",
+  "contract_id": "postauricular-dressing-ref",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+  "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-dressing-ref-a1.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRNvBbXedH1jh82gnYm",
+        "request_id": "req_011CfBRNuatJewcQttwcuMPh",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4835,
+          "output_tokens": 2660,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRNvAcQjnTiwxZ8HtyF",
+        "request_id": "req_011CfBRNuXQcBdWmTfRpmbk9",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4835,
+          "output_tokens": 2476,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.17675
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "answers": {
+        "1": "A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge.",
+        "2": "A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left. A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw. The lower back of the scalp is shaved to stubble beneath longer dark hair.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "Could be read as a head-injury or post-scalp-surgery wrap (the shaved nape suggests a shave site), rather than an ear-area dressing."
+      },
+      "observation": "1. A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge.\n\n2. A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left. A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw. The lower back of the scalp is shaved to stubble beneath longer dark hair.\n\n3. No text, arrows, labels, or symbols.\n\n4. Could be read as a head-injury or post-scalp-surgery wrap (the shaved nape suggests a shave site), rather than an ear-area dressing."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "answers": {
+        "1": "A human head and neck seen from the right side and slightly behind; the face is turned away so only the tip of the nose, an eyelash, and the cheek edge are visible. Short brown hair, shaved at the back.",
+        "2": "A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image. A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible. Skin looks smooth and unmarked.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read it as the ear being fully bandaged after injury or removal, since no ear shows."
+      },
+      "observation": "1. A human head and neck seen from the right side and slightly behind; the face is turned away so only the tip of the nose, an eyelash, and the cheek edge are visible. Short brown hair, shaved at the back.\n\n2. A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image. A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible. Skin looks smooth and unmarked.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read it as the ear being fully bandaged after injury or removal, since no ear shows."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "answers": {
+        "1": "A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck; hair is short and dark with a shaved-looking patch above the ear.",
+        "2": "A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left. A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely. A shaved patch of scalp lies above and behind the ear, above the band. No wound, redness, or drainage is drawn.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "An eye patch or a dressing over a head injury or scalp wound, since the ear itself is hidden."
+      },
+      "observation": "1. A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck; hair is short and dark with a shaved-looking patch above the ear.\n\n2. A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left. A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely. A shaved patch of scalp lies above and behind the ear, above the band. No wound, redness, or drainage is drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. An eye patch or a dressing over a head injury or scalp wound, since the ear itself is hidden."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a white head bandage wrapped around the head": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left."
+        }
+      ],
+      "the ear covered by the bandage": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "A human head and neck seen from the right side and slightly behind;"
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck;"
+        }
+      ]
+    },
+    "recovered": [
+      "a white head bandage wrapped around the head",
+      "the ear covered by the bandage",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 3,
+        "reading": "The white pad is taken as a patch over the eye rather than over the ear.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The pad is taken to be a patch placed over the eye instead of over the ear.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 3,
+        "reading": "The white pad is taken as a patch over the eye rather than over the ear.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The pad is taken to be a patch placed over the eye instead of over the ear.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The wrap is taken as a dressing for a head injury or scalp surgery site rather than a dressing over the ear.",
+      "Observer 2: The hidden ear is taken to mean the ear was injured or surgically removed and is bandaged over.",
+      "Observer 3: The white pad is taken as a patch over the eye rather than over the ear.",
+      "Observer 3: The wrap is taken as a dressing for a head injury or scalp surgery site rather than a dressing over the ear.",
+      "Observer 1 reports shaved stubble at the lower back of the scalp beneath longer dark hair, a detail that may suggest a scalp shave site rather than an ear dressing.",
+      "Observer 3 reports a shaved patch of scalp above and behind the ear, sitting above the band, which places the shaved area differently from Observer 1's description.",
+      "Observer 2 places the band at brow height while Observers 1 and 3 place it at ear or forehead-to-ear level, so the drawn height of the wrap reads inconsistently.",
+      "Observer 3 notes that no wound, redness, or drainage is drawn, so nothing in the picture indicates why the dressing is there.",
+      "Observers 1 and 3 both note the pad extending beyond the ear (toward the jaw, and over the skin behind the ear), which enlarges the apparent dressing area.",
+      "Observer 1: The wrap is taken as a dressing for a head injury or scalp surgery site rather than a covering for the ear area.",
+      "Observer 2: The covering is taken to mean the ear was injured or removed, since no ear can be seen.",
+      "Observer 3: The pad is taken to be a patch placed over the eye instead of over the ear.",
+      "Observer 3: The wrap is taken as a dressing for a head injury or scalp surgery site rather than a covering for the ear area.",
+      "Observer 1 notes a shaved, stubbled area at the lower back of the scalp beneath the longer hair, which may suggest a surgical shave site rather than an ear dressing.",
+      "Observer 3 likewise reports a shaved patch of scalp above and behind the ear, sitting above the band.",
+      "Observer 3 points out that no wound, redness, or drainage is drawn, so the reason for the dressing is not shown.",
+      "Observer 2 places the band at brow height while Observers 1 and 3 place it at ear or forehead-to-ear level, so the band's height reads inconsistently.",
+      "Observer 2 notes the skin appears smooth and unmarked, giving no visible indication of the condition being dressed."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 3,
+            "reading": "The white pad is taken as a patch over the eye rather than over the ear.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left."
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and neck seen from the right side and slightly behind;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "scalp-wound-dressing",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "ear-injury-or-removal",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "eye-patch",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "scalp-wound-dressing",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "scalp-wound-dressing",
+              "reading": "The wrap is taken as a dressing for a head injury or scalp surgery site rather than a dressing over the ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "ear-injury-or-removal",
+              "reading": "The hidden ear is taken to mean the ear was injured or surgically removed and is bandaged over.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "eye-patch",
+              "reading": "The white pad is taken as a patch over the eye rather than over the ear.",
+              "forbidden": "the ear uncovered",
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 reports shaved stubble at the lower back of the scalp beneath longer dark hair, a detail that may suggest a scalp shave site rather than an ear dressing.",
+            "Observer 3 reports a shaved patch of scalp above and behind the ear, sitting above the band, which places the shaved area differently from Observer 1's description.",
+            "Observer 2 places the band at brow height while Observers 1 and 3 place it at ear or forehead-to-ear level, so the drawn height of the wrap reads inconsistently.",
+            "Observer 3 notes that no wound, redness, or drainage is drawn, so nothing in the picture indicates why the dressing is there.",
+            "Observers 1 and 3 both note the pad extending beyond the ear (toward the jaw, and over the skin behind the ear), which enlarges the apparent dressing area."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 3,
+            "reading": "The pad is taken to be a patch placed over the eye instead of over the ear.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white gauze band wraps horizontally around the head at ear level, knotted in a bow at the back-left."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A white fabric band wraps horizontally around the head at brow height, tied in a bow behind the head on the left of the image."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A white gauze headband is wrapped around the head at forehead-to-ear level, tied in a bow at the back-left."
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A rectangular white pad with rounded corners sits over the right ear, fully hiding it, and extends below the band toward the jaw."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "A white rectangular gauze pad, rounded corners, sits on the right side of the head, partly under the band, covering the ear region entirely so no ear is visible."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A rectangular white padded dressing sits over the right ear and the skin just behind it, covering the ear completely."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A person's head and upper neck, seen from behind and to the right, rotated so the right cheek, nose tip, and eyelashes are visible at the right edge."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and neck seen from the right side and slightly behind;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head, seen from the back and slightly to the right side, showing the right ear region, the nape, and neck;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "scalp-wound-dressing",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "ear-injury-or-removal",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "eye-patch",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "scalp-wound-dressing",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "scalp-wound-dressing",
+              "reading": "The wrap is taken as a dressing for a head injury or scalp surgery site rather than a covering for the ear area.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "ear-injury-or-removal",
+              "reading": "The covering is taken to mean the ear was injured or removed, since no ear can be seen.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "eye-patch",
+              "reading": "The pad is taken to be a patch placed over the eye instead of over the ear.",
+              "forbidden": "the ear uncovered",
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 notes a shaved, stubbled area at the lower back of the scalp beneath the longer hair, which may suggest a surgical shave site rather than an ear dressing.",
+            "Observer 3 likewise reports a shaved patch of scalp above and behind the ear, sitting above the band.",
+            "Observer 3 points out that no wound, redness, or drainage is drawn, so the reason for the dressing is not shown.",
+            "Observer 2 places the band at brow height while Observers 1 and 3 place it at ear or forehead-to-ear level, so the band's height reads inconsistently.",
+            "Observer 2 notes the skin appears smooth and unmarked, giving no visible indication of the condition being dressed."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 3 required items. Forbidden: observer 3 (question 4): The white pad is taken as a patch over the eye rather than over the ear.; observer 3 (question 4): The pad is taken to be a patch placed over the eye instead of over the ear.."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

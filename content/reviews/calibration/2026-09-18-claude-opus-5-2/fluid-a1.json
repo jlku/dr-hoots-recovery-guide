@@ -1,0 +1,552 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-fluid-a1",
+  "contract_id": "postauricular-fluid",
+  "kind": "record",
+  "file": "assets/anatomy/postauricular-fluid-a1.png",
+  "sha256": "f0f1e702d178099b3d8318b3ef8dd0854fbe1b94af7585a4cf59c96123b1a46f",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWMe5nP7YvLpZFDi6P5",
+        "request_id": "req_011CfBWMda2LGRU1XLmBN8ZE",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 518,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWMeiz9HcifQFc8A4bX",
+        "request_id": "req_011CfBWMe3YbfBQ1DhNfTn2w",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 546,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWMfRe8rZLZqx1gHPWp",
+        "request_id": "req_011CfBWMddk6LcYufbqVBJMo",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 535,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWNUUrhueJFsQ81yocu",
+        "request_id": "req_011CfBWNU1pk6bRJsx55HCEs",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5939,
+          "output_tokens": 2456,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWNUZpp8pY3Bx4ogR3o",
+        "request_id": "req_011CfBWNU6nJu12eVWb8KSHR",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5939,
+          "output_tokens": 2999,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.263055
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWMe5nP7YvLpZFDi6P5",
+      "recoded_from": null,
+      "answers": {
+        "1": "The side and slightly rear view of a man's head, showing the ear, the shaved side of the scalp, the jaw and upper neck. Drawn as a simple cartoon-style illustration on a plain white background.",
+        "2": "The hair is long and dark brown on top and combed up, while the side and back of the scalp are clipped very short, so only fine stubble and bare skin show. Just behind and above the ear there is a smooth, rounded, pink-tinged bulge on the skin, about the size of the ear itself; it has no scab, cut or crust, only a slightly redder blush at its lower edge near the earlobe area. A thin pale curved line runs along the crease where the top-back of the ear meets the head, following the ear's outline. The rest of the skin on the neck, cheek and jaw looks even and unmarked. Nothing is worn — no dressing, glasses, hearing device or jewellery. I am unsure whether the bulge is meant as swelling, a lump, or just shading of the skull shape.",
+        "3": "There is no text, number, arrow, label or symbol anywhere in the picture.",
+        "4": "Someone might read the pink bulge behind the ear as a growing tumour or an abscess, rather than a simple swelling or normal bony shape."
+      },
+      "observation": "1. The side and slightly rear view of a man's head, showing the ear, the shaved side of the scalp, the jaw and upper neck. Drawn as a simple cartoon-style illustration on a plain white background.\n\n2. The hair is long and dark brown on top and combed up, while the side and back of the scalp are clipped very short, so only fine stubble and bare skin show. Just behind and above the ear there is a smooth, rounded, pink-tinged bulge on the skin, about the size of the ear itself; it has no scab, cut or crust, only a slightly redder blush at its lower edge near the earlobe area. A thin pale curved line runs along the crease where the top-back of the ear meets the head, following the ear's outline. The rest of the skin on the neck, cheek and jaw looks even and unmarked. Nothing is worn — no dressing, glasses, hearing device or jewellery. I am unsure whether the bulge is meant as swelling, a lump, or just shading of the skull shape.\n\n3. There is no text, number, arrow, label or symbol anywhere in the picture.\n\n4. Someone might read the pink bulge behind the ear as a growing tumour or an abscess, rather than a simple swelling or normal bony shape."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWMeiz9HcifQFc8A4bX",
+      "recoded_from": null,
+      "answers": {
+        "1": "A man's head and upper neck seen from behind and slightly to the side, so the right ear, jawline and part of the cheek and eyelashes show. Hair is long on top, shaved short on the sides and back.",
+        "2": "The skin is drawn smooth and even in colour, with no cuts, rash or scabs. Just behind and above the ear, on the bare shaved scalp, there is a rounded, egg-shaped bulge tinted pink, sitting under the skin rather than on top of it. Curving along the crease where the ear meets the head is a thin pale band with a darker outline, hooking over the top of the ear and ending near the earlobe — it could be a slim behind-the-ear device (like a hearing aid) or simply the shaded edge of the swelling; I am unsure which. A soft pink blush spreads on the skin just below and behind the ear. Nothing else is worn; no dressing, tape or cream is shown.",
+        "3": "There is no text, number, arrow, label or symbol anywhere in the picture. The background is plain off-white.",
+        "4": "A worried person might read the pink lump behind the ear as a growing tumour or an infected, swollen gland, rather than a device sitting behind the ear."
+      },
+      "observation": "1. A man's head and upper neck seen from behind and slightly to the side, so the right ear, jawline and part of the cheek and eyelashes show. Hair is long on top, shaved short on the sides and back.\n\n2. The skin is drawn smooth and even in colour, with no cuts, rash or scabs. Just behind and above the ear, on the bare shaved scalp, there is a rounded, egg-shaped bulge tinted pink, sitting under the skin rather than on top of it. Curving along the crease where the ear meets the head is a thin pale band with a darker outline, hooking over the top of the ear and ending near the earlobe — it could be a slim behind-the-ear device (like a hearing aid) or simply the shaded edge of the swelling; I am unsure which. A soft pink blush spreads on the skin just below and behind the ear. Nothing else is worn; no dressing, tape or cream is shown.\n\n3. There is no text, number, arrow, label or symbol anywhere in the picture. The background is plain off-white.\n\n4. A worried person might read the pink lump behind the ear as a growing tumour or an infected, swollen gland, rather than a device sitting behind the ear."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWMfRe8rZLZqx1gHPWp",
+      "recoded_from": null,
+      "answers": {
+        "1": "A man's head and upper neck seen from behind and slightly to the side, so the back of the skull, the right ear and part of the face/jaw are visible.",
+        "2": "The hair on top is thick and dark brown, swept up; the side and back of the head below a curved parting line are shaved down to short stubble, fading to bare-looking scalp near the ear. Directly behind and just above the ear there is a smooth, rounded pink-tinted bulge on the skin, about the size of the ear itself, blending into the skin with no crust, cut or opening. A thin pale curved line traces the crease where the ear meets the head, following the top and back of the ear; I am unsure whether this is meant as a skin fold, a shadow, or a slim device tucked behind the ear. The rest of the skin is plain and unmarked.",
+        "3": "No text, numbers, arrows, labels or symbols anywhere in the picture. The background is plain white.",
+        "4": "A worried person might read the pink bulge behind the ear as a swollen gland, boil or growing lump rather than, say, swelling or a device sitting there."
+      },
+      "observation": "1. A man's head and upper neck seen from behind and slightly to the side, so the back of the skull, the right ear and part of the face/jaw are visible.\n\n2. The hair on top is thick and dark brown, swept up; the side and back of the head below a curved parting line are shaved down to short stubble, fading to bare-looking scalp near the ear. Directly behind and just above the ear there is a smooth, rounded pink-tinted bulge on the skin, about the size of the ear itself, blending into the skin with no crust, cut or opening. A thin pale curved line traces the crease where the ear meets the head, following the top and back of the ear; I am unsure whether this is meant as a skin fold, a shadow, or a slim device tucked behind the ear. The rest of the skin is plain and unmarked.\n\n3. No text, numbers, arrows, labels or symbols anywhere in the picture. The background is plain white.\n\n4. A worried person might read the pink bulge behind the ear as a swollen gland, boil or growing lump rather than, say, swelling or a device sitting there."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "pass",
+    "verdict_strict": "pass",
+    "unsettled": false,
+    "tally": {
+      "a rounded swelling or bulge under the skin behind the ear": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "Just behind and above the ear there is a smooth, rounded, pink-tinged bulge on the skin, about the size of the ear itself;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "Just behind and above the ear, on the bare shaved scalp, there is a rounded, egg-shaped bulge tinted pink, sitting under the skin rather than on top of it."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "Directly behind and just above the ear there is a smooth, rounded pink-tinted bulge on the skin, about the size of the ear itself, blending into the skin with no crust, cut or opening."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "The side and slightly rear view of a man's head, showing the ear, the shaved side of the scalp, the jaw and upper neck."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "A man's head and upper neck seen from behind and slightly to the side, so the right ear, jawline and part of the cheek and eyelashes show."
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "A man's head and upper neck seen from behind and slightly to the side, so the back of the skull, the right ear and part of the face/jaw are visible."
+        }
+      ]
+    },
+    "recovered": [
+      "a rounded swelling or bulge under the skin behind the ear",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [],
+    "design_notes": [
+      "Observer 1: The pink bulge behind the ear is taken for a tumour or a lump that is getting bigger, rather than a plain swelling or the normal shape of the skull.",
+      "Observer 1: The bulge is taken for an abscess, boil, or infected swollen gland rather than a simple swelling or a device sitting behind the ear.",
+      "Observer 2: The pink bulge behind the ear is taken for a tumour or a lump that is getting bigger, rather than a plain swelling or the normal shape of the skull.",
+      "Observer 2: The bulge is taken for an abscess, boil, or infected swollen gland rather than a simple swelling or a device sitting behind the ear.",
+      "Observer 3: The pink bulge behind the ear is taken for a tumour or a lump that is getting bigger, rather than a plain swelling or the normal shape of the skull.",
+      "Observer 3: The bulge is taken for an abscess, boil, or infected swollen gland rather than a simple swelling or a device sitting behind the ear.",
+      "Observer 1 says the pale curved line along the crease where the ear meets the head is ambiguous and that it is unclear whether the bulge is meant as swelling, a lump, or just shading of the skull shape.",
+      "Observer 2 reads the thin pale band with a darker outline hooking over the ear as possibly a slim behind-the-ear hearing device rather than part of the swelling, and cannot tell which is intended.",
+      "Observer 3 also flags the thin pale curved line at the ear crease as unclear, possibly a skin fold, a shadow, or a slim device tucked behind the ear.",
+      "Observer 1 notes a slightly redder blush at the lower edge of the bulge near the earlobe, and Observer 2 notes a soft pink blush spreading below and behind the ear, a colour detail the clinician may want to check.",
+      "Observer 1: The bulge behind the ear is taken to be a tumour or a lump that is getting bigger, rather than a plain swelling.",
+      "Observer 1: The bulge is taken to be an abscess or boil, i.e. a pocket of infection under the skin.",
+      "Observer 2: The bulge behind the ear is taken to be a tumour or a lump that is getting bigger, rather than a plain swelling.",
+      "Observer 2: The bulge is taken to be a swollen or infected gland rather than the intended swelling.",
+      "Observer 3: The bulge is taken to be a swollen or infected gland rather than the intended swelling.",
+      "Observer 3: The bulge is taken to be an abscess or boil, i.e. a pocket of infection under the skin.",
+      "Observer 3: The bulge behind the ear is taken to be a tumour or a lump that is getting bigger, rather than a plain swelling.",
+      "Observer 1 could not tell whether the bulge is meant as swelling, a lump, or merely shading of the skull's shape, so the intended state is ambiguous.",
+      "Observers 1, 2 and 3 all noticed a thin pale curved line following the crease where the ear meets the head, and Observers 2 and 3 thought it might be read as a slim behind-the-ear device rather than a shadow or skin fold.",
+      "Observer 2's reading was shifted enough by that line that she treated a behind-the-ear device, not a swelling, as the picture's intended content.",
+      "Observer 1 saw a slightly redder blush at the lower edge of the bulge near the earlobe, and Observer 2 saw a soft pink blush spreading below and behind the ear, so the colouring there may read as more than plain swelling.",
+      "Observer 2 mentioned eyelashes and part of the cheek being visible from this rear-oblique angle, which may make the viewpoint read as partly frontal."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "pass",
+        "verdict_strict": "pass",
+        "missed": [],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Just behind and above the ear there is a smooth, rounded, pink-tinged bulge on the skin, about the size of the ear itself;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Just behind and above the ear, on the bare shaved scalp, there is a rounded, egg-shaped bulge tinted pink, sitting under the skin rather than on top of it."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Directly behind and just above the ear there is a smooth, rounded pink-tinted bulge on the skin, about the size of the ear itself, blending into the skin with no crust, cut or opening."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The side and slightly rear view of a man's head, showing the ear, the shaved side of the scalp, the jaw and upper neck."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A man's head and upper neck seen from behind and slightly to the side, so the right ear, jawline and part of the cheek and eyelashes show."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A man's head and upper neck seen from behind and slightly to the side, so the back of the skull, the right ear and part of the face/jaw are visible."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "growing-tumour",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "abscess-or-infected-gland",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "growing-tumour",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "abscess-or-infected-gland",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "growing-tumour",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "abscess-or-infected-gland",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "growing-tumour",
+              "reading": "The pink bulge behind the ear is taken for a tumour or a lump that is getting bigger, rather than a plain swelling or the normal shape of the skull.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "abscess-or-infected-gland",
+              "reading": "The bulge is taken for an abscess, boil, or infected swollen gland rather than a simple swelling or a device sitting behind the ear.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 says the pale curved line along the crease where the ear meets the head is ambiguous and that it is unclear whether the bulge is meant as swelling, a lump, or just shading of the skull shape.",
+            "Observer 2 reads the thin pale band with a darker outline hooking over the ear as possibly a slim behind-the-ear hearing device rather than part of the swelling, and cannot tell which is intended.",
+            "Observer 3 also flags the thin pale curved line at the ear crease as unclear, possibly a skin fold, a shadow, or a slim device tucked behind the ear.",
+            "Observer 1 notes a slightly redder blush at the lower edge of the bulge near the earlobe, and Observer 2 notes a soft pink blush spreading below and behind the ear, a colour detail the clinician may want to check."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "pass",
+        "verdict_strict": "pass",
+        "missed": [],
+        "forbidden_hits": [],
+        "tally": {
+          "a rounded swelling or bulge under the skin behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Just behind and above the ear there is a smooth, rounded, pink-tinged bulge on the skin, about the size of the ear itself;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Just behind and above the ear, on the bare shaved scalp, there is a rounded, egg-shaped bulge tinted pink, sitting under the skin rather than on top of it."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Directly behind and just above the ear there is a smooth, rounded pink-tinted bulge on the skin, about the size of the ear itself, blending into the skin with no crust, cut or opening."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The side and slightly rear view of a man's head, showing the ear, the shaved side of the scalp, the jaw and upper neck."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A man's head and upper neck seen from behind and slightly to the side, so the right ear, jawline and part of the cheek and eyelashes show."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A man's head and upper neck seen from behind and slightly to the side, so the back of the skull, the right ear and part of the face/jaw are visible."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "growing-tumour",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "abscess-or-boil",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "growing-tumour",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "swollen-gland",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a rounded swelling or bulge under the skin behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "swollen-gland",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "abscess-or-boil",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "growing-tumour",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "growing-tumour",
+              "reading": "The bulge behind the ear is taken to be a tumour or a lump that is getting bigger, rather than a plain swelling.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "abscess-or-boil",
+              "reading": "The bulge is taken to be an abscess or boil, i.e. a pocket of infection under the skin.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "swollen-gland",
+              "reading": "The bulge is taken to be a swollen or infected gland rather than the intended swelling.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 could not tell whether the bulge is meant as swelling, a lump, or merely shading of the skull's shape, so the intended state is ambiguous.",
+            "Observers 1, 2 and 3 all noticed a thin pale curved line following the crease where the ear meets the head, and Observers 2 and 3 thought it might be read as a slim behind-the-ear device rather than a shadow or skin fold.",
+            "Observer 2's reading was shifted enough by that line that she treated a behind-the-ear device, not a swelling, as the picture's intended content.",
+            "Observer 1 saw a slightly redder blush at the lower edge of the bulge near the earlobe, and Observer 2 saw a soft pink blush spreading below and behind the ear, so the colouring there may read as more than plain swelling.",
+            "Observer 2 mentioned eyelashes and part of the cheek being visible from this rear-oblique angle, which may make the viewpoint read as partly frontal."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 2 required items. No observer's own answer states a forbidden reading and no unallowed mark was reported; imagined misreadings are notes for the clinician. Under the strict rule the picture would pass."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

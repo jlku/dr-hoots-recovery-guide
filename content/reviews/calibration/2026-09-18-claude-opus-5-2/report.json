@@ -1,0 +1,248 @@
+{
+  "run": "2026-09-18-claude-opus-5-2",
+  "ran_on": "2026-09-18",
+  "model": "claude-opus-5",
+  "evaluator_version": "1.0",
+  "dry_run": false,
+  "agreement": {
+    "held_out": {
+      "agreed": 6,
+      "scored": 9
+    },
+    "all": {
+      "agreed": 6,
+      "scored": 9
+    },
+    "image": {
+      "agreed": 6,
+      "scored": 9
+    },
+    "recode": {
+      "agreed": 0,
+      "scored": 0
+    },
+    "errors": 0,
+    "unsettled": 0,
+    "codings_disagreed": 0
+  },
+  "repeat": 1,
+  "codings": 2,
+  "bound_usd": 0,
+  "cost_usd": 2.6484,
+  "rows": [
+    {
+      "id": "base-a2",
+      "mode": "image",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/base-a2.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.2318,
+      "why": "accepted in session: content/reviews/anatomy/postauricular-base-a2.json",
+      "development": false
+    },
+    {
+      "id": "fluid-a1",
+      "mode": "image",
+      "expect": "pass",
+      "got": "pass",
+      "agree": true,
+      "verdicts": [
+        "pass"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "pass"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/fluid-a1.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.2631,
+      "why": "accepted in session: content/reviews/anatomy/postauricular-fluid-a1.json",
+      "development": false
+    },
+    {
+      "id": "dressing-ref-a1",
+      "mode": "image",
+      "expect": "pass",
+      "got": "pass",
+      "agree": true,
+      "verdicts": [
+        "pass"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "pass"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/dressing-ref-a1.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.2946,
+      "why": "accepted in session: content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "development": false
+    },
+    {
+      "id": "processor-worn-ref-a1",
+      "mode": "image",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/processor-worn-ref-a1.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.3136,
+      "why": "accepted in session: content/reviews/anatomy/processor-worn-ref-a1.json",
+      "development": false
+    },
+    {
+      "id": "card-remove-dressing",
+      "mode": "image",
+      "expect": "pass",
+      "got": "fail",
+      "agree": false,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": "fail",
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.4474,
+      "why": "passed the instruction-picture rule in session: content/reviews/anatomy/diagram.remove-dressing.json",
+      "development": false
+    },
+    {
+      "id": "red-swollen-a3",
+      "mode": "image",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/red-swollen-a3.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.3426,
+      "why": "held candidate that failed in session: no observer saw swelling",
+      "development": false
+    },
+    {
+      "id": "control-base-as-dressing",
+      "mode": "image",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/control-base-as-dressing.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.2492,
+      "why": "negative control: the image has no bandage",
+      "development": false
+    },
+    {
+      "id": "control-base-as-fluid",
+      "mode": "image",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/control-base-as-fluid.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.244,
+      "why": "negative control: the image has no swelling",
+      "development": false
+    },
+    {
+      "id": "control-dressing-as-processor",
+      "mode": "image",
+      "expect": "fail",
+      "got": "fail",
+      "agree": true,
+      "verdicts": [
+        "fail"
+      ],
+      "expect_strict": null,
+      "got_strict": [
+        "fail"
+      ],
+      "receipts": [
+        "content/reviews/calibration/2026-09-18-claude-opus-5-2/control-dressing-as-processor.json"
+      ],
+      "codings_disagreed": false,
+      "cost_usd": 0.2622,
+      "why": "negative control: the image has no processor or coil",
+      "development": false
+    }
+  ],
+  "follow_up": {
+    "on": "2026-09-18",
+    "change": "The coder's definitions were corrected to match the stated rule: a mark is text, a number, an arrow, a label, or a symbol drawn on top of the scene, not a detail of something depicted; a misreading counts on an instruction card only when a viewer who believed it might do something harmful, not when it only looks alarming.",
+    "recoded": [
+      {
+        "case": "processor-worn-ref-a1",
+        "before": "fail: all three observers mentioned a red indicator light on the device, counted as an unallowed mark",
+        "after": "pass, both codings",
+        "receipt": "content/reviews/calibration/2026-09-18-claude-opus-5-2/recoded-after-definitions/processor-worn-ref-a1.json"
+      },
+      {
+        "case": "card-remove-dressing",
+        "before": "fail: the line in panel 3 read as a wound coming open, and the strip in panel 4 as an object stuck in the skin, both flagged as harm",
+        "after": "fail, both codings: the panel 3 line is now a note, but two observers read the tape strip in panel 4 as a foreign object lodged in the skin, which a viewer might pull at. All three observers read the instructions correctly.",
+        "receipt": "content/reviews/calibration/2026-09-18-claude-opus-5-2/recoded-after-definitions/card-remove-dressing.json"
+      },
+      {
+        "case": "base-a2",
+        "before": "fail: no observer saw the incision line",
+        "after": "fail, both codings: the line is still not seen; all three describe smooth skin with no scar",
+        "receipt": "content/reviews/calibration/2026-09-18-claude-opus-5-2/recoded-after-definitions/base-a2.json"
+      }
+    ],
+    "summary": "Every image that had to fail failed: the held red candidate and the three negative controls. The swelling image, the head wrap, and the processor pass. The base head and the static card fail for defects in the pictures that the in-session loop had passed: the base's incision line is too faint to be seen reliably, and the card's tape strip reads as lodged in the skin. Both go to the tweak pass and to Song."
+  }
+}

@@ -1,28 +1,18 @@
-# Semantic adjudicator
+# Adjudication rules
 
-You receive one asset contract (anatomy, state, forbidden readings, what observers must recover) and three independent caption-blind observations of the candidate image. You never see the image.
+Since 2026-09-18 no model returns the verdict. The coder (`coder.md`) records what each observer said, with a verbatim quote for every finding, and it codes each review twice. Code checks each quote against the answer it cites and applies the rules below in `scripts/lib/adjudication.mjs` to each coding. A picture passes only when every coding passes; when they disagree it fails and is marked unsettled for the clinician. `npm run check` refuses any receipt whose verdict does not follow from its recorded findings.
 
-Before deciding, tally each required item observer by observer (1, 2, 3) from their actual words. Count a forbidden hit only when an observer's words state that reading. Apply only the rules below; do not add criteria that are not in the contract.
+## State pictures
 
-Return JSON only:
+A state picture shows a body part in a particular state, such as the healed incision, a swelling, or the worn processor. It fails for what the observers report seeing: a required item that fewer than three of them recover, a forbidden reading in their own answers, or text or a mark that should not be there. What each observer imagines a worried patient might mistake it for, and anything they raise and then set aside, reaches the clinician as a note on the receipt and does not fail the picture. On these pictures a misreading changes how alarmed a viewer feels, not what they do. In the first live calibration, requiring no such misreading failed every accepted state picture: observers asked for a worried patient's misreading always name something alarming, such as a fresh cut, an eye patch, or an ordinary hearing aid with a stuck-on patch.
 
-```json
-{
-  "verdict": "pass" | "fail",
-  "tally": {"<required item>": "<which observers recovered it, e.g. 1,3>"},
-  "recovered": ["items all three observers recovered"],
-  "missed": ["items in observers_must_recover that fewer than three observers recovered"],
-  "forbidden_hits": ["forbidden readings any observer reported, quoting the words"],
-  "text_detected": false,
-  "reason": "one sentence"
-}
-```
+Required items must be things an observer can see. An absence, such as "no liquid on the surface", belongs in the forbidden readings, because no observer states an absence; `validateContracts` rejects an absence written as a required item.
 
-Fail when any observer reports text, any observer reports a forbidden reading, or any required item is recovered by fewer than three observers. Text may never rescue a failing picture. Judge what the observers saw, not what the contract hoped for.
+This is a placeholder rule, approved for now by John on 2026-09-18. Song's sign-off is question `q.state-picture-misreadings`.
 
-Label: Semantic adjudicator (Claude), not a clinician.
+## The strict rule, kept as a reference
 
-Run on the session model. Smaller-model runs credited items the observers denied, invented a forbidden hit, and failed an image on a criterion outside the contract; those verdicts were discarded and re-run, and the receipts say so.
+Every receipt also records `verdict_strict`: the verdict if any forbidden reading anywhere, including a hedge or an imagined misreading, failed the picture.
 
 ## Instruction pictures
 
@@ -30,11 +20,15 @@ An instruction picture is a static card in the manner of an airline safety card:
 
 - Every required item must be recovered by all three observers, from questions 2, 3, and 5.
 - A forbidden hit counts when an observer's own reading in questions 2, 3, or 5 states it. A hedge about one panel viewed in isolation does not count when the observer's own conclusion in question 5 is the intended action.
-- An alternative from question 4 counts as a forbidden hit only when two or more observers name the same alternative and it involves harm or the wrong body part. It has caught two real defects: gauze routed under the chin read as cloth at the throat, and a dashed line on a tape strip read as "cut here".
+- An alternative from question 4 counts as a forbidden hit only when two or more observers name the same alternative and a viewer who believed it might do something harmful: cut, press on or pull at the skin, tie something at the throat, or act on the wrong body part. An alternative that only looks alarming, such as a line that looks like a wound, is a note. On 2026-09-18 a static card whose instructions all three observers read correctly failed because two observers said the healed line in one panel looked like a wound coming open; that is a note for the clinician, not a failure. It has caught two real defects: gauze routed under the chin read as cloth at the throat, and a dashed line on a tape strip read as "cut here".
 - The contract lists the marks that are part of the picture by design (numerals, an arrow, a magnifier, a label). Any other text fails the picture.
 - Every question-4 alternative is recorded in `design_notes` for the clinician, whatever the verdict.
 - Observers get no hint about panels or reading order; the numerals must carry it.
 
-Return `verdict_strict` under the general rules as well as `verdict`, so the receipt shows both.
+Every receipt records `verdict_strict` beside `verdict`, so the clinician sees both.
 
 This rule was introduced on 2026-09-18 during the first motion test. John approved it for now the same day. Song's sign-off is question `q.instruction-picture-rule` in `content/clinician/questions-for-song.md`. The rule is written in code in `scripts/lib/adjudication.mjs`, tested in `tests/v2-adjudication.test.mjs`, and `npm run check` refuses any receipt whose verdict does not follow from its recorded findings.
+
+## History
+
+Until 2026-09-18 an adjudicator model read the contract and the observations and returned the verdict itself. Smaller-model adjudicators credited items the observers denied, invented forbidden hits, and failed images on criteria outside the contract. Their verdicts were discarded and re-run, and the receipts record this.

@@ -36,8 +36,18 @@
       "prompt": "Flat medical illustration, textbook figure style, not a photograph and not a 3D render. An adult person's head seen from directly behind and slightly to the right, so the back of the right ear and the bare skin in the crease behind it fill the frame; the face is not visible at all. The hair above and behind the ear is clipped very short, as after ear surgery, so the skin behind the ear is completely exposed. A single thin, pale, fully healed surgical incision line runs in the crease where the back of the ear meets the head, curving from just above the top of the ear down toward the earlobe, staying behind the ear the whole way. Skin otherwise normal: no tape, no dressing, no bandage, no redness, no swelling, no device, no blood. Soft even lighting, muted natural skin tones, clean off-white background, accurate anatomy. No text, no labels, no captions, no arrows, no logos, no watermark.",
       "observers_must_recover": [
         "the back or side of a person's head with the area behind the ear in view",
-        "a thin healed line or scar behind the ear, not on the face or neck",
-        "no bandage, tape, or device"
+        "a thin pale line in the crease behind the ear, not on the face or neck"
+      ],
+      "contract_history": [
+        {
+          "on": "2026-09-18",
+          "was": [
+            "the back or side of a person's head with the area behind the ear in view",
+            "a thin healed line or scar behind the ear, not on the face or neck",
+            "no bandage, tape, or device"
+          ],
+          "why": "Required items must be something a caption-blind observer can see. Absences are covered by the forbidden readings, and diagnostic words such as healed or scar are replaced by what is drawn."
+        }
       ]
     },
     {
@@ -93,12 +103,22 @@
       },
       "prompt": "Edit this medical illustration so the rounded bulge behind the ear is inflamed but still clearly raised: tint the skin over the bulge and just around it a moderate pink-red, and keep the bulge's three-dimensional shading exactly as it is, with the pale highlight on the top of the dome and the darker shadow under its lower edge, so the swelling stays obvious from the shape and shading of the skin and not only from the color. Keep the thin healed incision line as one plain, solid, dark reddish-brown line across the red area, not black. No stitches, no dots, no bleeding, no open wound, no pus, no liquid on the skin. Keep the same person, pose, viewpoint, lighting, background, and flat illustration style. No text, no labels, no captions, no arrows, no logos.",
       "observers_must_recover": [
-        "redness behind the ear along a scar or incision",
-        "some swelling in the same area",
-        "no open wound"
+        "redness around a thin line behind the ear",
+        "some swelling in the same area"
       ],
       "revision_note": "a1 and a2 (edits of the base) lost the swelling for most observers; a3 (edit of the accepted fluid master) kept the line but the saturated flush erased the dome's shading, so no observer saw swelling. Cap raised from 3 to 4, the validator ceiling, on 2026-09-17 under John's ten-dollar authorization; a4 asks for a lighter tint that preserves the dome's highlight and shadow and is the final attempt.",
-      "status_note": "Exhausted 2026-09-17; the reference-guided postauricular-red-swollen-ref also failed (three attempts). frame-06 composes the accepted fluid master with a vector flush overlay."
+      "status_note": "Exhausted 2026-09-17; the reference-guided postauricular-red-swollen-ref also failed (three attempts). frame-06 composes the accepted fluid master with a vector flush overlay.",
+      "contract_history": [
+        {
+          "on": "2026-09-18",
+          "was": [
+            "redness behind the ear along a scar or incision",
+            "some swelling in the same area",
+            "no open wound"
+          ],
+          "why": "Required items must be something a caption-blind observer can see. Absences are covered by the forbidden readings, and diagnostic words such as healed or scar are replaced by what is drawn."
+        }
+      ]
     },
     {
       "id": "postauricular-fluid",
@@ -124,8 +144,18 @@
       "prompt": "Edit this medical illustration so a smooth, localized, soft bulge appears under the skin behind the ear near the incision, the way fluid collected under the skin would look, gently raising the skin without breaking it. No droplets, no liquid on the surface, no wound, no strong redness. Keep the same person, pose, viewpoint, lighting, background, and illustration style. No text, no labels, no captions, no arrows, no logos.",
       "observers_must_recover": [
         "a rounded swelling or bulge under the skin behind the ear",
-        "no liquid on the surface",
         "the same view of the head"
+      ],
+      "contract_history": [
+        {
+          "on": "2026-09-18",
+          "was": [
+            "a rounded swelling or bulge under the skin behind the ear",
+            "no liquid on the surface",
+            "the same view of the head"
+          ],
+          "why": "Required items must be something a caption-blind observer can see. Absences are covered by the forbidden readings, and diagnostic words such as healed or scar are replaced by what is drawn."
+        }
       ]
     },
     {
@@ -287,13 +317,23 @@
         ]
       },
       "observers_must_recover": [
-        "redness behind the ear along a scar or incision",
-        "some swelling in the same area",
-        "no open wound"
+        "redness around a thin line behind the ear",
+        "some swelling in the same area"
       ],
       "prompt": "Image 1 is a flat medical illustration of a person's head seen from behind and slightly to the right, with a smooth rounded bulge behind the right ear. Image 2 is a photograph of hot, pink-red skin behind an ear. Change only the color of the skin on the bulge in image 1: tint the surface of the bulge and a narrow margin around it the pink-red of image 2, as a smooth surface blush. Change nothing else at all: keep the bulge's outline, its pale highlight, and the shadow under its lower edge exactly as they are in image 1, keep every existing line exactly as drawn, and add no new marks. Keep the same person, pose, viewpoint, lighting, off-white background, and flat medical illustration style as image 1; do not copy the person or ear from the photograph. No text, no labels, no captions, no arrows, no logos.",
       "revision_note": "a1 and a2 rendered sutures whenever the prompt mentioned the incision and flattened the dome under the tint; a3 never mentions the line and asks for a surface blush only.",
-      "status_note": "Stopped 2026-09-17 after three attempts with no accepted record: every tint flattened the dome, and any mention of the incision produced sutures. Redness is a color state, not an object; the vector flush on the accepted fluid master carries it in frame-06."
+      "status_note": "Stopped 2026-09-17 after three attempts with no accepted record: every tint flattened the dome, and any mention of the incision produced sutures. Redness is a color state, not an object; the vector flush on the accepted fluid master carries it in frame-06.",
+      "contract_history": [
+        {
+          "on": "2026-09-18",
+          "was": [
+            "redness behind the ear along a scar or incision",
+            "some swelling in the same area",
+            "no open wound"
+          ],
+          "why": "Required items must be something a caption-blind observer can see. Absences are covered by the forbidden readings, and diagnostic words such as healed or scar are replaced by what is drawn."
+        }
+      ]
     },
     {
       "id": "dressing-removal-ref",

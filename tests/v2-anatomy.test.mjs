@@ -103,3 +103,12 @@ test("accepted records need a passing adjudication and a receipt bound to the fi
   assert.match(text, new RegExp(`${target.id}: accepted without a passing adjudication`));
   assert.match(text, new RegExp(`${target.id}: accepted without a review receipt`));
 });
+
+test("a required item cannot be an absence, because no observer states one", () => {
+  const broken = structuredClone(contracts);
+  broken.assets[0].observers_must_recover = [...broken.assets[0].observers_must_recover, "no liquid on the surface"];
+  broken.diagrams[0].observers_must_recover = [...broken.diagrams[0].observers_must_recover, "nothing covering the ear"];
+  const errors = validateContracts(broken).errors.join("\n");
+  assert.match(errors, /"no liquid on the surface" is an absence/);
+  assert.match(errors, /"nothing covering the ear" is an absence/);
+});

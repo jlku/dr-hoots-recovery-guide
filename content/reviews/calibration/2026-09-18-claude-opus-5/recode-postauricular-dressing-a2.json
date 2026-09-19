@@ -1,0 +1,657 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-dressing-a2",
+  "contract_id": "postauricular-dressing",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-dressing-a2.png",
+  "sha256": "18973ecc680778c3b83576c58c7782c08ce1d050d9af974ae649cff3b633a5c6",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-dressing-a2.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRGmXYL7W9adqoHddhk",
+        "request_id": "req_011CfBRGkvpMJj62BFodHdXG",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4960,
+          "output_tokens": 4093,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRGmbkAzw2BcDhBgZRi",
+        "request_id": "req_011CfBRGm8UGEBQeg9DfEbcz",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4960,
+          "output_tokens": 3608,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.242125
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a2.json",
+      "answers": {
+        "1": "The back and right side of a person's head, seen from behind and slightly to the right; the right jawline, cheek, eyebrow, and eyelashes are visible at the edge, along with the neck and short dark hair.",
+        "2": "A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head. A large white rounded pad sits over the right ear region. The skin drawn is smooth and uniform, with no marks or discoloration.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "It could be read as a wound or injury to the ear itself, or as a hearing aid or earmuff-like device rather than a dressing."
+      },
+      "observation": "1. The back and right side of a person's head, seen from behind and slightly to the right; the right jawline, cheek, eyebrow, and eyelashes are visible at the edge, along with the neck and short dark hair.\n\n2. A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head. A large white rounded pad sits over the right ear region. The skin drawn is smooth and uniform, with no marks or discoloration.\n\n3. No text, arrows, labels, or symbols.\n\n4. It could be read as a wound or injury to the ear itself, or as a hearing aid or earmuff-like device rather than a dressing."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a2.json",
+      "answers": {
+        "1": "A human head and neck, seen from behind and slightly to the right side; the face is turned away, with only the right cheek, nose tip, and eyelashes visible. Short dark hair is shown on top of the scalp.",
+        "2": "A white gauze bandage is wrapped in several overlapping bands around the head at ear level. Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap. The skin looks smooth and uniform; no redness, swelling, cut, drainage, bruising, or other marks are drawn.",
+        "3": "No text, arrows, labels, numbers, or symbols.",
+        "4": "A worried patient might read the round pad as the ear itself, swollen, pale, and bulging outward, rather than a cushion placed over it."
+      },
+      "observation": "1. A human head and neck, seen from behind and slightly to the right side; the face is turned away, with only the right cheek, nose tip, and eyelashes visible. Short dark hair is shown on top of the scalp.\n\n2. A white gauze bandage is wrapped in several overlapping bands around the head at ear level. Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap. The skin looks smooth and uniform; no redness, swelling, cut, drainage, bruising, or other marks are drawn.\n\n3. No text, arrows, labels, numbers, or symbols.\n\n4. A worried patient might read the round pad as the ear itself, swollen, pale, and bulging outward, rather than a cushion placed over it."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-dressing-a2.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right; short brown hair with a shaved lower area.",
+        "2": "White gauze bandage wrapped in overlapping strips around the head; a large round pale pad sits over the right ear. The visible skin is smooth, uniform, with no redness, swelling, marks, or stitches drawn.",
+        "3": "No text, arrows, labels, or symbols. Faint lines on the pad suggest gauze texture only.",
+        "4": "It could be read as a large swelling or growth behind the ear rather than a pad, or as a bandage after a serious head injury or head surgery, not an ear procedure."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right; short brown hair with a shaved lower area.\n\n2. White gauze bandage wrapped in overlapping strips around the head; a large round pale pad sits over the right ear. The visible skin is smooth, uniform, with no redness, swelling, marks, or stitches drawn.\n\n3. No text, arrows, labels, or symbols. Faint lines on the pad suggest gauze texture only.\n\n4. It could be read as a large swelling or growth behind the ear rather than a pad, or as a bandage after a serious head injury or head surgery, not an ear procedure."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a white head bandage wrapped around the head": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A white gauze bandage is wrapped in several overlapping bands around the head at ear level."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "White gauze bandage wrapped in overlapping strips around the head;"
+        }
+      ],
+      "the ear covered by the bandage": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "A large white rounded pad sits over the right ear region."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "a large round pale pad sits over the right ear."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "The back and right side of a person's head, seen from behind and slightly to the right;"
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "A human head and neck, seen from behind and slightly to the right side;"
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right;"
+        }
+      ]
+    },
+    "recovered": [
+      "a white head bandage wrapped around the head",
+      "the ear covered by the bandage",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 2,
+        "reading": "The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 2,
+        "reading": "The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The dressed area is taken to be a wound or injury of the ear itself rather than a dressing over an intact ear.",
+      "Observer 1: The round pad is taken to be a hearing aid or earmuff-type device worn on the ear instead of a gauze dressing.",
+      "Observer 2: The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.",
+      "Observer 3: The pad is taken to be a large swelling or growth located behind the ear rather than a gauze cushion.",
+      "Observer 3: The whole wrap is taken to be dressing after a serious head injury or head operation rather than after an ear procedure.",
+      "Observer 3 reports part of the right ear or cheek as visible at the edge of the drawing, which risks reading the ear as not fully covered.",
+      "Observer 3 notes faint lines on the pad that read only as gauze texture, so the shading is not mistaken for marks.",
+      "Observer 3 describes a shaved area of hair below the bandage, a detail the other two observers did not mention.",
+      "Observer 2 notes the pad is puffy with concentric ridges, a shape that could be mistaken for the ear itself.",
+      "Observer 1 notes the pad could be read as a hearing aid or earmuff-like device rather than a dressing.",
+      "All three observers report no text, numbers, arrows, labels, or symbols anywhere in the picture.",
+      "Observer 1: The pad area is taken as a wound or injury of the ear itself rather than a dressing over it.",
+      "Observer 1: The round white pad is taken as a hearing aid or earmuff-type device rather than a gauze dressing.",
+      "Observer 2: The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.",
+      "Observer 3: The pad is taken as a large swelling or growth behind the ear rather than a dressing pad.",
+      "Observer 3: The wrap is taken as a dressing after serious head injury or head surgery rather than after an ear procedure.",
+      "Observer 3 reports that part of the right ear/cheek is visible at the edge of the drawing, which risks reading as an ear that is not fully covered.",
+      "Observer 2 notes the pad is drawn puffy with faint concentric ridges, a rendering that can be mistaken for a swollen, bulging ear.",
+      "Observer 3 notes faint lines on the pad that read only as gauze texture, so the pad's material is legible as gauze.",
+      "Observer 3 describes the hair as short brown with a shaved lower area, while Observers 1 and 2 describe short dark hair, so the hair and shave rendering is read inconsistently.",
+      "Observer 1 notes the wrap covers both the forehead and the back of the head in overlapping horizontal bands, confirming the wrap encircles the head rather than sitting loosely.",
+      "All three observers report no text, arrows, labels, numbers, or symbols anywhere in the illustration."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 2,
+            "reading": "The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A white gauze bandage is wrapped in several overlapping bands around the head at ear level."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "White gauze bandage wrapped in overlapping strips around the head;"
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A large white rounded pad sits over the right ear region."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "a large round pale pad sits over the right ear."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and right side of a person's head, seen from behind and slightly to the right;"
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and neck, seen from behind and slightly to the right side;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "ear-wound-or-injury",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "earmuff-or-hearing-aid",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "pad-as-swollen-ear",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "pad-as-swelling-behind-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "head-injury-or-surgery-bandage",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "ear-wound-or-injury",
+              "reading": "The dressed area is taken to be a wound or injury of the ear itself rather than a dressing over an intact ear.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "earmuff-or-hearing-aid",
+              "reading": "The round pad is taken to be a hearing aid or earmuff-type device worn on the ear instead of a gauze dressing.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "pad-as-swollen-ear",
+              "reading": "The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.",
+              "forbidden": "the ear uncovered",
+              "harm": true
+            },
+            {
+              "key": "pad-as-swelling-behind-ear",
+              "reading": "The pad is taken to be a large swelling or growth located behind the ear rather than a gauze cushion.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "head-injury-or-surgery-bandage",
+              "reading": "The whole wrap is taken to be dressing after a serious head injury or head operation rather than after an ear procedure.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 3 reports part of the right ear or cheek as visible at the edge of the drawing, which risks reading the ear as not fully covered.",
+            "Observer 3 notes faint lines on the pad that read only as gauze texture, so the shading is not mistaken for marks.",
+            "Observer 3 describes a shaved area of hair below the bandage, a detail the other two observers did not mention.",
+            "Observer 2 notes the pad is puffy with concentric ridges, a shape that could be mistaken for the ear itself.",
+            "Observer 1 notes the pad could be read as a hearing aid or earmuff-like device rather than a dressing.",
+            "All three observers report no text, numbers, arrows, labels, or symbols anywhere in the picture."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 2,
+            "reading": "The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a white head bandage wrapped around the head": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A white woven bandage wrapped around the head in overlapping horizontal bands, covering the forehead and back of the head."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A white gauze bandage is wrapped in several overlapping bands around the head at ear level."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "White gauze bandage wrapped in overlapping strips around the head;"
+            }
+          ],
+          "the ear covered by the bandage": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A large white rounded pad sits over the right ear region."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "Over the right ear sits a round, white, puffy pad with faint concentric ridges, held in place by the wrap."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "a large round pale pad sits over the right ear."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "The back and right side of a person's head, seen from behind and slightly to the right;"
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A human head and neck, seen from behind and slightly to the right side;"
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The back and right side of a person's head, neck, and part of the right ear/cheek, seen from behind and slightly to the right;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "ear-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "earmuff-device",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "pad-is-swollen-ear",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a white head bandage wrapped around the head",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "the ear covered by the bandage",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "swelling-behind-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "head-injury-dressing",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "ear-wound",
+              "reading": "The pad area is taken as a wound or injury of the ear itself rather than a dressing over it.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "earmuff-device",
+              "reading": "The round white pad is taken as a hearing aid or earmuff-type device rather than a gauze dressing.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "pad-is-swollen-ear",
+              "reading": "The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.",
+              "forbidden": "the ear uncovered",
+              "harm": true
+            },
+            {
+              "key": "swelling-behind-ear",
+              "reading": "The pad is taken as a large swelling or growth behind the ear rather than a dressing pad.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "head-injury-dressing",
+              "reading": "The wrap is taken as a dressing after serious head injury or head surgery rather than after an ear procedure.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 3 reports that part of the right ear/cheek is visible at the edge of the drawing, which risks reading as an ear that is not fully covered.",
+            "Observer 2 notes the pad is drawn puffy with faint concentric ridges, a rendering that can be mistaken for a swollen, bulging ear.",
+            "Observer 3 notes faint lines on the pad that read only as gauze texture, so the pad's material is legible as gauze.",
+            "Observer 3 describes the hair as short brown with a shaved lower area, while Observers 1 and 2 describe short dark hair, so the hair and shave rendering is read inconsistently.",
+            "Observer 1 notes the wrap covers both the forehead and the back of the head in overlapping horizontal bands, confirming the wrap encircles the head rather than sitting loosely.",
+            "All three observers report no text, arrows, labels, numbers, or symbols anywhere in the illustration."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 3 required items. Forbidden: observer 2 (question 4): The round pad is taken to be the ear itself, pale and swollen and bulging outward, rather than a cushion placed over the ear.; observer 2 (question 4): The round puffy pad is taken to be the ear itself, pale, swollen and bulging outward, instead of a cushion laid over the ear.."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0",
+  "patient_use": false,
+  "purpose": "A labeled set for checking that the API evaluator agrees with the in-session review loop before it replaces that loop. Image cases send the picture to three new observers. Recode cases re-code the in-session observers' stored words with the API coder, so coder agreement is measured apart from observer variance. Negative controls judge an image against another picture's contract and must fail.",
+  "development_cases": [
+    "content/reviews/anatomy/diagram.remove-dressing.json",
+    "content/reviews/anatomy/postauricular-base-a2.json",
+    "content/reviews/anatomy/postauricular-dressing-a2.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a3.json"
+  ],
+  "development_note": "These four receipts' stored observations were used on 2026-09-18 to write and test the coder prompt, so agreement on their re-coding is not independent evidence. The report scores them apart from the held-out cases: the other seven re-codings and every image case, whose observers will be new.",
+  "image_cases": [
+    {
+      "id": "base-a2",
+      "record": "postauricular-base-a2",
+      "expect": "pass",
+      "why": "accepted in session: content/reviews/anatomy/postauricular-base-a2.json"
+    },
+    {
+      "id": "fluid-a1",
+      "record": "postauricular-fluid-a1",
+      "expect": "pass",
+      "why": "accepted in session: content/reviews/anatomy/postauricular-fluid-a1.json"
+    },
+    {
+      "id": "dressing-ref-a1",
+      "record": "postauricular-dressing-ref-a1",
+      "expect": "pass",
+      "why": "accepted in session: content/reviews/anatomy/postauricular-dressing-ref-a1.json"
+    },
+    {
+      "id": "processor-worn-ref-a1",
+      "record": "processor-worn-ref-a1",
+      "expect": "pass",
+      "why": "accepted in session: content/reviews/anatomy/processor-worn-ref-a1.json"
+    },
+    {
+      "id": "card-remove-dressing",
+      "diagram": "diagram.remove-dressing",
+      "expect": "pass",
+      "expect_strict": "fail",
+      "why": "passed the instruction-picture rule in session: content/reviews/anatomy/diagram.remove-dressing.json"
+    },
+    {
+      "id": "red-swollen-a3",
+      "record": "postauricular-red-swollen-a3",
+      "expect": "fail",
+      "why": "held candidate that failed in session: no observer saw swelling"
+    },
+    {
+      "id": "control-base-as-dressing",
+      "record": "postauricular-base-a2",
+      "as": "postauricular-dressing-ref",
+      "expect": "fail",
+      "why": "negative control: the image has no bandage"
+    },
+    {
+      "id": "control-base-as-fluid",
+      "record": "postauricular-base-a2",
+      "as": "postauricular-fluid",
+      "expect": "fail",
+      "why": "negative control: the image has no swelling"
+    },
+    {
+      "id": "control-dressing-as-processor",
+      "record": "postauricular-dressing-ref-a1",
+      "as": "processor-worn-ref",
+      "expect": "fail",
+      "why": "negative control: the image has no processor or coil"
+    }
+  ],
+  "recode_cases": [
+    "content/reviews/anatomy/diagram.remove-dressing.json",
+    "content/reviews/anatomy/dressing-removal-ref-a1.json",
+    "content/reviews/anatomy/postauricular-base-a2.json",
+    "content/reviews/anatomy/postauricular-dressing-a2.json",
+    "content/reviews/anatomy/postauricular-dressing-a4.json",
+    "content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+    "content/reviews/anatomy/postauricular-fluid-a1.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a2.json",
+    "content/reviews/anatomy/postauricular-red-swollen-a3.json",
+    "content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+    "content/reviews/anatomy/processor-worn-ref-a1.json"
+  ]
+}

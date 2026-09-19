@@ -1,0 +1,705 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-red-swollen-a3",
+  "contract_id": "postauricular-red-swollen",
+  "kind": "record",
+  "file": "assets/anatomy/postauricular-red-swollen-a3.png",
+  "sha256": "2b8660143c5ea0f77018a1b7b3e0ff44e9467ff5e65b95ff4314092006d563c5",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWfgX8dh7U231ySrssA",
+        "request_id": "req_011CfBWffhWjbQSaMFUqeftf",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 460,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWfh58DKcXKBzEafrzE",
+        "request_id": "req_011CfBWffrSUw9wYwfpBZQon",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 586,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWfge56J9dEKLzxDahh",
+        "request_id": "req_011CfBWfg27d7BGfSJfQgupf",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 411,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWgWW9wxx97MLNwdCQH",
+        "request_id": "req_011CfBWgVshN62fcZMayuY5e",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5735,
+          "output_tokens": 4616,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWgWUuf2A8uP8UfTBjG",
+        "request_id": "req_011CfBWgVqxgUjtmuNJbz8Ec",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5735,
+          "output_tokens": 4245,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.342615
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWfgX8dh7U231ySrssA",
+      "recoded_from": null,
+      "answers": {
+        "1": "A person's head and upper neck, drawn as a cartoon-style illustration, seen from behind and slightly to the side (rear three-quarter view). The right ear, cheek edge, eyebrow, eyelashes and nose tip are visible at the right; the back of the head and the nape fill the left.",
+        "2": "The hair is dark and full on top, with the sides and back clipped very short/shaved so bare scalp shows. Just behind and above the ear there is a soft round patch of red-pink blush on the skin, strongest right behind the ear and fading outward toward the crown and down toward the neck. Inside that red patch sits a thin curved black line, like a crescent or hook, following the curve behind the ear from above the ear top down to the level of the earlobe — it looks like a drawn line or a fine mark on the skin, I am not sure which. No bandage, jewellery, glasses or other worn object. Skin is otherwise smooth and even, with no bumps, crusts or openings drawn.",
+        "3": "No words, numbers, arrows or labels anywhere. The only non-body drawing is the thin black crescent line behind the ear, which appears to point out the spot at the centre of the red area.",
+        "4": "A worried patient might read it as a fresh cut or surgical stitch line behind the ear with infection spreading around it, rather than simply a marked sore or tender spot."
+      },
+      "observation": "1. A person's head and upper neck, drawn as a cartoon-style illustration, seen from behind and slightly to the side (rear three-quarter view). The right ear, cheek edge, eyebrow, eyelashes and nose tip are visible at the right; the back of the head and the nape fill the left.\n\n2. The hair is dark and full on top, with the sides and back clipped very short/shaved so bare scalp shows. Just behind and above the ear there is a soft round patch of red-pink blush on the skin, strongest right behind the ear and fading outward toward the crown and down toward the neck. Inside that red patch sits a thin curved black line, like a crescent or hook, following the curve behind the ear from above the ear top down to the level of the earlobe — it looks like a drawn line or a fine mark on the skin, I am not sure which. No bandage, jewellery, glasses or other worn object. Skin is otherwise smooth and even, with no bumps, crusts or openings drawn.\n\n3. No words, numbers, arrows or labels anywhere. The only non-body drawing is the thin black crescent line behind the ear, which appears to point out the spot at the centre of the red area.\n\n4. A worried patient might read it as a fresh cut or surgical stitch line behind the ear with infection spreading around it, rather than simply a marked sore or tender spot."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWfh58DKcXKBzEafrzE",
+      "recoded_from": null,
+      "answers": {
+        "1": "A cartoon-style drawing of a person's head and upper neck, seen from behind and slightly to the side, so you look at the back of the head, the right ear, and a sliver of the face (eyebrow, eye, nose, lips) at the right edge.",
+        "2": "The hair is dark brown and full on top, with the sides and back clipped very short so the scalp shows through as stubble. The skin elsewhere looks smooth and plain, with no spots, cuts or bruises drawn. Just behind and a little above the ear there is a soft red blush on the skin, brightest right at the crease behind the ear and fading out into the shaved scalp. Sitting inside that red patch is a thin black curved line, shaped like a crescent, following the back edge of the ear from about ear-top height down to the earlobe level. I am not sure whether that line is meant to be a mark drawn on the skin or a line in the skin itself. Nothing is worn — no dressing, glasses or jewellery.",
+        "3": "No letters, numbers, arrows or written labels anywhere. The only non-body mark is the thin black crescent line behind the ear, which seems to point out that exact strip of skin.",
+        "4": "A worried person might read the redness and dark curved line as an infection, a rash, or a fresh cut/stitched wound behind the ear."
+      },
+      "observation": "1. A cartoon-style drawing of a person's head and upper neck, seen from behind and slightly to the side, so you look at the back of the head, the right ear, and a sliver of the face (eyebrow, eye, nose, lips) at the right edge.\n\n2. The hair is dark brown and full on top, with the sides and back clipped very short so the scalp shows through as stubble. The skin elsewhere looks smooth and plain, with no spots, cuts or bruises drawn. Just behind and a little above the ear there is a soft red blush on the skin, brightest right at the crease behind the ear and fading out into the shaved scalp. Sitting inside that red patch is a thin black curved line, shaped like a crescent, following the back edge of the ear from about ear-top height down to the earlobe level. I am not sure whether that line is meant to be a mark drawn on the skin or a line in the skin itself. Nothing is worn — no dressing, glasses or jewellery.\n\n3. No letters, numbers, arrows or written labels anywhere. The only non-body mark is the thin black crescent line behind the ear, which seems to point out that exact strip of skin.\n\n4. A worried person might read the redness and dark curved line as an infection, a rash, or a fresh cut/stitched wound behind the ear."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWfge56J9dEKLzxDahh",
+      "recoded_from": null,
+      "answers": {
+        "1": "A drawing of a person's head and upper neck, seen from the side and slightly from behind — the right side of the face, with the ear in the middle of the picture.",
+        "2": "The hair on top is thick and brown, but the side and back of the head are shaved very short, so bare scalp shows around and above the ear. Just behind the ear there is a soft red flush on the skin, brightest right behind the ear and fading outwards into the scalp and toward the top of the ear. Inside that red patch is a thin curved black line, shaped like a half-moon following the back edge of the ear, running from above the ear down to about ear-lobe level — it looks like a drawn cut or scar line, though I am not certain. The ear itself, face and neck look normal, with no dressing, bandage or device shown.",
+        "3": "There is no writing, number, arrow or label anywhere. The only non-skin mark is the curved black line behind the ear, which seems to point out a line on the skin there.",
+        "4": "A worried person might read the red area as an infection, rash or burn around the ear rather than simply a marked spot."
+      },
+      "observation": "1. A drawing of a person's head and upper neck, seen from the side and slightly from behind — the right side of the face, with the ear in the middle of the picture.\n\n2. The hair on top is thick and brown, but the side and back of the head are shaved very short, so bare scalp shows around and above the ear. Just behind the ear there is a soft red flush on the skin, brightest right behind the ear and fading outwards into the scalp and toward the top of the ear. Inside that red patch is a thin curved black line, shaped like a half-moon following the back edge of the ear, running from above the ear down to about ear-lobe level — it looks like a drawn cut or scar line, though I am not certain. The ear itself, face and neck look normal, with no dressing, bandage or device shown.\n\n3. There is no writing, number, arrow or label anywhere. The only non-skin mark is the curved black line behind the ear, which seems to point out a line on the skin there.\n\n4. A worried person might read the red area as an infection, rash or burn around the ear rather than simply a marked spot."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "redness around a thin line behind the ear": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "Inside that red patch sits a thin curved black line, like a crescent or hook, following the curve behind the ear from above the ear top down to the level of the earlobe — it looks like a drawn line or a fine mark on the skin, I am not sure which."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.4",
+          "text": "Sitting inside that red patch is a thin black curved line, shaped like a crescent, following the back edge of the ear from about ear-top height down to the earlobe level."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "Inside that red patch is a thin curved black line, shaped like a half-moon following the back edge of the ear, running from above the ear down to about ear-lobe level — it looks like a drawn cut or scar line, though I am not certain."
+        }
+      ],
+      "some swelling in the same area": []
+    },
+    "recovered": [
+      "redness around a thin line behind the ear"
+    ],
+    "missed": [
+      "some swelling in the same area"
+    ],
+    "forbidden_hits": [
+      {
+        "observer": 3,
+        "reading": "bleeding or an open wound",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to the spot",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to that strip of skin",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: curved black line behind the ear treated as a non-skin pointer",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: thin black crescent line behind the ear reported as a non-body drawing pointing out the spot",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black crescent line behind the ear reported as the only non-body mark, pointing out that strip of skin",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: curved black line behind the ear reported as the only non-skin mark, pointing out a line on the skin",
+        "source": "question 3",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 3,
+        "reading": "bleeding or an open wound",
+        "source": "own reading",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to the spot",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to that strip of skin",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: curved black line behind the ear treated as a non-skin pointer",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The curved line is taken to be a recent cut or a stitched surgical wound behind the ear, in Observer 1's version with infection spreading around it.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The curved line is taken to be a recent cut or a stitched surgical wound behind the ear, in Observer 1's version with infection spreading around it.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: thin black crescent line behind the ear reported as a non-body drawing pointing out the spot",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: thin black crescent line behind the ear reported as the only non-body mark, pointing out that strip of skin",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: curved black line behind the ear reported as the only non-skin mark, pointing out a line on the skin",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 1,
+        "reading": "The thin dark line is taken to be a fresh cut or a surgical stitch line behind the ear rather than a marked spot.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The thin dark line is taken to be a fresh cut or a surgical stitch line behind the ear rather than a marked spot.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The curved line is taken to be a recent cut or a stitched surgical wound behind the ear, in Observer 1's version with infection spreading around it.",
+      "Observer 2: The curved line is taken to be a recent cut or a stitched surgical wound behind the ear, in Observer 1's version with infection spreading around it.",
+      "Observer 2: The red area is taken to be an active infection or a rash rather than a marked tender spot.",
+      "Observer 3: The red area is taken to be an active infection or a rash rather than a marked tender spot.",
+      "Observer 3: The red area is taken to be a burn around the ear.",
+      "Observer 1 states the skin is otherwise smooth with no bumps, crusts or openings, so the required swelling is not drawn.",
+      "Observer 2 likewise describes the surrounding skin as smooth and plain with nothing raised, confirming the swelling is missing from the picture.",
+      "Observer 1 and Observer 2 both say they cannot tell whether the black crescent is a mark drawn on the skin or a feature of the skin itself.",
+      "Observer 3 reads the same crescent as a drawn cut or scar line, which pushes the image toward a wound reading.",
+      "All three observers describe the black crescent as a non-body mark that points out the spot, even though the picture is meant to carry no marks at all.",
+      "Observer 3 notes the ear, face and neck otherwise look normal with no dressing or device shown.",
+      "Observer 1: The thin dark line is taken to be a fresh cut or a surgical stitch line behind the ear rather than a marked spot.",
+      "Observer 1: The red area is taken to be an infection, in observer 1's wording an infection spreading around the line.",
+      "Observer 2: The red area is taken to be an infection, in observer 1's wording an infection spreading around the line.",
+      "Observer 2: The red area is taken to be a rash rather than the intended marked, tender spot.",
+      "Observer 2: The thin dark line is taken to be a fresh cut or a surgical stitch line behind the ear rather than a marked spot.",
+      "Observer 3: The red area is taken to be an infection, in observer 1's wording an infection spreading around the line.",
+      "Observer 3: The red area is taken to be a rash rather than the intended marked, tender spot.",
+      "No observer described any swelling or puffiness behind the ear, and observer 1 explicitly said the skin is smooth with no bumps drawn, so the required swelling does not read at all.",
+      "Observers 1 and 2 both said they could not tell whether the thin black crescent is a mark drawn on the skin or a line in the skin itself, so the line's meaning is ambiguous.",
+      "Observer 3 read the same thin black crescent as a drawn cut or scar line, which is how an incision or open wound could be inferred.",
+      "All three observers treated the black crescent as the only non-body mark in the picture, describing it as something that points out the spot behind the ear."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 3,
+            "reading": "bleeding or an open wound",
+            "source": "own reading"
+          },
+          {
+            "observer": 1,
+            "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to the spot",
+            "source": "question 3"
+          },
+          {
+            "observer": 2,
+            "reading": "unallowed mark: thin black crescent line behind the ear treated as a pointer to that strip of skin",
+            "source": "question 3"
+          },
+          {
+            "observer": 3,
+            "reading": "unallowed mark: curved black line behind the ear treated as a non-skin pointer",
+            "source": "question 3"
+          }
+        ],
+        "tally": {
+          "redness around a thin line behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "Inside that red patch sits a thin curved black line, like a crescent or hook, following the curve behind the ear from above the ear top down to the level of the earlobe — it looks like a drawn line or a fine mark on the skin, I am not sure which."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "Sitting inside that red patch is a thin black curved line, shaped like a crescent, following the back edge of the ear from about ear-top height down to the earlobe level."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Inside that red patch is a thin curved black line, shaped like a half-moon following the back edge of the ear, running from above the ear down to about ear-lobe level — it looks like a drawn cut or scar line, though I am not certain."
+            }
+          ],
+          "some swelling in the same area": []
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "thin black crescent line behind the ear treated as a pointer to the spot",
+                  "cite": "o1.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "fresh-cut-or-stitch-wound",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "thin black crescent line behind the ear treated as a pointer to that strip of skin",
+                  "cite": "o2.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "fresh-cut-or-stitch-wound",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "infection-or-rash",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "bleeding or an open wound",
+                  "cite": "o3.2.3"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "curved black line behind the ear treated as a non-skin pointer",
+                  "cite": "o3.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "infection-or-rash",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "burn-around-ear",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "fresh-cut-or-stitch-wound",
+              "reading": "The curved line is taken to be a recent cut or a stitched surgical wound behind the ear, in Observer 1's version with infection spreading around it.",
+              "forbidden": "bleeding or an open wound",
+              "harm": true
+            },
+            {
+              "key": "infection-or-rash",
+              "reading": "The red area is taken to be an active infection or a rash rather than a marked tender spot.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "burn-around-ear",
+              "reading": "The red area is taken to be a burn around the ear.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 states the skin is otherwise smooth with no bumps, crusts or openings, so the required swelling is not drawn.",
+            "Observer 2 likewise describes the surrounding skin as smooth and plain with nothing raised, confirming the swelling is missing from the picture.",
+            "Observer 1 and Observer 2 both say they cannot tell whether the black crescent is a mark drawn on the skin or a feature of the skin itself.",
+            "Observer 3 reads the same crescent as a drawn cut or scar line, which pushes the image toward a wound reading.",
+            "All three observers describe the black crescent as a non-body mark that points out the spot, even though the picture is meant to carry no marks at all.",
+            "Observer 3 notes the ear, face and neck otherwise look normal with no dressing or device shown."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 3,
+            "reading": "bleeding or an open wound",
+            "source": "own reading"
+          },
+          {
+            "observer": 1,
+            "reading": "unallowed mark: thin black crescent line behind the ear reported as a non-body drawing pointing out the spot",
+            "source": "question 3"
+          },
+          {
+            "observer": 2,
+            "reading": "unallowed mark: thin black crescent line behind the ear reported as the only non-body mark, pointing out that strip of skin",
+            "source": "question 3"
+          },
+          {
+            "observer": 3,
+            "reading": "unallowed mark: curved black line behind the ear reported as the only non-skin mark, pointing out a line on the skin",
+            "source": "question 3"
+          }
+        ],
+        "tally": {
+          "redness around a thin line behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Just behind and above the ear there is a soft round patch of red-pink blush on the skin, strongest right behind the ear and fading outward toward the crown and down toward the neck."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Just behind and a little above the ear there is a soft red blush on the skin, brightest right at the crease behind the ear and fading out into the shaved scalp."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "Just behind the ear there is a soft red flush on the skin, brightest right behind the ear and fading outwards into the scalp and toward the top of the ear."
+            }
+          ],
+          "some swelling in the same area": []
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "thin black crescent line behind the ear reported as a non-body drawing pointing out the spot",
+                  "cite": "o1.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "fresh-cut-or-stitched-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "infection-behind-ear",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "thin black crescent line behind the ear reported as the only non-body mark, pointing out that strip of skin",
+                  "cite": "o2.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "infection-behind-ear",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "fresh-cut-or-stitched-wound",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness around a thin line behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [
+                {
+                  "forbidden": "bleeding or an open wound",
+                  "cite": "o3.2.3"
+                }
+              ],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "curved black line behind the ear reported as the only non-skin mark, pointing out a line on the skin",
+                  "cite": "o3.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "infection-behind-ear",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "burn",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "fresh-cut-or-stitched-wound",
+              "reading": "The thin dark line is taken to be a fresh cut or a surgical stitch line behind the ear rather than a marked spot.",
+              "forbidden": "bleeding or an open wound",
+              "harm": true
+            },
+            {
+              "key": "infection-behind-ear",
+              "reading": "The red area is taken to be an infection, in observer 1's wording an infection spreading around the line.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "rash",
+              "reading": "The red area is taken to be a rash rather than the intended marked, tender spot.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "burn",
+              "reading": "The red area is taken to be a burn around the ear.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "No observer described any swelling or puffiness behind the ear, and observer 1 explicitly said the skin is smooth with no bumps drawn, so the required swelling does not read at all.",
+            "Observers 1 and 2 both said they could not tell whether the thin black crescent is a mark drawn on the skin or a line in the skin itself, so the line's meaning is ambiguous.",
+            "Observer 3 read the same thin black crescent as a drawn cut or scar line, which is how an incision or open wound could be inferred.",
+            "All three observers treated the black crescent as the only non-body mark in the picture, describing it as something that points out the spot behind the ear."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: some swelling in the same area. Forbidden: observer 3 (own reading): bleeding or an open wound; observer 1 (question 3): unallowed mark: thin black crescent line behind the ear treated as a pointer to the spot; observer 2 (question 3): unallowed mark: thin black crescent line behind the ear treated as a pointer to that strip of skin; observer 3 (question 3): unallowed mark: curved black line behind the ear treated as a non-skin pointer; observer 1 (question 3): unallowed mark: thin black crescent line behind the ear reported as a non-body drawing pointing out the spot; observer 2 (question 3): unallowed mark: thin black crescent line behind the ear reported as the only non-body mark, pointing out that strip of skin; observer 3 (question 3): unallowed mark: curved black line behind the ear reported as the only non-skin mark, pointing out a line on the skin. Under the strict rule the picture would fail."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

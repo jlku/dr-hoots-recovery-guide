@@ -1,5 +1,5 @@
 // scripts/generate-anatomy.mjs
-// One attempt per run. Reserves the estimate in the ledger first, refuses without FAL_KEY,
+// One attempt per run; --review sends the candidate to the API evaluator afterwards. Reserves the estimate in the ledger first, refuses without FAL_KEY,
 // retains the raw PNG, and records hash, prompt, seed, and request id in the manifest.
 import { fal } from "@fal-ai/client";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
@@ -82,3 +82,11 @@ const next = recordCandidate(manifest, plan, { bytes, width: image.width, height
 await writeFile(join(root, MANIFEST_PATH), `${JSON.stringify(next, null, 2)}\n`);
 await saveLedger(root, settleSpend(ledger, plan.ledgerId, { status: "completed", requestId: result.requestId ?? null }));
 console.log(`saved ${plan.file} (${image.width}x${image.height}) request ${result.requestId}`);
+
+// --review: send the new candidate straight to the API evaluator and accept it if it passes.
+if (args.includes("--review")) {
+  const { reviewAndRecord } = await import("./lib/review-runner.mjs");
+  const recordId = `${plan.assetId}-a${plan.attempt}`;
+  const outcome = await reviewAndRecord({ root, selection: { record: recordId }, apply: true, log: (line) => console.log(line) });
+  console.log(`review of ${recordId}: ${outcome.verdict}. ${outcome.receipt.adjudication.reason} Cost $${outcome.cost.toFixed(4)}; receipt ${outcome.path}`);
+}

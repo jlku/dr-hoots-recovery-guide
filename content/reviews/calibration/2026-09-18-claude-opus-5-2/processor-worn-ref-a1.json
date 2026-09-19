@@ -1,0 +1,788 @@
+{
+  "schema_version": "1.1",
+  "record_id": "processor-worn-ref-a1",
+  "contract_id": "processor-worn-ref",
+  "kind": "record",
+  "file": "assets/anatomy/processor-worn-ref-a1.png",
+  "sha256": "6fcee11654dccd51c5c6ebf25403cf8c14030179e63ec9fc1276f735fee3c326",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWVSLa9ZXjXefEvRNLZ",
+        "request_id": "req_011CfBWVRdtvV5bWjAC2xWCM",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 445,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWVSmN1uW8fJqu9F5S9",
+        "request_id": "req_011CfBWVRsYCZditvj7a5Yp4",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 471,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWVSRXEWb5J2QGwgppt",
+        "request_id": "req_011CfBWVRumKdUtD1GV4Eac8",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 576,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWWEwjxee87CMHJUfdD",
+        "request_id": "req_011CfBWWELXP4wiMWu5oNSHH",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6394,
+          "output_tokens": 3547,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWWEwzgztp7e3TwokGL",
+        "request_id": "req_011CfBWWEKHk6GTznxQGTbJT",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6394,
+          "output_tokens": 3856,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.31363
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWVSLa9ZXjXefEvRNLZ",
+      "recoded_from": null,
+      "answers": {
+        "1": "A drawing of a person's head and upper neck, seen from behind and slightly to the side (back-right view). The face is turned away so only the nose, eyebrow and cheek edge show at the right. Shoulders are cut off at the bottom.",
+        "2": "The hair on top and at the front is thick and brown; the side and back of the head are shaved very short, shown as fine stubble-like dashes. The skin looks smooth and intact, with no cut, scar, redness or bandage drawn. Two grey devices are worn: a round, flat disc sits on the shaved scalp above and behind the ear, roughly at the hairline where the long hair begins; a short coiled cord runs from it down and forward to a curved, bean-shaped unit that hooks over the top of the outer ear and rests in the crease behind the ear. The behind-the-ear unit has small buttons on its side and a tiny red dot near its top. The ear itself is uncovered and looks normal.",
+        "3": "No text, numbers, arrows, labels or symbols anywhere. The only small detail is the tiny red dot on the behind-the-ear device, which looks like an indicator light.",
+        "4": "A worried patient might read the disc on the scalp as something stuck into or through the skin after brain surgery, or as monitoring electrodes taped to the head, rather than a removable worn device."
+      },
+      "observation": "1. A drawing of a person's head and upper neck, seen from behind and slightly to the side (back-right view). The face is turned away so only the nose, eyebrow and cheek edge show at the right. Shoulders are cut off at the bottom.\n\n2. The hair on top and at the front is thick and brown; the side and back of the head are shaved very short, shown as fine stubble-like dashes. The skin looks smooth and intact, with no cut, scar, redness or bandage drawn. Two grey devices are worn: a round, flat disc sits on the shaved scalp above and behind the ear, roughly at the hairline where the long hair begins; a short coiled cord runs from it down and forward to a curved, bean-shaped unit that hooks over the top of the outer ear and rests in the crease behind the ear. The behind-the-ear unit has small buttons on its side and a tiny red dot near its top. The ear itself is uncovered and looks normal.\n\n3. No text, numbers, arrows, labels or symbols anywhere. The only small detail is the tiny red dot on the behind-the-ear device, which looks like an indicator light.\n\n4. A worried patient might read the disc on the scalp as something stuck into or through the skin after brain surgery, or as monitoring electrodes taped to the head, rather than a removable worn device."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWVSmN1uW8fJqu9F5S9",
+      "recoded_from": null,
+      "answers": {
+        "1": "A cartoon-style side view of a person's head, upper neck and shoulder, seen from behind and slightly to the right, so the right ear, jawline and the tip of the nose are visible.",
+        "2": "The hair on top is thick and brown, but the side and back of the head are shaved down to short stubble, shown as fine dashes; the shave line curves from the temple up over the crown and down behind the ear. Sitting on the shaved scalp, above and a little behind the ear, is a round dark grey disc about the size of a coin, with a smaller raised circle in its centre. A short ribbed grey cable runs from the bottom of the disc, curves down and forward, and plugs into a larger dark grey banana-shaped device that hooks over the top of the ear and rests in the crease behind it; that device has two small buttons on its front edge, a lighter grey strip along its top and a tiny red dot near the top. The skin looks smooth and unbroken, with no cuts, redness, stitches or swelling drawn.",
+        "3": "No text, numbers, arrows, labels or symbols appear anywhere in the picture. The only small coloured detail is a red dot on the ear-hook device, which looks like an indicator light.",
+        "4": "Someone might read it as a bolt or plug screwed into the skull after brain surgery, or as monitoring wires taped to a shaved head in hospital, rather than a removable worn device."
+      },
+      "observation": "1. A cartoon-style side view of a person's head, upper neck and shoulder, seen from behind and slightly to the right, so the right ear, jawline and the tip of the nose are visible.\n\n2. The hair on top is thick and brown, but the side and back of the head are shaved down to short stubble, shown as fine dashes; the shave line curves from the temple up over the crown and down behind the ear. Sitting on the shaved scalp, above and a little behind the ear, is a round dark grey disc about the size of a coin, with a smaller raised circle in its centre. A short ribbed grey cable runs from the bottom of the disc, curves down and forward, and plugs into a larger dark grey banana-shaped device that hooks over the top of the ear and rests in the crease behind it; that device has two small buttons on its front edge, a lighter grey strip along its top and a tiny red dot near the top. The skin looks smooth and unbroken, with no cuts, redness, stitches or swelling drawn.\n\n3. No text, numbers, arrows, labels or symbols appear anywhere in the picture. The only small coloured detail is a red dot on the ear-hook device, which looks like an indicator light.\n\n4. Someone might read it as a bolt or plug screwed into the skull after brain surgery, or as monitoring wires taped to a shaved head in hospital, rather than a removable worn device."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWVSRXEWb5J2QGwgppt",
+      "recoded_from": null,
+      "answers": {
+        "1": "The head and upper neck of a person, seen mostly from behind and the right side; the face is turned away so only the edge of the cheek, eyebrow and nose are visible. Shoulders and the back of the neck show at the bottom.",
+        "2": "The hair on top is thick and brown; the whole side and back of the head are shaved down to short stubble, drawn as fine dashes. A round dark grey disc, about the size of a coin, sits on the shaved scalp high up, above and behind the ear, partly under the long hair. A thin dark cord runs down from the disc in a gentle curve, with a short ribbed section near the top, and connects to a dark grey banana-shaped device that hooks over the top of the ear and rests in the groove behind the ear. That device has two small pale buttons on its lower front edge and a pale hook piece against the ear. The skin looks smooth and unbroken, with no cuts, redness or swelling.",
+        "3": "No words, numbers, arrows or labels. The only small marking is a tiny red dot on the top of the behind-the-ear device, which looks like an indicator light.",
+        "4": "It could be read as a lump or bolt going into the scalp, or a wound dressing with a drain tube, rather than a removable worn device."
+      },
+      "observation": "1. The head and upper neck of a person, seen mostly from behind and the right side; the face is turned away so only the edge of the cheek, eyebrow and nose are visible. Shoulders and the back of the neck show at the bottom.\n\n2. The hair on top is thick and brown; the whole side and back of the head are shaved down to short stubble, drawn as fine dashes. A round dark grey disc, about the size of a coin, sits on the shaved scalp high up, above and behind the ear, partly under the long hair. A thin dark cord runs down from the disc in a gentle curve, with a short ribbed section near the top, and connects to a dark grey banana-shaped device that hooks over the top of the ear and rests in the groove behind the ear. That device has two small pale buttons on its lower front edge and a pale hook piece against the ear. The skin looks smooth and unbroken, with no cuts, redness or swelling.\n\n3. No words, numbers, arrows or labels. The only small marking is a tiny red dot on the top of the behind-the-ear device, which looks like an indicator light.\n\n4. It could be read as a lump or bolt going into the scalp, or a wound dressing with a drain tube, rather than a removable worn device."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a device hooked behind the ear": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.5",
+          "text": "a short coiled cord runs from it down and forward to a curved, bean-shaped unit that hooks over the top of the outer ear and rests in the crease behind the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.4",
+          "text": "A short ribbed grey cable runs from the bottom of the disc, curves down and forward, and plugs into a larger dark grey banana-shaped device that hooks over the top of the ear and rests in the crease behind it;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.4",
+          "text": "A thin dark cord runs down from the disc in a gentle curve, with a short ribbed section near the top, and connects to a dark grey banana-shaped device that hooks over the top of the ear and rests in the groove behind the ear."
+        }
+      ],
+      "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.4",
+          "text": "Two grey devices are worn: a round, flat disc sits on the shaved scalp above and behind the ear, roughly at the hairline where the long hair begins;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "Sitting on the shaved scalp, above and a little behind the ear, is a round dark grey disc about the size of a coin, with a smaller raised circle in its centre."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "A round dark grey disc, about the size of a coin, sits on the shaved scalp high up, above and behind the ear, partly under the long hair."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "A drawing of a person's head and upper neck, seen from behind and slightly to the side (back-right view)."
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "A cartoon-style side view of a person's head, upper neck and shoulder, seen from behind and slightly to the right, so the right ear, jawline and the tip of the nose are visible."
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "The head and upper neck of a person, seen mostly from behind and the right side;"
+        }
+      ]
+    },
+    "recovered": [
+      "a device hooked behind the ear",
+      "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "unallowed mark: tiny red indicator dot on the behind-the-ear device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: tiny red indicator dot on the ear-hook device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: tiny red indicator dot on top of the behind-the-ear device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: tiny red indicator-light dot on the behind-the-ear device",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: tiny red indicator-light dot on the ear-hook device",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: tiny red indicator-light dot atop the behind-the-ear device",
+        "source": "question 3",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "unallowed mark: tiny red indicator dot on the behind-the-ear device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: tiny red indicator dot on the ear-hook device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: tiny red indicator dot on top of the behind-the-ear device",
+        "source": "question 3",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "unallowed mark: tiny red indicator-light dot on the behind-the-ear device",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "unallowed mark: tiny red indicator-light dot on the ear-hook device",
+        "source": "question 3",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "unallowed mark: tiny red indicator-light dot atop the behind-the-ear device",
+        "source": "question 3",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The scalp disc is taken for a bolt, plug or lump driven into the skin or skull after brain surgery rather than a device worn on the outside.",
+      "Observer 1: The disc and cable are taken for hospital monitoring electrodes or wires taped onto a shaved head.",
+      "Observer 2: The scalp disc is taken for a bolt, plug or lump driven into the skin or skull after brain surgery rather than a device worn on the outside.",
+      "Observer 2: The disc and cable are taken for hospital monitoring electrodes or wires taped onto a shaved head.",
+      "Observer 3: The scalp disc is taken for a bolt, plug or lump driven into the skin or skull after brain surgery rather than a device worn on the outside.",
+      "Observer 3: The disc and cord are taken for a dressing over a wound with a drain tube leading from it.",
+      "All three observers report a tiny red dot on the behind-the-ear device, which each of them reads as an indicator light, so the clinician should confirm whether this coloured detail is intended.",
+      "Observer 3 notes the scalp disc sits partly under the long hair, which may make the coil harder to see than intended.",
+      "Observers 1 and 2 describe the cable as short and coiled or ribbed, while Observer 3 describes a thin dark cord with only a short ribbed section near the top, so the cable's drawn character reads inconsistently.",
+      "Observers 1 and 2 report small buttons and a lighter strip on the ear device, and Observer 3 adds a pale hook piece against the ear, small hardware details the clinician may wish to check for accuracy.",
+      "All three observers note the skin is drawn smooth and unbroken with no cut, scar or swelling, confirming no surgical site is depicted even though each of them still raised a post-surgery misreading.",
+      "Observer 1 notes the shoulders are cut off at the bottom while Observers 2 and 3 describe a shoulder and the back of the neck as visible, a framing difference worth confirming.",
+      "Observer 1: The scalp disc is taken as a bolt, plug or lump fixed into or through the skin and skull, as after brain surgery, rather than a device worn on the outside.",
+      "Observer 1: The disc and cable are taken as hospital monitoring electrodes or wires taped onto a shaved head, rather than a removable personal device.",
+      "Observer 2: The scalp disc is taken as a bolt, plug or lump fixed into or through the skin and skull, as after brain surgery, rather than a device worn on the outside.",
+      "Observer 2: The disc and cable are taken as hospital monitoring electrodes or wires taped onto a shaved head, rather than a removable personal device.",
+      "Observer 3: The scalp disc is taken as a bolt, plug or lump fixed into or through the skin and skull, as after brain surgery, rather than a device worn on the outside.",
+      "Observer 3: The disc and cord are taken as a wound dressing with a drain tube coming out of it.",
+      "All three observers single out a tiny red dot on the behind-the-ear device, which each reads as an indicator light, so the clinician should confirm that this coloured spot is intended.",
+      "Observer 1 and Observer 2 report small buttons on the side or front edge of the ear-hook unit, and Observer 2 adds a lighter grey strip along its top, details that add device controls not called for by the brief.",
+      "Observer 2 notes a smaller raised circle in the centre of the scalp disc, while Observer 3 instead notes a pale hook piece resting against the ear, so the fine detailing of the parts is read differently by different viewers.",
+      "The cable is described inconsistently: Observer 1 sees a short coiled cord, Observer 2 a short ribbed cable, and Observer 3 a thin dark cord with only a short ribbed section near the top.",
+      "Observer 3 notes the scalp disc sits high up and partly under the long hair, which may make its position relative to the ear harder to judge.",
+      "Observer 2 points out that the shave line curves from the temple up over the crown and down behind the ear, a scalp detail worth checking for accuracy.",
+      "All three observers state the skin is smooth and unbroken with no cuts, redness or swelling drawn, which supports the worn-device reading."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "unallowed mark: tiny red indicator dot on the behind-the-ear device",
+            "source": "question 3"
+          },
+          {
+            "observer": 2,
+            "reading": "unallowed mark: tiny red indicator dot on the ear-hook device",
+            "source": "question 3"
+          },
+          {
+            "observer": 3,
+            "reading": "unallowed mark: tiny red indicator dot on top of the behind-the-ear device",
+            "source": "question 3"
+          }
+        ],
+        "tally": {
+          "a device hooked behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.5",
+              "text": "a short coiled cord runs from it down and forward to a curved, bean-shaped unit that hooks over the top of the outer ear and rests in the crease behind the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "A short ribbed grey cable runs from the bottom of the disc, curves down and forward, and plugs into a larger dark grey banana-shaped device that hooks over the top of the ear and rests in the crease behind it;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "A thin dark cord runs down from the disc in a gentle curve, with a short ribbed section near the top, and connects to a dark grey banana-shaped device that hooks over the top of the ear and rests in the groove behind the ear."
+            }
+          ],
+          "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Two grey devices are worn: a round, flat disc sits on the shaved scalp above and behind the ear, roughly at the hairline where the long hair begins;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Sitting on the shaved scalp, above and a little behind the ear, is a round dark grey disc about the size of a coin, with a smaller raised circle in its centre."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "A round dark grey disc, about the size of a coin, sits on the shaved scalp high up, above and behind the ear, partly under the long hair."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A drawing of a person's head and upper neck, seen from behind and slightly to the side (back-right view)."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A cartoon-style side view of a person's head, upper neck and shoulder, seen from behind and slightly to the right, so the right ear, jawline and the tip of the nose are visible."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The head and upper neck of a person, seen mostly from behind and the right side;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.5"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator dot on the behind-the-ear device",
+                  "cite": "o1.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "surgical-bolt-in-skull",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "monitoring-electrodes",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator dot on the ear-hook device",
+                  "cite": "o2.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "surgical-bolt-in-skull",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "monitoring-electrodes",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator dot on top of the behind-the-ear device",
+                  "cite": "o3.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "surgical-bolt-in-skull",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "wound-dressing-with-drain",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "surgical-bolt-in-skull",
+              "reading": "The scalp disc is taken for a bolt, plug or lump driven into the skin or skull after brain surgery rather than a device worn on the outside.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "monitoring-electrodes",
+              "reading": "The disc and cable are taken for hospital monitoring electrodes or wires taped onto a shaved head.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "wound-dressing-with-drain",
+              "reading": "The disc and cord are taken for a dressing over a wound with a drain tube leading from it.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "All three observers report a tiny red dot on the behind-the-ear device, which each of them reads as an indicator light, so the clinician should confirm whether this coloured detail is intended.",
+            "Observer 3 notes the scalp disc sits partly under the long hair, which may make the coil harder to see than intended.",
+            "Observers 1 and 2 describe the cable as short and coiled or ribbed, while Observer 3 describes a thin dark cord with only a short ribbed section near the top, so the cable's drawn character reads inconsistently.",
+            "Observers 1 and 2 report small buttons and a lighter strip on the ear device, and Observer 3 adds a pale hook piece against the ear, small hardware details the clinician may wish to check for accuracy.",
+            "All three observers note the skin is drawn smooth and unbroken with no cut, scar or swelling, confirming no surgical site is depicted even though each of them still raised a post-surgery misreading.",
+            "Observer 1 notes the shoulders are cut off at the bottom while Observers 2 and 3 describe a shoulder and the back of the neck as visible, a framing difference worth confirming."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "unallowed mark: tiny red indicator-light dot on the behind-the-ear device",
+            "source": "question 3"
+          },
+          {
+            "observer": 2,
+            "reading": "unallowed mark: tiny red indicator-light dot on the ear-hook device",
+            "source": "question 3"
+          },
+          {
+            "observer": 3,
+            "reading": "unallowed mark: tiny red indicator-light dot atop the behind-the-ear device",
+            "source": "question 3"
+          }
+        ],
+        "tally": {
+          "a device hooked behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.5",
+              "text": "a short coiled cord runs from it down and forward to a curved, bean-shaped unit that hooks over the top of the outer ear and rests in the crease behind the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "A short ribbed grey cable runs from the bottom of the disc, curves down and forward, and plugs into a larger dark grey banana-shaped device that hooks over the top of the ear and rests in the crease behind it;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.4",
+              "text": "A thin dark cord runs down from the disc in a gentle curve, with a short ribbed section near the top, and connects to a dark grey banana-shaped device that hooks over the top of the ear and rests in the groove behind the ear."
+            }
+          ],
+          "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Two grey devices are worn: a round, flat disc sits on the shaved scalp above and behind the ear, roughly at the hairline where the long hair begins;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Sitting on the shaved scalp, above and a little behind the ear, is a round dark grey disc about the size of a coin, with a smaller raised circle in its centre."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "A round dark grey disc, about the size of a coin, sits on the shaved scalp high up, above and behind the ear, partly under the long hair."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A drawing of a person's head and upper neck, seen from behind and slightly to the side (back-right view)."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A cartoon-style side view of a person's head, upper neck and shoulder, seen from behind and slightly to the right, so the right ear, jawline and the tip of the nose are visible."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "The head and upper neck of a person, seen mostly from behind and the right side;"
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.5"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator-light dot on the behind-the-ear device",
+                  "cite": "o1.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "bolt-into-head",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "monitoring-electrodes",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator-light dot on the ear-hook device",
+                  "cite": "o2.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "bolt-into-head",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "monitoring-electrodes",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.4"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [
+                {
+                  "mark": "tiny red indicator-light dot atop the behind-the-ear device",
+                  "cite": "o3.3.2"
+                }
+              ],
+              "alternatives": [
+                {
+                  "key": "bolt-into-head",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "dressing-with-drain",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "bolt-into-head",
+              "reading": "The scalp disc is taken as a bolt, plug or lump fixed into or through the skin and skull, as after brain surgery, rather than a device worn on the outside.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "monitoring-electrodes",
+              "reading": "The disc and cable are taken as hospital monitoring electrodes or wires taped onto a shaved head, rather than a removable personal device.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "dressing-with-drain",
+              "reading": "The disc and cord are taken as a wound dressing with a drain tube coming out of it.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "All three observers single out a tiny red dot on the behind-the-ear device, which each reads as an indicator light, so the clinician should confirm that this coloured spot is intended.",
+            "Observer 1 and Observer 2 report small buttons on the side or front edge of the ear-hook unit, and Observer 2 adds a lighter grey strip along its top, details that add device controls not called for by the brief.",
+            "Observer 2 notes a smaller raised circle in the centre of the scalp disc, while Observer 3 instead notes a pale hook piece resting against the ear, so the fine detailing of the parts is read differently by different viewers.",
+            "The cable is described inconsistently: Observer 1 sees a short coiled cord, Observer 2 a short ribbed cable, and Observer 3 a thin dark cord with only a short ribbed section near the top.",
+            "Observer 3 notes the scalp disc sits high up and partly under the long hair, which may make its position relative to the ear harder to judge.",
+            "Observer 2 points out that the shave line curves from the temple up over the crown and down behind the ear, a scalp detail worth checking for accuracy.",
+            "All three observers state the skin is smooth and unbroken with no cuts, redness or swelling drawn, which supports the worn-device reading."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 3 required items. Forbidden: observer 1 (question 3): unallowed mark: tiny red indicator dot on the behind-the-ear device; observer 2 (question 3): unallowed mark: tiny red indicator dot on the ear-hook device; observer 3 (question 3): unallowed mark: tiny red indicator dot on top of the behind-the-ear device; observer 1 (question 3): unallowed mark: tiny red indicator-light dot on the behind-the-ear device; observer 2 (question 3): unallowed mark: tiny red indicator-light dot on the ear-hook device; observer 3 (question 3): unallowed mark: tiny red indicator-light dot atop the behind-the-ear device. Under the strict rule the picture would fail."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

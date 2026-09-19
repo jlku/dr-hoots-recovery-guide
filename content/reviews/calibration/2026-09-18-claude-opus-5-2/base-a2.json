@@ -1,0 +1,471 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-base-a2",
+  "contract_id": "postauricular-base",
+  "kind": "record",
+  "file": "assets/anatomy/postauricular-base-a2.png",
+  "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0: three caption-blind observers each received only the image inside the request; a coder, run 2 times, received only the contract and their answers split into numbered units and cited a unit for each finding; code verified every citation and computed the verdict, which passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "state-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWJmqGxicLicszaKpAM",
+        "request_id": "req_011CfBWJkvDDatUJihErrQSG",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 456,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWJmZQFFDa963JxqNvx",
+        "request_id": "req_011CfBWJkpW4CmWsPnbHdLbi",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 496,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "observer",
+        "message_id": "msg_011CfBWJmno8RX1EiAtC4yYW",
+        "request_id": "req_011CfBWJktUDysBtp7QvVqX6",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 1821,
+          "output_tokens": 487,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWKb8Nb5EYwWBNZXBy1",
+        "request_id": "req_011CfBWKadrd7idYSryCvsJX",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6051,
+          "output_tokens": 2052,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBWKb7dGKqud8AXQh7Nx",
+        "request_id": "req_011CfBWKad7UNgnPXsjunRjz",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 6051,
+          "output_tokens": 2268,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.2318
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWJmqGxicLicszaKpAM",
+      "recoded_from": null,
+      "answers": {
+        "1": "A drawn head and upper neck of a person, seen from behind and slightly to the side; the face points to the right, so we see the back of the head, the right ear, the jawline and the start of the neck and shoulder.",
+        "2": "The top of the head has thick, brown, swept-back hair. Below that, the whole side and back of the head is bare, pale skin with no hair at all. Between the thick hair and the bare skin there is a band of very short stubble, drawn as fine dark flecks, running in a curved line from the front top, back over the crown area and down toward the back of the head; the edge is faded rather than sharp. The bare skin looks smooth and even, with no redness, spots, scabs, scars or flaking that I can see. The ear, jaw and neck are drawn plainly. Nothing is worn on the head — no cap, dressing, or device — and nothing appears applied to the skin.",
+        "3": "There is no text, number, arrow, label or symbol anywhere in the picture. The background is plain off-white.",
+        "4": "It could be read as sudden hair loss or bald patches from illness or treatment, rather than simply a shaved or clipped haircut with long hair left on top."
+      },
+      "observation": "1. A drawn head and upper neck of a person, seen from behind and slightly to the side; the face points to the right, so we see the back of the head, the right ear, the jawline and the start of the neck and shoulder.\n\n2. The top of the head has thick, brown, swept-back hair. Below that, the whole side and back of the head is bare, pale skin with no hair at all. Between the thick hair and the bare skin there is a band of very short stubble, drawn as fine dark flecks, running in a curved line from the front top, back over the crown area and down toward the back of the head; the edge is faded rather than sharp. The bare skin looks smooth and even, with no redness, spots, scabs, scars or flaking that I can see. The ear, jaw and neck are drawn plainly. Nothing is worn on the head — no cap, dressing, or device — and nothing appears applied to the skin.\n\n3. There is no text, number, arrow, label or symbol anywhere in the picture. The background is plain off-white.\n\n4. It could be read as sudden hair loss or bald patches from illness or treatment, rather than simply a shaved or clipped haircut with long hair left on top."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWJmZQFFDa963JxqNvx",
+      "recoded_from": null,
+      "answers": {
+        "1": "A person's head and upper neck, drawn from behind and slightly to the side, so you see the back of the head, the right ear, the jawline, and the tip of the nose and one eye at the far right. The top of the shoulder/neck is at the bottom.",
+        "2": "The hair on the top of the head is thick and brown, swept upward and toward the front. Below a clear curved line running from the front hairline over the side and around the back, the hair is cut down to almost nothing: there is a narrow band of short dark stubble just under the thick hair, and below that the scalp looks completely bare and smooth, plain skin-coloured, over the whole side and back of the head down to the neck. The ear is uncovered, with no hair in front of or behind it. I see no wound, rash, redness, scab, stitches, bandage, dressing, glasses, or device anywhere; the skin looks even in colour throughout.",
+        "3": "There is no text, number, arrow, label, or other symbol anywhere in the picture. The background is plain off-white.",
+        "4": "A worried person could read it as sudden patchy hair loss or balding on the sides and back, rather than simply a short undercut-style haircut or a head shaved on purpose."
+      },
+      "observation": "1. A person's head and upper neck, drawn from behind and slightly to the side, so you see the back of the head, the right ear, the jawline, and the tip of the nose and one eye at the far right. The top of the shoulder/neck is at the bottom.\n\n2. The hair on the top of the head is thick and brown, swept upward and toward the front. Below a clear curved line running from the front hairline over the side and around the back, the hair is cut down to almost nothing: there is a narrow band of short dark stubble just under the thick hair, and below that the scalp looks completely bare and smooth, plain skin-coloured, over the whole side and back of the head down to the neck. The ear is uncovered, with no hair in front of or behind it. I see no wound, rash, redness, scab, stitches, bandage, dressing, glasses, or device anywhere; the skin looks even in colour throughout.\n\n3. There is no text, number, arrow, label, or other symbol anywhere in the picture. The background is plain off-white.\n\n4. A worried person could read it as sudden patchy hair loss or balding on the sides and back, rather than simply a short undercut-style haircut or a head shaved on purpose."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": "claude-opus-5",
+      "message_id": "msg_011CfBWJmno8RX1EiAtC4yYW",
+      "recoded_from": null,
+      "answers": {
+        "1": "A person's head and upper neck, drawn from behind and slightly to the side. The face points to the right, so we mostly see the back and right side of the head, the right ear, the jawline and a bit of the shoulder.",
+        "2": "The top of the head has thick, dark brown hair that sweeps up and forward. Below a clean curved line running from the front hairline, back over the ear and down to the nape, the hair is gone: the back and side of the head are bare skin. Just under the parting line there is a band of short stubble (fine dark flecks) that fades into smooth, plain skin over the area above and behind the ear and down the back of the head. The skin there looks even in colour, with no rash, redness, scab, scar, bump or patchiness. The ear, face and neck are bare, with no bandage, dressing, device or cream drawn anywhere.",
+        "3": "No text, numbers, arrows, labels or symbols appear anywhere in the picture. The background is plain off-white.",
+        "4": "It could be read as hair loss rather than a haircut \\u2014 a worried person might think it shows sudden balding or a large bald patch on the back and side of the head, or a head shaved for surgery."
+      },
+      "observation": "1. A person's head and upper neck, drawn from behind and slightly to the side. The face points to the right, so we mostly see the back and right side of the head, the right ear, the jawline and a bit of the shoulder.\n\n2. The top of the head has thick, dark brown hair that sweeps up and forward. Below a clean curved line running from the front hairline, back over the ear and down to the nape, the hair is gone: the back and side of the head are bare skin. Just under the parting line there is a band of short stubble (fine dark flecks) that fades into smooth, plain skin over the area above and behind the ear and down the back of the head. The skin there looks even in colour, with no rash, redness, scab, scar, bump or patchiness. The ear, face and neck are bare, with no bandage, dressing, device or cream drawn anywhere.\n\n3. No text, numbers, arrows, labels or symbols appear anywhere in the picture. The background is plain off-white.\n\n4. It could be read as hair loss rather than a haircut \\u2014 a worried person might think it shows sudden balding or a large bald patch on the back and side of the head, or a head shaved for surgery."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "state-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "the back or side of a person's head with the area behind the ear in view": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.2",
+          "text": "the face points to the right, so we see the back of the head, the right ear, the jawline and the start of the neck and shoulder."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "The ear is uncovered, with no hair in front of or behind it."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "Just under the parting line there is a band of short stubble (fine dark flecks) that fades into smooth, plain skin over the area above and behind the ear and down the back of the head."
+        }
+      ],
+      "a thin pale line in the crease behind the ear, not on the face or neck": []
+    },
+    "recovered": [
+      "the back or side of a person's head with the area behind the ear in view"
+    ],
+    "missed": [
+      "a thin pale line in the crease behind the ear, not on the face or neck"
+    ],
+    "forbidden_hits": [],
+    "forbidden_hits_strict": [],
+    "design_notes": [
+      "Observer 1: The bare sides and back are taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate clipped or undercut haircut.",
+      "Observer 2: The bare sides and back are taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate clipped or undercut haircut.",
+      "Observer 3: The bare sides and back are taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate clipped or undercut haircut.",
+      "Observer 3: The bare scalp is taken as a head shaved in preparation for an operation.",
+      "All three observers describe the skin behind and around the ear as smooth and even, and Observer 1 explicitly reports no scars there, so the required thin pale line in the crease behind the ear does not read as drawn.",
+      "Observer 3 likewise states the skin shows no scar, bump or patchiness, confirming the healed-line state the picture is supposed to show is not visible.",
+      "Observer 2 reports the tip of the nose and one eye visible at the far right, a bit more of the face than the other two observers describe, which shifts the viewing angle away from a pure behind-the-ear view.",
+      "Observer 1 notes the stubble band has a faded rather than sharp edge, while Observers 2 and 3 describe the same boundary as a clear or clean curved line, so the hairline edge reads inconsistently.",
+      "Observer 3 notes the hairline runs back over the ear and down to the nape, meaning the clipped-hair boundary crosses exactly the area where the pale line should be legible.",
+      "Observer 1: The bare side and back of the head is taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate short haircut.",
+      "Observer 2: The bare side and back of the head is taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate short haircut.",
+      "Observer 3: The bare side and back of the head is taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate short haircut.",
+      "Observer 3: The shaved area is taken as a head prepared (shaved) for an operation.",
+      "Observer 1 states the bare skin shows no scars at all, so the thin pale line that should sit in the crease behind the ear is not coming across in the drawing.",
+      "Observer 2 likewise reports no wound, scab or stitches anywhere on the skin, confirming the required pale line behind the ear is not visible.",
+      "Observer 3 describes the skin above and behind the ear as even and unmarked with no scar, again indicating the key pale line is missing from the picture.",
+      "Observer 2 additionally sees the tip of the nose and one eye at the far right, showing more of the face than Observers 1 and 3 describe, which may pull attention away from the area behind the ear.",
+      "All three observers warn the shaved side and back reads as hair loss, and Observer 3 adds that it could read as a head shaved for surgery."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a thin pale line in the crease behind the ear, not on the face or neck"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "the back or side of a person's head with the area behind the ear in view": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.2",
+              "text": "the face points to the right, so we see the back of the head, the right ear, the jawline and the start of the neck and shoulder."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "The ear is uncovered, with no hair in front of or behind it."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Just under the parting line there is a band of short stubble (fine dark flecks) that fades into smooth, plain skin over the area above and behind the ear and down the back of the head."
+            }
+          ],
+          "a thin pale line in the crease behind the ear, not on the face or neck": []
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o1.1.2"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "shaved-for-surgery",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss-not-haircut",
+              "reading": "The bare sides and back are taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate clipped or undercut haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "shaved-for-surgery",
+              "reading": "The bare scalp is taken as a head shaved in preparation for an operation.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "All three observers describe the skin behind and around the ear as smooth and even, and Observer 1 explicitly reports no scars there, so the required thin pale line in the crease behind the ear does not read as drawn.",
+            "Observer 3 likewise states the skin shows no scar, bump or patchiness, confirming the healed-line state the picture is supposed to show is not visible.",
+            "Observer 2 reports the tip of the nose and one eye visible at the far right, a bit more of the face than the other two observers describe, which shifts the viewing angle away from a pure behind-the-ear view.",
+            "Observer 1 notes the stubble band has a faded rather than sharp edge, while Observers 2 and 3 describe the same boundary as a clear or clean curved line, so the hairline edge reads inconsistently.",
+            "Observer 3 notes the hairline runs back over the ear and down to the nape, meaning the clipped-hair boundary crosses exactly the area where the pale line should be legible."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "a thin pale line in the crease behind the ear, not on the face or neck"
+        ],
+        "forbidden_hits": [],
+        "tally": {
+          "the back or side of a person's head with the area behind the ear in view": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.2",
+              "text": "the face points to the right, so we see the back of the head, the right ear, the jawline and the start of the neck and shoulder."
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "A person's head and upper neck, drawn from behind and slightly to the side, so you see the back of the head, the right ear, the jawline, and the tip of the nose and one eye at the far right."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.2",
+              "text": "The face points to the right, so we mostly see the back and right side of the head, the right ear, the jawline and a bit of the shoulder."
+            }
+          ],
+          "a thin pale line in the crease behind the ear, not on the face or neck": []
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o1.1.2"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "the back or side of a person's head with the area behind the ear in view",
+                  "recovered": true,
+                  "cite": "o3.1.2"
+                },
+                {
+                  "item": "a thin pale line in the crease behind the ear, not on the face or neck",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hair-loss-not-haircut",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "head-shaved-for-surgery",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hair-loss-not-haircut",
+              "reading": "The bare side and back of the head is taken as sudden balding or patchy hair loss from illness or treatment rather than a deliberate short haircut.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "head-shaved-for-surgery",
+              "reading": "The shaved area is taken as a head prepared (shaved) for an operation.",
+              "forbidden": null,
+              "harm": false
+            }
+          ],
+          "design_notes": [
+            "Observer 1 states the bare skin shows no scars at all, so the thin pale line that should sit in the crease behind the ear is not coming across in the drawing.",
+            "Observer 2 likewise reports no wound, scab or stitches anywhere on the skin, confirming the required pale line behind the ear is not visible.",
+            "Observer 3 describes the skin above and behind the ear as even and unmarked with no scar, again indicating the key pale line is missing from the picture.",
+            "Observer 2 additionally sees the tip of the nose and one eye at the far right, showing more of the face than Observers 1 and 3 describe, which may pull attention away from the area behind the ear.",
+            "All three observers warn the shaved side and back reads as hair loss, and Observer 3 adds that it could read as a head shaved for surgery."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: a thin pale line in the crease behind the ear, not on the face or neck. No observer's own answer states a forbidden reading and no unallowed mark was reported; imagined misreadings are notes for the clinician. Under the strict rule the picture would fail."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

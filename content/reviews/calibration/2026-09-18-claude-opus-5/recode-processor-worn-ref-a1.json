@@ -1,0 +1,711 @@
+{
+  "schema_version": "1.1",
+  "record_id": "processor-worn-ref-a1",
+  "contract_id": "processor-worn-ref",
+  "kind": "recode",
+  "file": "assets/anatomy/processor-worn-ref-a1.png",
+  "sha256": "6fcee11654dccd51c5c6ebf25403cf8c14030179e63ec9fc1276f735fee3c326",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/processor-worn-ref-a1.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRfkQiHKkLs1WSpKxAE",
+        "request_id": "req_011CfBRfjvgG1VcsYypk3Qko",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5769,
+          "output_tokens": 4252,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRfkNyCbwMjZQERmCAQ",
+        "request_id": "req_011CfBRfjtT7i3bZrRdegHBx",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 5769,
+          "output_tokens": 5218,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.29444
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/processor-worn-ref-a1.json",
+      "answers": {
+        "1": "A human head and upper neck, seen from the right side in profile, slightly from behind; the face points right and only the eyelashes, brow, and tip of the nose are visible. Hair is short on top and buzzed on the sides.",
+        "2": "Two dark-grey objects joined by a thin cable. A round disc sits flat on the buzzed scalp behind and above the ear. A rectangular, oblong unit with a curved hook sits on top of the outer ear, its hook draped over the top of the ear and its body resting behind the ear; a short cable arcs from the disc down into the top of that unit. The skin looks intact, with no redness, swelling, cut, or scar drawn.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "It could be mistaken for a hearing aid with a magnetic headphone or headset pad, or for a patch stuck to the scalp; a worried patient might read the round disc as something implanted or protruding through the skin."
+      },
+      "observation": "1. A human head and upper neck, seen from the right side in profile, slightly from behind; the face points right and only the eyelashes, brow, and tip of the nose are visible. Hair is short on top and buzzed on the sides.\n\n2. Two dark-grey objects joined by a thin cable. A round disc sits flat on the buzzed scalp behind and above the ear. A rectangular, oblong unit with a curved hook sits on top of the outer ear, its hook draped over the top of the ear and its body resting behind the ear; a short cable arcs from the disc down into the top of that unit. The skin looks intact, with no redness, swelling, cut, or scar drawn.\n\n3. No text, arrows, labels, or symbols.\n\n4. It could be mistaken for a hearing aid with a magnetic headphone or headset pad, or for a patch stuck to the scalp; a worried patient might read the round disc as something implanted or protruding through the skin."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/processor-worn-ref-a1.json",
+      "answers": {
+        "1": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view). The face is turned away; only the tip of the nose, eyelashes, and eyebrow show at the right edge. The hair is short on top and closely shaved on the sides and back.",
+        "2": "Two connected dark-gray objects. A round, flat disc with a raised center sits on the shaved scalp above and behind the ear. A thin dark cable runs from the disc down and forward to a curved, oblong unit that hooks over the top of the ear and rests behind it. The oblong unit has a small clear hook over the ear and a tiny red dot near its top. The skin shows no cuts, redness, swelling, or scars.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient might read the disc as something surgically attached to or protruding from the skull, or the whole device as a large hearing aid with a wired clip."
+      },
+      "observation": "1. The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view). The face is turned away; only the tip of the nose, eyelashes, and eyebrow show at the right edge. The hair is short on top and closely shaved on the sides and back.\n\n2. Two connected dark-gray objects. A round, flat disc with a raised center sits on the shaved scalp above and behind the ear. A thin dark cable runs from the disc down and forward to a curved, oblong unit that hooks over the top of the ear and rests behind it. The oblong unit has a small clear hook over the ear and a tiny red dot near its top. The skin shows no cuts, redness, swelling, or scars.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient might read the disc as something surgically attached to or protruding from the skull, or the whole device as a large hearing aid with a wired clip."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/processor-worn-ref-a1.json",
+      "answers": {
+        "1": "A person's head, upper neck, and one shoulder, seen from the side and slightly behind, in flat illustration style. The near ear, nose, closed eye, and eyebrow are visible; the hair is short with a shaved fade above and behind the ear.",
+        "2": "A two-part dark grey device is worn on the head. A flat round disc sits on the scalp above and behind the ear, over the hair. A short cable runs from that disc down to a curved unit hooked over the top of the ear, resting behind the outer ear, with a thin clear hook over the ear top and a small red dot at its upper edge. The skin shows no redness, swelling, cut, scar, or bandage anywhere.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "Could be mistaken for an ordinary behind-the-ear hearing aid plus a stuck-on patch, or for a wound dressing on the scalp."
+      },
+      "observation": "1. A person's head, upper neck, and one shoulder, seen from the side and slightly behind, in flat illustration style. The near ear, nose, closed eye, and eyebrow are visible; the hair is short with a shaved fade above and behind the ear.\n\n2. A two-part dark grey device is worn on the head. A flat round disc sits on the scalp above and behind the ear, over the hair. A short cable runs from that disc down to a curved unit hooked over the top of the ear, resting behind the outer ear, with a thin clear hook over the ear top and a small red dot at its upper edge. The skin shows no redness, swelling, cut, scar, or bandage anywhere.\n\n3. No text, arrows, labels, or symbols.\n\n4. Could be mistaken for an ordinary behind-the-ear hearing aid plus a stuck-on patch, or for a wound dressing on the scalp."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a device hooked behind the ear": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.3",
+          "text": "A rectangular, oblong unit with a curved hook sits on top of the outer ear, its hook draped over the top of the ear and its body resting behind the ear;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "A thin dark cable runs from the disc down and forward to a curved, oblong unit that hooks over the top of the ear and rests behind it."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "A short cable runs from that disc down to a curved unit hooked over the top of the ear, resting behind the outer ear, with a thin clear hook over the ear top and a small red dot at its upper edge."
+        }
+      ],
+      "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.2",
+          "text": "A round disc sits flat on the buzzed scalp behind and above the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "A round, flat disc with a raised center sits on the shaved scalp above and behind the ear."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "A flat round disc sits on the scalp above and behind the ear, over the hair."
+        }
+      ],
+      "the same view of the head": [
+        {
+          "observer": 1,
+          "answer": 1,
+          "cite": "o1.1.1",
+          "text": "A human head and upper neck, seen from the right side in profile, slightly from behind;"
+        },
+        {
+          "observer": 2,
+          "answer": 1,
+          "cite": "o2.1.1",
+          "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+        },
+        {
+          "observer": 3,
+          "answer": 1,
+          "cite": "o3.1.1",
+          "text": "A person's head, upper neck, and one shoulder, seen from the side and slightly behind, in flat illustration style."
+        }
+      ]
+    },
+    "recovered": [
+      "a device hooked behind the ear",
+      "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+      "the same view of the head"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+      "Observer 1: The round disc is read as something implanted in or surgically attached to the skull, protruding through the skin.",
+      "Observer 2: The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+      "Observer 2: The round disc is read as something implanted in or surgically attached to the skull, protruding through the skin.",
+      "Observer 3: The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+      "Observer 3: The round disc is read as a dressing covering a wound on the scalp.",
+      "Observers 2 and 3 both report a tiny red dot near the top of the behind-the-ear unit, which Observer 1 does not mention at all.",
+      "Observers 2 and 3 describe a thin clear hook over the top of the ear, a detail absent from Observer 1's description of the same unit.",
+      "The three observers place the viewpoint slightly differently — Observer 1 calls it a right-side profile slightly from behind, Observer 2 calls it a rear three-quarter view, and Observer 3 a side view slightly from behind — so the intended angle may read ambiguously.",
+      "Observer 3 notes the disc sits on the scalp over the hair rather than against bare skin, which may affect how the coil's placement is understood.",
+      "Observer 3 is the only one to state the image reads as flat illustration style; Observers 1 and 2 say nothing about rendering style.",
+      "Observers 1, 2, and 3 all confirm the skin is drawn intact with no redness, swelling, cut, scar, or bandage, yet Observers 1, 2, and 3 each still anticipate a patient misreading the disc as an implant, protrusion, or wound dressing.",
+      "Observer 2 describes the disc as having a raised center, a relief detail the other two observers describe as simply flat.",
+      "Observer 1: The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+      "Observer 1: The round disc is taken for something implanted, surgically attached to the skull, or protruding out through the skin.",
+      "Observer 2: The round disc is taken for something implanted, surgically attached to the skull, or protruding out through the skin.",
+      "Observer 2: The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+      "Observer 3: The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+      "Observer 3: The disc on the scalp is taken for a dressing covering a wound.",
+      "Observers 2 and 3 each report a small red dot near the top of the behind-the-ear unit, a detail Observer 1 does not mention, so the clinician may want to confirm it is intended and not read as an indicator mark.",
+      "Observer 2 describes the disc as having a raised center while Observers 1 and 3 describe it as flat, so the disc's profile reads inconsistently.",
+      "Observer 3 says the disc sits over the hair, whereas Observers 1 and 2 place it on buzzed or shaved scalp.",
+      "Observer 1 read the head as a right-side profile only slightly turned away while Observer 2 read it as a rear three-quarter view from behind, suggesting the head angle is ambiguous.",
+      "Observers 2 and 3 note a thin clear hook over the top of the ear, which Observer 1 described only as a curved hook."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a device hooked behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "A rectangular, oblong unit with a curved hook sits on top of the outer ear, its hook draped over the top of the ear and its body resting behind the ear;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "A thin dark cable runs from the disc down and forward to a curved, oblong unit that hooks over the top of the ear and rests behind it."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "A short cable runs from that disc down to a curved unit hooked over the top of the ear, resting behind the outer ear, with a thin clear hook over the ear top and a small red dot at its upper edge."
+            }
+          ],
+          "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A round disc sits flat on the buzzed scalp behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "A round, flat disc with a raised center sits on the shaved scalp above and behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A flat round disc sits on the scalp above and behind the ear, over the hair."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A human head and upper neck, seen from the right side in profile, slightly from behind;"
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head, upper neck, and one shoulder, seen from the side and slightly behind, in flat illustration style."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hearing-aid-plus-accessory",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "disc-as-implant-through-skin",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hearing-aid-plus-accessory",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "disc-as-implant-through-skin",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hearing-aid-plus-accessory",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "scalp-wound-dressing",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hearing-aid-plus-accessory",
+              "reading": "The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.",
+              "forbidden": "a hearing aid with no coil",
+              "harm": false
+            },
+            {
+              "key": "disc-as-implant-through-skin",
+              "reading": "The round disc is read as something implanted in or surgically attached to the skull, protruding through the skin.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "scalp-wound-dressing",
+              "reading": "The round disc is read as a dressing covering a wound on the scalp.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observers 2 and 3 both report a tiny red dot near the top of the behind-the-ear unit, which Observer 1 does not mention at all.",
+            "Observers 2 and 3 describe a thin clear hook over the top of the ear, a detail absent from Observer 1's description of the same unit.",
+            "The three observers place the viewpoint slightly differently — Observer 1 calls it a right-side profile slightly from behind, Observer 2 calls it a rear three-quarter view, and Observer 3 a side view slightly from behind — so the intended angle may read ambiguously.",
+            "Observer 3 notes the disc sits on the scalp over the hair rather than against bare skin, which may affect how the coil's placement is understood.",
+            "Observer 3 is the only one to state the image reads as flat illustration style; Observers 1 and 2 say nothing about rendering style.",
+            "Observers 1, 2, and 3 all confirm the skin is drawn intact with no redness, swelling, cut, scar, or bandage, yet Observers 1, 2, and 3 each still anticipate a patient misreading the disc as an implant, protrusion, or wound dressing.",
+            "Observer 2 describes the disc as having a raised center, a relief detail the other two observers describe as simply flat."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a device hooked behind the ear": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.3",
+              "text": "A rectangular, oblong unit with a curved hook sits on top of the outer ear, its hook draped over the top of the ear and its body resting behind the ear;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "A thin dark cable runs from the disc down and forward to a curved, oblong unit that hooks over the top of the ear and rests behind it."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "A short cable runs from that disc down to a curved unit hooked over the top of the ear, resting behind the outer ear, with a thin clear hook over the ear top and a small red dot at its upper edge."
+            }
+          ],
+          "a round disc on the scalp above and behind the ear joined to the device by a short cable": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "A round disc sits flat on the buzzed scalp behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "A round, flat disc with a raised center sits on the shaved scalp above and behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "A flat round disc sits on the scalp above and behind the ear, over the hair."
+            }
+          ],
+          "the same view of the head": [
+            {
+              "observer": 1,
+              "answer": 1,
+              "cite": "o1.1.1",
+              "text": "A human head and upper neck, seen from the right side in profile, slightly from behind;"
+            },
+            {
+              "observer": 2,
+              "answer": 1,
+              "cite": "o2.1.1",
+              "text": "The back and side of a person's head, neck, and one ear, seen from behind and slightly to the side (a rear three-quarter view)."
+            },
+            {
+              "observer": 3,
+              "answer": 1,
+              "cite": "o3.1.1",
+              "text": "A person's head, upper neck, and one shoulder, seen from the side and slightly behind, in flat illustration style."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o1.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o1.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hearing-aid-with-pad-or-clip",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "disc-implanted-through-skin",
+                  "cite": "o1.4.2"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o2.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "disc-implanted-through-skin",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "hearing-aid-with-pad-or-clip",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a device hooked behind the ear",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "a round disc on the scalp above and behind the ear joined to the device by a short cable",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "the same view of the head",
+                  "recovered": true,
+                  "cite": "o3.1.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "hearing-aid-with-pad-or-clip",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "disc-as-wound-dressing",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "hearing-aid-with-pad-or-clip",
+              "reading": "The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.",
+              "forbidden": "a hearing aid with no coil",
+              "harm": false
+            },
+            {
+              "key": "disc-implanted-through-skin",
+              "reading": "The round disc is taken for something implanted, surgically attached to the skull, or protruding out through the skin.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "disc-as-wound-dressing",
+              "reading": "The disc on the scalp is taken for a dressing covering a wound.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observers 2 and 3 each report a small red dot near the top of the behind-the-ear unit, a detail Observer 1 does not mention, so the clinician may want to confirm it is intended and not read as an indicator mark.",
+            "Observer 2 describes the disc as having a raised center while Observers 1 and 3 describe it as flat, so the disc's profile reads inconsistently.",
+            "Observer 3 says the disc sits over the hair, whereas Observers 1 and 2 place it on buzzed or shaved scalp.",
+            "Observer 1 read the head as a right-side profile only slightly turned away while Observer 2 read it as a rear three-quarter view from behind, suggesting the head angle is ambiguous.",
+            "Observers 2 and 3 note a thin clear hook over the top of the ear, which Observer 1 described only as a curved hook."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 3 required items. Forbidden: observer 1 (question 4): The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.; observer 2 (question 4): The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.; observer 3 (question 4): The pair is read as an ordinary behind-the-ear hearing aid together with an unrelated accessory (a headphone or headset pad, a wired clip, or a stuck-on patch) rather than as a hearing device with its coil.; observer 1 (question 4): The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.; observer 2 (question 4): The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.; observer 3 (question 4): The whole device is taken for an ordinary behind-the-ear hearing aid whose disc is just a magnetic headphone or headset pad, a wired clip, or a stuck-on patch rather than a transmitting coil.."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

@@ -424,6 +424,368 @@
       "actual_usd": null,
       "request_id": "01a0b4aa-2f1b-7690-9dc5-a685de9e7d66",
       "status": "completed"
+    },
+    {
+      "id": "review:postauricular-base-a2:2026-09-18T18:50:19.394Z",
+      "at": "2026-09-18T18:50:19.394Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-base-a2: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.107095,
+      "request_id": "msg_011CfBQZXkfR714wXwPJC7j8,msg_011CfBQZXy4bvQxH1U3hS55v,msg_011CfBQZY42HVb59U3tmxf61,msg_011CfBQaaBJYUfRpjiiMrSUk,msg_011CfBQaaC3Wh98gaEBedfyj",
+      "status": "failed"
+    },
+    {
+      "id": "diagnostic:coder-refusal:2026-09-18T18:51:25.433Z",
+      "at": "2026-09-18T18:51:25.434Z",
+      "model": "claude-opus-5",
+      "purpose": "diagnose the coder refusal on the first live run",
+      "units": {
+        "calls": 1
+      },
+      "estimate_usd": 0.43,
+      "actual_usd": 0.019335,
+      "request_id": "msg_011CfBQeP2wXFzfoiN2u5FY4",
+      "status": "failed"
+    },
+    {
+      "id": "diagnostic:coder-citations:2026-09-18T18:53:45.709Z",
+      "at": "2026-09-18T18:53:45.710Z",
+      "model": "claude-opus-5",
+      "purpose": "check that the citation-based coder is not refused",
+      "units": {
+        "calls": 1
+      },
+      "estimate_usd": 0.43,
+      "actual_usd": 0.118565,
+      "request_id": "msg_011CfBQpj5DcWz7ZKPMynrkC",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-diagram.remove-dressing:2026-09-18T18:57:02.954Z",
+      "at": "2026-09-18T18:57:02.955Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/diagram.remove-dressing.json",
+      "units": {
+        "image": "assets/anatomy/diagrams/remove-dressing.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.357315,
+      "request_id": "msg_011CfBR5GUzZ6ghRz6ucWHWC,msg_011CfBR5GUV6QpUzpdm27tMA",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-dressing-removal-ref-a1:2026-09-18T18:58:05.947Z",
+      "at": "2026-09-18T18:58:05.947Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/dressing-removal-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/dressing-removal-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.281125,
+      "request_id": "msg_011CfBR9tjgTeUwYfBU5yEd9,msg_011CfBR9tiw7tFfxpL6gWMS7",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-base-a2:2026-09-18T18:58:57.752Z",
+      "at": "2026-09-18T18:58:57.752Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-base-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.21763,
+      "request_id": "msg_011CfBRDiMCp2pqj9BaP9svr,msg_011CfBRDiPge8rJkxjcbWgSy",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-a2:2026-09-18T18:59:39.161Z",
+      "at": "2026-09-18T18:59:39.161Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.242125,
+      "request_id": "msg_011CfBRGmXYL7W9adqoHddhk,msg_011CfBRGmbkAzw2BcDhBgZRi",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-a4:2026-09-18T19:00:24.465Z",
+      "at": "2026-09-18T19:00:24.465Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-a4.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-a4.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.19917,
+      "request_id": "msg_011CfBRL71tAZnKcduwNx5Ah,msg_011CfBRL78b9GXm5EZbW7DhD",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-dressing-ref-a1:2026-09-18T19:01:02.613Z",
+      "at": "2026-09-18T19:01:02.613Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-dressing-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.17675,
+      "request_id": "msg_011CfBRNvBbXedH1jh82gnYm,msg_011CfBRNvAcQjnTiwxZ8HtyF",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-fluid-a1:2026-09-18T19:01:33.888Z",
+      "at": "2026-09-18T19:01:33.888Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-fluid-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-fluid-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.19437,
+      "request_id": "msg_011CfBRRDiMotgF9LjF5TNmC,msg_011CfBRRDfsps85shmkUhoPs",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-a2:2026-09-18T19:02:09.859Z",
+      "at": "2026-09-18T19:02:09.859Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.243585,
+      "request_id": "msg_011CfBRTsoNTyJX3wswHcoxo,msg_011CfBRTsaDmb9CkPWjVA97f",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-a3:2026-09-18T19:02:58.843Z",
+      "at": "2026-09-18T19:02:58.843Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-a3.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-a3.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.29983,
+      "request_id": "msg_011CfBRXUwobCMw6y9Kf9qkJ,msg_011CfBRXUzHqW2h8BonENAnw",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-red-swollen-ref-a1:2026-09-18T19:03:58.964Z",
+      "at": "2026-09-18T19:03:58.964Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.261775,
+      "request_id": "msg_011CfBRbvDwN2h4hsaHfrYXM,msg_011CfBRbvJAYjyjV2dVEZfYi",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-processor-worn-ref-a1:2026-09-18T19:04:50.990Z",
+      "at": "2026-09-18T19:04:50.990Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/anatomy/processor-worn-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/processor-worn-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.29444,
+      "request_id": "msg_011CfBRfkQiHKkLs1WSpKxAE,msg_011CfBRfkNyCbwMjZQERmCAQ",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-base-a2:2026-09-18T20:05:40.368Z",
+      "at": "2026-09-18T20:05:40.368Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-base-a2: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.2318,
+      "request_id": "msg_011CfBWJmqGxicLicszaKpAM,msg_011CfBWJmZQFFDa963JxqNvx,msg_011CfBWJmno8RX1EiAtC4yYW,msg_011CfBWKb8Nb5EYwWBNZXBy1,msg_011CfBWKb7dGKqud8AXQh7Nx",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-fluid-a1:2026-09-18T20:06:19.387Z",
+      "at": "2026-09-18T20:06:19.387Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-fluid-a1: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-fluid-a1.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.263055,
+      "request_id": "msg_011CfBWMe5nP7YvLpZFDi6P5,msg_011CfBWMeiz9HcifQFc8A4bX,msg_011CfBWMfRe8rZLZqx1gHPWp,msg_011CfBWNUUrhueJFsQ81yocu,msg_011CfBWNUZpp8pY3Bx4ogR3o",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-dressing-ref-a1:2026-09-18T20:07:08.056Z",
+      "at": "2026-09-18T20:07:08.056Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-dressing-ref-a1: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.294595,
+      "request_id": "msg_011CfBWREHB98HEArgaqPe3g,msg_011CfBWREhxvzKnekv1NQAre,msg_011CfBWRFBk4XDf4tjy4rjVK,msg_011CfBWS26imLwS9V1Bdg8tX,msg_011CfBWS2AvfuqKftZaRizZ9",
+      "status": "completed"
+    },
+    {
+      "id": "review:processor-worn-ref-a1:2026-09-18T20:08:05.190Z",
+      "at": "2026-09-18T20:08:05.190Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of processor-worn-ref-a1: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/processor-worn-ref-a1.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.31363,
+      "request_id": "msg_011CfBWVSLa9ZXjXefEvRNLZ,msg_011CfBWVSmN1uW8fJqu9F5S9,msg_011CfBWVSRXEWb5J2QGwgppt,msg_011CfBWWEwjxee87CMHJUfdD,msg_011CfBWWEwzgztp7e3TwokGL",
+      "status": "completed"
+    },
+    {
+      "id": "review:diagram.remove-dressing:2026-09-18T20:09:04.207Z",
+      "at": "2026-09-18T20:09:04.207Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of diagram.remove-dressing: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/diagrams/remove-dressing.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.447355,
+      "request_id": "msg_011CfBWZnaqUjn1N65x6d6xJ,msg_011CfBWZncZwG91JGqu9fjE2,msg_011CfBWZoXtprLgEtrPxnZKi,msg_011CfBWagUmTxr1jyQgLvbeL,msg_011CfBWagS36i4JURRnq1WRr",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-red-swollen-a3:2026-09-18T20:10:24.128Z",
+      "at": "2026-09-18T20:10:24.128Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-red-swollen-a3: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-red-swollen-a3.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.342615,
+      "request_id": "msg_011CfBWfgX8dh7U231ySrssA,msg_011CfBWfh58DKcXKBzEafrzE,msg_011CfBWfge56J9dEKLzxDahh,msg_011CfBWgWW9wxx97MLNwdCQH,msg_011CfBWgWUuf2A8uP8UfTBjG",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-base-a2-as-postauricular-dressing-ref:2026-09-18T20:11:31.369Z",
+      "at": "2026-09-18T20:11:31.369Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-base-a2-as-postauricular-dressing-ref: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.24917,
+      "request_id": "msg_011CfBWkdedMAj2M7Ud673ST,msg_011CfBWke5vNuDazqQQ1gwHn,msg_011CfBWkdvkdoPAuKkTHiJfo,msg_011CfBWmcyDnD7TivBd5jxzv,msg_011CfBWmWDfpEroQMefNXHX2",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-base-a2-as-postauricular-fluid:2026-09-18T20:12:16.640Z",
+      "at": "2026-09-18T20:12:16.640Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-base-a2-as-postauricular-fluid: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.244,
+      "request_id": "msg_011CfBWoyPrkuxZJ3XykSRSK,msg_011CfBWoy4mbYs4kCNsU8WjA,msg_011CfBWoyUaEHjq6vif8ubjj,msg_011CfBWqEWE97SAryuDjnRSu,msg_011CfBWqES1r9961gf1ziTG8",
+      "status": "completed"
+    },
+    {
+      "id": "review:postauricular-dressing-ref-a1-as-processor-worn-ref:2026-09-18T20:13:05.464Z",
+      "at": "2026-09-18T20:13:05.464Z",
+      "model": "claude-opus-5",
+      "purpose": "caption-blind review of postauricular-dressing-ref-a1-as-processor-worn-ref: three observers and 2 codings",
+      "units": {
+        "image": "assets/anatomy/postauricular-dressing-ref-a1.png",
+        "calls": 5
+      },
+      "estimate_usd": 1.5,
+      "actual_usd": 0.262215,
+      "request_id": "msg_011CfBWsZyKZzNgbVnJ5rxMF,msg_011CfBWsa52Ai3s8L5yPP3Te,msg_011CfBWsaJAiY6beMaXD8dge,msg_011CfBWtT7LjpDupUaCyESEf,msg_011CfBWtT47qFynTDVpBZxNb",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-processor-worn-ref-a1:2026-09-18T20:15:52.415Z",
+      "at": "2026-09-18T20:15:52.415Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/calibration/2026-09-18-claude-opus-5-2/processor-worn-ref-a1.json",
+      "units": {
+        "image": "assets/anatomy/processor-worn-ref-a1.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.224425,
+      "request_id": "msg_011CfBX5tBX8jry8RfEx7mug,msg_011CfBX5tKU2ecTPHj9UCmNJ",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-diagram.remove-dressing:2026-09-18T20:16:32.771Z",
+      "at": "2026-09-18T20:16:32.771Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json",
+      "units": {
+        "image": "assets/anatomy/diagrams/remove-dressing.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.39239,
+      "request_id": "msg_011CfBX8rTRbYug1rL1N4k6E,msg_011CfBX8rWQS4TzGTeB5iY9o",
+      "status": "completed"
+    },
+    {
+      "id": "review:recode-postauricular-base-a2:2026-09-18T20:17:50.186Z",
+      "at": "2026-09-18T20:17:50.186Z",
+      "model": "claude-opus-5",
+      "purpose": "2 codings of the stored observations of content/reviews/calibration/2026-09-18-claude-opus-5-2/base-a2.json",
+      "units": {
+        "image": "assets/anatomy/postauricular-base-a2.png",
+        "calls": 2
+      },
+      "estimate_usd": 0.86,
+      "actual_usd": 0.15372,
+      "request_id": "msg_011CfBXEZmFTqSYhA6WppSTq,msg_011CfBXEZjGDXejEoL4BCfmE",
+      "status": "completed"
     }
   ]
 }

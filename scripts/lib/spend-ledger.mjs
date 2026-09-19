@@ -9,6 +9,18 @@ export const PRICING = Object.freeze({
   flux2ProAdditionalMegapixelUsd: 0.015,
   elevenV3PerThousandCharactersUsd: 0.1
 });
+// Claude API list prices per million tokens (first-party API), from the claude-api reference cached
+// 2026-06-24. A model that is not listed cannot be spent on until its price is added here.
+export const CLAUDE_PRICING = Object.freeze({
+  verifiedOn: "2026-06-24",
+  perMillionUsd: Object.freeze({
+    "claude-fable-5-1": Object.freeze({ input: 10, output: 50 }),
+    "claude-opus-5": Object.freeze({ input: 5, output: 25 }),
+    "claude-opus-4-8": Object.freeze({ input: 5, output: 25 }),
+    "claude-sonnet-5": Object.freeze({ input: 2, output: 10 }),
+    "claude-haiku-4-5": Object.freeze({ input: 1, output: 5 })
+  })
+});
 const COUNTED = new Set(["reserved", "completed"]);
 const STATUSES = new Set(["reserved", "completed", "failed"]);
 const roundUpCents = (value) => Math.ceil(value * 100 - 1e-9) / 100;
@@ -23,10 +35,36 @@ export function estimateNarrationUsd(characters) {
   return roundUpCents((characters / 1000) * PRICING.elevenV3PerThousandCharactersUsd);
 }
 
+export function claudePrice(model) {
+  const price = CLAUDE_PRICING.perMillionUsd[model];
+  if (!price) throw new Error(`no price for ${model}; add it to CLAUDE_PRICING before spending on it`);
+  return price;
+}
+
+// Dollars for one call from its reported usage. Cache writes bill at 1.25x input, cache reads at 0.1x.
+export function claudeUsd({ model, inputTokens = 0, outputTokens = 0, cacheWriteTokens = 0, cacheReadTokens = 0 }) {
+  const price = claudePrice(model);
+  const micro = inputTokens * price.input + outputTokens * price.output + cacheWriteTokens * price.input * 1.25 + cacheReadTokens * price.input * 0.1;
+  return Number((micro / 1e6).toFixed(6));
+}
+
+// An upper bound for a set of calls, rounded up to the cent, for reserving against the cap.
+export function estimateClaudeUsd(calls) {
+  const micro = calls.reduce((sum, call) => {
+    const price = claudePrice(call.model);
+    return sum + call.inputTokens * price.input + call.outputTokens * price.output;
+  }, 0);
+  return roundUpCents(micro / 1e6);
+}
+
+// Reserved and completed entries count at their actual cost when known, else their estimate. A failed
+// entry counts only what it actually billed, such as the calls that returned before a later one failed.
 export function ledgerTotals(ledger) {
-  const counted = (ledger.entries ?? []).filter((entry) => COUNTED.has(entry.status));
-  const committed = counted.reduce((sum, entry) => sum + (entry.actual_usd ?? entry.estimate_usd), 0);
-  return { cap: ledger.cap_usd, committed: round(committed), remaining: round(ledger.cap_usd - committed), entries: counted.length };
+  const entries = ledger.entries ?? [];
+  const counted = entries.filter((entry) => COUNTED.has(entry.status));
+  const billedFailures = entries.filter((entry) => entry.status === "failed" && entry.actual_usd > 0);
+  const committed = counted.reduce((sum, entry) => sum + (entry.actual_usd ?? entry.estimate_usd), 0) + billedFailures.reduce((sum, entry) => sum + entry.actual_usd, 0);
+  return { cap: ledger.cap_usd, committed: round(committed), remaining: round(ledger.cap_usd - committed), entries: counted.length + billedFailures.length };
 }
 
 export function reserveSpend(ledger, entry) {

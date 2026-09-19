@@ -1,0 +1,714 @@
+{
+  "schema_version": "1.1",
+  "record_id": "postauricular-red-swollen-ref-a1",
+  "contract_id": "postauricular-red-swollen-ref",
+  "kind": "recode",
+  "file": "assets/anatomy/postauricular-red-swollen-ref-a1.png",
+  "sha256": "02795fa831cfa9c04ce1aa9dcd8f6a5e656e92a4a830944931009b35ec76dea3",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/anatomy/postauricular-red-swollen-ref-a1.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "strict",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRbvDwN2h4hsaHfrYXM",
+        "request_id": "req_011CfBRbuQahZ2QNNF8q9Gim",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4955,
+          "output_tokens": 3984,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBRbvJAYjyjV2dVEZfYi",
+        "request_id": "req_011CfBRbuXH1FruRUeRQgoCx",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 4955,
+          "output_tokens": 4505,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.261775
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "answers": {
+        "1": "The left side of a person's head, seen from behind and slightly to the side, in profile facing right. The ear, shaved lower scalp with a darker hairline above, cheek, jaw, and neck are visible.",
+        "2": "A large, rounded, red-to-pink glowing circle sits on the skin directly behind the ear, in the hollow between the ear and the shaved scalp. Inside it, a short horizontal line of small white dashes or stitches runs across the middle, slightly to the left of the ear. The ear itself looks undisturbed. No dressing or worn object is drawn.",
+        "3": "No text, arrow, label, or symbol.",
+        "4": "It could be read as a fresh surgical wound with stitches that has become swollen and inflamed, or as a large boil or abscess behind the ear."
+      },
+      "observation": "1. The left side of a person's head, seen from behind and slightly to the side, in profile facing right. The ear, shaved lower scalp with a darker hairline above, cheek, jaw, and neck are visible.\n\n2. A large, rounded, red-to-pink glowing circle sits on the skin directly behind the ear, in the hollow between the ear and the shaved scalp. Inside it, a short horizontal line of small white dashes or stitches runs across the middle, slightly to the left of the ear. The ear itself looks undisturbed. No dressing or worn object is drawn.\n\n3. No text, arrow, label, or symbol.\n\n4. It could be read as a fresh surgical wound with stitches that has become swollen and inflamed, or as a large boil or abscess behind the ear."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "answers": {
+        "1": "The back and right side of a person's head, neck, and upper shoulder, drawn from behind and slightly to the right, so the right ear is in profile. Short dark hair on top, buzzed sides.",
+        "2": "A round, glowing red-pink patch of skin sits directly behind the right ear, over the bone area, roughly the size of the ear itself. It fades softly into the surrounding skin. Inside the patch, about midway down, there is a short horizontal pale line with tiny crosswise ticks, like a closed cut with stitches. Nothing is worn or applied.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A worried patient could read the red area as a fresh burn or an infected, oozing wound, or the crosswise ticks as a rash or teeth marks rather than stitches."
+      },
+      "observation": "1. The back and right side of a person's head, neck, and upper shoulder, drawn from behind and slightly to the right, so the right ear is in profile. Short dark hair on top, buzzed sides.\n\n2. A round, glowing red-pink patch of skin sits directly behind the right ear, over the bone area, roughly the size of the ear itself. It fades softly into the surrounding skin. Inside the patch, about midway down, there is a short horizontal pale line with tiny crosswise ticks, like a closed cut with stitches. Nothing is worn or applied.\n\n3. No text, arrows, labels, or symbols.\n\n4. A worried patient could read the red area as a fresh burn or an infected, oozing wound, or the crosswise ticks as a rash or teeth marks rather than stitches."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/anatomy/postauricular-red-swollen-ref-a1.json",
+      "answers": {
+        "1": "The back and side of a person's head, seen from behind and slightly to the left; the right ear, jaw, and cheek are in profile, with short hair on top and a shaved undercut.",
+        "2": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline. Across its middle runs a short horizontal line with tiny cross-marks, like a closed stitched cut. Nothing worn or applied; no bandage.",
+        "3": "No text, arrows, labels, or symbols.",
+        "4": "A patient might read it as a fresh red lump, cyst, or boil with a scar, rather than an expected post-surgical swelling."
+      },
+      "observation": "1. The back and side of a person's head, seen from behind and slightly to the left; the right ear, jaw, and cheek are in profile, with short hair on top and a shaved undercut.\n\n2. A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline. Across its middle runs a short horizontal line with tiny cross-marks, like a closed stitched cut. Nothing worn or applied; no bandage.\n\n3. No text, arrows, labels, or symbols.\n\n4. A patient might read it as a fresh red lump, cyst, or boil with a scar, rather than an expected post-surgical swelling."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "strict",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "redness behind the ear along a scar or incision": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "A large, rounded, red-to-pink glowing circle sits on the skin directly behind the ear, in the hollow between the ear and the shaved scalp."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.1",
+          "text": "A round, glowing red-pink patch of skin sits directly behind the right ear, over the bone area, roughly the size of the ear itself."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+        }
+      ],
+      "some swelling in the same area": [
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.1",
+          "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+        }
+      ],
+      "no open wound": [
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.3",
+          "text": "Inside the patch, about midway down, there is a short horizontal pale line with tiny crosswise ticks, like a closed cut with stitches."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "Across its middle runs a short horizontal line with tiny cross-marks, like a closed stitched cut."
+        }
+      ]
+    },
+    "recovered": [
+      "redness behind the ear along a scar or incision"
+    ],
+    "missed": [
+      "some swelling in the same area",
+      "no open wound"
+    ],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The red area reads as an infected, oozing wound.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The red area reads as an infected, oozing wound.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The red area plus the stitch line reads as a brand-new, swollen and inflamed surgical wound rather than a healing, expected state.",
+      "Observer 1: The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+      "Observer 2: The glowing red patch of skin reads as a fresh burn.",
+      "Observer 2: The red area reads as an infected, oozing wound.",
+      "Observer 2: The small crosswise ticks along the line read as a rash rather than stitches.",
+      "Observer 2: The small crosswise ticks read as teeth or bite marks rather than stitches.",
+      "Observer 3: The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+      "Observer 1 describes only a flat glowing red circle on the skin with no swelling, so the swollen state may not read from the drawing.",
+      "Observer 1 reads the head as the left side with the left ear, while Observers 2 and 3 both read it as the right ear, so the laterality of the view is ambiguous.",
+      "Observer 3 describes the view as from behind and slightly to the left yet identifies the right ear in profile, another sign the viewing angle is unclear.",
+      "Observer 1 reads the stitch line as ambiguous 'white dashes or stitches' and does not call the cut closed, unlike Observers 2 and 3 who both read it as a closed stitched cut.",
+      "Observer 2 notes the redness is intense enough that a worried patient could take it for a fresh burn or an infected, oozing wound.",
+      "Observer 2 also notes the tiny crosswise ticks could be taken for a rash or teeth marks instead of stitches.",
+      "Observer 3 notes that no bandage or dressing is drawn, as does Observer 1, so the post-operative context is not indicated by any dressing.",
+      "All three observers report no text, arrows, labels, or symbols anywhere in the image.",
+      "Observer 1: Seeing the area as a brand-new surgical wound with stitches that has turned swollen and inflamed, rather than a healing site with expected redness",
+      "Observer 1: Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+      "Observer 2: Seeing the red patch as a fresh burn of the skin",
+      "Observer 2: Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision",
+      "Observer 2: Reading the short line with crosswise ticks as a skin rash rather than as stitches along a closed cut",
+      "Observer 2: Reading the crosswise ticks as bite or teeth marks rather than as stitches",
+      "Observer 3: Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+      "Observer 1 describes the head as the left side seen from behind while Observers 2 and 3 both describe the right ear, so the side of the head being shown reads ambiguously and the clinician should check it.",
+      "Observer 1 saw only a flat glowing red circle and described swelling only as a possible misreading, suggesting the swelling is not clearly drawn as raised.",
+      "Observer 2 notes the red patch is about the size of the ear and fades softly into surrounding skin, which affects how contained the redness looks.",
+      "Observers 1 and 3 both note that no dressing, bandage, or applied object is drawn, so the site is shown bare.",
+      "Observer 1 notes the ear itself looks undisturbed, confirming the finding is confined to the area behind the ear.",
+      "Observers 2 and 3 read the short line with tiny cross-ticks as a closed stitched cut, while Observer 1 read the same marks only as white dashes or stitches without stating the cut is closed, so the closure may need to be drawn more plainly."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area",
+          "no open wound"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The red area reads as an infected, oozing wound.",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A large, rounded, red-to-pink glowing circle sits on the skin directly behind the ear, in the hollow between the ear and the shaved scalp."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A round, glowing red-pink patch of skin sits directly behind the right ear, over the bone area, roughly the size of the ear itself."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+            }
+          ],
+          "some swelling in the same area": [
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+            }
+          ],
+          "no open wound": [
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Inside the patch, about midway down, there is a short horizontal pale line with tiny crosswise ticks, like a closed cut with stitches."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "Across its middle runs a short horizontal line with tiny cross-marks, like a closed stitched cut."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "inflamed-fresh-surgical-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "boil-or-abscess-lump",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "fresh-burn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "infected-oozing-wound",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "stitches-as-rash",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "stitches-as-teeth-marks",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-or-abscess-lump",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "inflamed-fresh-surgical-wound",
+              "reading": "The red area plus the stitch line reads as a brand-new, swollen and inflamed surgical wound rather than a healing, expected state.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "boil-or-abscess-lump",
+              "reading": "The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.",
+              "forbidden": "pus",
+              "harm": false
+            },
+            {
+              "key": "fresh-burn",
+              "reading": "The glowing red patch of skin reads as a fresh burn.",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "infected-oozing-wound",
+              "reading": "The red area reads as an infected, oozing wound.",
+              "forbidden": "pus",
+              "harm": true
+            },
+            {
+              "key": "stitches-as-rash",
+              "reading": "The small crosswise ticks along the line read as a rash rather than stitches.",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "stitches-as-teeth-marks",
+              "reading": "The small crosswise ticks read as teeth or bite marks rather than stitches.",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 describes only a flat glowing red circle on the skin with no swelling, so the swollen state may not read from the drawing.",
+            "Observer 1 reads the head as the left side with the left ear, while Observers 2 and 3 both read it as the right ear, so the laterality of the view is ambiguous.",
+            "Observer 3 describes the view as from behind and slightly to the left yet identifies the right ear in profile, another sign the viewing angle is unclear.",
+            "Observer 1 reads the stitch line as ambiguous 'white dashes or stitches' and does not call the cut closed, unlike Observers 2 and 3 who both read it as a closed stitched cut.",
+            "Observer 2 notes the redness is intense enough that a worried patient could take it for a fresh burn or an infected, oozing wound.",
+            "Observer 2 also notes the tiny crosswise ticks could be taken for a rash or teeth marks instead of stitches.",
+            "Observer 3 notes that no bandage or dressing is drawn, as does Observer 1, so the post-operative context is not indicated by any dressing.",
+            "All three observers report no text, arrows, labels, or symbols anywhere in the image."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [
+          "some swelling in the same area",
+          "no open wound"
+        ],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision",
+            "source": "question 4"
+          },
+          {
+            "observer": 3,
+            "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "redness behind the ear along a scar or incision": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "A large, rounded, red-to-pink glowing circle sits on the skin directly behind the ear, in the hollow between the ear and the shaved scalp."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "A round, glowing red-pink patch of skin sits directly behind the right ear, over the bone area, roughly the size of the ear itself."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+            }
+          ],
+          "some swelling in the same area": [
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "A round, glowing red-pink swelling sits just behind the ear, over the bone between ear and hairline."
+            }
+          ],
+          "no open wound": [
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.3",
+              "text": "Inside the patch, about midway down, there is a short horizontal pale line with tiny crosswise ticks, like a closed cut with stitches."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "Across its middle runs a short horizontal line with tiny cross-marks, like a closed stitched cut."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": false,
+                  "cite": null
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "inflamed-fresh-surgical-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "boil-or-abscess",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": false,
+                  "cite": null
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o2.2.3"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "fresh-burn",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "infected-oozing-wound",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "rash",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "teeth-marks",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "redness behind the ear along a scar or incision",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "some swelling in the same area",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "no open wound",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "boil-or-abscess",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "inflamed-fresh-surgical-wound",
+              "reading": "Seeing the area as a brand-new surgical wound with stitches that has turned swollen and inflamed, rather than a healing site with expected redness",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "boil-or-abscess",
+              "reading": "Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision",
+              "forbidden": "pus",
+              "harm": false
+            },
+            {
+              "key": "fresh-burn",
+              "reading": "Seeing the red patch as a fresh burn of the skin",
+              "forbidden": null,
+              "harm": true
+            },
+            {
+              "key": "infected-oozing-wound",
+              "reading": "Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision",
+              "forbidden": "bleeding or an open wound",
+              "harm": true
+            },
+            {
+              "key": "rash",
+              "reading": "Reading the short line with crosswise ticks as a skin rash rather than as stitches along a closed cut",
+              "forbidden": null,
+              "harm": false
+            },
+            {
+              "key": "teeth-marks",
+              "reading": "Reading the crosswise ticks as bite or teeth marks rather than as stitches",
+              "forbidden": null,
+              "harm": true
+            }
+          ],
+          "design_notes": [
+            "Observer 1 describes the head as the left side seen from behind while Observers 2 and 3 both describe the right ear, so the side of the head being shown reads ambiguously and the clinician should check it.",
+            "Observer 1 saw only a flat glowing red circle and described swelling only as a possible misreading, suggesting the swelling is not clearly drawn as raised.",
+            "Observer 2 notes the red patch is about the size of the ear and fades softly into surrounding skin, which affects how contained the redness looks.",
+            "Observers 1 and 3 both note that no dressing, bandage, or applied object is drawn, so the site is shown bare.",
+            "Observer 1 notes the ear itself looks undisturbed, confirming the finding is confined to the area behind the ear.",
+            "Observers 2 and 3 read the short line with tiny cross-ticks as a closed stitched cut, while Observer 1 read the same marks only as white dashes or stitches without stating the cut is closed, so the closure may need to be drawn more plainly."
+          ]
+        }
+      }
+    ],
+    "reason": "Not recovered by all three observers: some swelling in the same area; no open wound. Forbidden: observer 1 (question 4): The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.; observer 2 (question 4): The red area reads as an infected, oozing wound.; observer 3 (question 4): The round red area reads as a boil, abscess, cyst, or fresh lump behind the ear rather than post-surgical redness and swelling.; observer 1 (question 4): Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision; observer 2 (question 4): Seeing the red area as an infected wound that is oozing and open rather than a closed, stitched incision; observer 3 (question 4): Seeing the round red area as a boil, abscess, cyst, or fresh lump in its own right instead of expected post-surgical redness and swelling along an incision."
+  },
+  "panels": null,
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

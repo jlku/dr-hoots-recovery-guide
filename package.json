@@ -25,9 +25,12 @@
     "media:build": "node scripts/build-media-projections.mjs",
     "media:validate": "node scripts/validate-media-projections.mjs",
     "instructions:validate": "node scripts/validate-instructions.mjs",
-    "reviews:validate": "node scripts/validate-reviews.mjs"
+    "reviews:validate": "node scripts/validate-reviews.mjs",
+    "review": "node --env-file-if-exists=.env.local scripts/review-anatomy.mjs",
+    "review:calibrate": "node --env-file-if-exists=.env.local scripts/calibrate-evaluator.mjs"
   },
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.126.0",
     "@fal-ai/client": "^1.9.0"
   }
 }

@@ -1,0 +1,888 @@
+{
+  "schema_version": "1.1",
+  "record_id": "diagram.remove-dressing",
+  "contract_id": "diagram.remove-dressing",
+  "kind": "recode",
+  "file": "assets/anatomy/diagrams/remove-dressing.png",
+  "sha256": "d6ca542316478fc43e7495c467545ce84a2f00920ad6eec21aaafd6bcebbfdbe",
+  "reviewed_on": "2026-09-18",
+  "method": "API evaluator 1.0, re-coding only: the observers' stored words from content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json were coded 2 times by a coder that saw only the contract and those words; the verdict is computed in code and passes only when every coding passes (scripts/lib/adjudication.mjs). AI review is not clinical approval.",
+  "evaluator": {
+    "version": "1.0",
+    "library": "scripts/lib/evaluator.mjs",
+    "rule": "instruction-picture",
+    "requested_model": "claude-opus-5",
+    "calls": [
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBX8rTRbYug1rL1N4k6E",
+        "request_id": "req_011CfBX8qzPdyqTr8QWKKPXX",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 7704,
+          "output_tokens": 6677,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      },
+      {
+        "role": "coder",
+        "message_id": "msg_011CfBX8rWQS4TzGTeB5iY9o",
+        "request_id": "req_011CfBX8r4Mou7zTCziyfaxr",
+        "requested_model": "claude-opus-5",
+        "served_model": "claude-opus-5",
+        "fell_back": false,
+        "stop_reason": "end_turn",
+        "usage": {
+          "input_tokens": 7704,
+          "output_tokens": 5937,
+          "cache_creation_input_tokens": 0,
+          "cache_read_input_tokens": 0
+        }
+      }
+    ],
+    "cost_usd": 0.39239
+  },
+  "inspection": null,
+  "observers": [
+    {
+      "label": "Caption-blind observer 1 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json",
+      "answers": {
+        "1": "A man's head and upper neck, seen from the side (right profile), hair shaved above and behind the ear; panel 4 is a close-up circle (magnifying glass) over the area just behind/above the ear.",
+        "2": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow near the back, with a square white dressing pad held over the shaved area behind and above the ear. Panel 2: two hands at the back of the head have untied the bandage and are pulling the loose ends away; the pad is no longer visible and the skin behind the ear looks bare. Panel 3: the head with nothing on it; a thin curved line runs along the skin just behind the ear where the shaved scalp meets the ear \\u2014 it looks like a closed cut or scar line, but I am not certain. Panel 4: magnified view of the same spot showing a small pale yellow rectangular strip lying on the skin just behind the ear.",
+        "3": "Numbers 1, 2, 3, 4 in dark circles at the top-left of each panel, giving the order. A teal arrow in panel 2 at the upper left, pointing left/away from the head, showing the bandage being pulled off. A white oval label reading \"Tape?\" at the bottom of panel 4, next to the magnifier, seemingly questioning the small strip.",
+        "4": "A worried patient might read panel 3 as an open wound or a new cut appearing after removing the bandage, or think the yellow strip is something stuck in the skin.",
+        "5": "It shows how to take the head bandage off: untie the bow at the back, unwrap and pull the bandage ends away from the head (arrow points away, to the left), lift off the pad, then look closely at the skin behind the ear \\u2014 the \"Tape?\" note suggests checking whether a small strip there is tape. Whether the strip should be left or removed is not shown."
+      },
+      "observation": "1. A man's head and upper neck, seen from the side (right profile), hair shaved above and behind the ear; panel 4 is a close-up circle (magnifying glass) over the area just behind/above the ear.\n\n2. Panel 1: a white gauze bandage wrapped around the head, tied in a bow near the back, with a square white dressing pad held over the shaved area behind and above the ear. Panel 2: two hands at the back of the head have untied the bandage and are pulling the loose ends away; the pad is no longer visible and the skin behind the ear looks bare. Panel 3: the head with nothing on it; a thin curved line runs along the skin just behind the ear where the shaved scalp meets the ear \\u2014 it looks like a closed cut or scar line, but I am not certain. Panel 4: magnified view of the same spot showing a small pale yellow rectangular strip lying on the skin just behind the ear.\n\n3. Numbers 1, 2, 3, 4 in dark circles at the top-left of each panel, giving the order. A teal arrow in panel 2 at the upper left, pointing left/away from the head, showing the bandage being pulled off. A white oval label reading \"Tape?\" at the bottom of panel 4, next to the magnifier, seemingly questioning the small strip.\n\n4. A worried patient might read panel 3 as an open wound or a new cut appearing after removing the bandage, or think the yellow strip is something stuck in the skin.\n\n5. It shows how to take the head bandage off: untie the bow at the back, unwrap and pull the bandage ends away from the head (arrow points away, to the left), lift off the pad, then look closely at the skin behind the ear \\u2014 the \"Tape?\" note suggests checking whether a small strip there is tape. Whether the strip should be left or removed is not shown."
+    },
+    {
+      "label": "Caption-blind observer 2 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json",
+      "answers": {
+        "1": "A man's head and upper neck, seen from the right side; panel 4 is a close-up circle (magnifier) of the skin just behind and above the right ear.",
+        "2": "Panel 1: a white gauze headband wraps around the head, tied in a bow near the front/temple; a square white pad sits over the area behind and above the ear. Hair above the band is shaved short in a patch. Panel 2: a hand at the back of the head holds the loosened end of the strip, the band now hanging loose off the head; the pad is gone. Panel 3: bare head, no band or pad; a thin pale curved line runs above and behind the ear on the shaved skin. Panel 4: magnified view of that spot showing a small pale-yellow rectangle stuck on the skin just behind the top of the ear.",
+        "3": "Numbers 1-4 in dark circles in each panel's top-left corner give the order. A teal arrow in panel 2 points left/backward, toward the hand pulling the wrap off. In panel 4, a magnifier shape and a text bubble reading \"Tape?\" point to the small rectangle on the skin.",
+        "4": "Someone might read the thin pale line in panel 3 as a fresh wound or scar reopening, or the small strip in panel 4 as something stuck in the skin rather than tape.",
+        "5": "Untie the bow, unwind the head wrap backwards (as the arrow shows) and take off the pad, then look at the skin behind the ear. The last panel asks the viewer to check whether a small strip of tape is still there; what to do about it is not shown."
+      },
+      "observation": "1. A man's head and upper neck, seen from the right side; panel 4 is a close-up circle (magnifier) of the skin just behind and above the right ear.\n\n2. Panel 1: a white gauze headband wraps around the head, tied in a bow near the front/temple; a square white pad sits over the area behind and above the ear. Hair above the band is shaved short in a patch. Panel 2: a hand at the back of the head holds the loosened end of the strip, the band now hanging loose off the head; the pad is gone. Panel 3: bare head, no band or pad; a thin pale curved line runs above and behind the ear on the shaved skin. Panel 4: magnified view of that spot showing a small pale-yellow rectangle stuck on the skin just behind the top of the ear.\n\n3. Numbers 1-4 in dark circles in each panel's top-left corner give the order. A teal arrow in panel 2 points left/backward, toward the hand pulling the wrap off. In panel 4, a magnifier shape and a text bubble reading \"Tape?\" point to the small rectangle on the skin.\n\n4. Someone might read the thin pale line in panel 3 as a fresh wound or scar reopening, or the small strip in panel 4 as something stuck in the skin rather than tape.\n\n5. Untie the bow, unwind the head wrap backwards (as the arrow shows) and take off the pad, then look at the skin behind the ear. The last panel asks the viewer to check whether a small strip of tape is still there; what to do about it is not shown."
+    },
+    {
+      "label": "Caption-blind observer 3 (Claude)",
+      "model": null,
+      "message_id": null,
+      "recoded_from": "content/reviews/calibration/2026-09-18-claude-opus-5-2/card-remove-dressing.json",
+      "answers": {
+        "1": "A man's head and upper neck, seen from the side (right profile), hair shaved above and behind the ear. Panel 4 is a close-up circle (magnifying glass) of the skin just behind the ear.",
+        "2": "Panel 1: a white bandage or gauze wrap goes around the head, tied in a bow at the back; a square padded dressing sits over the area behind and above the ear. Panel 2: the wrap is being untied/unwound, two hands holding the loose ends at the back of the head; the dressing is no longer visible. Panel 3: bare head, no bandage; a thin curved line runs just behind the ear along the hairline edge \\u2014 looks like a stitched or healing cut, though I am unsure. Panel 4: magnified view of that same spot with a small pale yellow rectangle stuck on the skin behind the ear, like a strip of tape or a small plaster.",
+        "3": "Numbers 1\\u20134 in dark circles at the top-left corner of each panel, giving the order of steps. A teal arrow in panel 2 pointing left/backwards, showing the direction to unwrap. A speech-bubble label reading \\u201cTape?\\u201d under the magnifier in panel 4, questioning the small strip.",
+        "4": "A worried patient might read it as hair being shaved for surgery, or think the line behind the ear is a wound coming open once the bandage is off.",
+        "5": "Untie the head wrap at the back and unwind it away from the head (arrow points backwards/left), take off the pad behind the ear, then look at the bare skin there; panel 4 asks whether a small tape strip is stuck behind the ear. Whether to remove or leave that tape is not clear from the picture."
+      },
+      "observation": "1. A man's head and upper neck, seen from the side (right profile), hair shaved above and behind the ear. Panel 4 is a close-up circle (magnifying glass) of the skin just behind the ear.\n\n2. Panel 1: a white bandage or gauze wrap goes around the head, tied in a bow at the back; a square padded dressing sits over the area behind and above the ear. Panel 2: the wrap is being untied/unwound, two hands holding the loose ends at the back of the head; the dressing is no longer visible. Panel 3: bare head, no bandage; a thin curved line runs just behind the ear along the hairline edge \\u2014 looks like a stitched or healing cut, though I am unsure. Panel 4: magnified view of that same spot with a small pale yellow rectangle stuck on the skin behind the ear, like a strip of tape or a small plaster.\n\n3. Numbers 1\\u20134 in dark circles at the top-left corner of each panel, giving the order of steps. A teal arrow in panel 2 pointing left/backwards, showing the direction to unwrap. A speech-bubble label reading \\u201cTape?\\u201d under the magnifier in panel 4, questioning the small strip.\n\n4. A worried patient might read it as hair being shaved for surgery, or think the line behind the ear is a wound coming open once the bandage is off.\n\n5. Untie the head wrap at the back and unwind it away from the head (arrow points backwards/left), take off the pad behind the ear, then look at the bare skin there; panel 4 asks whether a small tape strip is stuck behind the ear. Whether to remove or leave that tape is not clear from the picture."
+    }
+  ],
+  "adjudication": {
+    "label": "Findings coded by Claude from the observers' answers, each citing the unit that states it and checked in code; verdict computed in code. Not a clinician.",
+    "rule": "instruction-picture",
+    "verdict": "fail",
+    "verdict_strict": "fail",
+    "unsettled": false,
+    "tally": {
+      "a head dressing covering the ear in panel 1": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.1",
+          "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow near the back, with a square white dressing pad held over the shaved area behind and above the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.2",
+          "text": "a square white pad sits over the area behind and above the ear."
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.2",
+          "text": "a square padded dressing sits over the area behind and above the ear."
+        }
+      ],
+      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+        {
+          "observer": 1,
+          "answer": 5,
+          "cite": "o1.5.1",
+          "text": "It shows how to take the head bandage off: untie the bow at the back, unwrap and pull the bandage ends away from the head (arrow points away, to the left), lift off the pad, then look closely at the skin behind the ear \\u2014 the \"Tape?\" note suggests checking whether a small strip there is tape."
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.4",
+          "text": "Panel 2: a hand at the back of the head holds the loosened end of the strip, the band now hanging loose off the head;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.3",
+          "text": "Panel 2: the wrap is being untied/unwound, two hands holding the loose ends at the back of the head;"
+        }
+      ],
+      "the bare head with the ear uncovered in panel 3": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.4",
+          "text": "Panel 3: the head with nothing on it;"
+        },
+        {
+          "observer": 2,
+          "answer": 2,
+          "cite": "o2.2.6",
+          "text": "Panel 3: bare head, no band or pad;"
+        },
+        {
+          "observer": 3,
+          "answer": 2,
+          "cite": "o3.2.5",
+          "text": "Panel 3: bare head, no bandage;"
+        }
+      ],
+      "the dressing coming off rather than going on": [
+        {
+          "observer": 1,
+          "answer": 3,
+          "cite": "o1.3.2",
+          "text": "A teal arrow in panel 2 at the upper left, pointing left/away from the head, showing the bandage being pulled off."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.1",
+          "text": "Untie the bow, unwind the head wrap backwards (as the arrow shows) and take off the pad, then look at the skin behind the ear."
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.1",
+          "text": "Untie the head wrap at the back and unwind it away from the head (arrow points backwards/left), take off the pad behind the ear, then look at the bare skin there;"
+        }
+      ],
+      "looking behind the ear for tape in panel 4": [
+        {
+          "observer": 1,
+          "answer": 2,
+          "cite": "o1.2.6",
+          "text": "Panel 4: magnified view of the same spot showing a small pale yellow rectangular strip lying on the skin just behind the ear."
+        },
+        {
+          "observer": 2,
+          "answer": 5,
+          "cite": "o2.5.2",
+          "text": "The last panel asks the viewer to check whether a small strip of tape is still there;"
+        },
+        {
+          "observer": 3,
+          "answer": 5,
+          "cite": "o3.5.2",
+          "text": "panel 4 asks whether a small tape strip is stuck behind the ear."
+        }
+      ]
+    },
+    "recovered": [
+      "a head dressing covering the ear in panel 1",
+      "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+      "the bare head with the ear uncovered in panel 3",
+      "the dressing coming off rather than going on",
+      "looking behind the ear for tape in panel 4"
+    ],
+    "missed": [],
+    "forbidden_hits": [
+      {
+        "observer": 1,
+        "reading": "The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "forbidden_hits_strict": [
+      {
+        "observer": 1,
+        "reading": "The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 2,
+        "reading": "The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 3,
+        "reading": "The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+        "source": "question 4",
+        "coding": 1
+      },
+      {
+        "observer": 1,
+        "reading": "The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 2,
+        "reading": "The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+        "source": "question 4",
+        "coding": 2
+      },
+      {
+        "observer": 3,
+        "reading": "The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+        "source": "question 4",
+        "coding": 2
+      }
+    ],
+    "design_notes": [
+      "Observer 1: The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+      "Observer 1: The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+      "Observer 2: The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+      "Observer 2: The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+      "Observer 3: The shaved patch of hair is taken to mean the patient is being prepared for an upcoming operation.",
+      "Observer 3: The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+      "All three observers (1, 2 and 3) end by saying the picture never tells the viewer whether the small tape strip behind the ear should be peeled off or left in place.",
+      "Observers 1, 2 and 3 each describe a thin curved line on the skin behind the ear that reads to them as a cut, scar or stitched wound, so that detail may need softening or clarifying.",
+      "Observer 1 notes that the square pad has already vanished by panel 2, so the step of lifting the pad off the skin is never actually drawn.",
+      "Observer 1 and observer 3 see two hands holding the loose ends in panel 2 while observer 2 sees only one hand, suggesting the hands in that panel read ambiguously.",
+      "Observer 1 and observer 3 place the bow at the back of the head in panel 1 but observer 2 places it at the front near the temple, so the tie position is not reading consistently.",
+      "Observer 3 notes the shaved patch could be misread as preparation for surgery rather than as the site the dressing covered.",
+      "Observer 1: The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+      "Observer 1: The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+      "Observer 2: The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+      "Observer 2: The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+      "Observer 3: The sequence is taken to show hair being shaved in preparation for an operation rather than a dressing being removed afterwards.",
+      "Observer 3: The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+      "All three observers (Observer 1, Observer 2 and Observer 3) say the picture stops short of telling the viewer whether the small tape strip found behind the ear should be left alone or peeled off.",
+      "Observer 1 and Observer 3 place the bow of the head wrap at the back of the head while Observer 2 places it near the front by the temple, so the tie point reads inconsistently.",
+      "Observer 1 and Observer 3 see two hands holding the loosened wrap in panel 2 whereas Observer 2 sees only one hand, so the number of hands is unclear.",
+      "Observer 1, Observer 2 and Observer 3 all describe an uncertain thin curved line behind the ear in panel 3 that they variously read as a closed cut, scar or stitched wound, which may alarm patients.",
+      "Observer 3 notes the shaved patch of hair could be read as preparation for surgery rather than as a post-procedure dressing removal."
+    ],
+    "citation_checks": [],
+    "codings": [
+      {
+        "coding": 1,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow near the back, with a square white dressing pad held over the shaved area behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.2",
+              "text": "a square white pad sits over the area behind and above the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.2",
+              "text": "a square padded dressing sits over the area behind and above the ear."
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.1",
+              "text": "It shows how to take the head bandage off: untie the bow at the back, unwrap and pull the bandage ends away from the head (arrow points away, to the left), lift off the pad, then look closely at the skin behind the ear \\u2014 the \"Tape?\" note suggests checking whether a small strip there is tape."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "Panel 2: a hand at the back of the head holds the loosened end of the strip, the band now hanging loose off the head;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Panel 2: the wrap is being untied/unwound, two hands holding the loose ends at the back of the head;"
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Panel 3: the head with nothing on it;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.6",
+              "text": "Panel 3: bare head, no band or pad;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "Panel 3: bare head, no bandage;"
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 3,
+              "cite": "o1.3.2",
+              "text": "A teal arrow in panel 2 at the upper left, pointing left/away from the head, showing the bandage being pulled off."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the bow, unwind the head wrap backwards (as the arrow shows) and take off the pad, then look at the skin behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Untie the head wrap at the back and unwind it away from the head (arrow points backwards/left), take off the pad behind the ear, then look at the bare skin there;"
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.6",
+              "text": "Panel 4: magnified view of the same spot showing a small pale yellow rectangular strip lying on the skin just behind the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.2",
+              "text": "The last panel asks the viewer to check whether a small strip of tape is still there;"
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.2",
+              "text": "panel 4 asks whether a small tape strip is stuck behind the ear."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.5.1"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.3.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.2.6"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "strip-embedded-in-skin",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.6"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "strip-embedded-in-skin",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.2"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "shaving-for-surgery",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "line-as-open-wound",
+              "reading": "The thin curved line on the skin behind the ear is taken for a fresh cut or a wound opening up once the bandage is removed, rather than a healed line.",
+              "forbidden": "the ear injured or bleeding",
+              "harmful_action": false
+            },
+            {
+              "key": "strip-embedded-in-skin",
+              "reading": "The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+              "forbidden": null,
+              "harmful_action": true
+            },
+            {
+              "key": "shaving-for-surgery",
+              "reading": "The shaved patch of hair is taken to mean the patient is being prepared for an upcoming operation.",
+              "forbidden": null,
+              "harmful_action": false
+            }
+          ],
+          "design_notes": [
+            "All three observers (1, 2 and 3) end by saying the picture never tells the viewer whether the small tape strip behind the ear should be peeled off or left in place.",
+            "Observers 1, 2 and 3 each describe a thin curved line on the skin behind the ear that reads to them as a cut, scar or stitched wound, so that detail may need softening or clarifying.",
+            "Observer 1 notes that the square pad has already vanished by panel 2, so the step of lifting the pad off the skin is never actually drawn.",
+            "Observer 1 and observer 3 see two hands holding the loose ends in panel 2 while observer 2 sees only one hand, suggesting the hands in that panel read ambiguously.",
+            "Observer 1 and observer 3 place the bow at the back of the head in panel 1 but observer 2 places it at the front near the temple, so the tie position is not reading consistently.",
+            "Observer 3 notes the shaved patch could be misread as preparation for surgery rather than as the site the dressing covered."
+          ]
+        }
+      },
+      {
+        "coding": 2,
+        "verdict": "fail",
+        "verdict_strict": "fail",
+        "missed": [],
+        "forbidden_hits": [
+          {
+            "observer": 1,
+            "reading": "The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+            "source": "question 4"
+          },
+          {
+            "observer": 2,
+            "reading": "The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+            "source": "question 4"
+          }
+        ],
+        "tally": {
+          "a head dressing covering the ear in panel 1": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.1",
+              "text": "Panel 1: a white gauze bandage wrapped around the head, tied in a bow near the back, with a square white dressing pad held over the shaved area behind and above the ear."
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.1",
+              "text": "Panel 1: a white gauze headband wraps around the head, tied in a bow near the front/temple;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.1",
+              "text": "Panel 1: a white bandage or gauze wrap goes around the head, tied in a bow at the back;"
+            }
+          ],
+          "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.2",
+              "text": "Panel 2: two hands at the back of the head have untied the bandage and are pulling the loose ends away;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.4",
+              "text": "Panel 2: a hand at the back of the head holds the loosened end of the strip, the band now hanging loose off the head;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.3",
+              "text": "Panel 2: the wrap is being untied/unwound, two hands holding the loose ends at the back of the head;"
+            }
+          ],
+          "the bare head with the ear uncovered in panel 3": [
+            {
+              "observer": 1,
+              "answer": 2,
+              "cite": "o1.2.4",
+              "text": "Panel 3: the head with nothing on it;"
+            },
+            {
+              "observer": 2,
+              "answer": 2,
+              "cite": "o2.2.6",
+              "text": "Panel 3: bare head, no band or pad;"
+            },
+            {
+              "observer": 3,
+              "answer": 2,
+              "cite": "o3.2.5",
+              "text": "Panel 3: bare head, no bandage;"
+            }
+          ],
+          "the dressing coming off rather than going on": [
+            {
+              "observer": 1,
+              "answer": 3,
+              "cite": "o1.3.2",
+              "text": "A teal arrow in panel 2 at the upper left, pointing left/away from the head, showing the bandage being pulled off."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.1",
+              "text": "Untie the bow, unwind the head wrap backwards (as the arrow shows) and take off the pad, then look at the skin behind the ear."
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.1",
+              "text": "Untie the head wrap at the back and unwind it away from the head (arrow points backwards/left), take off the pad behind the ear, then look at the bare skin there;"
+            }
+          ],
+          "looking behind the ear for tape in panel 4": [
+            {
+              "observer": 1,
+              "answer": 5,
+              "cite": "o1.5.1",
+              "text": "It shows how to take the head bandage off: untie the bow at the back, unwrap and pull the bandage ends away from the head (arrow points away, to the left), lift off the pad, then look closely at the skin behind the ear \\u2014 the \"Tape?\" note suggests checking whether a small strip there is tape."
+            },
+            {
+              "observer": 2,
+              "answer": 5,
+              "cite": "o2.5.2",
+              "text": "The last panel asks the viewer to check whether a small strip of tape is still there;"
+            },
+            {
+              "observer": 3,
+              "answer": 5,
+              "cite": "o3.5.2",
+              "text": "panel 4 asks whether a small tape strip is stuck behind the ear."
+            }
+          ]
+        },
+        "findings": {
+          "observers": [
+            {
+              "observer": 1,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o1.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o1.2.2"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o1.2.4"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o1.3.2"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o1.5.1"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o1.4.1"
+                },
+                {
+                  "key": "strip-embedded-in-skin",
+                  "cite": "o1.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 2,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o2.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o2.2.4"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o2.2.6"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o2.5.1"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o2.5.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o2.4.1"
+                },
+                {
+                  "key": "strip-embedded-in-skin",
+                  "cite": "o2.4.1"
+                }
+              ]
+            },
+            {
+              "observer": 3,
+              "items": [
+                {
+                  "item": "a head dressing covering the ear in panel 1",
+                  "recovered": true,
+                  "cite": "o3.2.1"
+                },
+                {
+                  "item": "a hand taking the gauze away from the head in panel 2, with an arrow showing the direction",
+                  "recovered": true,
+                  "cite": "o3.2.3"
+                },
+                {
+                  "item": "the bare head with the ear uncovered in panel 3",
+                  "recovered": true,
+                  "cite": "o3.2.5"
+                },
+                {
+                  "item": "the dressing coming off rather than going on",
+                  "recovered": true,
+                  "cite": "o3.5.1"
+                },
+                {
+                  "item": "looking behind the ear for tape in panel 4",
+                  "recovered": true,
+                  "cite": "o3.5.2"
+                }
+              ],
+              "own_forbidden": [],
+              "hedges": [],
+              "unallowed_marks": [],
+              "alternatives": [
+                {
+                  "key": "shaving-for-surgery",
+                  "cite": "o3.4.1"
+                },
+                {
+                  "key": "line-as-open-wound",
+                  "cite": "o3.4.1"
+                }
+              ]
+            }
+          ],
+          "alternatives": [
+            {
+              "key": "line-as-open-wound",
+              "reading": "The thin curved line on the skin behind the ear in panel 3 is taken for a fresh cut or a wound opening up once the dressing is off, rather than a healed line.",
+              "forbidden": "the ear injured or bleeding",
+              "harmful_action": false
+            },
+            {
+              "key": "strip-embedded-in-skin",
+              "reading": "The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.",
+              "forbidden": null,
+              "harmful_action": true
+            },
+            {
+              "key": "shaving-for-surgery",
+              "reading": "The sequence is taken to show hair being shaved in preparation for an operation rather than a dressing being removed afterwards.",
+              "forbidden": null,
+              "harmful_action": false
+            }
+          ],
+          "design_notes": [
+            "All three observers (Observer 1, Observer 2 and Observer 3) say the picture stops short of telling the viewer whether the small tape strip found behind the ear should be left alone or peeled off.",
+            "Observer 1 and Observer 3 place the bow of the head wrap at the back of the head while Observer 2 places it near the front by the temple, so the tie point reads inconsistently.",
+            "Observer 1 and Observer 3 see two hands holding the loosened wrap in panel 2 whereas Observer 2 sees only one hand, so the number of hands is unclear.",
+            "Observer 1, Observer 2 and Observer 3 all describe an uncertain thin curved line behind the ear in panel 3 that they variously read as a closed cut, scar or stitched wound, which may alarm patients.",
+            "Observer 3 notes the shaved patch of hair could be read as preparation for surgery rather than as a post-procedure dressing removal."
+          ]
+        }
+      }
+    ],
+    "reason": "All three observers recovered all 5 required items. Forbidden: observer 1 (question 4): The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.; observer 2 (question 4): The small pale yellow strip in the magnified panel is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.; observer 1 (question 4): The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.; observer 2 (question 4): The small pale-yellow strip seen under the magnifier is taken for a foreign object lodged in the skin rather than a piece of tape lying on it.. Under the strict rule the picture would fail."
+  },
+  "panels": [
+    {
+      "record_id": "postauricular-dressing-ref-a1",
+      "file": "assets/anatomy/postauricular-dressing-ref-a1.png",
+      "sha256": "075665496c98c13f19e3a1108d2cf57e8032d9da1462052eea12cb59155f96e7"
+    },
+    {
+      "record_id": "dressing-removal-ref-a4",
+      "file": "assets/anatomy/dressing-removal-ref-a4.png",
+      "sha256": "13e71b1d293d065b620b157c295e549aafb9343306cbdfc0f7635062aed02cfa"
+    },
+    {
+      "record_id": "postauricular-base-a2",
+      "file": "assets/anatomy/postauricular-base-a2.png",
+      "sha256": "274a328efb50a4ea24b9042059ea32397fc2410905b9907cc16bdc5104410748"
+    }
+  ],
+  "clinician_review": {
+    "status": "pending",
+    "reviewer": null,
+    "date": null,
+    "note": "Song reviews the picture against its claim; this receipt is evidence for that review, not a substitute for it."
+  }
+}

@@ -149,6 +149,26 @@ A how-to picture is a static card in the manner of an airline safety card. Three
 - Every required item is recovered by all three observers.
 - A forbidden reading in an observer's own answer fails the card. So does any mark the contract does not allow.
 - A forced alternative reading fails the card only when two or more observers name the same one and it involves harm or the wrong body part. The strict verdict is kept beside it in the receipt.
+- State pictures, which show a body part in a state rather than an action, fail only for what observers report seeing. Imagined misreadings are notes for the clinician. Required items must be visible things; absences go in the forbidden readings. Approved for now by John on 2026-09-18; Song's sign-off is `q.state-picture-misreadings`.
 - `npm run check` runs `reviews:validate`, which refuses a receipt whose verdict does not follow from its findings, and `instructions:validate`, which refuses a verified claim without a passing receipt.
 
 Approved for now by John on 2026-09-18. Song's sign-off is `q.instruction-picture-rule` in `content/clinician/questions-for-song.md`.
+
+## Running the evaluator
+
+The image evaluator runs outside any Claude session with only an API key. For each image, three caption-blind observers receive the image inside the request and nothing else. A coder receives only the contract and their answers and quotes each finding. It codes the answers twice, because identical inputs have produced different codings on borderline items. Code checks every quote against the answer it cites and computes the verdict, which passes only when every coding passes. A picture whose codings disagree fails, is marked unsettled, and goes to the clinician.
+
+```bash
+npm run review -- --record <manifest record id> --dry-run
+npm run review -- --record <manifest record id> --apply
+npm run review -- --diagram diagram.remove-dressing --force
+node --env-file=.env.local scripts/generate-anatomy.mjs --asset <asset id> --review
+npm run review:calibrate -- --dry-run
+```
+
+- Setup: `ANTHROPIC_API_KEY` in the ignored `.env.local`. The evaluator talks to `https://api.anthropic.com` even when the shell sets `ANTHROPIC_BASE_URL`; set `AVS_ANTHROPIC_BASE_URL` only to use a gateway on purpose.
+- Model: `claude-opus-5` by default, with server-side refusal fallbacks enabled. Each receipt records which model actually answered every call.
+- Cost: each review reserves its worst case against the ledger's cap before the first call (about $1.50 for a 1024x768 image with two codings) and settles to the billed cost afterwards. A failed review records what its returned calls billed.
+- Receipts: `content/reviews/anatomy/<id>.json`, indexed automatically. With `--apply`, a candidate that passes is accepted; a failing review never demotes an accepted image on its own, and `npm run check` flags the mismatch.
+- Calibration: `npm run review:calibrate` (add `--repeat 3` to measure whether identical runs agree) runs the labeled set in `content/reviews/calibration/cases.json` and writes a report beside its receipts. The set holds accepted images, a failed candidate, negative controls judged against the wrong contract, and a re-coding of every in-session receipt. The evaluator replaces the in-session loop only after that report shows agreement.
+
