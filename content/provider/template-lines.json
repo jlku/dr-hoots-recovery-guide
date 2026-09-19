@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0",
+  "about": "Which lines of the practice dot phrase the guide covers, by the canonical sentences that say the same thing. A covered line the provider changes still plays the guide's reviewed wording, so the provider page quotes it. Lines not listed here, other than note_only, are instructions the guide does not cover.",
+  "covered": {
+    "dressing": ["wc.01", "wc.02"],
+    "incision": ["wc.03", "wc.04", "wc.05", "wc.06", "wc.07"],
+    "shower": ["wc.08"],
+    "activation": ["act.01"],
+    "when to call": ["call.01", "call.01a", "call.01b", "call.01c", "call.02", "call.03", "call.04", "call.05"],
+    "contact": ["call.06", "call.07", "call.07a", "call.08"]
+  },
+  "note_only": ["surgery date", "surgeon", "side"]
+}
