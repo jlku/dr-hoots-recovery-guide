@@ -3,6 +3,7 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { validateLanguagePack } from "./lib/language-packs.mjs";
+import { buildPacket, reviewerForLanguage, validateReceipt } from "./lib/translation-review.mjs";
 import { loadSegmentBundle } from "./lib/segments.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
@@ -31,6 +32,17 @@ async function main() {
   for (const { language, path, pack } of packs) {
     const errors = [...validateLanguagePack({ pack, canonical: bundle.canonical, segments: bundle.segments, source: english }).errors];
     if (pack.language !== language) errors.push(`language ${pack.language} does not match directory ${language}`);
+    // An AI-reviewed pack needs a passing receipt bound to exactly these sentences and labels.
+    if (pack.status === "ai_reviewed") {
+      try {
+        const receipt = JSON.parse(await readFile(join(repositoryRoot, pack.review?.receipt ?? ""), "utf8"));
+        const packet = await buildPacket({ root: repositoryRoot, reviewer: reviewerForLanguage(pack.language) });
+        errors.push(...validateReceipt(receipt, packet).map((error) => `review: ${error}`));
+        if (receipt.verdict !== "pass") errors.push("review: an ai_reviewed pack needs a passing receipt");
+      } catch (error) {
+        errors.push(`review: ${pack.review?.receipt ?? "no receipt"} cannot be read (${error.message})`);
+      }
+    }
     if (errors.length) {
       failed = true;
       for (const error of errors) console.error(`error: ${path}: ${error}`);

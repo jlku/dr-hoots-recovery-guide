@@ -1,0 +1,23 @@
+{
+  "id": "es-translation-v1",
+  "language": "es",
+  "criteria": [
+    {
+      "id": "equivalence",
+      "question": "Does the Spanish say exactly what the English says: the same action, time, threshold, condition, and who does it, with nothing added or dropped?"
+    },
+    {
+      "id": "protected_values",
+      "question": "Are phone numbers, numerals, and the fever comparator and unit intact?"
+    },
+    {
+      "id": "register",
+      "question": "Is it at grade 7 or below, in usted, with everyday words a patient would use?"
+    },
+    {
+      "id": "phrasing",
+      "question": "Would a Spanish speaker in the Bay Area find it natural and unambiguous?"
+    }
+  ],
+  "verdict_rule": "An item passes only when every criterion passes. The receipt passes only when every item passes."
+}
