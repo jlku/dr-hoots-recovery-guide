@@ -148,3 +148,26 @@ button, select, input { font-family: inherit; }
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation: none !important; scroll-behavior: auto !important; }
 }
+
+/* Provider page: paste a dot-phrase block, see what the guide will use, copy the patient link. */
+.provider-body { height: auto; min-height: 100dvh; overflow: auto; display: block; }
+.provider { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; max-width: 1200px; margin: 0 auto; padding: 24px; }
+.provider__label { display: block; margin-bottom: 8px; font-weight: 700; }
+.provider__block { width: 100%; min-height: 320px; padding: 12px; border: 1px solid var(--blue-gray); border-radius: 6px; font: 15px/1.5 ui-monospace, "SF Mono", Menlo, monospace; color: var(--navy); resize: vertical; }
+.provider__hint { margin: 8px 0 0; color: var(--blue-gray); font-size: 15px; }
+.provider__heading { margin: 24px 0 8px; font-size: 18px; }
+.provider__result > .provider__heading:first-child { margin-top: 0; }
+.provider__table { width: 100%; border-collapse: collapse; font-size: 16px; }
+.provider__table th, .provider__table td { padding: 8px 10px; border-bottom: 1px solid var(--gray-3); text-align: left; vertical-align: top; }
+.provider__table thead th { color: var(--blue-gray); font-size: 14px; }
+.provider__table tr.is-preset td:last-child { color: var(--blue-gray); }
+.provider__unread { margin-top: 8px; padding: 4px 16px 12px; border-left: 4px solid var(--yellow); background: #fff8e1; }
+.provider__unread ul { margin: 8px 0 0; padding-left: 18px; font: 14px/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
+.provider__link-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+.provider__link { flex: 1 1 280px; min-width: 0; padding: 10px 12px; border: 1px solid var(--gray-3); border-radius: 6px; background: var(--gray-1); font: 15px/1.4 ui-monospace, "SF Mono", Menlo, monospace; word-break: break-all; }
+.provider__asks { margin: 0; padding-left: 20px; display: grid; gap: 6px; }
+.provider__notice { margin: 0; padding: 12px 24px 24px; color: var(--blue-gray); font-size: 14px; text-align: center; }
+@media (max-width: 900px) {
+  .provider { grid-template-columns: minmax(0, 1fr); gap: 24px; padding: 16px; }
+  .provider__block { min-height: 220px; }
+}
