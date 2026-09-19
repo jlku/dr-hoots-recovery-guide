@@ -7,6 +7,7 @@ import { access, mkdir, readFile, writeFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
+import { writeReviewsIndex } from "./lib/reviews-index.mjs";
 import { buildSongPacket, songPanelPaths, validateSongReceipt } from "./lib/song-review.mjs";
 import { PANEL_SIZE, buildPacket, panelReceiptPaths, validateReceipt } from "./lib/translation-review.mjs";
 
@@ -49,4 +50,5 @@ if (!path) {
 }
 await mkdir(dirname(join(root, path)), { recursive: true });
 await writeFile(join(root, path), `${JSON.stringify(stored, null, 2)}\n`);
+await writeReviewsIndex(root);
 console.log(`${path}: reviewer ${slots.indexOf(path) + 1} of ${PANEL_SIZE}, ${receipt.verdict}${failing.length ? ` (${failing.length} fail: ${failing.join(", ")})` : ""}`);
