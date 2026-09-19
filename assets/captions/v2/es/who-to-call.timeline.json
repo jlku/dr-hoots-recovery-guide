@@ -1,0 +1,541 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/who-to-call",
+  "number": 6,
+  "language": "es",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/es/who-to-call.mp3",
+  "beats": [
+    {
+      "id": "beat/numbers",
+      "frame": "frame-11-numbers",
+      "sentence_ids": [
+        "call.06",
+        "call.07",
+        "call.07a",
+        "call.08"
+      ],
+      "start": 1.5,
+      "end": 32.86,
+      "speech_seconds": 31.36,
+      "record_id": "numbers",
+      "manifest": "assets/audio/v2/es/narration.json",
+      "source_audio": "assets/audio/v2/es/beats/numbers.mp3",
+      "text": "Para preguntas de rutina para la clínica o el cirujano, deje un mensaje en la línea de enfermería al 415-353-2148. La página de UCSF dice que debería recibir una llamada en las próximas 12 horas. Si nadie le llama, vuelva a llamar. En caso de emergencia, llame al 415-476-1000 y pida hablar con el residente de Otorrinolaringología de guardia."
+    }
+  ],
+  "words": [
+    {
+      "text": "Para",
+      "start": 1.5,
+      "end": 1.66,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "preguntas",
+      "start": 1.708,
+      "end": 2.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 2.247,
+      "end": 2.3,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "rutina",
+      "start": 2.36,
+      "end": 2.78,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "para",
+      "start": 2.828,
+      "end": 3.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 3.047,
+      "end": 3.1,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "clínica",
+      "start": 3.18,
+      "end": 3.66,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "o",
+      "start": 3.7,
+      "end": 3.74,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "el",
+      "start": 3.793,
+      "end": 3.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "cirujano,",
+      "start": 3.94,
+      "end": 5.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "deje",
+      "start": 5.073,
+      "end": 5.34,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "un",
+      "start": 5.367,
+      "end": 5.42,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "mensaje",
+      "start": 5.48,
+      "end": 5.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "en",
+      "start": 5.953,
+      "end": 6.06,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 6.087,
+      "end": 6.14,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "línea",
+      "start": 6.193,
+      "end": 6.46,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 6.487,
+      "end": 6.54,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "enfermería",
+      "start": 6.58,
+      "end": 7.18,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "al",
+      "start": 7.26,
+      "end": 7.42,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "415-353-2148.",
+      "start": 7.5,
+      "end": 12.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "La",
+      "start": 12.62,
+      "end": 13.42,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "página",
+      "start": 13.477,
+      "end": 13.82,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 13.873,
+      "end": 13.98,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "UCSF",
+      "start": 14.2,
+      "end": 15.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "dice",
+      "start": 15.164,
+      "end": 15.74,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "que",
+      "start": 15.78,
+      "end": 15.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "debería",
+      "start": 15.94,
+      "end": 16.3,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "recibir",
+      "start": 16.36,
+      "end": 16.78,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "una",
+      "start": 16.84,
+      "end": 17.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "llamada",
+      "start": 17.068,
+      "end": 17.42,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "en",
+      "start": 17.447,
+      "end": 17.5,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "las",
+      "start": 17.54,
+      "end": 17.66,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "próximas",
+      "start": 17.72,
+      "end": 18.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "12",
+      "start": 18.3,
+      "end": 18.62,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "horas.",
+      "start": 18.687,
+      "end": 19.1,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "Si",
+      "start": 19.42,
+      "end": 20.06,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "nadie",
+      "start": 20.12,
+      "end": 20.38,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "le",
+      "start": 20.407,
+      "end": 20.46,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "llama,",
+      "start": 20.513,
+      "end": 21.18,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "vuelva",
+      "start": 21.244,
+      "end": 21.58,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 21.62,
+      "end": 21.66,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "llamar.",
+      "start": 21.687,
+      "end": 22.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "En",
+      "start": 22.54,
+      "end": 23.18,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "caso",
+      "start": 23.244,
+      "end": 23.5,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 23.527,
+      "end": 23.58,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "emergencia,",
+      "start": 23.62,
+      "end": 24.62,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "llame",
+      "start": 24.7,
+      "end": 25.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "al",
+      "start": 25.047,
+      "end": 25.1,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "415-476-1000",
+      "start": 25.18,
+      "end": 28.62,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "y",
+      "start": 28.98,
+      "end": 29.34,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "pida",
+      "start": 29.42,
+      "end": 29.58,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "hablar",
+      "start": 29.626,
+      "end": 29.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "con",
+      "start": 29.94,
+      "end": 30.06,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "el",
+      "start": 30.087,
+      "end": 30.14,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "residente",
+      "start": 30.202,
+      "end": 30.78,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 30.807,
+      "end": 30.86,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "Otorrinolaringología",
+      "start": 30.9,
+      "end": 32.14,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 32.167,
+      "end": 32.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "guardia.",
+      "start": 32.273,
+      "end": 32.86,
+      "beat": "beat/numbers",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 3.74,
+      "text": "Para preguntas de rutina para la clínica o",
+      "beat": "beat/numbers",
+      "first_word": 0,
+      "word_count": 8
+    },
+    {
+      "id": "cue-02",
+      "start": 3.793,
+      "end": 6.46,
+      "text": "el cirujano, deje un mensaje en la línea",
+      "beat": "beat/numbers",
+      "first_word": 8,
+      "word_count": 8
+    },
+    {
+      "id": "cue-03",
+      "start": 6.487,
+      "end": 12.22,
+      "text": "de enfermería al 415-353-2148.",
+      "beat": "beat/numbers",
+      "first_word": 16,
+      "word_count": 4
+    },
+    {
+      "id": "cue-04",
+      "start": 12.62,
+      "end": 16.78,
+      "text": "La página de UCSF dice que debería recibir",
+      "beat": "beat/numbers",
+      "first_word": 20,
+      "word_count": 8
+    },
+    {
+      "id": "cue-05",
+      "start": 16.84,
+      "end": 19.1,
+      "text": "una llamada en las próximas 12 horas.",
+      "beat": "beat/numbers",
+      "first_word": 28,
+      "word_count": 7
+    },
+    {
+      "id": "cue-06",
+      "start": 19.42,
+      "end": 22.22,
+      "text": "Si nadie le llama, vuelva a llamar.",
+      "beat": "beat/numbers",
+      "first_word": 35,
+      "word_count": 7
+    },
+    {
+      "id": "cue-07",
+      "start": 22.54,
+      "end": 29.34,
+      "text": "En caso de emergencia, llame al 415-476-1000 y",
+      "beat": "beat/numbers",
+      "first_word": 42,
+      "word_count": 8
+    },
+    {
+      "id": "cue-08",
+      "start": 29.42,
+      "end": 32.22,
+      "text": "pida hablar con el residente de Otorrinolaringología de",
+      "beat": "beat/numbers",
+      "first_word": 50,
+      "word_count": 8
+    },
+    {
+      "id": "cue-09",
+      "start": 32.273,
+      "end": 32.86,
+      "text": "guardia.",
+      "beat": "beat/numbers",
+      "first_word": 58,
+      "word_count": 1
+    }
+  ],
+  "narration_seconds": 31.36,
+  "duration_seconds": 33.76,
+  "source_records": {
+    "numbers": "39723c197b8e64df2c65dc0cda323bc97a7c03ef1fac99b7add995694a260210"
+  }
+}

@@ -14,11 +14,11 @@ const bundle = await loadSegmentBundle(root);
 const hasFfmpeg = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" }).status === 0;
 
 test("the media plan covers every segment for every narrated language", () => {
-  assert.deepEqual(languagesWithNarration(bundle.segments), ["en"]);
+  assert.deepEqual(languagesWithNarration(bundle.segments), ["en", "es", "zh-Hans"]);
   const plan = buildMediaPlan(bundle);
-  // Four variants of the medication segment, one per combination of its medication beats, and one of each other segment.
-  assert.equal(plan.length, 10);
-  assert.deepEqual(plan.filter((item) => item.segment.id === "seg/next-two-weeks").map((item) => item.variant), ["a0p0", "a0p1", "a1p0", "a1p1"]);
+  // Per language: four variants of the medication segment, one per combination of its medication beats, and one of each other segment.
+  assert.equal(plan.length, 30);
+  assert.deepEqual(plan.filter((item) => item.segment.id === "seg/next-two-weeks" && item.language === "en").map((item) => item.variant), ["a0p0", "a0p1", "a1p0", "a1p1"]);
   assert.equal(mediaPaths(bundle.segments.segments[2], "en", "a1p0").audio, "assets/audio/v2/en/next-two-weeks.a1p0.mp3");
   assert.deepEqual(mediaPaths(bundle.segments.segments[0], "en"), {
     timeline: "assets/captions/v2/en/bandage-off.timeline.json",
@@ -28,7 +28,7 @@ test("the media plan covers every segment for every narrated language", () => {
   assert.equal(plan[0].timeline.audio_file, "assets/audio/v2/en/bandage-off.mp3");
   assert.match(plan[0].vtt, /^WEBVTT/);
   const index = buildMediaIndex(plan);
-  assert.equal(index.entries.length, 10);
+  assert.equal(index.entries.length, 30);
   const whoToCall = index.entries.find((entry) => entry.segment_id === "seg/who-to-call");
   assert.equal(whoToCall.captions, "assets/captions/v2/en/who-to-call.vtt");
   assert.equal(whoToCall.variant, "");

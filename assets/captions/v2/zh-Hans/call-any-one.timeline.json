@@ -1,0 +1,577 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/call-any-one",
+  "number": 5,
+  "language": "zh-Hans",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/zh-Hans/call-any-one.mp3",
+  "beats": [
+    {
+      "id": "beat/any-of-these",
+      "frame": "frame-0710-anylist",
+      "sentence_ids": [
+        "call.02",
+        "call.03",
+        "call.04",
+        "call.05"
+      ],
+      "start": 1.5,
+      "end": 33.5,
+      "speech_seconds": 32,
+      "record_id": "any-of-these",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/any-of-these.mp3",
+      "text": "如果发烧超过华氏101.5度，请打电话。如果耳朵后面的皮肤肿起来，或者感觉皮肤下面有液体在积聚，请打电话。如果出现头痛、怕光，或者特别嗜睡、没精神，请打电话。如果您对伤口护理有疑问，或者对您自己或孩子有其他医疗方面的担心，请打电话。"
+    }
+  ],
+  "words": [
+    {
+      "text": "如果",
+      "start": 1.5,
+      "end": 1.9,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "发烧",
+      "start": 1.9,
+      "end": 2.62,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "超过",
+      "start": 2.62,
+      "end": 3.02,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "华氏",
+      "start": 3.02,
+      "end": 3.74,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "101.5",
+      "start": 3.74,
+      "end": 4.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "度，",
+      "start": 4.86,
+      "end": 5.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 5.5,
+      "end": 5.9,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "打电话。",
+      "start": 5.9,
+      "end": 7.047,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "如果",
+      "start": 7.047,
+      "end": 8.06,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "耳朵",
+      "start": 8.06,
+      "end": 8.46,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "后面",
+      "start": 8.46,
+      "end": 8.74,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 8.74,
+      "end": 8.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "皮肤",
+      "start": 8.86,
+      "end": 9.58,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "肿起来，",
+      "start": 9.58,
+      "end": 10.7,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "或者",
+      "start": 10.7,
+      "end": 11.02,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "感觉",
+      "start": 11.02,
+      "end": 11.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "皮肤",
+      "start": 11.5,
+      "end": 11.82,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "下面",
+      "start": 11.82,
+      "end": 12.62,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "有",
+      "start": 12.62,
+      "end": 12.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "液体",
+      "start": 12.86,
+      "end": 13.34,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "在",
+      "start": 13.34,
+      "end": 13.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "积",
+      "start": 13.5,
+      "end": 13.74,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "聚，",
+      "start": 13.74,
+      "end": 14.42,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 14.42,
+      "end": 14.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "打电话。",
+      "start": 14.86,
+      "end": 16.007,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "如果",
+      "start": 16.007,
+      "end": 16.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "出现",
+      "start": 16.86,
+      "end": 17.34,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "头痛、",
+      "start": 17.34,
+      "end": 18.38,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "怕",
+      "start": 18.38,
+      "end": 18.62,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "光，",
+      "start": 18.62,
+      "end": 19.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "或者",
+      "start": 19.5,
+      "end": 19.9,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "特别",
+      "start": 19.9,
+      "end": 20.3,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "嗜",
+      "start": 20.3,
+      "end": 20.7,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "睡、",
+      "start": 20.7,
+      "end": 21.26,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "没",
+      "start": 21.26,
+      "end": 21.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "精神，",
+      "start": 21.5,
+      "end": 22.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 22.5,
+      "end": 22.86,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "打电话。",
+      "start": 22.86,
+      "end": 23.98,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "如果",
+      "start": 23.98,
+      "end": 24.94,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 24.94,
+      "end": 25.1,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "对",
+      "start": 25.1,
+      "end": 25.34,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "伤口",
+      "start": 25.34,
+      "end": 25.74,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "护理",
+      "start": 25.74,
+      "end": 26.14,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "有",
+      "start": 26.14,
+      "end": 26.3,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "疑问，",
+      "start": 26.3,
+      "end": 27.34,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "或者",
+      "start": 27.34,
+      "end": 27.74,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "对",
+      "start": 27.74,
+      "end": 27.9,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 27.9,
+      "end": 28.14,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "自己",
+      "start": 28.14,
+      "end": 28.94,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "或",
+      "start": 28.94,
+      "end": 29.1,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "孩子",
+      "start": 29.1,
+      "end": 29.9,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "有",
+      "start": 29.9,
+      "end": 30.22,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "其他",
+      "start": 30.22,
+      "end": 30.7,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "医疗",
+      "start": 30.7,
+      "end": 31.02,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "方面",
+      "start": 31.02,
+      "end": 31.34,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 31.34,
+      "end": 31.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "担心，",
+      "start": 31.5,
+      "end": 32.42,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 32.42,
+      "end": 32.78,
+      "beat": "beat/any-of-these",
+      "space": false
+    },
+    {
+      "text": "打电话。",
+      "start": 32.78,
+      "end": 33.5,
+      "beat": "beat/any-of-these",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 5.5,
+      "text": "如果发烧超过华氏101.5度，",
+      "beat": "beat/any-of-these",
+      "first_word": 0,
+      "word_count": 6
+    },
+    {
+      "id": "cue-02",
+      "start": 5.5,
+      "end": 7.047,
+      "text": "请打电话。",
+      "beat": "beat/any-of-these",
+      "first_word": 6,
+      "word_count": 2
+    },
+    {
+      "id": "cue-03",
+      "start": 7.047,
+      "end": 10.7,
+      "text": "如果耳朵后面的皮肤肿起来，",
+      "beat": "beat/any-of-these",
+      "first_word": 8,
+      "word_count": 6
+    },
+    {
+      "id": "cue-04",
+      "start": 10.7,
+      "end": 13.74,
+      "text": "或者感觉皮肤下面有液体在积",
+      "beat": "beat/any-of-these",
+      "first_word": 14,
+      "word_count": 8
+    },
+    {
+      "id": "cue-05",
+      "start": 13.74,
+      "end": 14.42,
+      "text": "聚，",
+      "beat": "beat/any-of-these",
+      "first_word": 22,
+      "word_count": 1
+    },
+    {
+      "id": "cue-06",
+      "start": 14.42,
+      "end": 16.007,
+      "text": "请打电话。",
+      "beat": "beat/any-of-these",
+      "first_word": 23,
+      "word_count": 2
+    },
+    {
+      "id": "cue-07",
+      "start": 16.007,
+      "end": 19.5,
+      "text": "如果出现头痛、怕光，",
+      "beat": "beat/any-of-these",
+      "first_word": 25,
+      "word_count": 5
+    },
+    {
+      "id": "cue-08",
+      "start": 19.5,
+      "end": 22.5,
+      "text": "或者特别嗜睡、没精神，",
+      "beat": "beat/any-of-these",
+      "first_word": 30,
+      "word_count": 6
+    },
+    {
+      "id": "cue-09",
+      "start": 22.5,
+      "end": 23.98,
+      "text": "请打电话。",
+      "beat": "beat/any-of-these",
+      "first_word": 36,
+      "word_count": 2
+    },
+    {
+      "id": "cue-10",
+      "start": 23.98,
+      "end": 27.34,
+      "text": "如果您对伤口护理有疑问，",
+      "beat": "beat/any-of-these",
+      "first_word": 38,
+      "word_count": 7
+    },
+    {
+      "id": "cue-11",
+      "start": 27.34,
+      "end": 30.7,
+      "text": "或者对您自己或孩子有其他",
+      "beat": "beat/any-of-these",
+      "first_word": 45,
+      "word_count": 8
+    },
+    {
+      "id": "cue-12",
+      "start": 30.7,
+      "end": 32.42,
+      "text": "医疗方面的担心，",
+      "beat": "beat/any-of-these",
+      "first_word": 53,
+      "word_count": 4
+    },
+    {
+      "id": "cue-13",
+      "start": 32.42,
+      "end": 33.5,
+      "text": "请打电话。",
+      "beat": "beat/any-of-these",
+      "first_word": 57,
+      "word_count": 2
+    }
+  ],
+  "narration_seconds": 32,
+  "duration_seconds": 34.4,
+  "source_records": {
+    "any-of-these": "b18e48de1076851ac6e294a1031c08ea0d6643b222ffcbe5a5b19ca82deb2331"
+  }
+}
