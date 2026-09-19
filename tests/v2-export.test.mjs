@@ -30,3 +30,12 @@ test("a still changes only where a beat, a caption, or a spoken word starts", as
     assert.equal(activeCue(timeline, a)?.id, activeCue(timeline, b)?.id);
   }
 });
+
+test("the export page has the title strip, square stage, caption band, and notice, and no prompt fields", async () => {
+  const html = await readFile(resolve(root, "guide/export.html"), "utf8");
+  for (const id of ["export-number", "export-heading", "export-chip", "stage", "caption", "notice"]) assert.match(html, new RegExp(`id="${id}"`), id);
+  assert.match(html, /src="assets\/export\.js"/);
+  assert.doesNotMatch(html, /prompt|textarea|<input/i);
+  const css = await readFile(resolve(root, "guide/assets/guide.css"), "utf8");
+  assert.match(css, /\.export \{[^}]*width: 1080px; height: 1920px; padding: 150px 72px 250px;/, "the canvas keeps the top 150 px and bottom 250 px clear");
+});
