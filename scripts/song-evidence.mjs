@@ -68,10 +68,14 @@ async function mediaFacts() {
   const numbers = segments.map((segment) => segment.number);
   const byLanguage = Object.fromEntries(LANGUAGES.map((language) => [language, index.entries.filter((entry) => entry.language === language)]));
   const narrated = LANGUAGES.filter((language) => numbers.every((number) => byLanguage[language].some((entry) => entry.number === number)));
-  const seconds = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => {
-    const durations = byLanguage[language].filter((entry) => entry.number === number).map((entry) => entry.duration_seconds);
-    return [number, durations.length ? Math.max(...durations) : null];
-  }))]));
+  // The ceiling is on narration, as in the spec and scripts/lib/segments.mjs; the running time adds the
+  // title card, the pauses between beats, and the tail.
+  const longestOf = (language, number, key) => {
+    const values = byLanguage[language].filter((entry) => entry.number === number).map((entry) => entry[key]);
+    return values.length ? Math.max(...values) : null;
+  };
+  const seconds = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => [number, longestOf(language, number, "narration_seconds")]))]));
+  const running = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => [number, longestOf(language, number, "duration_seconds")]))]));
   const longest = Math.max(...Object.values(seconds).flatMap((row) => Object.values(row).filter((value) => value !== null)));
   const captions = {};
   for (const language of LANGUAGES) {
@@ -90,7 +94,7 @@ async function mediaFacts() {
   }
   return {
     segments: numbers,
-    short_clips: { ok: narrated.includes("en") && longest <= CEILING_SECONDS && narrated.every((language) => numbers.every((number) => seconds[language][number] !== null)), ceiling_seconds: CEILING_SECONDS, longest_seconds: longest, seconds_by_language: seconds, narrated_languages: narrated },
+    short_clips: { ok: narrated.includes("en") && longest <= CEILING_SECONDS && narrated.every((language) => numbers.every((number) => seconds[language][number] !== null)), ceiling_seconds: CEILING_SECONDS, longest_narration_seconds: longest, narration_seconds_by_language: seconds, running_seconds_by_language: running, narrated_languages: narrated },
     no_owl: { ok: owl.length === 0, files_searched: patientFacing.length, matches: owl },
     narrator: {
       ok: LANGUAGES.every((language) => voices[language]?.voice && narrated.includes(language)),

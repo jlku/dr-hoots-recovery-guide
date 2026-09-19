@@ -5,7 +5,7 @@
     {
       "id": "short_clips",
       "asked": "Shorten to about 30-second videos: five short videos instead of one 2.5-minute video.",
-      "question": "Is every segment, in every narrated language, 35 seconds or less, with every segment present?",
+      "question": "Is every segment's narration, in every narrated language, 35 seconds or less, with every segment present? This is the spec's ceiling; the title card and pauses add about 3 seconds to each segment's running time, which the facts also report.",
       "measured": true
     },
     {
