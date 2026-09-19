@@ -100,16 +100,18 @@
     "ov.processor": "Procesador de sonido, se usa por fuera de la oreja",
     "ov.pending_howto": "Imagen de cómo hacerlo, pendiente",
     "ov.path_tape": "Si hay cinta",
-    "ov.path_no_tape": "Si no hay cinta"
+    "ov.path_no_tape": "Si no hay cinta",
+    "ui.song_review": "Revisión simulada de Song (IA), no es la aprobación de Song",
+    "ui.reviewed_by_clinician": "Revisado por un profesional de la salud"
   },
   "review": {
     "kind": "ai",
     "label": "Revisado por IA (Claude), no por un traductor médico certificado",
     "date": "2026-09-19",
     "receipts": [
-      "content/reviews/es/c6e7ee031b6b64ac.json",
-      "content/reviews/es/c6e7ee031b6b64ac.2.json",
-      "content/reviews/es/c6e7ee031b6b64ac.3.json"
+      "content/reviews/es/4758c11a1d002524.json",
+      "content/reviews/es/4758c11a1d002524.2.json",
+      "content/reviews/es/4758c11a1d002524.3.json"
     ]
   }
 }

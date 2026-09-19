@@ -94,9 +94,12 @@ export async function resolveSelection(root, { record: recordId, diagram: diagra
   throw new Error("choose what to review: --record <manifest record>, --diagram <diagram id>, or --recode <receipt>");
 }
 
+// The evaluator lists its own receipts and leaves the badges as they are; `npm run check` says when
+// they need rebuilding with `npm run reviews:index`.
 export async function refreshReviewsIndex(root) {
   const names = (await readdir(join(root, RECEIPTS_DIR))).filter((name) => name.endsWith(".json")).sort();
-  const index = { schema_version: "1.0", patient_use: false, anatomy: names.map((name) => `${RECEIPTS_DIR}/${name}`) };
+  const current = await readFile(join(root, REVIEWS_INDEX), "utf8").then(JSON.parse, () => ({}));
+  const index = { schema_version: "1.0", patient_use: false, ...current, anatomy: names.map((name) => `${RECEIPTS_DIR}/${name}`) };
   await writeFile(join(root, REVIEWS_INDEX), `${JSON.stringify(index, null, 2)}\n`);
 }
 

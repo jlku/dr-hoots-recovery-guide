@@ -1,0 +1,61 @@
+{
+  "id": "song-build-v1",
+  "asked_on": "2026-09-17",
+  "checks": [
+    {
+      "id": "short_clips",
+      "asked": "Shorten to about 30-second videos: five short videos instead of one 2.5-minute video.",
+      "question": "Is every segment, in every narrated language, 35 seconds or less, with all five segments present?",
+      "measured": true
+    },
+    {
+      "id": "no_owl",
+      "asked": "Drop the owl. Show what the surgical site looks like, or anatomy.",
+      "question": "Is there no owl or mascot anywhere a patient looks, and are the pictures of the surgical site and anatomy?",
+      "measured": true
+    },
+    {
+      "id": "narrator",
+      "asked": "A narrator voice instead of a character talking at you.",
+      "question": "Does one narrator voice per language speak to the patient, with no character, in every language offered?",
+      "measured": true
+    },
+    {
+      "id": "subtitles",
+      "asked": "Subtitles.",
+      "question": "Are there captions for every segment in English, Spanish, and Mandarin, readable at desktop and phone widths? At phone width the transcript under the player is the caption track and highlights the spoken word; that layout was chosen on purpose.",
+      "measured": true
+    },
+    {
+      "id": "toc",
+      "asked": "A selectable table of contents: jump to the part you are worried about.",
+      "question": "Is every chapter listed where the patient can see it, and does choosing one play from its start?",
+      "measured": true
+    },
+    {
+      "id": "languages",
+      "asked": "A language selector: Mandarin and Spanish cover most Bay Area testing.",
+      "question": "Does switching to Spanish or Mandarin change the page, the audio, and the captions to that language?",
+      "measured": true
+    },
+    {
+      "id": "provider_file",
+      "asked": "A table shaped like the dot phrase, with antibiotic yes or no, pain medication yes or no, follow-up date, and reviewed this video with a date; presets on every column, each overridable. Meet the provider in the text file; no new app.",
+      "question": "Can a provider paste the block and have a patient link in under a minute, with no account and no new app, and does the table show those four columns, each with its preset and the provider's override?",
+      "measured": true
+    },
+    {
+      "id": "review_line",
+      "asked": "Reviewed this video, with a date.",
+      "question": "Is the review a single line in the block, and does it reach the guide as a clinician badge with the date?",
+      "measured": true
+    },
+    {
+      "id": "card_summary",
+      "asked": "The card is the general summary; the videos are the fine detail.",
+      "question": "Is the printable card one tap away at desktop and phone widths?",
+      "measured": true
+    }
+  ],
+  "verdict_rule": "A check passes only when its measured fact passed and the screenshots show no real problem. The build passes only when every check passes."
+}

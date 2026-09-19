@@ -21,6 +21,7 @@ import {
   pickEntry,
   segmentByNumber,
   sentenceSpans,
+  reviewBadges,
   statusMessages,
   variantFor
 } from "../guide/assets/logic.js";
@@ -102,7 +103,8 @@ test("the guide takes each cue's words from its recorded range and ends Chinese 
 test("a translated guide always says who reviewed the translation, and says when it fell back to English", () => {
   const labels = { "ui.language_fallback": "This language is not available yet. Showing English." };
   assert.deepEqual(statusMessages({ pack: { language: "en", review: { label: "English source text" } }, fallback: false, labels }), []);
-  assert.deepEqual(statusMessages({ pack: { language: "es", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado" } }, fallback: false, labels }), ["Revisado por IA (Claude), no por un traductor médico certificado"]);
+  // Who reviewed the translation moved to the review badges; the status strip keeps only warnings.
+  assert.deepEqual(statusMessages({ pack: { language: "es", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado" } }, fallback: false, labels }), []);
   assert.deepEqual(statusMessages({ pack: { language: "en", review: {} }, fallback: true, labels }), ["This language is not available yet. Showing English."]);
 });
 
@@ -125,4 +127,22 @@ test("a medication the link switches off shows the pending note in the status st
   assert.equal(formatFollowUp("2026-10-01", "en"), "October 1, 2026");
   assert.equal(formatFollowUp("2026-10-01", "es"), "1 de octubre de 2026");
   assert.equal(formatFollowUp("2026-10-01", "zh-Hans"), "2026年10月1日");
+});
+
+test("the review badges say who reviewed what, and only a full review of this build counts", () => {
+  const labels = { "ui.song_review": "Simulated Song review (AI), not Song's approval", "ui.not_reviewed": "Not yet reviewed", "ui.reviewed_by_clinician": "Reviewed by clinician" };
+  const reviewed = { status: "reviewed", date: "2026-09-19" };
+  const notReviewed = { status: "not_reviewed", date: null };
+  const spanish = { status: "ai_reviewed", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado", date: "2026-09-18" } };
+  assert.deepEqual(reviewBadges({ badges: { song: notReviewed }, pack: { language: "en" }, clinicianDate: null, labels }), [
+    { kind: "song", label: "Simulated Song review (AI), not Song's approval", value: "Not yet reviewed" }
+  ]);
+  assert.deepEqual(reviewBadges({ badges: { song: reviewed }, pack: { language: "es", ...spanish }, clinicianDate: "2026-09-17", labels }), [
+    { kind: "translation", label: "Revisado por IA (Claude), no por un traductor médico certificado", value: "18 de septiembre de 2026" },
+    { kind: "song", label: "Simulated Song review (AI), not Song's approval", value: "19 de septiembre de 2026" },
+    { kind: "clinician", label: "Reviewed by clinician", value: "17 de septiembre de 2026" }
+  ]);
+  const draft = { language: "zh-Hans", status: "machine_draft", review: { label: "机器翻译草稿，尚未审核", date: "2026-09-18" } };
+  assert.deepEqual(reviewBadges({ badges: {}, pack: draft, clinicianDate: "not-a-date", labels })[0], { kind: "translation", label: "机器翻译草稿，尚未审核", value: "" });
+  assert.equal(reviewBadges({ badges: {}, pack: draft, clinicianDate: "not-a-date", labels }).length, 2, "an unreadable review date shows no clinician badge");
 });

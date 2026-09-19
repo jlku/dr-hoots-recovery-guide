@@ -22,6 +22,7 @@ import {
   parseFragment,
   pendingConditionalBeats,
   pickEntry,
+  reviewBadges,
   sentenceSpans,
   statusMessages,
   variantFor
@@ -36,6 +37,7 @@ const dom = {
   language: byId("language"),
   languageLabel: byId("language-label"),
   print: byId("print-link"),
+  transportCard: byId("transport-card"),
   chapterList: byId("chapter-list"),
   callBlock: byId("call-block"),
   stage: byId("stage"),
@@ -159,6 +161,41 @@ function renderChapters() {
   }));
 }
 
+// Who reviewed what: the translation, the simulated Song review, and Song's own review line from the
+// provider's link. Desktop shows it in the rail footer, phones at the end of the transcript.
+function badgeList() {
+  const list = document.createElement("ul");
+  list.className = "badges";
+  list.setAttribute("aria-label", labels()["ui.review_status"] ?? "");
+  for (const badge of reviewBadges({ badges: state.guide.reviews?.badges, pack: state.guide.pack, clinicianDate: state.params.r, labels: labels() })) {
+    const item = document.createElement("li");
+    item.className = `badge badge--${badge.kind}`;
+    item.append(span("badge__label", badge.label));
+    if (badge.value) item.append(document.createTextNode(" "), span("badge__value", badge.value));
+    list.append(item);
+  }
+  return list;
+}
+
+// The transcript ends with the review badges; on phones, which hide the rail footer, with the notice too.
+function transcriptFooter() {
+  const footer = document.createElement("div");
+  footer.className = "transcript-footer";
+  const notice = document.createElement("p");
+  notice.className = "transcript-footer__notice";
+  notice.textContent = labels()["ui.notice"];
+  footer.append(notice, badgeList());
+  return footer;
+}
+
+// A date from the provider's link, shown in the reading flow right after the sentence it belongs to.
+function dataNote(frame) {
+  const note = document.createElement("p");
+  note.className = "transcript__data";
+  note.textContent = (labels()[`ui.${frame.data_field.replace(/_date$/, "")}_on`] ?? "{date}").replace("{date}", state.followUp);
+  return note;
+}
+
 function renderCallBlock() {
   const module = state.guide.canonical.modules.find((item) => item.id === "ci/when-to-call");
   const values = new Map((module?.structured_values ?? []).map((value) => [value.field, value.value]));
@@ -195,7 +232,8 @@ function renderTranscript() {
     jump.textContent = `${segment.number} · ${labels()[segment.title_key] ?? ""}`;
     heading.append(jump);
     nodes.push(heading);
-    for (const sentence of state.sentences.get(segment.number) ?? []) {
+    const list = state.sentences.get(segment.number) ?? [];
+    list.forEach((sentence, position) => {
       const button = document.createElement("button");
       button.type = "button";
       button.className = "sentence";
@@ -207,8 +245,12 @@ function renderTranscript() {
         if (index < sentence.words.length - 1 && (word.space ?? true)) button.append(document.createTextNode(" "));
       });
       nodes.push(button);
-    }
+      const beat = segment.beats.find((item) => item.id === sentence.beat);
+      const frame = beat ? state.guide.frames.frames[beat.frame] : null;
+      if (frame?.data_field && state.followUp && list[position + 1]?.beat !== sentence.beat) nodes.push(dataNote(frame));
+    });
   }
+  nodes.push(transcriptFooter());
   dom.transcript.replaceChildren(...nodes);
 }
 
@@ -417,6 +459,7 @@ async function init() {
   dom.title.textContent = text["guide.title"];
   dom.languageLabel.textContent = text["ui.language"];
   dom.print.textContent = text["ui.print_card"];
+  dom.transportCard.textContent = text["ui.print_card"];
   dom.speedLabel.textContent = text["ui.speed"];
   dom.captionsLabel.textContent = text["ui.captions"];
   dom.transcriptHeading.textContent = text["ui.transcript"];

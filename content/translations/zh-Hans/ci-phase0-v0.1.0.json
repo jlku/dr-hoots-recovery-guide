@@ -37,7 +37,7 @@
     "act.01": "手术部位愈合后，您要回来进行第一次调机。",
     "act.02": "就诊时，您戴在耳朵外面的言语处理器，会由一位叫做听力师的听力专家来设定程序。",
     "act.03": "程序是按照您的需要设定的。",
-    "act.04": "以后就诊时，医疗团队会检查植入体和设备，并测量它们的工作情况。",
+    "act.04": "以后就诊时，医疗团队会检查植入体和设备，并检测它们的工作情况。",
     "act.05": "您会继续回来做检查和微调。"
   },
   "labels": {
@@ -100,16 +100,18 @@
     "ov.processor": "言语处理器，戴在耳朵外面",
     "ov.pending_howto": "操作图示待定",
     "ov.path_tape": "如果有胶布",
-    "ov.path_no_tape": "如果没有胶布"
+    "ov.path_no_tape": "如果没有胶布",
+    "ui.song_review": "模拟 Song 审核（人工智能），并非 Song 本人的批准",
+    "ui.reviewed_by_clinician": "医护人员已审核"
   },
   "review": {
     "kind": "ai",
     "label": "经人工智能（Claude）审核，并非认证医学翻译",
     "date": "2026-09-19",
     "receipts": [
-      "content/reviews/zh/b1860cd113ccdcce.json",
-      "content/reviews/zh/b1860cd113ccdcce.2.json",
-      "content/reviews/zh/b1860cd113ccdcce.3.json"
+      "content/reviews/zh/a90912e7c4c58ba8.json",
+      "content/reviews/zh/a90912e7c4c58ba8.2.json",
+      "content/reviews/zh/a90912e7c4c58ba8.3.json"
     ]
   }
 }

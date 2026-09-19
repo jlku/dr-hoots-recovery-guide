@@ -1,0 +1,21 @@
+.CIPOSTOP  Cochlear implant post-operative instructions (UCSF OHNS)
+Surgery date: ***          Side: {Left/Right}          Surgeon: ***
+Dressing: remove the head (mastoid) dressing 2 days after surgery.            (UCSF CI Center)
+Incision: {Tape present: keep dry 3 days, no cleaning / No tape: clean edges 2x daily
+  with 50/50 hydrogen peroxide and distilled water, then bacitracin}           (UCSF CI Center)
+Shower: may shower and wash hair 3 days after surgery.                        (UCSF CI Center)
+Antibiotic: {Yes: *** name, dose, days / No}                                   (UCSF EARS: "as prescribed")
+Pain medication: {Yes: *** / No: acetaminophen as needed}                      (UCSF EARS: Rx first 48-72 h, then OTC)
+Avoid: aspirin, ibuprofen, other NSAIDs for *** days                          (peer sheets: 10 days; confirm)
+Activity: no lifting over *** lb for *** weeks; no swimming until cleared;
+  avoid nose blowing; no driving until cleared                                 (UCSF EARS: >10 lb, 2-3 weeks)
+Follow-up: wound check and ear exam on ***                                     (UCSF CI Center: about 2 weeks;
+                                                                                UCSF EARS: 7-10 days; timeline PDF: 2-3 weeks)
+Activation: with audiology, about *** weeks after surgery                      (CI Center: about 1 month;
+                                                                                timeline PDF: 2-3 weeks; EARS: 3-6 weeks)
+When to call: redness and swelling not improving over 1-2 days and painful to touch;
+  fever above 101.5 F; swelling or fluid behind the ear; headache, light sensitivity,
+  or excessive lethargy; any wound-care question or concern.                   (UCSF CI Center)
+Contact: nursing line 415-353-2148, callback within 12 hours, call again if none;
+  emergencies 415-476-1000, ask for the Otolaryngology resident on call.       (UCSF CI Center)
+Video guide: language {English/Spanish/Mandarin}    Reviewed by *** on ***

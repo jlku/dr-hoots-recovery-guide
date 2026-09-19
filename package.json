@@ -27,10 +27,15 @@
     "instructions:validate": "node scripts/validate-instructions.mjs",
     "reviews:validate": "node scripts/validate-reviews.mjs",
     "review": "node --env-file-if-exists=.env.local scripts/review-anatomy.mjs",
-    "review:calibrate": "node --env-file-if-exists=.env.local scripts/calibrate-evaluator.mjs"
+    "review:calibrate": "node --env-file-if-exists=.env.local scripts/calibrate-evaluator.mjs",
+    "review:song-evidence": "node scripts/song-evidence.mjs",
+    "reviews:index": "node scripts/build-reviews-index.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.126.0",
     "@fal-ai/client": "^1.9.0"
+  },
+  "devDependencies": {
+    "playwright-core": "^1.63.0"
   }
 }

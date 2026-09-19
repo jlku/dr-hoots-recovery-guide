@@ -17,5 +17,42 @@
     "content/reviews/anatomy/processor-worn-ref-a1.json",
     "content/reviews/anatomy/sequence.remove-dressing-v2.json",
     "content/reviews/anatomy/sequence.remove-dressing.json"
-  ]
+  ],
+  "badges": {
+    "translations": {
+      "es": {
+        "status": "reviewed",
+        "label": "AI reviewer (Claude), not a certified medical translator",
+        "date": "2026-09-19",
+        "target": "4758c11a1d002524e935e7ba90ba2bd47f1accb5ded3060824769497441783f9",
+        "receipts": [
+          "content/reviews/es/4758c11a1d002524.json",
+          "content/reviews/es/4758c11a1d002524.2.json",
+          "content/reviews/es/4758c11a1d002524.3.json"
+        ]
+      },
+      "zh-Hans": {
+        "status": "reviewed",
+        "label": "AI reviewer (Claude), not a certified medical translator",
+        "date": "2026-09-19",
+        "target": "a90912e7c4c58ba807d224f1d66ee3a557a1f82d6bb7732d118a75686e32c98a",
+        "receipts": [
+          "content/reviews/zh/a90912e7c4c58ba8.json",
+          "content/reviews/zh/a90912e7c4c58ba8.2.json",
+          "content/reviews/zh/a90912e7c4c58ba8.3.json"
+        ]
+      }
+    },
+    "song": {
+      "status": "not_reviewed",
+      "label": "Simulated Song review (AI), not Song's approval",
+      "date": null,
+      "target": "71d251f8520b073347790c1da36d248e255513a4f8e1348dd868abfa98c12ac0",
+      "receipts": [
+        "content/reviews/song/71d251f8520b0733.json",
+        "content/reviews/song/71d251f8520b0733.2.json",
+        "content/reviews/song/71d251f8520b0733.3.json"
+      ]
+    }
+  }
 }
