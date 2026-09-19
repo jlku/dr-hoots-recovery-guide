@@ -4,7 +4,7 @@
   "script": "Hans",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "machine_draft",
+  "status": "ai_reviewed",
   "patient_use": false,
   "notice": "未经核实——不得用于患者",
   "sentences": {
@@ -19,7 +19,7 @@
     "wc.09": "伤口复查和耳部检查大约在手术后两周。",
     "wc.10": "缝线会自己溶解，所以不需要拆线。",
     "med.01": "请按照处方服用抗生素。",
-    "med.02": "它有助于预防感染。",
+    "med.02": "抗生素可以帮助预防感染。",
     "med.03": "请按照处方服用止痛药。",
     "med.04": "在疼痛变严重之前服用。",
     "call.01": "如果下面三种情况同时出现，请打电话给您的外科医生或诊所工作人员。",
@@ -103,9 +103,13 @@
     "ov.path_no_tape": "如果没有胶布"
   },
   "review": {
-    "kind": "none",
-    "label": "机器翻译草稿，尚未审核",
-    "date": "2026-09-18",
-    "receipts": []
+    "kind": "ai",
+    "label": "经人工智能（Claude）审核，并非认证医学翻译",
+    "date": "2026-09-19",
+    "receipts": [
+      "content/reviews/zh/b1860cd113ccdcce.json",
+      "content/reviews/zh/b1860cd113ccdcce.2.json",
+      "content/reviews/zh/b1860cd113ccdcce.3.json"
+    ]
   }
 }

@@ -4,7 +4,7 @@
   "script": "Latn",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "machine_draft",
+  "status": "ai_reviewed",
   "patient_use": false,
   "notice": "SIN VERIFICAR — NO PARA USO CON PACIENTES",
   "sentences": {
@@ -84,7 +84,7 @@
     "ui.print_card": "Imprimir la tarjeta",
     "ui.captions": "Subtítulos",
     "ov.tape_check": "Revise si hay cinta",
-    "ov.keep_dry": "Mantenga seco hasta 3 días después de la cirugía",
+    "ov.keep_dry": "Mantenga la zona seca hasta 3 días después de la cirugía",
     "ov.no_cleaning": "No limpie todavía",
     "ov.clean_twice": "Limpie los bordes con cuidado, dos veces al día",
     "ov.mix": "Partes iguales de agua oxigenada y agua destilada",
@@ -103,9 +103,13 @@
     "ov.path_no_tape": "Si no hay cinta"
   },
   "review": {
-    "kind": "none",
-    "label": "Borrador de traducción automática, aún sin revisar",
-    "date": "2026-09-18",
-    "receipts": []
+    "kind": "ai",
+    "label": "Revisado por IA (Claude), no por un traductor médico certificado",
+    "date": "2026-09-19",
+    "receipts": [
+      "content/reviews/es/c6e7ee031b6b64ac.json",
+      "content/reviews/es/c6e7ee031b6b64ac.2.json",
+      "content/reviews/es/c6e7ee031b6b64ac.3.json"
+    ]
   }
 }
