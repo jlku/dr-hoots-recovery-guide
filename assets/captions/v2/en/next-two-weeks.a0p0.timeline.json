@@ -250,32 +250,41 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.18,
-      "text": "Three days after surgery, you may shower and wash your hair.",
+      "end": 4.06,
+      "text": "Three days after surgery, you may shower",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 11
+      "word_count": 7
     },
     {
       "id": "cue-02",
-      "start": 5.404,
-      "end": 9.5,
-      "text": "Your wound check and ear exam are about two weeks after",
+      "start": 4.08,
+      "end": 5.18,
+      "text": "and wash your hair.",
       "beat": "beat/milestones",
-      "first_word": 11,
-      "word_count": 11
+      "first_word": 7,
+      "word_count": 4
     },
     {
       "id": "cue-03",
-      "start": 9.58,
-      "end": 10.78,
-      "text": "surgery —",
+      "start": 5.404,
+      "end": 8.78,
+      "text": "Your wound check and ear exam are about two",
       "beat": "beat/milestones",
-      "first_word": 22,
-      "word_count": 2
+      "first_word": 11,
+      "word_count": 9
     },
     {
       "id": "cue-04",
+      "start": 8.833,
+      "end": 10.78,
+      "text": "weeks after surgery —",
+      "beat": "beat/milestones",
+      "first_word": 20,
+      "word_count": 4
+    },
+    {
+      "id": "cue-05",
       "start": 10.82,
       "end": 12.62,
       "text": "the stitches dissolve on their own.",

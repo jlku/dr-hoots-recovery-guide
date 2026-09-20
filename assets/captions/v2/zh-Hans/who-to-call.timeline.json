@@ -462,20 +462,20 @@
     {
       "id": "cue-05",
       "start": 23.74,
-      "end": 33.42,
-      "text": "如有紧急情况，请拨打415-476-1000，并要求找值班的",
+      "end": 32.78,
+      "text": "如有紧急情况，请拨打415-476-1000，并要求找",
       "beat": "beat/numbers",
       "first_word": 40,
-      "word_count": 12
+      "word_count": 10
     },
     {
       "id": "cue-06",
-      "start": 33.42,
+      "start": 32.78,
       "end": 35.42,
-      "text": "耳鼻喉科住院医生。",
+      "text": "值班的耳鼻喉科住院医生。",
       "beat": "beat/numbers",
-      "first_word": 52,
-      "word_count": 3
+      "first_word": 50,
+      "word_count": 5
     }
   ],
   "narration_seconds": 33.92,

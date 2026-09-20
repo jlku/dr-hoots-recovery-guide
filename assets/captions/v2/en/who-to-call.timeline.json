@@ -321,20 +321,20 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.38,
-      "text": "For routine questions, leave a message on the nursing",
+      "end": 3.74,
+      "text": "For routine questions, leave a message",
       "beat": "beat/numbers",
       "first_word": 0,
-      "word_count": 9
+      "word_count": 6
     },
     {
       "id": "cue-02",
-      "start": 4.46,
+      "start": 3.793,
       "end": 9.98,
-      "text": "line: 415-353-2148.",
+      "text": "on the nursing line: 415-353-2148.",
       "beat": "beat/numbers",
-      "first_word": 9,
-      "word_count": 2
+      "first_word": 6,
+      "word_count": 5
     },
     {
       "id": "cue-03",
@@ -357,20 +357,20 @@
     {
       "id": "cue-05",
       "start": 16.08,
-      "end": 24.14,
-      "text": "For an emergency, call 415-476-1000 and ask for the Otolaryngology",
+      "end": 22.86,
+      "text": "For an emergency, call 415-476-1000 and ask",
       "beat": "beat/numbers",
       "first_word": 27,
-      "word_count": 10
+      "word_count": 7
     },
     {
       "id": "cue-06",
-      "start": 24.193,
+      "start": 22.88,
       "end": 25.5,
-      "text": "resident on call.",
+      "text": "for the Otolaryngology resident on call.",
       "beat": "beat/numbers",
-      "first_word": 37,
-      "word_count": 3
+      "first_word": 34,
+      "word_count": 6
     }
   ],
   "narration_seconds": 24,

@@ -454,41 +454,50 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.02,
-      "text": "Para preguntas de rutina para la clínica o el cirujano,",
+      "end": 3.66,
+      "text": "Para preguntas de rutina para la clínica",
       "beat": "beat/numbers",
       "first_word": 0,
-      "word_count": 10
+      "word_count": 7
     },
     {
       "id": "cue-02",
-      "start": 5.073,
-      "end": 12.22,
-      "text": "deje un mensaje en la línea de enfermería al 415-353-2148.",
+      "start": 3.7,
+      "end": 6.46,
+      "text": "o el cirujano, deje un mensaje en la línea",
       "beat": "beat/numbers",
-      "first_word": 10,
-      "word_count": 10
+      "first_word": 7,
+      "word_count": 9
     },
     {
       "id": "cue-03",
-      "start": 12.62,
-      "end": 17.42,
-      "text": "La página de UCSF dice que debería recibir una llamada",
+      "start": 6.487,
+      "end": 12.22,
+      "text": "de enfermería al 415-353-2148.",
       "beat": "beat/numbers",
-      "first_word": 20,
-      "word_count": 10
+      "first_word": 16,
+      "word_count": 4
     },
     {
       "id": "cue-04",
-      "start": 17.447,
-      "end": 19.1,
-      "text": "en las próximas 12 horas.",
+      "start": 12.62,
+      "end": 16.78,
+      "text": "La página de UCSF dice que debería recibir",
       "beat": "beat/numbers",
-      "first_word": 30,
-      "word_count": 5
+      "first_word": 20,
+      "word_count": 8
     },
     {
       "id": "cue-05",
+      "start": 16.84,
+      "end": 19.1,
+      "text": "una llamada en las próximas 12 horas.",
+      "beat": "beat/numbers",
+      "first_word": 28,
+      "word_count": 7
+    },
+    {
+      "id": "cue-06",
       "start": 19.42,
       "end": 22.22,
       "text": "Si nadie le llama, vuelva a llamar.",
@@ -497,22 +506,31 @@
       "word_count": 7
     },
     {
-      "id": "cue-06",
+      "id": "cue-07",
       "start": 22.54,
-      "end": 29.9,
-      "text": "En caso de emergencia, llame al 415-476-1000 y pida hablar",
+      "end": 29.58,
+      "text": "En caso de emergencia, llame al 415-476-1000 y pida",
       "beat": "beat/numbers",
       "first_word": 42,
-      "word_count": 10
+      "word_count": 9
     },
     {
-      "id": "cue-07",
-      "start": 29.94,
-      "end": 32.86,
-      "text": "con el residente de Otorrinolaringología de guardia.",
+      "id": "cue-08",
+      "start": 29.626,
+      "end": 30.78,
+      "text": "hablar con el residente",
       "beat": "beat/numbers",
-      "first_word": 52,
-      "word_count": 7
+      "first_word": 51,
+      "word_count": 4
+    },
+    {
+      "id": "cue-09",
+      "start": 30.807,
+      "end": 32.86,
+      "text": "de Otorrinolaringología de guardia.",
+      "beat": "beat/numbers",
+      "first_word": 55,
+      "word_count": 4
     }
   ],
   "narration_seconds": 31.36,

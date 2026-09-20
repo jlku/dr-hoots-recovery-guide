@@ -428,29 +428,38 @@
     {
       "id": "cue-05",
       "start": 9.873,
-      "end": 13.74,
-      "text": "clean the edges gently twice a day with equal parts hydrogen",
+      "end": 13.18,
+      "text": "clean the edges gently twice a day with equal parts",
       "beat": "beat/two-paths",
       "first_word": 27,
-      "word_count": 11
+      "word_count": 10
     },
     {
       "id": "cue-06",
-      "start": 13.8,
-      "end": 17.82,
-      "text": "peroxide and distilled water, then apply an antibiotic",
+      "start": 13.242,
+      "end": 16.3,
+      "text": "hydrogen peroxide and distilled water,",
       "beat": "beat/two-paths",
-      "first_word": 38,
-      "word_count": 8
+      "first_word": 37,
+      "word_count": 5
     },
     {
       "id": "cue-07",
-      "start": 17.9,
-      "end": 19.9,
-      "text": "ointment such as bacitracin.",
+      "start": 16.348,
+      "end": 18.38,
+      "text": "then apply an antibiotic ointment",
       "beat": "beat/two-paths",
-      "first_word": 46,
-      "word_count": 4
+      "first_word": 42,
+      "word_count": 5
+    },
+    {
+      "id": "cue-08",
+      "start": 18.46,
+      "end": 19.9,
+      "text": "such as bacitracin.",
+      "beat": "beat/two-paths",
+      "first_word": 47,
+      "word_count": 3
     }
   ],
   "narration_seconds": 18.4,

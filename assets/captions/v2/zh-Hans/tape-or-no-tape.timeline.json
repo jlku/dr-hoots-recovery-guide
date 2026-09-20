@@ -442,11 +442,20 @@
     {
       "id": "cue-05",
       "start": 20.22,
-      "end": 26.7,
-      "text": "然后涂上非处方的抗生素药膏，例如杆菌肽（bacitracin）。",
+      "end": 25.9,
+      "text": "然后涂上非处方的抗生素药膏，例如杆菌肽（",
       "beat": "beat/two-paths",
       "first_word": 40,
-      "word_count": 12
+      "word_count": 11
+    },
+    {
+      "id": "cue-06",
+      "start": 25.9,
+      "end": 26.7,
+      "text": "bacitracin）。",
+      "beat": "beat/two-paths",
+      "first_word": 51,
+      "word_count": 1
     }
   ],
   "narration_seconds": 25.2,

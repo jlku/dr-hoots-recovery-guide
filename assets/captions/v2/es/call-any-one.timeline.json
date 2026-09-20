@@ -524,65 +524,92 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.98,
-      "text": "Llame si tiene fiebre de más de 101.5 grados Fahrenheit.",
+      "end": 4.86,
+      "text": "Llame si tiene fiebre de más de 101.5",
       "beat": "beat/any-of-these",
       "first_word": 0,
-      "word_count": 10
+      "word_count": 8
     },
     {
       "id": "cue-02",
-      "start": 6.5,
-      "end": 10.14,
-      "text": "Llame si la piel detrás de la oreja está hinchada o si",
+      "start": 4.913,
+      "end": 5.98,
+      "text": "grados Fahrenheit.",
       "beat": "beat/any-of-these",
-      "first_word": 10,
-      "word_count": 12
+      "first_word": 8,
+      "word_count": 2
     },
     {
       "id": "cue-03",
-      "start": 10.22,
-      "end": 12.46,
-      "text": "siente que se le acumula líquido debajo.",
+      "start": 6.5,
+      "end": 9.66,
+      "text": "Llame si la piel detrás de la oreja está hinchada",
       "beat": "beat/any-of-these",
-      "first_word": 22,
-      "word_count": 7
+      "first_word": 10,
+      "word_count": 10
     },
     {
       "id": "cue-04",
-      "start": 12.98,
-      "end": 16.62,
-      "text": "Llame si tiene dolor de cabeza, si le molesta la luz,",
+      "start": 9.82,
+      "end": 12.46,
+      "text": "o si siente que se le acumula líquido debajo.",
       "beat": "beat/any-of-these",
-      "first_word": 29,
-      "word_count": 11
+      "first_word": 20,
+      "word_count": 9
     },
     {
       "id": "cue-05",
-      "start": 16.78,
-      "end": 19.26,
-      "text": "o si tiene demasiado sueño o cansancio.",
+      "start": 12.98,
+      "end": 15.5,
+      "text": "Llame si tiene dolor de cabeza,",
       "beat": "beat/any-of-these",
-      "first_word": 40,
-      "word_count": 7
+      "first_word": 29,
+      "word_count": 6
     },
     {
       "id": "cue-06",
-      "start": 19.86,
-      "end": 23.42,
-      "text": "Llame si tiene una pregunta sobre el cuidado de la herida",
+      "start": 15.527,
+      "end": 17.9,
+      "text": "si le molesta la luz, o si tiene demasiado",
       "beat": "beat/any-of-these",
-      "first_word": 47,
-      "word_count": 11
+      "first_word": 35,
+      "word_count": 9
     },
     {
       "id": "cue-07",
-      "start": 23.58,
-      "end": 27.66,
-      "text": "u otra preocupación médica sobre usted o su hijo o hija.",
+      "start": 17.98,
+      "end": 19.26,
+      "text": "sueño o cansancio.",
       "beat": "beat/any-of-these",
-      "first_word": 58,
-      "word_count": 11
+      "first_word": 44,
+      "word_count": 3
+    },
+    {
+      "id": "cue-08",
+      "start": 19.86,
+      "end": 22.62,
+      "text": "Llame si tiene una pregunta sobre el cuidado",
+      "beat": "beat/any-of-these",
+      "first_word": 47,
+      "word_count": 8
+    },
+    {
+      "id": "cue-09",
+      "start": 22.673,
+      "end": 25.26,
+      "text": "de la herida u otra preocupación médica",
+      "beat": "beat/any-of-these",
+      "first_word": 55,
+      "word_count": 7
+    },
+    {
+      "id": "cue-10",
+      "start": 25.313,
+      "end": 27.66,
+      "text": "sobre usted o su hijo o hija.",
+      "beat": "beat/any-of-these",
+      "first_word": 62,
+      "word_count": 7
     }
   ],
   "narration_seconds": 26.16,

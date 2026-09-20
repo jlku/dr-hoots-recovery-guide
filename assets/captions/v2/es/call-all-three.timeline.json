@@ -293,20 +293,20 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.94,
-      "text": "Llame a su cirujano o al personal de la clínica si tiene",
+      "end": 4.3,
+      "text": "Llame a su cirujano o al personal de la clínica",
       "beat": "beat/three-signs",
       "first_word": 0,
-      "word_count": 12
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 5,
+      "start": 4.433,
       "end": 6.46,
-      "text": "las tres señales de abajo.",
+      "text": "si tiene las tres señales de abajo.",
       "beat": "beat/three-signs",
-      "first_word": 12,
-      "word_count": 5
+      "first_word": 10,
+      "word_count": 7
     },
     {
       "id": "cue-03",

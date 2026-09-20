@@ -284,14 +284,23 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 6.06,
-      "text": "Dos días después de la cirugía, quítese el vendaje mastoideo,",
+      "end": 3.82,
+      "text": "Dos días después de la cirugía,",
       "beat": "beat/dressing-off",
       "first_word": 0,
-      "word_count": 10
+      "word_count": 6
     },
     {
       "id": "cue-02",
+      "start": 3.847,
+      "end": 6.06,
+      "text": "quítese el vendaje mastoideo,",
+      "beat": "beat/dressing-off",
+      "first_word": 6,
+      "word_count": 4
+    },
+    {
+      "id": "cue-03",
       "start": 6.113,
       "end": 8.46,
       "text": "es decir, el vendaje de la cabeza.",
@@ -300,22 +309,31 @@
       "word_count": 7
     },
     {
-      "id": "cue-03",
+      "id": "cue-04",
       "start": 8.7,
-      "end": 12.86,
-      "text": "Después, revise si hay cinta adhesiva sobre la incisión,",
+      "end": 11.82,
+      "text": "Después, revise si hay cinta adhesiva",
       "beat": "beat/dressing-off",
       "first_word": 17,
-      "word_count": 9
+      "word_count": 6
     },
     {
-      "id": "cue-04",
-      "start": 13.02,
-      "end": 15.82,
-      "text": "o corte de la cirugía, detrás de la oreja.",
+      "id": "cue-05",
+      "start": 11.86,
+      "end": 14.62,
+      "text": "sobre la incisión, o corte de la cirugía,",
       "beat": "beat/dressing-off",
-      "first_word": 26,
-      "word_count": 9
+      "first_word": 23,
+      "word_count": 8
+    },
+    {
+      "id": "cue-06",
+      "start": 14.684,
+      "end": 15.82,
+      "text": "detrás de la oreja.",
+      "beat": "beat/dressing-off",
+      "first_word": 31,
+      "word_count": 4
     }
   ],
   "narration_seconds": 14.32,

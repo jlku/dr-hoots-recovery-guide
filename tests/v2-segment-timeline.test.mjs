@@ -44,7 +44,7 @@ test("every word lands in exactly one cue and cues never overlap", () => {
   for (let index = 1; index < timeline.cues.length; index += 1) {
     assert.ok(timeline.cues[index].start >= timeline.cues[index - 1].end, timeline.cues[index].id);
   }
-  assert.ok(timeline.cues.every((cue) => cue.text.length <= CUE_CHARACTERS.spaced + 12));
+  assert.ok(timeline.cues.every((cue) => cue.text.length <= CUE_CHARACTERS.spaced));
   assert.equal(timeline.cues[0].id, "cue-01");
 });
 
@@ -83,7 +83,7 @@ test("a caption fills two lines and never ends on an article", () => {
   const words = "Dos días después de la cirugía, quítese el vendaje mastoideo, es decir, el vendaje de la cabeza.".split(" ").map((text, index) => ({ text, start: index, end: index + 0.5, beat: "b" }));
   const cues = groupCues(words, "b", 14, 0, { maxChars: CUE_CHARACTERS.spaced, avoidHanging: true });
   for (const cue of cues) {
-    assert.ok(cue.text.length <= CUE_CHARACTERS.spaced + 12, `${cue.text} is ${cue.text.length} characters`);
+    assert.ok(cue.text.length <= CUE_CHARACTERS.spaced, `${cue.text} is ${cue.text.length} characters`);
     assert.doesNotMatch(cue.text, /\s(el|la|de|y|a|the|of)$/i, `${cue.text} hangs on a short word`);
   }
   assert.ok(cues.length >= 2);

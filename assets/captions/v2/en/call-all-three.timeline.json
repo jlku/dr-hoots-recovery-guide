@@ -272,29 +272,47 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.78,
-      "text": "Call your surgeon or clinic if all three of these are true:",
+      "end": 3.82,
+      "text": "Call your surgeon or clinic if all three",
       "beat": "beat/three-signs",
       "first_word": 0,
-      "word_count": 12
+      "word_count": 8
     },
     {
       "id": "cue-02",
-      "start": 5,
-      "end": 9.26,
-      "text": "the incision is red and swollen, it is not getting better",
+      "start": 3.873,
+      "end": 4.78,
+      "text": "of these are true:",
       "beat": "beat/three-signs",
-      "first_word": 12,
-      "word_count": 11
+      "first_word": 8,
+      "word_count": 4
     },
     {
       "id": "cue-03",
-      "start": 9.308,
-      "end": 12.54,
-      "text": "over one to two days, and it hurts when touched.",
+      "start": 5,
+      "end": 8.06,
+      "text": "the incision is red and swollen,",
       "beat": "beat/three-signs",
-      "first_word": 23,
+      "first_word": 12,
+      "word_count": 6
+    },
+    {
+      "id": "cue-04",
+      "start": 8.113,
+      "end": 11.1,
+      "text": "it is not getting better over one to two days,",
+      "beat": "beat/three-signs",
+      "first_word": 18,
       "word_count": 10
+    },
+    {
+      "id": "cue-05",
+      "start": 11.12,
+      "end": 12.54,
+      "text": "and it hurts when touched.",
+      "beat": "beat/three-signs",
+      "first_word": 28,
+      "word_count": 5
     }
   ],
   "narration_seconds": 11.04,

@@ -462,20 +462,20 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.34,
-      "text": "Si hay cinta, mantenga la zona seca hasta tres días después",
+      "end": 4.94,
+      "text": "Si hay cinta, mantenga la zona seca hasta tres días",
       "beat": "beat/two-paths",
       "first_word": 0,
-      "word_count": 11
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 5.367,
+      "start": 4.99,
       "end": 6.3,
-      "text": "de la cirugía.",
+      "text": "después de la cirugía.",
       "beat": "beat/two-paths",
-      "first_word": 11,
-      "word_count": 3
+      "first_word": 10,
+      "word_count": 4
     },
     {
       "id": "cue-03",
@@ -489,56 +489,56 @@
     {
       "id": "cue-04",
       "start": 10.487,
-      "end": 13.98,
-      "text": "Si no hay cinta, limpie con cuidado los bordes de",
+      "end": 13.9,
+      "text": "Si no hay cinta, limpie con cuidado los bordes",
       "beat": "beat/two-paths",
       "first_word": 22,
-      "word_count": 10
+      "word_count": 9
     },
     {
       "id": "cue-05",
-      "start": 14.007,
+      "start": 13.927,
       "end": 15.98,
-      "text": "la incisión dos veces al día.",
+      "text": "de la incisión dos veces al día.",
       "beat": "beat/two-paths",
-      "first_word": 32,
-      "word_count": 6
+      "first_word": 31,
+      "word_count": 7
     },
     {
       "id": "cue-06",
       "start": 16.3,
-      "end": 19.9,
-      "text": "Use una mezcla de partes iguales de agua oxigenada",
+      "end": 19.18,
+      "text": "Use una mezcla de partes iguales de agua",
       "beat": "beat/two-paths",
       "first_word": 38,
-      "word_count": 9
+      "word_count": 8
     },
     {
       "id": "cue-07",
-      "start": 20.02,
+      "start": 19.26,
       "end": 21.26,
-      "text": "y agua destilada.",
+      "text": "oxigenada y agua destilada.",
       "beat": "beat/two-paths",
-      "first_word": 47,
-      "word_count": 3
+      "first_word": 46,
+      "word_count": 4
     },
     {
       "id": "cue-08",
       "start": 21.54,
-      "end": 25.82,
-      "text": "Después, aplique una pomada antibiótica de venta libre,",
+      "end": 25.18,
+      "text": "Después, aplique una pomada antibiótica de venta",
       "beat": "beat/two-paths",
       "first_word": 50,
-      "word_count": 8
+      "word_count": 7
     },
     {
       "id": "cue-09",
-      "start": 25.868,
+      "start": 25.247,
       "end": 27.02,
-      "text": "como bacitracina.",
+      "text": "libre, como bacitracina.",
       "beat": "beat/two-paths",
-      "first_word": 58,
-      "word_count": 2
+      "first_word": 57,
+      "word_count": 3
     }
   ],
   "narration_seconds": 25.52,

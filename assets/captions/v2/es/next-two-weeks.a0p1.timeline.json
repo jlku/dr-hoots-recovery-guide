@@ -475,59 +475,77 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.86,
-      "text": "Tres días después de la cirugía, puede ducharse y lavarse",
+      "end": 3.62,
+      "text": "Tres días después de la cirugía,",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 10
+      "word_count": 6
     },
     {
       "id": "cue-02",
-      "start": 4.913,
+      "start": 3.68,
       "end": 5.58,
-      "text": "el cabello.",
+      "text": "puede ducharse y lavarse el cabello.",
       "beat": "beat/milestones",
-      "first_word": 10,
-      "word_count": 2
+      "first_word": 6,
+      "word_count": 6
     },
     {
       "id": "cue-03",
       "start": 5.927,
-      "end": 9.42,
-      "text": "La revisión de la herida y el examen del oído son unas",
+      "end": 9.18,
+      "text": "La revisión de la herida y el examen del oído son",
       "beat": "beat/milestones",
       "first_word": 12,
-      "word_count": 12
+      "word_count": 11
     },
     {
       "id": "cue-04",
-      "start": 9.46,
+      "start": 9.228,
       "end": 11.34,
-      "text": "dos semanas después de la cirugía.",
+      "text": "unas dos semanas después de la cirugía.",
       "beat": "beat/milestones",
-      "first_word": 24,
-      "word_count": 6
+      "first_word": 23,
+      "word_count": 7
     },
     {
       "id": "cue-05",
       "start": 11.64,
-      "end": 15.9,
-      "text": "Los puntos se disuelven solos, así que no hay que quitarlos.",
+      "end": 14.22,
+      "text": "Los puntos se disuelven solos,",
       "beat": "beat/milestones",
       "first_word": 30,
-      "word_count": 11
+      "word_count": 5
     },
     {
       "id": "cue-06",
-      "start": 16.5,
-      "end": 20.22,
-      "text": "Tome su medicina para el dolor tal como se la recetaron.",
-      "beat": "beat/medication-pain",
-      "first_word": 41,
-      "word_count": 11
+      "start": 14.28,
+      "end": 15.9,
+      "text": "así que no hay que quitarlos.",
+      "beat": "beat/milestones",
+      "first_word": 35,
+      "word_count": 6
     },
     {
       "id": "cue-07",
+      "start": 16.5,
+      "end": 18.42,
+      "text": "Tome su medicina para el dolor tal",
+      "beat": "beat/medication-pain",
+      "first_word": 41,
+      "word_count": 7
+    },
+    {
+      "id": "cue-08",
+      "start": 18.468,
+      "end": 20.22,
+      "text": "como se la recetaron.",
+      "beat": "beat/medication-pain",
+      "first_word": 48,
+      "word_count": 4
+    },
+    {
+      "id": "cue-09",
       "start": 20.52,
       "end": 23.14,
       "text": "Tómela antes de que el dolor sea fuerte.",

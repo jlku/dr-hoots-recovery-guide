@@ -244,11 +244,20 @@
     {
       "id": "cue-02",
       "start": 7.18,
-      "end": 14.06,
-      "text": "接下来，检查耳朵后面的切口，也就是手术刀口，上面有没有贴胶布。",
+      "end": 11.54,
+      "text": "接下来，检查耳朵后面的切口，也就是手术",
       "beat": "beat/dressing-off",
       "first_word": 12,
-      "word_count": 16
+      "word_count": 9
+    },
+    {
+      "id": "cue-03",
+      "start": 11.54,
+      "end": 14.06,
+      "text": "刀口，上面有没有贴胶布。",
+      "beat": "beat/dressing-off",
+      "first_word": 21,
+      "word_count": 7
     }
   ],
   "narration_seconds": 12.56,
