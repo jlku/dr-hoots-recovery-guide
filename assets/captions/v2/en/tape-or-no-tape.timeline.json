@@ -401,20 +401,20 @@
     {
       "id": "cue-02",
       "start": 2.748,
-      "end": 5.1,
-      "text": "keep the area dry until three days after",
+      "end": 5.98,
+      "text": "keep the area dry until three days after surgery,",
       "beat": "beat/two-paths",
       "first_word": 5,
-      "word_count": 8
+      "word_count": 9
     },
     {
       "id": "cue-03",
-      "start": 5.17,
+      "start": 6.02,
       "end": 7.66,
-      "text": "surgery, and do not clean it before then.",
+      "text": "and do not clean it before then.",
       "beat": "beat/two-paths",
-      "first_word": 13,
-      "word_count": 8
+      "first_word": 14,
+      "word_count": 7
     },
     {
       "id": "cue-04",
@@ -428,29 +428,29 @@
     {
       "id": "cue-05",
       "start": 9.873,
-      "end": 12.46,
-      "text": "clean the edges gently twice a day with",
+      "end": 13.74,
+      "text": "clean the edges gently twice a day with equal parts hydrogen",
       "beat": "beat/two-paths",
       "first_word": 27,
-      "word_count": 8
+      "word_count": 11
     },
     {
       "id": "cue-06",
-      "start": 12.513,
-      "end": 16.54,
-      "text": "equal parts hydrogen peroxide and distilled water, then",
+      "start": 13.8,
+      "end": 17.82,
+      "text": "peroxide and distilled water, then apply an antibiotic",
       "beat": "beat/two-paths",
-      "first_word": 35,
+      "first_word": 38,
       "word_count": 8
     },
     {
       "id": "cue-07",
-      "start": 16.593,
+      "start": 17.9,
       "end": 19.9,
-      "text": "apply an antibiotic ointment such as bacitracin.",
+      "text": "ointment such as bacitracin.",
       "beat": "beat/two-paths",
-      "first_word": 43,
-      "word_count": 7
+      "first_word": 46,
+      "word_count": 4
     }
   ],
   "narration_seconds": 18.4,

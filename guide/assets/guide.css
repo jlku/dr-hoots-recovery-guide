@@ -211,7 +211,7 @@ button, select, input { font-family: inherit; }
 .export__stage .text-card__lead { font-size: 32px; }
 .export__stage .text-card__list { gap: 24px; font-size: 40px; }
 .export__stage .text-card__data { font-size: 40px; }
-.export__band { box-sizing: border-box; height: calc(2 * 1.25 * 52px + 40px); padding: 20px 28px; border-top: 6px solid var(--teal); border-radius: 0 0 12px 12px; background: var(--navy); }
-.export__caption { margin: 0; max-height: calc(2 * 1.25em); overflow: hidden; color: #fff; font-size: 52px; font-weight: 700; line-height: 1.25; }
+.export__band { box-sizing: border-box; height: calc(2 * 1.25 * 48px + 40px); padding: 20px 28px; border-top: 6px solid var(--teal); border-radius: 0 0 12px 12px; background: var(--navy); }
+.export__caption { margin: 0; max-height: calc(2 * 1.25em); overflow: hidden; color: #fff; font-size: 48px; font-weight: 700; line-height: 1.25; }
 .export__caption .word.is-active { padding: 0 6px; border-radius: 6px; }
 .export__notice { margin: 0; align-self: end; color: var(--blue-gray); font-size: 26px; }

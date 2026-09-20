@@ -293,32 +293,23 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.66,
-      "text": "Llame a su cirujano o al personal de",
+      "end": 4.94,
+      "text": "Llame a su cirujano o al personal de la clínica si tiene",
       "beat": "beat/three-signs",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 12
     },
     {
       "id": "cue-02",
-      "start": 3.687,
-      "end": 5.98,
-      "text": "la clínica si tiene las tres señales de",
+      "start": 5,
+      "end": 6.46,
+      "text": "las tres señales de abajo.",
       "beat": "beat/three-signs",
-      "first_word": 8,
-      "word_count": 8
+      "first_word": 12,
+      "word_count": 5
     },
     {
       "id": "cue-03",
-      "start": 6.007,
-      "end": 6.46,
-      "text": "abajo.",
-      "beat": "beat/three-signs",
-      "first_word": 16,
-      "word_count": 1
-    },
-    {
-      "id": "cue-04",
       "start": 6.887,
       "end": 10.02,
       "text": "La incisión está roja e hinchada.",
@@ -327,25 +318,16 @@
       "word_count": 6
     },
     {
-      "id": "cue-05",
+      "id": "cue-04",
       "start": 10.167,
-      "end": 12.38,
-      "text": "No mejora en los siguientes uno o dos",
+      "end": 12.94,
+      "text": "No mejora en los siguientes uno o dos días.",
       "beat": "beat/three-signs",
       "first_word": 23,
-      "word_count": 8
+      "word_count": 9
     },
     {
-      "id": "cue-06",
-      "start": 12.476,
-      "end": 12.94,
-      "text": "días.",
-      "beat": "beat/three-signs",
-      "first_word": 31,
-      "word_count": 1
-    },
-    {
-      "id": "cue-07",
+      "id": "cue-05",
       "start": 13.26,
       "end": 15.02,
       "text": "Le duele al tocarla.",

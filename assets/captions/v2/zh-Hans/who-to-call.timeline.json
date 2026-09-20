@@ -426,110 +426,56 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.1,
-      "text": "如果是给诊所或外科医生的",
+      "end": 8.06,
+      "text": "如果是给诊所或外科医生的一般问题，请拨打护理热线",
       "beat": "beat/numbers",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 14
     },
     {
       "id": "cue-02",
-      "start": 4.1,
-      "end": 5.38,
-      "text": "一般问题，",
-      "beat": "beat/numbers",
-      "first_word": 8,
-      "word_count": 2
-    },
-    {
-      "id": "cue-03",
-      "start": 5.38,
-      "end": 11.58,
-      "text": "请拨打护理热线415-353-2148",
-      "beat": "beat/numbers",
-      "first_word": 10,
-      "word_count": 7
-    },
-    {
-      "id": "cue-04",
-      "start": 11.58,
+      "start": 8.06,
       "end": 13.18,
-      "text": "留言。",
+      "text": "415-353-2148留言。",
       "beat": "beat/numbers",
-      "first_word": 17,
-      "word_count": 1
-    },
-    {
-      "id": "cue-05",
-      "start": 13.18,
-      "end": 15.38,
-      "text": "UCSF网页上说，",
-      "beat": "beat/numbers",
-      "first_word": 18,
+      "first_word": 14,
       "word_count": 4
     },
     {
-      "id": "cue-06",
-      "start": 15.38,
-      "end": 18.06,
-      "text": "您应该会在12小时内接到",
-      "beat": "beat/numbers",
-      "first_word": 22,
-      "word_count": 8
-    },
-    {
-      "id": "cue-07",
-      "start": 18.06,
+      "id": "cue-03",
+      "start": 13.18,
       "end": 19.047,
-      "text": "回电。",
+      "text": "UCSF网页上说，您应该会在12小时内接到回电。",
       "beat": "beat/numbers",
-      "first_word": 30,
-      "word_count": 2
+      "first_word": 18,
+      "word_count": 14
     },
     {
-      "id": "cue-08",
+      "id": "cue-04",
       "start": 19.047,
-      "end": 21.46,
-      "text": "如果没有人回电，",
+      "end": 23.74,
+      "text": "如果没有人回电，请再打一次。",
       "beat": "beat/numbers",
       "first_word": 32,
-      "word_count": 5
+      "word_count": 8
     },
     {
-      "id": "cue-09",
-      "start": 21.46,
-      "end": 23.74,
-      "text": "请再打一次。",
-      "beat": "beat/numbers",
-      "first_word": 37,
-      "word_count": 3
-    },
-    {
-      "id": "cue-10",
+      "id": "cue-05",
       "start": 23.74,
-      "end": 25.42,
-      "text": "如有紧急情况，",
+      "end": 33.42,
+      "text": "如有紧急情况，请拨打415-476-1000，并要求找值班的",
       "beat": "beat/numbers",
       "first_word": 40,
-      "word_count": 2
+      "word_count": 12
     },
     {
-      "id": "cue-11",
-      "start": 25.42,
-      "end": 31.18,
-      "text": "请拨打415-476-1000，",
-      "beat": "beat/numbers",
-      "first_word": 42,
-      "word_count": 5
-    },
-    {
-      "id": "cue-12",
-      "start": 31.18,
+      "id": "cue-06",
+      "start": 33.42,
       "end": 35.42,
-      "text": "并要求找值班的耳鼻喉科住院医生。",
+      "text": "耳鼻喉科住院医生。",
       "beat": "beat/numbers",
-      "first_word": 47,
-      "word_count": 8
+      "first_word": 52,
+      "word_count": 3
     }
   ],
   "narration_seconds": 33.92,

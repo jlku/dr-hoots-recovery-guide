@@ -565,47 +565,47 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.22,
-      "text": "Cuando la herida de la cirugía haya sanado,",
+      "end": 5.34,
+      "text": "Cuando la herida de la cirugía haya sanado, usted regresará",
       "beat": "beat/healing",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 4.3,
+      "start": 5.388,
       "end": 7.5,
-      "text": "usted regresará para su primera cita de programación.",
+      "text": "para su primera cita de programación.",
       "beat": "beat/healing",
-      "first_word": 8,
-      "word_count": 8
+      "first_word": 10,
+      "word_count": 6
     },
     {
       "id": "cue-03",
       "start": 8.1,
-      "end": 11.46,
-      "text": "En esa cita, un especialista en audición llamado",
+      "end": 12.34,
+      "text": "En esa cita, un especialista en audición llamado audiólogo",
       "beat": "beat/programming",
       "first_word": 16,
-      "word_count": 8
+      "word_count": 9
     },
     {
       "id": "cue-04",
-      "start": 11.52,
-      "end": 14.82,
-      "text": "audiólogo programa el procesador de sonido que usted",
+      "start": 12.42,
+      "end": 15.62,
+      "text": "programa el procesador de sonido que usted usa por fuera",
       "beat": "beat/programming",
-      "first_word": 24,
-      "word_count": 8
+      "first_word": 25,
+      "word_count": 10
     },
     {
       "id": "cue-05",
-      "start": 14.9,
+      "start": 15.647,
       "end": 16.34,
-      "text": "usa por fuera de la oreja.",
+      "text": "de la oreja.",
       "beat": "beat/programming",
-      "first_word": 32,
-      "word_count": 6
+      "first_word": 35,
+      "word_count": 3
     },
     {
       "id": "cue-06",
@@ -619,32 +619,23 @@
     {
       "id": "cue-07",
       "start": 20.38,
-      "end": 23.22,
-      "text": "En las citas siguientes, el equipo médico revisa",
+      "end": 23.82,
+      "text": "En las citas siguientes, el equipo médico revisa el implante",
       "beat": "beat/follow-up",
       "first_word": 45,
-      "word_count": 8
+      "word_count": 10
     },
     {
       "id": "cue-08",
-      "start": 23.233,
-      "end": 25.74,
-      "text": "el implante y los aparatos, y mide cómo",
+      "start": 23.86,
+      "end": 26.86,
+      "text": "y los aparatos, y mide cómo están funcionando.",
       "beat": "beat/follow-up",
-      "first_word": 53,
+      "first_word": 55,
       "word_count": 8
     },
     {
       "id": "cue-09",
-      "start": 25.793,
-      "end": 26.86,
-      "text": "están funcionando.",
-      "beat": "beat/follow-up",
-      "first_word": 61,
-      "word_count": 2
-    },
-    {
-      "id": "cue-10",
       "start": 27.3,
       "end": 31.1,
       "text": "Usted seguirá regresando para revisiones y ajustes finos.",

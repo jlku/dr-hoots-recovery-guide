@@ -434,59 +434,32 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 2.94,
-      "text": "手术三天后，",
+      "end": 5.74,
+      "text": "手术三天后，您可以淋浴和洗头。",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 3
+      "word_count": 9
     },
     {
       "id": "cue-02",
-      "start": 2.94,
-      "end": 5.74,
-      "text": "您可以淋浴和洗头。",
+      "start": 5.74,
+      "end": 10.7,
+      "text": "伤口复查和耳部检查大约在手术后两周。",
       "beat": "beat/milestones",
-      "first_word": 3,
-      "word_count": 6
+      "first_word": 9,
+      "word_count": 12
     },
     {
       "id": "cue-03",
-      "start": 5.74,
-      "end": 8.78,
-      "text": "伤口复查和耳部检查大约在",
+      "start": 10.7,
+      "end": 14.3,
+      "text": "缝线会自己溶解，所以不需要拆线。",
       "beat": "beat/milestones",
-      "first_word": 9,
-      "word_count": 8
+      "first_word": 21,
+      "word_count": 9
     },
     {
       "id": "cue-04",
-      "start": 8.78,
-      "end": 10.7,
-      "text": "手术后两周。",
-      "beat": "beat/milestones",
-      "first_word": 17,
-      "word_count": 4
-    },
-    {
-      "id": "cue-05",
-      "start": 10.7,
-      "end": 12.567,
-      "text": "缝线会自己溶解，",
-      "beat": "beat/milestones",
-      "first_word": 21,
-      "word_count": 5
-    },
-    {
-      "id": "cue-06",
-      "start": 12.567,
-      "end": 14.3,
-      "text": "所以不需要拆线。",
-      "beat": "beat/milestones",
-      "first_word": 26,
-      "word_count": 4
-    },
-    {
-      "id": "cue-07",
       "start": 14.9,
       "end": 18.1,
       "text": "请按照处方服用抗生素。",
@@ -495,7 +468,7 @@
       "word_count": 5
     },
     {
-      "id": "cue-08",
+      "id": "cue-05",
       "start": 18.1,
       "end": 20.66,
       "text": "抗生素可以帮助预防感染。",
@@ -504,7 +477,7 @@
       "word_count": 5
     },
     {
-      "id": "cue-09",
+      "id": "cue-06",
       "start": 21.26,
       "end": 24.02,
       "text": "请按照处方服用止痛药。",
@@ -513,7 +486,7 @@
       "word_count": 6
     },
     {
-      "id": "cue-10",
+      "id": "cue-07",
       "start": 24.02,
       "end": 26.46,
       "text": "在疼痛变严重之前服用。",

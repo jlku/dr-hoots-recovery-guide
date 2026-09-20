@@ -293,32 +293,14 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.46,
-      "text": "如果下面三种情况同时出现，",
+      "end": 10.06,
+      "text": "如果下面三种情况同时出现，请打电话给您的外科医生或诊所工作人员。",
       "beat": "beat/three-signs",
       "first_word": 0,
-      "word_count": 7
+      "word_count": 18
     },
     {
       "id": "cue-02",
-      "start": 4.46,
-      "end": 7.42,
-      "text": "请打电话给您的外科医生或",
-      "beat": "beat/three-signs",
-      "first_word": 7,
-      "word_count": 8
-    },
-    {
-      "id": "cue-03",
-      "start": 7.42,
-      "end": 10.06,
-      "text": "诊所工作人员。",
-      "beat": "beat/three-signs",
-      "first_word": 15,
-      "word_count": 3
-    },
-    {
-      "id": "cue-04",
       "start": 10.06,
       "end": 12.46,
       "text": "切口发红、肿胀。",
@@ -327,25 +309,16 @@
       "word_count": 4
     },
     {
-      "id": "cue-05",
+      "id": "cue-03",
       "start": 12.46,
-      "end": 15.1,
-      "text": "在接下来的一到两天内",
+      "end": 16.54,
+      "text": "在接下来的一到两天内没有好转。",
       "beat": "beat/three-signs",
       "first_word": 22,
-      "word_count": 8
+      "word_count": 10
     },
     {
-      "id": "cue-06",
-      "start": 15.1,
-      "end": 16.54,
-      "text": "没有好转。",
-      "beat": "beat/three-signs",
-      "first_word": 30,
-      "word_count": 2
-    },
-    {
-      "id": "cue-07",
+      "id": "cue-04",
       "start": 16.54,
       "end": 18.06,
       "text": "一碰就疼。",

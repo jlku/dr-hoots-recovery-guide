@@ -336,20 +336,11 @@
     {
       "id": "cue-05",
       "start": 16.113,
-      "end": 18.46,
-      "text": "or any question or concern about you or",
+      "end": 19.18,
+      "text": "or any question or concern about you or your child.",
       "beat": "beat/any-of-these",
       "first_word": 27,
-      "word_count": 8
-    },
-    {
-      "id": "cue-06",
-      "start": 18.492,
-      "end": 19.18,
-      "text": "your child.",
-      "beat": "beat/any-of-these",
-      "first_word": 35,
-      "word_count": 2
+      "word_count": 10
     }
   ],
   "narration_seconds": 17.68,

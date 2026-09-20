@@ -581,68 +581,50 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.46,
-      "text": "Tres días después de la cirugía, puede ducharse",
+      "end": 4.86,
+      "text": "Tres días después de la cirugía, puede ducharse y lavarse",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 4.5,
+      "start": 4.913,
       "end": 5.58,
-      "text": "y lavarse el cabello.",
+      "text": "el cabello.",
       "beat": "beat/milestones",
-      "first_word": 8,
-      "word_count": 4
+      "first_word": 10,
+      "word_count": 2
     },
     {
       "id": "cue-03",
       "start": 5.927,
-      "end": 8.22,
-      "text": "La revisión de la herida y el examen",
+      "end": 9.42,
+      "text": "La revisión de la herida y el examen del oído son unas",
       "beat": "beat/milestones",
       "first_word": 12,
-      "word_count": 8
+      "word_count": 12
     },
     {
       "id": "cue-04",
-      "start": 8.24,
-      "end": 10.46,
-      "text": "del oído son unas dos semanas después de",
+      "start": 9.46,
+      "end": 11.34,
+      "text": "dos semanas después de la cirugía.",
       "beat": "beat/milestones",
-      "first_word": 20,
-      "word_count": 8
+      "first_word": 24,
+      "word_count": 6
     },
     {
       "id": "cue-05",
-      "start": 10.513,
-      "end": 11.34,
-      "text": "la cirugía.",
+      "start": 11.64,
+      "end": 15.9,
+      "text": "Los puntos se disuelven solos, así que no hay que quitarlos.",
       "beat": "beat/milestones",
-      "first_word": 28,
-      "word_count": 2
+      "first_word": 30,
+      "word_count": 11
     },
     {
       "id": "cue-06",
-      "start": 11.64,
-      "end": 14.86,
-      "text": "Los puntos se disuelven solos, así que no",
-      "beat": "beat/milestones",
-      "first_word": 30,
-      "word_count": 8
-    },
-    {
-      "id": "cue-07",
-      "start": 14.9,
-      "end": 15.9,
-      "text": "hay que quitarlos.",
-      "beat": "beat/milestones",
-      "first_word": 38,
-      "word_count": 3
-    },
-    {
-      "id": "cue-08",
       "start": 16.5,
       "end": 19.46,
       "text": "Tome su antibiótico tal como se lo recetaron.",
@@ -651,7 +633,7 @@
       "word_count": 8
     },
     {
-      "id": "cue-09",
+      "id": "cue-07",
       "start": 19.62,
       "end": 21.7,
       "text": "Ayuda a prevenir una infección.",
@@ -660,25 +642,16 @@
       "word_count": 5
     },
     {
-      "id": "cue-10",
+      "id": "cue-08",
       "start": 22.3,
-      "end": 24.46,
-      "text": "Tome su medicina para el dolor tal como",
+      "end": 26.02,
+      "text": "Tome su medicina para el dolor tal como se la recetaron.",
       "beat": "beat/medication-pain",
       "first_word": 54,
-      "word_count": 8
+      "word_count": 11
     },
     {
-      "id": "cue-11",
-      "start": 24.513,
-      "end": 26.02,
-      "text": "se la recetaron.",
-      "beat": "beat/medication-pain",
-      "first_word": 62,
-      "word_count": 3
-    },
-    {
-      "id": "cue-12",
+      "id": "cue-09",
       "start": 26.32,
       "end": 28.94,
       "text": "Tómela antes de que el dolor sea fuerte.",

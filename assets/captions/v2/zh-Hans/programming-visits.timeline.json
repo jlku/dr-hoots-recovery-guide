@@ -544,59 +544,32 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.1,
-      "text": "手术部位愈合后，",
+      "end": 5.74,
+      "text": "手术部位愈合后，您要回来进行第一次调机。",
       "beat": "beat/healing",
       "first_word": 0,
-      "word_count": 4
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 3.1,
-      "end": 5.74,
-      "text": "您要回来进行第一次调机。",
-      "beat": "beat/healing",
-      "first_word": 4,
-      "word_count": 6
+      "start": 6.34,
+      "end": 11.38,
+      "text": "就诊时，您戴在耳朵外面的言语处理器，会由一位",
+      "beat": "beat/programming",
+      "first_word": 10,
+      "word_count": 14
     },
     {
       "id": "cue-03",
-      "start": 6.34,
-      "end": 7.42,
-      "text": "就诊时，",
+      "start": 11.38,
+      "end": 15.78,
+      "text": "叫做听力师的听力专家来设定程序。",
       "beat": "beat/programming",
-      "first_word": 10,
-      "word_count": 3
+      "first_word": 24,
+      "word_count": 9
     },
     {
       "id": "cue-04",
-      "start": 7.42,
-      "end": 10.58,
-      "text": "您戴在耳朵外面的言语处理器，",
-      "beat": "beat/programming",
-      "first_word": 13,
-      "word_count": 8
-    },
-    {
-      "id": "cue-05",
-      "start": 10.58,
-      "end": 12.9,
-      "text": "会由一位叫做听力师的听力",
-      "beat": "beat/programming",
-      "first_word": 21,
-      "word_count": 8
-    },
-    {
-      "id": "cue-06",
-      "start": 12.9,
-      "end": 15.78,
-      "text": "专家来设定程序。",
-      "beat": "beat/programming",
-      "first_word": 29,
-      "word_count": 4
-    },
-    {
-      "id": "cue-07",
       "start": 15.78,
       "end": 18.42,
       "text": "程序是按照您的需要设定的。",
@@ -605,43 +578,16 @@
       "word_count": 8
     },
     {
-      "id": "cue-08",
+      "id": "cue-05",
       "start": 19.02,
-      "end": 20.7,
-      "text": "以后就诊时，",
+      "end": 27.58,
+      "text": "以后就诊时，医疗团队会检查植入体和设备，并检测它们的工作情况。",
       "beat": "beat/follow-up",
       "first_word": 41,
-      "word_count": 4
+      "word_count": 19
     },
     {
-      "id": "cue-09",
-      "start": 20.7,
-      "end": 23.18,
-      "text": "医疗团队会检查植入体和",
-      "beat": "beat/follow-up",
-      "first_word": 45,
-      "word_count": 8
-    },
-    {
-      "id": "cue-10",
-      "start": 23.18,
-      "end": 24.1,
-      "text": "设备，",
-      "beat": "beat/follow-up",
-      "first_word": 53,
-      "word_count": 1
-    },
-    {
-      "id": "cue-11",
-      "start": 24.1,
-      "end": 27.58,
-      "text": "并检测它们的工作情况。",
-      "beat": "beat/follow-up",
-      "first_word": 54,
-      "word_count": 6
-    },
-    {
-      "id": "cue-12",
+      "id": "cue-06",
       "start": 27.58,
       "end": 30.38,
       "text": "您会继续回来做检查和微调。",

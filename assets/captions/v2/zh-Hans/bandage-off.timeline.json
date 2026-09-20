@@ -235,65 +235,20 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.02,
-      "text": "手术两天后，",
+      "end": 7.18,
+      "text": "手术两天后，拆下乳突敷料，也就是头上的绷带。",
       "beat": "beat/dressing-off",
       "first_word": 0,
-      "word_count": 3
+      "word_count": 12
     },
     {
       "id": "cue-02",
-      "start": 3.02,
-      "end": 4.62,
-      "text": "拆下乳突敷料，",
-      "beat": "beat/dressing-off",
-      "first_word": 3,
-      "word_count": 4
-    },
-    {
-      "id": "cue-03",
-      "start": 4.62,
-      "end": 7.18,
-      "text": "也就是头上的绷带。",
-      "beat": "beat/dressing-off",
-      "first_word": 7,
-      "word_count": 5
-    },
-    {
-      "id": "cue-04",
       "start": 7.18,
-      "end": 8.22,
-      "text": "接下来，",
+      "end": 14.06,
+      "text": "接下来，检查耳朵后面的切口，也就是手术刀口，上面有没有贴胶布。",
       "beat": "beat/dressing-off",
       "first_word": 12,
-      "word_count": 2
-    },
-    {
-      "id": "cue-05",
-      "start": 8.22,
-      "end": 10.3,
-      "text": "检查耳朵后面的切口，",
-      "beat": "beat/dressing-off",
-      "first_word": 14,
-      "word_count": 5
-    },
-    {
-      "id": "cue-06",
-      "start": 10.3,
-      "end": 12.26,
-      "text": "也就是手术刀口，",
-      "beat": "beat/dressing-off",
-      "first_word": 19,
-      "word_count": 3
-    },
-    {
-      "id": "cue-07",
-      "start": 12.26,
-      "end": 14.06,
-      "text": "上面有没有贴胶布。",
-      "beat": "beat/dressing-off",
-      "first_word": 22,
-      "word_count": 6
+      "word_count": 16
     }
   ],
   "narration_seconds": 12.56,

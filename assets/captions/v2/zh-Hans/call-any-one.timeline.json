@@ -461,119 +461,47 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.1,
-      "text": "如果发烧超过华氏101.5度，",
+      "end": 6.7,
+      "text": "如果发烧超过华氏101.5度，请打电话。",
       "beat": "beat/any-of-these",
       "first_word": 0,
-      "word_count": 6
+      "word_count": 8
     },
     {
       "id": "cue-02",
-      "start": 5.1,
-      "end": 6.7,
-      "text": "请打电话。",
+      "start": 6.7,
+      "end": 15.393,
+      "text": "如果耳朵后面的皮肤肿起来，或者感觉皮肤下面有液体在积聚，请打电话。",
       "beat": "beat/any-of-these",
-      "first_word": 6,
-      "word_count": 2
+      "first_word": 8,
+      "word_count": 17
     },
     {
       "id": "cue-03",
-      "start": 6.7,
-      "end": 10.22,
-      "text": "如果耳朵后面的皮肤肿起来，",
+      "start": 15.393,
+      "end": 23.873,
+      "text": "如果出现头痛、怕光，或者特别嗜睡、特别没精神，请打电话。",
       "beat": "beat/any-of-these",
-      "first_word": 8,
-      "word_count": 6
+      "first_word": 25,
+      "word_count": 14
     },
     {
       "id": "cue-04",
-      "start": 10.22,
-      "end": 13.26,
-      "text": "或者感觉皮肤下面有液体在积",
+      "start": 23.873,
+      "end": 30.06,
+      "text": "如果您对伤口护理有疑问，或者对您自己或孩子有",
       "beat": "beat/any-of-these",
-      "first_word": 14,
-      "word_count": 8
+      "first_word": 39,
+      "word_count": 14
     },
     {
       "id": "cue-05",
-      "start": 13.26,
-      "end": 13.78,
-      "text": "聚，",
-      "beat": "beat/any-of-these",
-      "first_word": 22,
-      "word_count": 1
-    },
-    {
-      "id": "cue-06",
-      "start": 13.78,
-      "end": 15.393,
-      "text": "请打电话。",
-      "beat": "beat/any-of-these",
-      "first_word": 23,
-      "word_count": 2
-    },
-    {
-      "id": "cue-07",
-      "start": 15.393,
-      "end": 18.86,
-      "text": "如果出现头痛、怕光，",
-      "beat": "beat/any-of-these",
-      "first_word": 25,
-      "word_count": 5
-    },
-    {
-      "id": "cue-08",
-      "start": 18.86,
-      "end": 22.22,
-      "text": "或者特别嗜睡、特别没精神，",
-      "beat": "beat/any-of-these",
-      "first_word": 30,
-      "word_count": 7
-    },
-    {
-      "id": "cue-09",
-      "start": 22.22,
-      "end": 23.873,
-      "text": "请打电话。",
-      "beat": "beat/any-of-these",
-      "first_word": 37,
-      "word_count": 2
-    },
-    {
-      "id": "cue-10",
-      "start": 23.873,
-      "end": 27.5,
-      "text": "如果您对伤口护理有疑问，",
-      "beat": "beat/any-of-these",
-      "first_word": 39,
-      "word_count": 7
-    },
-    {
-      "id": "cue-11",
-      "start": 27.5,
-      "end": 30.46,
-      "text": "或者对您自己或孩子有其他",
-      "beat": "beat/any-of-these",
-      "first_word": 46,
-      "word_count": 8
-    },
-    {
-      "id": "cue-12",
-      "start": 30.46,
-      "end": 32.18,
-      "text": "医疗方面的担心，",
-      "beat": "beat/any-of-these",
-      "first_word": 54,
-      "word_count": 4
-    },
-    {
-      "id": "cue-13",
-      "start": 32.18,
+      "start": 30.06,
       "end": 33.34,
-      "text": "请打电话。",
+      "text": "其他医疗方面的担心，请打电话。",
       "beat": "beat/any-of-these",
-      "first_word": 58,
-      "word_count": 2
+      "first_word": 53,
+      "word_count": 7
     }
   ],
   "narration_seconds": 31.84,

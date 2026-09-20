@@ -377,41 +377,32 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.14,
-      "text": "Three days after surgery, you may shower and",
+      "end": 5.18,
+      "text": "Three days after surgery, you may shower and wash your hair.",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 11
     },
     {
       "id": "cue-02",
-      "start": 4.204,
-      "end": 5.18,
-      "text": "wash your hair.",
+      "start": 5.404,
+      "end": 9.5,
+      "text": "Your wound check and ear exam are about two weeks after",
       "beat": "beat/milestones",
-      "first_word": 8,
-      "word_count": 3
+      "first_word": 11,
+      "word_count": 11
     },
     {
       "id": "cue-03",
-      "start": 5.404,
-      "end": 8.54,
-      "text": "Your wound check and ear exam are about",
+      "start": 9.58,
+      "end": 10.78,
+      "text": "surgery —",
       "beat": "beat/milestones",
-      "first_word": 11,
-      "word_count": 8
+      "first_word": 22,
+      "word_count": 2
     },
     {
       "id": "cue-04",
-      "start": 8.6,
-      "end": 10.78,
-      "text": "two weeks after surgery —",
-      "beat": "beat/milestones",
-      "first_word": 19,
-      "word_count": 5
-    },
-    {
-      "id": "cue-05",
       "start": 10.82,
       "end": 12.62,
       "text": "the stitches dissolve on their own.",
@@ -420,25 +411,16 @@
       "word_count": 6
     },
     {
-      "id": "cue-06",
+      "id": "cue-05",
       "start": 13.22,
-      "end": 14.82,
-      "text": "Take your pain medicine the way it was",
+      "end": 15.62,
+      "text": "Take your pain medicine the way it was prescribed.",
       "beat": "beat/medication-pain",
       "first_word": 30,
-      "word_count": 8
+      "word_count": 9
     },
     {
-      "id": "cue-07",
-      "start": 14.878,
-      "end": 15.62,
-      "text": "prescribed.",
-      "beat": "beat/medication-pain",
-      "first_word": 38,
-      "word_count": 1
-    },
-    {
-      "id": "cue-08",
+      "id": "cue-06",
       "start": 15.78,
       "end": 18.1,
       "text": "Take it before the pain gets bad.",
