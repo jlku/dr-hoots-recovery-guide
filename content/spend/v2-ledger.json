@@ -1489,6 +1489,21 @@
       "actual_usd": null,
       "request_id": "01a0bcc7-e687-7490-bcb1-d5cf716fcd90",
       "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:programming:2026-09-20T03:14:10.313Z",
+      "at": "2026-09-20T03:14:10.317Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/programming",
+      "units": {
+        "characters": 47,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0bcce-970e-7ae3-971c-5772173937c5",
+      "status": "completed"
     }
   ]
 }

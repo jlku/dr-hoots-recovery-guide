@@ -330,8 +330,8 @@
       "timeline": "assets/captions/v2/zh-Hans/programming-visits.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/programming-visits.vtt",
       "audio": "assets/audio/v2/zh-Hans/programming-visits.mp3",
-      "duration_seconds": 31.28,
-      "narration_seconds": 27.68
+      "duration_seconds": 30.8,
+      "narration_seconds": 27.2
     }
   ]
 }

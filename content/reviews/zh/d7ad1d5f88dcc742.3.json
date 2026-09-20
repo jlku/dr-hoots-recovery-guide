@@ -1,0 +1,1192 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "zh",
+  "kind": "ai",
+  "label": "AI reviewer (Claude), not a certified medical translator",
+  "model": "claude-opus-5 (session subagent)",
+  "reviewed_on": "2026-09-19",
+  "target": {
+    "file": "content/translations/zh-Hans/ci-phase0-v0.1.0.json",
+    "language": "zh-Hans",
+    "sha256": "d7ad1d5f88dcc742ef1f131e23f1c3301f538d3493ef93289ae09e0ae220066a"
+  },
+  "rubric": {
+    "id": "zh-translation-v1",
+    "sha256": "ec1bd753dd0c989a17030d5514b52c3ae6159210b3b63d59f967e175673d2c84"
+  },
+  "items": [
+    {
+      "id": "wc.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Time, action and the appositive gloss all match the English."
+    },
+    {
+      "id": "wc.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "The interrupted appositive mirrors the English; still clear that the check is for tape over the incision."
+    },
+    {
+      "id": "wc.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Condition and the three-day endpoint kept."
+    },
+    {
+      "id": "wc.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "wc.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Frequency, gentleness and 'edges' all kept."
+    },
+    {
+      "id": "wc.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "双氧水 is the everyday term; 等量 carries 'equal parts'."
+    },
+    {
+      "id": "wc.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Over-the-counter and the drug name with the English in parentheses are both kept."
+    },
+    {
+      "id": "wc.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "可以 keeps the permissive 'may'."
+    },
+    {
+      "id": "wc.09",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Clinic is the actor, as in the English."
+    },
+    {
+      "id": "wc.10",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "自己溶解 is implied by 'dissolve'; no added instruction."
+    },
+    {
+      "id": "med.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "med.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Naming 抗生素 supplies the subject Chinese needs for a standalone sentence; no meaning added."
+    },
+    {
+      "id": "med.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "med.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Keeps the 'before it gets bad' timing."
+    },
+    {
+      "id": "call.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "同时出现 preserves 'all three', not 'any of'."
+    },
+    {
+      "id": "call.01a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.01b",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "One-to-two-day window kept."
+    },
+    {
+      "id": "call.01c",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "一碰就疼 is the natural everyday phrasing."
+    },
+    {
+      "id": "call.02",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "超过 keeps 'above'; 华氏 and 101.5 intact."
+    },
+    {
+      "id": "call.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Both branches (swelling, fluid under the skin) kept."
+    },
+    {
+      "id": "call.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "特别嗜睡、特别没精神 is a two-word gloss of one symptom, excessive lethargy, not a fourth sign; still reads as three items."
+    },
+    {
+      "id": "call.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Both 'you' and 'your child' kept."
+    },
+    {
+      "id": "call.06",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "415-353-2148 intact; 留言 keeps 'leave a message'."
+    },
+    {
+      "id": "call.07",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "12 hours intact, and the attribution to the UCSF page is kept."
+    },
+    {
+      "id": "call.07a",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "call.08",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "415-476-1000 intact; 值班 keeps 'on call'."
+    },
+    {
+      "id": "act.01",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "调机 is the term Chinese-speaking implant families use for a programming visit."
+    },
+    {
+      "id": "act.02",
+      "kind": "sentence",
+      "verdict": "fail",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "fail"
+      },
+      "note": "The gloss 叫做听力师的听力专家 is circular in Chinese, and the fronted object plus 由...来 passive makes a long sentence hard to follow."
+    },
+    {
+      "id": "act.03",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "act.04",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Both 'checks' and 'measures how they are working' kept."
+    },
+    {
+      "id": "act.05",
+      "kind": "sentence",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "继续回来 keeps the ongoing sense."
+    },
+    {
+      "id": "guide.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "术后 is implied by 'recovery' and reads naturally as a title."
+    },
+    {
+      "id": "guide.subtitle",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "最 is a light intensifier that does not change the instruction."
+    },
+    {
+      "id": "seg.bandage-off.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Day 2 kept as 术后2天."
+    },
+    {
+      "id": "seg.bandage-off.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.tape-or-no-tape.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "看有没有胶布 reads as a chapter caption, as the English does."
+    },
+    {
+      "id": "seg.tape-or-no-tape.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.next-two-weeks.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "All three topics kept in order."
+    },
+    {
+      "id": "seg.next-two-weeks.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Day 3 to 2 weeks kept as a range."
+    },
+    {
+      "id": "seg.call-all-three.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "同时出现 keeps the all-three rule visible in the chapter title."
+    },
+    {
+      "id": "seg.call-all-three.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.call-any-one.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "任何一种 keeps the any-one rule, in contrast with the all-three chapter."
+    },
+    {
+      "id": "seg.call-any-one.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.who-to-call.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "seg.programming-visits.title",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "调机就诊 is compressed but reads correctly as a chapter title."
+    },
+    {
+      "id": "seg.programming-visits.chip",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.play",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.pause",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.previous",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.subtitles",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "字幕 is the standard control label."
+    },
+    {
+      "id": "ui.language",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.speed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.contents",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "目录 is right for a table of contents control."
+    },
+    {
+      "id": "ui.card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.notice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "内部原型 carries 'private prototype'; the not-for-patient-use restriction is explicit."
+    },
+    {
+      "id": "ui.pending_clinician_text",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "确定措辞 is slightly formal but matches the English, which is itself about wording; 用词 would read a touch plainer."
+    },
+    {
+      "id": "ui.follow_up_default",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "大约 keeps the hedge in 'about two weeks'."
+    },
+    {
+      "id": "ui.follow_up_on",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "{date} placeholder kept intact."
+    },
+    {
+      "id": "ui.seek",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "播放进度 is how a seek control is named in Chinese players."
+    },
+    {
+      "id": "ui.coming",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.language_fallback",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Both facts kept: not available yet, English shown instead."
+    },
+    {
+      "id": "ui.not_reviewed",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "尚未 keeps 'not yet'."
+    },
+    {
+      "id": "ui.replay",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.transcript",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "文字稿 is the plain term and stays distinct from 字幕."
+    },
+    {
+      "id": "ui.review_status",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.call_help",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.nursing_line",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Matches the wording used in call.06."
+    },
+    {
+      "id": "ui.emergency",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.follow_along",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "边听边看 reads naturally for a follow-along view."
+    },
+    {
+      "id": "ui.chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.of",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "A slash is the usual Chinese rendering of 'x of y' in a counter."
+    },
+    {
+      "id": "ui.previous_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.next_chapter",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.print_card",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ui.captions",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Correct on its own, but identical to ui.subtitles; if both controls ever show at once the Chinese cannot tell them apart."
+    },
+    {
+      "id": "ov.tape_check",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.keep_dry",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Numeral 3 and the post-surgery reference point both kept."
+    },
+    {
+      "id": "ov.no_cleaning",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "暂时 carries 'yet'."
+    },
+    {
+      "id": "ov.clean_twice",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Frequency and 'gently' kept in a caption-length line."
+    },
+    {
+      "id": "ov.mix",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "各一半 is the plainest way to say equal parts on a picture."
+    },
+    {
+      "id": "ov.ointment",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "涂 is added as the caption verb; the drug example is unchanged."
+    },
+    {
+      "id": "ov.red_swollen",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.not_better",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "One-to-two-day window kept."
+    },
+    {
+      "id": "ov.hurts",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fever",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "超过 plus 101.5 °F keeps comparator, numeral and unit exactly as drawn in English."
+    },
+    {
+      "id": "ov.fluid",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Both the swelling and the fluid branch kept."
+    },
+    {
+      "id": "ov.neuro",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Three signs, in the English order."
+    },
+    {
+      "id": "ov.any_concern",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.fluid_pointer",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "皮下积液 is short enough for a pointer and still understood."
+    },
+    {
+      "id": "ov.processor",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "言语处理器 matches the term used in act.02."
+    },
+    {
+      "id": "ov.pending_howto",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": ""
+    },
+    {
+      "id": "ov.path_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Matches the wording of wc.03."
+    },
+    {
+      "id": "ov.path_no_tape",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Matches the wording of wc.05."
+    },
+    {
+      "id": "ui.song_review",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "Keeps both halves: simulated AI review, and not Song's own approval."
+    },
+    {
+      "id": "ui.reviewed_by_clinician",
+      "kind": "label",
+      "verdict": "pass",
+      "criteria": {
+        "equivalence": "pass",
+        "protected_values": "pass",
+        "register": "pass",
+        "phrasing": "pass"
+      },
+      "note": "医护人员 covers 'clinician' without narrowing it to a physician."
+    }
+  ],
+  "findings": [
+    {
+      "id": "act.02",
+      "criterion": "phrasing",
+      "problem": "叫做听力师的听力专家 is circular in Chinese: 听力师 and 听力专家 are effectively the same word, so the gloss that works in English ('a hearing specialist called an audiologist') explains nothing here. The fronted object plus the 由...来设定程序 passive also stretches one idea across a long clause, which a grade 7 reader has to re-read.",
+      "suggestion": "就诊时，会由一位听力方面的专业人员（叫做听力师）来给您戴在耳朵外面的言语处理器设定程序。"
+    }
+  ],
+  "verdict": "fail"
+}

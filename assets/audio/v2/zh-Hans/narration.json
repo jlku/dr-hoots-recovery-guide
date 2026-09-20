@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-20T03:06:59.074Z",
+  "generatedAt": "2026-09-20T03:14:16.375Z",
   "records": [
     {
       "id": "dressing-off",
@@ -1891,253 +1891,6 @@
       "status": "draft_preview_only"
     },
     {
-      "id": "programming",
-      "file": "assets/audio/v2/zh-Hans/beats/programming.mp3",
-      "text": "就诊时，您戴在耳朵外面的言语处理器，会由一位叫做听力师的听力专家来设定程序。程序是按照您的需要设定的。",
-      "language": "zh-Hans",
-      "language_code": "zh",
-      "canonicalSentenceIds": [
-        "act.02",
-        "act.03"
-      ],
-      "model": "fal-ai/elevenlabs/tts/eleven-v3",
-      "voice": "George",
-      "stability": 0.68,
-      "similarityBoost": 0.78,
-      "speed": 1,
-      "outputFormat": "mp3_44100_128",
-      "seed": 92009,
-      "requestId": "01a0b830-f046-78e1-af8b-4cd8f37f01b0",
-      "timestamps": [
-        {
-          "characters": [
-            "就",
-            "诊",
-            "时"
-          ],
-          "character_start_times_seconds": [
-            0,
-            0.24,
-            0.48
-          ],
-          "character_end_times_seconds": [
-            0.24,
-            0.48,
-            0.72
-          ]
-        },
-        {
-          "characters": [
-            "，",
-            "您"
-          ],
-          "character_start_times_seconds": [
-            0.72,
-            1.08
-          ],
-          "character_end_times_seconds": [
-            1.08,
-            1.44
-          ]
-        },
-        {
-          "characters": [
-            "戴",
-            "在",
-            "耳",
-            "朵",
-            "外"
-          ],
-          "character_start_times_seconds": [
-            1.44,
-            1.5999999999999999,
-            1.8399999999999999,
-            2,
-            2.16
-          ],
-          "character_end_times_seconds": [
-            1.5999999999999999,
-            1.8399999999999999,
-            2,
-            2.16,
-            2.32
-          ]
-        },
-        {
-          "characters": [
-            "面",
-            "的",
-            "言",
-            "语"
-          ],
-          "character_start_times_seconds": [
-            2.32,
-            2.48,
-            2.6399999999999997,
-            2.8
-          ],
-          "character_end_times_seconds": [
-            2.48,
-            2.6399999999999997,
-            2.8,
-            3.04
-          ]
-        },
-        {
-          "characters": [
-            "处",
-            "理",
-            "器",
-            "，",
-            "会",
-            "由",
-            "一"
-          ],
-          "character_start_times_seconds": [
-            3.04,
-            3.24,
-            3.44,
-            3.6,
-            4.24,
-            4.48,
-            4.640000000000001
-          ],
-          "character_end_times_seconds": [
-            3.24,
-            3.44,
-            3.6,
-            4.24,
-            4.48,
-            4.640000000000001,
-            4.72
-          ]
-        },
-        {
-          "characters": [
-            "位",
-            "叫",
-            "做",
-            "听",
-            "力",
-            "师",
-            "的",
-            "听",
-            "力",
-            "专"
-          ],
-          "character_start_times_seconds": [
-            4.72,
-            5.04,
-            5.199999999999999,
-            5.359999999999999,
-            5.6,
-            5.84,
-            6,
-            6.16,
-            6.32,
-            6.56
-          ],
-          "character_end_times_seconds": [
-            5.04,
-            5.199999999999999,
-            5.359999999999999,
-            5.6,
-            5.84,
-            6,
-            6.16,
-            6.32,
-            6.56,
-            6.8
-          ]
-        },
-        {
-          "characters": [
-            "家",
-            "来",
-            "设",
-            "定",
-            "程",
-            "序",
-            "。"
-          ],
-          "character_start_times_seconds": [
-            6.8,
-            7.2,
-            7.4399999999999995,
-            7.68,
-            7.84,
-            8.08,
-            8.32
-          ],
-          "character_end_times_seconds": [
-            7.2,
-            7.4399999999999995,
-            7.68,
-            7.84,
-            8.08,
-            8.32,
-            9.44
-          ]
-        },
-        {
-          "characters": [
-            "程",
-            "序",
-            "是",
-            "按",
-            "照",
-            "您",
-            "的",
-            "需",
-            "要",
-            "设",
-            "定",
-            "的"
-          ],
-          "character_start_times_seconds": [
-            9.44,
-            9.799999999999999,
-            10.16,
-            10.32,
-            10.52,
-            10.719999999999999,
-            10.879999999999999,
-            11.04,
-            11.24,
-            11.44,
-            11.68,
-            11.84
-          ],
-          "character_end_times_seconds": [
-            9.799999999999999,
-            10.16,
-            10.32,
-            10.52,
-            10.719999999999999,
-            10.879999999999999,
-            11.04,
-            11.24,
-            11.44,
-            11.68,
-            11.84,
-            12
-          ]
-        },
-        {
-          "characters": [
-            "。"
-          ],
-          "character_start_times_seconds": [
-            12
-          ],
-          "character_end_times_seconds": [
-            12.08
-          ]
-        }
-      ],
-      "status": "draft_preview_only"
-    },
-    {
       "id": "follow-up",
       "file": "assets/audio/v2/zh-Hans/beats/follow-up.mp3",
       "text": "以后就诊时，医疗团队会检查植入体和设备，并检测它们的工作情况。您会继续回来做检查和微调。",
@@ -3106,6 +2859,233 @@
             13.8,
             13.92,
             14
+          ]
+        }
+      ],
+      "status": "draft_preview_only"
+    },
+    {
+      "id": "programming",
+      "file": "assets/audio/v2/zh-Hans/beats/programming.mp3",
+      "text": "就诊时，听力师会为您调试言语处理器，也就是您戴在耳朵外面的那个设备。程序是按照您的需要设定的。",
+      "language": "zh-Hans",
+      "language_code": "zh",
+      "canonicalSentenceIds": [
+        "act.02",
+        "act.03"
+      ],
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "voice": "George",
+      "stability": 0.68,
+      "similarityBoost": 0.78,
+      "speed": 1,
+      "outputFormat": "mp3_44100_128",
+      "seed": 92009,
+      "requestId": "01a0bcce-970e-7ae3-971c-5772173937c5",
+      "timestamps": [
+        {
+          "characters": [
+            "就",
+            "诊",
+            "时"
+          ],
+          "character_start_times_seconds": [
+            0,
+            0.16,
+            0.4
+          ],
+          "character_end_times_seconds": [
+            0.16,
+            0.4,
+            0.64
+          ]
+        },
+        {
+          "characters": [
+            "，",
+            "听"
+          ],
+          "character_start_times_seconds": [
+            0.64,
+            1.2000000000000002
+          ],
+          "character_end_times_seconds": [
+            1.2000000000000002,
+            1.44
+          ]
+        },
+        {
+          "characters": [
+            "力",
+            "师",
+            "会",
+            "为"
+          ],
+          "character_start_times_seconds": [
+            1.44,
+            1.68,
+            2,
+            2.16
+          ],
+          "character_end_times_seconds": [
+            1.68,
+            2,
+            2.16,
+            2.32
+          ]
+        },
+        {
+          "characters": [
+            "您",
+            "调",
+            "试"
+          ],
+          "character_start_times_seconds": [
+            2.32,
+            2.5599999999999996,
+            2.8
+          ],
+          "character_end_times_seconds": [
+            2.5599999999999996,
+            2.8,
+            3.04
+          ]
+        },
+        {
+          "characters": [
+            "言",
+            "语",
+            "处",
+            "理",
+            "器"
+          ],
+          "character_start_times_seconds": [
+            3.04,
+            3.2800000000000002,
+            3.44,
+            3.68,
+            3.92
+          ],
+          "character_end_times_seconds": [
+            3.2800000000000002,
+            3.44,
+            3.68,
+            3.92,
+            4.08
+          ]
+        },
+        {
+          "characters": [
+            "，",
+            "也",
+            "就",
+            "是",
+            "您",
+            "戴",
+            "在",
+            "耳",
+            "朵",
+            "外"
+          ],
+          "character_start_times_seconds": [
+            4.08,
+            4.5600000000000005,
+            5.04,
+            5.4,
+            5.76,
+            6,
+            6.16,
+            6.32,
+            6.48,
+            6.640000000000001
+          ],
+          "character_end_times_seconds": [
+            4.5600000000000005,
+            5.04,
+            5.4,
+            5.76,
+            6,
+            6.16,
+            6.32,
+            6.48,
+            6.640000000000001,
+            6.88
+          ]
+        },
+        {
+          "characters": [
+            "面",
+            "的",
+            "那",
+            "个",
+            "设",
+            "备",
+            "。"
+          ],
+          "character_start_times_seconds": [
+            6.88,
+            7.04,
+            7.2,
+            7.359999999999999,
+            7.52,
+            7.72,
+            7.92
+          ],
+          "character_end_times_seconds": [
+            7.04,
+            7.2,
+            7.359999999999999,
+            7.52,
+            7.72,
+            7.92,
+            8.96
+          ]
+        },
+        {
+          "characters": [
+            "程",
+            "序",
+            "是",
+            "按",
+            "照",
+            "您",
+            "的",
+            "需",
+            "要",
+            "设",
+            "定",
+            "的",
+            "。"
+          ],
+          "character_start_times_seconds": [
+            8.96,
+            9.4,
+            9.840000000000002,
+            10,
+            10.200000000000001,
+            10.4,
+            10.56,
+            10.72,
+            10.920000000000002,
+            11.120000000000001,
+            11.280000000000001,
+            11.440000000000001,
+            11.600000000000001
+          ],
+          "character_end_times_seconds": [
+            9.4,
+            9.840000000000002,
+            10,
+            10.200000000000001,
+            10.4,
+            10.56,
+            10.72,
+            10.920000000000002,
+            11.120000000000001,
+            11.280000000000001,
+            11.440000000000001,
+            11.600000000000001,
+            11.600000000000001
           ]
         }
       ],

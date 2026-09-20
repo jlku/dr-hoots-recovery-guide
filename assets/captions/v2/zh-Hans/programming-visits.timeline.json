@@ -39,12 +39,12 @@
         "act.03"
       ],
       "start": 6.34,
-      "end": 18.42,
-      "speech_seconds": 12.08,
+      "end": 17.94,
+      "speech_seconds": 11.6,
       "record_id": "programming",
       "manifest": "assets/audio/v2/zh-Hans/narration.json",
       "source_audio": "assets/audio/v2/zh-Hans/beats/programming.mp3",
-      "text": "就诊时，您戴在耳朵外面的言语处理器，会由一位叫做听力师的听力专家来设定程序。程序是按照您的需要设定的。"
+      "text": "就诊时，听力师会为您调试言语处理器，也就是您戴在耳朵外面的那个设备。程序是按照您的需要设定的。"
     },
     {
       "id": "beat/follow-up",
@@ -53,8 +53,8 @@
         "act.04",
         "act.05"
       ],
-      "start": 19.02,
-      "end": 30.38,
+      "start": 18.54,
+      "end": 29.9,
       "speech_seconds": 11.36,
       "record_id": "follow-up",
       "manifest": "assets/audio/v2/zh-Hans/narration.json",
@@ -136,406 +136,392 @@
     {
       "text": "就",
       "start": 6.34,
-      "end": 6.58,
+      "end": 6.5,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "诊",
-      "start": 6.58,
-      "end": 6.82,
+      "start": 6.5,
+      "end": 6.74,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "时，",
-      "start": 6.82,
-      "end": 7.42,
+      "start": 6.74,
+      "end": 7.54,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "您",
-      "start": 7.42,
-      "end": 7.78,
+      "text": "听力",
+      "start": 7.54,
+      "end": 8.02,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "戴在",
-      "start": 7.78,
-      "end": 8.18,
+      "text": "师",
+      "start": 8.02,
+      "end": 8.34,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "耳朵",
-      "start": 8.18,
+      "text": "会",
+      "start": 8.34,
       "end": 8.5,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "外面",
+      "text": "为",
       "start": 8.5,
-      "end": 8.82,
+      "end": 8.66,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "的",
-      "start": 8.82,
-      "end": 8.98,
+      "text": "您",
+      "start": 8.66,
+      "end": 8.9,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "言语",
-      "start": 8.98,
+      "text": "调",
+      "start": 8.9,
+      "end": 9.14,
+      "beat": "beat/programming",
+      "space": false
+    },
+    {
+      "text": "试",
+      "start": 9.14,
       "end": 9.38,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "处理",
+      "text": "言语",
       "start": 9.38,
       "end": 9.78,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "器，",
+      "text": "处理",
       "start": 9.78,
-      "end": 10.58,
+      "end": 10.26,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "会",
-      "start": 10.58,
-      "end": 10.82,
+      "text": "器，",
+      "start": 10.26,
+      "end": 10.9,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "由",
-      "start": 10.82,
-      "end": 10.98,
+      "text": "也就是",
+      "start": 10.9,
+      "end": 12.1,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "一位",
-      "start": 10.98,
-      "end": 11.38,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
-      "text": "叫做",
-      "start": 11.38,
-      "end": 11.7,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
-      "text": "听力",
-      "start": 11.7,
-      "end": 12.18,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
-      "text": "师",
-      "start": 12.18,
+      "text": "您",
+      "start": 12.1,
       "end": 12.34,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "的",
+      "text": "戴在",
       "start": 12.34,
-      "end": 12.5,
+      "end": 12.66,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "听力",
-      "start": 12.5,
-      "end": 12.9,
+      "text": "耳朵",
+      "start": 12.66,
+      "end": 12.98,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "专家",
-      "start": 12.9,
+      "text": "外面",
+      "start": 12.98,
+      "end": 13.38,
+      "beat": "beat/programming",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 13.38,
       "end": 13.54,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "来",
+      "text": "那个",
       "start": 13.54,
-      "end": 13.78,
+      "end": 13.86,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "设定",
-      "start": 13.78,
-      "end": 14.18,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
-      "text": "程序。",
-      "start": 14.18,
-      "end": 15.78,
+      "text": "设备。",
+      "start": 13.86,
+      "end": 15.3,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "程序",
-      "start": 15.78,
-      "end": 16.5,
+      "start": 15.3,
+      "end": 16.18,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "是",
-      "start": 16.5,
-      "end": 16.66,
+      "start": 16.18,
+      "end": 16.34,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "按照",
-      "start": 16.66,
+      "start": 16.34,
+      "end": 16.74,
+      "beat": "beat/programming",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 16.74,
+      "end": 16.9,
+      "beat": "beat/programming",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 16.9,
       "end": 17.06,
       "beat": "beat/programming",
       "space": false
     },
     {
-      "text": "您",
-      "start": 17.06,
-      "end": 17.22,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
-      "text": "的",
-      "start": 17.22,
-      "end": 17.38,
-      "beat": "beat/programming",
-      "space": false
-    },
-    {
       "text": "需要",
-      "start": 17.38,
-      "end": 17.78,
+      "start": 17.06,
+      "end": 17.46,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "设定",
-      "start": 17.78,
-      "end": 18.18,
+      "start": 17.46,
+      "end": 17.78,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "的。",
-      "start": 18.18,
-      "end": 18.42,
+      "start": 17.78,
+      "end": 17.94,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "以后",
-      "start": 19.02,
-      "end": 19.42,
+      "start": 18.54,
+      "end": 18.94,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "就",
-      "start": 19.42,
-      "end": 19.58,
+      "start": 18.94,
+      "end": 19.1,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "诊",
-      "start": 19.58,
-      "end": 19.9,
+      "start": 19.1,
+      "end": 19.42,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "时，",
-      "start": 19.9,
-      "end": 20.7,
+      "start": 19.42,
+      "end": 20.22,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "医疗",
-      "start": 20.7,
-      "end": 21.1,
+      "start": 20.22,
+      "end": 20.62,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "团队",
-      "start": 21.1,
-      "end": 21.58,
+      "start": 20.62,
+      "end": 21.1,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "会",
-      "start": 21.58,
-      "end": 21.74,
+      "start": 21.1,
+      "end": 21.26,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "检查",
-      "start": 21.74,
-      "end": 22.3,
+      "start": 21.26,
+      "end": 21.82,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "植",
-      "start": 22.3,
-      "end": 22.46,
+      "start": 21.82,
+      "end": 21.98,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "入",
-      "start": 22.46,
-      "end": 22.62,
+      "start": 21.98,
+      "end": 22.14,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "体",
-      "start": 22.62,
-      "end": 22.94,
+      "start": 22.14,
+      "end": 22.46,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "和",
-      "start": 22.94,
-      "end": 23.18,
+      "start": 22.46,
+      "end": 22.7,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "设备，",
-      "start": 23.18,
-      "end": 24.1,
+      "start": 22.7,
+      "end": 23.62,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "并",
-      "start": 24.1,
-      "end": 24.62,
+      "start": 23.62,
+      "end": 24.14,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "检测",
-      "start": 24.62,
-      "end": 25.18,
+      "start": 24.14,
+      "end": 24.7,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "它们",
-      "start": 25.18,
-      "end": 25.42,
+      "start": 24.7,
+      "end": 24.94,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "的",
-      "start": 25.42,
-      "end": 25.58,
+      "start": 24.94,
+      "end": 25.1,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "工作",
-      "start": 25.58,
-      "end": 25.98,
+      "start": 25.1,
+      "end": 25.5,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "情况。",
-      "start": 25.98,
-      "end": 27.58,
+      "start": 25.5,
+      "end": 27.1,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "您",
-      "start": 27.58,
-      "end": 27.74,
+      "start": 27.1,
+      "end": 27.26,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "会",
-      "start": 27.74,
-      "end": 27.98,
+      "start": 27.26,
+      "end": 27.5,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "继续",
-      "start": 27.98,
-      "end": 28.3,
+      "start": 27.5,
+      "end": 27.82,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "回来",
-      "start": 28.3,
-      "end": 28.86,
+      "start": 27.82,
+      "end": 28.38,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "做",
-      "start": 28.86,
-      "end": 29.1,
+      "start": 28.38,
+      "end": 28.62,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "检查",
-      "start": 29.1,
-      "end": 29.66,
+      "start": 28.62,
+      "end": 29.18,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "和",
-      "start": 29.66,
-      "end": 29.82,
+      "start": 29.18,
+      "end": 29.34,
       "beat": "beat/follow-up",
       "space": false
     },
     {
       "text": "微调。",
-      "start": 29.82,
-      "end": 30.38,
+      "start": 29.34,
+      "end": 29.9,
       "beat": "beat/follow-up",
       "space": false
     }
@@ -553,63 +539,63 @@
     {
       "id": "cue-02",
       "start": 6.34,
-      "end": 11.38,
-      "text": "就诊时，您戴在耳朵外面的言语处理器，会由一位",
+      "end": 12.1,
+      "text": "就诊时，听力师会为您调试言语处理器，也就是",
       "beat": "beat/programming",
       "first_word": 10,
       "word_count": 14
     },
     {
       "id": "cue-03",
-      "start": 11.38,
-      "end": 15.78,
-      "text": "叫做听力师的听力专家来设定程序。",
+      "start": 12.1,
+      "end": 15.3,
+      "text": "您戴在耳朵外面的那个设备。",
       "beat": "beat/programming",
       "first_word": 24,
-      "word_count": 9
+      "word_count": 7
     },
     {
       "id": "cue-04",
-      "start": 15.78,
-      "end": 18.42,
+      "start": 15.3,
+      "end": 17.94,
       "text": "程序是按照您的需要设定的。",
       "beat": "beat/programming",
-      "first_word": 33,
+      "first_word": 31,
       "word_count": 8
     },
     {
       "id": "cue-05",
-      "start": 19.02,
-      "end": 24.1,
+      "start": 18.54,
+      "end": 23.62,
       "text": "以后就诊时，医疗团队会检查植入体和设备，",
       "beat": "beat/follow-up",
-      "first_word": 41,
+      "first_word": 39,
       "word_count": 13
     },
     {
       "id": "cue-06",
-      "start": 24.1,
-      "end": 27.58,
+      "start": 23.62,
+      "end": 27.1,
       "text": "并检测它们的工作情况。",
       "beat": "beat/follow-up",
-      "first_word": 54,
+      "first_word": 52,
       "word_count": 6
     },
     {
       "id": "cue-07",
-      "start": 27.58,
-      "end": 30.38,
+      "start": 27.1,
+      "end": 29.9,
       "text": "您会继续回来做检查和微调。",
       "beat": "beat/follow-up",
-      "first_word": 60,
+      "first_word": 58,
       "word_count": 8
     }
   ],
-  "narration_seconds": 27.68,
-  "duration_seconds": 31.28,
+  "narration_seconds": 27.2,
+  "duration_seconds": 30.8,
   "source_records": {
     "healing": "e0748d3150f7cb4f14c6dbc7f03ffc64069e8c1daca80d40b295ba5e1b8f381c",
-    "programming": "2c6006bfdc4b2c9661e15f38f47896ccf77ae5e3f02020b6a0fe99c8b16229ae",
+    "programming": "817d05deb63bd28de667fd5131f2275d75155cb67c3c02c00cb83924c4f09d1b",
     "follow-up": "2877342652d511e062775d847dd8d7312f98809a85410aa7586b10d9a42d3b14"
   }
 }
