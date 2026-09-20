@@ -44,11 +44,15 @@
       }
     },
     "song": {
-      "status": "not_reviewed",
+      "status": "reviewed",
       "label": "Simulated Song review (AI), not Song's approval",
-      "date": null,
-      "target": null,
-      "receipts": []
+      "date": "2026-09-20",
+      "target": "1f0bd7c2389695c537b153e0cf39a436b9003c41b7bc02904a6931cb535689a7",
+      "receipts": [
+        "content/reviews/song/1f0bd7c2389695c5.json",
+        "content/reviews/song/1f0bd7c2389695c5.2.json",
+        "content/reviews/song/1f0bd7c2389695c5.3.json"
+      ]
     }
   }
 }
