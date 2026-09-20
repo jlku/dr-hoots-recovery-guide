@@ -14,6 +14,18 @@ const dom = {
   notUsed: byId("not-used"),
   notUsedSummary: byId("not-used-summary"),
   notUsedList: byId("not-used-list"),
+  contradicts: byId("contradicts"),
+  contradictsCount: byId("contradicts-count"),
+  contradictsSummary: byId("contradicts-summary"),
+  contradictsList: byId("contradicts-list"),
+  ackRow: byId("ack-row"),
+  ack: byId("ack"),
+  ackText: byId("ack-text"),
+  newPatient: byId("new-patient"),
+  restoreOffer: byId("restore-offer"),
+  restoreText: byId("restore-text"),
+  restore: byId("restore"),
+  discard: byId("discard"),
   unreadBlock: byId("unread-block"),
   unread: byId("unread"),
   alsoSays: byId("also-says"),
@@ -27,6 +39,9 @@ const dom = {
   open: byId("open-guide")
 };
 const STORE_KEY = "avs-provider-block";
+// The differences the provider has said they have read. It holds the exact lines, so editing the block
+// takes the tick back.
+let acknowledged = null;
 const LABELS = { antibiotic: "Antibiotic", pain_medication: "Pain medication", follow_up_date: "Follow-up", language: "Language", reviewed: "Reviewed by" };
 const MEDICATION_SENTENCE = { antibiotic: "med.01", pain_medication: "med.03" };
 const NO_WORDING = { antibiotic: "antibiotic", pain_medication: "prescription pain medicine" };
@@ -151,9 +166,10 @@ function reviewedRow(reviewed) {
   by.addEventListener("change", commit);
   date.addEventListener("change", commit);
   wrap.append(by, date);
+  // The patient's guide shows no reviewer line, so neither the name nor the date leaves this page.
   const note = reviewed
-    ? `The patient's guide shows "Reviewed by clinician" and this date. Check the guide as the patient will see it first.`
-    : "Optional. Adds a \"Reviewed by clinician\" line with the date to the patient's guide.";
+    ? { text: "Not shown to the patient, and not carried in the link. It stays in your note.", notInGuide: true }
+    : { text: "Stays in your note. The patient's guide shows no reviewer line.", notInGuide: true };
   return row("reviewed", wrap, reviewed ? "your block" : "none", [note], false);
 }
 
@@ -177,13 +193,29 @@ function lineItem(entry) {
   return item;
 }
 
+// A line the guide contradicts is not an omission: the patient is told something else. It gets its own
+// block, its own count, and the provider's word that they have read it.
+function contradictionItem(entry) {
+  const item = element("li", { className: "line line--contradicts" });
+  item.dataset.notInGuide = "";
+  item.append(
+    element("p", { className: "line__label", textContent: "You wrote" }),
+    element("code", { className: "line__text", textContent: entry.text }),
+    element("p", { className: "line__label", textContent: `The patient is told, in chapter ${chapterOf.get(entry.sentences[0])}` }),
+    element("p", { className: "line__heard", textContent: `“${quote(entry.sentences)}”` })
+  );
+  return item;
+}
+
 function render() {
   const text = dom.block.value;
   try {
-    sessionStorage.setItem(STORE_KEY, text);
+    if (text) sessionStorage.setItem(STORE_KEY, text);
+    else sessionStorage.removeItem(STORE_KEY);
   } catch {
     // Private windows can refuse storage; the page works without it.
   }
+  dom.newPatient.hidden = text.trim() === "";
   const focusKey = document.activeElement?.dataset?.focus;
   const parsed = parseProviderBlock(text);
   const { values, from_presets: fromPresets } = applyPresets(parsed.fields, presets);
@@ -197,10 +229,17 @@ function render() {
   if (focusKey) dom.rows.querySelector(`[data-focus="${focusKey}"]`)?.focus();
 
   const statuses = lineStatuses(parsed.other, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
-  const warnings = statuses.filter((entry) => entry.status === "changed" || entry.status === "not_covered");
-  dom.notUsedList.replaceChildren(...warnings.map(lineItem));
-  dom.notUsedSummary.textContent = warnings.length === 1 ? "1 line in your block will not reach this patient." : `${warnings.length} lines in your block will not reach this patient.`;
-  dom.notUsed.hidden = warnings.length === 0;
+  const contradictions = statuses.filter((entry) => entry.status === "changed");
+  dom.contradictsList.replaceChildren(...contradictions.map(contradictionItem));
+  dom.contradictsCount.textContent = String(contradictions.length);
+  dom.contradictsSummary.textContent = contradictions.length === 1
+    ? "line of yours says the opposite of what this patient will hear"
+    : "lines of yours say the opposite of what this patient will hear";
+  dom.contradicts.hidden = contradictions.length === 0;
+  const missingLines = statuses.filter((entry) => entry.status === "not_covered");
+  dom.notUsedList.replaceChildren(...missingLines.map(lineItem));
+  dom.notUsedSummary.textContent = missingLines.length === 1 ? "1 line in your block will not reach this patient." : `${missingLines.length} lines in your block will not reach this patient.`;
+  dom.notUsed.hidden = missingLines.length === 0;
   const missing = missingFromBlock(parsed.other, { covered: lineMap.covered });
   dom.alsoSaysList.replaceChildren(...missing.map((entry) => {
     const item = element("li", { className: "line line--also" });
@@ -215,15 +254,30 @@ function render() {
   dom.unread.replaceChildren(...parsed.unfilled.map((line) => element("li", { className: "line" }, element("code", { className: "line__text", textContent: line }), element("p", { className: "line__note", textContent: "Not filled in or not readable, so the value in the table applies. Change it there." }))));
   dom.unreadBlock.hidden = parsed.unfilled.length === 0;
 
+  const signature = contradictions.map((entry) => entry.text).join(" ");
+  dom.ackRow.hidden = contradictions.length === 0;
+  dom.ackText.textContent = contradictions.length === 1
+    ? "I have read the difference above, and I will tell this patient myself."
+    : `I have read the ${contradictions.length} differences above, and I will tell this patient myself.`;
+  // Editing the block re-arms the box: a tick covers the differences it was ticked for, not the next ones.
+  if (signature !== acknowledged) acknowledged = null;
+  dom.ack.dataset.signature = signature;
+  dom.ack.checked = signature !== "" && signature === acknowledged;
+
   const pending = FIELD_ORDER.filter((field) => parsed.needs_choice.includes(field)).map((field) => LABELS[field]);
-  if (pending.length) {
+  const blocked = pending.length
+    ? `Choose ${pending.join(" and ")} in the table before you send a link.`
+    : contradictions.length && signature !== acknowledged
+      ? `This patient's guide contradicts ${contradictions.length === 1 ? "a line" : `${contradictions.length} lines`} in your block. Read ${contradictions.length === 1 ? "it" : "them"} and tick the box before you send a link.`
+      : null;
+  if (blocked) {
     dom.link.removeAttribute("href");
     dom.link.textContent = "";
     dom.link.hidden = true;
     dom.copy.disabled = true;
     dom.open.removeAttribute("href");
     dom.open.setAttribute("aria-disabled", "true");
-    dom.linkState.textContent = `Choose ${pending.join(" and ")} in the table before you send a link.`;
+    dom.linkState.textContent = blocked;
     dom.linkState.className = "provider__link-state is-blocked";
     return;
   }
@@ -238,7 +292,48 @@ function render() {
   dom.linkState.className = "provider__link-state";
 }
 
-dom.block.addEventListener("input", render);
+// The page never opens holding a block. One patient's block is restored only when this provider asks for
+// it, and "Start a new patient" clears the page without losing what was there a second ago.
+let stash = "";
+function offer(text) {
+  dom.restoreText.textContent = text;
+  dom.restoreOffer.hidden = text === "";
+}
+function hideOffer() {
+  dom.restoreOffer.hidden = true;
+}
+
+dom.block.addEventListener("input", () => {
+  hideOffer();
+  render();
+});
+dom.ack.addEventListener("change", () => {
+  acknowledged = dom.ack.checked ? dom.ack.dataset.signature ?? null : null;
+  render();
+});
+dom.newPatient.addEventListener("click", () => {
+  stash = dom.block.value;
+  dom.block.value = "";
+  acknowledged = null;
+  render();
+  offer("Cleared. The block that was here is still in this tab's memory until you paste the next one.");
+  dom.block.focus();
+});
+dom.restore.addEventListener("click", () => {
+  dom.block.value = stash;
+  hideOffer();
+  render();
+});
+dom.discard.addEventListener("click", () => {
+  stash = "";
+  try {
+    sessionStorage.removeItem(STORE_KEY);
+  } catch {
+    // Nothing to remove when storage is unavailable.
+  }
+  hideOffer();
+  dom.block.focus();
+});
 dom.copy.addEventListener("click", async () => {
   try {
     await navigator.clipboard.writeText(dom.link.textContent);
@@ -250,8 +345,9 @@ dom.copy.addEventListener("click", async () => {
   }
 });
 try {
-  dom.block.value = sessionStorage.getItem(STORE_KEY) ?? "";
+  stash = sessionStorage.getItem(STORE_KEY) ?? "";
 } catch {
   // Starts empty when storage is unavailable.
 }
 render();
+if (stash) offer("A block was pasted in this tab earlier. It may be a different patient's.");

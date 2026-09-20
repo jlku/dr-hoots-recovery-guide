@@ -180,7 +180,8 @@ export function buildPatientLink(values, base = "guide/index.html") {
   params.set("p", values.pain_medication ? "1" : "0");
   if (values.follow_up_date) params.set("f", values.follow_up_date);
   params.set("l", values.language ?? "en");
-  if (values.reviewed?.date) params.set("r", values.reviewed.date);
+  // The reviewer stays in the note. The patient's guide shows no reviewer line, so a link that carried
+  // the date would promise a line that does not exist.
   return `${base}#${params.toString()}`;
 }
 
@@ -238,6 +239,18 @@ function keyOf(raw) {
 
 // Writes a choice made in the table back into the block, so the provider's note and the link agree.
 // One line replaces every line for that field; a review line keeps its place.
+// A provider's line often carries a note in the margin — "(UCSF CI Center: about 2 weeks;" with the rest
+// of it on the indented line below. Rewriting the value must not take the margin with it and leave the
+// indented half orphaned, because this text goes back into the chart.
+// The margin keeps its column when the new value still fits, so the block reads the same in the chart.
+const TRAILING_COMMENT = /\s\s+(\([^)]*\)?)\s*$/;
+function trailingComment(line, next) {
+  const match = TRAILING_COMMENT.exec(line);
+  if (!match) return "";
+  const column = line.length - match[0].length + match[0].search(/\S/);
+  return `${" ".repeat(Math.max(4, column - next.length))}${match[1]}`;
+}
+
 export function setFieldLine(text, field, value) {
   const lines = String(text ?? "").split(/\r?\n/);
   if (field === "reviewed") {
@@ -266,7 +279,9 @@ export function setFieldLine(text, field, value) {
     if (key && fieldFor(key) === field) {
       const at = raw.search(/reviewed by/i);
       const review = at > 0 ? raw.slice(at).trim() : "";
-      if (!replaced && next) out.push(review ? `${next}    ${review}` : next);
+      const margin = trailingComment(at > 0 ? raw.slice(0, at) : raw, next);
+      const rewritten = `${next}${margin}${review ? `    ${review}` : ""}`;
+      if (!replaced && next) out.push(rewritten);
       else if (review) out.push(review);
       replaced = true;
       continue;

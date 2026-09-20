@@ -14,11 +14,29 @@
   </header>
   <main class="provider">
     <section class="provider__paste" aria-labelledby="paste-label">
-      <label id="paste-label" class="provider__label" for="block">Paste the block from your note</label>
+      <div class="provider__paste-head">
+        <label id="paste-label" class="provider__label" for="block">Paste the block from your note</label>
+        <button id="new-patient" class="button button--quiet" type="button" hidden>Start a new patient</button>
+      </div>
+      <div id="restore-offer" class="provider__restore" hidden>
+        <p id="restore-text" class="provider__restore-text"></p>
+        <div class="provider__restore-actions">
+          <button id="restore" class="button button--quiet" type="button">Restore it</button>
+          <button id="discard" class="button button--quiet" type="button">Discard it</button>
+        </div>
+      </div>
       <textarea id="block" class="provider__block" rows="16" spellcheck="false" autocomplete="off" placeholder="Antibiotic: Yes&#10;Pain medication: No&#10;Follow-up: wound check and ear exam on 10/1/2026&#10;Video guide: language Spanish    Reviewed by … on …"></textarea>
       <p class="provider__hint">Nothing you paste leaves this browser tab. A line you leave out uses its preset.</p>
     </section>
     <section class="provider__result">
+      <div id="contradicts" class="provider__contradicts" role="alert" hidden>
+        <h2 class="provider__heading provider__heading--alarm">
+          <span id="contradicts-count" class="provider__count"></span>
+          <span id="contradicts-summary"></span>
+        </h2>
+        <p class="provider__contradicts-hint">The patient hears the guide's wording, not yours. Read each one before you send the link.</p>
+        <ul id="contradicts-list" class="provider__lines"></ul>
+      </div>
       <h2 class="provider__heading">What the guide will use</h2>
       <table id="parsed" class="provider__table">
         <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">From</th></tr></thead>
@@ -44,12 +62,15 @@
         <ul id="kept-list" class="provider__lines"></ul>
       </details>
       <h2 class="provider__heading">Patient link</h2>
+      <p id="ack-row" class="provider__ack" hidden>
+        <label class="provider__ack-label"><input id="ack" type="checkbox"> <span id="ack-text"></span></label>
+      </p>
       <div class="provider__link-row">
         <a id="patient-link" class="provider__link" target="_blank" rel="noopener"></a>
         <button id="copy-link" class="button button--primary" type="button">Copy link</button>
       </div>
       <p id="link-state" class="provider__link-state" role="status" aria-live="polite"></p>
-      <p class="provider__hint">The link carries the medication choices, the follow-up date, the language, and the review date. It never carries a name.</p>
+      <p class="provider__hint">The link carries the medication choices, the follow-up date, and the language. It never carries a name, and it never carries the reviewer.</p>
       <h2 class="provider__heading">What we still need from your clinic</h2>
       <ul id="asks" class="provider__asks">
         <li>Mark up the draft dot phrase: which lines match your practice, and what should change.</li>

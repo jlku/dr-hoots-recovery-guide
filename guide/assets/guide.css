@@ -179,12 +179,34 @@ button, select, input { font-family: inherit; }
 .provider__block { width: 100%; min-height: 320px; padding: 12px; border: 1px solid var(--blue-gray); border-radius: 6px; font: 15px/1.5 ui-monospace, "SF Mono", Menlo, monospace; color: var(--navy); resize: vertical; }
 .provider__hint { margin: 8px 0 0; color: var(--blue-gray); font-size: 15px; }
 .provider__heading { margin: 24px 0 8px; font-size: 18px; }
-.provider__result > .provider__heading:first-child { margin-top: 0; }
+.provider__result > .provider__heading:first-child, .provider__contradicts[hidden] + .provider__heading { margin-top: 0; }
 .provider__table { width: 100%; border-collapse: collapse; font-size: 16px; }
 .provider__table th, .provider__table td { padding: 8px 10px; border-bottom: 1px solid var(--gray-3); text-align: left; vertical-align: top; }
 .provider__table thead th { color: var(--blue-gray); font-size: 14px; }
 .provider__table tr.is-preset td:last-child { color: var(--blue-gray); }
 .provider__unread { margin-top: 16px; padding: 4px 16px 12px; border-left: 4px solid var(--yellow); background: #fff8e1; }
+/* Starting a patient: the page never opens holding a block, and clearing one is one button away. */
+.provider__paste-head { display: flex; gap: 12px; align-items: baseline; justify-content: space-between; flex-wrap: wrap; }
+.button--quiet { min-height: 40px; padding: 6px 14px; font-size: 15px; }
+.provider__restore { margin: 10px 0 0; padding: 10px 14px; border: 1px solid var(--gray-3); border-radius: 6px; background: var(--gray-1); display: flex; gap: 12px; align-items: center; justify-content: space-between; flex-wrap: wrap; }
+.provider__restore[hidden] { display: none; }
+.provider__restore-text { margin: 0; color: var(--navy); font-size: 15px; }
+.provider__restore-actions { display: flex; gap: 8px; }
+/* A line the guide contradicts: the loudest thing on the page, above the table, with its own count. */
+.provider__contradicts { margin: 0 0 20px; padding: 14px 18px 16px; border: 2px solid #b3261e; border-left-width: 8px; border-radius: 6px; background: #fcebea; }
+.provider__contradicts[hidden] { display: none; }
+.provider__heading--alarm { display: flex; gap: 10px; align-items: center; margin: 0; color: #7a1a14; font-size: 19px; }
+.provider__count { flex: none; min-width: 34px; padding: 2px 8px; border-radius: 999px; background: #b3261e; color: #fff; font-size: 19px; text-align: center; }
+.provider__contradicts-hint { margin: 8px 0 0; color: #7a1a14; font-size: 15px; font-weight: 700; }
+.line--contradicts { padding: 10px 12px; border-radius: 6px; background: var(--paper); }
+.line__label { margin: 0 0 2px; color: var(--blue-gray); font-size: 13px; text-transform: uppercase; letter-spacing: .04em; }
+.line__label + .line__label { margin-top: 10px; }
+.line__heard { margin: 0; color: #7a1a14; font-size: 16px; font-weight: 700; }
+/* The provider says, in their own words, that they have read the differences before the link appears. */
+.provider__ack { margin: 8px 0 12px; padding: 12px 14px; border: 2px solid #b3261e; border-radius: 6px; background: #fcebea; }
+.provider__ack[hidden] { display: none; }
+.provider__ack-label { display: flex; gap: 10px; align-items: flex-start; color: #7a1a14; font-size: 16px; font-weight: 700; cursor: pointer; }
+.provider__ack-label input { flex: none; width: 22px; height: 22px; margin: 0; }
 /* Lines of the block that will not reach this patient: loud, because the patient hears something else. */
 .provider__alert { margin-top: 16px; padding: 4px 16px 12px; border-left: 4px solid #b3261e; background: #fcebea; }
 .provider__alert-summary { margin: 0; color: #7a1a14; font-weight: 700; }

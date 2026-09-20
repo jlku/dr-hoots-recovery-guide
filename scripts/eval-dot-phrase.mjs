@@ -36,7 +36,12 @@ function check(spec = {}, { guide, page, link }) {
   for (const text of spec.contains ?? []) if (!has(guide, text)) misses.push(`guide does not say "${text}"`);
   for (const text of spec.lacks ?? []) if (has(guide, text)) misses.push(`guide still says "${text}"`);
   for (const text of spec.page_mentions ?? []) if (!page.includes(text)) misses.push(`provider page does not show "${text}"`);
-  for (const [key, value] of Object.entries(spec.link ?? {})) if (link[key] !== value) misses.push(`link ${key}=${link[key] ?? "(none)"}, wanted ${value}`);
+  // A null expectation means the parameter must not be in the link at all.
+  for (const [key, value] of Object.entries(spec.link ?? {})) {
+    if (value === null) {
+      if (key in link) misses.push(`link carries ${key}=${link[key]}, and it should carry no ${key}`);
+    } else if (link[key] !== value) misses.push(`link ${key}=${link[key] ?? "(none)"}, wanted ${value}`);
+  }
   return misses;
 }
 
@@ -55,6 +60,15 @@ async function runCase(browser, base, item) {
     link: document.getElementById("patient-link")?.textContent ?? ""
   }));
   await page.screenshot({ path: join(out, `${item.id}-provider.png`), fullPage: true });
+  // A block the guide contradicts holds the link back until the provider says they have read the
+  // differences. The eval ticks that box, as a provider would, so the guide itself is still checked.
+  const gated = await page.evaluate(() => !document.getElementById("ack-row")?.hidden);
+  if (gated) {
+    await page.click("#ack");
+    await page.waitForTimeout(200);
+    provider.link = await page.evaluate(() => document.getElementById("patient-link")?.textContent ?? "");
+    provider.text = await page.evaluate(() => document.querySelector(".provider__result")?.innerText ?? "");
+  }
   const withheld = !provider.link;
   let guide = "";
   if (!withheld) {
@@ -70,15 +84,18 @@ async function runCase(browser, base, item) {
   if (withheld && (item.effective?.contains || item.effective?.link)) effectiveMisses.push("the page withholds the link until the provider chooses");
   const safeMisses = withheld ? [] : check(item.safe, evidence);
   const named = provider.notInGuide.some((line) => line.includes(item.line));
+  // A case that says the guide contradicts this line fails when the page hands over the link freely.
+  const gateMisses = item.gate && !gated ? ["the page offers the link without saying the guide contradicts this line"] : [];
   return {
     id: item.id,
     kind: item.kind,
     intent: item.intent,
     withheld,
+    gated,
     effective: effectiveMisses.length === 0,
     honest: effectiveMisses.length === 0 || named,
-    safe: safeMisses.length === 0,
-    misses: [...effectiveMisses, ...safeMisses.filter((miss) => !effectiveMisses.includes(miss))],
+    safe: safeMisses.length === 0 && gateMisses.length === 0,
+    misses: [...effectiveMisses, ...safeMisses.filter((miss) => !effectiveMisses.includes(miss)), ...gateMisses],
     provider: { rows: provider.rows, not_in_guide: provider.notInGuide, other: provider.other, link: provider.link }
   };
 }
@@ -94,10 +111,10 @@ try {
   server.stop();
 }
 const mark = (ok) => (ok ? "pass" : "FAIL");
-const rows = results.map((result) => `| ${result.id} | ${result.kind} | ${mark(result.effective)} | ${mark(result.honest)} | ${mark(result.safe)} | ${result.misses.join("; ").replace(/\|/g, "/")} |`);
+const rows = results.map((result) => `| ${result.id} | ${result.kind} | ${mark(result.effective)} | ${mark(result.honest)} | ${mark(result.safe)} | ${result.gated ? "held back" : "\u2014"} | ${result.misses.join("; ").replace(/\|/g, "/")} |`);
 const count = (key) => results.filter((result) => result[key]).length;
 const summary = `effective ${count("effective")}/${results.length}, honest ${count("honest")}/${results.length}, safe ${count("safe")}/${results.length}`;
-const report = [`# Dot-phrase edit eval`, "", summary, "", "| Case | Kind | Effective | Honest | Safe | What went wrong |", "| --- | --- | --- | --- | --- | --- |", ...rows, ""].join("\n");
+const report = [`# Dot-phrase edit eval`, "", summary, "", "| Case | Kind | Effective | Honest | Safe | Link | What went wrong |", "| --- | --- | --- | --- | --- | --- | --- |", ...rows, ""].join("\n");
 await writeFile(join(out, "results.json"), `${JSON.stringify({ summary, results }, null, 2)}\n`);
 await writeFile(join(out, "report.md"), report);
 for (const result of results) console.log(`${mark(result.effective).padEnd(4)} ${mark(result.honest).padEnd(4)} ${mark(result.safe).padEnd(4)} ${result.id}${result.misses.length ? `: ${result.misses.join("; ")}` : ""}`);

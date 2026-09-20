@@ -46,7 +46,7 @@ test("the block reads only its five driving lines, lists what it could not read,
   const merged = applyPresets(parsed.fields, presets);
   assert.equal(merged.values.pain_medication, true);
   assert.deepEqual(merged.from_presets, ["pain_medication"]);
-  assert.equal(buildPatientLink(merged.values), "guide/index.html#a=0&p=1&f=2026-10-01&l=es&r=2026-09-17");
+  assert.equal(buildPatientLink(merged.values), "guide/index.html#a=0&p=1&f=2026-10-01&l=es", "the reviewer stays in the note: the guide shows no reviewer line, so the link carries no review date");
 });
 
 test("the link carries no names, and an empty block is all presets", () => {
@@ -151,4 +151,17 @@ test("the guide's own steps that the block never mentions are listed, so deletin
   assert.deepEqual(missing.map((entry) => entry.key), ["dressing", "incision", "activation", "when to call", "contact"], "shower is mentioned, the rest are not");
   assert.deepEqual(missing[0].sentences, ["wc.01", "wc.02"]);
   assert.deepEqual(missingFromBlock(parseProviderBlock(draftText).other, { covered: lineMap.covered }), [], "the practice's own draft mentions every covered step");
+});
+
+test("editing a value keeps the note's margin, so the chart entry survives the edit", () => {
+  const block = [
+    "Follow-up: wound check and ear exam on ***                                     (UCSF CI Center: about 2 weeks;",
+    "                                                                                UCSF EARS: 7-10 days; timeline PDF: 2-3 weeks)",
+    "Video guide: language English    Reviewed by Song on 09/17/2026"
+  ].join("\n");
+  const out = setFieldLine(block, "follow_up_date", "2026-10-15").split("\n");
+  assert.match(out[0], /^Follow-up: wound check and ear exam on 10\/15\/2026 +\(UCSF CI Center: about 2 weeks;$/);
+  assert.equal(out[0].indexOf("("), block.split("\n")[0].indexOf("("), "the margin keeps its column");
+  assert.equal(out[1], block.split("\n")[1], "the indented half of the note is untouched, not orphaned");
+  assert.equal(out[2], "Video guide: language English    Reviewed by Song on 09/17/2026");
 });

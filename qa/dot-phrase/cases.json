@@ -31,7 +31,8 @@
           "Three days after surgery, you may shower"
         ]
       },
-      "line": "Shower:"
+      "line": "Shower:",
+      "gate": true
     },
     {
       "id": "tweak-dressing-day",
@@ -50,7 +51,8 @@
           "Two days after surgery, remove the head bandage"
         ]
       },
-      "line": "Dressing:"
+      "line": "Dressing:",
+      "gate": true
     },
     {
       "id": "tweak-fever-threshold",
@@ -69,7 +71,8 @@
           "101.5"
         ]
       },
-      "line": "When to call:"
+      "line": "When to call:",
+      "gate": true
     },
     {
       "id": "tweak-callback-hours",
@@ -88,7 +91,8 @@
           "within 12 hours"
         ]
       },
-      "line": "Contact:"
+      "line": "Contact:",
+      "gate": true
     },
     {
       "id": "tweak-follow-up-date",
@@ -414,13 +418,16 @@
     {
       "id": "robust-reviewed-no-on",
       "kind": "robustness",
-      "intent": "A review line without the word on.",
+      "intent": "A review line without the word on: the page reads it, and the reviewer stays in the note.",
       "replace": {
         "Video guide:": "Video guide: language English    Reviewed by Dr. Example 9/19/2026"
       },
       "effective": {
+        "page_mentions": [
+          "It stays in your note"
+        ],
         "link": {
-          "r": "2026-09-19"
+          "r": null
         }
       },
       "safe": {},
