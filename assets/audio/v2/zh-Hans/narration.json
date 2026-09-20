@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T10:42:34.715Z",
+  "generatedAt": "2026-09-20T03:06:59.074Z",
   "records": [
     {
       "id": "dressing-off",
@@ -698,245 +698,6 @@
             25.040000000000003,
             25.12,
             25.200000000000003
-          ]
-        }
-      ],
-      "status": "draft_preview_only"
-    },
-    {
-      "id": "milestones",
-      "file": "assets/audio/v2/zh-Hans/beats/milestones.mp3",
-      "text": "手术三天后，您可以淋浴和洗头。伤口复查和耳部检查大约在手术后两周。缝线会自己溶解，所以不需要拆线。",
-      "language": "zh-Hans",
-      "language_code": "zh",
-      "canonicalSentenceIds": [
-        "wc.08",
-        "wc.09",
-        "wc.10"
-      ],
-      "model": "fal-ai/elevenlabs/tts/eleven-v3",
-      "voice": "George",
-      "stability": 0.68,
-      "similarityBoost": 0.78,
-      "speed": 1,
-      "outputFormat": "mp3_44100_128",
-      "seed": 92002,
-      "requestId": "01a0b830-1a02-77d1-9931-04af6f4b4605",
-      "timestamps": [
-        {
-          "characters": [
-            "手",
-            "术",
-            "三"
-          ],
-          "character_start_times_seconds": [
-            0,
-            0.24,
-            0.4
-          ],
-          "character_end_times_seconds": [
-            0.24,
-            0.4,
-            0.56
-          ]
-        },
-        {
-          "characters": [
-            "天",
-            "后"
-          ],
-          "character_start_times_seconds": [
-            0.56,
-            0.8
-          ],
-          "character_end_times_seconds": [
-            0.8,
-            1.04
-          ]
-        },
-        {
-          "characters": [
-            "，",
-            "您",
-            "可",
-            "以"
-          ],
-          "character_start_times_seconds": [
-            1.04,
-            1.44,
-            1.84,
-            2
-          ],
-          "character_end_times_seconds": [
-            1.44,
-            1.84,
-            2,
-            2.16
-          ]
-        },
-        {
-          "characters": [
-            "淋",
-            "浴",
-            "和"
-          ],
-          "character_start_times_seconds": [
-            2.16,
-            2.6,
-            2.8000000000000003
-          ],
-          "character_end_times_seconds": [
-            2.6,
-            2.8000000000000003,
-            2.96
-          ]
-        },
-        {
-          "characters": [
-            "洗",
-            "头",
-            "。",
-            "伤",
-            "口"
-          ],
-          "character_start_times_seconds": [
-            2.96,
-            3.2,
-            3.44,
-            4.24,
-            4.4
-          ],
-          "character_end_times_seconds": [
-            3.2,
-            3.44,
-            4.24,
-            4.4,
-            4.64
-          ]
-        },
-        {
-          "characters": [
-            "复",
-            "查",
-            "和",
-            "耳",
-            "部",
-            "检",
-            "查",
-            "大",
-            "约"
-          ],
-          "character_start_times_seconds": [
-            4.64,
-            4.88,
-            5.359999999999999,
-            5.52,
-            5.76,
-            5.92,
-            6.319999999999999,
-            6.72,
-            6.959999999999999
-          ],
-          "character_end_times_seconds": [
-            4.88,
-            5.359999999999999,
-            5.52,
-            5.76,
-            5.92,
-            6.319999999999999,
-            6.72,
-            6.959999999999999,
-            7.119999999999999
-          ]
-        },
-        {
-          "characters": [],
-          "character_start_times_seconds": [],
-          "character_end_times_seconds": []
-        },
-        {
-          "characters": [
-            "在",
-            "手",
-            "术",
-            "后",
-            "两",
-            "周",
-            "。",
-            "缝",
-            "线",
-            "会",
-            "自",
-            "己",
-            "溶",
-            "解",
-            "，",
-            "所",
-            "以",
-            "不"
-          ],
-          "character_start_times_seconds": [
-            7.119999999999999,
-            7.279999999999999,
-            7.4399999999999995,
-            7.68,
-            7.839999999999999,
-            8.079999999999998,
-            8.319999999999999,
-            9.2,
-            9.6,
-            9.76,
-            10,
-            10.16,
-            10.32,
-            10.479999999999999,
-            10.719999999999999,
-            11.067,
-            11.413,
-            11.759999999999998
-          ],
-          "character_end_times_seconds": [
-            7.279999999999999,
-            7.4399999999999995,
-            7.68,
-            7.839999999999999,
-            8.079999999999998,
-            8.319999999999999,
-            9.2,
-            9.6,
-            9.76,
-            10,
-            10.16,
-            10.32,
-            10.479999999999999,
-            10.719999999999999,
-            11.067,
-            11.413,
-            11.759999999999998,
-            11.919999999999998
-          ]
-        },
-        {
-          "characters": [
-            "需",
-            "要",
-            "拆",
-            "线",
-            "。"
-          ],
-          "character_start_times_seconds": [
-            11.919999999999998,
-            12.079999999999998,
-            12.239999999999998,
-            12.599999999999998,
-            12.719999999999999
-          ],
-          "character_end_times_seconds": [
-            12.079999999999998,
-            12.239999999999998,
-            12.599999999999998,
-            12.719999999999999,
-            12.799999999999999
           ]
         }
       ],
@@ -3101,6 +2862,251 @@
           "characters": [],
           "character_start_times_seconds": [],
           "character_end_times_seconds": []
+        }
+      ],
+      "status": "draft_preview_only"
+    },
+    {
+      "id": "milestones",
+      "file": "assets/audio/v2/zh-Hans/beats/milestones.mp3",
+      "text": "手术三天后，您可以淋浴和洗头。诊所会告诉您伤口复查和耳部检查的日期。缝线会自己溶解，所以不需要拆线。",
+      "language": "zh-Hans",
+      "language_code": "zh",
+      "canonicalSentenceIds": [
+        "wc.08",
+        "wc.09",
+        "wc.10"
+      ],
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "voice": "George",
+      "stability": 0.68,
+      "similarityBoost": 0.78,
+      "speed": 1,
+      "outputFormat": "mp3_44100_128",
+      "seed": 92002,
+      "requestId": "01a0bcc7-e687-7490-bcb1-d5cf716fcd90",
+      "timestamps": [
+        {
+          "characters": [
+            "手",
+            "术",
+            "三"
+          ],
+          "character_start_times_seconds": [
+            0,
+            0.24,
+            0.4
+          ],
+          "character_end_times_seconds": [
+            0.24,
+            0.4,
+            0.64
+          ]
+        },
+        {
+          "characters": [
+            "天",
+            "后"
+          ],
+          "character_start_times_seconds": [
+            0.64,
+            0.88
+          ],
+          "character_end_times_seconds": [
+            0.88,
+            1.12
+          ]
+        },
+        {
+          "characters": [
+            "，",
+            "您",
+            "可",
+            "以"
+          ],
+          "character_start_times_seconds": [
+            1.12,
+            1.48,
+            1.84,
+            2
+          ],
+          "character_end_times_seconds": [
+            1.48,
+            1.84,
+            2,
+            2.16
+          ]
+        },
+        {
+          "characters": [
+            "淋",
+            "浴",
+            "和"
+          ],
+          "character_start_times_seconds": [
+            2.16,
+            2.6,
+            2.8000000000000003
+          ],
+          "character_end_times_seconds": [
+            2.6,
+            2.8000000000000003,
+            3.04
+          ]
+        },
+        {
+          "characters": [
+            "洗",
+            "头",
+            "。",
+            "诊"
+          ],
+          "character_start_times_seconds": [
+            3.04,
+            3.2800000000000002,
+            3.52,
+            4.4
+          ],
+          "character_end_times_seconds": [
+            3.2800000000000002,
+            3.52,
+            4.4,
+            4.72
+          ]
+        },
+        {
+          "characters": [
+            "所",
+            "会",
+            "告",
+            "诉",
+            "您",
+            "伤",
+            "口",
+            "复"
+          ],
+          "character_start_times_seconds": [
+            4.72,
+            5.279999999999999,
+            5.4399999999999995,
+            5.6,
+            5.76,
+            6.32,
+            6.4799999999999995,
+            6.72
+          ],
+          "character_end_times_seconds": [
+            5.279999999999999,
+            5.4399999999999995,
+            5.6,
+            5.76,
+            6.32,
+            6.4799999999999995,
+            6.72,
+            6.88
+          ]
+        },
+        {
+          "characters": [
+            "查",
+            "和",
+            "耳",
+            "部",
+            "检",
+            "查",
+            "的",
+            "日",
+            "期"
+          ],
+          "character_start_times_seconds": [
+            6.88,
+            7.4399999999999995,
+            7.68,
+            7.84,
+            8,
+            8.2,
+            8.4,
+            8.48,
+            8.76
+          ],
+          "character_end_times_seconds": [
+            7.4399999999999995,
+            7.68,
+            7.84,
+            8,
+            8.2,
+            8.4,
+            8.48,
+            8.76,
+            9.04
+          ]
+        },
+        {
+          "characters": [
+            "。",
+            "缝",
+            "线",
+            "会",
+            "自",
+            "己",
+            "溶",
+            "解"
+          ],
+          "character_start_times_seconds": [
+            9.04,
+            10,
+            10.52,
+            10.799999999999999,
+            10.959999999999999,
+            11.12,
+            11.28,
+            11.52
+          ],
+          "character_end_times_seconds": [
+            10,
+            10.52,
+            10.799999999999999,
+            10.959999999999999,
+            11.12,
+            11.28,
+            11.52,
+            11.76
+          ]
+        },
+        {
+          "characters": [
+            "，",
+            "所",
+            "以",
+            "不",
+            "需",
+            "要",
+            "拆",
+            "线",
+            "。"
+          ],
+          "character_start_times_seconds": [
+            11.76,
+            12.133,
+            12.507,
+            12.879999999999999,
+            13.04,
+            13.24,
+            13.44,
+            13.8,
+            13.92
+          ],
+          "character_end_times_seconds": [
+            12.133,
+            12.507,
+            12.879999999999999,
+            13.04,
+            13.24,
+            13.44,
+            13.8,
+            13.92,
+            14
+          ]
         }
       ],
       "status": "draft_preview_only"

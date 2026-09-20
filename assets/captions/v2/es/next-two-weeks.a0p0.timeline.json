@@ -26,12 +26,12 @@
         "wc.10"
       ],
       "start": 1.5,
-      "end": 15.9,
-      "speech_seconds": 14.4,
+      "end": 14.86,
+      "speech_seconds": 13.36,
       "record_id": "milestones",
       "manifest": "assets/audio/v2/es/narration.json",
       "source_audio": "assets/audio/v2/es/beats/milestones.mp3",
-      "text": "Tres días después de la cirugía, puede ducharse y lavarse el cabello. La revisión de la herida y el examen del oído son unas dos semanas después de la cirugía. Los puntos se disuelven solos, así que no hay que quitarlos."
+      "text": "Tres días después de la cirugía, puede ducharse y lavarse el cabello. Su clínica le dará la fecha de su revisión de la herida y del examen del oído. Los puntos se disuelven solos, así que no hay que quitarlos."
     }
   ],
   "words": [
@@ -58,35 +58,35 @@
     },
     {
       "text": "de",
-      "start": 2.513,
-      "end": 2.62,
+      "start": 2.487,
+      "end": 2.54,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "la",
-      "start": 2.647,
-      "end": 2.7,
+      "start": 2.567,
+      "end": 2.62,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "cirugía,",
-      "start": 2.74,
-      "end": 3.62,
+      "start": 2.68,
+      "end": 3.66,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "puede",
-      "start": 3.68,
+      "start": 3.713,
       "end": 3.98,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "ducharse",
-      "start": 4.04,
+      "start": 4.02,
       "end": 4.46,
       "beat": "beat/milestones",
       "space": true
@@ -101,224 +101,217 @@
     {
       "text": "lavarse",
       "start": 4.58,
-      "end": 4.86,
+      "end": 4.94,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "el",
-      "start": 4.913,
+      "start": 4.967,
       "end": 5.02,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "cabello.",
-      "start": 5.073,
-      "end": 5.58,
+      "start": 5.087,
+      "end": 5.66,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "La",
-      "start": 5.927,
-      "end": 6.62,
+      "text": "Su",
+      "start": 5.9,
+      "end": 6.38,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "revisión",
-      "start": 6.673,
-      "end": 7.1,
+      "text": "clínica",
+      "start": 6.433,
+      "end": 6.86,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "de",
-      "start": 7.127,
-      "end": 7.18,
+      "text": "le",
+      "start": 6.913,
+      "end": 7.02,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "la",
-      "start": 7.207,
+      "text": "dará",
+      "start": 7.06,
       "end": 7.26,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "herida",
-      "start": 7.3,
-      "end": 7.58,
+      "text": "la",
+      "start": 7.287,
+      "end": 7.34,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "y",
-      "start": 7.62,
+      "text": "fecha",
+      "start": 7.393,
       "end": 7.66,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "el",
+      "text": "de",
       "start": 7.687,
       "end": 7.74,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "examen",
-      "start": 7.804,
-      "end": 8.22,
+      "text": "su",
+      "start": 7.793,
+      "end": 7.9,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "del",
-      "start": 8.24,
-      "end": 8.3,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "oído",
-      "start": 8.38,
-      "end": 8.78,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "son",
-      "start": 8.88,
-      "end": 9.18,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "unas",
-      "start": 9.228,
-      "end": 9.42,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "dos",
-      "start": 9.46,
-      "end": 9.58,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "semanas",
-      "start": 9.63,
-      "end": 9.98,
-      "beat": "beat/milestones",
-      "space": true
-    },
-    {
-      "text": "después",
-      "start": 10.03,
-      "end": 10.38,
+      "text": "revisión",
+      "start": 7.953,
+      "end": 8.38,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "de",
-      "start": 10.407,
-      "end": 10.46,
+      "start": 8.407,
+      "end": 8.46,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "la",
-      "start": 10.513,
-      "end": 10.62,
+      "start": 8.487,
+      "end": 8.54,
       "beat": "beat/milestones",
       "space": true
     },
     {
-      "text": "cirugía.",
-      "start": 10.66,
-      "end": 11.34,
+      "text": "herida",
+      "start": 8.58,
+      "end": 8.94,
+      "beat": "beat/milestones",
+      "space": true
+    },
+    {
+      "text": "y",
+      "start": 9.1,
+      "end": 9.26,
+      "beat": "beat/milestones",
+      "space": true
+    },
+    {
+      "text": "del",
+      "start": 9.28,
+      "end": 9.34,
+      "beat": "beat/milestones",
+      "space": true
+    },
+    {
+      "text": "examen",
+      "start": 9.404,
+      "end": 9.74,
+      "beat": "beat/milestones",
+      "space": true
+    },
+    {
+      "text": "del",
+      "start": 9.8,
+      "end": 9.98,
+      "beat": "beat/milestones",
+      "space": true
+    },
+    {
+      "text": "oído.",
+      "start": 10.02,
+      "end": 10.46,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "Los",
-      "start": 11.64,
-      "end": 12.54,
+      "start": 10.72,
+      "end": 11.5,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "puntos",
-      "start": 12.597,
-      "end": 12.94,
+      "start": 11.557,
+      "end": 11.9,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "se",
-      "start": 12.967,
-      "end": 13.02,
+      "start": 11.953,
+      "end": 12.06,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "disuelven",
-      "start": 13.08,
-      "end": 13.5,
+      "start": 12.1,
+      "end": 12.54,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "solos,",
-      "start": 13.58,
-      "end": 14.22,
+      "start": 12.6,
+      "end": 13.34,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "así",
-      "start": 14.28,
-      "end": 14.46,
+      "start": 13.42,
+      "end": 13.66,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "que",
-      "start": 14.5,
-      "end": 14.62,
+      "start": 13.7,
+      "end": 13.82,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "no",
-      "start": 14.7,
-      "end": 14.86,
+      "start": 13.847,
+      "end": 13.9,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "hay",
-      "start": 14.9,
-      "end": 15.02,
+      "start": 13.92,
+      "end": 13.98,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "que",
-      "start": 15.04,
-      "end": 15.1,
+      "start": 14.02,
+      "end": 14.14,
       "beat": "beat/milestones",
       "space": true
     },
     {
       "text": "quitarlos.",
-      "start": 15.153,
-      "end": 15.9,
+      "start": 14.167,
+      "end": 14.86,
       "beat": "beat/milestones",
       "space": false
     }
@@ -327,7 +320,7 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.62,
+      "end": 3.66,
       "text": "Tres días después de la cirugía,",
       "beat": "beat/milestones",
       "first_word": 0,
@@ -335,8 +328,8 @@
     },
     {
       "id": "cue-02",
-      "start": 3.68,
-      "end": 5.58,
+      "start": 3.713,
+      "end": 5.66,
       "text": "puede ducharse y lavarse el cabello.",
       "beat": "beat/milestones",
       "first_word": 6,
@@ -344,44 +337,44 @@
     },
     {
       "id": "cue-03",
-      "start": 5.927,
-      "end": 9.18,
-      "text": "La revisión de la herida y el examen del oído son",
+      "start": 5.9,
+      "end": 8.38,
+      "text": "Su clínica le dará la fecha de su revisión",
       "beat": "beat/milestones",
       "first_word": 12,
-      "word_count": 11
+      "word_count": 9
     },
     {
       "id": "cue-04",
-      "start": 9.228,
-      "end": 11.34,
-      "text": "unas dos semanas después de la cirugía.",
+      "start": 8.407,
+      "end": 10.46,
+      "text": "de la herida y del examen del oído.",
       "beat": "beat/milestones",
-      "first_word": 23,
-      "word_count": 7
+      "first_word": 21,
+      "word_count": 8
     },
     {
       "id": "cue-05",
-      "start": 11.64,
-      "end": 14.22,
+      "start": 10.72,
+      "end": 13.34,
       "text": "Los puntos se disuelven solos,",
       "beat": "beat/milestones",
-      "first_word": 30,
+      "first_word": 29,
       "word_count": 5
     },
     {
       "id": "cue-06",
-      "start": 14.28,
-      "end": 15.9,
+      "start": 13.42,
+      "end": 14.86,
       "text": "así que no hay que quitarlos.",
       "beat": "beat/milestones",
-      "first_word": 35,
+      "first_word": 34,
       "word_count": 6
     }
   ],
-  "narration_seconds": 14.4,
-  "duration_seconds": 16.8,
+  "narration_seconds": 13.36,
+  "duration_seconds": 15.76,
   "source_records": {
-    "milestones": "e556286e6f6022e5d82d79134bf7e013289220b843260e01c30976e1d56024b1"
+    "milestones": "194af51bc1c514127b09a47b5eda98f41c8ddc4b3c7057ea9c364f740966498d"
   }
 }

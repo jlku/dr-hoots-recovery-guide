@@ -26,12 +26,12 @@
         "wc.10"
       ],
       "start": 1.5,
-      "end": 14.3,
-      "speech_seconds": 12.8,
+      "end": 15.5,
+      "speech_seconds": 14,
       "record_id": "milestones",
       "manifest": "assets/audio/v2/zh-Hans/narration.json",
       "source_audio": "assets/audio/v2/zh-Hans/beats/milestones.mp3",
-      "text": "手术三天后，您可以淋浴和洗头。伤口复查和耳部检查大约在手术后两周。缝线会自己溶解，所以不需要拆线。"
+      "text": "手术三天后，您可以淋浴和洗头。诊所会告诉您伤口复查和耳部检查的日期。缝线会自己溶解，所以不需要拆线。"
     },
     {
       "id": "beat/medication-antibiotic",
@@ -40,8 +40,8 @@
         "med.01",
         "med.02"
       ],
-      "start": 14.9,
-      "end": 20.66,
+      "start": 16.1,
+      "end": 21.86,
       "speech_seconds": 5.76,
       "record_id": "medication-antibiotic",
       "manifest": "assets/audio/v2/zh-Hans/narration.json",
@@ -60,20 +60,20 @@
     {
       "text": "三天",
       "start": 1.9,
-      "end": 2.3,
+      "end": 2.38,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "后，",
-      "start": 2.3,
-      "end": 2.94,
+      "start": 2.38,
+      "end": 2.98,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "您",
-      "start": 2.94,
+      "start": 2.98,
       "end": 3.34,
       "beat": "beat/milestones",
       "space": false
@@ -95,238 +95,238 @@
     {
       "text": "和",
       "start": 4.3,
-      "end": 4.46,
+      "end": 4.54,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "洗",
-      "start": 4.46,
-      "end": 4.7,
+      "start": 4.54,
+      "end": 4.78,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "头。",
-      "start": 4.7,
-      "end": 5.74,
+      "start": 4.78,
+      "end": 5.9,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "伤口",
-      "start": 5.74,
-      "end": 6.14,
+      "text": "诊所",
+      "start": 5.9,
+      "end": 6.78,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "复查",
-      "start": 6.14,
-      "end": 6.86,
+      "text": "会",
+      "start": 6.78,
+      "end": 6.94,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "和",
-      "start": 6.86,
-      "end": 7.02,
-      "beat": "beat/milestones",
-      "space": false
-    },
-    {
-      "text": "耳",
-      "start": 7.02,
+      "text": "告诉",
+      "start": 6.94,
       "end": 7.26,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "部",
+      "text": "您",
       "start": 7.26,
-      "end": 7.42,
+      "end": 7.82,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "检查",
-      "start": 7.42,
+      "text": "伤口",
+      "start": 7.82,
       "end": 8.22,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "大约",
+      "text": "复查",
       "start": 8.22,
-      "end": 8.62,
+      "end": 8.94,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "在",
-      "start": 8.62,
-      "end": 8.78,
-      "beat": "beat/milestones",
-      "space": false
-    },
-    {
-      "text": "手术",
-      "start": 8.78,
+      "text": "和",
+      "start": 8.94,
       "end": 9.18,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "后",
+      "text": "耳",
       "start": 9.18,
       "end": 9.34,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "两",
+      "text": "部",
       "start": 9.34,
-      "end": 9.58,
+      "end": 9.5,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "周。",
-      "start": 9.58,
-      "end": 10.7,
+      "text": "检查",
+      "start": 9.5,
+      "end": 9.9,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "缝",
-      "start": 10.7,
-      "end": 11.1,
+      "text": "的",
+      "start": 9.9,
+      "end": 9.98,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "线",
-      "start": 11.1,
-      "end": 11.26,
-      "beat": "beat/milestones",
-      "space": false
-    },
-    {
-      "text": "会",
-      "start": 11.26,
+      "text": "日期。",
+      "start": 9.98,
       "end": 11.5,
       "beat": "beat/milestones",
       "space": false
     },
     {
-      "text": "自己",
+      "text": "缝",
       "start": 11.5,
-      "end": 11.82,
+      "end": 12.02,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "线",
+      "start": 12.02,
+      "end": 12.3,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "会",
+      "start": 12.3,
+      "end": 12.46,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "自己",
+      "start": 12.46,
+      "end": 12.78,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "溶解，",
-      "start": 11.82,
-      "end": 12.567,
+      "start": 12.78,
+      "end": 13.633,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "所以",
-      "start": 12.567,
-      "end": 13.26,
+      "start": 13.633,
+      "end": 14.38,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "不需要",
-      "start": 13.26,
-      "end": 13.74,
+      "start": 14.38,
+      "end": 14.94,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "拆",
-      "start": 13.74,
-      "end": 14.1,
+      "start": 14.94,
+      "end": 15.3,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "线。",
-      "start": 14.1,
-      "end": 14.3,
+      "start": 15.3,
+      "end": 15.5,
       "beat": "beat/milestones",
       "space": false
     },
     {
       "text": "请",
-      "start": 14.9,
-      "end": 15.14,
+      "start": 16.1,
+      "end": 16.34,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "按照",
-      "start": 15.14,
-      "end": 15.54,
+      "start": 16.34,
+      "end": 16.74,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "处方",
-      "start": 15.54,
-      "end": 16.26,
+      "start": 16.74,
+      "end": 17.46,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "服用",
-      "start": 16.26,
-      "end": 16.58,
+      "start": 17.46,
+      "end": 17.78,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "抗生素。",
-      "start": 16.58,
-      "end": 18.1,
+      "start": 17.78,
+      "end": 19.3,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "抗生素",
-      "start": 18.1,
-      "end": 19.06,
+      "start": 19.3,
+      "end": 20.26,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "可以",
-      "start": 19.06,
-      "end": 19.38,
+      "start": 20.26,
+      "end": 20.58,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "帮助",
-      "start": 19.38,
-      "end": 19.78,
+      "start": 20.58,
+      "end": 20.98,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "预防",
-      "start": 19.78,
-      "end": 20.18,
+      "start": 20.98,
+      "end": 21.38,
       "beat": "beat/medication-antibiotic",
       "space": false
     },
     {
       "text": "感染。",
-      "start": 20.18,
-      "end": 20.66,
+      "start": 21.38,
+      "end": 21.86,
       "beat": "beat/medication-antibiotic",
       "space": false
     }
@@ -335,7 +335,7 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 5.74,
+      "end": 5.9,
       "text": "手术三天后，您可以淋浴和洗头。",
       "beat": "beat/milestones",
       "first_word": 0,
@@ -343,17 +343,17 @@
     },
     {
       "id": "cue-02",
-      "start": 5.74,
-      "end": 10.7,
-      "text": "伤口复查和耳部检查大约在手术后两周。",
+      "start": 5.9,
+      "end": 11.5,
+      "text": "诊所会告诉您伤口复查和耳部检查的日期。",
       "beat": "beat/milestones",
       "first_word": 9,
       "word_count": 12
     },
     {
       "id": "cue-03",
-      "start": 10.7,
-      "end": 14.3,
+      "start": 11.5,
+      "end": 15.5,
       "text": "缝线会自己溶解，所以不需要拆线。",
       "beat": "beat/milestones",
       "first_word": 21,
@@ -361,8 +361,8 @@
     },
     {
       "id": "cue-04",
-      "start": 14.9,
-      "end": 18.1,
+      "start": 16.1,
+      "end": 19.3,
       "text": "请按照处方服用抗生素。",
       "beat": "beat/medication-antibiotic",
       "first_word": 30,
@@ -370,18 +370,18 @@
     },
     {
       "id": "cue-05",
-      "start": 18.1,
-      "end": 20.66,
+      "start": 19.3,
+      "end": 21.86,
       "text": "抗生素可以帮助预防感染。",
       "beat": "beat/medication-antibiotic",
       "first_word": 35,
       "word_count": 5
     }
   ],
-  "narration_seconds": 18.56,
-  "duration_seconds": 21.56,
+  "narration_seconds": 19.76,
+  "duration_seconds": 22.76,
   "source_records": {
-    "milestones": "f244c1f189680cc734f15ff6eddba0426145aeaa39fbfbb2790a3b40efda90f7",
+    "milestones": "619b68bd649952b35504be5558bf8d117927959beffd5c55fbf19d4879b314a7",
     "medication-antibiotic": "8de7fb976b2a623d7e4fb6aa5ddf66c1fe9c3382f1bdb5a4aa8da313a9ca8121"
   }
 }

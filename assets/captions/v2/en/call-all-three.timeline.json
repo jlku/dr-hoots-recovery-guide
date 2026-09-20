@@ -27,243 +27,257 @@
         "call.01c"
       ],
       "start": 1.5,
-      "end": 12.54,
-      "speech_seconds": 11.04,
-      "record_id": "call-three-signs",
-      "manifest": "assets/audio/draft/manifest.json",
-      "source_audio": "assets/audio/draft/call-three-signs.mp3",
-      "text": "Call your surgeon or clinic if all three of these are true: the incision is red and swollen, it is not getting better over one to two days, and it hurts when touched."
+      "end": 14.86,
+      "speech_seconds": 13.36,
+      "record_id": "three-signs",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/three-signs.mp3",
+      "text": "Call your surgeon or clinic staff if all three signs below are present. The incision is red and swollen. It does not get better over the next one to two days. It hurts when touched."
     }
   ],
   "words": [
     {
       "text": "Call",
       "start": 1.5,
-      "end": 1.66,
+      "end": 1.74,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "your",
-      "start": 1.708,
+      "start": 1.772,
       "end": 1.9,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "surgeon",
-      "start": 1.96,
-      "end": 2.38,
+      "start": 1.97,
+      "end": 2.46,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "or",
-      "start": 2.433,
-      "end": 2.54,
+      "start": 2.513,
+      "end": 2.62,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "clinic",
-      "start": 2.609,
+      "start": 2.677,
       "end": 3.02,
       "beat": "beat/three-signs",
       "space": true
     },
     {
+      "text": "staff",
+      "start": 3.1,
+      "end": 3.5,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
       "text": "if",
-      "start": 3.127,
-      "end": 3.34,
+      "start": 3.633,
+      "end": 3.9,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "all",
-      "start": 3.4,
-      "end": 3.58,
+      "start": 3.98,
+      "end": 4.22,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "three",
-      "start": 3.62,
-      "end": 3.82,
+      "start": 4.247,
+      "end": 4.38,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "of",
-      "start": 3.873,
-      "end": 3.98,
+      "text": "signs",
+      "start": 4.46,
+      "end": 4.86,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "these",
-      "start": 4.007,
-      "end": 4.14,
+      "text": "below",
+      "start": 4.913,
+      "end": 5.18,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "are",
-      "start": 4.18,
-      "end": 4.3,
+      "start": 5.22,
+      "end": 5.34,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "true:",
-      "start": 4.38,
-      "end": 4.78,
+      "text": "present.",
+      "start": 5.39,
+      "end": 5.9,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "the",
-      "start": 5,
-      "end": 5.66,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "incision",
-      "start": 5.74,
-      "end": 6.22,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "is",
-      "start": 6.273,
-      "end": 6.38,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "red",
-      "start": 6.46,
-      "end": 6.7,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "and",
-      "start": 6.74,
+      "text": "The",
+      "start": 6.14,
       "end": 6.86,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "swollen,",
-      "start": 6.93,
-      "end": 8.06,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "it",
-      "start": 8.113,
-      "end": 8.22,
+      "text": "incision",
+      "start": 6.94,
+      "end": 7.42,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "is",
-      "start": 8.247,
-      "end": 8.3,
+      "start": 7.5,
+      "end": 7.66,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "not",
-      "start": 8.36,
-      "end": 8.54,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "getting",
-      "start": 8.58,
-      "end": 8.86,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "better",
-      "start": 8.917,
-      "end": 9.26,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "over",
-      "start": 9.308,
-      "end": 9.5,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "one",
-      "start": 9.54,
-      "end": 9.66,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "to",
-      "start": 9.74,
-      "end": 9.9,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "two",
-      "start": 9.94,
-      "end": 10.06,
-      "beat": "beat/three-signs",
-      "space": true
-    },
-    {
-      "text": "days,",
-      "start": 10.156,
-      "end": 11.1,
+      "text": "red",
+      "start": 7.76,
+      "end": 8.06,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "and",
-      "start": 11.12,
-      "end": 11.18,
+      "start": 8.1,
+      "end": 8.22,
       "beat": "beat/three-signs",
       "space": true
     },
     {
-      "text": "it",
-      "start": 11.233,
+      "text": "swollen.",
+      "start": 8.29,
+      "end": 8.86,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "It",
+      "start": 9.153,
+      "end": 9.74,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "does",
+      "start": 9.772,
+      "end": 9.9,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "not",
+      "start": 9.96,
+      "end": 10.14,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "get",
+      "start": 10.2,
+      "end": 10.38,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "better",
+      "start": 10.426,
+      "end": 10.7,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "over",
+      "start": 10.748,
+      "end": 10.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 10.96,
+      "end": 11.02,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "next",
+      "start": 11.084,
       "end": 11.34,
       "beat": "beat/three-signs",
       "space": true
     },
     {
+      "text": "one",
+      "start": 11.42,
+      "end": 11.66,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "to",
+      "start": 11.74,
+      "end": 11.9,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "two",
+      "start": 11.94,
+      "end": 12.06,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "days.",
+      "start": 12.156,
+      "end": 12.62,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "It",
+      "start": 12.94,
+      "end": 13.58,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
       "text": "hurts",
-      "start": 11.407,
-      "end": 11.74,
+      "start": 13.66,
+      "end": 14.06,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "when",
-      "start": 11.788,
-      "end": 11.98,
+      "start": 14.092,
+      "end": 14.22,
       "beat": "beat/three-signs",
       "space": true
     },
     {
       "text": "touched.",
-      "start": 12.04,
-      "end": 12.54,
+      "start": 14.29,
+      "end": 14.86,
       "beat": "beat/three-signs",
       "space": false
     }
@@ -272,52 +286,61 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.82,
-      "text": "Call your surgeon or clinic if all three",
+      "end": 4.86,
+      "text": "Call your surgeon or clinic staff if all three signs",
       "beat": "beat/three-signs",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 10
     },
     {
       "id": "cue-02",
-      "start": 3.873,
-      "end": 4.78,
-      "text": "of these are true:",
+      "start": 4.913,
+      "end": 5.9,
+      "text": "below are present.",
       "beat": "beat/three-signs",
-      "first_word": 8,
-      "word_count": 4
+      "first_word": 10,
+      "word_count": 3
     },
     {
       "id": "cue-03",
-      "start": 5,
-      "end": 8.06,
-      "text": "the incision is red and swollen,",
+      "start": 6.14,
+      "end": 8.86,
+      "text": "The incision is red and swollen.",
       "beat": "beat/three-signs",
-      "first_word": 12,
+      "first_word": 13,
       "word_count": 6
     },
     {
       "id": "cue-04",
-      "start": 8.113,
-      "end": 11.1,
-      "text": "it is not getting better over one to two days,",
+      "start": 9.153,
+      "end": 10.7,
+      "text": "It does not get better",
       "beat": "beat/three-signs",
-      "first_word": 18,
-      "word_count": 10
+      "first_word": 19,
+      "word_count": 5
     },
     {
       "id": "cue-05",
-      "start": 11.12,
-      "end": 12.54,
-      "text": "and it hurts when touched.",
+      "start": 10.748,
+      "end": 12.62,
+      "text": "over the next one to two days.",
       "beat": "beat/three-signs",
-      "first_word": 28,
-      "word_count": 5
+      "first_word": 24,
+      "word_count": 7
+    },
+    {
+      "id": "cue-06",
+      "start": 12.94,
+      "end": 14.86,
+      "text": "It hurts when touched.",
+      "beat": "beat/three-signs",
+      "first_word": 31,
+      "word_count": 4
     }
   ],
-  "narration_seconds": 11.04,
-  "duration_seconds": 13.44,
+  "narration_seconds": 13.36,
+  "duration_seconds": 15.76,
   "source_records": {
-    "call-three-signs": "eb502417fbadbc834b4c8aa1495a8f09c87c78d6cef9559a90dec2f70852f299"
+    "three-signs": "d4cdd95ee39c6ad5ad03eb50784fa3b96b9a38065b5d5cae9045d56bce7394a4"
   }
 }

@@ -3,11 +3,11 @@ import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { MEDIA_INDEX_PATH, buildMediaIndex, buildMediaPlan, serializeJson } from "./build-segment-media.mjs";
-import { loadLanguagePacks } from "./lib/language-packs.mjs";
+import { canonicalSentenceText, loadLanguagePacks } from "./lib/language-packs.mjs";
 import { CUE_CHARACTERS, HANGING as HANGING_WORDS } from "./lib/segment-timeline.mjs";
 import { isSpacelessLanguage } from "./lib/narration-timing.mjs";
 import { loadSegmentBundle, segmentNarrationSeconds, validateSegments } from "./lib/segments.mjs";
-import { validateTranslatedNarration } from "./lib/v2-narration.mjs";
+import { validateNarrationText } from "./lib/v2-narration.mjs";
 
 const repositoryRoot = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 
@@ -60,8 +60,9 @@ async function main() {
   const bundle = await loadSegmentBundle(repositoryRoot);
   const result = validateSegments(bundle);
   const errors = [...result.errors];
-  const packs = (await loadLanguagePacks(repositoryRoot)).map((entry) => entry.pack);
-  errors.push(...validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs }));
+  // The English "pack" is the canonical text itself, so a canonical edit fails until the recording follows.
+  const packs = [...(await loadLanguagePacks(repositoryRoot)).map((entry) => entry.pack).filter((pack) => pack.language !== "en"), { language: "en", sentences: Object.fromEntries(canonicalSentenceText(bundle.canonical)) }];
+  errors.push(...validateNarrationText({ segments: bundle.segments, records: bundle.records, packs }));
   errors.push(...captionShapeErrors(buildMediaPlan(bundle)));
   if (result.valid && checkMedia) errors.push(...(await checkCommittedMedia(bundle, repositoryRoot)));
   const languages = [...new Set(bundle.segments.segments.flatMap((segment) => segment.beats).flatMap((beat) => Object.keys(beat.narration ?? {})))].sort();

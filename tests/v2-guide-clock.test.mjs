@@ -28,10 +28,11 @@ test("sentences are cut at terminal punctuation and never cross a beat", () => {
 
 test("a decimal inside a number does not end a sentence", () => {
   const sentences = sentenceSpans(numbers);
-  assert.equal(sentences.length, 3);
-  assert.ok(sentences[0].text.endsWith("415-353-2148."));
-  assert.ok(sentences[1].text.endsWith("call again."));
-  assert.ok(sentences[2].text.endsWith("on call."));
+  assert.equal(sentences.length, 4);
+  assert.ok(sentences[0].text.endsWith("415-353-2148."), sentences[0].text);
+  assert.ok(sentences[1].text.endsWith("call within 12 hours."), sentences[1].text);
+  assert.ok(sentences[2].text.endsWith("call again."), sentences[2].text);
+  assert.ok(sentences[3].text.endsWith("on call."), sentences[3].text);
 });
 
 test("the active sentence is the last one that has started", () => {

@@ -4,7 +4,7 @@
   "script": "Hans",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "ai_reviewed",
+  "status": "machine_draft",
   "patient_use": false,
   "notice": "未经核实——不得用于患者",
   "sentences": {
@@ -16,7 +16,7 @@
     "wc.06": "用等量的双氧水和蒸馏水混合成的液体。",
     "wc.07": "然后涂上非处方的抗生素药膏，例如杆菌肽（bacitracin）。",
     "wc.08": "手术三天后，您可以淋浴和洗头。",
-    "wc.09": "伤口复查和耳部检查大约在手术后两周。",
+    "wc.09": "诊所会告诉您伤口复查和耳部检查的日期。",
     "wc.10": "缝线会自己溶解，所以不需要拆线。",
     "med.01": "请按照处方服用抗生素。",
     "med.02": "抗生素可以帮助预防感染。",
@@ -109,13 +109,9 @@
     "ui.reviewed_by_clinician": "医护人员已审核"
   },
   "review": {
-    "kind": "ai",
-    "label": "经人工智能（Claude）审核，并非认证医学翻译",
+    "kind": "none",
+    "label": "机器翻译草稿，尚未审核",
     "date": "2026-09-19",
-    "receipts": [
-      "content/reviews/zh/eed5fa9312c3683a.json",
-      "content/reviews/zh/eed5fa9312c3683a.2.json",
-      "content/reviews/zh/eed5fa9312c3683a.3.json"
-    ]
+    "receipts": []
   }
 }

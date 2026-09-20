@@ -83,8 +83,8 @@ test("time formats as minutes and seconds", () => {
 
 test("phrases resolve to the start of their first word, ignoring case and punctuation", () => {
   const words = timeline.words;
-  assert.equal(phraseTime(words, "remove the head bandage"), words.find((word) => word.text === "remove").start);
-  assert.equal(phraseTime(words, "Then check:"), words.find((word) => word.text === "Then").start);
+  assert.equal(phraseTime(words, "remove the mastoid dressing"), words.find((word) => word.text === "remove").start);
+  assert.equal(phraseTime(words, "Next, check"), words.find((word) => word.text === "Next,").start);
   assert.equal(phraseTime(words, "not in the narration"), null);
   assert.equal(phraseTime(words, ""), null);
 });
