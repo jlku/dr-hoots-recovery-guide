@@ -108,6 +108,11 @@ export function parseProviderBlock(text) {
   const unclear = {};
   let reviewed = null;
   let previous = null;
+  // Whether the line a continuation would attach to is one the page shows back. A driving line is a
+  // value, not a sentence any list renders, so text appended to it used to disappear from the page
+  // entirely: an indented "do not take ibuprofen or any NSAID for 10 days" under "Antibiotic: Yes"
+  // appeared in no list at all. Nothing the clinician wrote may vanish.
+  let previousShown = false;
   for (const raw of String(text ?? "").split(/\r?\n/)) {
     const line = raw.trim();
     if (!line) continue;
@@ -115,7 +120,15 @@ export function parseProviderBlock(text) {
     const leadKey = match ? match[1].toLowerCase().replace(/[\s-]+/g, " ").trim() : null;
     // An indented line continues the line above it, unless it names one of the driving lines.
     if (/^\s/.test(raw) && previous && !(leadKey && fieldFor(leadKey))) {
-      previous.text = `${previous.text} ${line}`;
+      if (previousShown) {
+        previous.text = `${previous.text} ${line}`;
+        continue;
+      }
+      // Under a driving line it stands on its own and the classifier decides what it is. A dose read
+      // as an instruction is noise; an instruction read as nothing is how a warning disappeared.
+      previous = { key: null, text: line };
+      previousShown = true;
+      other.push(previous);
       continue;
     }
     const reviewedAt = line.search(/reviewed by/i);
@@ -135,8 +148,10 @@ export function parseProviderBlock(text) {
         unclear[field] = line;
       }
       previous = { key, text: line };
+      previousShown = false;
     } else if (reviewedAt !== 0) {
       previous = { key, text: line };
+      previousShown = true;
       other.push(previous);
     }
     if (reviewedAt >= 0) {

@@ -166,3 +166,26 @@ test("editing a value keeps the note's margin, so the chart entry survives the e
   assert.equal(out[1], block.split("\n")[1], "the indented half of the note is untouched, not orphaned");
   assert.equal(out[2], "Video guide: language English    Reviewed by Song on 09/17/2026");
 });
+
+test("nothing the clinician wrote disappears: a continuation under a driving line becomes a line of its own", () => {
+  // A driving line is a value, not a sentence any list renders, so text appended to it used to vanish
+  // from the page: it was in the textarea and in no review list. This is the NSAID warning both
+  // walkthrough users asked for, and it disappeared without a word.
+  const parsed = parseProviderBlock(["Antibiotic: Yes", "  IMPORTANT: do not take ibuprofen or any NSAID for 10 days", "Shower: you may shower 3 days after surgery"].join("\n"));
+  assert.deepEqual(parsed.other.map((entry) => entry.text), [
+    "IMPORTANT: do not take ibuprofen or any NSAID for 10 days",
+    "Shower: you may shower 3 days after surgery"
+  ], "the warning is a line of its own, so the page can say the guide will not carry it");
+  assert.equal(parsed.fields.antibiotic, true, "the driving line still reads");
+
+  const wrapped = parseProviderBlock(["Shower: you may shower and wash your hair", "  three days after surgery"].join("\n"));
+  assert.deepEqual(wrapped.other.map((entry) => entry.text), ["Shower: you may shower and wash your hair three days after surgery"], "an ordinary wrapped line still joins the line above it");
+
+  const everyLine = (block) => {
+    const result = parseProviderBlock(block);
+    return [...result.other.map((entry) => entry.text), ...result.unread].join(" ");
+  };
+  for (const tail of ["do not lift more than 10 pounds for 2 weeks", "cephalexin 500 mg three times daily", "call if you have a fever over 101.5"]) {
+    assert.match(everyLine(["Pain medication: Yes", `  ${tail}`].join("\n")), new RegExp(tail.slice(0, 20).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `"${tail}" must appear somewhere the clinician can see it`);
+  }
+});

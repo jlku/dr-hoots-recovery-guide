@@ -1,0 +1,15 @@
+.CIPOSTOPINSTR
+Procedure: Cochlear implantation, {Left/Right:12345} ear
+Date of surgery: ***
+Surgeon: ***
+Wound care: Mastoid dressing removed POD #2. Steri-strips remain until they fall off.
+Hair washing: May shampoo on POD #3.
+Abx: {Yes/No:33} - *** mg *** for *** days
+Analgesia: {Narcotic/Tylenol only:9} ***
+NSAIDs: Avoid x *** days
+Activity restrictions: No lifting > *** lbs x *** weeks. No nose blowing. No swimming until cleared.
+RTC: wound check *** ; activation ***
+Precautions: No MRI without implant team clearance. Avoid contact sports.
+Call clinic for: fever > 101.5, purulent drainage, expanding erythema, severe vertigo, facial weakness.
+Clinic phone: ***
+Instructions reviewed with patient and family, questions answered. Reviewed by *** on ***
