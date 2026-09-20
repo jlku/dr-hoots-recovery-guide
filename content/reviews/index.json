@@ -46,12 +46,12 @@
     "song": {
       "status": "reviewed",
       "label": "Simulated Song review (AI), not Song's approval",
-      "date": "2026-09-19",
-      "target": "5483ae0efab75982dff2ca2d54818ff07ec2194c5c7773d4f098ed5a6dedfb99",
+      "date": "2026-09-20",
+      "target": "b529d490a7249545aae46963e50cab753607c00c7c8b196bd4d37b69ec1916be",
       "receipts": [
-        "content/reviews/song/5483ae0efab75982.json",
-        "content/reviews/song/5483ae0efab75982.2.json",
-        "content/reviews/song/5483ae0efab75982.3.json"
+        "content/reviews/song/b529d490a7249545.json",
+        "content/reviews/song/b529d490a7249545.2.json",
+        "content/reviews/song/b529d490a7249545.3.json"
       ]
     }
   }
