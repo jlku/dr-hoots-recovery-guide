@@ -17,7 +17,7 @@
     {
       "module_id": "ci/wound-care",
       "module_version": "0.1.0",
-      "content_sha256": "b49fe71c58551be16da5291d35d5433319bb929553e50294cfa4eee13e0deeb9",
+      "content_sha256": "fd0e737b5bb512dd67dc781ec30135d27769be581ab5e60a2a0f7d1c360790c1",
       "sentence_ids": [
         "wc.01",
         "wc.02",
@@ -187,6 +187,7 @@
         "wc.10"
       ],
       "source_claim_ids": [
+        "practice.follow-up.clinic-gives-date",
         "surgery.wound-check.two-weeks",
         "surgery.sutures.dissolvable"
       ],
@@ -196,6 +197,7 @@
         "renderable": false,
         "review_status": "blocked_pending_surgeon_review",
         "source_claim_ids": [
+          "practice.follow-up.clinic-gives-date",
           "surgery.wound-check.two-weeks",
           "surgery.sutures.dissolvable"
         ],
@@ -1060,5 +1062,5 @@
       }
     }
   },
-  "projection_sha256": "7cbe62b6ad5d10ee8c7422c75cf7ba886a774374549df8fc3a666ceffb6146d1"
+  "projection_sha256": "11fd07430346aa99375891ae34a6a180839f9c40a28b58d5e40c6e7ef1df6cd2"
 }
