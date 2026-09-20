@@ -46,7 +46,7 @@ const LABELS = { antibiotic: "Antibiotic", pain_medication: "Pain medication", f
 const MEDICATION_SENTENCE = { antibiotic: "med.01", pain_medication: "med.03" };
 const NO_WORDING = { antibiotic: "antibiotic", pain_medication: "prescription pain medicine" };
 
-const [{ presets }, lineMap, canonical, segmentFile, templateText] = await Promise.all([
+const [presetFile, lineMap, canonical, segmentFile, templateText] = await Promise.all([
   fetchJson("content/provider/presets.json"),
   fetchJson("content/provider/template-lines.json"),
   fetchJson("content/canonical/ci-phase0-v0.1.0.json"),
@@ -56,6 +56,9 @@ const [{ presets }, lineMap, canonical, segmentFile, templateText] = await Promi
 const sentences = canonicalSentences(canonical);
 const chapterOf = new Map(segmentFile.segments.flatMap((segment) => segment.beats.flatMap((beat) => (beat.sentence_ids ?? []).map((id) => [id, segment.number]))));
 const template = parseProviderBlock(templateText).other;
+const presets = presetFile.presets;
+// Until a clinic approves them these are offers, never answers. See content/provider/presets.json.
+const presetsApproved = presetFile.approved === true;
 const covered = coveredSentences(lineMap);
 
 function element(tag, props = {}, ...children) {
@@ -104,18 +107,29 @@ function yesNo(field, value, disabled) {
   return group;
 }
 
-function medicationRow(field, parsed, values, fromPresets) {
-  const needsChoice = parsed.needs_choice.includes(field);
+// The clinic's unapproved default, offered by name instead of applied in silence.
+function offerButton(field, label) {
+  const button = element("button", { type: "button", className: "row-offer", textContent: label });
+  button.dataset.focus = `offer-${field}`;
+  button.addEventListener("click", () => apply(field, presets[field]));
+  return button;
+}
+
+function medicationRow(field, parsed, values, fromPresets, unauthored) {
+  const needsChoice = parsed.needs_choice.includes(field) || unauthored.includes(field);
   const value = needsChoice ? null : values[field];
   const notes = [];
   const conflict = parsed.conflicts.find((entry) => entry.field === field);
   if (conflict) notes.push(`Your block says both ${conflict.lines.map((line) => `"${line}"`).join(" and ")}. Choose one.`);
-  else if (needsChoice) notes.push(`This page cannot read "${parsed.unclear[field]}" as a yes or a no. Choose one.`);
+  else if (parsed.unclear[field]) notes.push(`This page cannot read "${parsed.unclear[field]}" as a yes or a no. Choose one.`);
+  else if (unauthored.includes(field)) notes.push(`Your note says nothing about this, so this page will not guess. Your clinic's draft default is ${presets[field] ? "Yes" : "No"}, and nobody has confirmed it yet.`);
   if (value === true) notes.push(`The guide says: "${sentences.get(MEDICATION_SENTENCE[field])}"`);
   else if (value === false) notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}, and says nothing about it until your clinic gives us that wording.`);
   if (value !== null && parsed.details[field]) notes.push({ text: `Not shown to the patient: "${parsed.details[field]}". It stays in your note.`, notInGuide: true });
   const from = needsChoice ? "Choose one" : fromPresets.includes(field) ? "preset" : "your block";
-  return row(field, yesNo(field, value, false), from, notes, needsChoice);
+  const control = element("div", { className: "row-control" }, yesNo(field, value, false));
+  if (unauthored.includes(field)) control.append(offerButton(field, `Use the draft default (${presets[field] ? "Yes" : "No"})`));
+  return row(field, control, from, notes, needsChoice);
 }
 
 function followUpRow(values, fromPresets, language, parsed) {
@@ -142,14 +156,21 @@ function followUpRow(values, fromPresets, language, parsed) {
   return row("follow_up_date", wrap, fromPresets.includes("follow_up_date") ? "preset" : "your block", notes, false);
 }
 
-function languageRow(values, fromPresets, needsChoice) {
+function languageRow(values, fromPresets, needsChoice, unauthored) {
   const select = element("select", { className: "row-input" });
   select.setAttribute("aria-label", "Guide language");
   select.dataset.focus = "language";
   for (const language of LANGUAGES) select.append(element("option", { value: language.code, textContent: language.label, selected: language.code === values.language && !needsChoice }));
   if (needsChoice) select.prepend(element("option", { value: "", textContent: "Choose a language", selected: true, disabled: true }));
   select.addEventListener("change", () => apply("language", select.value));
-  return row("language", select, needsChoice ? "Choose one" : fromPresets.includes("language") ? "preset" : "your block", needsChoice ? ["Your block names a language this page cannot read. Choose one."] : [], needsChoice);
+  const wrap = element("div", { className: "row-control" }, select);
+  const notes = [];
+  if (needsChoice && !unauthored) notes.push("Your block names a language this page cannot read. Choose one.");
+  if (unauthored) {
+    notes.push("Your note does not say which language this patient reads, so this page will not guess.");
+    wrap.append(offerButton("language", "Use the draft default (English)"));
+  }
+  return row("language", wrap, needsChoice || unauthored ? "Choose one" : fromPresets.includes("language") ? "preset" : "your block", notes, needsChoice || unauthored);
 }
 
 function reviewedRow(reviewed) {
@@ -219,12 +240,12 @@ function render() {
   dom.newPatient.hidden = text.trim() === "";
   const focusKey = document.activeElement?.dataset?.focus;
   const parsed = parseProviderBlock(text);
-  const { values, from_presets: fromPresets } = applyPresets(parsed.fields, presets);
+  const { values, from_presets: fromPresets, unauthored } = applyPresets(parsed.fields, presets, { approved: presetsApproved });
   dom.rows.replaceChildren(
-    medicationRow("antibiotic", parsed, values, fromPresets),
-    medicationRow("pain_medication", parsed, values, fromPresets),
+    medicationRow("antibiotic", parsed, values, fromPresets, unauthored),
+    medicationRow("pain_medication", parsed, values, fromPresets, unauthored),
     followUpRow(values, fromPresets, values.language, parsed),
-    languageRow(values, fromPresets, parsed.needs_choice.includes("language")),
+    languageRow(values, fromPresets, parsed.needs_choice.includes("language"), unauthored.includes("language")),
     reviewedRow(parsed.fields.reviewed)
   );
   if (focusKey) dom.rows.querySelector(`[data-focus="${focusKey}"]`)?.focus();
@@ -265,7 +286,9 @@ function render() {
   dom.ack.dataset.signature = signature;
   dom.ack.checked = signature !== "" && signature === acknowledged;
 
-  const pending = FIELD_ORDER.filter((field) => parsed.needs_choice.includes(field)).map((field) => LABELS[field]);
+  // A value with no author blocks the link exactly as an unreadable one does: absence, mislabelling and
+  // unreadability are one object, because the patient cannot tell them apart.
+  const pending = FIELD_ORDER.filter((field) => parsed.needs_choice.includes(field) || unauthored.includes(field)).map((field) => LABELS[field]);
   const blocked = pending.length
     ? `Choose ${pending.join(" and ")} in the table before you send a link.`
     : contradictions.length && signature !== acknowledged

@@ -44,14 +44,14 @@ test("the block reads only its five driving lines, lists what it could not read,
   assert.deepEqual(parsed.unread, ["Pain medication: {Yes: *** / No: acetaminophen as needed}"]);
   assert.deepEqual(parsed.other.map((entry) => entry.key), [null, "surgery date"]);
   assert.deepEqual(parsed.needs_choice, ["pain_medication"], "an unfilled template line is still a choice the provider has not made");
-  const merged = applyPresets(parsed.fields, presets);
+  const merged = applyPresets(parsed.fields, presets, { approved: true });
   assert.equal(merged.values.pain_medication, true);
   assert.deepEqual(merged.from_presets, ["pain_medication"]);
   assert.equal(buildPatientLink(merged.values), "guide/index.html#a=0&p=1&f=2026-10-01&l=es", "the reviewer stays in the note: the guide shows no reviewer line, so the link carries no review date");
 });
 
-test("the link carries no names, and an empty block is all presets", () => {
-  const merged = applyPresets(parseProviderBlock("").fields, presets);
+test("the link carries no names, and an empty block is all presets once a clinic approves them", () => {
+  const merged = applyPresets(parseProviderBlock("").fields, presets, { approved: true });
   assert.deepEqual([...merged.from_presets].sort(), ["antibiotic", "follow_up_date", "language", "pain_medication"]);
   assert.equal(buildPatientLink(merged.values), "guide/index.html#a=1&p=1&l=en");
   const named = buildPatientLink({ ...merged.values, reviewed: { by: "Song Lee", date: "2026-09-17" } });
@@ -69,7 +69,7 @@ test("the spec's unfilled draft block reads as all presets, with its unchosen li
   assert.deepEqual(parsed.fields, {});
   assert.equal(parsed.unread.length, 4);
   assert.deepEqual(parsed.needs_choice, ["antibiotic", "pain_medication", "follow_up_date", "language"], "the draft's own lines are choices, not presets");
-  assert.equal(buildPatientLink(applyPresets(parsed.fields, presets).values), "guide/index.html#a=1&p=1&l=en", "presets still answer a block that leaves the line out");
+  assert.equal(buildPatientLink(applyPresets(parsed.fields, presets, { approved: true }).values), "guide/index.html#a=1&p=1&l=en", "an approved preset still answers a block that leaves the line out");
 });
 
 test("the words a clinician would type for the five driving lines are read", () => {
@@ -188,4 +188,20 @@ test("nothing the clinician wrote disappears: a continuation under a driving lin
   for (const tail of ["do not lift more than 10 pounds for 2 weeks", "cephalexin 500 mg three times daily", "call if you have a fever over 101.5"]) {
     assert.match(everyLine(["Pain medication: Yes", `  ${tail}`].join("\n")), new RegExp(tail.slice(0, 20).replace(/[.*+?^${}()|[\]\\]/g, "\\$&")), `"${tail}" must appear somewhere the clinician can see it`);
   }
+});
+
+test("an unapproved preset is an offer, not an answer: silence never becomes speech", () => {
+  // content/provider/presets.json is status placeholder_for_song, patient_use false. Until a clinic
+  // approves it, a line the block leaves out has no author, and a value with no author may not reach a
+  // patient. A prose note whose own words were "We did not send you home on an antibiotic" used to
+  // produce a=1 from that file.
+  const empty = applyPresets(parseProviderBlock("").fields, presets, { approved: false });
+  assert.deepEqual(empty.unauthored, ["antibiotic", "pain_medication", "language"], "each substantive default needs an author");
+  assert.deepEqual(empty.from_presets, ["follow_up_date"], "a preset of null asserts nothing, so it needs none");
+  assert.equal("antibiotic" in empty.values, false, "and no value is invented for the ones that do");
+  assert.throws(() => buildPatientLink(empty.values), /antibiotic has no value/, "a link cannot be built past the gate");
+
+  const answered = applyPresets(parseProviderBlock("Antibiotic: No\nPain medication: Yes\nVideo guide: language Spanish").fields, presets, { approved: false });
+  assert.deepEqual(answered.unauthored, [], "a block that answers them needs nothing");
+  assert.equal(buildPatientLink(answered.values), "guide/index.html#a=0&p=1&l=es");
 });

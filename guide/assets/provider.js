@@ -2,8 +2,9 @@
 // Reads the provider's dot-phrase block. Pure functions shared by the provider page and the tests.
 // Only five lines drive the guide; every other line stays in the provider's note and is listed by name.
 // A driving line that is present but unresolved, whether unreadable or an unfilled template list, needs
-// a choice; so do two lines that disagree. A yes or a no is never guessed. Leaving the line out of the
-// block is how a preset applies.
+// a choice; so do two lines that disagree. A yes or a no is never guessed. Leaving the line out asks the
+// same question: until a clinic approves its presets, an absent line has no author and no value, and the
+// page offers the draft default by name rather than applying it in silence.
 
 const LANGUAGE_NAMES = [
   [/^(english|inglés|ingles|英文|英语)$/iu, "en"],
@@ -175,21 +176,35 @@ export function parseProviderBlock(text) {
   return { fields, unread: [...new Set(unread)], unfilled, unclear, other, details, conflicts, needs_choice: FIELD_ORDER.filter((field) => needsChoice.has(field)) };
 }
 
-export function applyPresets(fields, presets) {
+// A preset answers a line the block leaves out — but only once a clinic has approved it. Until then the
+// page may offer it in one click and may not apply it silently: a value nobody authored must never become
+// a sentence a patient hears. A prose note whose own words were "We did not send you home on an
+// antibiotic" used to produce a=1 from this file, because saying nothing and saying no looked the same.
+// A preset of null asserts nothing, so it needs no author.
+export function applyPresets(fields, presets, { approved = true } = {}) {
   const values = { ...fields };
   const fromPresets = [];
+  const unauthored = [];
   for (const key of ["antibiotic", "pain_medication", "language", "follow_up_date"]) {
-    if (!(key in fields)) {
-      values[key] = presets[key];
-      fromPresets.push(key);
+    if (key in fields) continue;
+    if (!approved && presets[key] !== null) {
+      unauthored.push(key);
+      continue;
     }
+    values[key] = presets[key];
+    fromPresets.push(key);
   }
-  return { values, from_presets: fromPresets };
+  return { values, from_presets: fromPresets, unauthored, offers: presets };
 }
 
 // Parameters live in the fragment, so nothing patient-specific reaches a server log. The only date
 // is the clinic appointment; a reviewer's name never enters the link.
 export function buildPatientLink(values, base = "guide/index.html") {
+  // A missing value is not a no. Coercing one would turn "this page found nothing" into "the patient was
+  // prescribed nothing", which is the same sentence to the patient and the opposite fact.
+  for (const key of ["antibiotic", "pain_medication", "language"]) {
+    if (values[key] === undefined || values[key] === null) throw new Error(`buildPatientLink: ${key} has no value; a link may not be built from a value nobody authored`);
+  }
   const params = new URLSearchParams();
   params.set("a", values.antibiotic ? "1" : "0");
   params.set("p", values.pain_medication ? "1" : "0");

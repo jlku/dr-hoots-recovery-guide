@@ -13,7 +13,8 @@ const corpus = [];
 for (const name of (await readdir(resolve(root, "qa/import"))).filter((file) => file.endsWith(".txt")).sort()) {
   corpus.push({ name, text: await readFile(resolve(root, "qa/import", name), "utf8") });
 }
-const presets = JSON.parse(await readFile(resolve(root, "content/provider/presets.json"), "utf8")).presets;
+const presetFile = JSON.parse(await readFile(resolve(root, "content/provider/presets.json"), "utf8"));
+const presets = presetFile.presets;
 const lineMap = JSON.parse(await readFile(resolve(root, "content/provider/template-lines.json"), "utf8"));
 const covered = coveredSentences(lineMap);
 const template = parseProviderBlock(await readFile(resolve(root, "content/provider/dot-phrase-draft.txt"), "utf8")).other;
@@ -53,7 +54,7 @@ test("every note in the corpus parses without throwing, and classifies every lin
 // The rest of this file is characterisation, not approval. It records what the page does today with a
 // real practice's note so that changing it is a deliberate decision and not a surprise. Each assertion
 // that describes a hazard says so.
-test("HAZARD, recorded: a note that says the patient got no antibiotic still sends a=1, from a placeholder", () => {
+test("a note that says the patient got no antibiotic no longer sends a=1", () => {
   const prose = corpus.find((entry) => entry.name === "s1-prose.txt").text;
   assert.match(prose, /did not send you home on an antibiotic/, "the clinician's own words say no antibiotic");
 
@@ -61,10 +62,15 @@ test("HAZARD, recorded: a note that says the patient got no antibiotic still sen
   assert.deepEqual(parsed.fields, {}, "the parser reads nothing at all from unlabelled prose");
   assert.deepEqual(parsed.needs_choice, [], "and nothing about that absence asks the clinician to choose");
 
-  const { values, from_presets: fromPresets } = applyPresets(parsed.fields, presets);
-  assert.deepEqual([...fromPresets].sort(), [...FIELD_ORDER].sort(), "every driving value comes from the preset file");
-  assert.equal(values.antibiotic, true);
-  assert.match(buildPatientLink(values), /a=1/, "so the patient is told to take an antibiotic they were never prescribed");
+  // Fixed: the preset file is unapproved, so absence now has no author and the link is not built.
+  const gated = applyPresets(parsed.fields, presets, { approved: presetFile.approved === true });
+  assert.deepEqual([...gated.unauthored].sort(), ["antibiotic", "language", "pain_medication"], "the page asks instead of guessing");
+  assert.throws(() => buildPatientLink(gated.values), /has no value/, "and no link can be built from what nobody authored");
+
+  // What it used to do, kept so the regression is named: approve the placeholders and a=1 comes back.
+  const ungated = applyPresets(parsed.fields, presets, { approved: true });
+  assert.deepEqual([...ungated.from_presets].sort(), [...FIELD_ORDER].sort());
+  assert.match(buildPatientLink(ungated.values), /a=1/, "an approved preset would still speak for a silent note");
 });
 
 test("HAZARD, recorded: one extra word in a label decides whether the page blocks or guesses", () => {
