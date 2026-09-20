@@ -4,12 +4,13 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { applyPresets, buildPatientLink, lineStatuses, missingFromBlock, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine } from "../guide/assets/provider.js";
+import { applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine } from "../guide/assets/provider.js";
 
 const root = resolve(import.meta.dirname, "..");
 const presets = JSON.parse(await readFile(resolve(root, "content/provider/presets.json"), "utf8")).presets;
 const draftText = await readFile(resolve(root, "content/provider/dot-phrase-draft.txt"), "utf8");
 const lineMap = JSON.parse(await readFile(resolve(root, "content/provider/template-lines.json"), "utf8"));
+const covered = coveredSentences(lineMap);
 
 test("yes and no parse tolerantly, and an unchosen Epic list is never guessed", () => {
   for (const text of ["yes", "Y", "Yes: amoxicillin 500 mg for 7 days", "{Yes}", "yes."]) assert.equal(parseYesNo(text), true, text);
@@ -114,13 +115,13 @@ test("each line the guide does not use says whether the guide covers it and whet
     "Activity: no lifting over 10 lb for 2 weeks",
     "Driving: no driving until cleared"
   ].join("\n");
-  const statuses = lineStatuses(parseProviderBlock(block).other, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
+  const statuses = lineStatuses(parseProviderBlock(block).other, { template, covered, noteOnly: lineMap.note_only });
   assert.deepEqual(statuses.map((entry) => [entry.key, entry.status]), [["surgery date", "note"], ["dressing", "same"], ["shower", "changed"], ["avoid", "not_covered"], ["activity", "not_covered"], ["driving", "not_covered"]]);
   assert.deepEqual(statuses[2].sentences, ["wc.08"]);
   assert.equal(statuses[3].placeholder, true, "an unfilled *** in a line the guide does not use is flagged");
   assert.equal(statuses[4].placeholder, false);
-  const untouched = lineStatuses(template, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
-  assert.ok(untouched.filter((entry) => lineMap.covered[entry.key]).every((entry) => entry.status === "same"), "the practice's own draft matches itself");
+  const untouched = lineStatuses(template, { template, covered, noteOnly: lineMap.note_only });
+  assert.ok(untouched.filter((entry) => covered[entry.key]).every((entry) => entry.status === "same"), "the practice's own draft matches itself");
 });
 
 test("a choice in the table writes the matching line back into the block", () => {
@@ -141,16 +142,16 @@ test("a choice in the table writes the matching line back into the block", () =>
 test("an unlabeled line counts as an instruction, and the header stays a note", () => {
   const template = parseProviderBlock(draftText).other;
   const block = [".CIPOSTOP  Cochlear implant post-operative instructions (UCSF OHNS)", "No NSAIDs (aspirin, ibuprofen, naproxen) x 10 days post-op -- bleeding risk."].join("\n");
-  const statuses = lineStatuses(parseProviderBlock(block).other, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
+  const statuses = lineStatuses(parseProviderBlock(block).other, { template, covered, noteOnly: lineMap.note_only });
   assert.deepEqual(statuses.map((entry) => entry.status), ["note", "not_covered"], "only the practice's own unlabeled lines are notes");
 });
 
 test("the guide's own steps that the block never mentions are listed, so deleting a line hides nothing", () => {
   const block = ["Antibiotic: No", "Shower: may shower and wash hair 5 days after surgery."].join("\n");
-  const missing = missingFromBlock(parseProviderBlock(block).other, { covered: lineMap.covered });
+  const missing = missingFromBlock(parseProviderBlock(block).other, { covered });
   assert.deepEqual(missing.map((entry) => entry.key), ["dressing", "incision", "activation", "when to call", "contact"], "shower is mentioned, the rest are not");
   assert.deepEqual(missing[0].sentences, ["wc.01", "wc.02"]);
-  assert.deepEqual(missingFromBlock(parseProviderBlock(draftText).other, { covered: lineMap.covered }), [], "the practice's own draft mentions every covered step");
+  assert.deepEqual(missingFromBlock(parseProviderBlock(draftText).other, { covered }), [], "the practice's own draft mentions every covered step");
 });
 
 test("editing a value keeps the note's margin, so the chart entry survives the edit", () => {

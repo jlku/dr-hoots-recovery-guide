@@ -251,6 +251,12 @@ function trailingComment(line, next) {
   return `${" ".repeat(Math.max(4, column - next.length))}${match[1]}`;
 }
 
+// The map records more than the sentence ids now — which line owns them, and whether its numbers are
+// practice-level — so everything that only needs the ids reads them through here.
+export function coveredSentences(lineMap) {
+  return Object.fromEntries(Object.entries(lineMap.covered).map(([key, entry]) => [key, entry.sentences]));
+}
+
 export function setFieldLine(text, field, value) {
   const lines = String(text ?? "").split(/\r?\n/);
   if (field === "reviewed") {

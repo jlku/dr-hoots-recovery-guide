@@ -5,7 +5,7 @@
 // the provider pastes leaves the browser tab.
 import { assetUrl, canonicalSentences, fetchJson } from "./data.js";
 import { LANGUAGES, formatFollowUp } from "./logic.js";
-import { FIELD_ORDER, applyPresets, buildPatientLink, lineStatuses, missingFromBlock, parseProviderBlock, setFieldLine } from "./provider.js";
+import { FIELD_ORDER, applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, parseProviderBlock, setFieldLine } from "./provider.js";
 
 const byId = (id) => document.getElementById(id);
 const dom = {
@@ -56,6 +56,7 @@ const [{ presets }, lineMap, canonical, segmentFile, templateText] = await Promi
 const sentences = canonicalSentences(canonical);
 const chapterOf = new Map(segmentFile.segments.flatMap((segment) => segment.beats.flatMap((beat) => (beat.sentence_ids ?? []).map((id) => [id, segment.number]))));
 const template = parseProviderBlock(templateText).other;
+const covered = coveredSentences(lineMap);
 
 function element(tag, props = {}, ...children) {
   const node = Object.assign(document.createElement(tag), props);
@@ -228,7 +229,7 @@ function render() {
   );
   if (focusKey) dom.rows.querySelector(`[data-focus="${focusKey}"]`)?.focus();
 
-  const statuses = lineStatuses(parsed.other, { template, covered: lineMap.covered, noteOnly: lineMap.note_only });
+  const statuses = lineStatuses(parsed.other, { template, covered, noteOnly: lineMap.note_only });
   const contradictions = statuses.filter((entry) => entry.status === "changed");
   dom.contradictsList.replaceChildren(...contradictions.map(contradictionItem));
   dom.contradictsCount.textContent = String(contradictions.length);
@@ -240,7 +241,7 @@ function render() {
   dom.notUsedList.replaceChildren(...missingLines.map(lineItem));
   dom.notUsedSummary.textContent = missingLines.length === 1 ? "1 line in your block will not reach this patient." : `${missingLines.length} lines in your block will not reach this patient.`;
   dom.notUsed.hidden = missingLines.length === 0;
-  const missing = missingFromBlock(parsed.other, { covered: lineMap.covered });
+  const missing = missingFromBlock(parsed.other, { covered });
   dom.alsoSaysList.replaceChildren(...missing.map((entry) => {
     const item = element("li", { className: "line line--also" });
     item.append(element("p", { className: "line__note", textContent: `Chapter ${chapterOf.get(entry.sentences[0])}: "${quote(entry.sentences)}"` }));

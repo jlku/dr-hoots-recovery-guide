@@ -1,13 +1,55 @@
 {
-  "schema_version": "1.0",
-  "about": "Which lines of the practice dot phrase the guide covers, by the canonical sentences that say the same thing. A covered line the provider changes still plays the guide's reviewed wording, so the provider page quotes it. Lines not listed here, other than note_only, are instructions the guide does not cover.",
+  "schema_version": "2.0",
+  "about": "The spine between the practice dot phrase and the spoken script. Every canonical sentence belongs to one line of the block, or is listed in guide_only with the reason no line says it. A covered line's numbers are practice-level: fixed for this practice's version of the guide, so they may be spoken. A field line's value comes from the patient's link, so nothing it owns may speak a number — validate-template-lines.mjs enforces that. Beat and chapter are not stored here; they are derived from the segments file, which is their one source of truth.",
   "covered": {
-    "dressing": ["wc.01", "wc.02"],
-    "incision": ["wc.03", "wc.04", "wc.05", "wc.06", "wc.07"],
-    "shower": ["wc.08"],
-    "activation": ["act.01"],
-    "when to call": ["call.01", "call.01a", "call.01b", "call.01c", "call.02", "call.03", "call.04", "call.05"],
-    "contact": ["call.06", "call.07", "call.07a", "call.08"]
+    "dressing": {
+      "sentences": ["wc.01", "wc.02"],
+      "numbers": "practice"
+    },
+    "incision": {
+      "sentences": ["wc.03", "wc.04", "wc.05", "wc.06", "wc.07"],
+      "numbers": "practice"
+    },
+    "shower": {
+      "sentences": ["wc.08"],
+      "numbers": "practice"
+    },
+    "activation": {
+      "sentences": ["act.01"],
+      "numbers": "practice"
+    },
+    "when to call": {
+      "sentences": ["call.01", "call.01a", "call.01b", "call.01c", "call.02", "call.03", "call.04", "call.05"],
+      "numbers": "practice"
+    },
+    "contact": {
+      "sentences": ["call.06", "call.07", "call.07a", "call.08"],
+      "numbers": "practice"
+    }
   },
-  "note_only": ["surgery date", "surgeon", "side"]
+  "fields": {
+    "follow up": {
+      "sentences": ["wc.09"],
+      "numbers": "patient",
+      "why": "The link carries this patient's date, so the sentence names no interval: the clinic gives the date."
+    },
+    "antibiotic": {
+      "sentences": ["med.01", "med.02"],
+      "numbers": "patient",
+      "why": "The link says whether these beats play at all. The drug, dose and days stay in the provider's note."
+    },
+    "pain medication": {
+      "sentences": ["med.03", "med.04"],
+      "numbers": "patient",
+      "why": "The link says whether these beats play at all. The drug and schedule stay in the provider's note."
+    }
+  },
+  "note_only": ["surgery date", "surgeon", "side"],
+  "guide_only": {
+    "wc.10": "The guide says stitches dissolve. No line of the block mentions it; it comes from the CI Center handout.",
+    "act.02": "What happens at the activation visit. The block's Activation line gives the timing only.",
+    "act.03": "What happens at the activation visit. The block's Activation line gives the timing only.",
+    "act.04": "What happens at later programming visits, which the block does not describe.",
+    "act.05": "What happens at later programming visits, which the block does not describe."
+  }
 }

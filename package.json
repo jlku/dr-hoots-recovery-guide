@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "node scripts/serve.mjs",
     "test": "npm run test:unit",
-    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run segments:validate && npm run frames:validate && npm run instructions:validate && npm run anatomy:validate && npm run reviews:validate && npm run translations:validate && npm run spend:validate && npm run test:unit",
+    "check": "npm run content:validate && npm run copy:validate && npm run media:validate && npm run narration:validate && npm run lines:validate && npm run segments:validate && npm run frames:validate && npm run instructions:validate && npm run anatomy:validate && npm run reviews:validate && npm run translations:validate && npm run spend:validate && npm run test:unit",
     "segments:validate": "node scripts/validate-segments.mjs --media",
     "frames:validate": "node scripts/validate-frames.mjs",
     "anatomy:validate": "node scripts/validate-anatomy.mjs",
@@ -31,7 +31,8 @@
     "review:song-evidence": "node scripts/song-evidence.mjs",
     "reviews:index": "node scripts/build-reviews-index.mjs",
     "export": "node scripts/export-segments.mjs",
-    "eval:dot-phrase": "node scripts/eval-dot-phrase.mjs"
+    "eval:dot-phrase": "node scripts/eval-dot-phrase.mjs",
+    "lines:validate": "node scripts/validate-template-lines.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.126.0",
