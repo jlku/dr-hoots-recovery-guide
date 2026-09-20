@@ -8,21 +8,29 @@ import { buildSegmentTimeline, groupCues, joinWords, toWebVtt, vttTime } from ".
 const root = resolve(import.meta.dirname, "..");
 const bundle = await loadSegmentBundle(root);
 const segmentOne = bundle.segments.segments[0];
-const segmentTwo = bundle.segments.segments[1];
+const segmentTwo = bundle.segments.segments.find((item) => item.id === "seg/next-two-weeks");
+const multiBeat = bundle.segments.segments.find((item) => item.id === "seg/programming-visits");
 
-test("segment one starts after the title card and spaces beats by the gap", () => {
-  const timeline = buildSegmentTimeline({ segments: bundle.segments, segment: segmentOne, records: bundle.records });
+test("a segment starts after the title card and spaces beats by the gap", () => {
+  const timeline = buildSegmentTimeline({ segments: bundle.segments, segment: multiBeat, records: bundle.records });
   assert.equal(timeline.title_card.end, 1.5);
-  assert.equal(timeline.beats.length, 2);
+  assert.equal(timeline.beats.length, 3);
   assert.equal(timeline.beats[0].start, 1.5);
   assert.equal(timeline.beats[0].end, Number((1.5 + timeline.beats[0].speech_seconds).toFixed(3)));
   assert.equal(timeline.beats[1].start, Number((timeline.beats[0].end + 0.6).toFixed(3)));
-  assert.equal(timeline.duration_seconds, Number((timeline.beats[1].end + 0.9).toFixed(3)));
-  assert.equal(timeline.words[0].text, "Two");
+  assert.equal(timeline.duration_seconds, Number((timeline.beats[2].end + 0.9).toFixed(3)));
+  assert.equal(timeline.words[0].text, "After");
   assert.equal(timeline.words[0].start, 1.5);
   assert.ok(timeline.words.every((word, index) => index === 0 || word.start >= timeline.words[index - 1].start));
   assert.ok(timeline.narration_seconds <= 35);
-  assert.equal(typeof timeline.source_records["wound-day2"], "string");
+  assert.equal(typeof timeline.source_records[timeline.beats[0].record_id], "string");
+});
+
+test("segment one opens on the first instruction", () => {
+  const timeline = buildSegmentTimeline({ segments: bundle.segments, segment: segmentOne, records: bundle.records });
+  assert.deepEqual(timeline.beats.map((beat) => beat.id), ["beat/dressing-off"]);
+  assert.equal(timeline.words[0].text, "Two");
+  assert.equal(timeline.duration_seconds, Number((timeline.beats[0].end + 0.9).toFixed(3)));
 });
 
 test("every word lands in exactly one cue and cues never overlap", () => {

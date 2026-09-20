@@ -28,7 +28,8 @@ import {
 import { phraseTime } from "../guide/assets/frames.js";
 
 const root = resolve(import.meta.dirname, "..");
-const timeline = JSON.parse(await readFile(resolve(root, "assets/captions/v2/en/incision-day2.timeline.json"), "utf8"));
+const timeline = JSON.parse(await readFile(resolve(root, "assets/captions/v2/en/bandage-off.timeline.json"), "utf8"));
+const multiBeat = JSON.parse(await readFile(resolve(root, "assets/captions/v2/en/programming-visits.timeline.json"), "utf8"));
 const index = JSON.parse(await readFile(resolve(root, "assets/captions/v2/index.json"), "utf8"));
 const segments = JSON.parse(await readFile(resolve(root, "content/segments/ci-phase0-v0.1.0.segments.json"), "utf8"));
 
@@ -45,24 +46,24 @@ test("media entries pick the requested language or fall back to English with a f
   assert.deepEqual(availableLanguages(index), ["en"]);
   const exact = pickEntry(index, 1, "en");
   assert.equal(exact.fallback, false);
-  assert.equal(exact.entry.segment_id, "seg/incision-day2");
+  assert.equal(exact.entry.segment_id, "seg/bandage-off");
   const fallback = pickEntry(index, 1, "es");
   assert.equal(fallback.fallback, true);
   assert.equal(fallback.entry.language, "en");
   assert.equal(pickEntry(index, 9, "en").entry, null);
-  assert.equal(segmentByNumber(segments, 2).id, "seg/next-two-weeks");
+  assert.equal(segmentByNumber(segments, 3).id, "seg/next-two-weeks");
   assert.equal(segmentByNumber(segments, 9), null);
   // A medication beat is pending only when the link switches it off: its "no" wording waits on Song.
-  assert.deepEqual(pendingConditionalBeats(segmentByNumber(segments, 2), { antibiotic: false, pain_medication: true }).map((beat) => beat.id), ["beat/medication-antibiotic"]);
-  assert.equal(pendingConditionalBeats(segmentByNumber(segments, 2), { antibiotic: true, pain_medication: true }).length, 0);
+  assert.deepEqual(pendingConditionalBeats(segmentByNumber(segments, 3), { antibiotic: false, pain_medication: true }).map((beat) => beat.id), ["beat/medication-antibiotic"]);
+  assert.equal(pendingConditionalBeats(segmentByNumber(segments, 3), { antibiotic: true, pain_medication: true }).length, 0);
   assert.equal(pendingConditionalBeats(segmentByNumber(segments, 1)).length, 0);
 });
 
 test("the clock resolves title card, beats, cues, and active words from a real timeline", () => {
-  assert.equal(activeBeat(timeline, 0), null);
-  assert.equal(activeBeat(timeline, 1.5).id, "beat/dressing-off");
-  assert.equal(activeBeat(timeline, timeline.beats[1].start).id, "beat/two-paths");
-  assert.equal(activeBeat(timeline, timeline.beats[0].end + 0.1).id, "beat/dressing-off");
+  assert.equal(activeBeat(multiBeat, 0), null);
+  assert.equal(activeBeat(multiBeat, 1.5).id, "beat/healing");
+  assert.equal(activeBeat(multiBeat, multiBeat.beats[1].start).id, "beat/programming");
+  assert.equal(activeBeat(multiBeat, multiBeat.beats[0].end + 0.1).id, "beat/healing");
   assert.equal(activeCue(timeline, 0), null);
   assert.equal(activeCue(timeline, 1.5).id, "cue-01");
   const words = assignWordsToCues(timeline);
@@ -108,7 +109,7 @@ test("a translated guide always says who reviewed the translation, and says when
   assert.deepEqual(statusMessages({ pack: { language: "en", review: {} }, fallback: true, labels }), ["This language is not available yet. Showing English."]);
 });
 
-test("the link's medication flags choose segment 2's variant, with presets for missing flags", () => {
+test("the link's medication flags choose the medication segment's variant, with presets for missing flags", () => {
   const presets = { antibiotic: true, pain_medication: true };
   assert.equal(variantFor({ a: "0", p: "1" }, presets), "a0p1");
   assert.equal(variantFor({}, presets), "a1p1");

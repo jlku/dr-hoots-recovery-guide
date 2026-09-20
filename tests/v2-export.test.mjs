@@ -11,11 +11,11 @@ const readJson = async (path) => JSON.parse(await readFile(resolve(root, path), 
 
 test("only segments with no patient-specific beats or data export", async () => {
   const { segments } = await readJson("content/segments/ci-phase0-v0.1.0.segments.json");
-  assert.deepEqual(fixedSegments(segments).map((segment) => segment.number), [1, 3, 4, 5]);
+  assert.deepEqual(fixedSegments(segments).map((segment) => segment.number), [1, 2, 4, 5, 6, 7]);
 });
 
 test("a still changes only where a beat, a caption, or a spoken word starts", async () => {
-  const timeline = await readJson("assets/captions/v2/en/incision-day2.timeline.json");
+  const timeline = await readJson("assets/captions/v2/en/programming-visits.timeline.json");
   const points = exportChangePoints(timeline);
   assert.equal(points[0], 0);
   assert.ok(points.every((point, index) => index === 0 || point > points[index - 1]), "strictly increasing");

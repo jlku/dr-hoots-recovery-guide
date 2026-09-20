@@ -41,7 +41,7 @@ test("the English pack is valid and resolves sentences from canonical", () => {
   assert.deepEqual(result.errors, []);
   const sentences = resolveSentences({ pack: englishPack, canonical: bundle.canonical });
   assert.equal(sentences.get("wc.01"), "Two days after surgery, remove the mastoid dressing, or head bandage.");
-  assert.ok(requiredLabelKeys(bundle.segments).includes("seg.incision-day2.title"));
+  assert.ok(requiredLabelKeys(bundle.segments).includes("seg.bandage-off.title"));
 });
 
 test("English packs must not copy canonical sentences", () => {

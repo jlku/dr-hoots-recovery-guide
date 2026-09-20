@@ -4,19 +4,30 @@
   "patient_use": false,
   "entries": [
     {
-      "segment_id": "seg/incision-day2",
+      "segment_id": "seg/bandage-off",
       "number": 1,
       "language": "en",
       "variant": "",
-      "timeline": "assets/captions/v2/en/incision-day2.timeline.json",
-      "captions": "assets/captions/v2/en/incision-day2.vtt",
-      "audio": "assets/audio/v2/en/incision-day2.mp3",
-      "duration_seconds": 28.76,
-      "narration_seconds": 25.76
+      "timeline": "assets/captions/v2/en/bandage-off.timeline.json",
+      "captions": "assets/captions/v2/en/bandage-off.vtt",
+      "audio": "assets/audio/v2/en/bandage-off.mp3",
+      "duration_seconds": 9.76,
+      "narration_seconds": 7.36
+    },
+    {
+      "segment_id": "seg/tape-or-no-tape",
+      "number": 2,
+      "language": "en",
+      "variant": "",
+      "timeline": "assets/captions/v2/en/tape-or-no-tape.timeline.json",
+      "captions": "assets/captions/v2/en/tape-or-no-tape.vtt",
+      "audio": "assets/audio/v2/en/tape-or-no-tape.mp3",
+      "duration_seconds": 20.8,
+      "narration_seconds": 18.4
     },
     {
       "segment_id": "seg/next-two-weeks",
-      "number": 2,
+      "number": 3,
       "language": "en",
       "variant": "a0p0",
       "timeline": "assets/captions/v2/en/next-two-weeks.a0p0.timeline.json",
@@ -27,7 +38,7 @@
     },
     {
       "segment_id": "seg/next-two-weeks",
-      "number": 2,
+      "number": 3,
       "language": "en",
       "variant": "a0p1",
       "timeline": "assets/captions/v2/en/next-two-weeks.a0p1.timeline.json",
@@ -38,7 +49,7 @@
     },
     {
       "segment_id": "seg/next-two-weeks",
-      "number": 2,
+      "number": 3,
       "language": "en",
       "variant": "a1p0",
       "timeline": "assets/captions/v2/en/next-two-weeks.a1p0.timeline.json",
@@ -49,7 +60,7 @@
     },
     {
       "segment_id": "seg/next-two-weeks",
-      "number": 2,
+      "number": 3,
       "language": "en",
       "variant": "a1p1",
       "timeline": "assets/captions/v2/en/next-two-weeks.a1p1.timeline.json",
@@ -59,19 +70,30 @@
       "narration_seconds": 20.48
     },
     {
-      "segment_id": "seg/when-to-call",
-      "number": 3,
+      "segment_id": "seg/call-all-three",
+      "number": 4,
       "language": "en",
       "variant": "",
-      "timeline": "assets/captions/v2/en/when-to-call.timeline.json",
-      "captions": "assets/captions/v2/en/when-to-call.vtt",
-      "audio": "assets/audio/v2/en/when-to-call.mp3",
-      "duration_seconds": 31.72,
-      "narration_seconds": 28.72
+      "timeline": "assets/captions/v2/en/call-all-three.timeline.json",
+      "captions": "assets/captions/v2/en/call-all-three.vtt",
+      "audio": "assets/audio/v2/en/call-all-three.mp3",
+      "duration_seconds": 13.44,
+      "narration_seconds": 11.04
+    },
+    {
+      "segment_id": "seg/call-any-one",
+      "number": 5,
+      "language": "en",
+      "variant": "",
+      "timeline": "assets/captions/v2/en/call-any-one.timeline.json",
+      "captions": "assets/captions/v2/en/call-any-one.vtt",
+      "audio": "assets/audio/v2/en/call-any-one.mp3",
+      "duration_seconds": 20.08,
+      "narration_seconds": 17.68
     },
     {
       "segment_id": "seg/who-to-call",
-      "number": 4,
+      "number": 6,
       "language": "en",
       "variant": "",
       "timeline": "assets/captions/v2/en/who-to-call.timeline.json",
@@ -82,7 +104,7 @@
     },
     {
       "segment_id": "seg/programming-visits",
-      "number": 5,
+      "number": 7,
       "language": "en",
       "variant": "",
       "timeline": "assets/captions/v2/en/programming-visits.timeline.json",

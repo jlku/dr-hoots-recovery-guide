@@ -4,7 +4,7 @@
   "script": "Latn",
   "artifact_id": "ci-phase0",
   "artifact_version": "0.1.0",
-  "status": "ai_reviewed",
+  "status": "machine_draft",
   "patient_use": false,
   "notice": "SIN VERIFICAR — NO PARA USO CON PACIENTES",
   "sentences": {
@@ -43,12 +43,16 @@
   "labels": {
     "guide.title": "Guía de recuperación del implante coclear",
     "guide.subtitle": "Cinco videos cortos. Empiece por el que responda su duda.",
-    "seg.incision-day2.title": "Día 2: quitar el vendaje, con o sin cinta",
-    "seg.incision-day2.chip": "Día 2",
+    "seg.bandage-off.title": "Día 2: quitar el vendaje",
+    "seg.bandage-off.chip": "Día 2",
+    "seg.tape-or-no-tape.title": "Día 2: con o sin cinta",
+    "seg.tape-or-no-tape.chip": "Día 2",
     "seg.next-two-weeks.title": "Las próximas dos semanas: la ducha, sus medicinas y la revisión de la herida",
     "seg.next-two-weeks.chip": "Del día 3 a las 2 semanas",
-    "seg.when-to-call.title": "Cuándo llamar: las señales",
-    "seg.when-to-call.chip": "Cualquier día",
+    "seg.call-all-three.title": "Cuándo llamar: las tres señales juntas",
+    "seg.call-all-three.chip": "Cualquier día",
+    "seg.call-any-one.title": "Cuándo llamar: cualquiera de estas",
+    "seg.call-any-one.chip": "Cualquier día",
     "seg.who-to-call.title": "A quién llamar: los números",
     "seg.who-to-call.chip": "Cualquier día",
     "seg.programming-visits.title": "Después de sanar: citas de programación",
@@ -105,13 +109,9 @@
     "ui.reviewed_by_clinician": "Revisado por un profesional de la salud"
   },
   "review": {
-    "kind": "ai",
-    "label": "Revisado por IA (Claude), no por un traductor médico certificado",
+    "kind": "none",
+    "label": "Borrador de traducción automática, aún sin revisar",
     "date": "2026-09-19",
-    "receipts": [
-      "content/reviews/es/4758c11a1d002524.json",
-      "content/reviews/es/4758c11a1d002524.2.json",
-      "content/reviews/es/4758c11a1d002524.3.json"
-    ]
+    "receipts": []
   }
 }

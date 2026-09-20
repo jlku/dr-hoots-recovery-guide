@@ -1,0 +1,461 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/tape-or-no-tape",
+  "number": 2,
+  "language": "en",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/en/tape-or-no-tape.mp3",
+  "beats": [
+    {
+      "id": "beat/two-paths",
+      "frame": "frame-0203-paths",
+      "sentence_ids": [
+        "wc.03",
+        "wc.04",
+        "wc.05",
+        "wc.06",
+        "wc.07"
+      ],
+      "start": 1.5,
+      "end": 19.9,
+      "speech_seconds": 18.4,
+      "record_id": "wound-paths",
+      "manifest": "assets/audio/draft/manifest.json",
+      "source_audio": "assets/audio/draft/wound-paths.mp3",
+      "text": "If there is tape — keep the area dry until three days after surgery, and do not clean it before then. If there is no tape — clean the edges gently twice a day with equal parts hydrogen peroxide and distilled water, then apply an antibiotic ointment such as bacitracin."
+    }
+  ],
+  "words": [
+    {
+      "text": "If",
+      "start": 1.5,
+      "end": 1.66,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "there",
+      "start": 1.687,
+      "end": 1.82,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "is",
+      "start": 1.873,
+      "end": 1.98,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "tape",
+      "start": 2.044,
+      "end": 2.3,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "—",
+      "start": 2.5,
+      "end": 2.7,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "keep",
+      "start": 2.748,
+      "end": 2.94,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 2.96,
+      "end": 3.02,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "area",
+      "start": 3.1,
+      "end": 3.42,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "dry",
+      "start": 3.52,
+      "end": 3.82,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "until",
+      "start": 3.887,
+      "end": 4.22,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "three",
+      "start": 4.26,
+      "end": 4.46,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "days",
+      "start": 4.524,
+      "end": 4.78,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "after",
+      "start": 4.833,
+      "end": 5.1,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "surgery,",
+      "start": 5.17,
+      "end": 5.98,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "and",
+      "start": 6.02,
+      "end": 6.14,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "do",
+      "start": 6.167,
+      "end": 6.22,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "not",
+      "start": 6.26,
+      "end": 6.38,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "clean",
+      "start": 6.433,
+      "end": 6.7,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "it",
+      "start": 6.753,
+      "end": 6.86,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "before",
+      "start": 6.906,
+      "end": 7.18,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "then.",
+      "start": 7.26,
+      "end": 7.66,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "If",
+      "start": 7.953,
+      "end": 8.54,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "there",
+      "start": 8.567,
+      "end": 8.7,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "is",
+      "start": 8.753,
+      "end": 8.86,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "no",
+      "start": 8.913,
+      "end": 9.02,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "tape",
+      "start": 9.116,
+      "end": 9.5,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "—",
+      "start": 9.66,
+      "end": 9.82,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "clean",
+      "start": 9.873,
+      "end": 10.14,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 10.16,
+      "end": 10.22,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "edges",
+      "start": 10.287,
+      "end": 10.62,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "gently",
+      "start": 10.689,
+      "end": 11.1,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "twice",
+      "start": 11.167,
+      "end": 11.5,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 11.54,
+      "end": 11.58,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "day",
+      "start": 11.7,
+      "end": 12.06,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "with",
+      "start": 12.14,
+      "end": 12.46,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "equal",
+      "start": 12.513,
+      "end": 12.78,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "parts",
+      "start": 12.847,
+      "end": 13.18,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "hydrogen",
+      "start": 13.242,
+      "end": 13.74,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "peroxide",
+      "start": 13.8,
+      "end": 14.54,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "and",
+      "start": 14.62,
+      "end": 14.86,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "distilled",
+      "start": 14.908,
+      "end": 15.34,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "water,",
+      "start": 15.42,
+      "end": 16.3,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "then",
+      "start": 16.348,
+      "end": 16.54,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "apply",
+      "start": 16.593,
+      "end": 16.86,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "an",
+      "start": 16.887,
+      "end": 16.94,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "antibiotic",
+      "start": 17.02,
+      "end": 17.82,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "ointment",
+      "start": 17.9,
+      "end": 18.38,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "such",
+      "start": 18.46,
+      "end": 18.78,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "as",
+      "start": 18.807,
+      "end": 18.86,
+      "beat": "beat/two-paths",
+      "space": true
+    },
+    {
+      "text": "bacitracin.",
+      "start": 18.92,
+      "end": 19.9,
+      "beat": "beat/two-paths",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 2.7,
+      "text": "If there is tape —",
+      "beat": "beat/two-paths",
+      "first_word": 0,
+      "word_count": 5
+    },
+    {
+      "id": "cue-02",
+      "start": 2.748,
+      "end": 5.1,
+      "text": "keep the area dry until three days after",
+      "beat": "beat/two-paths",
+      "first_word": 5,
+      "word_count": 8
+    },
+    {
+      "id": "cue-03",
+      "start": 5.17,
+      "end": 7.66,
+      "text": "surgery, and do not clean it before then.",
+      "beat": "beat/two-paths",
+      "first_word": 13,
+      "word_count": 8
+    },
+    {
+      "id": "cue-04",
+      "start": 7.953,
+      "end": 9.82,
+      "text": "If there is no tape —",
+      "beat": "beat/two-paths",
+      "first_word": 21,
+      "word_count": 6
+    },
+    {
+      "id": "cue-05",
+      "start": 9.873,
+      "end": 12.46,
+      "text": "clean the edges gently twice a day with",
+      "beat": "beat/two-paths",
+      "first_word": 27,
+      "word_count": 8
+    },
+    {
+      "id": "cue-06",
+      "start": 12.513,
+      "end": 16.54,
+      "text": "equal parts hydrogen peroxide and distilled water, then",
+      "beat": "beat/two-paths",
+      "first_word": 35,
+      "word_count": 8
+    },
+    {
+      "id": "cue-07",
+      "start": 16.593,
+      "end": 19.9,
+      "text": "apply an antibiotic ointment such as bacitracin.",
+      "beat": "beat/two-paths",
+      "first_word": 43,
+      "word_count": 7
+    }
+  ],
+  "narration_seconds": 18.4,
+  "duration_seconds": 20.8,
+  "source_records": {
+    "wound-paths": "0e2560eaf29936aada2c072ac48323fb5e7c09cd31a1d44804f3cbe693cc551b"
+  }
+}

@@ -15,10 +15,10 @@
   },
   "segments": [
     {
-      "id": "seg/incision-day2",
+      "id": "seg/bandage-off",
       "number": 1,
-      "title_key": "seg.incision-day2.title",
-      "chip_key": "seg.incision-day2.chip",
+      "title_key": "seg.bandage-off.title",
+      "chip_key": "seg.bandage-off.chip",
       "beats": [
         {
           "id": "beat/dressing-off",
@@ -33,7 +33,15 @@
               "record_id": "wound-day2"
             }
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "seg/tape-or-no-tape",
+      "number": 2,
+      "title_key": "seg.tape-or-no-tape.title",
+      "chip_key": "seg.tape-or-no-tape.chip",
+      "beats": [
         {
           "id": "beat/two-paths",
           "sentence_ids": [
@@ -55,7 +63,7 @@
     },
     {
       "id": "seg/next-two-weeks",
-      "number": 2,
+      "number": 3,
       "title_key": "seg.next-two-weeks.title",
       "chip_key": "seg.next-two-weeks.chip",
       "data_fields": [
@@ -112,10 +120,10 @@
       ]
     },
     {
-      "id": "seg/when-to-call",
-      "number": 3,
-      "title_key": "seg.when-to-call.title",
-      "chip_key": "seg.when-to-call.chip",
+      "id": "seg/call-all-three",
+      "number": 4,
+      "title_key": "seg.call-all-three.title",
+      "chip_key": "seg.call-all-three.chip",
       "beats": [
         {
           "id": "beat/three-signs",
@@ -132,7 +140,15 @@
               "record_id": "call-three-signs"
             }
           }
-        },
+        }
+      ]
+    },
+    {
+      "id": "seg/call-any-one",
+      "number": 5,
+      "title_key": "seg.call-any-one.title",
+      "chip_key": "seg.call-any-one.chip",
+      "beats": [
         {
           "id": "beat/any-of-these",
           "sentence_ids": [
@@ -153,7 +169,7 @@
     },
     {
       "id": "seg/who-to-call",
-      "number": 4,
+      "number": 6,
       "title_key": "seg.who-to-call.title",
       "chip_key": "seg.who-to-call.chip",
       "beats": [
@@ -177,7 +193,7 @@
     },
     {
       "id": "seg/programming-visits",
-      "number": 5,
+      "number": 7,
       "title_key": "seg.programming-visits.title",
       "chip_key": "seg.programming-visits.chip",
       "beats": [

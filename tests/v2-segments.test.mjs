@@ -104,15 +104,15 @@ test("the repository segments validate and stay under the ceiling", async () => 
   const bundle = await loadSegmentBundle(root);
   const result = validateSegments(bundle);
   assert.deepEqual(result.errors, []);
-  assert.equal(bundle.segments.segments.length, 5);
+  assert.equal(bundle.segments.segments.length, 7);
   for (const segment of bundle.segments.segments) {
     assert.ok(segmentNarrationSeconds(segment, bundle.records) <= NARRATION_CEILING_SECONDS, segment.id);
   }
 });
 
-test("segment 2 has four variants, one per combination of its medication beats", async () => {
+test("the medication segment has four variants, one per combination of its medication beats", async () => {
   const bundle = await loadSegmentBundle(root);
-  const segment = bundle.segments.segments.find((item) => item.number === 2);
+  const segment = bundle.segments.segments.find((item) => item.id === "seg/next-two-weeks");
   assert.deepEqual(segmentVariants(segment).map((variant) => variant.id), ["a0p0", "a0p1", "a1p0", "a1p1"]);
   assert.deepEqual(segmentVariants(segment)[1].conditions, { antibiotic: false, pain_medication: true });
   assert.deepEqual(segmentVariants(bundle.segments.segments[0]).map((variant) => variant.id), [""]);
