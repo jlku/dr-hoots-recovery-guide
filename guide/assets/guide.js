@@ -21,7 +21,6 @@ import {
   normalizeLanguage,
   parseFragment,
   pickEntry,
-  reviewBadges,
   sentenceSpans,
   statusMessages,
   variantFor
@@ -160,30 +159,14 @@ function renderChapters() {
   }));
 }
 
-// Who reviewed what: the translation, the simulated Song review, and Song's own review line from the
-// provider's link. Desktop shows it in the rail footer, phones at the end of the transcript.
-function badgeList() {
-  const list = document.createElement("ul");
-  list.className = "badges";
-  list.setAttribute("aria-label", labels()["ui.review_status"] ?? "");
-  for (const badge of reviewBadges({ badges: state.guide.reviews?.badges, pack: state.guide.pack, clinicianDate: state.params.r, labels: labels() })) {
-    const item = document.createElement("li");
-    item.className = `badge badge--${badge.kind}`;
-    item.append(span("badge__label", badge.label));
-    if (badge.value) item.append(document.createTextNode(" "), span("badge__value", badge.value));
-    list.append(item);
-  }
-  return list;
-}
-
-// The transcript ends with the review badges; on phones, which hide the rail footer, with the notice too.
+// Phones hide the rail footer, so the transcript ends with the prototype notice.
 function transcriptFooter() {
   const footer = document.createElement("div");
   footer.className = "transcript-footer";
   const notice = document.createElement("p");
   notice.className = "transcript-footer__notice";
   notice.textContent = labels()["ui.notice"];
-  footer.append(notice, badgeList());
+  footer.append(notice);
   return footer;
 }
 

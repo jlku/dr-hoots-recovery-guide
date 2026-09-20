@@ -171,6 +171,9 @@ export function localToGlobal(clock, number, local) {
 export function statusMessages({ pack, fallback, labels }) {
   const messages = [];
   if (fallback) messages.push(labels["ui.language_fallback"]);
+  // A translation no reviewer has passed says so; a reviewed one says nothing, and who reviewed it
+  // belongs on the provider page, not in front of the patient.
+  if (pack?.status === "machine_draft" && pack?.review?.label) messages.push(pack.review.label);
   return messages.filter(Boolean);
 }
 
@@ -181,22 +184,6 @@ export function formatFollowUp(date, language) {
   return new Intl.DateTimeFormat(language, { year: "numeric", month: "long", day: "numeric", timeZone: "UTC" }).format(new Date(Date.UTC(year, month - 1, day)));
 }
 
-// Who reviewed what, for the rail footer and the phone footer. A translation badge carries the pack's
-// own review label; the simulated Song review counts only when a full panel passed this exact build;
-// Song's real review reaches the guide only through the provider's link.
-export function reviewBadges({ badges, pack, clinicianDate, labels }) {
-  const language = pack?.language ?? "en";
-  const date = (value) => formatFollowUp(value, language) ?? "";
-  const items = [];
-  if (language !== "en" && pack?.review?.label) {
-    const reviewed = ["ai_reviewed", "human_reviewed"].includes(pack.status);
-    items.push({ kind: "translation", label: pack.review.label, value: reviewed ? date(pack.review.date) : "" });
-  }
-  const song = badges?.song;
-  items.push({ kind: "song", label: labels["ui.song_review"], value: song?.status === "reviewed" ? date(song.date) : labels["ui.not_reviewed"] });
-  if (/^\d{4}-\d{2}-\d{2}$/.test(clinicianDate ?? "")) items.push({ kind: "clinician", label: labels["ui.reviewed_by_clinician"], value: date(clinicianDate) });
-  return items;
-}
 
 // Segments that are the same for every patient: no beat depends on the provider's link and no frame
 // draws a patient's data. Only these export as video.

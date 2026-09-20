@@ -1,0 +1,437 @@
+{
+  "schema_version": "1.0",
+  "about": "Edits a provider makes to the dot phrase, and what the patient should then see. Each case is scored three ways. Effective: the guide reflects the edit. Honest: when it does not, the provider page names that line as not reaching the patient; a count of other lines is not enough. Safe: the guide never tells the patient the opposite of what the provider wrote. Run with npm run eval:dot-phrase.",
+  "base_block": [
+    "Surgery date: 9/15/2026          Side: Right          Surgeon: Dr. Example",
+    "Dressing: remove the head (mastoid) dressing 2 days after surgery.",
+    "Shower: may shower and wash hair 3 days after surgery.",
+    "Antibiotic: Yes",
+    "Pain medication: Yes",
+    "Follow-up: wound check and ear exam on 10/01/2026",
+    "Video guide: language English    Reviewed by Dr. Example on 2026-09-19"
+  ],
+  "cases": [
+    {
+      "id": "tweak-shower-days",
+      "kind": "tweak an existing step",
+      "intent": "The practice lets patients shower after 5 days, not 3.",
+      "replace": {
+        "Shower:": "Shower: may shower and wash hair 5 days after surgery."
+      },
+      "effective": {
+        "contains": [
+          "5 days"
+        ],
+        "lacks": [
+          "Three days after surgery, you may shower"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "Three days after surgery, you may shower"
+        ]
+      },
+      "line": "Shower:",
+      "gate": true
+    },
+    {
+      "id": "tweak-dressing-day",
+      "kind": "tweak an existing step",
+      "intent": "This surgeon has the dressing removed the day after surgery.",
+      "replace": {
+        "Dressing:": "Dressing: remove the head (mastoid) dressing 1 day after surgery."
+      },
+      "effective": {
+        "lacks": [
+          "Two days after surgery, remove the head bandage"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "Two days after surgery, remove the head bandage"
+        ]
+      },
+      "line": "Dressing:",
+      "gate": true
+    },
+    {
+      "id": "tweak-fever-threshold",
+      "kind": "tweak an existing step",
+      "intent": "Call for a fever above 100.4 F.",
+      "add": [
+        "When to call: fever above 100.4 F; swelling or fluid behind the ear; any wound-care question."
+      ],
+      "effective": {
+        "contains": [
+          "100.4"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "101.5"
+        ]
+      },
+      "line": "When to call:",
+      "gate": true
+    },
+    {
+      "id": "tweak-callback-hours",
+      "kind": "tweak an existing step",
+      "intent": "The nursing line calls back within 24 hours at this clinic.",
+      "add": [
+        "Contact: nursing line 415-353-2148, callback within 24 hours, call again if none."
+      ],
+      "effective": {
+        "contains": [
+          "24 hours"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "within 12 hours"
+        ]
+      },
+      "line": "Contact:",
+      "gate": true
+    },
+    {
+      "id": "tweak-follow-up-date",
+      "kind": "tweak an existing step",
+      "intent": "Move the wound check to October 15.",
+      "replace": {
+        "Follow-up:": "Follow-up: wound check and ear exam on 10/15/2026"
+      },
+      "effective": {
+        "contains": [
+          "October 15, 2026"
+        ],
+        "link": {
+          "f": "2026-10-15"
+        }
+      },
+      "safe": {
+        "lacks": [
+          "October 1, 2026"
+        ]
+      },
+      "line": "Follow-up:"
+    },
+    {
+      "id": "option-antibiotic-drug",
+      "kind": "add an option",
+      "intent": "Name the antibiotic, dose, and days, as the draft's Antibiotic line invites.",
+      "replace": {
+        "Antibiotic:": "Antibiotic: Yes: cephalexin 500 mg four times a day for 7 days"
+      },
+      "effective": {
+        "contains": [
+          "cephalexin"
+        ],
+        "link": {
+          "a": "1"
+        }
+      },
+      "safe": {
+        "link": {
+          "a": "1"
+        }
+      },
+      "line": "cephalexin"
+    },
+    {
+      "id": "option-pain-otc",
+      "kind": "add an option",
+      "intent": "No prescription pain medicine: acetaminophen as needed, the draft's own No option.",
+      "replace": {
+        "Pain medication:": "Pain medication: No: acetaminophen as needed"
+      },
+      "effective": {
+        "contains": [
+          "acetaminophen"
+        ],
+        "link": {
+          "p": "0"
+        }
+      },
+      "safe": {
+        "link": {
+          "p": "0"
+        },
+        "lacks": [
+          "Take your pain medicine the way it was prescribed"
+        ]
+      },
+      "line": "acetaminophen"
+    },
+    {
+      "id": "option-pain-alias",
+      "kind": "add an option",
+      "intent": "Say no to pain medication in the words a provider would type.",
+      "replace": {
+        "Pain medication:": "Pain meds: No"
+      },
+      "effective": {
+        "link": {
+          "p": "0"
+        }
+      },
+      "safe": {
+        "link": {
+          "p": "0"
+        },
+        "lacks": [
+          "Take your pain medicine the way it was prescribed"
+        ]
+      },
+      "line": "Pain meds:"
+    },
+    {
+      "id": "option-antibiotic-none",
+      "kind": "add an option",
+      "intent": "No antibiotic, written as none.",
+      "replace": {
+        "Antibiotic:": "Antibiotic: none"
+      },
+      "effective": {
+        "link": {
+          "a": "0"
+        }
+      },
+      "safe": {
+        "link": {
+          "a": "0"
+        },
+        "lacks": [
+          "Take your antibiotic the way it was prescribed"
+        ]
+      },
+      "line": "Antibiotic: none"
+    },
+    {
+      "id": "option-language-alias",
+      "kind": "add an option",
+      "intent": "Send the Spanish guide, written as a Language line.",
+      "replace": {
+        "Video guide:": "Language: Spanish    Reviewed by Dr. Example on 2026-09-19"
+      },
+      "effective": {
+        "link": {
+          "l": "es"
+        }
+      },
+      "safe": {},
+      "line": "Language: Spanish"
+    },
+    {
+      "id": "option-side",
+      "kind": "add an option",
+      "intent": "The implant is on the left; the guide should say which ear.",
+      "replace": {
+        "Surgery date:": "Surgery date: 9/15/2026          Side: Left          Surgeon: Dr. Example"
+      },
+      "effective": {
+        "contains": [
+          "left"
+        ]
+      },
+      "safe": {},
+      "line": "Side: Left"
+    },
+    {
+      "id": "option-follow-up-relative",
+      "kind": "add an option",
+      "intent": "Follow-up in about two weeks, no date yet. The page cannot read \"in 2 weeks\" as a date, so it asks: \"in 7 days\" silently becoming \"about two weeks\" would contradict the provider (see follow-up-relative-short).",
+      "replace": {
+        "Follow-up:": "Follow-up: wound check and ear exam in 2 weeks"
+      },
+      "effective": {
+        "page_mentions": [
+          "in 2 weeks"
+        ]
+      },
+      "safe": {},
+      "line": "Follow-up:"
+    },
+    {
+      "id": "follow-up-relative-short",
+      "kind": "add an option",
+      "intent": "A one-week wound check written without a date. The guide must not quietly fall back to \"about two weeks\".",
+      "replace": {
+        "Follow-up:": "Follow-up: wound check in 7 days"
+      },
+      "effective": {
+        "page_mentions": [
+          "in 7 days"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "about two weeks after surgery"
+        ]
+      },
+      "line": "in 7 days"
+    },
+    {
+      "id": "new-step-nsaids",
+      "kind": "add a new step",
+      "intent": "Avoid aspirin, ibuprofen, and other NSAIDs for 10 days.",
+      "add": [
+        "Avoid: aspirin, ibuprofen, other NSAIDs for 10 days"
+      ],
+      "effective": {
+        "contains": [
+          "ibuprofen"
+        ]
+      },
+      "safe": {},
+      "line": "Avoid:"
+    },
+    {
+      "id": "new-step-lifting",
+      "kind": "add a new step",
+      "intent": "No lifting over 10 pounds for 2 weeks.",
+      "add": [
+        "Activity: no lifting over 10 lb for 2 weeks; no swimming until cleared"
+      ],
+      "effective": {
+        "contains": [
+          "lifting"
+        ]
+      },
+      "safe": {},
+      "line": "Activity:"
+    },
+    {
+      "id": "new-step-driving",
+      "kind": "add a new step",
+      "intent": "No driving until the surgeon clears it.",
+      "add": [
+        "Driving: no driving until cleared by your surgeon"
+      ],
+      "effective": {
+        "contains": [
+          "driving"
+        ]
+      },
+      "safe": {},
+      "line": "Driving:"
+    },
+    {
+      "id": "new-step-free-text",
+      "kind": "add a new step",
+      "intent": "Sleep with the head raised on two pillows for the first week.",
+      "add": [
+        "Other: sleep with your head raised on two pillows for the first week"
+      ],
+      "effective": {
+        "contains": [
+          "pillows"
+        ]
+      },
+      "safe": {},
+      "line": "Other:"
+    },
+    {
+      "id": "robust-conflict",
+      "kind": "robustness",
+      "intent": "A templated Yes left above a hand-typed No; the page should flag the conflict, not pick one.",
+      "add": [
+        "Antibiotic: No"
+      ],
+      "effective": {
+        "page_mentions": [
+          "Antibiotic: Yes",
+          "Antibiotic: No"
+        ]
+      },
+      "safe": {},
+      "line": "Antibiotic: No"
+    },
+    {
+      "id": "robust-epic-unselected",
+      "kind": "robustness",
+      "intent": "An Epic list left unselected.",
+      "replace": {
+        "Antibiotic:": "Antibiotic: {Yes/No}"
+      },
+      "effective": {
+        "page_mentions": [
+          "Antibiotic: {Yes/No}"
+        ]
+      },
+      "safe": {},
+      "line": "Antibiotic: {Yes/No}"
+    },
+    {
+      "id": "robust-caps-spacing",
+      "kind": "robustness",
+      "intent": "Capitals and stray spaces.",
+      "replace": {
+        "Antibiotic:": "  ANTIBIOTIC :  NO  "
+      },
+      "effective": {
+        "link": {
+          "a": "0"
+        }
+      },
+      "safe": {
+        "link": {
+          "a": "0"
+        }
+      },
+      "line": "ANTIBIOTIC"
+    },
+    {
+      "id": "robust-date-words",
+      "kind": "robustness",
+      "intent": "A follow-up date written out in words.",
+      "replace": {
+        "Follow-up:": "Follow-up: wound check and ear exam on Oct 15, 2026"
+      },
+      "effective": {
+        "contains": [
+          "October 15, 2026"
+        ]
+      },
+      "safe": {
+        "lacks": [
+          "October 1, 2026"
+        ]
+      },
+      "line": "Follow-up:"
+    },
+    {
+      "id": "robust-follow-up-abbreviation",
+      "kind": "robustness",
+      "intent": "The common chart abbreviation F/u.",
+      "replace": {
+        "Follow-up:": "F/u: 10/15/2026"
+      },
+      "effective": {
+        "contains": [
+          "October 15, 2026"
+        ]
+      },
+      "safe": {},
+      "line": "F/u:"
+    },
+    {
+      "id": "robust-reviewed-no-on",
+      "kind": "robustness",
+      "intent": "A review line without the word on: the page reads it, and the reviewer stays in the note.",
+      "replace": {
+        "Video guide:": "Video guide: language English    Reviewed by Dr. Example 9/19/2026"
+      },
+      "effective": {
+        "page_mentions": [
+          "It stays in your note"
+        ],
+        "link": {
+          "r": null
+        }
+      },
+      "safe": {},
+      "line": "Reviewed by"
+    }
+  ]
+}

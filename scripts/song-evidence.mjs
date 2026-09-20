@@ -2,15 +2,14 @@
 // screenshots at desktop and phone widths. Drives the installed Google Chrome through playwright-core;
 // Chrome has to run outside a command sandbox.
 //   node scripts/song-evidence.mjs --out <directory outside the repository>
-import { spawn } from "node:child_process";
 import { mkdir, readFile, writeFile } from "node:fs/promises";
-import { createServer } from "node:net";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 import { chromium } from "playwright-core";
 
 import { buildFiles, buildHash } from "./lib/build-hash.mjs";
+import { serveBuild } from "./lib/serve-build.mjs";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const outIndex = process.argv.indexOf("--out");
@@ -36,29 +35,6 @@ const FILLED_BLOCK = [
 const readJson = async (path) => JSON.parse(await readFile(join(root, path), "utf8"));
 const exists = (path) => readFile(join(root, path)).then(() => true, () => false);
 const normalize = (text) => String(text ?? "").replace(/\s+/g, "");
-
-async function freePort() {
-  return new Promise((resolvePort, reject) => {
-    const server = createServer();
-    server.listen(0, "127.0.0.1", () => {
-      const { port } = server.address();
-      server.close(() => resolvePort(port));
-    });
-    server.on("error", reject);
-  });
-}
-
-async function startServer() {
-  const port = await freePort();
-  const child = spawn(process.execPath, ["scripts/serve.mjs"], { cwd: root, env: { ...process.env, PORT: String(port) }, stdio: "ignore" });
-  const base = `http://127.0.0.1:${port}`;
-  for (let attempt = 0; attempt < 50; attempt += 1) {
-    if (await fetch(`${base}/guide/index.html`).then((response) => response.ok, () => false)) return { base, stop: () => child.kill() };
-    await new Promise((wait) => setTimeout(wait, 100));
-  }
-  child.kill();
-  throw new Error("the static server did not start");
-}
 
 // Facts from the committed media, before any browser opens.
 async function mediaFacts() {
@@ -192,7 +168,7 @@ async function providerFacts(browser, base, out) {
   await page.screenshot({ path: join(out, "provider-draft.png") });
   const started = performance.now();
   await page.fill("#block", FILLED_BLOCK);
-  await page.waitForFunction(() => document.getElementById("patient-link")?.textContent.includes("r=2026-09-19"));
+  await page.waitForFunction(() => document.getElementById("patient-link")?.textContent.includes("f=2026-10-01"));
   const milliseconds = Math.round(performance.now() - started);
   const filledRows = await table();
   const link = await page.textContent("#patient-link");
@@ -204,7 +180,7 @@ async function providerFacts(browser, base, out) {
   const fragment = new URL(link).hash;
   return {
     link,
-    ok: hasColumns(draftRows) && hasColumns(filledRows) && /[#&]a=0/.test(fragment) && /[&]p=1/.test(fragment) && /f=2026-10-01/.test(fragment) && milliseconds < 60000 && requests.length === 0 && accountFields === 0,
+    ok: hasColumns(draftRows) && hasColumns(filledRows) && /[#&]a=0/.test(fragment) && /[&]p=1/.test(fragment) && /f=2026-10-01/.test(fragment) && !/[#&]r=/.test(fragment) && milliseconds < 60000 && requests.length === 0 && accountFields === 0,
     steps: ["paste the block", "copy the link"],
     milliseconds_from_paste_to_link: milliseconds,
     requests_after_load: requests,
@@ -232,7 +208,9 @@ async function reviewLineFacts(browser, base, link, out) {
   await page.evaluate(() => document.querySelector(".transcript-footer")?.scrollIntoView({ block: "end" }));
   await page.screenshot({ path: join(out, "guide-from-link-badges.png") });
   await context.close();
-  return { ok: lines.length === 1 && Boolean(badge) && /2026/.test(badge ?? ""), lines_in_block: lines, clinician_badge: badge, follow_up_in_transcript: followUp };
+  // John removed the patient-facing review badge: the reviewer stays in the provider's note, so the
+  // measured fact is that no badge reaches the patient and no review date rides in the link.
+  return { ok: lines.length === 1 && badge === null, lines_in_block: lines, clinician_badge: badge, review_date_in_link: /[#&]r=/.test(link), follow_up_in_transcript: followUp };
 }
 
 async function cardFacts(browser, base) {
@@ -277,7 +255,7 @@ async function screenshots(browser, base, out) {
 await mkdir(out, { recursive: true });
 const build = await buildHash(root);
 const media = await mediaFacts();
-const server = await startServer();
+const server = await serveBuild(root);
 const browser = await chromium.launch({ channel: "chrome", headless: true });
 try {
   const toc = await tocFacts(browser, server.base, media.index, media.segments);

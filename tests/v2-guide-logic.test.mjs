@@ -21,7 +21,6 @@ import {
   pickEntry,
   segmentByNumber,
   sentenceSpans,
-  reviewBadges,
   statusMessages,
   variantFor
 } from "../guide/assets/logic.js";
@@ -131,20 +130,9 @@ test("a medication the link switches off shows the pending note in the status st
   assert.equal(formatFollowUp("2026-10-01", "zh-Hans"), "2026年10月1日");
 });
 
-test("the review badges say who reviewed what, and only a full review of this build counts", () => {
-  const labels = { "ui.song_review": "Simulated Song review (AI), not Song's approval", "ui.not_reviewed": "Not yet reviewed", "ui.reviewed_by_clinician": "Reviewed by clinician" };
-  const reviewed = { status: "reviewed", date: "2026-09-19" };
-  const notReviewed = { status: "not_reviewed", date: null };
-  const spanish = { status: "ai_reviewed", review: { label: "Revisado por IA (Claude), no por un traductor médico certificado", date: "2026-09-18" } };
-  assert.deepEqual(reviewBadges({ badges: { song: notReviewed }, pack: { language: "en" }, clinicianDate: null, labels }), [
-    { kind: "song", label: "Simulated Song review (AI), not Song's approval", value: "Not yet reviewed" }
-  ]);
-  assert.deepEqual(reviewBadges({ badges: { song: reviewed }, pack: { language: "es", ...spanish }, clinicianDate: "2026-09-17", labels }), [
-    { kind: "translation", label: "Revisado por IA (Claude), no por un traductor médico certificado", value: "18 de septiembre de 2026" },
-    { kind: "song", label: "Simulated Song review (AI), not Song's approval", value: "19 de septiembre de 2026" },
-    { kind: "clinician", label: "Reviewed by clinician", value: "17 de septiembre de 2026" }
-  ]);
+test("a translation no reviewer has passed says so, and a reviewed one says nothing", () => {
+  const labels = { "ui.language_fallback": "This language is not available yet. Showing English." };
   const draft = { language: "zh-Hans", status: "machine_draft", review: { label: "机器翻译草稿，尚未审核", date: "2026-09-18" } };
-  assert.deepEqual(reviewBadges({ badges: {}, pack: draft, clinicianDate: "not-a-date", labels })[0], { kind: "translation", label: "机器翻译草稿，尚未审核", value: "" });
-  assert.equal(reviewBadges({ badges: {}, pack: draft, clinicianDate: "not-a-date", labels }).length, 2, "an unreadable review date shows no clinician badge");
+  assert.deepEqual(statusMessages({ pack: draft, fallback: false, labels }), ["机器翻译草稿，尚未审核"]);
+  assert.deepEqual(statusMessages({ pack: { ...draft, status: "ai_reviewed" }, fallback: false, labels }), [], "who reviewed it belongs on the provider page");
 });
