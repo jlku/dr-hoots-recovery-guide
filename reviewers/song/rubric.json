@@ -47,7 +47,7 @@
     {
       "id": "review_line",
       "asked": "Reviewed this video, with a date.",
-      "question": "Is the review a single line in the block, and does it reach the guide as a clinician badge with the date?",
+      "question": "Is the review a single line in the block, and does the page tell the truth about where it goes? John removed the patient-facing review badge on 2026-09-19, so the reviewer stays in the provider's note: the patient's guide shows no reviewer line, and the patient link carries no review date.",
       "measured": true
     },
     {

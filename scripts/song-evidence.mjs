@@ -168,7 +168,7 @@ async function providerFacts(browser, base, out) {
   await page.screenshot({ path: join(out, "provider-draft.png") });
   const started = performance.now();
   await page.fill("#block", FILLED_BLOCK);
-  await page.waitForFunction(() => document.getElementById("patient-link")?.textContent.includes("r=2026-09-19"));
+  await page.waitForFunction(() => document.getElementById("patient-link")?.textContent.includes("f=2026-10-01"));
   const milliseconds = Math.round(performance.now() - started);
   const filledRows = await table();
   const link = await page.textContent("#patient-link");
@@ -180,7 +180,7 @@ async function providerFacts(browser, base, out) {
   const fragment = new URL(link).hash;
   return {
     link,
-    ok: hasColumns(draftRows) && hasColumns(filledRows) && /[#&]a=0/.test(fragment) && /[&]p=1/.test(fragment) && /f=2026-10-01/.test(fragment) && milliseconds < 60000 && requests.length === 0 && accountFields === 0,
+    ok: hasColumns(draftRows) && hasColumns(filledRows) && /[#&]a=0/.test(fragment) && /[&]p=1/.test(fragment) && /f=2026-10-01/.test(fragment) && !/[#&]r=/.test(fragment) && milliseconds < 60000 && requests.length === 0 && accountFields === 0,
     steps: ["paste the block", "copy the link"],
     milliseconds_from_paste_to_link: milliseconds,
     requests_after_load: requests,
@@ -208,7 +208,9 @@ async function reviewLineFacts(browser, base, link, out) {
   await page.evaluate(() => document.querySelector(".transcript-footer")?.scrollIntoView({ block: "end" }));
   await page.screenshot({ path: join(out, "guide-from-link-badges.png") });
   await context.close();
-  return { ok: lines.length === 1 && Boolean(badge) && /2026/.test(badge ?? ""), lines_in_block: lines, clinician_badge: badge, follow_up_in_transcript: followUp };
+  // John removed the patient-facing review badge: the reviewer stays in the provider's note, so the
+  // measured fact is that no badge reaches the patient and no review date rides in the link.
+  return { ok: lines.length === 1 && badge === null, lines_in_block: lines, clinician_badge: badge, review_date_in_link: /[#&]r=/.test(link), follow_up_in_transcript: followUp };
 }
 
 async function cardFacts(browser, base) {
