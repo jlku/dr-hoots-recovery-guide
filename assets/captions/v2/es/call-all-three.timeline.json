@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/call-all-three",
+  "number": 4,
+  "language": "es",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/es/call-all-three.mp3",
+  "beats": [
+    {
+      "id": "beat/three-signs",
+      "frame": "frame-06-redness",
+      "sentence_ids": [
+        "call.01",
+        "call.01a",
+        "call.01b",
+        "call.01c"
+      ],
+      "start": 1.5,
+      "end": 15.02,
+      "speech_seconds": 13.52,
+      "record_id": "three-signs",
+      "manifest": "assets/audio/v2/es/narration.json",
+      "source_audio": "assets/audio/v2/es/beats/three-signs.mp3",
+      "text": "Llame a su cirujano o al personal de la clínica si tiene las tres señales de abajo. La incisión está roja e hinchada. No mejora en los siguientes uno o dos días. Le duele al tocarla."
+    }
+  ],
+  "words": [
+    {
+      "text": "Llame",
+      "start": 1.5,
+      "end": 1.82,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 1.86,
+      "end": 1.9,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "su",
+      "start": 1.953,
+      "end": 2.06,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "cirujano",
+      "start": 2.1,
+      "end": 2.62,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "o",
+      "start": 2.78,
+      "end": 2.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "al",
+      "start": 2.967,
+      "end": 3.02,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "personal",
+      "start": 3.082,
+      "end": 3.58,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 3.607,
+      "end": 3.66,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 3.687,
+      "end": 3.74,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "clínica",
+      "start": 3.793,
+      "end": 4.3,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "si",
+      "start": 4.433,
+      "end": 4.7,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "tiene",
+      "start": 4.74,
+      "end": 4.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "las",
+      "start": 5,
+      "end": 5.18,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "tres",
+      "start": 5.212,
+      "end": 5.34,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "señales",
+      "start": 5.42,
+      "end": 5.82,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 5.873,
+      "end": 5.98,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "abajo.",
+      "start": 6.007,
+      "end": 6.46,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "La",
+      "start": 6.887,
+      "end": 7.74,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "incisión",
+      "start": 7.8,
+      "end": 8.3,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "está",
+      "start": 8.348,
+      "end": 8.54,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "roja",
+      "start": 8.62,
+      "end": 8.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "e",
+      "start": 8.98,
+      "end": 9.02,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "hinchada.",
+      "start": 9.06,
+      "end": 10.02,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "No",
+      "start": 10.167,
+      "end": 10.46,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "mejora",
+      "start": 10.52,
+      "end": 10.86,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "en",
+      "start": 10.887,
+      "end": 10.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "los",
+      "start": 10.98,
+      "end": 11.1,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "siguientes",
+      "start": 11.151,
+      "end": 11.66,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "uno",
+      "start": 11.76,
+      "end": 12.06,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "o",
+      "start": 12.14,
+      "end": 12.22,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "dos",
+      "start": 12.26,
+      "end": 12.38,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "días.",
+      "start": 12.476,
+      "end": 12.94,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "Le",
+      "start": 13.26,
+      "end": 13.9,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "duele",
+      "start": 13.96,
+      "end": 14.22,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "al",
+      "start": 14.273,
+      "end": 14.38,
+      "beat": "beat/three-signs",
+      "space": true
+    },
+    {
+      "text": "tocarla.",
+      "start": 14.433,
+      "end": 15.02,
+      "beat": "beat/three-signs",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 4.3,
+      "text": "Llame a su cirujano o al personal de la clínica",
+      "beat": "beat/three-signs",
+      "first_word": 0,
+      "word_count": 10
+    },
+    {
+      "id": "cue-02",
+      "start": 4.433,
+      "end": 6.46,
+      "text": "si tiene las tres señales de abajo.",
+      "beat": "beat/three-signs",
+      "first_word": 10,
+      "word_count": 7
+    },
+    {
+      "id": "cue-03",
+      "start": 6.887,
+      "end": 10.02,
+      "text": "La incisión está roja e hinchada.",
+      "beat": "beat/three-signs",
+      "first_word": 17,
+      "word_count": 6
+    },
+    {
+      "id": "cue-04",
+      "start": 10.167,
+      "end": 12.94,
+      "text": "No mejora en los siguientes uno o dos días.",
+      "beat": "beat/three-signs",
+      "first_word": 23,
+      "word_count": 9
+    },
+    {
+      "id": "cue-05",
+      "start": 13.26,
+      "end": 15.02,
+      "text": "Le duele al tocarla.",
+      "beat": "beat/three-signs",
+      "first_word": 32,
+      "word_count": 4
+    }
+  ],
+  "narration_seconds": 13.52,
+  "duration_seconds": 15.92,
+  "source_records": {
+    "three-signs": "aa137824c8ac1f324b7b37804a682d98df6d972e613acc164d8e815818813c88"
+  }
+}

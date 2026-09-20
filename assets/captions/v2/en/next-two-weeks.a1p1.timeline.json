@@ -476,38 +476,38 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.14,
-      "text": "Three days after surgery, you may shower and",
+      "end": 4.06,
+      "text": "Three days after surgery, you may shower",
       "beat": "beat/milestones",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 7
     },
     {
       "id": "cue-02",
-      "start": 4.204,
+      "start": 4.08,
       "end": 5.18,
-      "text": "wash your hair.",
+      "text": "and wash your hair.",
       "beat": "beat/milestones",
-      "first_word": 8,
-      "word_count": 3
+      "first_word": 7,
+      "word_count": 4
     },
     {
       "id": "cue-03",
       "start": 5.404,
-      "end": 8.54,
-      "text": "Your wound check and ear exam are about",
+      "end": 8.78,
+      "text": "Your wound check and ear exam are about two",
       "beat": "beat/milestones",
       "first_word": 11,
-      "word_count": 8
+      "word_count": 9
     },
     {
       "id": "cue-04",
-      "start": 8.6,
+      "start": 8.833,
       "end": 10.78,
-      "text": "two weeks after surgery —",
+      "text": "weeks after surgery —",
       "beat": "beat/milestones",
-      "first_word": 19,
-      "word_count": 5
+      "first_word": 20,
+      "word_count": 4
     },
     {
       "id": "cue-05",
@@ -539,23 +539,14 @@
     {
       "id": "cue-08",
       "start": 18.3,
-      "end": 19.9,
-      "text": "Take your pain medicine the way it was",
+      "end": 20.7,
+      "text": "Take your pain medicine the way it was prescribed.",
       "beat": "beat/medication-pain",
       "first_word": 42,
-      "word_count": 8
+      "word_count": 9
     },
     {
       "id": "cue-09",
-      "start": 19.958,
-      "end": 20.7,
-      "text": "prescribed.",
-      "beat": "beat/medication-pain",
-      "first_word": 50,
-      "word_count": 1
-    },
-    {
-      "id": "cue-10",
       "start": 20.86,
       "end": 23.18,
       "text": "Take it before the pain gets bad.",

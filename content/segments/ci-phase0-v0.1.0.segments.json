@@ -31,6 +31,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "wound-day2"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "dressing-off"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "dressing-off"
             }
           }
         }
@@ -56,6 +64,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "wound-paths"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "two-paths"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "two-paths"
             }
           }
         }
@@ -82,6 +98,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "wound-milestones"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "milestones"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "milestones"
             }
           }
         },
@@ -98,6 +122,14 @@
             "en": {
               "manifest": "assets/audio/v2/en/narration.json",
               "record_id": "medication-antibiotic"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "medication-antibiotic"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "medication-antibiotic"
             }
           }
         },
@@ -113,6 +145,14 @@
           "narration": {
             "en": {
               "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "medication-pain"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "medication-pain"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
               "record_id": "medication-pain"
             }
           }
@@ -138,6 +178,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "call-three-signs"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "three-signs"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "three-signs"
             }
           }
         }
@@ -162,6 +210,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "call-any"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "any-of-these"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "any-of-these"
             }
           }
         }
@@ -186,6 +242,14 @@
             "en": {
               "manifest": "assets/audio/draft/manifest.json",
               "record_id": "call-numbers"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "numbers"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "numbers"
             }
           }
         }
@@ -207,6 +271,14 @@
             "en": {
               "manifest": "assets/audio/manifest.json",
               "record_id": "healing"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "healing"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "healing"
             }
           }
         },
@@ -221,6 +293,14 @@
             "en": {
               "manifest": "assets/audio/manifest.json",
               "record_id": "chaptered-programming"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "programming"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
+              "record_id": "programming"
             }
           }
         },
@@ -234,6 +314,14 @@
           "narration": {
             "en": {
               "manifest": "assets/audio/manifest.json",
+              "record_id": "follow-up"
+            },
+            "es": {
+              "manifest": "assets/audio/v2/es/narration.json",
+              "record_id": "follow-up"
+            },
+            "zh-Hans": {
+              "manifest": "assets/audio/v2/zh-Hans/narration.json",
               "record_id": "follow-up"
             }
           }

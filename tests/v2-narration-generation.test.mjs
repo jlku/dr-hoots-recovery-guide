@@ -35,11 +35,15 @@ test("the plan prices each beat, and keeps a beat whose recorded text and voice 
 
 test("translated narration must say exactly the pack's sentences, for every narrated beat", () => {
   const segments = structuredClone(bundle.segments);
+  for (const narrated of narratedBeats(segments)) delete narrated.narration.es;
   const beat = narratedBeats(segments)[0];
   beat.narration.es = { manifest: "m.json", record_id: beatRecordId(beat) };
   const records = new Map([[`m.json#${beatRecordId(beat)}`, { id: beatRecordId(beat), text: "wrong", canonicalSentenceIds: beat.sentence_ids }]]);
   const errors = validateTranslatedNarration({ segments, records, packs: [pack("es", ".")] }).join("\n");
   assert.match(errors, new RegExp(`${beat.id} es narration does not say the pack's sentences`));
   assert.match(errors, /es narration is missing for beat\//, "a language is complete or absent");
-  assert.deepEqual(validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs: [] }), [], "English alone needs nothing");
+  const englishOnly = structuredClone(bundle.segments);
+  for (const narrated of narratedBeats(englishOnly)) for (const language of Object.keys(narrated.narration)) if (language !== "en") delete narrated.narration[language];
+  assert.deepEqual(validateTranslatedNarration({ segments: englishOnly, records: bundle.records, packs: [] }), [], "English alone needs nothing");
+  assert.match(validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs: [] }).join("\n"), /es narration has no pack to check it against/);
 });

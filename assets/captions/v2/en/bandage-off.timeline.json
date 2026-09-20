@@ -190,20 +190,11 @@
     {
       "id": "cue-03",
       "start": 6.14,
-      "end": 8.38,
-      "text": "is there tape over the incision behind your",
+      "end": 8.86,
+      "text": "is there tape over the incision behind your ear?",
       "beat": "beat/dressing-off",
       "first_word": 10,
-      "word_count": 8
-    },
-    {
-      "id": "cue-04",
-      "start": 8.48,
-      "end": 8.86,
-      "text": "ear?",
-      "beat": "beat/dressing-off",
-      "first_word": 18,
-      "word_count": 1
+      "word_count": 9
     }
   ],
   "narration_seconds": 7.36,

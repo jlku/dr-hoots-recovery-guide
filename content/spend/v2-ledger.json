@@ -949,6 +949,381 @@
       "actual_usd": null,
       "request_id": "01a0b7f4-8c1a-72f2-8820-4ff5c846e1de",
       "status": "completed"
+    },
+    {
+      "id": "tts:es:dressing-off:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:14.874Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/dressing-off",
+      "units": {
+        "characters": 196,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b82d-f684-7f01-b4f4-afd3bf21300c",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:two-paths:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:24.978Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/two-paths",
+      "units": {
+        "characters": 341,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b82e-1d5d-7fd2-ae16-fa6bf2fcdc59",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:milestones:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:36.472Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/milestones",
+      "units": {
+        "characters": 220,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.03,
+      "actual_usd": null,
+      "request_id": "01a0b82e-4a48-7472-b1c7-392d78b544ef",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:medication-antibiotic:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:44.097Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/medication-antibiotic",
+      "units": {
+        "characters": 77,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b82e-680d-7b12-88a3-b8b289e6325d",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:medication-pain:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:48.039Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/medication-pain",
+      "units": {
+        "characters": 97,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b82e-7775-7823-b26d-6508921f17cb",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:three-signs:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:52.629Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/three-signs",
+      "units": {
+        "characters": 186,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b82e-8960-7273-96d2-210a63e7e537",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:any-of-these:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:40:59.741Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/any-of-these",
+      "units": {
+        "characters": 361,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b82e-a52a-7592-b72a-65466eb5a225",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:numbers:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:41:13.385Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/numbers",
+      "units": {
+        "characters": 343,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.04,
+      "actual_usd": null,
+      "request_id": "01a0b82e-da79-75e2-ab7a-dfd57f70ae87",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:healing:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:41:25.294Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/healing",
+      "units": {
+        "characters": 97,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b82f-08fa-7f80-bb66-563076086797",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:programming:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:41:30.652Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/programming",
+      "units": {
+        "characters": 169,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b82f-1dea-7533-b248-c08d8191a921",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:follow-up:2026-09-19T05:40:14.869Z",
+      "at": "2026-09-19T05:41:37.588Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/follow-up",
+      "units": {
+        "characters": 165,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b82f-3903-7260-a886-d45c84acb122",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:dressing-off:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:16.085Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/dressing-off",
+      "units": {
+        "characters": 53,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b82f-cff3-7ee1-9a44-bbacf2246328",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:two-paths:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:23.257Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/two-paths",
+      "units": {
+        "characters": 108,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b82f-eb66-7570-93e1-3d44d1e68916",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:milestones:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:35.188Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/milestones",
+      "units": {
+        "characters": 49,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-1a02-77d1-9931-04af6f4b4605",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:medication-antibiotic:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:42.602Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/medication-antibiotic",
+      "units": {
+        "characters": 23,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-36f9-75e3-b15d-4e3ece11716a",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:medication-pain:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:47.757Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/medication-pain",
+      "units": {
+        "characters": 22,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-4b1a-7501-a408-44b847d66df4",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:three-signs:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:51.610Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/three-signs",
+      "units": {
+        "characters": 60,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-5a24-7592-a4fc-6f1fa23f5207",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:any-of-these:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:42:59.777Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/any-of-these",
+      "units": {
+        "characters": 116,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b830-7a12-77e2-b673-3fe0497f7188",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:numbers:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:43:11.755Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/numbers",
+      "units": {
+        "characters": 116,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b830-a8dc-7ca2-9f2d-30b963642a38",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:healing:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:43:26.725Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/healing",
+      "units": {
+        "characters": 20,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-e351-7ee2-9b34-6dc88d87fd42",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:programming:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:43:30.037Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/programming",
+      "units": {
+        "characters": 51,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b830-f046-78e1-af8b-4cd8f37f01b0",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:follow-up:2026-09-19T05:42:16.081Z",
+      "at": "2026-09-19T05:43:37.186Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/follow-up",
+      "units": {
+        "characters": 44,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b831-0c2f-7c51-b5dc-1cb3e11c47a5",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:follow-up:2026-09-19T05:45:46.891Z",
+      "at": "2026-09-19T05:45:46.895Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/follow-up",
+      "units": {
+        "characters": 44,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.01,
+      "actual_usd": null,
+      "request_id": "01a0b833-073d-77b2-b1c7-c03216a64220",
+      "status": "completed"
+    },
+    {
+      "id": "tts:es:three-signs:2026-09-19T10:42:14.795Z",
+      "at": "2026-09-19T10:42:14.800Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "es narration for beat/three-signs",
+      "units": {
+        "characters": 182,
+        "language": "es",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b942-7358-7513-af06-23c1ed4a3415",
+      "status": "completed"
+    },
+    {
+      "id": "tts:zh-Hans:any-of-these:2026-09-19T10:42:22.624Z",
+      "at": "2026-09-19T10:42:22.629Z",
+      "model": "fal-ai/elevenlabs/tts/eleven-v3",
+      "purpose": "zh-Hans narration for beat/any-of-these",
+      "units": {
+        "characters": 118,
+        "language": "zh-Hans",
+        "voice": "George"
+      },
+      "estimate_usd": 0.02,
+      "actual_usd": null,
+      "request_id": "01a0b942-91db-7dd1-b142-f7b46df5c370",
+      "status": "completed"
     }
   ]
 }

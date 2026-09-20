@@ -321,50 +321,32 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.98,
-      "text": "For routine questions, leave a message on the",
+      "end": 3.74,
+      "text": "For routine questions, leave a message",
       "beat": "beat/numbers",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 6
     },
     {
       "id": "cue-02",
-      "start": 4.03,
-      "end": 5.5,
-      "text": "nursing line:",
+      "start": 3.793,
+      "end": 9.98,
+      "text": "on the nursing line: 415-353-2148.",
       "beat": "beat/numbers",
-      "first_word": 8,
-      "word_count": 2
+      "first_word": 6,
+      "word_count": 5
     },
     {
       "id": "cue-03",
-      "start": 5.66,
-      "end": 9.98,
-      "text": "415-353-2148.",
+      "start": 10.22,
+      "end": 13.74,
+      "text": "You should get a call back within 12 hours —",
       "beat": "beat/numbers",
-      "first_word": 10,
-      "word_count": 1
+      "first_word": 11,
+      "word_count": 10
     },
     {
       "id": "cue-04",
-      "start": 10.22,
-      "end": 12.54,
-      "text": "You should get a call back within 12",
-      "beat": "beat/numbers",
-      "first_word": 11,
-      "word_count": 8
-    },
-    {
-      "id": "cue-05",
-      "start": 12.633,
-      "end": 13.74,
-      "text": "hours —",
-      "beat": "beat/numbers",
-      "first_word": 19,
-      "word_count": 2
-    },
-    {
-      "id": "cue-06",
       "start": 13.793,
       "end": 15.82,
       "text": "if no one calls, call again.",
@@ -373,22 +355,22 @@
       "word_count": 6
     },
     {
-      "id": "cue-07",
+      "id": "cue-05",
       "start": 16.08,
-      "end": 22.94,
-      "text": "For an emergency, call 415-476-1000 and ask for",
+      "end": 22.86,
+      "text": "For an emergency, call 415-476-1000 and ask",
       "beat": "beat/numbers",
       "first_word": 27,
-      "word_count": 8
+      "word_count": 7
     },
     {
-      "id": "cue-08",
-      "start": 22.96,
+      "id": "cue-06",
+      "start": 22.88,
       "end": 25.5,
-      "text": "the Otolaryngology resident on call.",
+      "text": "for the Otolaryngology resident on call.",
       "beat": "beat/numbers",
-      "first_word": 35,
-      "word_count": 5
+      "first_word": 34,
+      "word_count": 6
     }
   ],
   "narration_seconds": 24,

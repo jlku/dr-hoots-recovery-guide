@@ -43,11 +43,13 @@ test("fragment parameters round-trip and unknown languages fall back to English"
 });
 
 test("media entries pick the requested language or fall back to English with a flag", () => {
-  assert.deepEqual(availableLanguages(index), ["en"]);
+  assert.deepEqual(availableLanguages(index), ["en", "es", "zh-Hans"]);
+  assert.equal(pickEntry(index, 1, "es").entry.language, "es");
   const exact = pickEntry(index, 1, "en");
   assert.equal(exact.fallback, false);
   assert.equal(exact.entry.segment_id, "seg/bandage-off");
-  const fallback = pickEntry(index, 1, "es");
+  const englishOnly = { ...index, entries: index.entries.filter((entry) => entry.language === "en") };
+  const fallback = pickEntry(englishOnly, 1, "es");
   assert.equal(fallback.fallback, true);
   assert.equal(fallback.entry.language, "en");
   assert.equal(pickEntry(index, 9, "en").entry, null);
@@ -123,8 +125,7 @@ test("the link's medication flags choose the medication segment's variant, with 
 
 test("a medication the link switches off shows the pending note in the status strip, and a follow-up date reads in the patient's language", () => {
   const labels = { "ui.pending_clinician_text": "Medication details are pending your surgeon's wording.", "ui.language_fallback": "Showing English." };
-  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: ["antibiotic"] }), ["Medication details are pending your surgeon's wording."]);
-  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels, pendingConditions: [] }), []);
+  assert.deepEqual(statusMessages({ pack: { language: "en" }, fallback: false, labels }), [], "a medication left out by the link is not announced to the patient");
   assert.equal(formatFollowUp("2026-10-01", "en"), "October 1, 2026");
   assert.equal(formatFollowUp("2026-10-01", "es"), "1 de octubre de 2026");
   assert.equal(formatFollowUp("2026-10-01", "zh-Hans"), "2026年10月1日");

@@ -20,7 +20,6 @@ import {
   localToGlobal,
   normalizeLanguage,
   parseFragment,
-  pendingConditionalBeats,
   pickEntry,
   reviewBadges,
   sentenceSpans,
@@ -427,6 +426,7 @@ function showError(error) {
 }
 
 async function init() {
+  delete document.body.dataset.ready;
   cancelAnimationFrame(rafHandle);
   dom.audio.pause();
   const params = parseFragment(location.hash);
@@ -481,8 +481,9 @@ async function init() {
   dom.follow.checked = readFlag(FOLLOW_KEY);
 
   const fallback = guide.packFallback || picks.some((pick) => pick.fallback);
-  const pendingConditions = guide.segments.segments.flatMap((segment) => pendingConditionalBeats(segment, conditions)).map((beat) => beat.condition);
-  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text, pendingConditions }));
+  // A medication the link switches off is simply left out. That its "no" wording waits on Song is the
+  // provider's to know, on the provider page; patients read it as their surgeon having missed something.
+  setStatus(statusMessages({ pack: guide.pack, fallback, labels: text }));
 
   const requested = Number.parseInt(params.s ?? "1", 10) || 1;
   await loadSegment(segmentByNumber(requested) && entryFor(requested) ? requested : entries[0]?.number ?? 1);
@@ -501,6 +502,8 @@ async function init() {
       playing: isPlaying()
     })
   };
+  // Scripts that capture the page wait for this: chapters draw early, labels and timing come last.
+  document.body.dataset.ready = `${guide.language}:${state.current}`;
 }
 
 dom.play.addEventListener("click", () => {

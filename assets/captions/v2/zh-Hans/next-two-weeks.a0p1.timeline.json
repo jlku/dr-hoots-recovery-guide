@@ -1,0 +1,401 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/next-two-weeks",
+  "number": 3,
+  "language": "zh-Hans",
+  "variant": "a0p1",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/zh-Hans/next-two-weeks.a0p1.mp3",
+  "beats": [
+    {
+      "id": "beat/milestones",
+      "frame": "frame-0405-milestones",
+      "sentence_ids": [
+        "wc.08",
+        "wc.09",
+        "wc.10"
+      ],
+      "start": 1.5,
+      "end": 14.3,
+      "speech_seconds": 12.8,
+      "record_id": "milestones",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/milestones.mp3",
+      "text": "手术三天后，您可以淋浴和洗头。伤口复查和耳部检查大约在手术后两周。缝线会自己溶解，所以不需要拆线。"
+    },
+    {
+      "id": "beat/medication-pain",
+      "frame": "frame-medication",
+      "sentence_ids": [
+        "med.03",
+        "med.04"
+      ],
+      "start": 14.9,
+      "end": 20.1,
+      "speech_seconds": 5.2,
+      "record_id": "medication-pain",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/medication-pain.mp3",
+      "text": "请按照处方服用止痛药。在疼痛变严重之前服用。"
+    }
+  ],
+  "words": [
+    {
+      "text": "手术",
+      "start": 1.5,
+      "end": 1.9,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "三天",
+      "start": 1.9,
+      "end": 2.3,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "后，",
+      "start": 2.3,
+      "end": 2.94,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 2.94,
+      "end": 3.34,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "可以",
+      "start": 3.34,
+      "end": 3.66,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "淋浴",
+      "start": 3.66,
+      "end": 4.3,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "和",
+      "start": 4.3,
+      "end": 4.46,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "洗",
+      "start": 4.46,
+      "end": 4.7,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "头。",
+      "start": 4.7,
+      "end": 5.74,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "伤口",
+      "start": 5.74,
+      "end": 6.14,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "复查",
+      "start": 6.14,
+      "end": 6.86,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "和",
+      "start": 6.86,
+      "end": 7.02,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "耳",
+      "start": 7.02,
+      "end": 7.26,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "部",
+      "start": 7.26,
+      "end": 7.42,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "检查",
+      "start": 7.42,
+      "end": 8.22,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "大约",
+      "start": 8.22,
+      "end": 8.62,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "在",
+      "start": 8.62,
+      "end": 8.78,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "手术",
+      "start": 8.78,
+      "end": 9.18,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "后",
+      "start": 9.18,
+      "end": 9.34,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "两",
+      "start": 9.34,
+      "end": 9.58,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "周。",
+      "start": 9.58,
+      "end": 10.7,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "缝",
+      "start": 10.7,
+      "end": 11.1,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "线",
+      "start": 11.1,
+      "end": 11.26,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "会",
+      "start": 11.26,
+      "end": 11.5,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "自己",
+      "start": 11.5,
+      "end": 11.82,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "溶解，",
+      "start": 11.82,
+      "end": 12.567,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "所以",
+      "start": 12.567,
+      "end": 13.26,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "不需要",
+      "start": 13.26,
+      "end": 13.74,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "拆",
+      "start": 13.74,
+      "end": 14.1,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "线。",
+      "start": 14.1,
+      "end": 14.3,
+      "beat": "beat/milestones",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 14.9,
+      "end": 15.06,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "按照",
+      "start": 15.06,
+      "end": 15.38,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "处方",
+      "start": 15.38,
+      "end": 16.18,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "服用",
+      "start": 16.18,
+      "end": 16.58,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "止痛",
+      "start": 16.58,
+      "end": 16.98,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "药。",
+      "start": 16.98,
+      "end": 17.66,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "在",
+      "start": 17.66,
+      "end": 18.1,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "疼痛",
+      "start": 18.1,
+      "end": 18.66,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "变",
+      "start": 18.66,
+      "end": 18.82,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "严重",
+      "start": 18.82,
+      "end": 19.22,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "之前",
+      "start": 19.22,
+      "end": 19.7,
+      "beat": "beat/medication-pain",
+      "space": false
+    },
+    {
+      "text": "服用。",
+      "start": 19.7,
+      "end": 20.1,
+      "beat": "beat/medication-pain",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 5.74,
+      "text": "手术三天后，您可以淋浴和洗头。",
+      "beat": "beat/milestones",
+      "first_word": 0,
+      "word_count": 9
+    },
+    {
+      "id": "cue-02",
+      "start": 5.74,
+      "end": 10.7,
+      "text": "伤口复查和耳部检查大约在手术后两周。",
+      "beat": "beat/milestones",
+      "first_word": 9,
+      "word_count": 12
+    },
+    {
+      "id": "cue-03",
+      "start": 10.7,
+      "end": 14.3,
+      "text": "缝线会自己溶解，所以不需要拆线。",
+      "beat": "beat/milestones",
+      "first_word": 21,
+      "word_count": 9
+    },
+    {
+      "id": "cue-04",
+      "start": 14.9,
+      "end": 17.66,
+      "text": "请按照处方服用止痛药。",
+      "beat": "beat/medication-pain",
+      "first_word": 30,
+      "word_count": 6
+    },
+    {
+      "id": "cue-05",
+      "start": 17.66,
+      "end": 20.1,
+      "text": "在疼痛变严重之前服用。",
+      "beat": "beat/medication-pain",
+      "first_word": 36,
+      "word_count": 6
+    }
+  ],
+  "narration_seconds": 18,
+  "duration_seconds": 21,
+  "source_records": {
+    "milestones": "f244c1f189680cc734f15ff6eddba0426145aeaa39fbfbb2790a3b40efda90f7",
+    "medication-pain": "5d99949e5c69db777c8f8be733a623405e5e762ade9955bb9a2b3726fca31eb7"
+  }
+}

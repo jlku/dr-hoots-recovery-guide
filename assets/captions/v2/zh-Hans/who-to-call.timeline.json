@@ -1,0 +1,486 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/who-to-call",
+  "number": 6,
+  "language": "zh-Hans",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/zh-Hans/who-to-call.mp3",
+  "beats": [
+    {
+      "id": "beat/numbers",
+      "frame": "frame-11-numbers",
+      "sentence_ids": [
+        "call.06",
+        "call.07",
+        "call.07a",
+        "call.08"
+      ],
+      "start": 1.5,
+      "end": 35.42,
+      "speech_seconds": 33.92,
+      "record_id": "numbers",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/numbers.mp3",
+      "text": "如果是给诊所或外科医生的一般问题，请拨打护理热线415-353-2148留言。UCSF网页上说，您应该会在12小时内接到回电。如果没有人回电，请再打一次。如有紧急情况，请拨打415-476-1000，并要求找值班的耳鼻喉科住院医生。"
+    }
+  ],
+  "words": [
+    {
+      "text": "如果",
+      "start": 1.5,
+      "end": 1.98,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "是",
+      "start": 1.98,
+      "end": 2.14,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "给",
+      "start": 2.14,
+      "end": 2.3,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "诊所",
+      "start": 2.3,
+      "end": 3.02,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "或",
+      "start": 3.02,
+      "end": 3.18,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "外科",
+      "start": 3.18,
+      "end": 3.58,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "医生",
+      "start": 3.58,
+      "end": 3.98,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 3.98,
+      "end": 4.1,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "一般",
+      "start": 4.1,
+      "end": 4.46,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "问题，",
+      "start": 4.46,
+      "end": 5.38,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "请拨",
+      "start": 5.38,
+      "end": 6.14,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "打",
+      "start": 6.14,
+      "end": 6.3,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "护理",
+      "start": 6.3,
+      "end": 6.62,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "热线",
+      "start": 6.62,
+      "end": 8.06,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "415-",
+      "start": 8.06,
+      "end": 9.26,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "353-",
+      "start": 9.26,
+      "end": 10.62,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "2148",
+      "start": 10.62,
+      "end": 11.58,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "留言。",
+      "start": 11.58,
+      "end": 13.18,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "UCSF",
+      "start": 13.18,
+      "end": 13.98,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "网页",
+      "start": 13.98,
+      "end": 14.38,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "上",
+      "start": 14.38,
+      "end": 14.62,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "说，",
+      "start": 14.62,
+      "end": 15.38,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 15.38,
+      "end": 15.82,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "应该",
+      "start": 15.82,
+      "end": 16.22,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "会",
+      "start": 16.22,
+      "end": 16.46,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "在",
+      "start": 16.46,
+      "end": 16.62,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "12",
+      "start": 16.62,
+      "end": 16.94,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "小时",
+      "start": 16.94,
+      "end": 17.34,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "内",
+      "start": 17.34,
+      "end": 17.74,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "接到",
+      "start": 17.74,
+      "end": 18.06,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "回",
+      "start": 18.06,
+      "end": 18.3,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "电。",
+      "start": 18.3,
+      "end": 19.047,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "如果",
+      "start": 19.047,
+      "end": 20.06,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "没有",
+      "start": 20.06,
+      "end": 20.38,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "人",
+      "start": 20.38,
+      "end": 20.62,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "回",
+      "start": 20.62,
+      "end": 20.86,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "电，",
+      "start": 20.86,
+      "end": 21.46,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 21.46,
+      "end": 21.82,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "再打",
+      "start": 21.82,
+      "end": 22.22,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "一次。",
+      "start": 22.22,
+      "end": 23.74,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "如有",
+      "start": 23.74,
+      "end": 24.14,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "紧急情况，",
+      "start": 24.14,
+      "end": 25.42,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "请拨",
+      "start": 25.42,
+      "end": 26.54,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "打",
+      "start": 26.54,
+      "end": 27.02,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "415-",
+      "start": 27.02,
+      "end": 28.3,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "476-",
+      "start": 28.3,
+      "end": 29.58,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "1000，",
+      "start": 29.58,
+      "end": 31.18,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "并",
+      "start": 31.18,
+      "end": 31.74,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "要求",
+      "start": 31.74,
+      "end": 32.54,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "找",
+      "start": 32.54,
+      "end": 32.78,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "值班",
+      "start": 32.78,
+      "end": 33.18,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 33.18,
+      "end": 33.42,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "耳鼻喉科",
+      "start": 33.42,
+      "end": 34.46,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "住院",
+      "start": 34.46,
+      "end": 34.94,
+      "beat": "beat/numbers",
+      "space": false
+    },
+    {
+      "text": "医生。",
+      "start": 34.94,
+      "end": 35.42,
+      "beat": "beat/numbers",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 8.06,
+      "text": "如果是给诊所或外科医生的一般问题，请拨打护理热线",
+      "beat": "beat/numbers",
+      "first_word": 0,
+      "word_count": 14
+    },
+    {
+      "id": "cue-02",
+      "start": 8.06,
+      "end": 13.18,
+      "text": "415-353-2148留言。",
+      "beat": "beat/numbers",
+      "first_word": 14,
+      "word_count": 4
+    },
+    {
+      "id": "cue-03",
+      "start": 13.18,
+      "end": 19.047,
+      "text": "UCSF网页上说，您应该会在12小时内接到回电。",
+      "beat": "beat/numbers",
+      "first_word": 18,
+      "word_count": 14
+    },
+    {
+      "id": "cue-04",
+      "start": 19.047,
+      "end": 23.74,
+      "text": "如果没有人回电，请再打一次。",
+      "beat": "beat/numbers",
+      "first_word": 32,
+      "word_count": 8
+    },
+    {
+      "id": "cue-05",
+      "start": 23.74,
+      "end": 32.78,
+      "text": "如有紧急情况，请拨打415-476-1000，并要求找",
+      "beat": "beat/numbers",
+      "first_word": 40,
+      "word_count": 10
+    },
+    {
+      "id": "cue-06",
+      "start": 32.78,
+      "end": 35.42,
+      "text": "值班的耳鼻喉科住院医生。",
+      "beat": "beat/numbers",
+      "first_word": 50,
+      "word_count": 5
+    }
+  ],
+  "narration_seconds": 33.92,
+  "duration_seconds": 36.32,
+  "source_records": {
+    "numbers": "a3b7eb30c37b420f0ea5cf71b49306cb8e26746aade8013e75c06e3964f67a87"
+  }
+}

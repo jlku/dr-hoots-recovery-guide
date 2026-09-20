@@ -327,29 +327,29 @@
     {
       "id": "cue-04",
       "start": 11.46,
-      "end": 16.06,
-      "text": "a headache, light sensitivity, or excessive lethargy;",
+      "end": 14.06,
+      "text": "a headache, light sensitivity,",
       "beat": "beat/any-of-these",
       "first_word": 20,
-      "word_count": 7
+      "word_count": 4
     },
     {
       "id": "cue-05",
-      "start": 16.113,
-      "end": 18.46,
-      "text": "or any question or concern about you or",
+      "start": 14.113,
+      "end": 16.06,
+      "text": "or excessive lethargy;",
       "beat": "beat/any-of-these",
-      "first_word": 27,
-      "word_count": 8
+      "first_word": 24,
+      "word_count": 3
     },
     {
       "id": "cue-06",
-      "start": 18.492,
+      "start": 16.113,
       "end": 19.18,
-      "text": "your child.",
+      "text": "or any question or concern about you or your child.",
       "beat": "beat/any-of-these",
-      "first_word": 35,
-      "word_count": 2
+      "first_word": 27,
+      "word_count": 10
     }
   ],
   "narration_seconds": 17.68,

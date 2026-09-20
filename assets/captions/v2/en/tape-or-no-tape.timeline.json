@@ -401,20 +401,20 @@
     {
       "id": "cue-02",
       "start": 2.748,
-      "end": 5.1,
-      "text": "keep the area dry until three days after",
+      "end": 5.98,
+      "text": "keep the area dry until three days after surgery,",
       "beat": "beat/two-paths",
       "first_word": 5,
-      "word_count": 8
+      "word_count": 9
     },
     {
       "id": "cue-03",
-      "start": 5.17,
+      "start": 6.02,
       "end": 7.66,
-      "text": "surgery, and do not clean it before then.",
+      "text": "and do not clean it before then.",
       "beat": "beat/two-paths",
-      "first_word": 13,
-      "word_count": 8
+      "first_word": 14,
+      "word_count": 7
     },
     {
       "id": "cue-04",
@@ -428,29 +428,38 @@
     {
       "id": "cue-05",
       "start": 9.873,
-      "end": 12.46,
-      "text": "clean the edges gently twice a day with",
+      "end": 13.18,
+      "text": "clean the edges gently twice a day with equal parts",
       "beat": "beat/two-paths",
       "first_word": 27,
-      "word_count": 8
+      "word_count": 10
     },
     {
       "id": "cue-06",
-      "start": 12.513,
-      "end": 16.54,
-      "text": "equal parts hydrogen peroxide and distilled water, then",
+      "start": 13.242,
+      "end": 16.3,
+      "text": "hydrogen peroxide and distilled water,",
       "beat": "beat/two-paths",
-      "first_word": 35,
-      "word_count": 8
+      "first_word": 37,
+      "word_count": 5
     },
     {
       "id": "cue-07",
-      "start": 16.593,
-      "end": 19.9,
-      "text": "apply an antibiotic ointment such as bacitracin.",
+      "start": 16.348,
+      "end": 18.38,
+      "text": "then apply an antibiotic ointment",
       "beat": "beat/two-paths",
-      "first_word": 43,
-      "word_count": 7
+      "first_word": 42,
+      "word_count": 5
+    },
+    {
+      "id": "cue-08",
+      "start": 18.46,
+      "end": 19.9,
+      "text": "such as bacitracin.",
+      "beat": "beat/two-paths",
+      "first_word": 47,
+      "word_count": 3
     }
   ],
   "narration_seconds": 18.4,

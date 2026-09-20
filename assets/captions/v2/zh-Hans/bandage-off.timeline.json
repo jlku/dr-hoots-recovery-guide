@@ -1,0 +1,268 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/bandage-off",
+  "number": 1,
+  "language": "zh-Hans",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/zh-Hans/bandage-off.mp3",
+  "beats": [
+    {
+      "id": "beat/dressing-off",
+      "frame": "frame-01",
+      "sentence_ids": [
+        "wc.01",
+        "wc.02"
+      ],
+      "start": 1.5,
+      "end": 14.06,
+      "speech_seconds": 12.56,
+      "record_id": "dressing-off",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/dressing-off.mp3",
+      "text": "手术两天后，拆下乳突敷料，也就是头上的绷带。接下来，检查耳朵后面的切口，也就是手术刀口，上面有没有贴胶布。"
+    }
+  ],
+  "words": [
+    {
+      "text": "手术",
+      "start": 1.5,
+      "end": 1.82,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "两",
+      "start": 1.82,
+      "end": 2.06,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "天后，",
+      "start": 2.06,
+      "end": 3.02,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "拆下",
+      "start": 3.02,
+      "end": 3.42,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "乳",
+      "start": 3.42,
+      "end": 3.66,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "突",
+      "start": 3.66,
+      "end": 3.9,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "敷料，",
+      "start": 3.9,
+      "end": 4.62,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "也就是",
+      "start": 4.62,
+      "end": 5.34,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "头",
+      "start": 5.34,
+      "end": 5.58,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "上",
+      "start": 5.58,
+      "end": 5.74,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 5.74,
+      "end": 5.9,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "绷带。",
+      "start": 5.9,
+      "end": 7.18,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "接",
+      "start": 7.18,
+      "end": 7.34,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "下来，",
+      "start": 7.34,
+      "end": 8.22,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "检查",
+      "start": 8.22,
+      "end": 8.7,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "耳朵",
+      "start": 8.7,
+      "end": 9.02,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "后面",
+      "start": 9.02,
+      "end": 9.42,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 9.42,
+      "end": 9.58,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "切口，",
+      "start": 9.58,
+      "end": 10.3,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "也就是",
+      "start": 10.3,
+      "end": 11.02,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "手术",
+      "start": 11.02,
+      "end": 11.54,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "刀口，",
+      "start": 11.54,
+      "end": 12.26,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "上面",
+      "start": 12.26,
+      "end": 12.94,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "有",
+      "start": 12.94,
+      "end": 13.1,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "没有",
+      "start": 13.1,
+      "end": 13.42,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "贴",
+      "start": 13.42,
+      "end": 13.58,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "胶",
+      "start": 13.58,
+      "end": 13.82,
+      "beat": "beat/dressing-off",
+      "space": false
+    },
+    {
+      "text": "布。",
+      "start": 13.82,
+      "end": 14.06,
+      "beat": "beat/dressing-off",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 7.18,
+      "text": "手术两天后，拆下乳突敷料，也就是头上的绷带。",
+      "beat": "beat/dressing-off",
+      "first_word": 0,
+      "word_count": 12
+    },
+    {
+      "id": "cue-02",
+      "start": 7.18,
+      "end": 11.54,
+      "text": "接下来，检查耳朵后面的切口，也就是手术",
+      "beat": "beat/dressing-off",
+      "first_word": 12,
+      "word_count": 9
+    },
+    {
+      "id": "cue-03",
+      "start": 11.54,
+      "end": 14.06,
+      "text": "刀口，上面有没有贴胶布。",
+      "beat": "beat/dressing-off",
+      "first_word": 21,
+      "word_count": 7
+    }
+  ],
+  "narration_seconds": 12.56,
+  "duration_seconds": 14.96,
+  "source_records": {
+    "dressing-off": "b26637a3fd57a6c36285213f4071d195d2f92798a9a38c0da0a7ca783adccfee"
+  }
+}

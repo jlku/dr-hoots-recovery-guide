@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import test from "node:test";
 
 import { loadSegmentBundle } from "../scripts/lib/segments.mjs";
-import { buildSegmentTimeline, groupCues, joinWords, toWebVtt, vttTime } from "../scripts/lib/segment-timeline.mjs";
+import { CUE_CHARACTERS, buildSegmentTimeline, groupCues, joinWords, toWebVtt, vttTime } from "../scripts/lib/segment-timeline.mjs";
 
 const root = resolve(import.meta.dirname, "..");
 const bundle = await loadSegmentBundle(root);
@@ -44,7 +44,7 @@ test("every word lands in exactly one cue and cues never overlap", () => {
   for (let index = 1; index < timeline.cues.length; index += 1) {
     assert.ok(timeline.cues[index].start >= timeline.cues[index - 1].end, timeline.cues[index].id);
   }
-  assert.ok(timeline.cues.every((cue) => cue.text.split(" ").length <= 8));
+  assert.ok(timeline.cues.every((cue) => cue.text.length <= CUE_CHARACTERS.spaced));
   assert.equal(timeline.cues[0].id, "cue-01");
 });
 
@@ -77,4 +77,23 @@ test("cues record which words they hold, and Chinese cues join without spaces an
   assert.deepEqual(cues.map((cue) => [cue.first_word, cue.word_count]), [[10, 1], [11, 3], [14, 2]]);
   assert.equal(joinWords([{ text: "Hola,", space: true }, { text: "mundo.", space: false }]), "Hola, mundo.");
   assert.equal(joinWords([{ text: "old" }, { text: "timeline" }]), "old timeline", "a word without a space flag counts as spaced");
+});
+
+test("a caption fills two lines and never ends on an article", () => {
+  const words = "Dos días después de la cirugía, quítese el vendaje mastoideo, es decir, el vendaje de la cabeza.".split(" ").map((text, index) => ({ text, start: index, end: index + 0.5, beat: "b" }));
+  const cues = groupCues(words, "b", 14, 0, { maxChars: CUE_CHARACTERS.spaced, avoidHanging: true });
+  for (const cue of cues) {
+    assert.ok(cue.text.length <= CUE_CHARACTERS.spaced, `${cue.text} is ${cue.text.length} characters`);
+    assert.doesNotMatch(cue.text, /\s(el|la|de|y|a|the|of)$/i, `${cue.text} hangs on a short word`);
+  }
+  assert.ok(cues.length >= 2);
+  assert.equal(cues.map((cue) => cue.text).join(" "), words.map((word) => word.text).join(" "), "every word is still in a cue");
+});
+
+test("a caption never ends on an orphan of a few characters", () => {
+  const chinese = "手术两天后， 拆下乳突敷料， 也就是头上的绷带。 接下来， 检查耳朵后面的切口， 也就是手术刀口， 上面有没有贴 胶布。".split(" ").map((text, index) => ({ text, start: index, end: index + 0.5, beat: "b", space: false }));
+  const cues = groupCues(chinese, "b", 14, 0, { maxChars: CUE_CHARACTERS.spaceless, breakOn: /[。；：！？…]$/ });
+  assert.ok(cues.every((cue) => cue.text.length * 3 > CUE_CHARACTERS.spaceless || cues.length === 1), cues.map((cue) => cue.text).join(" | "));
+  assert.equal(cues.map((cue) => cue.text).join(""), chinese.map((word) => word.text).join(""), "every word is still in a cue");
+  assert.deepEqual(cues.map((cue) => cue.id), cues.map((_, index) => `cue-0${index + 1}`));
 });

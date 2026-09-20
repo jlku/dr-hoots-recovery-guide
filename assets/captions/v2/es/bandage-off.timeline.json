@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/bandage-off",
+  "number": 1,
+  "language": "es",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/es/bandage-off.mp3",
+  "beats": [
+    {
+      "id": "beat/dressing-off",
+      "frame": "frame-01",
+      "sentence_ids": [
+        "wc.01",
+        "wc.02"
+      ],
+      "start": 1.5,
+      "end": 15.82,
+      "speech_seconds": 14.32,
+      "record_id": "dressing-off",
+      "manifest": "assets/audio/v2/es/narration.json",
+      "source_audio": "assets/audio/v2/es/beats/dressing-off.mp3",
+      "text": "Dos días después de la cirugía, quítese el vendaje mastoideo, es decir, el vendaje de la cabeza. Después, revise si hay cinta adhesiva sobre la incisión, o corte de la cirugía, detrás de la oreja."
+    }
+  ],
+  "words": [
+    {
+      "text": "Dos",
+      "start": 1.5,
+      "end": 1.74,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "días",
+      "start": 1.804,
+      "end": 2.06,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "después",
+      "start": 2.12,
+      "end": 2.54,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 2.567,
+      "end": 2.62,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 2.647,
+      "end": 2.7,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "cirugía,",
+      "start": 2.76,
+      "end": 3.82,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "quítese",
+      "start": 3.847,
+      "end": 4.26,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "el",
+      "start": 4.273,
+      "end": 4.3,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "vendaje",
+      "start": 4.364,
+      "end": 4.86,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "mastoideo,",
+      "start": 4.908,
+      "end": 6.06,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "es",
+      "start": 6.113,
+      "end": 6.22,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "decir,",
+      "start": 6.287,
+      "end": 6.94,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "el",
+      "start": 6.993,
+      "end": 7.1,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "vendaje",
+      "start": 7.148,
+      "end": 7.58,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 7.607,
+      "end": 7.66,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 7.687,
+      "end": 7.74,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "cabeza.",
+      "start": 7.82,
+      "end": 8.46,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "Después,",
+      "start": 8.7,
+      "end": 10.14,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "revise",
+      "start": 10.197,
+      "end": 10.54,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "si",
+      "start": 10.593,
+      "end": 10.7,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "hay",
+      "start": 10.74,
+      "end": 10.86,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "cinta",
+      "start": 10.9,
+      "end": 11.26,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "adhesiva",
+      "start": 11.287,
+      "end": 11.82,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "sobre",
+      "start": 11.86,
+      "end": 12.06,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 12.087,
+      "end": 12.14,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "incisión,",
+      "start": 12.18,
+      "end": 12.86,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "o",
+      "start": 13.02,
+      "end": 13.18,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "corte",
+      "start": 13.26,
+      "end": 13.58,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 13.607,
+      "end": 13.66,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 13.687,
+      "end": 13.74,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "cirugía,",
+      "start": 13.8,
+      "end": 14.62,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "detrás",
+      "start": 14.684,
+      "end": 15.02,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "de",
+      "start": 15.047,
+      "end": 15.1,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "la",
+      "start": 15.127,
+      "end": 15.18,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "oreja.",
+      "start": 15.24,
+      "end": 15.82,
+      "beat": "beat/dressing-off",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 3.82,
+      "text": "Dos días después de la cirugía,",
+      "beat": "beat/dressing-off",
+      "first_word": 0,
+      "word_count": 6
+    },
+    {
+      "id": "cue-02",
+      "start": 3.847,
+      "end": 6.06,
+      "text": "quítese el vendaje mastoideo,",
+      "beat": "beat/dressing-off",
+      "first_word": 6,
+      "word_count": 4
+    },
+    {
+      "id": "cue-03",
+      "start": 6.113,
+      "end": 8.46,
+      "text": "es decir, el vendaje de la cabeza.",
+      "beat": "beat/dressing-off",
+      "first_word": 10,
+      "word_count": 7
+    },
+    {
+      "id": "cue-04",
+      "start": 8.7,
+      "end": 11.82,
+      "text": "Después, revise si hay cinta adhesiva",
+      "beat": "beat/dressing-off",
+      "first_word": 17,
+      "word_count": 6
+    },
+    {
+      "id": "cue-05",
+      "start": 11.86,
+      "end": 14.62,
+      "text": "sobre la incisión, o corte de la cirugía,",
+      "beat": "beat/dressing-off",
+      "first_word": 23,
+      "word_count": 8
+    },
+    {
+      "id": "cue-06",
+      "start": 14.684,
+      "end": 15.82,
+      "text": "detrás de la oreja.",
+      "beat": "beat/dressing-off",
+      "first_word": 31,
+      "word_count": 4
+    }
+  ],
+  "narration_seconds": 14.32,
+  "duration_seconds": 16.72,
+  "source_records": {
+    "dressing-off": "7c21a03be87b8a3924af5c482a4dd711c328768c2345ce38adec9354cf469513"
+  }
+}

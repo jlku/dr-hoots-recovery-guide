@@ -502,47 +502,47 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.98,
-      "text": "After the surgery site has healed, you return",
+      "end": 3.5,
+      "text": "After the surgery site has healed,",
       "beat": "beat/healing",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 6
     },
     {
       "id": "cue-02",
-      "start": 4.02,
+      "start": 3.52,
       "end": 5.74,
-      "text": "for your first programming visit.",
+      "text": "you return for your first programming visit.",
       "beat": "beat/healing",
-      "first_word": 8,
-      "word_count": 5
+      "first_word": 6,
+      "word_count": 7
     },
     {
       "id": "cue-03",
       "start": 6.34,
-      "end": 9.46,
-      "text": "At this visit, a hearing specialist called an",
+      "end": 9.06,
+      "text": "At this visit, a hearing specialist called",
       "beat": "beat/programming",
       "first_word": 13,
-      "word_count": 8
+      "word_count": 7
     },
     {
       "id": "cue-04",
-      "start": 9.524,
-      "end": 13.38,
-      "text": "audiologist programs the speech processor you wear outside",
+      "start": 9.193,
+      "end": 12.58,
+      "text": "an audiologist programs the speech processor you",
       "beat": "beat/programming",
-      "first_word": 21,
-      "word_count": 8
+      "first_word": 20,
+      "word_count": 7
     },
     {
       "id": "cue-05",
-      "start": 13.412,
+      "start": 12.644,
       "end": 14.02,
-      "text": "your ear.",
+      "text": "wear outside your ear.",
       "beat": "beat/programming",
-      "first_word": 29,
-      "word_count": 2
+      "first_word": 27,
+      "word_count": 4
     },
     {
       "id": "cue-06",

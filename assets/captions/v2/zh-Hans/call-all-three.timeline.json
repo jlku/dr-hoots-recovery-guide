@@ -1,0 +1,344 @@
+{
+  "schema_version": "1.0",
+  "segment_id": "seg/call-all-three",
+  "number": 4,
+  "language": "zh-Hans",
+  "variant": "",
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "fps": 30
+  },
+  "title_card": {
+    "start": 0,
+    "end": 1.5
+  },
+  "beat_gap_seconds": 0.6,
+  "tail_seconds": 0.9,
+  "audio_file": "assets/audio/v2/zh-Hans/call-all-three.mp3",
+  "beats": [
+    {
+      "id": "beat/three-signs",
+      "frame": "frame-06-redness",
+      "sentence_ids": [
+        "call.01",
+        "call.01a",
+        "call.01b",
+        "call.01c"
+      ],
+      "start": 1.5,
+      "end": 18.06,
+      "speech_seconds": 16.56,
+      "record_id": "three-signs",
+      "manifest": "assets/audio/v2/zh-Hans/narration.json",
+      "source_audio": "assets/audio/v2/zh-Hans/beats/three-signs.mp3",
+      "text": "如果下面三种情况同时出现，请打电话给您的外科医生或诊所工作人员。切口发红、肿胀。在接下来的一到两天内没有好转。一碰就疼。"
+    }
+  ],
+  "words": [
+    {
+      "text": "如果",
+      "start": 1.5,
+      "end": 1.82,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "下面",
+      "start": 1.82,
+      "end": 2.22,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "三",
+      "start": 2.22,
+      "end": 2.38,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "种",
+      "start": 2.38,
+      "end": 2.62,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "情况",
+      "start": 2.62,
+      "end": 3.18,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "同时",
+      "start": 3.18,
+      "end": 3.66,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "出现，",
+      "start": 3.66,
+      "end": 4.46,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "请",
+      "start": 4.46,
+      "end": 4.86,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "打电话",
+      "start": 4.86,
+      "end": 5.58,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "给",
+      "start": 5.58,
+      "end": 5.74,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "您",
+      "start": 5.74,
+      "end": 5.86,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 5.86,
+      "end": 5.98,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "外科",
+      "start": 5.98,
+      "end": 6.38,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "医生",
+      "start": 6.38,
+      "end": 7.18,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "或",
+      "start": 7.18,
+      "end": 7.42,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "诊所",
+      "start": 7.42,
+      "end": 7.98,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "工作",
+      "start": 7.98,
+      "end": 8.3,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "人员。",
+      "start": 8.3,
+      "end": 10.06,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "切口",
+      "start": 10.06,
+      "end": 10.46,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "发红、",
+      "start": 10.46,
+      "end": 11.34,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "肿",
+      "start": 11.34,
+      "end": 11.7,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "胀。",
+      "start": 11.7,
+      "end": 12.46,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "在",
+      "start": 12.46,
+      "end": 13.1,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "接",
+      "start": 13.1,
+      "end": 13.26,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "下来",
+      "start": 13.26,
+      "end": 13.58,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "的",
+      "start": 13.58,
+      "end": 13.86,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "一",
+      "start": 13.86,
+      "end": 14.14,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "到",
+      "start": 14.14,
+      "end": 14.3,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "两",
+      "start": 14.3,
+      "end": 14.46,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "天内",
+      "start": 14.46,
+      "end": 15.1,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "没有",
+      "start": 15.1,
+      "end": 15.42,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "好转。",
+      "start": 15.42,
+      "end": 16.54,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "一",
+      "start": 16.54,
+      "end": 17.26,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "碰",
+      "start": 17.26,
+      "end": 17.5,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "就",
+      "start": 17.5,
+      "end": 17.74,
+      "beat": "beat/three-signs",
+      "space": false
+    },
+    {
+      "text": "疼。",
+      "start": 17.74,
+      "end": 18.06,
+      "beat": "beat/three-signs",
+      "space": false
+    }
+  ],
+  "cues": [
+    {
+      "id": "cue-01",
+      "start": 1.5,
+      "end": 5.98,
+      "text": "如果下面三种情况同时出现，请打电话给您的",
+      "beat": "beat/three-signs",
+      "first_word": 0,
+      "word_count": 12
+    },
+    {
+      "id": "cue-02",
+      "start": 5.98,
+      "end": 10.06,
+      "text": "外科医生或诊所工作人员。",
+      "beat": "beat/three-signs",
+      "first_word": 12,
+      "word_count": 6
+    },
+    {
+      "id": "cue-03",
+      "start": 10.06,
+      "end": 12.46,
+      "text": "切口发红、肿胀。",
+      "beat": "beat/three-signs",
+      "first_word": 18,
+      "word_count": 4
+    },
+    {
+      "id": "cue-04",
+      "start": 12.46,
+      "end": 16.54,
+      "text": "在接下来的一到两天内没有好转。",
+      "beat": "beat/three-signs",
+      "first_word": 22,
+      "word_count": 10
+    },
+    {
+      "id": "cue-05",
+      "start": 16.54,
+      "end": 18.06,
+      "text": "一碰就疼。",
+      "beat": "beat/three-signs",
+      "first_word": 32,
+      "word_count": 4
+    }
+  ],
+  "narration_seconds": 16.56,
+  "duration_seconds": 18.96,
+  "source_records": {
+    "three-signs": "26ccfef3374005da256223eb0fb9a730ea1c52d34aa7302286af0ae9d07e5ba9"
+  }
+}

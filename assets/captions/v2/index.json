@@ -112,6 +112,226 @@
       "audio": "assets/audio/v2/en/programming-visits.mp3",
       "duration_seconds": 26.64,
       "narration_seconds": 23.04
+    },
+    {
+      "segment_id": "seg/bandage-off",
+      "number": 1,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/bandage-off.timeline.json",
+      "captions": "assets/captions/v2/es/bandage-off.vtt",
+      "audio": "assets/audio/v2/es/bandage-off.mp3",
+      "duration_seconds": 16.72,
+      "narration_seconds": 14.32
+    },
+    {
+      "segment_id": "seg/tape-or-no-tape",
+      "number": 2,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/tape-or-no-tape.timeline.json",
+      "captions": "assets/captions/v2/es/tape-or-no-tape.vtt",
+      "audio": "assets/audio/v2/es/tape-or-no-tape.mp3",
+      "duration_seconds": 27.92,
+      "narration_seconds": 25.52
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "es",
+      "variant": "a0p0",
+      "timeline": "assets/captions/v2/es/next-two-weeks.a0p0.timeline.json",
+      "captions": "assets/captions/v2/es/next-two-weeks.a0p0.vtt",
+      "audio": "assets/audio/v2/es/next-two-weeks.a0p0.mp3",
+      "duration_seconds": 16.8,
+      "narration_seconds": 14.4
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "es",
+      "variant": "a0p1",
+      "timeline": "assets/captions/v2/es/next-two-weeks.a0p1.timeline.json",
+      "captions": "assets/captions/v2/es/next-two-weeks.a0p1.vtt",
+      "audio": "assets/audio/v2/es/next-two-weeks.a0p1.mp3",
+      "duration_seconds": 24.04,
+      "narration_seconds": 21.04
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "es",
+      "variant": "a1p0",
+      "timeline": "assets/captions/v2/es/next-two-weeks.a1p0.timeline.json",
+      "captions": "assets/captions/v2/es/next-two-weeks.a1p0.vtt",
+      "audio": "assets/audio/v2/es/next-two-weeks.a1p0.mp3",
+      "duration_seconds": 22.6,
+      "narration_seconds": 19.6
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "es",
+      "variant": "a1p1",
+      "timeline": "assets/captions/v2/es/next-two-weeks.a1p1.timeline.json",
+      "captions": "assets/captions/v2/es/next-two-weeks.a1p1.vtt",
+      "audio": "assets/audio/v2/es/next-two-weeks.a1p1.mp3",
+      "duration_seconds": 29.84,
+      "narration_seconds": 26.24
+    },
+    {
+      "segment_id": "seg/call-all-three",
+      "number": 4,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/call-all-three.timeline.json",
+      "captions": "assets/captions/v2/es/call-all-three.vtt",
+      "audio": "assets/audio/v2/es/call-all-three.mp3",
+      "duration_seconds": 15.92,
+      "narration_seconds": 13.52
+    },
+    {
+      "segment_id": "seg/call-any-one",
+      "number": 5,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/call-any-one.timeline.json",
+      "captions": "assets/captions/v2/es/call-any-one.vtt",
+      "audio": "assets/audio/v2/es/call-any-one.mp3",
+      "duration_seconds": 28.56,
+      "narration_seconds": 26.16
+    },
+    {
+      "segment_id": "seg/who-to-call",
+      "number": 6,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/who-to-call.timeline.json",
+      "captions": "assets/captions/v2/es/who-to-call.vtt",
+      "audio": "assets/audio/v2/es/who-to-call.mp3",
+      "duration_seconds": 33.76,
+      "narration_seconds": 31.36
+    },
+    {
+      "segment_id": "seg/programming-visits",
+      "number": 7,
+      "language": "es",
+      "variant": "",
+      "timeline": "assets/captions/v2/es/programming-visits.timeline.json",
+      "captions": "assets/captions/v2/es/programming-visits.vtt",
+      "audio": "assets/audio/v2/es/programming-visits.mp3",
+      "duration_seconds": 32,
+      "narration_seconds": 28.4
+    },
+    {
+      "segment_id": "seg/bandage-off",
+      "number": 1,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/bandage-off.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/bandage-off.vtt",
+      "audio": "assets/audio/v2/zh-Hans/bandage-off.mp3",
+      "duration_seconds": 14.96,
+      "narration_seconds": 12.56
+    },
+    {
+      "segment_id": "seg/tape-or-no-tape",
+      "number": 2,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/tape-or-no-tape.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/tape-or-no-tape.vtt",
+      "audio": "assets/audio/v2/zh-Hans/tape-or-no-tape.mp3",
+      "duration_seconds": 27.6,
+      "narration_seconds": 25.2
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "zh-Hans",
+      "variant": "a0p0",
+      "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a0p0.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a0p0.vtt",
+      "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a0p0.mp3",
+      "duration_seconds": 15.2,
+      "narration_seconds": 12.8
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "zh-Hans",
+      "variant": "a0p1",
+      "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a0p1.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a0p1.vtt",
+      "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a0p1.mp3",
+      "duration_seconds": 21,
+      "narration_seconds": 18
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "zh-Hans",
+      "variant": "a1p0",
+      "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a1p0.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a1p0.vtt",
+      "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a1p0.mp3",
+      "duration_seconds": 21.56,
+      "narration_seconds": 18.56
+    },
+    {
+      "segment_id": "seg/next-two-weeks",
+      "number": 3,
+      "language": "zh-Hans",
+      "variant": "a1p1",
+      "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a1p1.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a1p1.vtt",
+      "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a1p1.mp3",
+      "duration_seconds": 27.36,
+      "narration_seconds": 23.76
+    },
+    {
+      "segment_id": "seg/call-all-three",
+      "number": 4,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/call-all-three.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/call-all-three.vtt",
+      "audio": "assets/audio/v2/zh-Hans/call-all-three.mp3",
+      "duration_seconds": 18.96,
+      "narration_seconds": 16.56
+    },
+    {
+      "segment_id": "seg/call-any-one",
+      "number": 5,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/call-any-one.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/call-any-one.vtt",
+      "audio": "assets/audio/v2/zh-Hans/call-any-one.mp3",
+      "duration_seconds": 34.24,
+      "narration_seconds": 31.84
+    },
+    {
+      "segment_id": "seg/who-to-call",
+      "number": 6,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/who-to-call.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/who-to-call.vtt",
+      "audio": "assets/audio/v2/zh-Hans/who-to-call.mp3",
+      "duration_seconds": 36.32,
+      "narration_seconds": 33.92
+    },
+    {
+      "segment_id": "seg/programming-visits",
+      "number": 7,
+      "language": "zh-Hans",
+      "variant": "",
+      "timeline": "assets/captions/v2/zh-Hans/programming-visits.timeline.json",
+      "captions": "assets/captions/v2/zh-Hans/programming-visits.vtt",
+      "audio": "assets/audio/v2/zh-Hans/programming-visits.mp3",
+      "duration_seconds": 31.28,
+      "narration_seconds": 27.68
     }
   ]
 }

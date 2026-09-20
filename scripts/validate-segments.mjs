@@ -4,6 +4,8 @@ import { fileURLToPath } from "node:url";
 
 import { MEDIA_INDEX_PATH, buildMediaIndex, buildMediaPlan, serializeJson } from "./build-segment-media.mjs";
 import { loadLanguagePacks } from "./lib/language-packs.mjs";
+import { CUE_CHARACTERS, HANGING as HANGING_WORDS } from "./lib/segment-timeline.mjs";
+import { isSpacelessLanguage } from "./lib/narration-timing.mjs";
 import { loadSegmentBundle, segmentNarrationSeconds, validateSegments } from "./lib/segments.mjs";
 import { validateTranslatedNarration } from "./lib/v2-narration.mjs";
 
@@ -36,6 +38,23 @@ export async function checkCommittedMedia(bundle, root) {
   return errors;
 }
 
+// What a caption may not do, in any language: run past the budget for its script, or end on a word that
+// belongs to the phrase after it. A Spanish caption ran to 61 characters against a budget of 52 and a
+// Song reviewer read it as a sentence cut in half.
+export function captionShapeErrors(plan) {
+  const errors = [];
+  for (const item of plan) {
+    const spaceless = isSpacelessLanguage(item.timeline.language);
+    const budget = spaceless ? CUE_CHARACTERS.spaceless : CUE_CHARACTERS.spaced;
+    for (const cue of item.timeline.cues) {
+      if (cue.text.length > budget) errors.push(`${item.paths.vtt} ${cue.id}: ${cue.text.length} characters against a budget of ${budget}: "${cue.text}"`);
+      const last = cue.text.split(/\s+/).at(-1) ?? "";
+      if (!spaceless && /\p{L}$/u.test(last) && HANGING_WORDS.test(last)) errors.push(`${item.paths.vtt} ${cue.id} ends on "${last}", which belongs to the caption after it: "${cue.text}"`);
+    }
+  }
+  return errors;
+}
+
 async function main() {
   const checkMedia = process.argv.includes("--media");
   const bundle = await loadSegmentBundle(repositoryRoot);
@@ -43,6 +62,7 @@ async function main() {
   const errors = [...result.errors];
   const packs = (await loadLanguagePacks(repositoryRoot)).map((entry) => entry.pack);
   errors.push(...validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs }));
+  errors.push(...captionShapeErrors(buildMediaPlan(bundle)));
   if (result.valid && checkMedia) errors.push(...(await checkCommittedMedia(bundle, repositoryRoot)));
   const languages = [...new Set(bundle.segments.segments.flatMap((segment) => segment.beats).flatMap((beat) => Object.keys(beat.narration ?? {})))].sort();
   for (const segment of bundle.segments.segments) {

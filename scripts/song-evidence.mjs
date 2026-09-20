@@ -68,10 +68,14 @@ async function mediaFacts() {
   const numbers = segments.map((segment) => segment.number);
   const byLanguage = Object.fromEntries(LANGUAGES.map((language) => [language, index.entries.filter((entry) => entry.language === language)]));
   const narrated = LANGUAGES.filter((language) => numbers.every((number) => byLanguage[language].some((entry) => entry.number === number)));
-  const seconds = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => {
-    const durations = byLanguage[language].filter((entry) => entry.number === number).map((entry) => entry.duration_seconds);
-    return [number, durations.length ? Math.max(...durations) : null];
-  }))]));
+  // The ceiling is on narration, as in the spec and scripts/lib/segments.mjs; the running time adds the
+  // title card, the pauses between beats, and the tail.
+  const longestOf = (language, number, key) => {
+    const values = byLanguage[language].filter((entry) => entry.number === number).map((entry) => entry[key]);
+    return values.length ? Math.max(...values) : null;
+  };
+  const seconds = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => [number, longestOf(language, number, "narration_seconds")]))]));
+  const running = Object.fromEntries(LANGUAGES.map((language) => [language, Object.fromEntries(numbers.map((number) => [number, longestOf(language, number, "duration_seconds")]))]));
   const longest = Math.max(...Object.values(seconds).flatMap((row) => Object.values(row).filter((value) => value !== null)));
   const captions = {};
   for (const language of LANGUAGES) {
@@ -90,7 +94,7 @@ async function mediaFacts() {
   }
   return {
     segments: numbers,
-    short_clips: { ok: narrated.includes("en") && longest <= CEILING_SECONDS && narrated.every((language) => numbers.every((number) => seconds[language][number] !== null)), ceiling_seconds: CEILING_SECONDS, longest_seconds: longest, seconds_by_language: seconds, narrated_languages: narrated },
+    short_clips: { ok: narrated.includes("en") && longest <= CEILING_SECONDS && narrated.every((language) => numbers.every((number) => seconds[language][number] !== null)), ceiling_seconds: CEILING_SECONDS, longest_narration_seconds: longest, narration_seconds_by_language: seconds, running_seconds_by_language: running, narrated_languages: narrated },
     no_owl: { ok: owl.length === 0, files_searched: patientFacing.length, matches: owl },
     narrator: {
       ok: LANGUAGES.every((language) => voices[language]?.voice && narrated.includes(language)),
@@ -105,8 +109,8 @@ async function mediaFacts() {
 async function openGuide(context, base, fragment) {
   const page = await context.newPage();
   await page.goto(`${base}/guide/index.html#${fragment}`);
-  await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
-  await page.waitForTimeout(600);
+  await page.waitForSelector("body[data-ready]", { state: "attached", timeout: 15000 });
+  await page.waitForTimeout(300);
   return page;
 }
 
@@ -149,8 +153,8 @@ async function languageFacts(browser, base) {
     const context = await browser.newContext(DESKTOP);
     const page = await openGuide(context, base, "s=1&l=en");
     await page.selectOption("#language", language);
-    await page.waitForFunction((code) => document.documentElement.lang === code, language, { timeout: 5000 }).catch(() => {});
-    await page.waitForTimeout(800);
+    await page.waitForSelector(`body[data-ready^="${language}:"]`, { state: "attached", timeout: 15000 });
+    await page.waitForTimeout(300);
     const pack = await readJson(`content/translations/${language}/${ARTIFACT}.json`);
     const shown = await page.evaluate(() => ({
       lang: document.documentElement.lang,
@@ -219,8 +223,8 @@ async function reviewLineFacts(browser, base, link, out) {
   const context = await browser.newContext(DESKTOP);
   const page = await context.newPage();
   await page.goto(link.replace(/^https?:\/\/[^/]+/, base));
-  await page.waitForSelector("#chapter-list .chapter", { state: "attached" });
-  await page.waitForTimeout(800);
+  await page.waitForSelector("body[data-ready]", { state: "attached", timeout: 15000 });
+  await page.waitForTimeout(300);
   const badge = await page.evaluate(() => [...document.querySelectorAll(".badge--clinician")].find((node) => node.offsetParent !== null)?.textContent.trim() ?? null);
   const followUp = await page.evaluate(() => document.querySelector(".transcript__data")?.textContent ?? null);
   await page.evaluate(() => document.querySelector(".transcript__data")?.scrollIntoView({ block: "center" }));
@@ -256,9 +260,14 @@ async function screenshots(browser, base, out) {
     for (const [width, options] of [["desktop", DESKTOP], ["phone", PHONE]]) {
       const context = await browser.newContext(options);
       const page = await openGuide(context, base, `s=1&l=${language}`);
+      // Past the title card, so the screenshot shows the chapter's picture and a caption.
+      await page.click("#transcript .sentence");
+      await page.waitForTimeout(700);
+      await page.evaluate(() => document.getElementById("audio").pause());
+      await page.waitForTimeout(300);
       const file = `guide-${language}-${width}.png`;
       await page.screenshot({ path: join(out, file) });
-      shots.push({ file, shows: `The guide opened in ${names[language]} at ${width === "desktop" ? "1280 by 800" : "375 by 812 phone"} width, chapter 1, before playing.` });
+      shots.push({ file, shows: `The guide in ${names[language]} at ${width === "desktop" ? "1280 by 800" : "375 by 812 phone"} width, paused on the first sentence of chapter 1, with its picture.` });
       await context.close();
     }
   }

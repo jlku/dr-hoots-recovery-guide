@@ -168,10 +168,9 @@ export function localToGlobal(clock, number, local) {
 // The status strip: a visible notice when a language fell back to English, a note when a medication
 // the link switched off still waits on the surgeon's wording, and, whenever a translation is showing,
 // who reviewed it. AI review is always labeled as AI. None of these enters the reading flow.
-export function statusMessages({ pack, fallback, labels, pendingConditions = [] }) {
+export function statusMessages({ pack, fallback, labels }) {
   const messages = [];
   if (fallback) messages.push(labels["ui.language_fallback"]);
-  if (pendingConditions.length) messages.push(labels["ui.pending_clinician_text"]);
   return messages.filter(Boolean);
 }
 
