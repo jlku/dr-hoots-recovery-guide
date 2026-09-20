@@ -44,6 +44,8 @@ Cut on the patient's question, not on module boundaries. Durations are from the 
 
 Rules:
 
+> **Revised 2026-09-19: narration speaks nothing a link can change.** A value a patient's link carries, such as the follow-up date, is live text on the frame or a pre-rendered variant, never spoken. Practice-level values stay spoken, because they are fixed for a practice version, and they come from the practice dot phrase, which is now a source of its own (`content/canonical`, kind `practice_protocol`). The English recording is checked against the canonical sentences, as the translations already were.
+
 - Hard ceiling 35 s of narration per segment, checked by a validator against the timestamp manifest.
 - Each segment opens on a 1.5 s title card: number, title, day chip. No welcome clip, no outro. The TOC page does the welcoming.
 - A segment is a list of beats. A beat binds one or more sentence IDs to one frame and one motion. Beats are the unit that captions, motion, and translations all key on.
