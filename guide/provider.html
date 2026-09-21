@@ -42,7 +42,13 @@
         <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">From</th></tr></thead>
         <tbody></tbody>
       </table>
-      <p class="provider__hint">Change a value here and the matching line in your block changes too, so your note and the link agree.</p>
+      <p class="provider__hint">Change a value here and the matching line in your block changes too, so your note and the link agree. This page rewrites the value and nothing else: your own words stay as you wrote them.</p>
+      <div id="edit-home">
+        <p id="edit-state" class="provider__edit-state" role="status" aria-live="polite" hidden>
+          <span id="edit-said"></span>
+          <button id="undo-edit" class="button button--quiet" type="button">Undo that</button>
+        </p>
+      </div>
       <div id="not-used" class="provider__alert" data-not-in-guide hidden>
         <h2 class="provider__heading">Not in this patient's guide</h2>
         <p id="not-used-summary" class="provider__alert-summary"></p>

@@ -4,7 +4,7 @@ import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine } from "../guide/assets/provider.js";
+import { applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, normalizeDate, parseProviderBlock, parseYesNo, setFieldLine, writeFieldLine } from "../guide/assets/provider.js";
 
 const root = resolve(import.meta.dirname, "..");
 const presets = JSON.parse(await readFile(resolve(root, "content/provider/presets.json"), "utf8")).presets;
@@ -127,14 +127,18 @@ test("each line the guide does not use says whether the guide covers it and whet
 test("a choice in the table writes the matching line back into the block", () => {
   const block = ["Antibiotic: {Yes: *** name, dose, days / No}", "Pain medication: Yes", "Antibiotic: Yes", "Video guide: language English    Reviewed by Dr. Example on 2026-09-19"].join("\n");
   const chosen = setFieldLine(block, "antibiotic", false);
-  assert.deepEqual(chosen.split("\n"), ["Antibiotic: No", "Pain medication: Yes", "Video guide: language English    Reviewed by Dr. Example on 2026-09-19"], "one line replaces every antibiotic line");
+  // Every antibiotic line is rewritten so the two agree. The duplicate is not deleted: the page rewrites
+  // the value it owns and never removes a line the clinician typed, because this text goes to the chart.
+  assert.deepEqual(chosen.split("\n"), ["Antibiotic: No", "Pain medication: Yes", "Antibiotic: No", "Video guide: language English    Reviewed by Dr. Example on 2026-09-19"]);
   assert.deepEqual(parseProviderBlock(chosen).fields.antibiotic, false);
   const spanish = setFieldLine(chosen, "language", "es");
   assert.match(spanish, /^Video guide: language Spanish {4}Reviewed by Dr\. Example on 2026-09-19$/m, "the review line stays on its line");
   const dated = setFieldLine(spanish, "follow_up_date", "2026-10-15");
   assert.match(dated, /^Follow-up: wound check and ear exam on 10\/15\/2026$/m);
   assert.equal(parseProviderBlock(dated).fields.follow_up_date, "2026-10-15");
-  assert.doesNotMatch(setFieldLine(dated, "follow_up_date", null), /Follow-up:/, "clearing the date removes its line");
+  // Clearing the date puts the template's own blank back rather than deleting the clinician's sentence
+  // about the visit, which used to disappear whole.
+  assert.match(setFieldLine(dated, "follow_up_date", null), /^Follow-up: wound check and ear exam on \*\*\*$/m);
   const reviewed = setFieldLine("Antibiotic: No", "reviewed", { by: "Dr. Lee", date: "2026-09-20" });
   assert.deepEqual(parseProviderBlock(reviewed).fields.reviewed, { by: "Dr. Lee", date: "2026-09-20" });
 });
@@ -204,4 +208,26 @@ test("an unapproved preset is an offer, not an answer: silence never becomes spe
   const answered = applyPresets(parseProviderBlock("Antibiotic: No\nPain medication: Yes\nVideo guide: language Spanish").fields, presets, { approved: false });
   assert.deepEqual(answered.unauthored, [], "a block that answers them needs nothing");
   assert.equal(buildPatientLink(answered.values), "guide/index.html#a=0&p=1&l=es");
+});
+
+test("the write-back rewrites the value and never the clinician's words", () => {
+  // A nurse clicked No and the page turned "Antibiotic: Yes cephalexin 500 mg, 7 days" into
+  // "Antibiotic: No", destroying the drug, the dose and the duration — in text that goes back into the
+  // chart, with no undo. The page now owns the answer token and nothing else.
+  const kept = writeFieldLine("Antibiotic: Yes cephalexin 500 mg, 7 days", "antibiotic", false);
+  assert.equal(kept.text, "Antibiotic: No cephalexin 500 mg, 7 days");
+  assert.equal(kept.outcome, "rewrote");
+  assert.equal(kept.tail, "cephalexin 500 mg, 7 days", "and it says the tail now contradicts the answer");
+
+  const prose = writeFieldLine("Antibiotic: pending culture results", "antibiotic", false);
+  assert.equal(prose.text, "Antibiotic: pending culture results", "words it cannot read are left exactly as written");
+  assert.equal(prose.outcome, "kept");
+  assert.equal(prose.kept, "pending culture results");
+
+  const added = writeFieldLine("Shower: 3 days\nReviewed by Dr. Lee on 9/9/2026", "antibiotic", false);
+  assert.deepEqual(added.text.split("\n"), ["Shower: 3 days", "Antibiotic: No", "Reviewed by Dr. Lee on 9/9/2026"], "a new line goes above the signature, never below it");
+  assert.equal(added.outcome, "added");
+
+  assert.equal(writeFieldLine("Video guide: language Spanish", "language", "zh-Hans").text, "Video guide: language Mandarin");
+  assert.equal(writeFieldLine("Follow up: come back in two to three weeks", "follow_up_date", "2026-10-15").outcome, "kept", "a sentence with no date token is theirs to edit");
 });

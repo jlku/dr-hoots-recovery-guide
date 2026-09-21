@@ -5,7 +5,7 @@
 // the provider pastes leaves the browser tab.
 import { assetUrl, canonicalSentences, fetchJson } from "./data.js";
 import { LANGUAGES, formatFollowUp } from "./logic.js";
-import { FIELD_ORDER, applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, parseProviderBlock, setFieldLine } from "./provider.js";
+import { FIELD_ORDER, applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, parseProviderBlock, writeFieldLine } from "./provider.js";
 
 const byId = (id) => document.getElementById(id);
 const dom = {
@@ -36,6 +36,10 @@ const dom = {
   link: byId("patient-link"),
   linkState: byId("link-state"),
   copy: byId("copy-link"),
+  editState: byId("edit-state"),
+  editHome: byId("edit-home"),
+  editSaid: byId("edit-said"),
+  undo: byId("undo-edit"),
   open: byId("open-guide")
 };
 const STORE_KEY = "avs-provider-block";
@@ -43,6 +47,8 @@ const STORE_KEY = "avs-provider-block";
 // takes the tick back.
 let acknowledged = null;
 const LABELS = { antibiotic: "Antibiotic", pain_medication: "Pain medication", follow_up_date: "Follow-up", language: "Language", reviewed: "Reviewed by" };
+// What the page rewrote, named the way a clinician would say it.
+const WROTE = { antibiotic: "antibiotic answer", pain_medication: "pain medication answer", follow_up_date: "follow-up date", language: "guide language" };
 const MEDICATION_SENTENCE = { antibiotic: "med.01", pain_medication: "med.03" };
 const NO_WORDING = { antibiotic: "antibiotic", pain_medication: "prescription pain medicine" };
 
@@ -71,8 +77,42 @@ function quote(ids) {
   return ids.map((id) => sentences.get(id)).filter(Boolean).join(" ");
 }
 
+// What the last table edit did, so the page can offer to undo it by name.
+let lastEdit = null;
+
+// The clinician's block goes back into the chart, so an edit they did not mean must be reversible the way
+// every other edit in the browser is. Assigning textarea.value wipes the native undo stack, so Ctrl-Z did
+// nothing after a table click. Writing through the browser's own edit path keeps one undo history for
+// typing and for our writes alike; where that path is unavailable the page falls back and the Undo button
+// beside the table is the only way back, which is why the button exists whether or not Ctrl-Z works.
+function writeBlock(next) {
+  const previous = dom.block.value;
+  if (next === previous) return previous;
+  const active = document.activeElement;
+  let wrote = false;
+  try {
+    dom.block.focus();
+    dom.block.setSelectionRange(0, previous.length);
+    wrote = document.execCommand("insertText", false, next) && dom.block.value === next;
+  } catch {
+    wrote = false;
+  }
+  if (!wrote) dom.block.value = next;
+  if (active && active !== dom.block && typeof active.focus === "function") active.focus();
+  return previous;
+}
+
 function apply(field, value) {
-  dom.block.value = setFieldLine(dom.block.value, field, value);
+  const { text, outcome, kept, tail } = writeFieldLine(dom.block.value, field, value);
+  const previous = writeBlock(text);
+  lastEdit = { field, previous, outcome, kept, tail };
+  render();
+}
+
+function undoLastEdit() {
+  if (!lastEdit) return;
+  writeBlock(lastEdit.previous);
+  lastEdit = null;
   render();
 }
 
@@ -276,7 +316,27 @@ function render() {
   dom.unread.replaceChildren(...parsed.unfilled.map((line) => element("li", { className: "line" }, element("code", { className: "line__text", textContent: line }), element("p", { className: "line__note", textContent: "Not filled in or not readable, so the value in the table applies. Change it there." }))));
   dom.unreadBlock.hidden = parsed.unfilled.length === 0;
 
-  const signature = contradictions.map((entry) => entry.text).join(" ");
+  // What the last table edit did to the clinician's own text, in their words, with a way back.
+  if (lastEdit) {
+    const label = LABELS[lastEdit.field];
+    const said = lastEdit.outcome === "added"
+      ? `${label} was not in your block, so this page added a line for it.`
+      : lastEdit.outcome === "kept"
+        ? `Your ${label.toLowerCase()} line still says \u201c${lastEdit.kept}\u201d. This page did not change your words; the link uses what you chose.`
+        : lastEdit.tail
+          ? `Rewrote the ${WROTE[lastEdit.field]} only. Your line still says \u201c${lastEdit.tail}\u201d \u2014 check it before this goes back in the chart.`
+          : `Rewrote the ${WROTE[lastEdit.field]} in your block.`;
+    dom.editSaid.textContent = said;
+    dom.editState.hidden = false;
+    dom.editState.dataset.attention = lastEdit.outcome === "kept" || lastEdit.tail ? "" : "quiet";
+    // It belongs against the control that caused it, not a screen below: the clinician clicked here.
+    dom.rows.querySelector(`tr[data-field="${lastEdit.field}"] td`)?.append(dom.editState);
+  } else {
+    dom.editState.hidden = true;
+    dom.editHome.append(dom.editState);
+  }
+
+  const signature = contradictions.map((entry) => entry.text).join("\u0000");
   dom.ackRow.hidden = contradictions.length === 0;
   dom.ackText.textContent = contradictions.length === 1
     ? "I have read the difference above, and I will tell this patient myself."
@@ -329,8 +389,10 @@ function hideOffer() {
 
 dom.block.addEventListener("input", () => {
   hideOffer();
+  lastEdit = null;
   render();
 });
+dom.undo.addEventListener("click", undoLastEdit);
 dom.ack.addEventListener("change", () => {
   acknowledged = dom.ack.checked ? dom.ack.dataset.signature ?? null : null;
   render();

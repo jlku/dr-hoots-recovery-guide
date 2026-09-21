@@ -287,43 +287,145 @@ export function coveredSentences(lineMap) {
   return Object.fromEntries(Object.entries(lineMap.covered).map(([key, entry]) => [key, entry.sentences]));
 }
 
-export function setFieldLine(text, field, value) {
-  const lines = String(text ?? "").split(/\r?\n/);
-  if (field === "reviewed") {
-    const review = value ? `Reviewed by ${value.by} on ${usDate(value.date)}` : null;
-    let placed = false;
-    const out = [];
-    for (const raw of lines) {
-      const at = raw.search(/reviewed by/i);
-      if (at < 0) {
-        out.push(raw);
-        continue;
-      }
-      const before = raw.slice(0, at).replace(/\s+$/, "");
-      const next = placed || !review ? before : before ? `${before}    ${review}` : review;
-      placed = placed || Boolean(review);
-      if (next.trim()) out.push(next);
-    }
-    if (!placed && review) out.push(review);
-    return out.join("\n");
+// Writing a value back into the block rewrites the token that holds it and nothing else. It used to
+// rebuild the whole line from a template, so clicking No on "Antibiotic: Yes cephalexin 500 mg, 7 days"
+// destroyed the drug, the dose and the duration — text that goes back into the patient's chart. The only
+// thing with authority to delete a clinician's prose is the clinician.
+//
+// Three outcomes, and the page says which happened:
+//   "rewrote"  the page found its token and replaced it, keeping every other word on the line
+//   "added"    there was no line for this field, so one was added above the signature
+//   "kept"     the line says something the page cannot read as a value, so it was left exactly as it is
+const ANSWER_TOKEN = /^(yes|y|no|n|none|not\s+(?:needed|prescribed|indicated|required|given))\b/i;
+const BRACED = /\{[^}]*\}/;
+
+function answerWord(value) {
+  return value ? "Yes" : "No";
+}
+
+// Where the value sits on the line, without its margin note or its review suffix.
+function splitLine(raw) {
+  const reviewedAt = raw.search(/reviewed by/i);
+  const body = reviewedAt > 0 ? raw.slice(0, reviewedAt) : raw;
+  const review = reviewedAt > 0 ? raw.slice(reviewedAt).trim() : "";
+  const match = body.match(/^(\s*[A-Za-z][A-Za-z /-]*?\s*:\s*)([\s\S]*)$/);
+  if (!match) return null;
+  const marginAt = match[2].search(/\s\s+\([^)]*\)?\s*$/);
+  const value = marginAt >= 0 ? match[2].slice(0, marginAt) : match[2].replace(/\s+$/, "");
+  const margin = marginAt >= 0 ? match[2].slice(marginAt).trim() : "";
+  // Where the margin note starts on the untouched line, so it can keep its column.
+  const column = marginAt >= 0 ? match[1].length + match[2].slice(0, marginAt).length + match[2].slice(marginAt).search(/\S/) : 0;
+  return { label: match[1], value, margin, column, review };
+}
+
+function joinLine({ label, value, margin, column, review }) {
+  const head = `${label}${value}`;
+  const gap = margin ? " ".repeat(Math.max(4, column - head.length)) : "";
+  return `${head}${gap}${margin}${review ? `    ${review}` : ""}`;
+}
+
+// Replaces the token this field owns inside the clinician's own sentence. Returns null when the page
+// cannot see a token it owns, which means the words are theirs and stay untouched.
+function replaceToken(value, field, next) {
+  if (field === "antibiotic" || field === "pain_medication") {
+    const word = answerWord(next);
+    if (BRACED.test(value)) return value.replace(BRACED, word);
+    if (value.includes("***")) return value.replace("***", word);
+    const match = value.match(ANSWER_TOKEN);
+    if (match) return `${word}${value.slice(match[0].length)}`;
+    return value.trim() === "" ? word : null;
   }
-  const next = FIELD_LINES[field](value);
-  let replaced = false;
+  if (field === "language") {
+    const word = LANGUAGE_WORDS[next] ?? "English";
+    if (BRACED.test(value)) return value.replace(BRACED, word);
+    const spoken = value.split(/(\s+)/).findIndex((part) => LANGUAGE_NAMES.some(([pattern]) => pattern.test(part.replace(/[^\p{L}]/gu, ""))));
+    if (spoken >= 0) {
+      const parts = value.split(/(\s+)/);
+      parts[spoken] = word;
+      return parts.join("");
+    }
+    if (value.includes("***")) return value.replace("***", word);
+    return value.trim() === "" ? `language ${word}` : null;
+  }
+  // follow_up_date: the date is a token inside the clinician's sentence about the visit.
+  const found = findDate(value);
+  const token = next ? usDate(next) : "***";
+  if (found) return value.replace(found.text, token);
+  if (value.includes("***")) return next ? value.replace("***", token) : value;
+  if (!next) return value;
+  return value.trim() === "" ? `wound check and ear exam on ${token}` : null;
+}
+
+export function writeFieldLine(text, field, value) {
+  const lines = String(text ?? "").split(/\r?\n/);
+  if (field === "reviewed") return { text: setReviewedLine(lines, value), outcome: "rewrote", kept: "", tail: "" };
+
+  let outcome = null;
+  let kept = "";
+  let tail = "";
+  // Every line for this field is rewritten, not just the first. Two lines that disagreed now agree, and
+  // the duplicate is still the clinician's to delete: the page does not remove a line they typed.
+  let first = true;
+  const out = lines.map((raw) => {
+    if (/^\s/.test(raw)) return raw;
+    const key = keyOf(raw);
+    if (!key || fieldFor(key) !== field) return raw;
+    const parts = splitLine(raw);
+    if (!parts) return raw;
+    const written = replaceToken(parts.value, field, value);
+    if (written === null) {
+      if (first) {
+        outcome = "kept";
+        kept = parts.value.trim();
+        first = false;
+      }
+      return raw;
+    }
+    if (first) {
+      outcome = "rewrote";
+      kept = "";
+      first = false;
+    }
+    // Rewriting the answer can leave the clinician's own tail contradicting it: "No cephalexin 500 mg,
+    // 7 days". The page keeps their words and tells them, rather than deleting the drug to look tidy.
+    if ((field === "antibiotic" || field === "pain_medication") && !tail) {
+      const tailText = written.replace(ANSWER_TOKEN, "").replace(/^[\s:;,.-]+/, "").trim();
+      if (tailText) tail = tailText;
+    }
+    return joinLine({ ...parts, value: written });
+  });
+
+  if (!outcome) {
+    const line = FIELD_LINES[field](value);
+    if (!line) return { text: out.join("\n"), outcome: "rewrote", kept: "", tail: "" };
+    // A new line goes above the signature, never below it.
+    const signature = out.findIndex((raw) => /reviewed by/i.test(raw));
+    const at = signature >= 0 ? signature : out.length;
+    out.splice(at, 0, line);
+    outcome = "added";
+  }
+  return { text: out.join("\n"), outcome, kept, tail };
+}
+
+function setReviewedLine(lines, value) {
+  const review = value ? `Reviewed by ${value.by} on ${usDate(value.date)}` : null;
+  let placed = false;
   const out = [];
   for (const raw of lines) {
-    const key = /^\s/.test(raw) ? null : keyOf(raw);
-    if (key && fieldFor(key) === field) {
-      const at = raw.search(/reviewed by/i);
-      const review = at > 0 ? raw.slice(at).trim() : "";
-      const margin = trailingComment(at > 0 ? raw.slice(0, at) : raw, next);
-      const rewritten = `${next}${margin}${review ? `    ${review}` : ""}`;
-      if (!replaced && next) out.push(rewritten);
-      else if (review) out.push(review);
-      replaced = true;
+    const at = raw.search(/reviewed by/i);
+    if (at < 0) {
+      out.push(raw);
       continue;
     }
-    out.push(raw);
+    const before = raw.slice(0, at).replace(/\s+$/, "");
+    const next = placed || !review ? before : before ? `${before}    ${review}` : review;
+    placed = placed || Boolean(review);
+    if (next.trim()) out.push(next);
   }
-  if (!replaced && next) out.push(next);
+  if (!placed && review) out.push(review);
   return out.join("\n");
+}
+
+export function setFieldLine(text, field, value) {
+  return writeFieldLine(text, field, value).text;
 }

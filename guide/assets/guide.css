@@ -203,6 +203,12 @@ button, select, input { font-family: inherit; }
 .line__label + .line__label { margin-top: 10px; }
 .line__heard { margin: 0; color: #7a1a14; font-size: 16px; font-weight: 700; }
 /* The provider says, in their own words, that they have read the differences before the link appears. */
+/* What the last table edit did to the clinician's note, and the way back out of it. */
+.provider__edit-state { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin: 8px 0 0; font-size: 14px; padding: 8px 12px; border-left: 4px solid var(--teal); background: var(--wash); color: var(--navy); font-size: 15px; }
+.provider__edit-state[hidden] { display: none; }
+.provider__edit-state:not([data-attention="quiet"]) { border-left-color: #b3261e; background: #fcebea; color: #7a1a14; font-weight: 700; }
+.provider__edit-state span { flex: 1 1 180px; min-width: 0; }
+.provider__edit-state .button--quiet { flex: none; min-height: 34px; padding: 4px 12px; font-size: 14px; }
 .provider__ack { margin: 8px 0 12px; padding: 12px 14px; border: 2px solid #b3261e; border-radius: 6px; background: #fcebea; }
 .provider__ack[hidden] { display: none; }
 .provider__ack-label { display: flex; gap: 10px; align-items: flex-start; color: #7a1a14; font-size: 16px; font-weight: 700; cursor: pointer; }
