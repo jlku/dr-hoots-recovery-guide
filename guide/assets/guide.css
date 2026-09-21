@@ -209,6 +209,12 @@ button, select, input { font-family: inherit; }
 .provider__edit-state:not([data-attention="quiet"]) { border-left-color: #b3261e; background: #fcebea; color: #7a1a14; font-weight: 700; }
 .provider__edit-state span { flex: 1 1 180px; min-width: 0; }
 .provider__edit-state .button--quiet { flex: none; min-height: 34px; padding: 4px 12px; font-size: 14px; }
+/* A finger needs a bigger target than a mouse, and the cell is narrow on a phone. */
+@media (max-width: 900px) {
+  .provider__edit-state { gap: 8px; }
+  .provider__edit-state span { flex: 1 1 100%; }
+  .provider__edit-state .button--quiet { width: 100%; min-height: 44px; }
+}
 .provider__ack { margin: 8px 0 12px; padding: 12px 14px; border: 2px solid #b3261e; border-radius: 6px; background: #fcebea; }
 .provider__ack[hidden] { display: none; }
 .provider__ack-label { display: flex; gap: 10px; align-items: flex-start; color: #7a1a14; font-size: 16px; font-weight: 700; cursor: pointer; }
