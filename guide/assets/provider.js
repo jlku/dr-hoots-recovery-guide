@@ -13,10 +13,13 @@ const LANGUAGE_NAMES = [
 ];
 
 // The words a clinician types for each driving line, after lowercasing and turning hyphens into spaces.
+// Measured against 25 real published post-operative handouts, not guessed. "Pain:" alone is the single
+// most common field label in that corpus and was missing; "pain meds", "f/u" and "abx" appear zero times
+// between them, and are kept only because a clinician typing our own draft may use them.
 const FIELD_KEYS = {
   antibiotic: ["antibiotic", "antibiotics", "abx"],
-  pain_medication: ["pain medication", "pain medications", "pain medicine", "pain meds", "pain med"],
-  follow_up_date: ["follow up", "followup", "f/u", "fu"],
+  pain_medication: ["pain", "pain medication", "pain medications", "pain medicine", "pain meds", "pain med", "pain control", "dealing with pain", "pain and discomfort", "pain management"],
+  follow_up_date: ["follow up", "followup", "f/u", "fu", "follow up visit", "follow up visits", "follow up appointment", "follow up appointments", "return to clinic", "rtc"],
   language: ["video guide", "language", "lang", "guide language"]
 };
 export const FIELD_ORDER = ["antibiotic", "pain_medication", "follow_up_date", "language"];
@@ -67,6 +70,32 @@ export function normalizeDate(text) {
   return findDate(text)?.iso ?? null;
 }
 
+// No real handout carries a bookable appointment. Across 25 published post-operative instructions, 19
+// state a follow-up and 0 state a date: every one is an interval, and half tell the patient to phone and
+// book it themselves. Demanding a date was demanding something the source never contains.
+const NUMBER_WORDS = { one: 1, two: 2, three: 3, four: 4, five: 5, six: 6, seven: 7, eight: 8, nine: 9, ten: 10, twelve: 12 };
+const COUNT = "(\\d{1,2}|one|two|three|four|five|six|seven|eight|nine|ten|twelve)";
+const INTERVAL = new RegExp(`\\b${COUNT}(?:\\s*(?:-|\\u2013|to)\\s*${COUNT})?\\s+(day|week|month)s?\\b`, "i");
+
+export function readInterval(text) {
+  const match = String(text ?? "").match(INTERVAL);
+  if (!match) return null;
+  const count = (word) => (word ? NUMBER_WORDS[word.toLowerCase()] ?? Number(word) : null);
+  const from = count(match[1]);
+  const to = count(match[2]);
+  if (!Number.isFinite(from)) return null;
+  const unit = match[3].toLowerCase();
+  const days = { day: 1, week: 7, month: 30 }[unit];
+  return {
+    text: match[0].replace(/\s+/g, " ").trim(),
+    unit,
+    from,
+    to: Number.isFinite(to) ? to : from,
+    days_from: from * days,
+    days_to: (Number.isFinite(to) ? to : from) * days
+  };
+}
+
 function parseLanguage(text) {
   const value = String(text ?? "").replace(/^language\s*/i, "").trim();
   if (!value || /[{}]/.test(value)) return null;
@@ -94,7 +123,10 @@ function readField(field, value) {
   }
   if (field === "follow_up_date") {
     const date = normalizeDate(value);
-    return date ? { value: date } : null;
+    if (date) return { value: date };
+    // An interval is a readable answer meaning "no date yet", not a line the page failed to read.
+    const interval = readInterval(value);
+    return interval ? { value: null, interval } : null;
   }
   const language = parseLanguage(value);
   return language ? { value: language } : null;
@@ -105,6 +137,7 @@ export function parseProviderBlock(text) {
   const unread = [];
   const other = [];
   const details = {};
+  const intervals = {};
   const needsChoice = new Set();
   const unclear = {};
   let reviewed = null;
@@ -114,10 +147,32 @@ export function parseProviderBlock(text) {
   // entirely: an indented "do not take ibuprofen or any NSAID for 10 days" under "Antibiotic: Yes"
   // appeared in no list at all. Nothing the clinician wrote may vanish.
   let previousShown = false;
-  for (const raw of String(text ?? "").split(/\r?\n/)) {
+  const all = String(text ?? "").split(/\r?\n/);
+  // A label alone on its line, with its instruction in the block beneath, is the commonest shape in real
+  // handouts: 12 of 25. The block is read as that label's value, and still shown as its own lines, so
+  // nothing is hidden and nothing is counted as missing that the clinician can plainly see.
+  const blockUnder = (start) => {
+    const body = [];
+    for (let index = start + 1; index < all.length; index += 1) {
+      const next = all[index];
+      if (!next.trim()) break;
+      const bare = stripBullet(next.trim());
+      const bulleted = next !== stripBullet(next) || /^\s/.test(next);
+      if (!bulleted) break;
+      if (bare.match(/^([A-Za-z][A-Za-z /-]*?)\s*:\s*(.*)$/) && fieldFor(bare.split(":")[0].toLowerCase().replace(/[\s-]+/g, " ").trim())) break;
+      body.push(bare);
+      if (body.length >= 6) break;
+    }
+    return body.join(" ");
+  };
+  for (let position = 0; position < all.length; position += 1) {
+    const raw = all[position];
     const line = raw.trim();
     if (!line) continue;
-    const match = line.match(/^([A-Za-z][A-Za-z /-]*?)\s*:\s*(.*)$/);
+    // The bullet is stripped to read the line, never to show it: the clinician's words are displayed
+    // exactly as they wrote them, glyph and all.
+    const bare = stripBullet(line);
+    const match = bare.match(/^([A-Za-z][A-Za-z /-]*?)\s*:\s*(.*)$/);
     const leadKey = match ? match[1].toLowerCase().replace(/[\s-]+/g, " ").trim() : null;
     // An indented line continues the line above it, unless it names one of the driving lines.
     if (/^\s/.test(raw) && previous && !(leadKey && fieldFor(leadKey))) {
@@ -133,20 +188,25 @@ export function parseProviderBlock(text) {
       continue;
     }
     const reviewedAt = line.search(/reviewed by/i);
-    const main = reviewedAt > 0 ? line.slice(0, reviewedAt).trim() : line;
+    const bareReviewedAt = bare.search(/reviewed by/i);
+    const main = bareReviewedAt > 0 ? bare.slice(0, bareReviewedAt).trim() : bare;
     const keyed = main.match(/^([A-Za-z][A-Za-z /-]*?)\s*:\s*(.*)$/);
     const key = keyed ? keyed[1].toLowerCase().replace(/[\s-]+/g, " ").trim() : null;
     const value = keyed?.[2] ?? "";
     const field = key ? fieldFor(key) : null;
     if (field) {
-      const read = readField(field, value);
+      // An empty value means the instruction is in the block below the label, not missing.
+      const effective = value.trim() ? value : blockUnder(position);
+      const read = readField(field, effective);
       if (read) {
         (seen[field] ||= []).push({ value: read.value, line });
         if (read.details) details[field] = read.details;
+        // The clinician's own line is kept with it, so the page can quote them rather than a fragment.
+        if (read.interval) intervals[field] = { ...read.interval, line };
       } else {
         unread.push(line);
         needsChoice.add(field);
-        unclear[field] = line;
+        unclear[field] = value.trim() ? line : `${line} ${blockUnder(position)}`.trim();
       }
       previous = { key, text: line };
       previousShown = false;
@@ -173,7 +233,7 @@ export function parseProviderBlock(text) {
   }
   if (reviewed) fields.reviewed = reviewed;
   const unfilled = [...new Set(unread)].filter((line) => !Object.values(unclear).includes(line));
-  return { fields, unread: [...new Set(unread)], unfilled, unclear, other, details, conflicts, needs_choice: FIELD_ORDER.filter((field) => needsChoice.has(field)) };
+  return { fields, unread: [...new Set(unread)], unfilled, unclear, other, details, intervals, conflicts, needs_choice: FIELD_ORDER.filter((field) => needsChoice.has(field)) };
 }
 
 // A preset answers a line the block leaves out — but only once a clinic has approved it. Until then the
@@ -259,8 +319,16 @@ const FIELD_LINES = {
   language: (value) => `Video guide: language ${LANGUAGE_WORDS[value] ?? "English"}`
 };
 
+// A leading bullet, dash or list number is decoration, not part of the label. Real handouts print
+// "\u2022 Antibiotics:", "3. Medication:" and "1. Dressing:"; without this the glyph alone defeated the
+// two verbatim matches the closed list did have.
+const BULLET = /^\s*(?:[\u2022\u2023\u25aa\u25cf\u25cb\u00b7*+\u2013\u2014-]|\(?\d{1,2}[.)]|\(?[a-f][.)])\s+/;
+export function stripBullet(line) {
+  return String(line ?? "").replace(BULLET, "");
+}
+
 function keyOf(raw) {
-  const line = raw.trim();
+  const line = stripBullet(raw.trim());
   const reviewedAt = line.search(/reviewed by/i);
   const main = reviewedAt > 0 ? line.slice(0, reviewedAt).trim() : line;
   const keyed = main.match(/^([A-Za-z][A-Za-z /-]*?)\s*:\s*(.*)$/);

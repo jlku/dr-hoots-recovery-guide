@@ -51,6 +51,9 @@ const LABELS = { antibiotic: "Antibiotic", pain_medication: "Pain medication", f
 const WROTE = { antibiotic: "antibiotic answer", pain_medication: "pain medication answer", follow_up_date: "follow-up date", language: "guide language" };
 const MEDICATION_SENTENCE = { antibiotic: "med.01", pain_medication: "med.03" };
 const NO_WORDING = { antibiotic: "antibiotic", pain_medication: "prescription pain medicine" };
+// What the frame shows when the link carries no date, and the wait it stands for.
+const FALLBACK_WAIT = "about two weeks after surgery";
+const FALLBACK_DAYS = 14;
 
 const [presetFile, lineMap, canonical, segmentFile, templateText] = await Promise.all([
   fetchJson("content/provider/presets.json"),
@@ -172,6 +175,11 @@ function medicationRow(field, parsed, values, fromPresets, unauthored) {
   return row(field, control, from, notes, needsChoice);
 }
 
+// The guide's fallback wait has to fall inside what the note said, or the patient reads a different one.
+function intervalAgrees(interval) {
+  return interval.days_from <= FALLBACK_DAYS && FALLBACK_DAYS <= interval.days_to;
+}
+
 function followUpRow(values, fromPresets, language, parsed) {
   const needsChoice = parsed.needs_choice.includes("follow_up_date");
   const wrap = element("div", { className: "row-control" });
@@ -190,9 +198,17 @@ function followUpRow(values, fromPresets, language, parsed) {
     const said = conflict ? conflict.lines.map((line) => `"${line}"`).join(" and ") : `"${parsed.unclear.follow_up_date}"`;
     return row("follow_up_date", wrap, "Choose one", [`This page cannot read ${said} as one date. Pick the date, or use "about two weeks".`], true);
   }
+  const interval = parsed.intervals?.follow_up_date;
   const notes = values.follow_up_date
-    ? [`The guide shows "Your wound check and ear exam: ${formatFollowUp(values.follow_up_date, "en")}" and still says "about two weeks after surgery" when it speaks.${language !== "en" ? " (Shown in the patient's language.)" : ""}`]
-    : [`The guide says "about two weeks after surgery".`];
+    ? [`The guide shows "Your wound check and ear exam: ${formatFollowUp(values.follow_up_date, "en")}".${language !== "en" ? " (Shown in the patient's language.)" : ""}`]
+    : interval
+      // Real handouts give an interval, never a bookable date. The page says what the note said, and
+      // whether the guide's own wait agrees with it.
+      ? [`Your note says "${interval.line ?? interval.text}", which is not a date this page can put in the guide.`,
+         intervalAgrees(interval)
+           ? `Without a date the guide shows "${FALLBACK_WAIT}", which agrees with your note.`
+           : `Without a date the guide shows "${FALLBACK_WAIT}" \u2014 a different wait from the one you wrote. Set the date, or the patient reads the wrong one.`]
+      : [`The guide says "${FALLBACK_WAIT}".`];
   return row("follow_up_date", wrap, fromPresets.includes("follow_up_date") ? "preset" : "your block", notes, false);
 }
 
@@ -292,6 +308,17 @@ function render() {
 
   const statuses = lineStatuses(parsed.other, { template, covered, noteOnly: lineMap.note_only });
   const contradictions = statuses.filter((entry) => entry.status === "changed");
+  // A follow-up the note states as an interval is not a line of the block, but it contradicts the guide
+  // in exactly the same way when the guide's fallback wait is not the one the clinician wrote.
+  const interval = parsed.intervals?.follow_up_date;
+  if (interval && !values.follow_up_date && !intervalAgrees(interval)) {
+    contradictions.push({
+      text: interval.line ?? `Follow-up: ${interval.text}`,
+      sentences: [],
+      heard: `Your wound check and ear exam: ${FALLBACK_WAIT}`,
+      chapter: chapterOf.get("wc.09")
+    });
+  }
   dom.contradictsList.replaceChildren(...contradictions.map(contradictionItem));
   dom.contradictsCount.textContent = String(contradictions.length);
   dom.contradictsSummary.textContent = contradictions.length === 1
@@ -349,8 +376,13 @@ function render() {
   // A value with no author blocks the link exactly as an unreadable one does: absence, mislabelling and
   // unreadability are one object, because the patient cannot tell them apart.
   const pending = FIELD_ORDER.filter((field) => parsed.needs_choice.includes(field) || unauthored.includes(field)).map((field) => LABELS[field]);
+  // A contradiction the clinician can actually fix here asks them to fix it. Ticking a box to accept a
+  // wait you can correct with one date picker is a worse outcome than being made to correct it.
+  const needsDate = Boolean(interval) && !values.follow_up_date && !intervalAgrees(interval);
   const blocked = pending.length
     ? `Choose ${pending.join(" and ")} in the table before you send a link.`
+    : needsDate
+      ? `Your note says "${interval.line ?? interval.text}". Set the follow-up date, because the guide cannot say that \u2014 without a date it shows "${FALLBACK_WAIT}".`
     : contradictions.length && signature !== acknowledged
       ? `This patient's guide contradicts ${contradictions.length === 1 ? "a line" : `${contradictions.length} lines`} in your block. Read ${contradictions.length === 1 ? "it" : "them"} and tick the box before you send a link.`
       : null;
