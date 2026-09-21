@@ -120,6 +120,7 @@
         "wc.10"
       ],
       "source_claim_ids": [
+        "practice.follow-up.clinic-gives-date",
         "surgery.wound-check.two-weeks",
         "surgery.sutures.dissolvable"
       ],
@@ -129,6 +130,7 @@
         "renderable": false,
         "review_status": "blocked_pending_surgeon_review",
         "source_claim_ids": [
+          "practice.follow-up.clinic-gives-date",
           "surgery.wound-check.two-weeks",
           "surgery.sutures.dissolvable"
         ],

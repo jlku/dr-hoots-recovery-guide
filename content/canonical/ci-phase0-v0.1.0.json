@@ -188,6 +188,26 @@
           "claim": "Take pain medication as prescribed, staying ahead of pain rather than waiting until it is severe."
         }
       ]
+    },
+    {
+      "id": "practice-dot-phrase-2026-09-17",
+      "kind": "practice_protocol",
+      "status": "surgeon_review",
+      "publisher": "UCSF OHNS cochlear implant practice (partner surgeon)",
+      "title": "Cochlear implant post-operative dot phrase (draft, awaiting the surgeon's markup)",
+      "file": "content/provider/dot-phrase-draft.txt",
+      "retrieved_at": "2026-09-17",
+      "visible_revision_date": null,
+      "passage_locations": [
+        "Follow-up: wound check and ear exam on ***"
+      ],
+      "claims": [
+        {
+          "id": "practice.follow-up.clinic-gives-date",
+          "claim": "The clinic gives the patient the date of the wound check and ear exam."
+        }
+      ],
+      "claim_snapshot_sha256": "764372a688e798f4d114b2ef43b5f3c9e85ac013e742b7d419dc3757908bbfc2"
     }
   ],
   "modules": [
@@ -197,7 +217,7 @@
       "status": "unverified_draft",
       "phase": "recovery days 0 to 14",
       "title": "Care for the surgery site",
-      "content_sha256": "b49fe71c58551be16da5291d35d5433319bb929553e50294cfa4eee13e0deeb9",
+      "content_sha256": "fd0e737b5bb512dd67dc781ec30135d27769be581ab5e60a2a0f7d1c360790c1",
       "canonical_sentences": [
         {
           "id": "wc.01",
@@ -258,8 +278,9 @@
         },
         {
           "id": "wc.09",
-          "text": "Your wound check and ear exam are about two weeks after surgery.",
+          "text": "Your clinic will give you the date for your wound check and ear exam.",
           "source_claim_ids": [
+            "practice.follow-up.clinic-gives-date",
             "surgery.wound-check.two-weeks"
           ]
         },
@@ -314,7 +335,7 @@
       ],
       "readability": {
         "method": "flesch_kincaid_estimate",
-        "grade": 6.3,
+        "grade": 6,
         "target_max": 7
       },
       "visual_policy": "Text-only until the partner surgeon approves any wound-care illustration or animation.",

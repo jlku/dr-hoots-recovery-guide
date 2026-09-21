@@ -16,7 +16,7 @@
     "wc.06": "Use una mezcla de partes iguales de agua oxigenada y agua destilada.",
     "wc.07": "Después, aplique una pomada antibiótica de venta libre, como bacitracina.",
     "wc.08": "Tres días después de la cirugía, puede ducharse y lavarse el cabello.",
-    "wc.09": "La revisión de la herida y el examen del oído son unas dos semanas después de la cirugía.",
+    "wc.09": "Su clínica le dará la fecha de su revisión de la herida y del examen del oído.",
     "wc.10": "Los puntos se disuelven solos, así que no hay que quitarlos.",
     "med.01": "Tome su antibiótico tal como se lo recetaron.",
     "med.02": "Ayuda a prevenir una infección.",
@@ -113,9 +113,9 @@
     "label": "Revisado por IA (Claude), no por un traductor médico certificado",
     "date": "2026-09-19",
     "receipts": [
-      "content/reviews/es/3323558051be56cd.json",
-      "content/reviews/es/3323558051be56cd.2.json",
-      "content/reviews/es/3323558051be56cd.3.json"
+      "content/reviews/es/9cb94a7dc6b3dd19.json",
+      "content/reviews/es/9cb94a7dc6b3dd19.2.json",
+      "content/reviews/es/9cb94a7dc6b3dd19.3.json"
     ]
   }
 }

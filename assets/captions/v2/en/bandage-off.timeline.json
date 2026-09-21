@@ -25,12 +25,12 @@
         "wc.02"
       ],
       "start": 1.5,
-      "end": 8.86,
-      "speech_seconds": 7.36,
-      "record_id": "wound-day2",
-      "manifest": "assets/audio/draft/manifest.json",
-      "source_audio": "assets/audio/draft/wound-day2.mp3",
-      "text": "Two days after surgery, remove the head bandage. Then check: is there tape over the incision behind your ear?"
+      "end": 11.5,
+      "speech_seconds": 10,
+      "record_id": "dressing-off",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/dressing-off.mp3",
+      "text": "Two days after surgery, remove the mastoid dressing, or head bandage. Next, check whether tape covers the incision, or surgical cut, behind the ear."
     }
   ],
   "words": [
@@ -57,7 +57,7 @@
     },
     {
       "text": "surgery,",
-      "start": 2.36,
+      "start": 2.37,
       "end": 3.1,
       "beat": "beat/dressing-off",
       "space": true
@@ -77,93 +77,128 @@
       "space": true
     },
     {
+      "text": "mastoid",
+      "start": 3.66,
+      "end": 4.14,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "dressing,",
+      "start": 4.202,
+      "end": 4.78,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 4.807,
+      "end": 4.86,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
       "text": "head",
-      "start": 3.628,
-      "end": 3.82,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "bandage.",
-      "start": 3.868,
-      "end": 4.46,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "Then",
-      "start": 4.604,
+      "start": 4.924,
       "end": 5.18,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
-      "text": "check:",
-      "start": 5.26,
-      "end": 6.02,
+      "text": "bandage.",
+      "start": 5.244,
+      "end": 5.9,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
-      "text": "is",
-      "start": 6.14,
-      "end": 6.38,
+      "text": "Next,",
+      "start": 6.092,
+      "end": 7.18,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
-      "text": "there",
-      "start": 6.42,
-      "end": 6.62,
+      "text": "check",
+      "start": 7.22,
+      "end": 7.42,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "whether",
+      "start": 7.45,
+      "end": 7.66,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
       "text": "tape",
-      "start": 6.684,
-      "end": 6.94,
+      "start": 7.74,
+      "end": 8.06,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
-      "text": "over",
-      "start": 7.004,
-      "end": 7.26,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "the",
-      "start": 7.28,
-      "end": 7.34,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "incision",
-      "start": 7.4,
-      "end": 7.9,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "behind",
-      "start": 7.946,
-      "end": 8.22,
-      "beat": "beat/dressing-off",
-      "space": true
-    },
-    {
-      "text": "your",
-      "start": 8.252,
+      "text": "covers",
+      "start": 8.106,
       "end": 8.38,
       "beat": "beat/dressing-off",
       "space": true
     },
     {
-      "text": "ear?",
-      "start": 8.48,
-      "end": 8.86,
+      "text": "the",
+      "start": 8.42,
+      "end": 8.54,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "incision,",
+      "start": 8.6,
+      "end": 9.34,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 9.393,
+      "end": 9.5,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "surgical",
+      "start": 9.553,
+      "end": 9.98,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "cut,",
+      "start": 10.08,
+      "end": 10.46,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "behind",
+      "start": 10.517,
+      "end": 10.86,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 10.9,
+      "end": 11.02,
+      "beat": "beat/dressing-off",
+      "space": true
+    },
+    {
+      "text": "ear.",
+      "start": 11.1,
+      "end": 11.5,
       "beat": "beat/dressing-off",
       "space": false
     }
@@ -172,34 +207,43 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 4.46,
-      "text": "Two days after surgery, remove the head bandage.",
+      "end": 4.14,
+      "text": "Two days after surgery, remove the mastoid",
       "beat": "beat/dressing-off",
       "first_word": 0,
-      "word_count": 8
+      "word_count": 7
     },
     {
       "id": "cue-02",
-      "start": 4.604,
-      "end": 6.02,
-      "text": "Then check:",
+      "start": 4.202,
+      "end": 5.9,
+      "text": "dressing, or head bandage.",
       "beat": "beat/dressing-off",
-      "first_word": 8,
-      "word_count": 2
+      "first_word": 7,
+      "word_count": 4
     },
     {
       "id": "cue-03",
-      "start": 6.14,
-      "end": 8.86,
-      "text": "is there tape over the incision behind your ear?",
+      "start": 6.092,
+      "end": 9.34,
+      "text": "Next, check whether tape covers the incision,",
       "beat": "beat/dressing-off",
-      "first_word": 10,
-      "word_count": 9
+      "first_word": 11,
+      "word_count": 7
+    },
+    {
+      "id": "cue-04",
+      "start": 9.393,
+      "end": 11.5,
+      "text": "or surgical cut, behind the ear.",
+      "beat": "beat/dressing-off",
+      "first_word": 18,
+      "word_count": 6
     }
   ],
-  "narration_seconds": 7.36,
-  "duration_seconds": 9.76,
+  "narration_seconds": 10,
+  "duration_seconds": 12.4,
   "source_records": {
-    "wound-day2": "25c2375fc5e39c9cb667d412d3d611ebf0f68eaa5e658ad15f3c7a6d23bf3cea"
+    "dressing-off": "01b573c5af55f32b21418a92b3a73300fc5d6b3a5d56d89d694b6f7bd53cadeb"
   }
 }

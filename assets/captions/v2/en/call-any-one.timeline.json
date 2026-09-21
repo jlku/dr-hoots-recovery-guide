@@ -27,271 +27,397 @@
         "call.05"
       ],
       "start": 1.5,
-      "end": 19.18,
-      "speech_seconds": 17.68,
-      "record_id": "call-any",
-      "manifest": "assets/audio/draft/manifest.json",
-      "source_audio": "assets/audio/draft/call-any.mp3",
-      "text": "Also call for any of these: a fever above 101.5 degrees Fahrenheit; swelling, or fluid building up, behind your ear; a headache, light sensitivity, or excessive lethargy; or any question or concern about you or your child."
+      "end": 22.7,
+      "speech_seconds": 21.2,
+      "record_id": "any-of-these",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/any-of-these.mp3",
+      "text": "Call if you have a fever above 101.5 degrees Fahrenheit. Call if the skin behind your ear is swollen or feels like fluid is building up under it. Call if you have a headache, light sensitivity, or excessive lethargy. Call if you have a wound-care question or another medical concern about you or your child."
     }
   ],
   "words": [
     {
-      "text": "Also",
+      "text": "Call",
       "start": 1.5,
-      "end": 1.82,
+      "end": 1.74,
       "beat": "beat/any-of-these",
       "space": true
     },
     {
-      "text": "call",
-      "start": 1.884,
-      "end": 2.14,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "for",
-      "start": 2.2,
-      "end": 2.38,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "any",
-      "start": 2.42,
-      "end": 2.54,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "of",
-      "start": 2.593,
-      "end": 2.7,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "these:",
-      "start": 2.767,
-      "end": 3.18,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "a",
-      "start": 3.58,
-      "end": 3.98,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "fever",
-      "start": 4.06,
-      "end": 4.46,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "above",
-      "start": 4.527,
-      "end": 4.86,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "101.5",
-      "start": 4.94,
-      "end": 6.46,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "degrees",
-      "start": 6.51,
-      "end": 6.86,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "Fahrenheit;",
-      "start": 6.918,
-      "end": 7.66,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "swelling,",
-      "start": 7.784,
-      "end": 8.86,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "or",
-      "start": 8.887,
-      "end": 8.94,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "fluid",
-      "start": 9.02,
-      "end": 9.42,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "building",
-      "start": 9.456,
-      "end": 9.74,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "up,",
-      "start": 9.82,
-      "end": 10.06,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "behind",
-      "start": 10.106,
-      "end": 10.38,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "your",
-      "start": 10.412,
-      "end": 10.54,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "ear;",
-      "start": 10.64,
-      "end": 11.02,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "a",
-      "start": 11.46,
-      "end": 11.9,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "headache,",
-      "start": 11.962,
-      "end": 12.7,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "light",
-      "start": 12.753,
-      "end": 13.02,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "sensitivity,",
-      "start": 13.087,
-      "end": 14.06,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "or",
-      "start": 14.113,
-      "end": 14.22,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "excessive",
-      "start": 14.268,
-      "end": 14.7,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "lethargy;",
-      "start": 14.748,
-      "end": 16.06,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "or",
-      "start": 16.113,
-      "end": 16.22,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "any",
-      "start": 16.28,
-      "end": 16.46,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "question",
-      "start": 16.513,
-      "end": 16.94,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "or",
-      "start": 16.993,
-      "end": 17.1,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "concern",
-      "start": 17.16,
-      "end": 17.58,
-      "beat": "beat/any-of-these",
-      "space": true
-    },
-    {
-      "text": "about",
-      "start": 17.633,
-      "end": 17.9,
+      "text": "if",
+      "start": 1.793,
+      "end": 1.9,
       "beat": "beat/any-of-these",
       "space": true
     },
     {
       "text": "you",
-      "start": 17.98,
-      "end": 18.22,
+      "start": 1.92,
+      "end": 1.98,
       "beat": "beat/any-of-these",
       "space": true
     },
     {
-      "text": "or",
-      "start": 18.3,
-      "end": 18.46,
+      "text": "have",
+      "start": 2.012,
+      "end": 2.14,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 2.18,
+      "end": 2.22,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "fever",
+      "start": 2.287,
+      "end": 2.62,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "above",
+      "start": 2.673,
+      "end": 2.94,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "101.5",
+      "start": 3.1,
+      "end": 4.46,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "degrees",
+      "start": 4.51,
+      "end": 4.86,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "Fahrenheit.",
+      "start": 4.918,
+      "end": 5.58,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "Call",
+      "start": 5.804,
+      "end": 6.7,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "if",
+      "start": 6.753,
+      "end": 6.86,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 6.9,
+      "end": 7.02,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "skin",
+      "start": 7.084,
+      "end": 7.34,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "behind",
+      "start": 7.397,
+      "end": 7.74,
       "beat": "beat/any-of-these",
       "space": true
     },
     {
       "text": "your",
-      "start": 18.492,
-      "end": 18.62,
+      "start": 7.756,
+      "end": 7.82,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "ear",
+      "start": 7.9,
+      "end": 8.14,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "is",
+      "start": 8.193,
+      "end": 8.3,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "swollen",
+      "start": 8.38,
+      "end": 8.94,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 9.047,
+      "end": 9.26,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "feels",
+      "start": 9.313,
+      "end": 9.58,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "like",
+      "start": 9.628,
+      "end": 9.82,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "fluid",
+      "start": 9.887,
+      "end": 10.22,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "is",
+      "start": 10.273,
+      "end": 10.38,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "building",
+      "start": 10.424,
+      "end": 10.78,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "up",
+      "start": 10.833,
+      "end": 10.94,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "under",
+      "start": 10.98,
+      "end": 11.18,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "it.",
+      "start": 11.26,
+      "end": 11.5,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "Call",
+      "start": 11.708,
+      "end": 12.54,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "if",
+      "start": 12.593,
+      "end": 12.7,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "you",
+      "start": 12.72,
+      "end": 12.78,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "have",
+      "start": 12.812,
+      "end": 12.94,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 12.98,
+      "end": 13.02,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "headache,",
+      "start": 13.073,
+      "end": 13.5,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "light",
+      "start": 13.593,
+      "end": 14.06,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "sensitivity,",
+      "start": 14.127,
+      "end": 15.1,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 15.153,
+      "end": 15.26,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "excessive",
+      "start": 15.316,
+      "end": 15.82,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "lethargy.",
+      "start": 15.868,
+      "end": 16.98,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "Call",
+      "start": 17.1,
+      "end": 17.58,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "if",
+      "start": 17.633,
+      "end": 17.74,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "you",
+      "start": 17.76,
+      "end": 17.82,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "have",
+      "start": 17.852,
+      "end": 17.98,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 18.02,
+      "end": 18.06,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "wound-care",
+      "start": 18.127,
+      "end": 18.7,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "question",
+      "start": 18.762,
+      "end": 19.26,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 19.367,
+      "end": 19.58,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "another",
+      "start": 19.62,
+      "end": 19.9,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "medical",
+      "start": 19.96,
+      "end": 20.38,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "concern",
+      "start": 20.45,
+      "end": 20.94,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "about",
+      "start": 20.993,
+      "end": 21.26,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "you",
+      "start": 21.34,
+      "end": 21.58,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "or",
+      "start": 21.66,
+      "end": 21.82,
+      "beat": "beat/any-of-these",
+      "space": true
+    },
+    {
+      "text": "your",
+      "start": 21.852,
+      "end": 21.98,
       "beat": "beat/any-of-these",
       "space": true
     },
     {
       "text": "child.",
-      "start": 18.7,
-      "end": 19.18,
+      "start": 22.073,
+      "end": 22.7,
       "beat": "beat/any-of-these",
       "space": false
     }
@@ -300,61 +426,79 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.18,
-      "text": "Also call for any of these:",
+      "end": 4.46,
+      "text": "Call if you have a fever above 101.5",
       "beat": "beat/any-of-these",
       "first_word": 0,
-      "word_count": 6
-    },
-    {
-      "id": "cue-02",
-      "start": 3.58,
-      "end": 7.66,
-      "text": "a fever above 101.5 degrees Fahrenheit;",
-      "beat": "beat/any-of-these",
-      "first_word": 6,
-      "word_count": 6
-    },
-    {
-      "id": "cue-03",
-      "start": 7.784,
-      "end": 11.02,
-      "text": "swelling, or fluid building up, behind your ear;",
-      "beat": "beat/any-of-these",
-      "first_word": 12,
       "word_count": 8
     },
     {
-      "id": "cue-04",
-      "start": 11.46,
-      "end": 14.06,
-      "text": "a headache, light sensitivity,",
+      "id": "cue-02",
+      "start": 4.51,
+      "end": 5.58,
+      "text": "degrees Fahrenheit.",
       "beat": "beat/any-of-these",
-      "first_word": 20,
-      "word_count": 4
+      "first_word": 8,
+      "word_count": 2
+    },
+    {
+      "id": "cue-03",
+      "start": 5.804,
+      "end": 9.58,
+      "text": "Call if the skin behind your ear is swollen or feels",
+      "beat": "beat/any-of-these",
+      "first_word": 10,
+      "word_count": 11
+    },
+    {
+      "id": "cue-04",
+      "start": 9.628,
+      "end": 11.5,
+      "text": "like fluid is building up under it.",
+      "beat": "beat/any-of-these",
+      "first_word": 21,
+      "word_count": 7
     },
     {
       "id": "cue-05",
-      "start": 14.113,
-      "end": 16.06,
-      "text": "or excessive lethargy;",
+      "start": 11.708,
+      "end": 13.5,
+      "text": "Call if you have a headache,",
       "beat": "beat/any-of-these",
-      "first_word": 24,
-      "word_count": 3
+      "first_word": 28,
+      "word_count": 6
     },
     {
       "id": "cue-06",
-      "start": 16.113,
-      "end": 19.18,
-      "text": "or any question or concern about you or your child.",
+      "start": 13.593,
+      "end": 16.98,
+      "text": "light sensitivity, or excessive lethargy.",
       "beat": "beat/any-of-these",
-      "first_word": 27,
-      "word_count": 10
+      "first_word": 34,
+      "word_count": 5
+    },
+    {
+      "id": "cue-07",
+      "start": 17.1,
+      "end": 19.9,
+      "text": "Call if you have a wound-care question or another",
+      "beat": "beat/any-of-these",
+      "first_word": 39,
+      "word_count": 9
+    },
+    {
+      "id": "cue-08",
+      "start": 19.96,
+      "end": 22.7,
+      "text": "medical concern about you or your child.",
+      "beat": "beat/any-of-these",
+      "first_word": 48,
+      "word_count": 7
     }
   ],
-  "narration_seconds": 17.68,
-  "duration_seconds": 20.08,
+  "narration_seconds": 21.2,
+  "duration_seconds": 23.6,
   "source_records": {
-    "call-any": "ca2deeddb4c1ee08ec02624d67ea9798bebc753faaaaba43c5af000fdef156b6"
+    "any-of-these": "264ba6967bafa7f9ff76439c013f6e503e160b7c9c059ab4f0d4ac69dae5ad03"
   }
 }

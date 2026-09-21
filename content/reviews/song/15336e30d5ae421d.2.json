@@ -1,0 +1,354 @@
+{
+  "schema_version": "1.0",
+  "reviewer": "song",
+  "kind": "ai",
+  "label": "Simulated Song review (AI), not Song's approval",
+  "model": "claude-opus-5 (session subagent)",
+  "reviewed_on": "2026-09-20",
+  "target": {
+    "kind": "build",
+    "sha256": "15336e30d5ae421d3a5dfab0fa48fb8bde6f0658fa301d36a100f8b07da43567",
+    "files": 169
+  },
+  "rubric": {
+    "id": "song-build-v1",
+    "sha256": "3291e459274bd83895de982570d352ad5e7be69687aabe8343088a1ddf90e3dd"
+  },
+  "checks": [
+    {
+      "id": "short_clips",
+      "verdict": "pass",
+      "note": "All seven segments exist in all three narrated languages and the longest narration is 33.92 s (zh-Hans segment 6), under the 35 s ceiling (short_clips fact). Running times with the title card match what the patient sees: the English chapter list in guide-en-desktop.png reads 0:12 / 0:25 / 0:24 / 0:16 / 0:24 / 0:28 / 0:26 for 2:36 total, Spanish 3:04 in guide-es-desktop.png, Mandarin 3:11 in guide-zh-Hans-desktop.png, with the longest single chapter 0:36 (zh-Hans 6), the ~3 s the title card adds."
+    },
+    {
+      "id": "no_owl",
+      "verdict": "pass",
+      "note": "The no_owl fact searched 18 files and found no owl or mascot. Nothing owl-like appears in any screenshot; chapter 1 shows four drawn panels of the surgical site instead: the mastoid dressing in place, the dressing being lifted off with an arrow, the healed incision line behind the ear, and a magnified view of the incision labelled \"Check for tape\" (guide-en-desktop.png, guide-en-phone.png, and the same art in the Spanish and Mandarin shots)."
+    },
+    {
+      "id": "narrator",
+      "verdict": "pass",
+      "note": "One narrator voice (George) per language for en, es and zh-Hans, all three narrated (narrator fact). No character speaks to the patient anywhere on the page: the player is a plain Play / progress / Speed row with the illustration above it and no figure on screen (guide-en-desktop.png, guide-zh-Hans-desktop.png). Voice quality itself is not something a screenshot can show, so this is a pass on the fact plus the absence of any character."
+    },
+    {
+      "id": "subtitles",
+      "verdict": "pass",
+      "note": "Captions exist for all seven segments in en, es and zh-Hans (subtitles fact). At 1280x800 the caption band sits under the picture with a Captions / Subtítulos / 字幕 checkbox on and the key timing word highlighted (\"after\", \"después\", \"天后\") in guide-en-desktop.png, guide-es-desktop.png, guide-zh-Hans-desktop.png; the band carries a timed chunk of the sentence and the full sentence is in the transcript beside it, with no text cut mid-word or running past the band. At 375x812 the transcript under the player is the caption track and marks the current sentence in bold with a teal bar (guide-en-phone.png, guide-es-phone.png, guide-zh-Hans-phone.png), the layout the packet says was chosen on purpose."
+    },
+    {
+      "id": "toc",
+      "verdict": "pass",
+      "note": "Seven chapters listed and every one visible at 1280x800 in all three languages (toc fact); the chapter list with titles and durations is the left column of guide-en-desktop.png, guide-es-desktop.png and guide-zh-Hans-desktop.png. Each chapter landed exactly on its expected start (0, 12.4, 37.44, 61.92, 77.68, 101.28, 129.36 s) and set the matching active chapter. At phone width the patient gets a \"Chapter 1 of 7\" selector with back / forward buttons and a dropdown for the full list (guide-en-phone.png)."
+    },
+    {
+      "id": "languages",
+      "verdict": "pass",
+      "note": "Switching language changes page, audio and captions (languages fact: es and zh-Hans each return their own title, their own audio file under /assets/audio/v2/<lang>/, and the expected first sentence). The screenshots show no English left behind in the translated views: guide-es-desktop.png is Spanish down to \"Idioma\", \"Imprimir la tarjeta\", \"Reproducir\", \"Subtítulos\", \"TRANSCRIPCIÓN\", the chapter titles, the call-for-help block and the in-picture label \"Revise si hay cinta\"; guide-zh-Hans-desktop.png is Chinese down to \"语言\", \"打印卡片\", \"播放\", \"字幕\", \"文字稿\", the chapter titles, the phone block and the in-picture label \"检查有没有胶布\"."
+    },
+    {
+      "id": "provider_file",
+      "verdict": "pass",
+      "note": "The provider pastes the block into the page and the patient link is ready in 25 ms, with no network requests after load and zero account or login fields (provider_file fact); the only steps are paste the block and copy the link, and the page says \"Nothing you paste leaves this browser tab\" (provider-draft.png). The table shows the four columns Song asked for, plus Language, each with a one-click preset and an override: on the raw draft with *** placeholders each row offers \"Use the draft default (Yes)\", \"Use 'about two weeks'\" or \"Use the draft default (English)\" and says in plain words why it will not guess (provider-draft.png); on the filled block each row reads the provider's own value from the note, From = \"your block\" (provider-filled.png, antibiotic No, pain medication Yes, follow-up 10/01/2026, Español). The link #a=0&p=1&f=2026-10-01&l=es opens the guide in Spanish with the antibiotic wording dropped (chapter 3 shortens from 0:29 to 0:23) and the date in the transcript as \"Su revisión de la herida y examen del oído: 1 de octubre de 2026\" (guide-from-link.png)."
+    },
+    {
+      "id": "review_line",
+      "verdict": "pass",
+      "note": "The review is one line in the block: \"Video guide: language {English/Spanish/Mandarin}    Reviewed by *** on ***\" (review_line fact, one entry in lines_in_block; it soft-wraps in the textarea in provider-draft.png). The page tells the truth about where it goes: the draft row says \"Stays in your note. The patient's guide shows no reviewer line.\" and the filled row says \"Not shown to the patient, and not carried in the link. It stays in your note.\" (provider-draft.png, provider-filled.png). The link fragment carries no review date (review_date_in_link false, fragment #a=0&p=1&f=2026-10-01&l=es), no clinician badge exists, and the patient guide opened from that link shows no reviewer line when the transcript is scrolled to the end of chapter 7 (guide-from-link-badges.png)."
+    },
+    {
+      "id": "card_summary",
+      "verdict": "pass",
+      "note": "The card is one tap away at both widths (card_summary fact: on first screen desktop and phone, card responds 200). \"Print the card\" sits in the header at 1280x800 (guide-en-desktop.png, and translated as \"Imprimir la tarjeta\" / \"打印卡片\" in the Spanish and Mandarin shots); at 375x812 it is in the control row under the player, above the fold, in every language (guide-en-phone.png, guide-es-phone.png, guide-zh-Hans-phone.png)."
+    }
+  ],
+  "findings": [],
+  "verdict": "pass",
+  "facts": {
+    "short_clips": {
+      "ok": true,
+      "ceiling_seconds": 35,
+      "longest_narration_seconds": 33.92,
+      "narration_seconds_by_language": {
+        "en": {
+          "1": 10,
+          "2": 22.64,
+          "3": 20.88,
+          "4": 13.36,
+          "5": 21.2,
+          "6": 25.68,
+          "7": 22.56
+        },
+        "es": {
+          "1": 14.32,
+          "2": 25.52,
+          "3": 25.2,
+          "4": 13.52,
+          "5": 26.16,
+          "6": 31.36,
+          "7": 28.4
+        },
+        "zh-Hans": {
+          "1": 12.56,
+          "2": 25.2,
+          "3": 24.96,
+          "4": 16.56,
+          "5": 31.84,
+          "6": 33.92,
+          "7": 27.2
+        }
+      },
+      "running_seconds_by_language": {
+        "en": {
+          "1": 12.4,
+          "2": 25.04,
+          "3": 24.48,
+          "4": 15.76,
+          "5": 23.6,
+          "6": 28.08,
+          "7": 26.16
+        },
+        "es": {
+          "1": 16.72,
+          "2": 27.92,
+          "3": 28.8,
+          "4": 15.92,
+          "5": 28.56,
+          "6": 33.76,
+          "7": 32
+        },
+        "zh-Hans": {
+          "1": 14.96,
+          "2": 27.6,
+          "3": 28.56,
+          "4": 18.96,
+          "5": 34.24,
+          "6": 36.32,
+          "7": 30.8
+        }
+      },
+      "narrated_languages": [
+        "en",
+        "es",
+        "zh-Hans"
+      ]
+    },
+    "no_owl": {
+      "ok": true,
+      "files_searched": 18,
+      "matches": []
+    },
+    "narrator": {
+      "ok": true,
+      "voices": {
+        "en": "George",
+        "es": "George",
+        "zh-Hans": "George"
+      },
+      "narrated_languages": [
+        "en",
+        "es",
+        "zh-Hans"
+      ]
+    },
+    "subtitles": {
+      "ok": true,
+      "segments_with_captions": {
+        "en": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "es": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "zh-Hans": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      }
+    },
+    "toc": {
+      "ok": true,
+      "listed": 7,
+      "chapters": [
+        {
+          "number": 1,
+          "expected_start": 0,
+          "landed_at": 0,
+          "active_chapter": 1,
+          "ok": true
+        },
+        {
+          "number": 2,
+          "expected_start": 12.4,
+          "landed_at": 12.4,
+          "active_chapter": 2,
+          "ok": true
+        },
+        {
+          "number": 3,
+          "expected_start": 37.44,
+          "landed_at": 37.44,
+          "active_chapter": 3,
+          "ok": true
+        },
+        {
+          "number": 4,
+          "expected_start": 61.92,
+          "landed_at": 61.92,
+          "active_chapter": 4,
+          "ok": true
+        },
+        {
+          "number": 5,
+          "expected_start": 77.68,
+          "landed_at": 77.68,
+          "active_chapter": 5,
+          "ok": true
+        },
+        {
+          "number": 6,
+          "expected_start": 101.28,
+          "landed_at": 101.28,
+          "active_chapter": 6,
+          "ok": true
+        },
+        {
+          "number": 7,
+          "expected_start": 129.36,
+          "landed_at": 129.36,
+          "active_chapter": 7,
+          "ok": true
+        }
+      ],
+      "every_chapter_visible_at_1280x800": {
+        "en": true,
+        "es": true,
+        "zh-Hans": true
+      }
+    },
+    "languages": {
+      "ok": true,
+      "es": {
+        "lang": "es",
+        "title": "Guía de recuperación del implante coclear",
+        "audio": "http://127.0.0.1:63664/assets/audio/v2/es/bandage-off.mp3",
+        "first_sentence": "Dos días después de la cirugía, quítese el vendaje mastoideo, es decir, el vendaje de la cabeza.",
+        "status": "",
+        "audio_language": "es",
+        "expected_first_sentence": "Dos días después de la cirugía, quítese el vendaje mastoideo, es decir, el vendaje de la cabeza.",
+        "ok": true
+      },
+      "zh-Hans": {
+        "lang": "zh-Hans",
+        "title": "人工耳蜗术后恢复指南",
+        "audio": "http://127.0.0.1:63664/assets/audio/v2/zh-Hans/bandage-off.mp3",
+        "first_sentence": "手术两天后，拆下乳突敷料，也就是头上的绷带。",
+        "status": "",
+        "audio_language": "zh-Hans",
+        "expected_first_sentence": "手术两天后，拆下乳突敷料，也就是头上的绷带。",
+        "ok": true
+      }
+    },
+    "provider_file": {
+      "link": "http://127.0.0.1:63664/guide/index.html#a=0&p=1&f=2026-10-01&l=es",
+      "ok": true,
+      "steps": [
+        "paste the block",
+        "copy the link"
+      ],
+      "milliseconds_from_paste_to_link": 25,
+      "requests_after_load": [],
+      "account_or_login_fields": 0,
+      "draft_block_rows": [
+        [
+          "Antibiotic",
+          "YesNoUse the draft default (Yes)This page cannot read \"Antibiotic: {Yes: *** name, dose, days / No}                                   (UCSF EARS: \"as prescribed\")\" as a yes or a no. Choose one.",
+          "Choose one"
+        ],
+        [
+          "Pain medication",
+          "YesNoUse the draft default (Yes)This page cannot read \"Pain medication: {Yes: *** / No: acetaminophen as needed}                      (UCSF EARS: Rx first 48-72 h, then OTC)\" as a yes or a no. Choose one.",
+          "Choose one"
+        ],
+        [
+          "Follow-up",
+          "Use “about two weeks”This page cannot read \"Follow-up: wound check and ear exam on ***                                     (UCSF CI Center: about 2 weeks;\" as one date. Pick the date, or use \"about two weeks\".",
+          "Choose one"
+        ],
+        [
+          "Language",
+          "Choose a languageEnglishEspañol中文（简体）Use the draft default (English)Your note does not say which language this patient reads, so this page will not guess.",
+          "Choose one"
+        ],
+        [
+          "Reviewed by",
+          "Stays in your note. The patient's guide shows no reviewer line.",
+          "none"
+        ]
+      ],
+      "draft_block_unread_lines": [],
+      "filled_example_block": "Antibiotic: No\nPain medication: Yes\nFollow-up: wound check and ear exam on 10/01/2026\nVideo guide: language Spanish    Reviewed by Dr. Example on 2026-09-19",
+      "filled_example_rows": [
+        [
+          "Antibiotic",
+          "YesNoThe guide leaves this out. It has no wording yet for patients who get no antibiotic, and says nothing about it until your clinic gives us that wording.",
+          "your block"
+        ],
+        [
+          "Pain medication",
+          "YesNoThe guide says: \"Take your pain medicine the way it was prescribed.\"",
+          "your block"
+        ],
+        [
+          "Follow-up",
+          "ClearThe guide shows \"Your wound check and ear exam: October 1, 2026\" and still says \"about two weeks after surgery\" when it speaks. (Shown in the patient's language.)",
+          "your block"
+        ],
+        [
+          "Language",
+          "EnglishEspañol中文（简体）",
+          "your block"
+        ],
+        [
+          "Reviewed by",
+          "Not shown to the patient, and not carried in the link. It stays in your note.",
+          "your block"
+        ]
+      ],
+      "link_fragment": "#a=0&p=1&f=2026-10-01&l=es",
+      "follow_up_in_transcript": "Su revisión de la herida y examen del oído: 1 de octubre de 2026"
+    },
+    "review_line": {
+      "ok": true,
+      "lines_in_block": [
+        "Video guide: language {English/Spanish/Mandarin}    Reviewed by *** on ***"
+      ],
+      "clinician_badge": null,
+      "review_date_in_link": false
+    },
+    "card_summary": {
+      "ok": true,
+      "on_first_screen": {
+        "desktop": true,
+        "phone": true
+      },
+      "card_status": 200
+    }
+  }
+}

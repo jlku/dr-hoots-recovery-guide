@@ -43,10 +43,12 @@ export function planNarration({ segments, pack, voice, manifest }) {
 
 // A translated language is narrated for every beat or for none, and each track must say exactly the
 // pack's sentences, so an edited translation cannot keep stale audio.
-export function validateTranslatedNarration({ segments, records, packs }) {
+// Every narrated language, English included: the recording has to say the sentences the guide shows.
+// English is checked against the canonical sentences, which the caller passes as the "en" pack.
+export function validateNarrationText({ segments, records, packs }) {
   const errors = [];
   const beats = narratedBeats(segments);
-  const languages = new Set(beats.flatMap((beat) => Object.keys(beat.narration ?? {})).filter((language) => language !== "en"));
+  const languages = new Set(beats.flatMap((beat) => Object.keys(beat.narration ?? {})));
   for (const language of languages) {
     const pack = packs.find((item) => item.language === language);
     for (const beat of beats) {

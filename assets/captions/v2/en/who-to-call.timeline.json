@@ -27,12 +27,12 @@
         "call.08"
       ],
       "start": 1.5,
-      "end": 25.5,
-      "speech_seconds": 24,
-      "record_id": "call-numbers",
-      "manifest": "assets/audio/draft/manifest.json",
-      "source_audio": "assets/audio/draft/call-numbers.mp3",
-      "text": "For routine questions, leave a message on the nursing line: 415-353-2148. You should get a call back within 12 hours — if no one calls, call again. For an emergency, call 415-476-1000 and ask for the Otolaryngology resident on call."
+      "end": 27.18,
+      "speech_seconds": 25.68,
+      "record_id": "numbers",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/numbers.mp3",
+      "text": "For routine questions for the clinic or surgeon, leave a message on the nursing line at 415-353-2148. The UCSF page says you should get a call within 12 hours. If no one calls, call again. For an emergency, call 415-476-1000 and ask for the Otolaryngology resident on call."
     }
   ],
   "words": [
@@ -45,274 +45,330 @@
     },
     {
       "text": "routine",
-      "start": 1.65,
-      "end": 2.14,
+      "start": 1.63,
+      "end": 1.98,
       "beat": "beat/numbers",
       "space": true
     },
     {
-      "text": "questions,",
-      "start": 2.196,
-      "end": 3.02,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "leave",
-      "start": 3.06,
-      "end": 3.26,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "a",
-      "start": 3.3,
-      "end": 3.34,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "message",
-      "start": 3.39,
-      "end": 3.74,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "on",
-      "start": 3.793,
-      "end": 3.9,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "the",
-      "start": 3.92,
-      "end": 3.98,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "nursing",
-      "start": 4.03,
-      "end": 4.38,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "line:",
-      "start": 4.46,
-      "end": 5.5,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "415-353-2148.",
-      "start": 5.66,
-      "end": 9.98,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "You",
-      "start": 10.22,
-      "end": 10.94,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "should",
-      "start": 10.963,
-      "end": 11.1,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "get",
-      "start": 11.14,
-      "end": 11.26,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "a",
-      "start": 11.34,
-      "end": 11.42,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "call",
-      "start": 11.452,
-      "end": 11.58,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "back",
-      "start": 11.644,
-      "end": 11.9,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "within",
-      "start": 11.934,
-      "end": 12.14,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "12",
-      "start": 12.3,
-      "end": 12.54,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "hours",
-      "start": 12.633,
-      "end": 13.1,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "—",
-      "start": 13.42,
-      "end": 13.74,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "if",
-      "start": 13.793,
-      "end": 13.9,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "no",
-      "start": 13.98,
-      "end": 14.14,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "one",
-      "start": 14.16,
-      "end": 14.22,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "calls,",
-      "start": 14.313,
-      "end": 15.02,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "call",
-      "start": 15.068,
-      "end": 15.26,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "again.",
-      "start": 15.34,
-      "end": 15.82,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "For",
-      "start": 16.08,
-      "end": 16.86,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "an",
-      "start": 16.913,
-      "end": 17.02,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "emergency,",
-      "start": 17.084,
-      "end": 17.98,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "call",
-      "start": 18.044,
-      "end": 18.3,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "415-476-1000",
-      "start": 18.54,
-      "end": 21.98,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "and",
-      "start": 22.12,
-      "end": 22.54,
-      "beat": "beat/numbers",
-      "space": true
-    },
-    {
-      "text": "ask",
-      "start": 22.62,
-      "end": 22.86,
+      "text": "questions",
+      "start": 2.036,
+      "end": 2.54,
       "beat": "beat/numbers",
       "space": true
     },
     {
       "text": "for",
-      "start": 22.88,
-      "end": 22.94,
+      "start": 2.58,
+      "end": 2.7,
       "beat": "beat/numbers",
       "space": true
     },
     {
       "text": "the",
-      "start": 22.96,
-      "end": 23.02,
+      "start": 2.72,
+      "end": 2.78,
       "beat": "beat/numbers",
       "space": true
     },
     {
-      "text": "Otolaryngology",
-      "start": 23.1,
-      "end": 24.14,
+      "text": "clinic",
+      "start": 2.837,
+      "end": 3.18,
       "beat": "beat/numbers",
       "space": true
     },
     {
-      "text": "resident",
-      "start": 24.193,
-      "end": 24.62,
+      "text": "or",
+      "start": 3.233,
+      "end": 3.34,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "surgeon,",
+      "start": 3.4,
+      "end": 4.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "leave",
+      "start": 4.26,
+      "end": 4.46,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 4.5,
+      "end": 4.54,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "message",
+      "start": 4.59,
+      "end": 4.94,
       "beat": "beat/numbers",
       "space": true
     },
     {
       "text": "on",
-      "start": 24.7,
-      "end": 24.86,
+      "start": 4.967,
+      "end": 5.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 5.06,
+      "end": 5.18,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "nursing",
+      "start": 5.23,
+      "end": 5.58,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "line",
+      "start": 5.644,
+      "end": 5.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "at",
+      "start": 6.033,
+      "end": 6.3,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "415-353-2148.",
+      "start": 6.38,
+      "end": 10.46,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "The",
+      "start": 10.68,
+      "end": 11.34,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "UCSF",
+      "start": 11.52,
+      "end": 12.14,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "page",
+      "start": 12.22,
+      "end": 12.54,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "says",
+      "start": 12.636,
+      "end": 13.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "you",
+      "start": 13.04,
+      "end": 13.1,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "should",
+      "start": 13.134,
+      "end": 13.34,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "get",
+      "start": 13.36,
+      "end": 13.42,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "a",
+      "start": 13.46,
+      "end": 13.5,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "call",
+      "start": 13.58,
+      "end": 13.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "within",
+      "start": 13.946,
+      "end": 14.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "12",
+      "start": 14.38,
+      "end": 14.54,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "hours.",
+      "start": 14.62,
+      "end": 15.18,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "If",
+      "start": 15.42,
+      "end": 15.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "no",
+      "start": 15.953,
+      "end": 16.06,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "one",
+      "start": 16.1,
+      "end": 16.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "calls,",
+      "start": 16.313,
+      "end": 17.02,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "call",
+      "start": 17.068,
+      "end": 17.26,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "again.",
+      "start": 17.34,
+      "end": 17.82,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "For",
+      "start": 18.04,
+      "end": 18.7,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "an",
+      "start": 18.727,
+      "end": 18.78,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "emergency,",
+      "start": 18.844,
+      "end": 19.5,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "call",
+      "start": 19.564,
+      "end": 19.82,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "415-476-1000",
+      "start": 20.14,
+      "end": 23.58,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "and",
+      "start": 23.74,
+      "end": 24.22,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "ask",
+      "start": 24.3,
+      "end": 24.54,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "for",
+      "start": 24.56,
+      "end": 24.62,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "the",
+      "start": 24.66,
+      "end": 24.78,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "Otolaryngology",
+      "start": 24.86,
+      "end": 25.9,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "resident",
+      "start": 25.962,
+      "end": 26.46,
+      "beat": "beat/numbers",
+      "space": true
+    },
+    {
+      "text": "on",
+      "start": 26.513,
+      "end": 26.62,
       "beat": "beat/numbers",
       "space": true
     },
     {
       "text": "call.",
-      "start": 24.956,
-      "end": 25.5,
+      "start": 26.7,
+      "end": 27.18,
       "beat": "beat/numbers",
       "space": false
     }
@@ -321,61 +377,70 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.74,
-      "text": "For routine questions, leave a message",
+      "end": 4.22,
+      "text": "For routine questions for the clinic or surgeon,",
       "beat": "beat/numbers",
       "first_word": 0,
-      "word_count": 6
+      "word_count": 8
     },
     {
       "id": "cue-02",
-      "start": 3.793,
-      "end": 9.98,
-      "text": "on the nursing line: 415-353-2148.",
+      "start": 4.26,
+      "end": 10.46,
+      "text": "leave a message on the nursing line at 415-353-2148.",
       "beat": "beat/numbers",
-      "first_word": 6,
-      "word_count": 5
+      "first_word": 8,
+      "word_count": 9
     },
     {
       "id": "cue-03",
-      "start": 10.22,
-      "end": 13.74,
-      "text": "You should get a call back within 12 hours —",
+      "start": 10.68,
+      "end": 13.42,
+      "text": "The UCSF page says you should get",
       "beat": "beat/numbers",
-      "first_word": 11,
-      "word_count": 10
-    },
-    {
-      "id": "cue-04",
-      "start": 13.793,
-      "end": 15.82,
-      "text": "if no one calls, call again.",
-      "beat": "beat/numbers",
-      "first_word": 21,
-      "word_count": 6
-    },
-    {
-      "id": "cue-05",
-      "start": 16.08,
-      "end": 22.86,
-      "text": "For an emergency, call 415-476-1000 and ask",
-      "beat": "beat/numbers",
-      "first_word": 27,
+      "first_word": 17,
       "word_count": 7
     },
     {
+      "id": "cue-04",
+      "start": 13.46,
+      "end": 15.18,
+      "text": "a call within 12 hours.",
+      "beat": "beat/numbers",
+      "first_word": 24,
+      "word_count": 5
+    },
+    {
+      "id": "cue-05",
+      "start": 15.42,
+      "end": 17.82,
+      "text": "If no one calls, call again.",
+      "beat": "beat/numbers",
+      "first_word": 29,
+      "word_count": 6
+    },
+    {
       "id": "cue-06",
-      "start": 22.88,
-      "end": 25.5,
+      "start": 18.04,
+      "end": 24.54,
+      "text": "For an emergency, call 415-476-1000 and ask",
+      "beat": "beat/numbers",
+      "first_word": 35,
+      "word_count": 7
+    },
+    {
+      "id": "cue-07",
+      "start": 24.56,
+      "end": 27.18,
       "text": "for the Otolaryngology resident on call.",
       "beat": "beat/numbers",
-      "first_word": 34,
+      "first_word": 42,
       "word_count": 6
     }
   ],
-  "narration_seconds": 24,
-  "duration_seconds": 26.4,
+  "narration_seconds": 25.68,
+  "duration_seconds": 28.08,
   "source_records": {
-    "call-numbers": "840135f59465ef186b4e3cc1bcce22c131e1339b01e81583dbd501c54df7097f"
+    "numbers": "71c08f66f418a766d31153637d5b5b0540807cc51568b26f00a6901e612030c0"
   }
 }

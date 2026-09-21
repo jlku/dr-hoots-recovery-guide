@@ -29,8 +29,8 @@
           "frame": "frame-01",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "wound-day2"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "dressing-off"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -62,8 +62,8 @@
           "frame": "frame-0203-paths",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "wound-paths"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "two-paths"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -96,8 +96,8 @@
           "frame": "frame-0405-milestones",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "wound-milestones"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "milestones"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -176,8 +176,8 @@
           "frame": "frame-06-redness",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "call-three-signs"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "three-signs"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -208,8 +208,8 @@
           "frame": "frame-0710-anylist",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "call-any"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "any-of-these"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -240,8 +240,8 @@
           "frame": "frame-11-numbers",
           "narration": {
             "en": {
-              "manifest": "assets/audio/draft/manifest.json",
-              "record_id": "call-numbers"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "numbers"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -269,7 +269,7 @@
           "frame": "frame-12-healing",
           "narration": {
             "en": {
-              "manifest": "assets/audio/manifest.json",
+              "manifest": "assets/audio/v2/en/narration.json",
               "record_id": "healing"
             },
             "es": {
@@ -291,8 +291,8 @@
           "frame": "frame-13-programming",
           "narration": {
             "en": {
-              "manifest": "assets/audio/manifest.json",
-              "record_id": "chaptered-programming"
+              "manifest": "assets/audio/v2/en/narration.json",
+              "record_id": "programming"
             },
             "es": {
               "manifest": "assets/audio/v2/es/narration.json",
@@ -313,7 +313,7 @@
           "frame": "frame-14-follow-up",
           "narration": {
             "en": {
-              "manifest": "assets/audio/manifest.json",
+              "manifest": "assets/audio/v2/en/narration.json",
               "record_id": "follow-up"
             },
             "es": {

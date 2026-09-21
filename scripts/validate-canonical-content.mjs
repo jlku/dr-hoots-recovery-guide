@@ -1,4 +1,5 @@
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 
 const contentPath = new URL("../content/canonical/ci-phase0-v0.1.0.json", import.meta.url);
@@ -43,7 +44,15 @@ for (const source of content.sources) {
   const computedHash = hashClaims(source.claims);
   sourceResults[source.id] = computedHash;
   assert(source.claim_snapshot_sha256 === computedHash, `${source.id}: claim snapshot hash mismatch`);
-  assert(source.url.startsWith("https://"), `${source.id}: source URL must use HTTPS`);
+  // A practice protocol is the partner surgeon's own text in this repository, not a page on the web.
+  // It carries the file instead of a URL, and stays in surgeon_review until the surgeon marks it up.
+  if (source.kind === "practice_protocol") {
+    assert(typeof source.file === "string" && existsSync(new URL(`../${source.file}`, import.meta.url)), `${source.id}: practice protocol file is missing`);
+    assert(source.status === "surgeon_review", `${source.id}: a practice protocol stays in surgeon_review until the surgeon marks it up`);
+    assert(!source.url, `${source.id}: a practice protocol has a file, not a URL`);
+  } else {
+    assert(source.url.startsWith("https://"), `${source.id}: source URL must use HTTPS`);
+  }
   // Sources added after the first snapshot carry their own, later retrieval date.
   assert(/^\d{4}-\d{2}-\d{2}$/.test(source.retrieved_at) && source.retrieved_at >= content.artifact.source_retrieved_at, `${source.id}: retrieval date must be on or after the artifact's first snapshot`);
   for (const claim of source.claims) {

@@ -24,34 +24,34 @@
         "status": "reviewed",
         "label": "AI reviewer (Claude), not a certified medical translator",
         "date": "2026-09-19",
-        "target": "3323558051be56cd1ffb1597d1d00f08e9594e06ca62818dc5aaaf3c58f12423",
+        "target": "9cb94a7dc6b3dd198fbb564d333ee11bc45611fccc262226e5f0d69ab661c17d",
         "receipts": [
-          "content/reviews/es/3323558051be56cd.json",
-          "content/reviews/es/3323558051be56cd.2.json",
-          "content/reviews/es/3323558051be56cd.3.json"
+          "content/reviews/es/9cb94a7dc6b3dd19.json",
+          "content/reviews/es/9cb94a7dc6b3dd19.2.json",
+          "content/reviews/es/9cb94a7dc6b3dd19.3.json"
         ]
       },
       "zh-Hans": {
         "status": "reviewed",
         "label": "AI reviewer (Claude), not a certified medical translator",
         "date": "2026-09-19",
-        "target": "eed5fa9312c3683ad7e73baedbb4f44a63c3395e6f755841afd3c86aeae55738",
+        "target": "a2dbf01ebef5bf9a5738efcf39e84c37dcd1c9b6f5ec98b546c2d00e361b19a5",
         "receipts": [
-          "content/reviews/zh/eed5fa9312c3683a.json",
-          "content/reviews/zh/eed5fa9312c3683a.2.json",
-          "content/reviews/zh/eed5fa9312c3683a.3.json"
+          "content/reviews/zh/a2dbf01ebef5bf9a.json",
+          "content/reviews/zh/a2dbf01ebef5bf9a.2.json",
+          "content/reviews/zh/a2dbf01ebef5bf9a.3.json"
         ]
       }
     },
     "song": {
       "status": "reviewed",
       "label": "Simulated Song review (AI), not Song's approval",
-      "date": "2026-09-19",
-      "target": "0b9c0e5bd4bdf7d7a2d6457e5f63a140ce3ce9402fb82b8fed13b2e1d41d00e1",
+      "date": "2026-09-20",
+      "target": "4d9dd2fdbe1ed8ffa1d4f5b4614ae88e83de5424e752e2510b28f7480e8977e8",
       "receipts": [
-        "content/reviews/song/0b9c0e5bd4bdf7d7.json",
-        "content/reviews/song/0b9c0e5bd4bdf7d7.2.json",
-        "content/reviews/song/0b9c0e5bd4bdf7d7.3.json"
+        "content/reviews/song/4d9dd2fdbe1ed8ff.json",
+        "content/reviews/song/4d9dd2fdbe1ed8ff.2.json",
+        "content/reviews/song/4d9dd2fdbe1ed8ff.3.json"
       ]
     }
   }

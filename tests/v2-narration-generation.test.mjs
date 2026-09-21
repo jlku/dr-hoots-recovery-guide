@@ -3,7 +3,8 @@ import assert from "node:assert/strict";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { beatRecordId, beatText, narratedBeats, planNarration, validateTranslatedNarration } from "../scripts/lib/v2-narration.mjs";
+import { beatRecordId, beatText, narratedBeats, planNarration, validateNarrationText } from "../scripts/lib/v2-narration.mjs";
+import { canonicalSentenceText } from "../scripts/lib/language-packs.mjs";
 import { loadSegmentBundle } from "../scripts/lib/segments.mjs";
 
 const root = resolve(import.meta.dirname, "..");
@@ -39,11 +40,14 @@ test("translated narration must say exactly the pack's sentences, for every narr
   const beat = narratedBeats(segments)[0];
   beat.narration.es = { manifest: "m.json", record_id: beatRecordId(beat) };
   const records = new Map([[`m.json#${beatRecordId(beat)}`, { id: beatRecordId(beat), text: "wrong", canonicalSentenceIds: beat.sentence_ids }]]);
-  const errors = validateTranslatedNarration({ segments, records, packs: [pack("es", ".")] }).join("\n");
+  const errors = validateNarrationText({ segments, records, packs: [pack("es", ".")] }).join("\n");
   assert.match(errors, new RegExp(`${beat.id} es narration does not say the pack's sentences`));
   assert.match(errors, /es narration is missing for beat\//, "a language is complete or absent");
   const englishOnly = structuredClone(bundle.segments);
   for (const narrated of narratedBeats(englishOnly)) for (const language of Object.keys(narrated.narration)) if (language !== "en") delete narrated.narration[language];
-  assert.deepEqual(validateTranslatedNarration({ segments: englishOnly, records: bundle.records, packs: [] }), [], "English alone needs nothing");
-  assert.match(validateTranslatedNarration({ segments: bundle.segments, records: bundle.records, packs: [] }).join("\n"), /es narration has no pack to check it against/);
+  // English is checked too, against the canonical sentences the caller passes as the "en" pack.
+  const english = { language: "en", sentences: Object.fromEntries(canonicalSentenceText(bundle.canonical)) };
+  assert.deepEqual(validateNarrationText({ segments: englishOnly, records: bundle.records, packs: [english] }), [], "the English recording says the canonical sentences");
+  assert.match(validateNarrationText({ segments: englishOnly, records: bundle.records, packs: [] }).join("\n"), /en narration has no pack to check it against/);
+  assert.match(validateNarrationText({ segments: bundle.segments, records: bundle.records, packs: [english] }).join("\n"), /es narration has no pack to check it against/);
 });

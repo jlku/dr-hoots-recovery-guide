@@ -11,8 +11,8 @@
       "timeline": "assets/captions/v2/en/bandage-off.timeline.json",
       "captions": "assets/captions/v2/en/bandage-off.vtt",
       "audio": "assets/audio/v2/en/bandage-off.mp3",
-      "duration_seconds": 9.76,
-      "narration_seconds": 7.36
+      "duration_seconds": 12.4,
+      "narration_seconds": 10
     },
     {
       "segment_id": "seg/tape-or-no-tape",
@@ -22,8 +22,8 @@
       "timeline": "assets/captions/v2/en/tape-or-no-tape.timeline.json",
       "captions": "assets/captions/v2/en/tape-or-no-tape.vtt",
       "audio": "assets/audio/v2/en/tape-or-no-tape.mp3",
-      "duration_seconds": 20.8,
-      "narration_seconds": 18.4
+      "duration_seconds": 25.04,
+      "narration_seconds": 22.64
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -33,8 +33,8 @@
       "timeline": "assets/captions/v2/en/next-two-weeks.a0p0.timeline.json",
       "captions": "assets/captions/v2/en/next-two-weeks.a0p0.vtt",
       "audio": "assets/audio/v2/en/next-two-weeks.a0p0.mp3",
-      "duration_seconds": 13.52,
-      "narration_seconds": 11.12
+      "duration_seconds": 13.92,
+      "narration_seconds": 11.52
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -44,8 +44,8 @@
       "timeline": "assets/captions/v2/en/next-two-weeks.a0p1.timeline.json",
       "captions": "assets/captions/v2/en/next-two-weeks.a0p1.vtt",
       "audio": "assets/audio/v2/en/next-two-weeks.a0p1.mp3",
-      "duration_seconds": 19,
-      "narration_seconds": 16
+      "duration_seconds": 19.4,
+      "narration_seconds": 16.4
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -55,8 +55,8 @@
       "timeline": "assets/captions/v2/en/next-two-weeks.a1p0.timeline.json",
       "captions": "assets/captions/v2/en/next-two-weeks.a1p0.vtt",
       "audio": "assets/audio/v2/en/next-two-weeks.a1p0.mp3",
-      "duration_seconds": 18.6,
-      "narration_seconds": 15.6
+      "duration_seconds": 19,
+      "narration_seconds": 16
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -66,8 +66,8 @@
       "timeline": "assets/captions/v2/en/next-two-weeks.a1p1.timeline.json",
       "captions": "assets/captions/v2/en/next-two-weeks.a1p1.vtt",
       "audio": "assets/audio/v2/en/next-two-weeks.a1p1.mp3",
-      "duration_seconds": 24.08,
-      "narration_seconds": 20.48
+      "duration_seconds": 24.48,
+      "narration_seconds": 20.88
     },
     {
       "segment_id": "seg/call-all-three",
@@ -77,8 +77,8 @@
       "timeline": "assets/captions/v2/en/call-all-three.timeline.json",
       "captions": "assets/captions/v2/en/call-all-three.vtt",
       "audio": "assets/audio/v2/en/call-all-three.mp3",
-      "duration_seconds": 13.44,
-      "narration_seconds": 11.04
+      "duration_seconds": 15.76,
+      "narration_seconds": 13.36
     },
     {
       "segment_id": "seg/call-any-one",
@@ -88,8 +88,8 @@
       "timeline": "assets/captions/v2/en/call-any-one.timeline.json",
       "captions": "assets/captions/v2/en/call-any-one.vtt",
       "audio": "assets/audio/v2/en/call-any-one.mp3",
-      "duration_seconds": 20.08,
-      "narration_seconds": 17.68
+      "duration_seconds": 23.6,
+      "narration_seconds": 21.2
     },
     {
       "segment_id": "seg/who-to-call",
@@ -99,8 +99,8 @@
       "timeline": "assets/captions/v2/en/who-to-call.timeline.json",
       "captions": "assets/captions/v2/en/who-to-call.vtt",
       "audio": "assets/audio/v2/en/who-to-call.mp3",
-      "duration_seconds": 26.4,
-      "narration_seconds": 24
+      "duration_seconds": 28.08,
+      "narration_seconds": 25.68
     },
     {
       "segment_id": "seg/programming-visits",
@@ -110,8 +110,8 @@
       "timeline": "assets/captions/v2/en/programming-visits.timeline.json",
       "captions": "assets/captions/v2/en/programming-visits.vtt",
       "audio": "assets/audio/v2/en/programming-visits.mp3",
-      "duration_seconds": 26.64,
-      "narration_seconds": 23.04
+      "duration_seconds": 26.16,
+      "narration_seconds": 22.56
     },
     {
       "segment_id": "seg/bandage-off",
@@ -143,8 +143,8 @@
       "timeline": "assets/captions/v2/es/next-two-weeks.a0p0.timeline.json",
       "captions": "assets/captions/v2/es/next-two-weeks.a0p0.vtt",
       "audio": "assets/audio/v2/es/next-two-weeks.a0p0.mp3",
-      "duration_seconds": 16.8,
-      "narration_seconds": 14.4
+      "duration_seconds": 15.76,
+      "narration_seconds": 13.36
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -154,8 +154,8 @@
       "timeline": "assets/captions/v2/es/next-two-weeks.a0p1.timeline.json",
       "captions": "assets/captions/v2/es/next-two-weeks.a0p1.vtt",
       "audio": "assets/audio/v2/es/next-two-weeks.a0p1.mp3",
-      "duration_seconds": 24.04,
-      "narration_seconds": 21.04
+      "duration_seconds": 23,
+      "narration_seconds": 20
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -165,8 +165,8 @@
       "timeline": "assets/captions/v2/es/next-two-weeks.a1p0.timeline.json",
       "captions": "assets/captions/v2/es/next-two-weeks.a1p0.vtt",
       "audio": "assets/audio/v2/es/next-two-weeks.a1p0.mp3",
-      "duration_seconds": 22.6,
-      "narration_seconds": 19.6
+      "duration_seconds": 21.56,
+      "narration_seconds": 18.56
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -176,8 +176,8 @@
       "timeline": "assets/captions/v2/es/next-two-weeks.a1p1.timeline.json",
       "captions": "assets/captions/v2/es/next-two-weeks.a1p1.vtt",
       "audio": "assets/audio/v2/es/next-two-weeks.a1p1.mp3",
-      "duration_seconds": 29.84,
-      "narration_seconds": 26.24
+      "duration_seconds": 28.8,
+      "narration_seconds": 25.2
     },
     {
       "segment_id": "seg/call-all-three",
@@ -253,8 +253,8 @@
       "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a0p0.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a0p0.vtt",
       "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a0p0.mp3",
-      "duration_seconds": 15.2,
-      "narration_seconds": 12.8
+      "duration_seconds": 16.4,
+      "narration_seconds": 14
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -264,8 +264,8 @@
       "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a0p1.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a0p1.vtt",
       "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a0p1.mp3",
-      "duration_seconds": 21,
-      "narration_seconds": 18
+      "duration_seconds": 22.2,
+      "narration_seconds": 19.2
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -275,8 +275,8 @@
       "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a1p0.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a1p0.vtt",
       "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a1p0.mp3",
-      "duration_seconds": 21.56,
-      "narration_seconds": 18.56
+      "duration_seconds": 22.76,
+      "narration_seconds": 19.76
     },
     {
       "segment_id": "seg/next-two-weeks",
@@ -286,8 +286,8 @@
       "timeline": "assets/captions/v2/zh-Hans/next-two-weeks.a1p1.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/next-two-weeks.a1p1.vtt",
       "audio": "assets/audio/v2/zh-Hans/next-two-weeks.a1p1.mp3",
-      "duration_seconds": 27.36,
-      "narration_seconds": 23.76
+      "duration_seconds": 28.56,
+      "narration_seconds": 24.96
     },
     {
       "segment_id": "seg/call-all-three",
@@ -330,8 +330,8 @@
       "timeline": "assets/captions/v2/zh-Hans/programming-visits.timeline.json",
       "captions": "assets/captions/v2/zh-Hans/programming-visits.vtt",
       "audio": "assets/audio/v2/zh-Hans/programming-visits.mp3",
-      "duration_seconds": 31.28,
-      "narration_seconds": 27.68
+      "duration_seconds": 30.8,
+      "narration_seconds": 27.2
     }
   ]
 }

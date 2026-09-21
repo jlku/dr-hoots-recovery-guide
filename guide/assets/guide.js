@@ -429,7 +429,9 @@ async function init() {
     sentences.set(entry.number, sentenceSpans(timeline));
     cues.set(entry.number, assignWordsToCues(timeline));
   }));
-  const followUp = params.f ? formatFollowUp(params.f, guide.pack.language) : null;
+  // The narration no longer speaks an interval, so the frame carries the date, or the usual wait when
+  // the link has no date.
+  const followUp = (params.f ? formatFollowUp(params.f, guide.pack.language) : null) ?? guide.pack.labels["ui.follow_up_default"];
   state = { guide, clock, timelines, sentences, cues, current: null, params, variant, conditions, followUp };
   frameId = null;
   cueKey = null;

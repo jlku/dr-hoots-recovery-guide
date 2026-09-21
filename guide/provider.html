@@ -26,7 +26,7 @@
         </div>
       </div>
       <textarea id="block" class="provider__block" rows="16" spellcheck="false" autocomplete="off" placeholder="Antibiotic: Yes&#10;Pain medication: No&#10;Follow-up: wound check and ear exam on 10/1/2026&#10;Video guide: language Spanish    Reviewed by … on …"></textarea>
-      <p class="provider__hint">Nothing you paste leaves this browser tab. A line you leave out uses its preset.</p>
+      <p class="provider__hint">Nothing you paste leaves this browser tab. A line you leave out is a question this page asks, not a value it guesses.</p>
     </section>
     <section class="provider__result">
       <div id="contradicts" class="provider__contradicts" role="alert" hidden>
@@ -42,7 +42,13 @@
         <thead><tr><th scope="col">Field</th><th scope="col">Value</th><th scope="col">From</th></tr></thead>
         <tbody></tbody>
       </table>
-      <p class="provider__hint">Change a value here and the matching line in your block changes too, so your note and the link agree.</p>
+      <p class="provider__hint">Change a value here and the matching line in your block changes too, so your note and the link agree. This page rewrites the value and nothing else: your own words stay as you wrote them.</p>
+      <div id="edit-home">
+        <p id="edit-state" class="provider__edit-state" role="status" aria-live="polite" hidden>
+          <span id="edit-said"></span>
+          <button id="undo-edit" class="button button--quiet" type="button">Undo that</button>
+        </p>
+      </div>
       <div id="not-used" class="provider__alert" data-not-in-guide hidden>
         <h2 class="provider__heading">Not in this patient's guide</h2>
         <p id="not-used-summary" class="provider__alert-summary"></p>
@@ -73,8 +79,10 @@
       <p class="provider__hint">The link carries the medication choices, the follow-up date, and the language. It never carries a name, and it never carries the reviewer.</p>
       <h2 class="provider__heading">What we still need from your clinic</h2>
       <ul id="asks" class="provider__asks">
+        <li><strong>Do the antibiotic and pain medicine answers change from patient to patient, or are they how your practice works?</strong> They are the only two things in this guide that change what a patient is told. If they are practice-level, this page should ask you once instead of every time.</li>
+        <li><strong>Send six real after-visit summaries, identifiers removed.</strong> This page has only ever been tested against the draft below, which we wrote. We do not know what shape your instructions are actually in, and a list, a paragraph and a pasted PDF need different handling.</li>
+        <li>Confirm the four defaults — antibiotic yes, pain medication yes, English, no follow-up date — or give us the right ones. Nobody has approved them, so this page now asks instead of applying them.</li>
         <li>Mark up the draft dot phrase: which lines match your practice, and what should change.</li>
-        <li>Confirm the presets: antibiotic yes, pain medication yes, English, no follow-up date.</li>
         <li>Pick the follow-up interval and the activation window your practice uses.</li>
         <li>Give us the wording for patients who get no antibiotic, and for patients who get no prescription pain medicine. Until then the guide says nothing about them.</li>
         <li>Say whether pain relievers to avoid, and activity limits, deserve chapters of their own.</li>

@@ -272,6 +272,28 @@
       "line": "in 7 days"
     },
     {
+      "id": "follow-up-one-week-date",
+      "kind": "tweak an existing step",
+      "intent": "A wound check one week out. The guide must say that date and must not speak a different interval.",
+      "replace": {
+        "Follow-up:": "Follow-up: wound check and ear exam on 9/22/2026"
+      },
+      "effective": {
+        "contains": [
+          "September 22, 2026"
+        ],
+        "link": {
+          "f": "2026-09-22"
+        }
+      },
+      "safe": {
+        "lacks": [
+          "are about two weeks after surgery"
+        ]
+      },
+      "line": "Follow-up:"
+    },
+    {
       "id": "new-step-nsaids",
       "kind": "add a new step",
       "intent": "Avoid aspirin, ibuprofen, and other NSAIDs for 10 days.",

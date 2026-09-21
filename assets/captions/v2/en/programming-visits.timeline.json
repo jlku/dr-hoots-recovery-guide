@@ -24,11 +24,11 @@
         "act.01"
       ],
       "start": 1.5,
-      "end": 5.74,
-      "speech_seconds": 4.24,
+      "end": 5.82,
+      "speech_seconds": 4.32,
       "record_id": "healing",
-      "manifest": "assets/audio/manifest.json",
-      "source_audio": "assets/audio/healing.mp3",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/healing.mp3",
       "text": "After the surgery site has healed, you return for your first programming visit."
     },
     {
@@ -38,13 +38,13 @@
         "act.02",
         "act.03"
       ],
-      "start": 6.34,
-      "end": 16.9,
-      "speech_seconds": 10.56,
-      "record_id": "chaptered-programming",
-      "manifest": "assets/audio/manifest.json",
-      "source_audio": "assets/audio/chaptered-programming.mp3",
-      "text": "At this visit, a hearing specialist called an audiologist programs the speech processor you wear outside your ear. The program is made for your needs."
+      "start": 6.42,
+      "end": 16.02,
+      "speech_seconds": 9.6,
+      "record_id": "programming",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/programming.mp3",
+      "text": "At the visit, a hearing specialist called an audiologist programs the speech processor you wear outside your ear. The program is made for your needs."
     },
     {
       "id": "beat/follow-up",
@@ -53,12 +53,12 @@
         "act.04",
         "act.05"
       ],
-      "start": 17.5,
-      "end": 25.74,
-      "speech_seconds": 8.24,
+      "start": 16.62,
+      "end": 25.26,
+      "speech_seconds": 8.64,
       "record_id": "follow-up",
-      "manifest": "assets/audio/manifest.json",
-      "source_audio": "assets/audio/follow-up.mp3",
+      "manifest": "assets/audio/v2/en/narration.json",
+      "source_audio": "assets/audio/v2/en/beats/follow-up.mp3",
       "text": "At later visits, the team checks the implant and equipment and measures how they are working. You will keep returning for checks and fine-tuning."
     }
   ],
@@ -79,21 +79,21 @@
     },
     {
       "text": "surgery",
-      "start": 1.95,
-      "end": 2.3,
+      "start": 1.96,
+      "end": 2.38,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "site",
-      "start": 2.364,
-      "end": 2.62,
+      "start": 2.444,
+      "end": 2.7,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "has",
-      "start": 2.66,
+      "start": 2.72,
       "end": 2.78,
       "beat": "beat/healing",
       "space": true
@@ -101,399 +101,399 @@
     {
       "text": "healed,",
       "start": 2.837,
-      "end": 3.5,
-      "beat": "beat/healing",
-      "space": true
-    },
-    {
-      "text": "you",
-      "start": 3.52,
       "end": 3.58,
       "beat": "beat/healing",
       "space": true
     },
     {
+      "text": "you",
+      "start": 3.6,
+      "end": 3.66,
+      "beat": "beat/healing",
+      "space": true
+    },
+    {
       "text": "return",
-      "start": 3.637,
-      "end": 3.98,
+      "start": 3.717,
+      "end": 4.06,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "for",
-      "start": 4.02,
-      "end": 4.14,
+      "start": 4.1,
+      "end": 4.22,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "your",
-      "start": 4.172,
-      "end": 4.3,
+      "start": 4.252,
+      "end": 4.38,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "first",
-      "start": 4.353,
-      "end": 4.62,
+      "start": 4.433,
+      "end": 4.7,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "programming",
-      "start": 4.667,
-      "end": 5.18,
+      "start": 4.753,
+      "end": 5.34,
       "beat": "beat/healing",
       "space": true
     },
     {
       "text": "visit.",
-      "start": 5.247,
-      "end": 5.74,
+      "start": 5.407,
+      "end": 5.82,
       "beat": "beat/healing",
       "space": false
     },
     {
       "text": "At",
-      "start": 6.34,
-      "end": 6.5,
+      "start": 6.42,
+      "end": 6.58,
       "beat": "beat/programming",
       "space": true
     },
     {
-      "text": "this",
-      "start": 6.548,
-      "end": 6.74,
+      "text": "the",
+      "start": 6.6,
+      "end": 6.66,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "visit,",
-      "start": 6.807,
-      "end": 7.46,
+      "start": 6.727,
+      "end": 7.38,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "a",
-      "start": 7.5,
-      "end": 7.54,
+      "start": 7.42,
+      "end": 7.46,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "hearing",
-      "start": 7.59,
-      "end": 7.94,
+      "start": 7.51,
+      "end": 7.86,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "specialist",
-      "start": 7.998,
-      "end": 8.58,
+      "start": 7.911,
+      "end": 8.42,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "called",
-      "start": 8.649,
-      "end": 9.06,
+      "start": 8.466,
+      "end": 8.74,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "an",
-      "start": 9.193,
-      "end": 9.46,
+      "start": 8.767,
+      "end": 8.82,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "audiologist",
-      "start": 9.524,
-      "end": 10.42,
+      "start": 8.9,
+      "end": 9.78,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "programs",
-      "start": 10.518,
-      "end": 11.3,
+      "start": 9.869,
+      "end": 10.58,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "the",
-      "start": 11.32,
-      "end": 11.38,
+      "start": 10.6,
+      "end": 10.66,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "speech",
-      "start": 11.437,
-      "end": 11.78,
+      "start": 10.717,
+      "end": 11.06,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "processor",
-      "start": 11.836,
-      "end": 12.34,
+      "start": 11.116,
+      "end": 11.62,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "you",
-      "start": 12.4,
-      "end": 12.58,
+      "start": 11.66,
+      "end": 11.78,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "wear",
-      "start": 12.644,
-      "end": 12.9,
+      "start": 11.844,
+      "end": 12.1,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "outside",
-      "start": 12.96,
-      "end": 13.38,
+      "start": 12.16,
+      "end": 12.58,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "your",
-      "start": 13.412,
-      "end": 13.54,
+      "start": 12.612,
+      "end": 12.74,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "ear.",
-      "start": 13.64,
-      "end": 14.02,
+      "start": 12.84,
+      "end": 13.22,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "The",
-      "start": 14.26,
-      "end": 14.98,
+      "start": 13.46,
+      "end": 14.18,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "program",
-      "start": 15.05,
-      "end": 15.54,
+      "start": 14.24,
+      "end": 14.66,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "is",
-      "start": 15.567,
-      "end": 15.62,
+      "start": 14.713,
+      "end": 14.82,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "made",
-      "start": 15.684,
-      "end": 15.94,
+      "start": 14.868,
+      "end": 15.06,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "for",
-      "start": 15.96,
-      "end": 16.02,
+      "start": 15.1,
+      "end": 15.22,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "your",
-      "start": 16.068,
-      "end": 16.26,
+      "start": 15.252,
+      "end": 15.38,
       "beat": "beat/programming",
       "space": true
     },
     {
       "text": "needs.",
-      "start": 16.34,
-      "end": 16.9,
+      "start": 15.473,
+      "end": 16.02,
       "beat": "beat/programming",
       "space": false
     },
     {
       "text": "At",
-      "start": 17.5,
-      "end": 17.66,
+      "start": 16.62,
+      "end": 16.7,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "later",
-      "start": 17.7,
-      "end": 17.9,
+      "start": 16.753,
+      "end": 17.02,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "visits,",
-      "start": 17.969,
-      "end": 18.54,
+      "start": 17.077,
+      "end": 17.66,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "the",
-      "start": 18.58,
-      "end": 18.7,
+      "start": 17.68,
+      "end": 17.74,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "team",
-      "start": 18.748,
-      "end": 18.94,
+      "start": 17.804,
+      "end": 18.06,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "checks",
-      "start": 18.997,
-      "end": 19.34,
+      "start": 18.117,
+      "end": 18.46,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "the",
-      "start": 19.36,
-      "end": 19.42,
+      "start": 18.48,
+      "end": 18.54,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "implant",
-      "start": 19.49,
-      "end": 19.98,
+      "start": 18.61,
+      "end": 19.1,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "and",
-      "start": 20,
-      "end": 20.06,
+      "start": 19.12,
+      "end": 19.18,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "equipment",
-      "start": 20.116,
-      "end": 20.62,
+      "start": 19.236,
+      "end": 19.74,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "and",
-      "start": 20.72,
-      "end": 21.02,
+      "start": 19.86,
+      "end": 20.22,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "measures",
-      "start": 21.064,
-      "end": 21.42,
+      "start": 20.264,
+      "end": 20.62,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "how",
-      "start": 21.46,
-      "end": 21.58,
+      "start": 20.66,
+      "end": 20.78,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "they",
-      "start": 21.612,
-      "end": 21.74,
+      "start": 20.812,
+      "end": 20.94,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "are",
-      "start": 21.76,
-      "end": 21.82,
+      "start": 20.96,
+      "end": 21.02,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "working.",
-      "start": 21.88,
-      "end": 22.38,
+      "start": 21.08,
+      "end": 21.58,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "You",
-      "start": 22.6,
-      "end": 23.26,
+      "start": 21.84,
+      "end": 22.62,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "will",
-      "start": 23.292,
-      "end": 23.42,
+      "start": 22.636,
+      "end": 22.7,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "keep",
-      "start": 23.452,
-      "end": 23.58,
+      "start": 22.764,
+      "end": 23.02,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "returning",
-      "start": 23.636,
-      "end": 24.14,
+      "start": 23.068,
+      "end": 23.5,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "for",
-      "start": 24.18,
-      "end": 24.3,
+      "start": 23.54,
+      "end": 23.66,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "checks",
-      "start": 24.357,
-      "end": 24.7,
+      "start": 23.729,
+      "end": 24.14,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "and",
-      "start": 24.72,
-      "end": 24.78,
+      "start": 24.16,
+      "end": 24.22,
       "beat": "beat/follow-up",
       "space": true
     },
     {
       "text": "fine-tuning.",
-      "start": 24.86,
-      "end": 25.74,
+      "start": 24.3,
+      "end": 25.26,
       "beat": "beat/follow-up",
       "space": false
     }
@@ -502,7 +502,7 @@
     {
       "id": "cue-01",
       "start": 1.5,
-      "end": 3.5,
+      "end": 3.58,
       "text": "After the surgery site has healed,",
       "beat": "beat/healing",
       "first_word": 0,
@@ -510,8 +510,8 @@
     },
     {
       "id": "cue-02",
-      "start": 3.52,
-      "end": 5.74,
+      "start": 3.6,
+      "end": 5.82,
       "text": "you return for your first programming visit.",
       "beat": "beat/healing",
       "first_word": 6,
@@ -519,17 +519,17 @@
     },
     {
       "id": "cue-03",
-      "start": 6.34,
-      "end": 9.06,
-      "text": "At this visit, a hearing specialist called",
+      "start": 6.42,
+      "end": 8.74,
+      "text": "At the visit, a hearing specialist called",
       "beat": "beat/programming",
       "first_word": 13,
       "word_count": 7
     },
     {
       "id": "cue-04",
-      "start": 9.193,
-      "end": 12.58,
+      "start": 8.767,
+      "end": 11.78,
       "text": "an audiologist programs the speech processor you",
       "beat": "beat/programming",
       "first_word": 20,
@@ -537,8 +537,8 @@
     },
     {
       "id": "cue-05",
-      "start": 12.644,
-      "end": 14.02,
+      "start": 11.844,
+      "end": 13.22,
       "text": "wear outside your ear.",
       "beat": "beat/programming",
       "first_word": 27,
@@ -546,8 +546,8 @@
     },
     {
       "id": "cue-06",
-      "start": 14.26,
-      "end": 16.9,
+      "start": 13.46,
+      "end": 16.02,
       "text": "The program is made for your needs.",
       "beat": "beat/programming",
       "first_word": 31,
@@ -555,8 +555,8 @@
     },
     {
       "id": "cue-07",
-      "start": 17.5,
-      "end": 19.98,
+      "start": 16.62,
+      "end": 19.1,
       "text": "At later visits, the team checks the implant",
       "beat": "beat/follow-up",
       "first_word": 38,
@@ -564,8 +564,8 @@
     },
     {
       "id": "cue-08",
-      "start": 20,
-      "end": 22.38,
+      "start": 19.12,
+      "end": 21.58,
       "text": "and equipment and measures how they are working.",
       "beat": "beat/follow-up",
       "first_word": 46,
@@ -573,19 +573,19 @@
     },
     {
       "id": "cue-09",
-      "start": 22.6,
-      "end": 25.74,
+      "start": 21.84,
+      "end": 25.26,
       "text": "You will keep returning for checks and fine-tuning.",
       "beat": "beat/follow-up",
       "first_word": 54,
       "word_count": 8
     }
   ],
-  "narration_seconds": 23.04,
-  "duration_seconds": 26.64,
+  "narration_seconds": 22.56,
+  "duration_seconds": 26.16,
   "source_records": {
-    "healing": "3f23a7c88497614327e982e3e9b5228091d900e27f541658180ad15b7e374b73",
-    "chaptered-programming": "adc251a7f910058c28181c9f9abacbf3b8917c0bbccc21064ffdc25fafdf5b90",
-    "follow-up": "653c8fb6deff208c648a434f61cf14bf8ee4c854c0108a90a9766478e6f06636"
+    "healing": "726e5072b57c533af66a4575e455bbfa8063d9186ada1429c1774a69cbba787c",
+    "programming": "a517899d972ab0b0824037055466586491fbb357eb56845b836f32901ea154a7",
+    "follow-up": "cf2bcf2658f79d31b73f22e325e8d510c01e46b3dd96ae0c197cd66a039ea4a5"
   }
 }
