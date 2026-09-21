@@ -24,6 +24,13 @@ const FIELD_KEYS = {
 };
 export const FIELD_ORDER = ["antibiotic", "pain_medication", "follow_up_date", "language"];
 
+// Only a label that names a MEDICINE may settle a yes or a no from its value. "Pain:" is a symptom
+// heading as often as a medication one — one handout in the corpus opens it "Pain: Expect a mild-to-
+// moderate amount of pain" — so "Pain: none" is a pain score, not a statement that nothing was
+// prescribed, and "Pain: Yes" is a patient reporting pain. Reading either as an answer silently drops or
+// adds a narrated instruction. A non-answering label is still recognised: it just has to be asked about.
+const ANSWERING_KEYS = new Set(["antibiotic", "antibiotics", "abx", "pain medication", "pain medications", "pain medicine", "pain meds", "pain med"]);
+
 const MONTHS = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"];
 const MONTH = "(jan|feb|mar|apr|may|jun|jul|aug|sept|sep|oct|nov|dec)[a-z]*\\.?";
 const DATE_PATTERNS = [
@@ -116,8 +123,9 @@ function fieldFor(key) {
   return Object.entries(FIELD_KEYS).find(([, keys]) => keys.includes(key))?.[0] ?? null;
 }
 
-function readField(field, value) {
+function readField(field, value, key) {
   if (field === "antibiotic" || field === "pain_medication") {
+    if (key && !ANSWERING_KEYS.has(key)) return null;
     const answer = parseYesNo(value);
     return answer === null ? null : { value: answer, details: yesNoDetails(value) };
   }
@@ -130,6 +138,91 @@ function readField(field, value) {
   }
   const language = parseLanguage(value);
   return language ? { value: language } : null;
+}
+
+// Reading what a note says about a medicine, without ever deciding the answer from it.
+//
+// Three adversaries attacked a 34-rule classifier that tried to answer yes or no from prose. They broke
+// it 24 times, and the four worst breaks were silent wrong answers on REAL hospital text: "We do not
+// prescribe narcotics after this operation; you will be given tramadol" read as no; "We do not prescribe
+// an antibiotic before surgery" read as no for the discharge course; a medication list read as no because
+// 20 of 22 common ENT antibiotics were not in the pattern. Measured over 25 real documents, the whole
+// classifier produced 2 definite answers in 50 reads — so it bought almost no answers and carried every
+// one of those risks.
+//
+// So this reads EVIDENCE, never an answer. The clinician still decides. The worst thing a mistake here
+// can do is quote the wrong sentence or fail to quote a relevant one; it cannot put a sentence in a
+// patient's ear. What it buys is a page that tells the truth about why it is asking: "your note does not
+// mention this" and "your note says it depends" are different facts, and so is "your note talks about
+// ointment for the incision, which is a different thing".
+const CLASS_TOKENS = {
+  antibiotic: /\bantibiotics?\b|\b(cephalexin|keflex|amoxicillin|augmentin|clindamycin|azithromycin|zithromax|doxycycline|cefuroxime|cefdinir|cefadroxil|levofloxacin|ciprofloxacin|bactrim|sulfamethoxazole|ciprodex|ofloxacin)\b/i,
+  pain_medication: /\bpain (medicines?|medications?|meds?|pills?|relievers?|killers?)\b|\b(medicines?|medications?|pills?) (for|to help with) (the )?pain\b|\b(analgesics?|narcotics?|opioids?)\b|\b(tylenol|acetaminophen|ibuprofen|motrin|advil|naproxen|aleve|oxycodone|hydrocodone|percocet|vicodin|norco|tramadol|codeine)\b/i
+};
+// A route this guide's antibiotic sentence is not about. The guide already narrates the ointment in its
+// wound-care chapter, so a sentence about it is not silence and not an answer either.
+const TOPICAL = /\b(ointments?|creams?|salves?|gels?|drops?|otic|topical)\b|\b(bacitracin|polysporin|neosporin|mupirocin|bactroban)\b|\btriple antibiotic\b/i;
+const APPLYING = /\b(apply|applied|applying|application|coat|coated|dab|smear|instill)\b|\bcotton ball\b/i;
+// Sentences that mention a medicine without being an instruction to take one.
+const RESTRICTION = /\b(driv\w*|machinery|vehicle|operate|flying|fly|alcohol)\b/i;
+const AVOIDING = /\b(avoid|do not take|don'?t take|refrain from|stop taking|hold)\b/i;
+const STEWARDSHIP = /\bresistan(ce|t)\b|\bused too often\b|\bwork on infections?\b|\bantibiotic use\b/i;
+const SECOND_PERSON = /\b(you|your)\b/i;
+const STATISTIC = /\d+\s*(?:-\s*\d+\s*)?%/;
+const SYMPTOM_CALL = /\b(call|notify|report|emergency)\b/i;
+const PLACEHOLDER = /\*\*\*|_{3,}|\[[^\]]{2,40}\]|\{[^}]*\/[^}]*\}/;
+
+// A PDF wraps a sentence across lines, and a break in the middle of one is not a boundary. Splitting
+// there quoted a clinician's "You will not routinely receive an antibiotic because there are antibiotics
+// in the ear canal" back to them as "an antibiotic because there are antibiotics in the ear canal" — the
+// negation gone and the meaning reversed, in a sentence the page was about to ask them to trust.
+function unwrap(text) {
+  const out = [];
+  for (const raw of String(text ?? "").split(/\r?\n/)) {
+    const line = raw.trim();
+    if (!line) {
+      out.push("");
+      continue;
+    }
+    const previous = out.at(-1);
+    const continues = previous
+      && !/[.!?:;]$/.test(previous)
+      && !/^[•▪●*\-]|^\d+[.)]|^[A-Za-z][A-Za-z /-]{0,28}:/.test(line)
+      && !/^[A-Z][A-Z \d.,'()/-]{6,}$/.test(line);
+    if (continues) out[out.length - 1] = `${previous} ${line}`;
+    else out.push(line);
+  }
+  return out.join("\n");
+}
+
+// Sentences, bullets and rows — never split at a comma, which would cut a hedge from its imperative.
+function segments(text) {
+  return unwrap(text)
+    .split(/(?<=[.!?])\s+(?=[A-Z•])|\n+|(?:^|\s)[•▪●*]\s+/u)
+    .map((part) => part.replace(/\s+/g, " ").trim())
+    .filter((part) => part.length > 2);
+}
+
+export function readMedicationEvidence(text, field) {
+  const token = CLASS_TOKENS[field];
+  if (!token) return { state: "unmentioned", quote: "" };
+  let topical = "";
+  for (const segment of segments(text)) {
+    if (!token.test(segment)) continue;
+    // Everything below only silences a quote. None of it can produce an answer.
+    if (TOPICAL.test(segment) || APPLYING.test(segment)) {
+      topical = topical || segment;
+      continue;
+    }
+    if (STATISTIC.test(segment)) continue;
+    if (STEWARDSHIP.test(segment) && !SECOND_PERSON.test(segment)) continue;
+    if (RESTRICTION.test(segment) && /\b(while|when|until|after)\b/i.test(segment)) continue;
+    if (AVOIDING.test(segment) && !/\bprescri/i.test(segment)) continue;
+    if (SYMPTOM_CALL.test(segment) && !/\bprescri|\btake\b/i.test(segment)) continue;
+    if (PLACEHOLDER.test(segment)) continue;
+    return { state: "unsettled", quote: segment };
+  }
+  return topical ? { state: "topical_only", quote: topical } : { state: "unmentioned", quote: "" };
 }
 
 export function parseProviderBlock(text) {
@@ -197,7 +290,7 @@ export function parseProviderBlock(text) {
     if (field) {
       // An empty value means the instruction is in the block below the label, not missing.
       const effective = value.trim() ? value : blockUnder(position);
-      const read = readField(field, effective);
+      const read = readField(field, effective, key);
       if (read) {
         (seen[field] ||= []).push({ value: read.value, line });
         if (read.details) details[field] = read.details;
@@ -221,6 +314,8 @@ export function parseProviderBlock(text) {
       else if (!line.slice(reviewedAt).includes("***")) unread.push(line);
     }
   }
+  const evidence = {};
+  for (const field of ["antibiotic", "pain_medication"]) evidence[field] = readMedicationEvidence(text, field);
   const fields = {};
   const conflicts = [];
   for (const [field, entries] of Object.entries(seen)) {
@@ -233,7 +328,7 @@ export function parseProviderBlock(text) {
   }
   if (reviewed) fields.reviewed = reviewed;
   const unfilled = [...new Set(unread)].filter((line) => !Object.values(unclear).includes(line));
-  return { fields, unread: [...new Set(unread)], unfilled, unclear, other, details, intervals, conflicts, needs_choice: FIELD_ORDER.filter((field) => needsChoice.has(field)) };
+  return { fields, unread: [...new Set(unread)], unfilled, unclear, other, details, intervals, evidence, conflicts, needs_choice: FIELD_ORDER.filter((field) => needsChoice.has(field)) };
 }
 
 // A preset answers a line the block leaves out — but only once a clinic has approved it. Until then the

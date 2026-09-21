@@ -150,6 +150,24 @@ function yesNo(field, value, disabled) {
   return group;
 }
 
+// What the note actually says about this medicine, in the clinician's own words. The page never decides
+// the answer from prose — it says why it is asking, because "your note does not mention this" and "your
+// note says it depends" are different facts and a clinician acts on them differently.
+const BY_MOUTH = { antibiotic: "an antibiotic by mouth", pain_medication: "prescription pain medicine" };
+function evidenceNotes(field, evidence) {
+  const draft = `Your clinic's draft default is ${presets[field] ? "Yes" : "No"}, and nobody has confirmed it.`;
+  // The clinician's sentence usually ends in a full stop of its own.
+  const said = (quote) => `Your note says \u201c${String(quote).replace(/\s*[.;]$/, "")}\u201d.`;
+  if (evidence?.state === "unsettled") {
+    return [said(evidence.quote), `This page cannot tell from that whether this patient is taking ${BY_MOUTH[field]}, so it will not guess. ${draft}`];
+  }
+  if (evidence?.state === "topical_only") {
+    const chapter = chapterOf.get("wc.07");
+    return [said(evidence.quote), `That is ointment or drops for the incision, which the guide already covers${chapter ? ` in chapter ${chapter}` : ""}. It does not say whether this patient takes ${BY_MOUTH[field]}. ${draft}`];
+  }
+  return [`Your note does not mention ${BY_MOUTH[field]}, so this page will not guess. ${draft}`];
+}
+
 // The clinic's unapproved default, offered by name instead of applied in silence.
 function offerButton(field, label) {
   const button = element("button", { type: "button", className: "row-offer", textContent: label });
@@ -164,8 +182,12 @@ function medicationRow(field, parsed, values, fromPresets, unauthored) {
   const notes = [];
   const conflict = parsed.conflicts.find((entry) => entry.field === field);
   if (conflict) notes.push(`Your block says both ${conflict.lines.map((line) => `"${line}"`).join(" and ")}. Choose one.`);
+  // A line the page matched but could not settle: when the note actually talks about the medicine, say
+  // what it said rather than complaining that it was not a yes or a no. Our own template's "{Yes/No}" has
+  // no evidence behind it, so it keeps the plainer message.
+  else if (parsed.unclear[field] && parsed.evidence?.[field]?.state !== "unmentioned") notes.push(...evidenceNotes(field, parsed.evidence[field]));
   else if (parsed.unclear[field]) notes.push(`This page cannot read "${parsed.unclear[field]}" as a yes or a no. Choose one.`);
-  else if (unauthored.includes(field)) notes.push(`Your note says nothing about this, so this page will not guess. Your clinic's draft default is ${presets[field] ? "Yes" : "No"}, and nobody has confirmed it yet.`);
+  else if (unauthored.includes(field)) notes.push(...evidenceNotes(field, parsed.evidence?.[field]));
   if (value === true) notes.push(`The guide says: "${sentences.get(MEDICATION_SENTENCE[field])}"`);
   else if (value === false) notes.push(`The guide leaves this out. It has no wording yet for patients who get no ${NO_WORDING[field]}, and says nothing about it until your clinic gives us that wording.`);
   if (value !== null && parsed.details[field]) notes.push({ text: `Not shown to the patient: "${parsed.details[field]}". It stays in your note.`, notInGuide: true });

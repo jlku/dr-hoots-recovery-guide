@@ -6,7 +6,7 @@ import { readFile, readdir } from "node:fs/promises";
 import { resolve } from "node:path";
 import test from "node:test";
 
-import { FIELD_ORDER, applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, parseProviderBlock, stripBullet } from "../guide/assets/provider.js";
+import { FIELD_ORDER, applyPresets, buildPatientLink, coveredSentences, lineStatuses, missingFromBlock, parseProviderBlock, readMedicationEvidence, stripBullet } from "../guide/assets/provider.js";
 
 const root = resolve(import.meta.dirname, "..");
 const corpus = [];
@@ -99,4 +99,68 @@ test("a bullet or a list number in front of a label does not hide the label", ()
   assert.equal(parseProviderBlock("3. Antibiotic: No").fields.antibiotic, false);
   assert.deepEqual(parseProviderBlock("- Pain: Tylenol as needed").needs_choice, ["pain_medication"], "matched, and honestly unreadable as a yes or no");
   assert.ok(parseProviderBlock("\u2022 Antibiotics: Yes").other.length === 0);
+});
+
+// Three adversaries attacked a rule set that tried to answer yes or no from prose and broke it 24 times,
+// four of them silent wrong answers on real hospital text. These are their cases. The reader never
+// answers from prose, so the only question each one asks is: does the page say something true?
+test("a note's own words are read as evidence, and never as an answer", () => {
+  const cases = [
+    // The ointment trap: most antibiotic mentions in real handouts are topical, and the guide already
+    // narrates the ointment in its wound-care chapter.
+    ["apply the antibiotic ointment (Bacitracin/Polysporin/Neosporin) to the area three times a day", "antibiotic", "topical_only"],
+    ["Use a cotton ball coated heavily with antibiotic ointment", "antibiotic", "topical_only"],
+    ["If antibiotic ear drops have been prescribed, place 5 drops in the ear", "antibiotic", "topical_only"],
+    // Hedged, deferred and third-person: the note talks about it and settles nothing.
+    ["Antibiotics are usually prescribed, please take them as directed until they are all gone.", "antibiotic", "unsettled"],
+    ["Take oral antibiotic if prescribed.", "antibiotic", "unsettled"],
+    ["You will be given medicine for pain that you will take by mouth.", "pain_medication", "unsettled"],
+    // A hedged negative is not a no. An adversary turned this class into a silent skip.
+    ["You will not routinely receive an antibiotic because there are antibiotics in the ear canal.", "antibiotic", "unsettled"],
+    // Mentions that are not instructions at all.
+    ["Do NOT drive while taking prescription pain medication.", "pain_medication", "unmentioned"],
+    ["Avoid Aspirin and Ibuprofen for one week to reduce the chance of bleeding.", "pain_medication", "unmentioned"],
+    ["Minor wound infection (1-2%) responds to oral antibiotics", "antibiotic", "unmentioned"],
+    ["If antibiotics are used too often, they may not work on infections.", "antibiotic", "unmentioned"],
+    ["Call the office for pain unrelieved by Tylenol.", "pain_medication", "unmentioned"],
+    ["The dressing stays on until tomorrow.", "antibiotic", "unmentioned"]
+  ];
+  for (const [text, field, state] of cases) {
+    assert.equal(readMedicationEvidence(text, field).state, state, text);
+  }
+
+  // Whatever it reads, it never settles the field: only the clinician does.
+  for (const [text, field] of cases.map(([text, field]) => [text, field])) {
+    const parsed = parseProviderBlock(text);
+    assert.equal(field in parsed.fields, false, `${text} must not answer ${field}`);
+  }
+});
+
+test("a symptom heading is not a medication answer", () => {
+  // "Pain:" is a symptom heading as often as a medication one — one corpus handout opens it "Pain: Expect
+  // a mild-to-moderate amount of pain". Reading "Pain: none" as a no silently drops a real instruction,
+  // and "Pain: Yes" as a yes adds one. Both shipped briefly; neither may come back.
+  for (const line of ["Pain: none", "Pain: denied", "Pain: Yes", "Pain: 4/10"]) {
+    const parsed = parseProviderBlock(line);
+    assert.equal("pain_medication" in parsed.fields, false, `${line} must not settle the field`);
+    assert.deepEqual(parsed.needs_choice, ["pain_medication"], `${line} asks instead`);
+  }
+  // A label that names the medicine still answers, because that is what our own dot phrase writes.
+  assert.equal(parseProviderBlock("Pain medication: none").fields.pain_medication, false);
+  assert.equal(parseProviderBlock("Pain medicine: Yes").fields.pain_medication, true);
+  assert.equal(parseProviderBlock("Antibiotic: No").fields.antibiotic, false);
+});
+
+test("a sentence wrapped across PDF lines is quoted whole, negation and all", () => {
+  // Split at the line break, this handout's sentence came back as "an antibiotic because there are
+  // antibiotics in the ear canal" — the negation gone and the meaning reversed, in text the page was
+  // about to ask a clinician to trust.
+  const wrapped = ["You will not routinely receive", "an antibiotic because there are antibiotics in the ear canal."].join("\n");
+  const evidence = readMedicationEvidence(wrapped, "antibiotic");
+  assert.equal(evidence.state, "unsettled");
+  assert.match(evidence.quote, /^You will not routinely receive an antibiotic/, "the quote keeps its subject and its negation");
+
+  // A real heading below an unterminated line is still a heading, not a continuation.
+  const headed = ["Take your medicine as directed", "WHEN TO CALL US", "Fever over 101.5 F."].join("\n");
+  assert.ok(!readMedicationEvidence(headed, "antibiotic").quote.includes("WHEN TO CALL"), "an all-caps heading does not join the line above it");
 });
